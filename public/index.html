@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find the best logo assets exposed by a company website.">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Logo Yoink</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="brand" href="/" aria-label="Logo Yoink home"><span>LY</span> Logo Yoink</a>
+        <p>Website in. Best logo out.</p>
+      </header>
+
+      <section class="hero">
+        <div class="kicker">Open-source logo retrieval</div>
+        <h1>Yoink the right<br>company logo.</h1>
+        <p class="intro">We inspect structured data, web manifests, Apple touch icons, favicons, and an optional Besticon service—then validate and rank the actual image files.</p>
+        <form id="extract-form">
+          <label for="website">Company website</label>
+          <div class="input-row">
+            <input id="website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="stripe.com" required>
+            <button type="submit">Find logos <span>↗</span></button>
+          </div>
+        </form>
+        <div id="status" class="status" aria-live="polite"></div>
+      </section>
+
+      <section id="results" class="results" hidden>
+        <div class="result-heading">
+          <div>
+            <div class="kicker">Ranked candidates</div>
+            <h2 id="result-domain"></h2>
+          </div>
+          <dl id="diagnostics"></dl>
+        </div>
+        <div id="candidate-grid" class="candidate-grid"></div>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3012 @@
+{
+  "generatedAt": "2026-08-22T22:25:39.614Z",
+  "source": "canonical_v2.startup_directory_projection",
+  "seed": "logo-yoink-2026-08-22",
+  "counts": {
+    "total": 500,
+    "original": 100,
+    "additional": 400
+  },
+  "companies": [
+    {
+      "entity_id": "215c83e5-089c-5461-8958-7aee040626b5",
+      "name": "Loxz Digital Group",
+      "website": "loxz.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "09428c34-1f3a-500c-9179-07bd9df7584d",
+      "name": "Fuse Oncology, Inc.",
+      "website": "fuseonc.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "74358840-5eb0-58ad-9386-93e34ba2dbd8",
+      "name": "Maxi Mobility",
+      "website": "ma-xi.it",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "0a2f83d8-187a-57c1-95d4-48f2fb4b17f2",
+      "name": "Cryptoys",
+      "website": "cryptoys.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "fcc9b114-5202-5378-9ba5-242a24fd7233",
+      "name": "Little Chompions",
+      "website": "littlechompions.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "acfef272-3b6c-549d-ae2e-cde39d4c91b0",
+      "name": "Electro.Aero",
+      "website": "electro.aero",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "98285ae9-4fa4-50b3-939a-efeba77dbdaf",
+      "name": "MIWA Robotics",
+      "website": "miwarobotics.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "799c51bf-5fe0-4b88-9d78-ab33408cdefa",
+      "name": "Peppa",
+      "website": "peppa.io",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "5e5fa673-b3a9-53da-9267-4376386694e8",
+      "name": "Scoped Solutions",
+      "website": "scoped.no",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "26f729ed-18f3-521b-b965-89fdecb5b58e",
+      "name": "Miracure",
+      "website": "miracure.co.kr",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "5651a414-b924-4060-b6d0-3abfed02fae6",
+      "name": "7RD",
+      "website": "7rd.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "211b58e7-3f4a-5c59-9945-ffd8db8c8d55",
+      "name": "Tapnow",
+      "website": "tapnow.ca",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "d96b2a26-5f32-5284-8a71-dcaf70b8bf0d",
+      "name": "Malwation",
+      "website": "malwation.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "dfaeaa0f-94fc-575a-b0b5-b0acb3ba3040",
+      "name": "hDiscounter",
+      "website": "hdiscounter.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "03fa0811-70dd-5f4a-8e71-ab93f43e5b82",
+      "name": "Storyline",
+      "website": "storyline-inc.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "08e1725c-7c8e-5ffc-903e-e6100cfd212c",
+      "name": "Willow",
+      "website": "hiwillow.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "7cf21cec-946c-525e-bf85-14e7938d6375",
+      "name": "HN Novatech",
+      "website": "hnnt.co.kr",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "29113c97-7b1c-400e-8073-f5785925d7f7",
+      "name": "Workizen",
+      "website": "workizen.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "e29dfad2-de60-58ea-98f3-ecf2d6181ff0",
+      "name": "beebizy",
+      "website": "beebizy.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "4eaa178e-0f8e-58df-9545-e97e31483f31",
+      "name": "Resolute ISR",
+      "website": "resoluteisr.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "2b0f001b-6e0a-58b3-9c31-cab0a1f48543",
+      "name": "BayaniPay",
+      "website": "bayanipay.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "49bcc7cf-854f-5961-a889-c35039bf1712",
+      "name": "Fawn Friends",
+      "website": "fawnfriends.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "0019c04d-3249-56ec-b27a-3e6d0711d411",
+      "name": "reCommodity",
+      "website": "recommodity.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "7127517c-81c1-522d-b635-408254cb2413",
+      "name": "Faster",
+      "website": "fstr.co",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "bb760534-a004-53b0-bac2-0b80d1e8072f",
+      "name": "Zyng Corp",
+      "website": "zyngcorp.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "b78dfb67-198f-552d-8667-2479395f9285",
+      "name": "XPAI",
+      "website": "xpai.io",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "8833fe2c-37ff-5939-ae80-46b6503b3a98",
+      "name": "Haryon (ex Knock Knock)",
+      "website": "knock-knock.fr",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "f1545d03-b581-5a68-abb1-91348f81de86",
+      "name": "Bloktok.io",
+      "website": "bloktok.io",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "c85355da-7ae7-418a-955f-b61e935f55a5",
+      "name": "Celeste Technologies",
+      "website": "celestetechnologies.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "b7e4559e-492f-46d3-b222-7b18631a6c5b",
+      "name": "Tanzle.ai",
+      "website": "tanzle.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "99d1d5df-13a7-5f34-a7e2-9d78935ca9d5",
+      "name": "Sloane",
+      "website": "hi-sloane.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "34d39357-da72-5b37-8a49-ed1edb8069a3",
+      "name": "AXL - Edtech",
+      "website": "axl.tech",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "c07ae0ac-f157-58b7-9d46-d96eb69a17af",
+      "name": "Celosia Therapeutics",
+      "website": "celosiatx.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "41caba4c-53da-59d6-a59d-8e7182e5f7a9",
+      "name": "RocketX Exchange",
+      "website": "rocketx.exchange",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "f0cb6c5f-6900-594a-b1f6-8772f267f363",
+      "name": "TradeBridge",
+      "website": "tradebridge.co.in",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "e06a7263-f5de-5885-bcb8-6f71f23d9a05",
+      "name": "Bluefiremed",
+      "website": "bluefiremed.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "0efd459b-6f87-54e3-b557-c70704722bb0",
+      "name": "AutoX",
+      "website": "autox.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "e32499d8-a882-5272-98f8-62f97742548c",
+      "name": "matapelajar",
+      "website": "matapelajar.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "d160d632-bbbb-5913-b7e6-547b3b44a3f5",
+      "name": "Starpower Network",
+      "website": "starpower.world",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "d3b2b0b7-c25e-52b2-b286-4ea59ebf9381",
+      "name": "Palion",
+      "website": "palion.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "c4eb67d3-e3cc-5e19-848c-6d19d9a0c644",
+      "name": "3DSecret",
+      "website": "3dsecret.eu",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "cc9f66f6-3fb2-559d-87e1-c9aaf4418cb3",
+      "name": "Grapple",
+      "website": "cloudgrapple.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "0dae4932-edb9-4195-b92d-50cd79b5ebce",
+      "name": "Bhr",
+      "website": "bhr.fyi",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "ca6ba847-8569-5d42-99b2-6af2d5cba5db",
+      "name": "Fair Fintech",
+      "website": "bankwithfair.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "a45b745f-b64f-527c-8ece-469bca415744",
+      "name": "Gameye",
+      "website": "gameye.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "835e65e5-cc65-5017-8df1-334ed8d752f4",
+      "name": "Lumiate",
+      "website": "lumiate.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "e707da8d-ed68-5ff8-8d23-09b0d986eb3d",
+      "name": "Innovationdepartment",
+      "website": "innovationdepartment.tech",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "db344bff-7c7c-5909-95d7-fe6864b46ed2",
+      "name": "Naviatx",
+      "website": "naviatx.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "029e03cd-fa75-5aa8-920a-df78250ff12f",
+      "name": "Sona (getsona.com)",
+      "website": "sonu.stream",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "f23fc3d3-fdf3-5608-88d3-deab8f33d985",
+      "name": "AttackIQ",
+      "website": "attackiq.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "82007088-59ea-57c7-b68d-48a73c1a5523",
+      "name": "LinkDR",
+      "website": "linkdr.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "3180bf15-c1a6-5692-8744-14e98fbaa83a",
+      "name": "Frank Works",
+      "website": "frankworksshoes.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "630e7a4f-0ec3-5894-91e2-11b86778a91a",
+      "name": "OUDU Education",
+      "website": "ouduedu.me",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "b7e635fb-4a6a-5838-a0d2-12cb84e98c39",
+      "name": "Fastyr",
+      "website": "fastyr.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "b9ed8d13-7c66-5d81-9357-1475caa8c9cd",
+      "name": "Arkieva",
+      "website": "arkieva.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "7670f560-2374-5a05-8571-592b0cbd15b7",
+      "name": "Cubiko",
+      "website": "cubiko.co",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "5706d5ab-a95c-5a00-a104-afc6eb4c0926",
+      "name": "MakerMarketo",
+      "website": "makermarketo.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "399e15ce-38a4-5a7b-bc2b-822245358a8e",
+      "name": "Fretefy",
+      "website": "fretefy.com.br",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "46fd566f-49b5-5986-a7e6-539e6723d1ad",
+      "name": "Fleetcraft",
+      "website": "getfleetcraft.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "15d7129b-f412-5429-9dd7-0ea6d827a477",
+      "name": "RapidVerify",
+      "website": "rapidverify.io",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "3e4ae78b-f172-5117-b755-e4b4403039b7",
+      "name": "BRbase",
+      "website": "brbase.de",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "fbdc60df-515d-52f6-8ce9-409a4d81cee1",
+      "name": "JUNO Nutrition",
+      "website": "spedition-kleine.de",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "d21c211d-d2d5-5325-9639-92aa64f71de3",
+      "name": "Sinhke",
+      "website": "sinhke.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "48573074-ef58-51ca-ac9e-0718276e4e7d",
+      "name": "Dynamicneedsanalysis",
+      "website": "dynamicneedsanalysis.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "c5f87233-0bfd-535c-9914-0b242a1ffefa",
+      "name": "Revpar Pro",
+      "website": "revpar.pro",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "32fbf886-3ecc-5549-9cd4-fa0b6db492c1",
+      "name": "KopiRun",
+      "website": "kopirun.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "eadf6c0b-2900-51f9-89aa-7f637a22d12d",
+      "name": "Lisa",
+      "website": "lisaand.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "504e40b0-2775-5e15-a341-b4e917a35a5b",
+      "name": "Haze Automotive",
+      "website": "hazeautomotive.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "343a7b61-0d75-58f6-b737-fcf9ee4cb51c",
+      "name": "MACH Dynamics",
+      "website": "machtransit.us",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "b672560f-a6f0-5df1-ad04-5e05b2142c0f",
+      "name": "Uplifty",
+      "website": "uplifty.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "029a4cd7-0c97-5a90-80f4-3515d3677cf5",
+      "name": "INSAT",
+      "website": "insat.com.ar",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "b61a81e4-cd2d-5da5-870a-8424b213e770",
+      "name": "AdQuick",
+      "website": "adquick.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "310239e1-05a0-4719-9753-38357089f231",
+      "name": "Hudson Burnham Real Estate",
+      "website": "hudsonburnhamfl.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "878e3297-0a66-5d68-a3aa-e95b9df5cdee",
+      "name": "Mia AI",
+      "website": "themia.world",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "489074ec-4d19-4eae-8235-61dc29aded51",
+      "name": "Portico Health",
+      "website": "portico-health.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "7b2900ba-5dac-5555-b5b0-4e2d9536aadd",
+      "name": "Nui",
+      "website": "nui.earth",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "8e5edc77-f88b-53f4-b9e7-b0df312a29a3",
+      "name": "Equi-rider",
+      "website": "equi-rider.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "dd46accd-beb3-5901-8029-eabbf46a2145",
+      "name": "Maslife",
+      "website": "maslife.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "b9b88484-546e-52bf-a60f-5179f125ff17",
+      "name": "Tap",
+      "website": "tap.co",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "87a43bc3-8bc1-5e54-a175-d5016aa9647a",
+      "name": "SeekGene",
+      "website": "seekgene.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "f156d0d8-d90e-5d39-b07a-499b45abe1d9",
+      "name": "Curiominds AI",
+      "website": "curiominds.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "0872e314-0bfb-5d5a-8b9e-2e59173b0364",
+      "name": "riyo.ai",
+      "website": "riyo.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "84f51fe7-1df3-5931-b103-6ef4e85ea1b6",
+      "name": "克睿基因 Cure Genetics",
+      "website": "curegenetics.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "ec68ad08-8230-522b-8b18-2e43cb4dfcbf",
+      "name": "Aryval",
+      "website": "aryval.io",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "39b690f3-ae28-5e59-96e9-535220e94e3f",
+      "name": "Wethos",
+      "website": "wethos.co",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "66b94c7c-b6d8-565f-91cc-d8dd1dda333c",
+      "name": "Bizlog",
+      "website": "bizlog.in",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "3ff2f9ac-2574-53d9-bbdb-e6adfd1b0404",
+      "name": "Utiq",
+      "website": "utiq.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "e6e85545-3ec9-5ee3-a8ed-50e2fae56fac",
+      "name": "Rally - LGBTQ+ sports and fitness",
+      "website": "rally.lgbt",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "94ed7c07-9c00-5765-b2f2-ddbccf3e64ba",
+      "name": "Paradoxintelligence",
+      "website": "paradoxintelligence.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "15ea530b-a1b7-597a-9143-579c7e6dd772",
+      "name": "CareerNetwork.co",
+      "website": "careernetwork.co",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "1ce7d5bb-b6ec-5402-814a-615b399544e9",
+      "name": "Robestec",
+      "website": "robestec.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "6ae191a4-9509-4fc6-9edb-5454e84adf47",
+      "name": "Tenvos",
+      "website": "tenvos.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "7ab537aa-c2e4-52da-bc5f-5e307c86760a",
+      "name": "r.Potential",
+      "website": "rpotential.ai",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "2964ae5b-aadf-482c-b5b9-1def504daf45",
+      "name": "DAR.fm",
+      "website": "mp3tunes.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "b2f65391-9346-5fec-ae08-cc9623a4213d",
+      "name": "Avantus",
+      "website": "avantus.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "ff7a421a-680a-47c2-8fea-ac8c6e37452c",
+      "name": "TrialNav",
+      "website": "trialnav.org",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "7f0b0ca0-b29c-5a72-b6e8-cc8591c58ea6",
+      "name": "Hystar",
+      "website": "hystar.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "dd59bd28-7225-574f-aee2-08ea1fb8853f",
+      "name": "GeoZoom",
+      "website": "geozoom.com.br",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "ee06b299-d9c2-5060-a25a-9ac446e0d49c",
+      "name": "CoReport",
+      "website": "coreport.io",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "0f8cbb9a-da22-55fa-86fd-b31076aecc9d",
+      "name": "Nighthawk",
+      "website": "nighthawkfinance.com",
+      "cohort": "original-100"
+    },
+    {
+      "entity_id": "0824c2da-138b-58a8-bb09-ed617ec87121",
+      "name": "Lokal",
+      "website": "getlokalapp.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "96472ffe-01f3-50e8-8f2b-5a489f23bb70",
+      "name": "AEROCINE Films",
+      "website": "aerobo.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9edbd192-86dd-559b-b9a3-a4785c36edc3",
+      "name": "DVI SYSTEMS",
+      "website": "dvi-systems.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "39494737-0913-5688-9c75-a5d59afbd319",
+      "name": "Moonwalk.com",
+      "website": "moonwalk.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "83739c06-2ff8-4862-abba-fe6548fbdde5",
+      "name": "Wellknown",
+      "website": "wellknownlabs.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c945d5fa-53f1-5c70-8aeb-5d337d6660e3",
+      "name": "Watershed Informatics",
+      "website": "watershed.bio",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9fac9023-a9d3-52de-87e4-ed0af2a4bc6d",
+      "name": "Alladapt Immunotherapeutics",
+      "website": "alladapt.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7d194f0f-af07-55da-aa99-991d138279ca",
+      "name": "Finway",
+      "website": "finway.de",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5769d1e6-f169-4f9a-8f37-2cafebc26554",
+      "name": "Beeva",
+      "website": "beeva.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c4e5bc4d-a5df-4e5f-a471-2a89bd7787d1",
+      "name": "Twinvocate",
+      "website": "twinvocate.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "fae3de8a-63f0-53de-8d60-d0c02a09a05f",
+      "name": "Argo Therapeutics",
+      "website": "argo-therapeutics.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cd73156e-19a2-45fc-8ca8-cc5f878a6fe8",
+      "name": "CompositeEdge",
+      "website": "compositeedge.de",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ba444db0-ff0b-59b6-83b9-40418e6481bd",
+      "name": "Impact Food",
+      "website": "eatimpactfood.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d52ea0cc-d846-586f-aa2a-daac2939b720",
+      "name": "TychoAI",
+      "website": "tycho.fit",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "07b30609-3a71-50e0-9626-d1f557bf1383",
+      "name": "Amukha",
+      "website": "amukha.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "f20b52ca-4970-5bb9-939a-a055f70b831d",
+      "name": "Rúmina",
+      "website": "rumina.com.br",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "fae30971-0d10-4c76-942b-483cc595f288",
+      "name": "RippleTalks",
+      "website": "rippletalks.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7a064337-519b-5f76-8f32-c7b600c881a8",
+      "name": "Coyax",
+      "website": "coyax.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "22fd374b-4534-52ea-8783-306bb3c7d5c1",
+      "name": "Xiaobang Bang CRM",
+      "website": "xbongbong.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "46c4290f-46a0-5fd3-a708-ebd6975b2407",
+      "name": "Btrust",
+      "website": "btrust.finance",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b6c81bee-9ec0-5f66-b690-a70767f0032e",
+      "name": "Sparkion",
+      "website": "sparkion.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "bc099a46-d902-543c-95b8-c7d1a5906eae",
+      "name": "Licorice",
+      "website": "licorice.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e3d1497d-89bd-587b-a3a0-5831563ce985",
+      "name": "VoltaGrid",
+      "website": "voltagrid.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a125521d-259e-5bef-ab84-578fe39b43b8",
+      "name": "Factris",
+      "website": "factris.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "802ac645-048d-58f4-82d8-4b10416a42f1",
+      "name": "Barocal",
+      "website": "barocal.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d1880a68-6a9a-5bfd-9737-61c51bb81bb5",
+      "name": "Layla Wellness",
+      "website": "laylawellness.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "05b04911-6a68-5b12-a88c-feeb4712d890",
+      "name": "Somnox",
+      "website": "somnox.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "45bc22d9-5246-4d48-b779-579b5eda50e8",
+      "name": "Edificex",
+      "website": "edificex.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5ded0e47-0183-5afb-b265-a90710a5ed30",
+      "name": "WAYV",
+      "website": "shopwayv.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8a869fa4-4102-5f45-8208-97a60a05b9b7",
+      "name": "GINT",
+      "website": "gintlab.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e2147a54-d5d0-4ab5-8640-ce3d8251af36",
+      "name": "Dixest",
+      "website": "dixest.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9b726638-d2f4-564e-a1f9-28f4cc462b76",
+      "name": "8020CRM",
+      "website": "8020crm.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b24c4e15-3736-5174-8331-a006d93df265",
+      "name": "5enses",
+      "website": "5enses.my.canva.site",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1c415a06-6ff9-510d-8e9c-c0a79762108e",
+      "name": "Isybuy",
+      "website": "isybuy.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d762ea6e-65fa-5c30-9e95-59a1f75a59ec",
+      "name": "Lensesforless",
+      "website": "lensesforless.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1298adbd-d87c-5154-9e67-4387065aa752",
+      "name": "Hook Coffee",
+      "website": "hookcoffee.com.sg",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e2f0b6c8-fb6b-5e0e-bc36-bf126f09af53",
+      "name": "Move37",
+      "website": "move37.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2d75633d-8ac1-5e1f-b1c2-3c2cec45de1f",
+      "name": "LifeRaft",
+      "website": "liferaft.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9255a9b9-2714-56fc-87f1-accb77ca1b95",
+      "name": "Quiver Quantitative",
+      "website": "quiverquant.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "429eb9b6-7e85-53e4-a756-1dbdd6f179ee",
+      "name": "Sua Farmácia Online",
+      "website": "asuafarmaciaonline.pt",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c1e19a68-5449-4b01-b136-a3b1854eeebf",
+      "name": "NOA",
+      "website": "joinnoa.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e48a190b-207e-4b4b-adfb-eef8dae4e931",
+      "name": "SoftMSP",
+      "website": "softmsp.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ad0f5ad7-9d3d-5266-9626-380128b1237a",
+      "name": "OpenSphere",
+      "website": "opensphere.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "383b3085-34a6-59b4-9273-c2317c8a0c19",
+      "name": "ClearPic",
+      "website": "clearpic.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7c7d7904-cdd9-5b82-8c64-9a352ad638cc",
+      "name": "Allstacks",
+      "website": "allstacks.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4ec7bd71-4c91-5fe2-988a-00cda1e2456b",
+      "name": "Vention",
+      "website": "vention.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c333035b-9c30-587d-aa31-f0bfcf2ace2a",
+      "name": "Babel",
+      "website": "aibabel.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "eb6a497d-5f19-57d2-ac81-599c6f089ca4",
+      "name": "ProClass",
+      "website": "proclassonline.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "26f69a7e-fe36-5300-b803-f547cde2a664",
+      "name": "Tamayou",
+      "website": "tamayou.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6e28a9ad-4f68-5a28-a376-12056bd3fb01",
+      "name": "CyberSec",
+      "website": "itwercsllc.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "64089aa2-6c09-5a35-9c0f-63a567baa35e",
+      "name": "Edgebeam",
+      "website": "edgebeam.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7945723a-d674-5702-872c-cf5d299f0f23",
+      "name": "Sadie",
+      "website": "getsadie.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e53d57ef-cce0-5fcc-b48f-50ef98277f5c",
+      "name": "Astribot",
+      "website": "astribot.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "eb241774-c2c7-5fa1-a4e4-8cfc5e261b17",
+      "name": "Legalyze",
+      "website": "legalyze.app",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "748e1289-5244-5b28-935c-1533aa1f859c",
+      "name": "HUDU",
+      "website": "hudu.uk",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b27ec10e-f55a-5aad-989c-139c02a5c2fa",
+      "name": "i'SUPPLY",
+      "website": "isupply.com.eg",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7f5028b0-6648-58e4-a158-f96d0b9333df",
+      "name": "Podisensetech",
+      "website": "podisensetech.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "88326ae5-de0d-576d-adc4-0804150bc5ab",
+      "name": "Oly Platform",
+      "website": "oly-platform.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6cc5bf88-939b-5ba4-9a74-bb3ca507718b",
+      "name": "Infiuss",
+      "website": "infiuss.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d0eb4b44-6323-5934-910b-6b1bac549839",
+      "name": "WASPITO",
+      "website": "waspito.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6ceae0a5-eca9-5201-8ebe-da61bf5cee07",
+      "name": "ai.r Recruit",
+      "website": "airrecruit.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "47af618c-5b04-50f6-a19c-f4ae2c7c8927",
+      "name": "trampay",
+      "website": "trampay.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b49d7fd3-ec46-5f83-990c-cc406ee90cdf",
+      "name": "Ranqx",
+      "website": "ranqx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "dd600399-d2c2-58c9-a538-88a6fd50437f",
+      "name": "Fratellidesideri",
+      "website": "fratellidesideri.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "fb798119-e306-573f-ad95-676c5a25ae58",
+      "name": "Aspira",
+      "website": "aspiraconnect.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "defbfe4e-0461-57a7-8e09-1a13df14f06a",
+      "name": "M&S Biotics",
+      "website": "msbiotics.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7e1a871e-b18c-5a7e-abc6-e3c99cae3b9a",
+      "name": "Shogun",
+      "website": "getshogun.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "92a946c4-a372-4cd6-8202-ffc56b423f5c",
+      "name": "HyFlux",
+      "website": "hyflux.aero",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b5159534-5bf6-5b8d-b177-3c98a482104d",
+      "name": "Go Healthy & Co",
+      "website": "gohealthyandco.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "44205c79-9395-5bc4-b7c2-0929bece483e",
+      "name": "Candice AI",
+      "website": "candice.digital",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "898f404a-7ec8-5103-8acf-4c4cc7551dbb",
+      "name": "(P)rind",
+      "website": "eatprind.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "90c74f67-a08a-51dd-b5f3-b9c34ada0a92",
+      "name": "Polyteia",
+      "website": "polyteia.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a0ae020b-b09d-5a4f-a3a4-084e83c1e95a",
+      "name": "finQbit",
+      "website": "finqbit.pl",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e5ddba99-320e-524b-b94d-b7fe91e82e3e",
+      "name": "Remitation",
+      "website": "remitation.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ea14fcbc-3302-57f7-9c61-15e73e3a41aa",
+      "name": "Exaim.ai",
+      "website": "exaim.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c1b5d85a-13d6-5656-84c2-5eb88e9871ff",
+      "name": "JobsMatch",
+      "website": "jobsmatch.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1cd265bb-b1fe-56c9-aea1-a7b8c8f12c4a",
+      "name": "Nth Cycle",
+      "website": "nthcycle.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d0b8c9d4-e71e-5ca2-8d31-a9297455ebfe",
+      "name": "Geniosai",
+      "website": "geniosai.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c0da717f-177b-51f1-889e-505fe18e1934",
+      "name": "Basetwo AI",
+      "website": "basetwo.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0b8ab292-6766-5dcf-ae00-5f8218a0b4b6",
+      "name": "Zubachee",
+      "website": "zubachee.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9fc36624-61bc-5ba1-b830-3737db325d0c",
+      "name": "Qidzz",
+      "website": "qidzz.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c2d4c8ce-995b-53b0-a2f4-dca51083d3a3",
+      "name": "Quarkchain",
+      "website": "quarkchain.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e4c4996a-3d20-5ed3-ad66-9dd576baac85",
+      "name": "Dive Analytics",
+      "website": "diveanalytics.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "55e82e29-547b-50a6-b940-24db844c9253",
+      "name": "MindCoord",
+      "website": "mindcoord.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5e8df561-bab3-5ef5-b0e7-94ef25cc7108",
+      "name": "Trashie",
+      "website": "trashie.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "564c367f-636f-525e-9c9c-cd28fa5eca0c",
+      "name": "Titan Co.,LTD",
+      "website": "titantrading.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4df801df-8efe-5064-b280-7185012512da",
+      "name": "Atrium Exchange",
+      "website": "atrium.exchange",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7931e349-d76d-5e26-8dad-85380be04472",
+      "name": "TokenForge",
+      "website": "token-forge.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e78dee9a-b869-53a9-9cf9-c4a655292737",
+      "name": "Strata",
+      "website": "connectstrata.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3e1603d9-261d-5777-a844-defac3d2a745",
+      "name": "Inveztor",
+      "website": "inveztor.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "615fb039-f640-554d-9f73-0027b187fd1c",
+      "name": "Ellie Mental Health",
+      "website": "elliementalhealth.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8360bc3a-dd61-5d39-b583-c125c7bd779b",
+      "name": "FLUUS",
+      "website": "fluus.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "fd7b6186-a506-523a-b8fe-6d43324aca5d",
+      "name": "The Folklore Group",
+      "website": "thefolklore.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e1120d32-b0e9-5fdc-97d5-6b0e165a5269",
+      "name": "Pistos",
+      "website": "pistos.cl",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a5bd57f7-77a4-4bee-8938-d6580381020a",
+      "name": "Electran",
+      "website": "electran.org",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "71f9c1b8-ced9-445f-a5c9-86e7bc053784",
+      "name": "TLDR Parents",
+      "website": "tldrparents.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "55791b47-ea24-59a9-96cd-f05661463c8c",
+      "name": "Tamam",
+      "website": "tamam.life",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4d031493-9a58-5bce-8b4d-b4c996b13374",
+      "name": "Talus",
+      "website": "talus.bio",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2f36b7a0-04a6-5753-ae52-8d767f60b93a",
+      "name": "SuperZop",
+      "website": "superzop.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b3d16e4e-34bb-509d-ae16-0d3449bfc86f",
+      "name": "DevBots",
+      "website": "robot.dev",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "be64a29d-c0df-5543-9817-351f81112949",
+      "name": "shiftNOW",
+      "website": "shiftnow.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0e1bcee2-d71e-50e6-8f38-1101c4c8a3d9",
+      "name": "Powermind Hypnotech",
+      "website": "powermind.app",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "672062e7-483c-5694-a4ac-561a34cb1e12",
+      "name": "OcuLine Handheld Ultrasound Mount",
+      "website": "oculine.net",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c951e014-b53e-5dc2-a2da-f6a4346317b4",
+      "name": "Synapta",
+      "website": "synapta.com.au",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cab0684d-d44e-5fc1-97bb-566d4ec03ae3",
+      "name": "Block Lit",
+      "website": "block-lit.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a2d6b35a-dffb-595f-b021-3e4596aa23f7",
+      "name": "BanterAI",
+      "website": "banterai.business",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "fc5cbbe8-4332-5dea-b582-a350fd384c92",
+      "name": "JustFund",
+      "website": "justfund.us",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8f852273-b636-5824-a656-2bf8c27d8f27",
+      "name": "BudID",
+      "website": "budid.se",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "f64c2ad8-fa30-5cd0-823f-f0b848aa4f35",
+      "name": "Unabated Sports",
+      "website": "unabated.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a0b29441-6401-562b-87df-b6cf1d1b12e3",
+      "name": "Salsa",
+      "website": "salsa.me",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d3f59295-b915-5b83-a92b-024b51e13f5f",
+      "name": "Ahgpay",
+      "website": "ahgpay.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6764b821-b5e5-52df-92b2-694abdf3e044",
+      "name": "ReflectionAI",
+      "website": "reflection.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ea22d211-ccc3-5c7b-9bf5-44fed5d226b1",
+      "name": "Moviatech",
+      "website": "moviatech.tech",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "aca28409-b49d-5419-8c3f-1cddcdf2a60a",
+      "name": "Alchemy Rewire",
+      "website": "alchemyrewire.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "de403477-119e-5109-b912-6c9eed27452f",
+      "name": "Carefeed",
+      "website": "carefeed.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0d055ee1-903c-55ea-9cc2-7bcfd8ea39a8",
+      "name": "33m2",
+      "website": "33m2.co.kr",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c9016197-ccf5-4fd0-bcb5-97167403db9a",
+      "name": "Advl",
+      "website": "advl.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "054b0512-5eba-54b8-b722-4789cd56d85b",
+      "name": "Prometheus",
+      "website": "prometheus.nexus",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6e9af9ab-47b5-47cc-9e12-8847c7045674",
+      "name": "MindBridge Automation",
+      "website": "mindbridgeautomation.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "bb078649-bee6-5c76-8cd9-4b166889d5d1",
+      "name": "Fourier Health",
+      "website": "fourierhealth.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1180553f-7ada-574e-ad62-8f6379ac0dbd",
+      "name": "Solphos",
+      "website": "solphos.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "74a6447a-343b-54ae-a600-e02b47b64e40",
+      "name": "Planhat",
+      "website": "planhat.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "348ec0ba-a0f0-5b2c-b6d2-feffc6b5bceb",
+      "name": "Gridavate",
+      "website": "gridavate.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b2f29a61-8f8f-5fa0-8bb3-76135b1fe782",
+      "name": "Fetherstill",
+      "website": "fetherstill.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d12cbc46-888e-4edb-aa52-a1ff756b9026",
+      "name": "Niche Site Operator",
+      "website": "aidgentic.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9219ac66-0b8c-5aee-8967-947dbee63de0",
+      "name": "Modulize",
+      "website": "modulize.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5bc04b3a-ed6a-5a45-85b8-5dcb7356853d",
+      "name": "Cymbiotika",
+      "website": "cymbiotika.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7426f583-d3c2-5032-98df-9b2d991d639f",
+      "name": "MyySports",
+      "website": "myysports.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0fb9792a-05db-58f2-a0ea-d6e1c22d4bb1",
+      "name": "Asynt Solutions",
+      "website": "asyntsolutions.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0d7c9da5-9121-58cf-bb42-3a07995af58c",
+      "name": "Endstack",
+      "website": "endstack.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2ae60220-abd5-515a-a3c0-2465526ca6e4",
+      "name": "Ground Truth Agriculture Inc",
+      "website": "groundtruth.ag",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "df5ec988-7cd7-566b-af44-087a7ebf6ccc",
+      "name": "Artbag Embalagens",
+      "website": "artbag.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d8e99541-52fa-41b5-aec2-47daec57849b",
+      "name": "Your Winery",
+      "website": "innovint.us",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a663603e-39cb-54f7-aad5-6de2cf2ce44e",
+      "name": "elecell",
+      "website": "elecell.co.kr",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ee40452e-7050-5ba6-b816-6b318635e10f",
+      "name": "ai|coustics",
+      "website": "ai-coustics.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "15e90d2b-b973-5355-9e78-05cb5aa6aec0",
+      "name": "Userpilot",
+      "website": "userpilot.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "31d2af46-34a0-53ad-8803-02ba10e81a3b",
+      "name": "Rinstra Technologies (Pvt) Ltd",
+      "website": "rinstra.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0aa5df27-f357-5e44-a151-f79381e252ff",
+      "name": "Moku",
+      "website": "moku.gg",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7e9ac895-b464-5ab0-8da0-f66c9e5f14d5",
+      "name": "Misogi Labs",
+      "website": "misogilabs.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6dd3b1f1-7234-5438-ae4c-1dff1c25d2be",
+      "name": "Playable",
+      "website": "playable.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "203470b7-45b7-5a4d-9b2c-b7653da338ce",
+      "name": "RevRing AI",
+      "website": "revring.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "789912b0-4173-5c18-a7df-3643832ca641",
+      "name": "Fluxiontherapeutics",
+      "website": "fluxiontherapeutics.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "12e6f0c2-9bf2-57e5-9d47-33665976d921",
+      "name": "Count",
+      "website": "withcount.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a83f4a88-d872-52c4-88ef-1ab0e84a884b",
+      "name": "Longevity Space",
+      "website": "longevityspaces.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "68de1336-2ae6-5d23-807c-4f6f29fef923",
+      "name": "WaitWell",
+      "website": "waitwell.ca",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d37c3d35-5cb6-5129-b1eb-90241614081e",
+      "name": "Level Up Basketball 🏀",
+      "website": "levelupbasket.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6d378ea2-dc13-5307-958a-242c1497e27b",
+      "name": "Mocksi",
+      "website": "mocksi.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "555d34d7-32f3-56d8-aeff-4c1e96ac31bc",
+      "name": "Moombix",
+      "website": "moombix.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "28d056ef-224e-5a32-b548-be33c82d32a0",
+      "name": "IsoTruss, Inc.",
+      "website": "isotruss.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "780d3f8c-68bd-5472-b8f3-edef2fbd6895",
+      "name": "ICS Nett, Inc. (ICS)",
+      "website": "ics-net.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "80d6ab3d-a047-540f-9fb1-4b1f045fefc2",
+      "name": "MattoBoard",
+      "website": "mattoboard.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e7a9c0bc-fc5f-594a-ab71-edcbed58f4a9",
+      "name": "Vesalius",
+      "website": "vesalius.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ea1462ed-7229-5b54-ab5a-059ed2b671c8",
+      "name": "Carbix",
+      "website": "carbixcorp.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ebdeed26-c885-57af-857c-cb803777d684",
+      "name": "Getmills",
+      "website": "getmills.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d9a0ecb6-370e-5bab-a854-5281ed3f1dd9",
+      "name": "CityGem",
+      "website": "citygem.app",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "96642272-fcd5-57e8-b333-592881f176d9",
+      "name": "Stupaid",
+      "website": "stupaid.work",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "85667832-af51-4c0d-b681-16a376370d13",
+      "name": "Comment",
+      "website": "comment.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b03b9f38-711b-57fe-aba1-7ee861160fe7",
+      "name": "HEXANIKA",
+      "website": "hexanika.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ee327516-8bb2-52da-8f38-5185f14efc66",
+      "name": "Möbius Industries",
+      "website": "mobiusindustry.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7c3123af-a34a-5f1b-97b1-ce77cb2ae116",
+      "name": "Delphi Healthcare",
+      "website": "delphihc.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b0cf0cab-3185-570d-a995-0269f972236f",
+      "name": "SenpAI.GG",
+      "website": "senpai.gg",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6f1d85f2-38c3-5a90-a040-77f1b30f7e3b",
+      "name": "Moneybay",
+      "website": "moneybay.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a2189200-c9a6-5cf8-be47-605c03b89e4d",
+      "name": "Seal Rock Therapeutics",
+      "website": "sealrocktx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "daba61f6-b9b1-4189-9bf0-8cfe20d64f12",
+      "name": "FieldLine Industries",
+      "website": "fieldlineindustries.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2cb18965-898f-417a-a5f2-48b12fcbd031",
+      "name": "Simuland",
+      "website": "simuland.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6bbf9f5d-6453-578d-a073-f0f440865600",
+      "name": "Sondera",
+      "website": "sondera.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "90ce0109-3855-59a3-9d40-9a142546e204",
+      "name": "Temple Future Owners",
+      "website": "templefutureowners.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e86985e5-4d09-5662-aaf4-d308f4f10efc",
+      "name": "Grasshoppersignup",
+      "website": "grasshoppersignup.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4c9af3f2-c2c0-547a-8070-2963de36504b",
+      "name": "Eusorone",
+      "website": "eusorone.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "43ab2019-e7cf-5257-b258-d97cfa0793c3",
+      "name": "EliotNest",
+      "website": "eliotnest.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b2af3c7e-bdf3-5f2d-93c7-9a0c929d5076",
+      "name": "General Instinct",
+      "website": "general-instinct.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "088ea7db-6db8-4d5a-a3e1-4fd34b85e68f",
+      "name": "AVNGR",
+      "website": "asmbld.org",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c036875c-9e73-5e85-9c56-410c9901e145",
+      "name": "Bioli",
+      "website": "bioliskincare.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6a1aca49-fc2b-5cc7-b44c-4036ef46dc74",
+      "name": "Edjy",
+      "website": "edjy.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a4955c47-2b6e-5711-90e6-af61dce0d8f9",
+      "name": "AirWinder",
+      "website": "airwinder.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3c89dfbf-8c28-5bfc-8882-3b90c75ab7ee",
+      "name": "Genopets",
+      "website": "genopets.me",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b47a440e-8f87-5d70-b23d-c4e7783a3e9c",
+      "name": "Wortal",
+      "website": "wortal.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4996d45c-35b7-5dfb-9fc7-ba30201405be",
+      "name": "Dantari",
+      "website": "dantari.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "634b2b1f-1bed-50cc-b99d-501021801833",
+      "name": "BlueFoot Inc.",
+      "website": "bluefoot.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "351866a2-b761-56c9-80cd-e027f58008f9",
+      "name": "Lydian",
+      "website": "lydianuniverse.xyz",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e79a312d-d299-5894-8d8a-c6d94c564af0",
+      "name": "PaylabsID",
+      "website": "paylabs.co.id",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3d51bb26-91bb-5361-9a1f-ef4754488e50",
+      "name": "Rateweb.co.za",
+      "website": "rateweb.co.za",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b1bd83cc-185e-5f1e-86cc-d087051fec87",
+      "name": "GENIUS ALLIANCE GROUP",
+      "website": "genius-alliance.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3b32f460-788a-58ff-aba3-9f43a45ba313",
+      "name": "Turnstile",
+      "website": "turnstile.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3e666c3f-4d36-5b42-b355-18528720302f",
+      "name": "Hapteon",
+      "website": "hapteon.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "16ef38e7-a7e3-5687-8e59-5bde301d3267",
+      "name": "EyeTell",
+      "website": "eyetell.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b601c256-e918-58b4-a3d2-982c179d2441",
+      "name": "Flow Medical",
+      "website": "flowmedical.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ab83fff4-9e2f-5d5f-a7ba-a11dfe036ea5",
+      "name": "Cyclerion Therapeutics",
+      "website": "cyclerion.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "22d83fca-3544-5f55-bcbf-81c6804697f1",
+      "name": "Tribe",
+      "website": "withyourtribe.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "efb5ebf6-4fdf-5e4b-a5f7-6007a46ab16d",
+      "name": "Bandit Network",
+      "website": "bandit.network",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "83460336-7108-5b5b-8ef0-585caa9b835e",
+      "name": "Cedilla Therapeutics",
+      "website": "cedillatx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2c2e2aa6-c270-5802-bc3f-b41cf119cf06",
+      "name": "The ARIA Network",
+      "website": "thearianetwork.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7ae01b9b-bb1b-58b6-875c-fa7cdad22c5c",
+      "name": "Sipn Bourbon",
+      "website": "sipnbourbon.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "f7d976a3-636e-5a70-b559-345035a57a90",
+      "name": "Limelight Bio",
+      "website": "limelightbio.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9d5aa1b3-f3df-5fb0-adc1-77b0fc834997",
+      "name": "ORiS",
+      "website": "oris-space.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "51d3073d-0349-53da-a6d2-01f03a032851",
+      "name": "PortalCX",
+      "website": "portalcx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "242e957b-255f-539d-88f9-030319aebdbc",
+      "name": "Cellink",
+      "website": "cellink.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "fab059b9-05d9-5f09-b637-afdcd162b5bb",
+      "name": "Adtuo",
+      "website": "adtuo.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d0079f9e-0ab7-5455-bca8-90ee8771b686",
+      "name": "Raiqon",
+      "website": "raiqon.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5620c97a-9ed3-564f-9884-a1a1db48e6b5",
+      "name": "SPACECOOL INC.",
+      "website": "spacecool.jp",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e67e4ec7-4136-53cb-be90-809b8cb6055e",
+      "name": "Umanrobotx",
+      "website": "umanrobotx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a78e25eb-2511-4b50-aadb-a2cb4c31cc6c",
+      "name": "Regumint",
+      "website": "regumint.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "71bdcf04-1a50-545a-b714-9e5eff9e2817",
+      "name": "PTC",
+      "website": "ptc.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "205b8df5-1a0f-5ddc-9884-a1dd3c3cf0cc",
+      "name": "Raywatt Inc.",
+      "website": "raywatt.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2bf4cfdd-29cd-4ff0-b682-5a4d21459663",
+      "name": "Optilyx",
+      "website": "optilyx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "acd0cf1b-a672-518a-8dbc-2c6831d316e6",
+      "name": "Rapid Flight Training",
+      "website": "rapidflighttraining.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8580f8c8-b43a-58bb-a6b4-ac84e2ccae8c",
+      "name": "SimulPlus Films",
+      "website": "simulpus.org",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ede4106e-0fc9-5a4a-b812-9c68a7a746c6",
+      "name": "Netomnia",
+      "website": "netomnia.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "65cf8c44-ed70-5e20-852e-441ff2a37303",
+      "name": "Dialaxy",
+      "website": "dialaxy.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "09879416-dc89-4bea-8b7e-338dc32f6963",
+      "name": "Centrality Labs",
+      "website": "centralitylabs.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cfe9d92d-1caf-579f-835b-8157aaa9cf40",
+      "name": "Care.com",
+      "website": "lexue985.com.cn",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e9535eeb-6a17-54f1-bcef-3633129eec5f",
+      "name": "Drip Labs",
+      "website": "driplabs.xyz",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "95ff919d-4e03-5076-9ed9-9b652cab94f3",
+      "name": "AIx2",
+      "website": "aix2.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3624dca6-b8a3-5a27-b301-b4c1b6222d4e",
+      "name": "ions.bio",
+      "website": "ions.bio",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d7bc4cf0-a4fc-56ff-9f0f-2b9fc97060dd",
+      "name": "Useatlas",
+      "website": "useatlas.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "72a7dab6-68ae-5424-88a4-b7362e78a1d3",
+      "name": "The Headset App",
+      "website": "theheadsetapp.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d21d8179-202d-5711-9daa-fb3d532f23c1",
+      "name": "Opix",
+      "website": "opix.com.br",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9a825417-08b0-5ff8-a625-337ae011a532",
+      "name": "Beeedge",
+      "website": "beeedge.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "01c7f9e0-67c9-5c0a-b950-27e27a9972eb",
+      "name": "Novos Power",
+      "website": "novospower.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "df7259c7-8bf2-541a-bc88-27917c6ced74",
+      "name": "HopeNation",
+      "website": "hopenationcounseling.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3047cd8f-9c31-5690-bdc1-5e104f3904a8",
+      "name": "Doctor Wise",
+      "website": "doctorwise.com.br",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "834eccb3-2d61-5733-832b-9e080722e6b1",
+      "name": "Upthread",
+      "website": "upthread.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c1bf359d-b95b-521e-9b69-c3074f9956fe",
+      "name": "Daanaa",
+      "website": "daanaa.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ede349b9-99ec-54a3-9a7e-d23b04e4f340",
+      "name": "Lendao",
+      "website": "lendao.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4f0b60fe-5788-514b-80c7-8a015747c8e2",
+      "name": "Actuate",
+      "website": "actuate.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "05ce1126-f0b1-51ad-ba11-d38774ecccf2",
+      "name": "DigiParser",
+      "website": "digiparser.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "19033335-8a0d-589a-ac67-333e8a001c6e",
+      "name": "Orb Labs",
+      "website": "orblabs.xyz",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "52b6878e-d050-5aeb-a2be-eca0ff1e6164",
+      "name": "RahRah",
+      "website": "rahrahlife.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cb7aedff-5c7a-5a62-b8d0-662d13915e31",
+      "name": "Shaachi",
+      "website": "shaachi.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7ea18312-6910-54a2-9744-9bc7cedef1f0",
+      "name": "Ludufi",
+      "website": "ludufi.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b81c2e16-da78-5907-a1a4-1287af8bea13",
+      "name": "Aequus HQ",
+      "website": "aequushq.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "fe3100c2-d221-51d3-99b1-4e793e0d9c09",
+      "name": "Annotation AI",
+      "website": "annotation-ai.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d8f87a5b-5a0f-5825-a545-5920bc0b1a46",
+      "name": "Whisper",
+      "website": "letswhisper.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8335e59d-87eb-59a1-9c5a-48f3b5a898a4",
+      "name": "Betaport",
+      "website": "betaport.systems",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8155099c-4c70-51bf-b22f-156da834609e",
+      "name": "Stak",
+      "website": "stak.mx",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "198b77c2-1917-5e30-b856-c2c190391a49",
+      "name": "Perch Mobility, Inc",
+      "website": "perchmobility.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9477f34c-fbf0-50c0-98f4-59b815d02660",
+      "name": "Bolsa de Casas",
+      "website": "bolsadecasas.mx",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ec602b42-bf9b-59ad-ba2d-392a8467dd0d",
+      "name": "Papillon Therapeutics",
+      "website": "papillon-tx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8e482752-eb8a-5706-8ba3-29a36b1ba4f4",
+      "name": "Weplan",
+      "website": "weplan.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "99b1c264-44ec-5754-b220-8b559c989add",
+      "name": "Movo",
+      "website": "movo.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "424166c8-85ce-4de6-9058-4c61fe11ca92",
+      "name": "CoTraining",
+      "website": "cotraining.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "798d3c9c-911e-5d7b-8c81-c4e18d767a02",
+      "name": "Vycto",
+      "website": "vycto.tech",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d7158c84-6b1e-5fbe-995c-75c8a2ec0429",
+      "name": "Sessionmusic",
+      "website": "sessionmusic.app",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2333be51-1873-5846-8986-82df0d363b87",
+      "name": "Thrivewithtype1",
+      "website": "thrivewithtype1.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "80672c11-6854-5fab-91c2-81fe7cf49014",
+      "name": "Essential Robotics",
+      "website": "essential-robotics.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0eaf686d-15ad-5c06-a904-bc343bef10a8",
+      "name": "Concierge",
+      "website": "webconcierge.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8df0231f-f1ee-58cd-b99f-5db783e1136a",
+      "name": "Tempus Injury Advocates",
+      "website": "tempusrisk.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "dd2a208d-9856-5cf5-b540-e6719dda42cd",
+      "name": "Anarchy",
+      "website": "anarchy.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "08dc58a8-21aa-5bcc-b0cf-621a01d375c5",
+      "name": "AutoSyn",
+      "website": "autosyn.se",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "08e6ed88-20d5-532c-97d8-737c0f1e4cf9",
+      "name": "Trustiu",
+      "website": "trustiu.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "32afcd61-3dfd-55d1-b618-eb0206117d15",
+      "name": "Skygauge",
+      "website": "skygauge.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6ed5ce15-7f87-517e-8ec2-5afe0fba4e1d",
+      "name": "Alixia",
+      "website": "alixia.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cbcd52a4-0f35-507f-9cd6-1af41509af3c",
+      "name": "FJDynamics",
+      "website": "fjdynamics.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6c07d5fe-88a4-55a1-9f9c-70bcf30a21d0",
+      "name": "Venice Music",
+      "website": "qanda.la",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "bbe254e2-8b7d-561f-9d5c-74cbc10754a9",
+      "name": "Kemgo Inc.",
+      "website": "kemgo.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "072937de-f292-598f-8439-2c17026fbfce",
+      "name": "Boostgrad",
+      "website": "boostgrad.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "72bcae91-b6aa-4515-ab6e-5a44b4b6b2be",
+      "name": "Y3 Technologies",
+      "website": "y3.sg",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5d5893e8-58d5-5e8d-b577-141683a323b7",
+      "name": "InfoTiles",
+      "website": "infotiles.no",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "975bb615-2cef-5b9b-ae27-2dcfc63dcc00",
+      "name": "Untamed Planet",
+      "website": "untamedplanet.earth",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "390966e8-98aa-4d8c-9f4c-31059cb62763",
+      "name": "Pulsar Si",
+      "website": "pulsar-si.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "98cc201c-ae34-5ec3-a734-a60a33a7e58c",
+      "name": "wikifolio Financial",
+      "website": "wikifolio.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3404e8e1-2b75-549f-aaee-d9535e0c8ce2",
+      "name": "Coordle",
+      "website": "coordleapp.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "593a9d21-75da-5345-bba8-72b9ae53172d",
+      "name": "Café Momentum",
+      "website": "cafemomentum.org",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "efd27d49-05f3-5dab-b600-71423d8e1449",
+      "name": "OneChain Immunotherapeutics",
+      "website": "onechaintx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "eb799ba0-28d7-5257-918b-8972c7592ab9",
+      "name": "Clikalia",
+      "website": "clikalia.es",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "f4087945-51d3-557e-a964-cfa9f72736ec",
+      "name": "Goamigo",
+      "website": "goamigo.fr",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0152f6f6-96d8-5dd9-ba96-bee4dc77a84f",
+      "name": "Perchnow",
+      "website": "perchnow.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "242a9ff6-bd7b-53f9-a96b-130af8e89c33",
+      "name": "Sentius",
+      "website": "sentius.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cc45cc5d-c73f-5ed8-971b-6a130c7789fa",
+      "name": "Lookiar",
+      "website": "lookiar.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "edd22494-91f6-50d0-8dca-3661101faafd",
+      "name": "Airvolute",
+      "website": "airvolute.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "32ad3db8-a573-48b3-9452-d60ad5ea5939",
+      "name": "Vetra AI",
+      "website": "pawbeatvet.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b123664f-3945-5b84-90c8-a51c3529d4bf",
+      "name": "Lead Academy",
+      "website": "lead.academy",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "05d0ba9f-1b73-56ea-892a-503934dc56ec",
+      "name": "Pool",
+      "website": "soypool.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "360ce949-59d5-59d9-8ccd-4a4186861146",
+      "name": "Enstyle",
+      "website": "enstyle.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9a803f86-f964-5a23-b591-256fb44b5d0b",
+      "name": "SAMMY",
+      "website": "sammylabs.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ee76c675-c8e9-5f56-a9ea-cbf312583fec",
+      "name": "Cavero Quantum",
+      "website": "caveroquantum.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4d758b92-af16-5522-aae9-73f9308a2d05",
+      "name": "Robomotion",
+      "website": "robomotion.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6a8217d4-2f39-5104-b6a4-590afefcf25f",
+      "name": "Cashwalk",
+      "website": "cashwalk.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6a58bbca-f7b7-5f5a-a056-d21e25dbde35",
+      "name": "Bineric AI",
+      "website": "bineric.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3391b89b-f8b8-5059-958b-7f58ad91c41b",
+      "name": "Split Pay",
+      "website": "splitpay.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a1019e5a-0f97-5136-8df8-e3fa215a6db7",
+      "name": "GAIT",
+      "website": "gaitglobal.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "741b5064-ff6f-5572-aab6-dd878c97120b",
+      "name": "AIBTRUST",
+      "website": "aibtrust.jp",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2a1f88c9-8961-5b70-a86e-e151b29be99d",
+      "name": "Edutechs",
+      "website": "edutechs.app",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ac591533-9c2f-59e7-80cc-3825fcfd8ba3",
+      "name": "US Wind",
+      "website": "uswindinc.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8c9f58a7-e2d3-5170-89db-5a83663130d5",
+      "name": "SPIRL",
+      "website": "spirl.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1c71f2a4-d8f2-58e9-a35a-7b7d6909bf3b",
+      "name": "Finca App",
+      "website": "finca-app.in",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e45b6ca8-c18b-5d69-99a1-34ba7a86e4bb",
+      "name": "Klipy",
+      "website": "useklipy.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6c7d1182-e0b3-54c2-b3e8-fa8c013bae29",
+      "name": "Recon Health",
+      "website": "reconhealthai.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "17fb619e-8c57-5200-be1a-f4c6030e900e",
+      "name": "Whitebox Editor",
+      "website": "gorest.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3cca6dea-b223-5a79-a93d-51a6f4efd429",
+      "name": "Voithru 보이스루",
+      "website": "voithru.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7cf61503-68ce-54f9-87f3-fa6d366eb319",
+      "name": "Pluvo",
+      "website": "pluvo.co.uk",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "eb81da28-e16d-541b-ba22-ac31e76e8327",
+      "name": "SiteWorker",
+      "website": "siteworker.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "62edba82-bf6a-5e2b-95a0-9e6ab44de2b2",
+      "name": "Biomojo",
+      "website": "biomojo.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "21d1eb52-5d5c-5d4c-8471-4aaaae9ab45f",
+      "name": "Cache",
+      "website": "usecache.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9a17ac0e-7c62-42b7-b293-e6d9dabeda8d",
+      "name": "Maingen",
+      "website": "maingen.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4120d0c5-1894-56fc-8c31-26f4b132c8d0",
+      "name": "OoshEars, Inc.",
+      "website": "ooshears.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a563953f-b5ec-5849-b90a-000e43636ed0",
+      "name": "Raindrop",
+      "website": "myraindrop.co.uk",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "6234f2b2-13e4-57b7-8fa5-cb96e3632ae1",
+      "name": "LexLynk",
+      "website": "lexlynk.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0a394b13-9e9f-5261-9947-08bfdb5dd241",
+      "name": "GRAMFS",
+      "website": "gramfsglobal.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ebac0386-664e-5c23-af10-14df75d91353",
+      "name": "Arago",
+      "website": "aragosystem.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "521478b7-671d-59fc-aa2b-a73cfbe8a26b",
+      "name": "hum.ai",
+      "website": "hum.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4880a82d-4384-59a8-ab86-43c57935fa7c",
+      "name": "Quansys",
+      "website": "quansys.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "981d0699-6389-5343-8d38-89ca3c230a4f",
+      "name": "Plask",
+      "website": "plask.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5e5addb6-9dd5-5fad-964b-c6ba6513cdb0",
+      "name": "SawTech AI",
+      "website": "sawtechai.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5e5ffcc3-d8ad-5764-972c-0402b8e9dc27",
+      "name": "Piction Health",
+      "website": "pictionhealth.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "f127b707-b4fc-5bf7-b3db-13c0783770cc",
+      "name": "Qualisure Diagnostics",
+      "website": "qualisuredx.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1af8ae76-367d-5f35-b0b7-2d3057f35206",
+      "name": "Norachem",
+      "website": "norachem.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "14044dec-ab45-5176-ab6c-8ecc7108efdc",
+      "name": "Hueco",
+      "website": "tieneshueco.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c99e294b-8092-524a-9a0c-f54a2d89df4a",
+      "name": "InfraHub",
+      "website": "infrahub.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7ee75de3-3e22-5d1e-8ad2-7217090cb217",
+      "name": "Readybit",
+      "website": "readybit.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2530ab61-7249-580f-90da-fe9ec8de31d3",
+      "name": "inmemori",
+      "website": "inmemori.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "005d7c0a-6658-5f35-9db2-421520a15a22",
+      "name": "i2o Retail",
+      "website": "i2oretail.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a454b657-127d-54af-a2a0-10cbce5e4410",
+      "name": "ESTA",
+      "website": "estalinks.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "900731ae-1db7-5aa4-b12f-15a92d143e02",
+      "name": "Jumlaty",
+      "website": "jumlaty.app",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0871bdde-81d1-5c87-87d4-b7d7aecf02b7",
+      "name": "Bastion Health",
+      "website": "getbastion.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cc4a0562-e6a7-5e52-81f3-1b552bc81f38",
+      "name": "Amutable",
+      "website": "amutable.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cc310ac5-2d5a-5b16-8902-14891627b71d",
+      "name": "MUSICVERSE LIMITED (USA",
+      "website": "musicverse.ar",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "116e5175-6298-52eb-9765-a62e4a510150",
+      "name": "Rechat",
+      "website": "rechat.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7017d132-d7ef-45a7-a5d4-cf0e70323db0",
+      "name": "Cited & Seen",
+      "website": "citedandseen.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "272715cd-e59e-5b5b-b4ce-42d2f8ff6345",
+      "name": "Wora Delivery",
+      "website": "woradelivery.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "cdebca68-0fab-53ef-a97a-251f22aaabf7",
+      "name": "RemoteEngine",
+      "website": "remoteengine.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0531c318-7887-511c-b298-f87801754b0d",
+      "name": "CWALLET",
+      "website": "cwallet.qa",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c404c556-1b30-52d7-9a69-5551088123a8",
+      "name": "Enneo",
+      "website": "enneo.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b6989443-7092-5644-b0bb-f6a7a3e49d2c",
+      "name": "MY HEALTHY®",
+      "website": "myhealthy.fr",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "630af203-698c-5ca1-ad77-1f32f142d3eb",
+      "name": "Agrofy",
+      "website": "agrofy.com.ar",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7753d99f-772d-558c-b51e-a9d0638c65e9",
+      "name": "Arcanite",
+      "website": "arcnet.com.au",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1b5a2761-672d-56aa-a1f7-7efdf8e7ca39",
+      "name": "Spikedigitech",
+      "website": "spikedigitech.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ec0f51ae-e77f-55c6-aa62-479e0eef6131",
+      "name": "Jurlina Coenergy",
+      "website": "jurlinacoenergy.eu",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "bc959eff-a438-5873-a56b-735654965cf4",
+      "name": "Kellify Group, LLC",
+      "website": "kellify.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8a28dcc3-b4ca-55a6-b1d3-381565624a2d",
+      "name": "Basker",
+      "website": "basker.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "bd6fd6c7-a922-53a9-b061-5eb726d13235",
+      "name": "Sleeplay",
+      "website": "sleeplay.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "524d5f75-e5b8-4ebb-9a32-e06227c26a77",
+      "name": "DNA Chat",
+      "website": "dna.chat",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "739af4ae-1f3c-5aa6-8ec9-6075b0e7e532",
+      "name": "The Adaptive Movement",
+      "website": "theadaptivemovement.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b23a549c-bca3-5d1b-94f4-479933a266d5",
+      "name": "Crewline",
+      "website": "crewline.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "661d7d26-1551-5e51-a83f-87cc2e929d9e",
+      "name": "Sanity",
+      "website": "sanitygroup.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0bd71b21-400f-5d21-b9f9-2013c8695a92",
+      "name": "CloudNatix",
+      "website": "cloudnatix.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "422e2a6a-56d9-5e72-bee1-a1645b3dd204",
+      "name": "EndoSound",
+      "website": "endosound.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c28d2a1b-0275-4bbf-967f-e791bec26031",
+      "name": "Verapulse",
+      "website": "verapulse.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c12e8636-0b4d-5b86-9895-60cc63cd5545",
+      "name": "Fixme",
+      "website": "fixme.ng",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "54cf7725-47d4-53e6-a954-86a8287c9f38",
+      "name": "Anadey",
+      "website": "anadey.com.au",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "5b33bae5-9b49-5205-a36a-eff48f453c49",
+      "name": "Yumlish",
+      "website": "yumlish.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c86e510f-e118-5aa5-826f-5d9d7efdcae2",
+      "name": "NUMiX MATERIALS",
+      "website": "numixmaterials.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "51542e4b-aa1a-5693-b905-ed4a7946b7bb",
+      "name": "Mikrofleks",
+      "website": "mikrofleks.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1152affc-9d7e-5cb3-966e-88700e3e203f",
+      "name": "Molecule Systems",
+      "website": "moleculesystems.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "36512523-a7f3-58f2-bdfd-acb71c981d56",
+      "name": "Almaden Genomics",
+      "website": "almaden.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c73a40db-e46b-402d-b66e-6172a560096f",
+      "name": "ISD",
+      "website": "intelligentsolutionsdiscovery.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "86c2017d-8973-5e5d-b6f9-b54e86f7c913",
+      "name": "Elevent",
+      "website": "bookelevent.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8b33ccd1-cd5d-502f-acc9-182c531c14df",
+      "name": "Leaf Insurance",
+      "website": "leaf-forsikring.dk",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "74f07de6-41b0-5124-9d10-1a03804ebbc9",
+      "name": "Red Lynx",
+      "website": "redlynx.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1341fbe4-753f-563f-a947-54e1f363d318",
+      "name": "iRecovery Behavioral Healthcare",
+      "website": "irecoveryusa.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "df6a4df2-0c90-5f26-83d6-42f4af032d1c",
+      "name": "Stella Automotive AI",
+      "website": "stellaautomotive.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "e29bd41e-2b71-543a-8ff5-2154fdd8c60c",
+      "name": "Truce",
+      "website": "truce.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4fe84024-4621-5ea9-bf65-8c371e3476a8",
+      "name": "Slide Financial",
+      "website": "getslideapp.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "27de7e5e-9728-467c-bc06-1af33087d7f4",
+      "name": "Marvix",
+      "website": "marvix.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0ecf4428-d90d-5e35-9c79-59d1f910715b",
+      "name": "Monograma",
+      "website": "monograma.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "12eb2d65-dfab-5617-a237-d4b0261a35a8",
+      "name": "Talli",
+      "website": "talli.me",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4147fc4e-e0a2-55d6-914f-1ddcb1f0b128",
+      "name": "Cellsor",
+      "website": "cellsor.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "29c2a3db-6499-546d-96f0-f1eda56a9650",
+      "name": "PharmaCare S.r.l.",
+      "website": "pharmacare.srl",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "94a95d32-a433-4f75-9995-c1e60de84db5",
+      "name": "Femma",
+      "website": "femma.app",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3e2fa745-2eff-5e50-9137-4fc624bfb4b4",
+      "name": "agrantis",
+      "website": "agrantis.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "2d0742ce-d9ef-52be-9d12-d3a96181b827",
+      "name": "Liberatech Space",
+      "website": "liberatech.space",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ac8cbef0-f4ce-5646-8b01-bcf1da0ddb1d",
+      "name": "Propel",
+      "website": "withpropel.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "af64525d-37aa-4365-971c-a3c1a8e12ba9",
+      "name": "Arkenintelligence",
+      "website": "arkenintelligence.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9cc3baea-e4be-5b5c-bbe6-707a50e0d1ee",
+      "name": "Iruca",
+      "website": "iruca.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7a44d400-8d55-58b9-abfe-4a4ffd1da252",
+      "name": "Magneto Empleos",
+      "website": "magneto365.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9628aa90-b3bd-573d-aefb-3903409a9c4f",
+      "name": "Intelligent Health.tech",
+      "website": "intelligenthealth.tech",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "be0f710a-c7a2-59bf-aa5d-3eb43e9db44b",
+      "name": "Boop",
+      "website": "boop-app.pet",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "7b556dd2-b9fc-5346-bd06-9f295e35ec97",
+      "name": "RideOS",
+      "website": "rideos.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "14d50fda-b790-5c31-a450-3f32f54f42c0",
+      "name": "Previnex",
+      "website": "previnex.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "ff593c1a-1329-56c4-88a1-dc60f10f1c20",
+      "name": "iTech Minerals",
+      "website": "itechminerals.com.au",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c2e3dc0a-ec89-5bcb-8239-df97ee6bbee0",
+      "name": "TheWordsmith.ai",
+      "website": "thewordsmith.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "1a299b28-5a1a-5960-90e4-70cba7597921",
+      "name": "Logo Diffusion Inc",
+      "website": "logodiffusion.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "c0999813-d511-5dc6-9565-8904736d21b4",
+      "name": "Geefter",
+      "website": "geefter.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "9f0718db-861a-555c-9aa8-d21d4a8e6bc4",
+      "name": "Internative School",
+      "website": "internative.in",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8255eed2-b3ce-55ce-ad23-c6cd4f1e92cd",
+      "name": "COMBO",
+      "website": "combonetwork.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "afcabeac-f276-5110-a96d-3e0fab89e2a1",
+      "name": "Sensible",
+      "website": "sensiblepad.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "953c7693-3881-502c-99b8-193f938f5fe5",
+      "name": "Rigly",
+      "website": "rigly.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0f3b1b3e-5586-5e6b-a347-6b064c83a02f",
+      "name": "NestSTEPS Employee Benefits",
+      "website": "neststepsbenefits.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "432b644a-da12-5215-8ede-845d4248017e",
+      "name": "Tapin2",
+      "website": "tapin2.co",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "0a87ab45-4e02-5a84-a745-764f930739f6",
+      "name": "Pathy",
+      "website": "pathy.ai",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b8a3fb04-c253-5631-81c7-806fb7ac260a",
+      "name": "Microchannel Devices",
+      "website": "microchannel-devices.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "aec1116c-65a3-5736-80c0-397ac03b6cf5",
+      "name": "Effex",
+      "website": "effex.app",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "438ba96e-c543-541c-a26f-58947af9e0d1",
+      "name": "6Spirits S.A.",
+      "website": "6spirits.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "f71c7b18-64f5-5e7d-b712-083451b5cf74",
+      "name": "Checkmyguest",
+      "website": "checkmyguest.fr",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "b458cf0f-7bc3-589b-9a18-1ce145f7462a",
+      "name": "Obseva",
+      "website": "obseva.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "3aabfdb1-d84a-5215-894b-693add836f02",
+      "name": "Medical Network Solutions",
+      "website": "medicalnetworksolutions.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "4fbe277d-40fd-5c6e-b426-49f89620d947",
+      "name": "Blueprint",
+      "website": "happybrainhappylife.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d911e339-12ae-5f76-9a4e-019b40502938",
+      "name": "Apian",
+      "website": "apian.aero",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "fbe26b0c-3527-5427-9e5d-c01f9d1eb8d1",
+      "name": "Velorex ATMs",
+      "website": "velorex.net",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "89474692-1338-568c-9077-41c8bb310149",
+      "name": "Driver Technologies Inc.",
+      "website": "driverdashcam.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "280abe6a-0e85-5bf8-8414-d61c56c6241b",
+      "name": "Blue Spruce AI",
+      "website": "bluespruceai.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "8b0157c3-04f6-5df4-ba64-107099cbec86",
+      "name": "askavenue",
+      "website": "askavenue.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "59600604-3b8c-5020-a999-e18d4dfbd0ad",
+      "name": "Tumta Corp.",
+      "website": "growthfit.kr",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "24b48926-7541-410b-a657-29ed45345ba0",
+      "name": "You Just Run",
+      "website": "youjustrun.in",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "eddc580c-113a-5c98-a56f-6cc1428f24a1",
+      "name": "CroBio",
+      "website": "crobio.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "877e8799-77a8-534a-8c28-55191b15c711",
+      "name": "Nubetico",
+      "website": "nubetico.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "eeadf1c1-7c69-5be8-b2c1-ac17f493740f",
+      "name": "CommodityAI",
+      "website": "commodityai.io",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "a9c760e5-2fb7-5cc8-82d3-6d8fcff5c15f",
+      "name": "Sherdeepai",
+      "website": "sherdeepai.com",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "d859d87a-a8ac-5d6f-b706-4087f31c8949",
+      "name": "Spetz",
+      "website": "spetz.co.il",
+      "cohort": "additional-400"
+    },
+    {
+      "entity_id": "04727796-0e6f-51bc-89f5-bee955daea1f",
+      "name": "Cattle Care",
+      "website": "cattle-care.com",
+      "cohort": "additional-400"
+    }
+  ]
+}
