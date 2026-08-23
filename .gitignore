@@ -7,3 +7,4 @@ output/playwright/
 .DS_Store
 *.log
 .env
+.env.local
