@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "visual-benchmark-v1",
+  "identity_status": ["current", "related_rebrand", "wrong_site", "ambiguous", "unreachable"],
+  "reachability": ["live_first_party", "redirected_related_identity", "redirected_off_domain", "parked_or_for_sale", "expired_or_hijacked", "blocked_interstitial", "dns_tls_failure", "incomplete_blank", "ambiguous_identity"],
+  "capture_status": ["pending", "success", "failure", "incomplete"],
+  "benchmark_split": ["development", "validation", "evaluation"],
+  "source_type": ["img", "picture", "inline_svg", "css_background", "css_mask", "favicon", "manifest", "structured_data", "browser_network", "text_only", "other"],
+  "visual_role": ["symbol", "wordmark", "horizontal_lockup", "stacked_lockup", "favicon", "social_card", "badge", "partner_logo", "ui_control", "content_image", "other"],
+  "visual_region": ["header", "nav", "body", "footer", "metadata", "browser_chrome", "unknown"],
+  "theme": ["light", "dark", "both", "unknown"],
+  "visibility": ["good", "conditional", "unusable"],
+  "mapping_confidence": ["exact", "derived", "suggested", "unmapped"],
+  "identity_correctness": ["correct", "wrong", "ambiguous"],
+  "review_workflow_version": ["visual-review-packet-v3-positive-first", "visual-review-packet-v4-ranker-safe"],
+  "usability": ["good", "conditional", "unusable"],
+  "provenance_quality": ["visible_exact_use", "structured_first_party", "inferred_first_party", "unsupported"],
+  "label_kind": ["entity", "visual_instance", "candidate", "missing_role", "review_attestation"],
+  "label_role": ["icon", "wide", "favicon", "stacked", "other"],
+  "label_value_keys": {
+    "entity": ["identity_status", "graphic_logo_present", "text_only_brand_present", "confidence", "note"],
+    "candidate": ["identity", "roles", "best_for_role", "usability_light", "usability_dark", "provenance_quality", "quality_defects", "reject_reason", "confidence", "note"],
+    "visual_instance": ["identity", "visual_role", "region", "theme", "visibility", "first_party", "mapping_confidence", "confidence", "note"],
+    "missing_role": ["missing_cause", "confidence", "note"],
+    "review_attestation": ["visual_evidence_reviewed", "review_workflow", "visual_instance_count"]
+  },
+  "reviewer_kind": ["luna", "human", "coordinator"],
+  "adjudication_status": ["pending", "accepted_primary", "accepted_secondary", "resolved", "rejected"],
+  "stage": ["discovery", "parse", "download_budget", "validation", "deduplication", "generic_asset", "role_eligibility", "rank_threshold", "identity_filter", "shape_quality", "theme_serialization", "mapping", "other"],
+  "rejection_stage": ["discovery", "parse", "download_budget", "validation", "deduplication", "generic_asset", "role_eligibility", "rank_threshold", "identity_filter", "shape_quality", "theme_serialization", "mapping", "other"],
+  "missing_role_cause": ["no_graphic_asset_exists", "icon_only_or_stacked_only", "asset_visible_not_discovered", "discovered_not_validated", "removed_by_url_or_byte_dedupe", "excluded_by_budget", "rejected_by_identity_or_evidence", "rejected_by_shape_or_quality", "ranked_below_worse_candidate", "theme_serialization_failure", "page_blocked_or_incomplete", "identity_unsafe_or_ambiguous", "not_missing"]
+}

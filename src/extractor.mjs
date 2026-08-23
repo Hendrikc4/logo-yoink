@@ -11,11 +11,87 @@ const MAX_HTML_BYTES = 2 * 1024 * 1024;
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
 const MAX_CANDIDATES_TO_DOWNLOAD = 16;
 const ROLE_QUEUE_CAPS = { icon: 6, wide: 8, favicon: 4 };
-const FAVICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'root-favicon']);
+const FAVICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'root-favicon', 'google-favicon', 'duckduckgo-favicon']);
 const STRUCTURED_LOGO_SOURCES = new Set(['schema', 'og-logo', 'microdata']);
 const DOM_IMAGE_SOURCES = new Set(['dom-img', 'dom-picture', 'noscript-img']);
 const CONTENT_BOX_MAX_SAMPLES = 96;
 const CONTENT_BOX_MIN_EDGE_PX = 24;
+const JINA_READER_BASE_URL = 'https://r.jina.ai/';
+const JINA_BRAND_CAPTURE_SCRIPT = String.raw`(() => {
+  const selectors = [
+    'header [class*="logo" i]', 'nav [class*="logo" i]',
+    'header [id*="logo" i]', 'nav [id*="logo" i]',
+    'header img[alt*="logo" i]', 'nav img[alt*="logo" i]',
+    'header a[aria-label*="home" i]', 'nav a[aria-label*="home" i]',
+    'header a[href="/"]', 'nav a[href="/"]',
+  ];
+  const candidates = [...new Set(selectors.flatMap(selector => [...document.querySelectorAll(selector)]))]
+    .map(element => {
+      const rect = element.getBoundingClientRect();
+      const semantic = [element.id, element.className, element.getAttribute('aria-label'), element.getAttribute('title'), element.getAttribute('alt')]
+        .filter(Boolean).join(' ').slice(0, 500);
+      const graphic = /^(IMG|SVG|PICTURE)$/.test(element.tagName) || Boolean(element.querySelector('img,svg,picture'));
+      const explicitlyLogoMarked = /logo|wordmark|logomark/i.test(semantic);
+      let score = 0;
+      if (explicitlyLogoMarked) score += 100;
+      if (/home/i.test(semantic)) score += 70;
+      if (element.getAttribute('href') === '/') score += 55;
+      if (graphic) score += 25;
+      if (element.closest('header,nav')) score += 20;
+      if (rect.width > 4 && rect.height > 4) score += 20;
+      if (rect.width > innerWidth * .8 || rect.height > innerHeight * .4) score -= 80;
+      if ((element.textContent || '').trim().length > 80) score -= 60;
+      return { element, rect, score, graphic, explicitlyLogoMarked };
+    })
+    .filter(item => item.rect.width > 4 && item.rect.height > 4 && (item.graphic || item.explicitlyLogoMarked))
+    .sort((a, b) => b.score - a.score || a.rect.width * a.rect.height - b.rect.width * b.rect.height);
+  const chosen = candidates[0];
+  if (!chosen || chosen.score < 40) return;
+  const target = chosen.element;
+  let ancestor = target;
+  let background = 'rgb(255, 255, 255)';
+  while (ancestor) {
+    const color = getComputedStyle(ancestor).backgroundColor;
+    if (color && color !== 'transparent' && color !== 'rgba(0, 0, 0, 0)') { background = color; break; }
+    ancestor = ancestor.parentElement;
+  }
+  target.id = 'logo-yoink-jina-brand';
+  for (const element of [target, ...target.querySelectorAll('*')]) {
+    const classes = typeof element.className === 'string' ? element.className : '';
+    element.style.setProperty('text-decoration', 'none', 'important');
+    element.style.setProperty('animation', 'none', 'important');
+    element.style.setProperty('transition', 'none', 'important');
+    const font = classes.match(/font-\[['"]([^'"]+)/)?.[1];
+    const weight = classes.match(/font-\[(\d{3})\]/)?.[1];
+    const color = classes.match(/text-\[#([0-9a-f]{3,8})\]/i)?.[1];
+    const gradientFrom = classes.match(/from-\[#([0-9a-f]{3,8})\]/i)?.[1];
+    const gradientTo = classes.match(/to-\[#([0-9a-f]{3,8})\]/i)?.[1];
+    if (font) element.style.setProperty('font-family', "'" + font + "', sans-serif", 'important');
+    if (weight) element.style.setProperty('font-weight', weight, 'important');
+    if (color) element.style.setProperty('color', '#' + color, 'important');
+    if (gradientFrom && gradientTo) {
+      element.style.setProperty('background-image', 'linear-gradient(to right, #' + gradientFrom + ', #' + gradientTo + ')', 'important');
+      element.style.setProperty('background-clip', 'text', 'important');
+      element.style.setProperty('-webkit-background-clip', 'text', 'important');
+      element.style.setProperty('color', 'transparent', 'important');
+    }
+  }
+  document.body.replaceChildren(target);
+  document.documentElement.style.cssText = 'width:768px!important;height:384px!important;overflow:hidden!important';
+  document.body.style.cssText = 'margin:0!important;width:768px!important;height:384px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important';
+  document.documentElement.style.background = background;
+  document.body.style.background = background;
+  const rect = target.getBoundingClientRect();
+  const scale = Math.max(1, Math.min(4, 620 / Math.max(rect.width, 1), 260 / Math.max(rect.height, 1)));
+  target.style.setProperty('position', 'static', 'important');
+  target.style.setProperty('margin', '0', 'important');
+  target.style.setProperty('transform', 'scale(' + scale + ')', 'important');
+  target.style.setProperty('transform-origin', 'center', 'important');
+  const marker = document.createElement('i');
+  marker.id = 'logo-yoink-jina-marker';
+  marker.style.cssText = 'position:fixed!important;left:0!important;top:0!important;width:4px!important;height:4px!important;background:rgb(1,254,2)!important;z-index:2147483647!important';
+  document.body.append(marker);
+})()`;
 
 export function normalizeWebsite(value) {
   const raw = String(value ?? '').trim();
@@ -79,6 +155,108 @@ async function fetchTimed(url, { timeoutMs, accept = '*/*', diagnostics, allowPr
     controller.abort();
     throw error;
   } finally { clearTimeout(timer); }
+}
+
+async function fetchJinaHomepage(targetUrl, { apiKey, timeoutMs = DEFAULT_TIMEOUT_MS, diagnostics, fetchImpl = fetch, validateUrl = assertPublicUrl } = {}) {
+  if (!apiKey) throw new Error('Jina API key is not configured.');
+  await validateUrl(targetUrl);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    if (diagnostics) diagnostics.requests += 1;
+    return await fetchImpl(`${JINA_READER_BASE_URL}${targetUrl}`, {
+      signal: controller.signal,
+      headers: {
+        accept: 'text/html',
+        authorization: `Bearer ${apiKey}`,
+        'x-respond-with': 'html',
+        'x-engine': 'browser',
+        'x-base': 'final',
+        'x-timeout': String(Math.max(1, Math.ceil(timeoutMs / 1000))),
+      },
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function fetchJinaBrandScreenshot(targetUrl, { apiKey, timeoutMs = 30_000, diagnostics, fetchImpl = fetch, validateUrl = assertPublicUrl } = {}) {
+  if (!apiKey) throw new Error('Jina API key is not configured.');
+  await validateUrl(targetUrl);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    if (diagnostics) diagnostics.requests += 1;
+    return await fetchImpl(JINA_READER_BASE_URL, {
+      method: 'POST',
+      signal: controller.signal,
+      headers: {
+        accept: 'image/png', authorization: `Bearer ${apiKey}`, 'content-type': 'application/json',
+        'x-respond-with': 'screenshot', 'x-engine': 'browser', 'x-respond-timing': 'media-idle',
+        'x-timeout': String(Math.max(1, Math.ceil(timeoutMs / 1000))),
+      },
+      body: JSON.stringify({ url: targetUrl, viewport: { width: 768, height: 384 }, injectPageScript: JINA_BRAND_CAPTURE_SCRIPT }),
+    });
+  } finally { clearTimeout(timer); }
+}
+
+async function brandScreenshotCandidate(targetUrl, bytes, provider, { fullCanvas = false } = {}) {
+  let pipeline = sharp(bytes, { limitInputPixels: 64 * 1024 * 1024 });
+  if (fullCanvas) {
+    const { data: pixels, info: rawInfo } = await pipeline.clone().raw().toBuffer({ resolveWithObject: true });
+    const markerOffset = (rawInfo.width + 1) * rawInfo.channels;
+    const marker = [...pixels.subarray(markerOffset, markerOffset + 3)];
+    if (marker[0] > 20 || marker[1] < 220 || marker[2] > 30) throw new Error('Jina did not render the verified logo target.');
+    if (rawInfo.width <= 8 || rawInfo.height <= 8) throw new Error('Jina screenshot canvas was too small.');
+    pipeline = pipeline.extract({ left: 4, top: 4, width: rawInfo.width - 8, height: rawInfo.height - 8 });
+  }
+  const { data, info } = await pipeline.trim({ threshold: 10 }).png().toBuffer({ resolveWithObject: true });
+  if (info.width < 24 || info.height < 12 || info.width * info.height < 500) throw new Error('Jina screenshot did not contain a usable logo element.');
+  const ratio = info.width / info.height;
+  const dataUrl = `data:image/png;base64,${data.toString('base64')}`;
+  return {
+    ...candidate(`${targetUrl}#jina-brand-screenshot`, 'jina-screenshot', `${info.width}x${info.height}`, 'image/png', {
+      source_page: targetUrl,
+      evidence: { element: 'jina-brand-screenshot', dom_region: 'header', home_linked: true, positive_token: true, eligible_roles: ratio >= 1.8 ? ['wide'] : ['icon'] },
+    }),
+    observed: { format: 'png', mimeType: 'image/png', width: info.width, height: info.height, byte_hash: createHash('sha256').update(data).digest('hex') },
+    format: 'png', mimeType: 'image/png', width: info.width, height: info.height,
+    resolvedUrl: `${targetUrl}#jina-brand-screenshot`, resolved_url: `${targetUrl}#jina-brand-screenshot`,
+    bytes: data.length, squareish: ratio >= 0.72 && ratio <= 1.4, scalable: false,
+    highResolution: Math.min(info.width, info.height) >= 128,
+    provenance: { retrieved_at: new Date().toISOString(), http_status: 200, provider }, dataUrl,
+  };
+}
+
+async function remoteJinaBrandCandidate(targetUrl, { apiKey, timeoutMs, diagnostics } = {}) {
+  const response = await fetchJinaBrandScreenshot(targetUrl, { apiKey, timeoutMs, diagnostics });
+  if (!response.ok) throw new Error(`Jina screenshot returned HTTP ${response.status}.`);
+  const { bytes } = await readLimited(response, MAX_IMAGE_BYTES, { diagnostics, timeoutMs });
+  if (!imageMetadata(bytes, response.headers.get('content-type'))) throw new Error('Jina screenshot did not return a supported image.');
+  return brandScreenshotCandidate(targetUrl, bytes, 'jina-reader-screenshot', { fullCanvas: true });
+}
+
+async function jinaBrandCandidate(targetUrl, html, { timeoutMs = 12_000 } = {}) {
+  const { chromium } = await import('playwright');
+  const browser = await chromium.launch({ headless: true });
+  let bytes;
+  try {
+    const context = await browser.newContext({ javaScriptEnabled: false, serviceWorkers: 'block', viewport: { width: 768, height: 384 } });
+    const page = await context.newPage();
+    page.setDefaultTimeout(timeoutMs);
+    await page.route('**/*', route => route.abort());
+    await page.setContent(html, { waitUntil: 'domcontentloaded', timeout: timeoutMs });
+    const isolated = await page.evaluate(script => {
+      (0, eval)(script);
+      return Boolean(document.querySelector('#logo-yoink-jina-brand'));
+    }, JINA_BRAND_CAPTURE_SCRIPT);
+    if (!isolated) throw new Error('Jina HTML did not expose a likely home-linked brand element.');
+    bytes = await page.locator('#logo-yoink-jina-brand').screenshot({ type: 'png', animations: 'disabled', timeout: timeoutMs });
+    await context.close();
+  } finally {
+    await browser.close();
+  }
+  return brandScreenshotCandidate(targetUrl, bytes, 'jina-reader-html-local-render');
 }
 
 async function readLimited(response, maxBytes, { truncate = false, diagnostics, timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
@@ -201,6 +379,21 @@ async function besticonCandidates(domain, endpoint, timeoutMs, diagnostics) {
   } catch { return []; }
 }
 
+function cachedFaviconSources(domain) {
+  return [
+    candidate(`https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=256`, 'google-favicon', '256x256', 'image/png', { evidence: { element: 'cached-favicon', provider: 'google' } }),
+    candidate(`https://icons.duckduckgo.com/ip3/${encodeURIComponent(domain)}.ico`, 'duckduckgo-favicon', '', 'image/x-icon', { evidence: { element: 'cached-favicon', provider: 'duckduckgo' } }),
+  ];
+}
+
+async function cachedFaviconCandidate(domain, timeoutMs, diagnostics) {
+  for (const item of cachedFaviconSources(domain)) {
+    const validated = await validateCandidate(item, timeoutMs, diagnostics);
+    if (validated) return validated;
+  }
+  return null;
+}
+
 function parseAttributes(tag) {
   const result = {};
   for (const match of tag.matchAll(/([:\w-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)) result[match[1].toLowerCase()] = match[2] ?? match[3] ?? match[4] ?? '';
@@ -216,8 +409,14 @@ function imageMetadata(bytes, contentType) {
   if (/^(?:<\?xml\b[^>]*>\s*)?(?:<!--[^]*?-->\s*)*<svg\b/i.test(prefix) && !/<(?:script|foreignObject)\b|\bon\w+\s*=|<!DOCTYPE|<!ENTITY|@import\b/i.test(prefix)) {
     const a = parseAttributes(prefix.match(/<svg\b[^>]*>/i)?.[0] ?? ''), viewBox = String(a.viewbox ?? '').split(/[\s,]+/).map(Number);
     const absolute = value => /^\s*\d+(?:\.\d+)?(?:px)?\s*$/i.test(String(value ?? '')) ? Number.parseFloat(value) : null;
-    const width = absolute(a.width) ?? (viewBox.length === 4 && viewBox.every(Number.isFinite) ? viewBox[2] : null);
-    const height = absolute(a.height) ?? (viewBox.length === 4 && viewBox.every(Number.isFinite) ? viewBox[3] : null);
+    let width = absolute(a.width), height = absolute(a.height);
+    const validViewBox = viewBox.length === 4 && viewBox.every(Number.isFinite) && viewBox[2] > 0 && viewBox[3] > 0;
+    if (validViewBox) {
+      const ratio = viewBox[2] / viewBox[3];
+      if (width == null && height != null) width = height * ratio;
+      else if (height == null && width != null) height = width / ratio;
+      else if (width == null && height == null) [width, height] = [viewBox[2], viewBox[3]];
+    }
     return { format: 'svg', mimeType: 'image/svg+xml', width: width || null, height: height || null };
   }
   if (bytes.length >= 12 && bytes.subarray(0, 4).toString('ascii') === 'RIFF' && bytes.subarray(8, 12).toString('ascii') === 'WEBP') return { format: 'webp', mimeType: 'image/webp', width: null, height: null };
@@ -337,18 +536,40 @@ function fromBrowserCandidate(item, homepage, eligibleRoles = ['icon', 'wide']) 
 export async function extractLogos(website, options = {}) {
   const startedAt = performance.now(), timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS, normalized = normalizeWebsite(website), network = { requests: 0, bytesDownloaded: 0 }, isBare = normalized.url.hostname.toLowerCase() === normalized.domain;
   const attempts = [...new Set([normalized.url.href, `https://${normalized.domain}/`, `http://${normalized.domain}/`, ...(isBare ? [`https://www.${normalized.domain}/`] : [])])];
-  let homepage = null, html = '', htmlTruncated = false; const reachability = [];
+  let homepage = null, html = '', htmlTruncated = false, jinaHomepageUsed = false; const reachability = [];
   for (const attempt of attempts) {
     try { const response = await fetchTimed(attempt, { timeoutMs, accept: 'text/html,application/xhtml+xml', diagnostics: network }); if (!response.ok) { reachability.push({ url: attempt, ok: false, status: response.status }); continue; } homepage = response.url; const read = await readLimited(response, MAX_HTML_BYTES, { truncate: true, diagnostics: network }); html = read.bytes.toString('utf8'); htmlTruncated = read.truncated; reachability.push({ url: attempt, ok: true, status: response.status, finalUrl: response.url }); break; }
     catch (error) { reachability.push({ url: attempt, ok: false, error: error.name === 'AbortError' ? 'timeout' : error.message }); }
   }
-  if (!homepage) throw new Error(`Could not reach the website. ${reachability.map(item => `${item.url}: ${item.error ?? `HTTP ${item.status}`}`).join(' | ')}`);
+  const jinaApiKey = options.jinaApiKey ?? process.env.JINA_API_KEY?.trim();
+  if (!homepage && jinaApiKey) {
+    const target = attempts.find((_, index) => reachability[index]?.status !== 404) ?? attempts[0];
+    try {
+      const response = await fetchJinaHomepage(target, { apiKey: jinaApiKey, timeoutMs: Math.max(timeoutMs, 20_000), diagnostics: network });
+      if (!response.ok) {
+        reachability.push({ url: target, via: 'jina', ok: false, status: response.status });
+      } else {
+        const read = await readLimited(response, MAX_HTML_BYTES, { truncate: true, diagnostics: network, timeoutMs: Math.max(timeoutMs, 20_000) });
+        homepage = target;
+        html = read.bytes.toString('utf8');
+        htmlTruncated = read.truncated;
+        jinaHomepageUsed = true;
+        reachability.push({ url: target, via: 'jina', ok: true, status: response.status, finalUrl: target });
+      }
+    } catch (error) {
+      reachability.push({ url: target, via: 'jina', ok: false, error: error.name === 'AbortError' ? 'timeout' : error.message });
+    }
+  }
+  if (!homepage) throw new Error(`Could not reach the website. ${reachability.map(item => `${item.url}${item.via ? ` via ${item.via}` : ''}: ${item.error ?? `HTTP ${item.status}`}`).join(' | ')}`);
   const namecheapInterstitial = !/(?:^|\.)namecheap\.com$/i.test(normalized.domain) && /alt=["']Namecheap Logo["']/i.test(html);
   const vercelInterstitial = !/(?:^|\.)vercel\.com$/i.test(normalized.domain) && /Vercel Security Checkpoint/i.test(html);
   if (/sedoparking|domain (?:name )?is for sale|buy this domain|hugedomains|afternic|parking-page\.shtml/i.test(html) || namecheapInterstitial || vercelInterstitial) {
     throw new Error('Website appears parked or for sale.');
   }
   const parsed = parseHomepage(html, homepage, { companyName: options.companyName });
+  const jinaRecoverableLogoMarkup = parsed.candidates.some(item =>
+    ['dom-img', 'dom-picture', 'noscript-img', 'inline-svg'].includes(item.source) &&
+    (item.evidence?.positive_token || item.evidence?.home_linked));
   const [manifest, besticon] = await Promise.all([Promise.all(parsed.manifests.slice(0, 2).map(url => manifestCandidates(url, timeoutMs, network))).then(groups => groups.flat()), besticonCandidates(normalized.domain, options.besticonUrl, timeoutMs, network)]);
   const root = new URL(homepage); root.pathname = '/favicon.ico'; root.search = ''; root.hash = ''; const rootPng = new URL(root); rootPng.pathname = '/favicon.png';
   const all = [...parsed.candidates, ...manifest, ...besticon, candidate(root.href, 'root-favicon', '', 'image/x-icon', { source_page: homepage }), candidate(rootPng.href, 'root-favicon', '', 'image/png', { source_page: homepage })];
@@ -362,6 +583,14 @@ export async function extractLogos(website, options = {}) {
   const contentStats = { boxes: 0 };
   await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
   let ranked = rankCandidates(validated, { companyName: options.companyName });
+  let cachedFavicon = null;
+  if (!ranked.selectedByRole.favicon && options.cachedFavicon !== false) {
+    cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network);
+    if (cachedFavicon) {
+      validated = dedupeBytes([...validated, cachedFavicon]);
+      ranked = rankCandidates(validated, { companyName: options.companyName });
+    }
+  }
 
   const expandedPages = [];
   if (options.expandedPages > 0 && !ranked.selectedByRole.wide) {
@@ -385,7 +614,7 @@ export async function extractLogos(website, options = {}) {
   }
 
   let browserDiagnostics = null;
-  if (options.browser && (!ranked.selectedByRole.icon || !ranked.selectedByRole.wide)) {
+  if (options.browser && !jinaHomepageUsed && (!ranked.selectedByRole.icon || !ranked.selectedByRole.wide)) {
     const missingRoles = ['icon', 'wide'].filter(role => !ranked.selectedByRole[role]);
     const rendered = await discoverBrowserLogos({ url: homepage, domain: normalized.domain, company: options.companyName }, {
       browser: options.browserInstance,
@@ -403,15 +632,35 @@ export async function extractLogos(website, options = {}) {
     ranked = rankCandidates(validated, { companyName: options.companyName });
   }
 
+  let jinaScreenshot = null;
+  if (jinaApiKey && jinaRecoverableLogoMarkup && !ranked.selectedByRole.icon && !ranked.selectedByRole.wide) {
+    try {
+      let screenshot;
+      let mode = 'remote';
+      try {
+        screenshot = await remoteJinaBrandCandidate(homepage, { apiKey: jinaApiKey, timeoutMs: Math.max(timeoutMs, 30_000), diagnostics: network });
+      } catch {
+        mode = 'local-html';
+        screenshot = await jinaBrandCandidate(homepage, html, { timeoutMs: Math.max(timeoutMs, 12_000) });
+      }
+      validated = dedupeBytes([...validated, screenshot]);
+      await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
+      ranked = rankCandidates(validated, { companyName: options.companyName });
+      jinaScreenshot = { status: 'ok', mode, width: screenshot.width, height: screenshot.height };
+    } catch (error) {
+      jinaScreenshot = { status: 'error', error: error.name === 'AbortError' ? 'timeout' : error.message };
+    }
+  }
+
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
-  return { input: website, domain: normalized.domain, homepage, selected: ranked.selected, selectedByRole: ranked.selectedByRole, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  return { input: website, domain: normalized.domain, homepage, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.
 export const internals = {
   imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
   selectRoleAware, measureContentBox, attachContentBoxes, dedupeBytes,
-  fromBrowserCandidate, discoveryPriority, validateCandidate,
+  fromBrowserCandidate, discoveryPriority, validateCandidate, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,
 };

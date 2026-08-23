@@ -1,0 +1,19 @@
+{
+  "name": "Logo Yoink",
+  "short_name": "Logo Yoink",
+  "icons": [
+    {
+      "src": "/assets/brand/logo-yoink-mark-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/logo-yoink-mark-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#090b0c",
+  "background_color": "#090b0c",
+  "display": "standalone"
+}
