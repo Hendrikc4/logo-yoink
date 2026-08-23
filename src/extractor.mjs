@@ -4,6 +4,7 @@ import { lookup as dnsLookup } from 'node:dns/promises';
 import sharp from 'sharp';
 import { parseHomepage, resolveHttpUrl } from './discover-static.mjs';
 import { discoverBrowserLogos } from './discover-browser.mjs';
+import { discoverOfficialBrandAssets, discoverSpaBundleAssets } from './discover-deep.mjs';
 import { hasWideEvidence, rankCandidates, scoreCandidate, SOURCE_WEIGHT } from './rank.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
@@ -135,7 +136,7 @@ async function assertPublicUrl(value) {
   return url;
 }
 
-async function fetchTimed(url, { timeoutMs, accept = '*/*', diagnostics, allowPrivate = false } = {}) {
+async function fetchTimed(url, { timeoutMs, accept = '*/*', diagnostics, allowPrivate = false, headers = {} } = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs ?? DEFAULT_TIMEOUT_MS);
   try {
@@ -144,7 +145,7 @@ async function fetchTimed(url, { timeoutMs, accept = '*/*', diagnostics, allowPr
     for (let redirects = 0; redirects <= 5; redirects++) {
       if (!allowPrivate) await assertPublicUrl(current);
       if (diagnostics) diagnostics.requests += 1;
-      const response = await fetch(current, { redirect: 'manual', signal: controller.signal, headers: { accept, 'user-agent': 'Mozilla/5.0 (compatible; LogoYoink/0.2; +https://github.com/Hendrikc4/logo-yoink)' } });
+      const response = await fetch(current, { redirect: 'manual', signal: controller.signal, headers: { accept, 'user-agent': 'Mozilla/5.0 (compatible; LogoYoink/0.2; +https://github.com/Hendrikc4/logo-yoink)', ...headers } });
       if (![301, 302, 303, 307, 308].includes(response.status)) return response;
       const location = response.headers.get('location');
       if (!location) return response;
@@ -440,6 +441,21 @@ async function validateCandidate(item, timeoutMs, diagnostics) {
     return { ...item, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { retrieved_at: new Date().toISOString(), http_status: response.status }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
+async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, status = 200, contentType = '' } = {}) {
+  try {
+    const { rawBytes: _rawBytes, ...cleanItem } = item;
+    let metadata = imageMetadata(bytes, contentType);
+    if (metadata && ['webp', 'avif'].includes(metadata.format)) {
+      const decoded = await sharp(bytes, { limitInputPixels: 64 * 1024 * 1024 }).metadata();
+      metadata = { ...metadata, width: decoded.width ?? null, height: decoded.height ?? null };
+    }
+    if (!metadata || !bytes.length) return null;
+    const width = metadata.width ?? item.declared?.width ?? null, height = metadata.height ?? item.declared?.height ?? null;
+    const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4;
+    const scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
+    return { ...cleanItem, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? [] }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+  } catch { return null; }
+}
 async function mapConcurrent(items, concurrency, mapper) { const output = new Array(items.length); let cursor = 0; await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, async () => { while (cursor < items.length) { const index = cursor++; output[index] = await mapper(items[index], index); } })); return output; }
 
 function dataUrlBytes(value) {
@@ -588,6 +604,34 @@ export async function extractLogos(website, options = {}) {
     cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network);
     if (cachedFavicon) {
       validated = dedupeBytes([...validated, cachedFavicon]);
+      ranked = rankCandidates(validated, { companyName: options.companyName });
+    }
+  }
+
+  const deepDiagnostics = { enabled: Boolean(options.deepWide), official: null, spaBundle: null };
+  if (options.deepWide && (options.forceDeepWide || !ranked.selectedByRole.wide)) {
+    const deepCompanyName = options.companyName || normalized.domain.split('.')[0];
+    const fetchResource = async (url, request = {}) => {
+      const response = await fetchTimed(url, { timeoutMs, accept: request.accept ?? '*/*', diagnostics: network, headers: request.headers });
+      if (request.detectArchive && /(?:application|multipart)\/(?:zip|x-zip-compressed)/i.test(response.headers.get('content-type') ?? '')) {
+        await response.body?.cancel().catch(() => {});
+        return { ok: response.ok, status: response.status, url: response.url, headers: response.headers, bytes: Buffer.alloc(0) };
+      }
+      const read = await readLimited(response, request.maxBytes ?? MAX_HTML_BYTES, { diagnostics: network, timeoutMs });
+      return { ok: response.ok, status: response.status, url: response.url, headers: response.headers, bytes: read.bytes };
+    };
+    const official = await discoverOfficialBrandAssets({ homepage, parsed, companyName: deepCompanyName, fetchResource, maxPages: options.deepWidePages ?? 2 });
+    deepDiagnostics.official = official.diagnostics;
+    const direct = official.candidates.filter(item => !item.rawBytes);
+    const archive = (await Promise.all(official.candidates.filter(item => item.rawBytes).map(item => validateCandidateBytes(item, item.rawBytes)))).filter(Boolean);
+    const extraDirect = (await mapConcurrent(direct, 3, item => validateCandidate(item, timeoutMs, network))).filter(Boolean);
+    validated = dedupeBytes([...validated, ...archive, ...extraDirect]);
+    ranked = rankCandidates(validated, { companyName: options.companyName });
+    if (options.spaBundles && !ranked.selectedByRole.wide) {
+      const spa = await discoverSpaBundleAssets({ homepage, parsed, companyName: deepCompanyName, fetchResource });
+      deepDiagnostics.spaBundle = spa.diagnostics;
+      const spaExtra = (await mapConcurrent(spa.candidates, 2, item => validateCandidate(item, timeoutMs, network))).filter(Boolean);
+      validated = dedupeBytes([...validated, ...spaExtra]);
       ranked = rankCandidates(validated, { companyName: options.companyName });
     }
   }

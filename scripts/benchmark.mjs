@@ -45,6 +45,8 @@ Run options:
   --user-agent TEXT     Recorded in config; forwarded when extractor supports it
   --browser             Enable extractor browser fallback when supported
   --expanded-pages N    Bounded extra pages when supported (default: 0)
+  --deep-wide           Opt-in first-party brand-asset graph when wide is missing
+  --spa-bundles         With --deep-wide, scan at most one same-origin SPA entry bundle
   --role-budget         Reserve the fixed download budget by candidate role (default off)
   --content-bounding-wide
                         Use bounded content boxes for wide-role ranking only (default off)
@@ -58,7 +60,7 @@ export function parseArgs(argv) {
   const args = [...argv];
   const command = ['compare', 'score'].includes(args[0]) ? args.shift() : 'run';
   const options = { command };
-  const booleans = new Set(['browser', 'help', 'role-budget', 'content-bounding-wide']);
+  const booleans = new Set(['browser', 'help', 'role-budget', 'content-bounding-wide', 'deep-wide', 'spa-bundles']);
   for (let index = 0; index < args.length; index++) {
     const raw = args[index];
     if (!raw.startsWith('--')) throw new Error(`Unexpected argument: ${raw}`);
@@ -616,6 +618,7 @@ async function runCommand(options) {
     options: {
       concurrency, timeout_ms: timeoutMs, besticon_enabled: Boolean(options.besticonUrl),
       browser: Boolean(options.browser), expanded_pages: options.expandedPages ?? 0,
+      deep_wide: Boolean(options.deepWide), spa_bundles: Boolean(options.spaBundles),
       role_budget: Boolean(options.roleBudget), content_bounding_wide: Boolean(options.contentBoundingWide),
       user_agent: options.userAgent ?? 'extractor default',
     },
@@ -639,6 +642,8 @@ async function runCommand(options) {
     besticonUrl: options.besticonUrl,
     browser: Boolean(options.browser),
     expandedPages: options.expandedPages ?? 0,
+    deepWide: Boolean(options.deepWide),
+    spaBundles: Boolean(options.spaBundles),
     roleAwareBudget: Boolean(options.roleBudget),
     contentBoundingWide: Boolean(options.contentBoundingWide),
     userAgent: options.userAgent,

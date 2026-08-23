@@ -54,9 +54,13 @@ Logo Yoink deliberately binds to localhost by default. It resolves and rejects n
 ```bash
 npm run cli -- stripe.com
 npm run cli -- stripe.com --download ./downloads/stripe
+npm run cli -- anthropic.com --deep-wide
+npm run cli -- pnptc.com --deep-wide --spa-bundles
 ```
 
 Set `BESTICON_URL` and `JINA_API_KEY` for the CLI in the same way as the web service.
+
+`--deep-wide` is an explicit, conditional fallback: only when the homepage path has no accepted wide logo, it follows at most two semantically strong first-party brand/press/media links and can selectively inspect official ZIP kits. `--spa-bundles` additionally scans at most one same-origin SPA entry bundle (2.2 MB maximum) for an expected-company logo literal. Neither flag changes the default homepage path, and the browser fallback remains the broader asynchronous option.
 
 ## Test
 
@@ -73,7 +77,7 @@ npm run benchmark -- --cohort original-100 --output runs/my-run
 npm run review-montage -- runs/my-run
 ```
 
-Other frozen cohorts are `holdout-100`, `remaining-300`, and `all-500`. Use `--browser` or `--expanded-pages 2` for measured ablations; neither is enabled by default. A labeled score can be recomputed without crawling again:
+Other frozen cohorts are `holdout-100`, `remaining-300`, and `all-500`. Use `--browser`, `--expanded-pages 2`, `--deep-wide`, or `--deep-wide --spa-bundles` for measured ablations; none is enabled by default. A labeled score can be recomputed without crawling again:
 
 ```bash
 node scripts/benchmark.mjs score --run runs/my-run --labels path/to/review-labels.jsonl
@@ -86,6 +90,7 @@ The automated availability proxy is not a quality score. The 0–100 benchmark s
 - `src/extractor.mjs` — reusable extraction, validation, metadata, and scoring logic
 - `src/discover-static.mjs` — parsed-document candidate discovery
 - `src/discover-browser.mjs` — bounded rendered-browser fallback
+- `src/discover-deep.mjs` — opt-in official asset graph, safe ZIP selection, and SPA entry-bundle probe
 - `src/rank.mjs` — interpretable role-specific scoring
 - `src/server.mjs` — small localhost HTTP/API server
 - `src/cli.mjs` — JSON and download CLI

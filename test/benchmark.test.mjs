@@ -33,6 +33,12 @@ test('parses run and comparison command options', () => {
   });
 });
 
+test('parses opt-in deep discovery flags independently from the default path', () => {
+  assert.deepEqual(parseArgs(['--cohort', 'original-100', '--deep-wide', '--spa-bundles']), {
+    command: 'run', cohort: 'original-100', deepWide: true, spaBundles: true,
+  });
+});
+
 function candidate(id, role, extras = {}) {
   return { candidate_id: id, predicted_roles: [role], source: 'test', width: role === 'wide' ? 400 : 200, height: 200, ...extras };
 }
