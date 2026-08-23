@@ -409,4 +409,8 @@ export async function extractLogos(website, options = {}) {
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.
-export const internals = { imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue, selectRoleAware, measureContentBox, attachContentBoxes, scoreCandidate: item => scoreCandidate(item).role_scores.icon };
+export const internals = {
+  imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
+  selectRoleAware, measureContentBox, attachContentBoxes, dedupeBytes,
+  scoreCandidate: item => scoreCandidate(item).role_scores.icon,
+};
