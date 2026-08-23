@@ -2,11 +2,11 @@ import { createHash } from 'node:crypto';
 
 const DEFAULTS = {
   bodyBytes: 2 * 1024,
-  clientBurst: 2,
-  clientWindowMs: 30 * 60 * 1000,
-  globalBurst: 10,
+  clientBurst: 20,
+  clientWindowMs: 10 * 60 * 1000,
+  globalBurst: 60,
   globalWindowMs: 60 * 1000,
-  maxConcurrent: 1,
+  maxConcurrent: 2,
 };
 
 export class DemoHttpError extends Error {

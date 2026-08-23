@@ -69,11 +69,11 @@ test('public demo enables fallbacks while keeping their work tightly bounded', (
   const limits = demoLimits({});
   assert.deepEqual(limits, {
     bodyBytes: 2 * 1024,
-    clientBurst: 2,
-    clientWindowMs: 30 * 60 * 1000,
-    globalBurst: 10,
+    clientBurst: 20,
+    clientWindowMs: 10 * 60 * 1000,
+    globalBurst: 60,
     globalWindowMs: 60 * 1000,
-    maxConcurrent: 1,
+    maxConcurrent: 2,
   });
   const options = publicDemoExtractionOptions({ JINA_API_KEY: 'secret', BROWSER_DISCOVERY: '1' });
   assert.equal(options.jinaApiKey, 'secret');
