@@ -145,7 +145,7 @@
           <label class="visually-hidden" for="website">Website URL</label>
           <div class="input-row">
             <span class="input-link-icon" aria-hidden="true">↗</span>
-            <input id="website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="https://example.com" required aria-describedby="form-hint status">
+            <input id="website" name="website" type="text" inputmode="url" autocomplete="url" maxlength="2048" placeholder="https://example.com" required aria-describedby="form-hint status">
             <button type="submit"><span class="button-label">Yoink it</span><img class="button-mark" src="/assets/brand/logo-yoink-mark.png" alt="" aria-hidden="true"></button>
           </div>
           <p id="form-hint" class="form-hint">Enter any website URL and we’ll find the right logo.</p>
@@ -230,6 +230,8 @@
       </nav>
       <p>Created with <span aria-label="chocolate">🍫</span> by <a href="https://hendrik-cornelissen.com" target="_blank" rel="noreferrer">Hendrik Cornelissen</a></p>
     </footer>
+    <script src="/analytics.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <script type="module" src="/game-ui.js"></script>
     <script type="module" src="/app.js"></script>
   </body>

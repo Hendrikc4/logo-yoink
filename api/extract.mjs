@@ -1,29 +1,11 @@
-import { extractLogos } from '../src/extractor.mjs';
+import { extractLogos, normalizeWebsite } from '../src/extractor.mjs';
+import { createDemoGuard, demoLimits, DemoHttpError, publicDemoExtractionOptions, readDemoJson, securityHeaders } from '../src/demo-security.mjs';
 
-const MAX_BODY_BYTES = 32 * 1024;
-
-async function readBody(request) {
-  if (request.body && typeof request.body === 'object' && !Buffer.isBuffer(request.body)) {
-    return request.body;
-  }
-
-  if (typeof request.body === 'string' || Buffer.isBuffer(request.body)) {
-    const body = Buffer.from(request.body);
-    if (body.length > MAX_BODY_BYTES) throw new Error('Request body is too large.');
-    return JSON.parse(body.toString('utf8'));
-  }
-
-  const chunks = [];
-  let size = 0;
-  for await (const chunk of request) {
-    size += chunk.length;
-    if (size > MAX_BODY_BYTES) throw new Error('Request body is too large.');
-    chunks.push(chunk);
-  }
-  return JSON.parse(Buffer.concat(chunks).toString('utf8'));
-}
+const limits = demoLimits();
+const demoGuard = createDemoGuard(limits);
 
 export default async function handler(request, response) {
+  for (const [name, value] of Object.entries(securityHeaders)) response.setHeader(name, value);
   response.setHeader('cache-control', 'no-store');
 
   if (request.method !== 'POST') {
@@ -32,18 +14,17 @@ export default async function handler(request, response) {
   }
 
   try {
-    const body = await readBody(request);
-    const result = await extractLogos(body.website, {
-      besticonUrl: process.env.BESTICON_URL || null,
-      jinaApiKey: process.env.JINA_API_KEY || null,
-      roleAwareBudget: true,
-      contentBoundingWide: true,
-      browser: false,
-    });
+    const rate = demoGuard.check(request);
+    const body = await readDemoJson(request, limits.bodyBytes);
+    const target = normalizeWebsite(body.website);
+    const result = await demoGuard.run(target.url.href, () => extractLogos(target.url.href, publicDemoExtractionOptions()));
+    response.setHeader('ratelimit-limit', String(rate.limit));
+    response.setHeader('ratelimit-remaining', String(rate.remaining));
     return response.status(200).json(result);
   } catch (error) {
-    return response.status(400).json({
-      error: error instanceof Error ? error.message : 'Logo extraction failed.',
-    });
+    const status = error instanceof DemoHttpError ? error.status : 400;
+    if (error instanceof DemoHttpError && error.retryAfter) response.setHeader('retry-after', String(error.retryAfter));
+    const message = error instanceof DemoHttpError ? error.message : 'We could not inspect that website.';
+    return response.status(status).json({ error: message });
   }
 }

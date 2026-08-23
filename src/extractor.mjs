@@ -387,9 +387,9 @@ function cachedFaviconSources(domain) {
   ];
 }
 
-async function cachedFaviconCandidate(domain, timeoutMs, diagnostics) {
+async function cachedFaviconCandidate(domain, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES) {
   for (const item of cachedFaviconSources(domain)) {
-    const validated = await validateCandidate(item, timeoutMs, diagnostics);
+    const validated = await validateCandidate(item, timeoutMs, diagnostics, maxImageBytes);
     if (validated) return validated;
   }
   return null;
@@ -425,11 +425,11 @@ function imageMetadata(bytes, contentType) {
   return null;
 }
 
-async function validateCandidate(item, timeoutMs, diagnostics) {
+async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES) {
   try {
     const response = await fetchTimed(item.url, { timeoutMs, accept: 'image/*,*/*;q=0.6', diagnostics });
     if (!response.ok) return null;
-    const { bytes } = await readLimited(response, MAX_IMAGE_BYTES, { diagnostics, timeoutMs });
+    const { bytes } = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs });
     let metadata = imageMetadata(bytes, response.headers.get('content-type'));
     if (metadata && ['webp', 'avif'].includes(metadata.format)) {
       const decoded = await sharp(bytes, { limitInputPixels: 64 * 1024 * 1024 }).metadata();
@@ -551,13 +551,14 @@ function fromBrowserCandidate(item, homepage, eligibleRoles = ['icon', 'wide']) 
 
 export async function extractLogos(website, options = {}) {
   const startedAt = performance.now(), timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS, normalized = normalizeWebsite(website), network = { requests: 0, bytesDownloaded: 0 }, isBare = normalized.url.hostname.toLowerCase() === normalized.domain;
+  const maxImageBytes = Number.isFinite(options.maxImageBytes) ? Math.max(128 * 1024, Math.min(MAX_IMAGE_BYTES, options.maxImageBytes)) : MAX_IMAGE_BYTES;
   const attempts = [...new Set([normalized.url.href, `https://${normalized.domain}/`, `http://${normalized.domain}/`, ...(isBare ? [`https://www.${normalized.domain}/`] : [])])];
   let homepage = null, html = '', htmlTruncated = false, jinaHomepageUsed = false; const reachability = [];
   for (const attempt of attempts) {
     try { const response = await fetchTimed(attempt, { timeoutMs, accept: 'text/html,application/xhtml+xml', diagnostics: network }); if (!response.ok) { reachability.push({ url: attempt, ok: false, status: response.status }); continue; } homepage = response.url; const read = await readLimited(response, MAX_HTML_BYTES, { truncate: true, diagnostics: network }); html = read.bytes.toString('utf8'); htmlTruncated = read.truncated; reachability.push({ url: attempt, ok: true, status: response.status, finalUrl: response.url }); break; }
     catch (error) { reachability.push({ url: attempt, ok: false, error: error.name === 'AbortError' ? 'timeout' : error.message }); }
   }
-  const jinaApiKey = options.jinaApiKey ?? process.env.JINA_API_KEY?.trim();
+  const jinaApiKey = Object.hasOwn(options, 'jinaApiKey') ? options.jinaApiKey : process.env.JINA_API_KEY?.trim();
   if (!homepage && jinaApiKey) {
     const target = attempts.find((_, index) => reachability[index]?.status !== 404) ?? attempts[0];
     try {
@@ -594,14 +595,14 @@ export async function extractLogos(website, options = {}) {
   const budget = options.maxCandidates ?? MAX_CANDIDATES_TO_DOWNLOAD;
   const queueSelection = options.roleAwareBudget ? selectRoleAware(rankedUnique, budget) : null;
   const unique = queueSelection?.chosen ?? rankedUnique.slice(0, budget);
-  const validatedRaw = (await mapConcurrent(unique, 6, item => validateCandidate(item, timeoutMs, network))).filter(Boolean);
+  const validatedRaw = (await mapConcurrent(unique, 6, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
   let validated = dedupeBytes(validatedRaw);
   const contentStats = { boxes: 0 };
   await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
   let ranked = rankCandidates(validated, { companyName: options.companyName });
   let cachedFavicon = null;
   if (!ranked.selectedByRole.favicon && options.cachedFavicon !== false) {
-    cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network);
+    cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
     if (cachedFavicon) {
       validated = dedupeBytes([...validated, cachedFavicon]);
       ranked = rankCandidates(validated, { companyName: options.companyName });
@@ -624,13 +625,13 @@ export async function extractLogos(website, options = {}) {
     deepDiagnostics.official = official.diagnostics;
     const direct = official.candidates.filter(item => !item.rawBytes);
     const archive = (await Promise.all(official.candidates.filter(item => item.rawBytes).map(item => validateCandidateBytes(item, item.rawBytes)))).filter(Boolean);
-    const extraDirect = (await mapConcurrent(direct, 3, item => validateCandidate(item, timeoutMs, network))).filter(Boolean);
+    const extraDirect = (await mapConcurrent(direct, 3, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
     validated = dedupeBytes([...validated, ...archive, ...extraDirect]);
     ranked = rankCandidates(validated, { companyName: options.companyName });
     if (options.spaBundles && !ranked.selectedByRole.wide) {
       const spa = await discoverSpaBundleAssets({ homepage, parsed, companyName: deepCompanyName, fetchResource });
       deepDiagnostics.spaBundle = spa.diagnostics;
-      const spaExtra = (await mapConcurrent(spa.candidates, 2, item => validateCandidate(item, timeoutMs, network))).filter(Boolean);
+      const spaExtra = (await mapConcurrent(spa.candidates, 2, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
       validated = dedupeBytes([...validated, ...spaExtra]);
       ranked = rankCandidates(validated, { companyName: options.companyName });
     }
@@ -648,7 +649,7 @@ export async function extractLogos(website, options = {}) {
         const known = new Set(validated.map(item => item.url));
         const additions = dedupeUrls(page.candidates.filter(item => !known.has(item.url)))
           .sort((a, b) => discoveryPriority(b) - discoveryPriority(a)).slice(0, 8);
-        const extra = (await mapConcurrent(additions, 4, item => validateCandidate(item, timeoutMs, network))).filter(Boolean);
+        const extra = (await mapConcurrent(additions, 4, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
         validated = dedupeBytes([...validated, ...extra]);
         await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
         ranked = rankCandidates(validated, { companyName: options.companyName });
@@ -670,7 +671,7 @@ export async function extractLogos(website, options = {}) {
     const known = new Set(validated.map(item => item.url));
     const browserItems = rendered.candidates.map(item => fromBrowserCandidate(item, homepage, missingRoles)).filter(item => item && !known.has(item.url))
       .sort((a, b) => discoveryPriority(b) - discoveryPriority(a)).slice(0, 8);
-    const extra = (await mapConcurrent(browserItems, 4, item => validateCandidate(item, timeoutMs, network))).filter(Boolean);
+    const extra = (await mapConcurrent(browserItems, 4, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
     validated = dedupeBytes([...validated, ...extra]);
     await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
     ranked = rankCandidates(validated, { companyName: options.companyName });

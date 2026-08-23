@@ -3,7 +3,8 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { extractLogos } from './extractor.mjs';
+import { extractLogos, normalizeWebsite } from './extractor.mjs';
+import { createDemoGuard, demoLimits, DemoHttpError, publicDemoExtractionOptions, readDemoJson, securityHeaders } from './demo-security.mjs';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 const publicRoot = join(projectRoot, 'public');
@@ -12,6 +13,8 @@ const host = process.env.HOST ?? '127.0.0.1';
 const besticonUrl = process.env.BESTICON_URL || null;
 const jinaApiKey = process.env.JINA_API_KEY || null;
 const browserDiscovery = process.env.BROWSER_DISCOVERY !== '0';
+const limits = demoLimits();
+const demoGuard = createDemoGuard(limits);
 
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -21,19 +24,8 @@ const mimeTypes = {
 
 function json(response, status, value) {
   const body = JSON.stringify(value);
-  response.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'content-length': Buffer.byteLength(body), 'cache-control': 'no-store' });
+  response.writeHead(status, { ...securityHeaders, 'content-type': 'application/json; charset=utf-8', 'content-length': Buffer.byteLength(body), 'cache-control': 'no-store' });
   response.end(body);
-}
-
-async function readJson(request) {
-  const chunks = [];
-  let size = 0;
-  for await (const chunk of request) {
-    size += chunk.length;
-    if (size > 32 * 1024) throw new Error('Request body is too large.');
-    chunks.push(chunk);
-  }
-  return JSON.parse(Buffer.concat(chunks).toString('utf8'));
 }
 
 async function serveFile(pathname, response) {
@@ -43,7 +35,7 @@ async function serveFile(pathname, response) {
   if (!path.startsWith(publicRoot)) return json(response, 404, { error: 'Not found.' });
   try {
     const bytes = await readFile(path);
-    response.writeHead(200, { 'content-type': mimeTypes[extname(path)] ?? 'application/octet-stream', 'content-length': bytes.length });
+    response.writeHead(200, { ...securityHeaders, 'content-type': mimeTypes[extname(path)] ?? 'application/octet-stream', 'content-length': bytes.length, 'cache-control': path.endsWith('index.html') ? 'no-cache' : 'public, max-age=3600' });
     response.end(bytes);
   } catch {
     json(response, 404, { error: 'Not found.' });
@@ -54,17 +46,21 @@ const server = createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host ?? `${host}:${port}`}`);
   if (request.method === 'POST' && url.pathname === '/api/extract') {
     try {
-      const body = await readJson(request);
-      const result = await extractLogos(body.website, {
-        besticonUrl,
-        jinaApiKey,
-        roleAwareBudget: true,
-        contentBoundingWide: true,
-        browser: browserDiscovery,
-      });
+      const rate = demoGuard.check(request);
+      const body = await readDemoJson(request, limits.bodyBytes);
+      const target = normalizeWebsite(body.website);
+      const demoOptions = publicDemoExtractionOptions(process.env);
+      const result = await demoGuard.run(target.url.href, () => extractLogos(target.url.href, {
+        ...demoOptions, besticonUrl, browser: browserDiscovery && demoOptions.browser,
+      }));
+      response.setHeader('ratelimit-limit', String(rate.limit));
+      response.setHeader('ratelimit-remaining', String(rate.remaining));
       return json(response, 200, result);
     } catch (error) {
-      return json(response, 400, { error: error instanceof Error ? error.message : 'Logo extraction failed.' });
+      const status = error instanceof DemoHttpError ? error.status : 400;
+      if (error instanceof DemoHttpError && error.retryAfter) response.setHeader('retry-after', String(error.retryAfter));
+      const message = error instanceof DemoHttpError ? error.message : 'We could not inspect that website.';
+      return json(response, status, { error: message });
     }
   }
   if (request.method === 'GET') return serveFile(url.pathname, response);
@@ -74,6 +70,12 @@ const server = createServer(async (request, response) => {
 server.listen(port, host, () => {
   console.log(`Logo Yoink is running at http://${host}:${port}`);
   console.log(besticonUrl ? `Besticon fallback: ${besticonUrl}` : 'Besticon fallback: disabled');
-  console.log(jinaApiKey ? 'Jina reachability fallback: enabled' : 'Jina reachability fallback: disabled');
-  console.log(`Rendered fallback: ${browserDiscovery ? 'enabled for missing roles' : 'disabled'}`);
+  console.log(jinaApiKey && process.env.PUBLIC_DEMO_ALLOW_JINA !== '0' ? 'Public demo Jina fallback: enabled' : 'Public demo Jina fallback: disabled');
+  console.log(`Public demo rendered fallback: ${browserDiscovery && process.env.PUBLIC_DEMO_BROWSER !== '0' ? 'enabled for missing roles' : 'disabled'}`);
 });
+
+server.headersTimeout = 10_000;
+server.requestTimeout = 15_000;
+server.keepAliveTimeout = 5_000;
+server.maxRequestsPerSocket = 100;
+server.on('clientError', (_error, socket) => socket.end('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n'));
