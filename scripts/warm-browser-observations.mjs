@@ -2,7 +2,7 @@
 
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, stat, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { discoverBrowserLogos } from '../src/discover-browser.mjs';
 import { internals } from '../src/extractor.mjs';
@@ -27,6 +27,13 @@ export function observationKey({ url, company, browserVersion }) {
 
 export function missingWideQueue(results) {
   return results.filter(result => result.status === 'success' && REACHABLE.has(result.reachability) && !result.selected_by_role?.wide);
+}
+
+export async function observationCacheState(path, maxAgeMs = Infinity, nowMs = Date.now()) {
+  if (!existsSync(path)) return 'miss';
+  if (maxAgeMs === Infinity) return 'fresh';
+  const ageMs = Math.max(0, nowMs - (await stat(path)).mtimeMs);
+  return ageMs < maxAgeMs ? 'fresh' : 'stale';
 }
 
 async function jsonl(path) {
@@ -58,13 +65,17 @@ function percentile(values, fraction) {
 }
 
 async function main() {
-  const [runArg, outputArg, concurrencyArg = '2', timeoutArg = '12000'] = process.argv.slice(2);
+  const [runArg, outputArg, concurrencyArg = '2', timeoutArg = '12000', maxAgeArg = 'Infinity'] = process.argv.slice(2);
   if (!runArg || !outputArg) {
-    throw new Error('Usage: node scripts/warm-browser-observations.mjs <static-run> <observations> [concurrency<=2] [timeout-ms]');
+    throw new Error('Usage: node scripts/warm-browser-observations.mjs <static-run> <observations> [concurrency<=2] [timeout-ms] [max-age-ms]');
   }
   const concurrency = Math.min(2, Number(concurrencyArg));
   const timeoutMs = Number(timeoutArg);
-  if (!Number.isInteger(concurrency) || concurrency < 1 || !Number.isInteger(timeoutMs) || timeoutMs < 1) throw new Error('Invalid concurrency or timeout.');
+  const maxAgeMs = maxAgeArg === 'Infinity' ? Infinity : Number(maxAgeArg);
+  if (!Number.isInteger(concurrency) || concurrency < 1 || !Number.isInteger(timeoutMs) || timeoutMs < 1 ||
+      (maxAgeMs !== Infinity && (!Number.isInteger(maxAgeMs) || maxAgeMs < 0))) {
+    throw new Error('Invalid concurrency, timeout, or max age.');
+  }
   const runDirectory = resolve(runArg);
   const outputDirectory = resolve(outputArg);
   await mkdir(outputDirectory, { recursive: true });
@@ -80,7 +91,8 @@ async function main() {
     outcomes = await mapConcurrent(queue, concurrency, async record => {
       const key = observationKey({ url: record.homepage, company: record.name, browserVersion });
       const path = join(outputDirectory, `${key}.json`);
-      if (existsSync(path)) return { entity_id: record.entity_id, key, cache: 'hit' };
+      const cacheState = await observationCacheState(path, maxAgeMs);
+      if (cacheState === 'fresh') return { entity_id: record.entity_id, key, cache: 'hit' };
       const rendered = await discoverBrowserLogos(
         { url: record.homepage, domain: record.domain, company: record.name },
         { browser, darkMode: true, timeoutMs },
@@ -100,7 +112,7 @@ async function main() {
       };
       await atomicWrite(path, `${JSON.stringify(artifact)}\n`);
       return {
-        entity_id: record.entity_id, key, cache: 'miss', duration_ms: rendered.diagnostics.durationMs,
+        entity_id: record.entity_id, key, cache: 'miss', stale_refresh: cacheState === 'stale', duration_ms: rendered.diagnostics.durationMs,
         requests: rendered.diagnostics.requests, bytes: rendered.diagnostics.declaredTransferBytes,
         validated: validated.filter(Boolean).length,
       };
@@ -113,6 +125,8 @@ async function main() {
   const summary = {
     schema_version: 1, discovery_version: DISCOVERY_VERSION, parent_run: runDirectory,
     queue: queue.length, browser_invocations: misses.length, cache_hits: outcomes.length - misses.length,
+    cache_max_age_ms: maxAgeMs === Infinity ? null : maxAgeMs,
+    stale_refreshes: misses.filter(item => item.stale_refresh).length,
     browser_concurrency_max: concurrency, browser_timeout_ms: timeoutMs,
     totals: {
       wall_ms: Math.round(performance.now() - started),
