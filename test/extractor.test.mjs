@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { internals, normalizeWebsite } from '../src/extractor.mjs';
-import { genericAssetReason, rankCandidates } from '../src/rank.mjs';
+import { buildAssetFamilies, genericAssetReason, rankCandidates } from '../src/rank.mjs';
 
 test('normalizes bare company domains', () => {
   const result = normalizeWebsite('www.Example.com/company');
@@ -12,6 +12,48 @@ test('normalizes bare company domains', () => {
 test('rejects local and unsupported URLs', () => {
   assert.throws(() => normalizeWebsite('http://127.0.0.1:3000'), /private-network/);
   assert.throws(() => normalizeWebsite('file:///etc/passwd'), /HTTP and HTTPS/);
+});
+
+test('builds ordered HTTPS favicon-cache fallbacks without putting the domain in credentials', () => {
+  const sources = internals.cachedFaviconSources('example.com');
+  assert.deepEqual(sources.map(item => item.source), ['google-favicon', 'duckduckgo-favicon']);
+  assert.equal(sources[0].url, 'https://www.google.com/s2/favicons?domain=example.com&sz=256');
+  assert.equal(sources[1].url, 'https://icons.duckduckgo.com/ip3/example.com.ico');
+});
+
+test('Jina homepage fallback requests rendered HTML without exposing the key in the URL', async () => {
+  const calls = [];
+  const diagnostics = { requests: 0 };
+  const expected = new Response('<html></html>', { status: 200 });
+  const response = await internals.fetchJinaHomepage('https://example.com/path', {
+    apiKey: 'test-secret',
+    timeoutMs: 12_000,
+    diagnostics,
+    validateUrl: async () => {},
+    fetchImpl: async (url, init) => { calls.push({ url, init }); return expected; },
+  });
+  assert.equal(response, expected);
+  assert.equal(diagnostics.requests, 1);
+  assert.equal(calls[0].url, 'https://r.jina.ai/https://example.com/path');
+  assert.equal(calls[0].init.headers.authorization, 'Bearer test-secret');
+  assert.equal(calls[0].init.headers['x-respond-with'], 'html');
+  assert.equal(calls[0].init.headers['x-engine'], 'browser');
+  assert.equal(calls[0].init.headers['x-timeout'], '12');
+  assert.doesNotMatch(calls[0].url, /test-secret/);
+});
+
+test('Jina HTML recovery renders an explicitly marked graphic logo but not ordinary home-link text', async () => {
+  const logoSvg = encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60"><rect width="240" height="60" fill="white"/><path d="M5 5h50v50H5z" fill="#f40"/><text x="70" y="42" font-size="32">Acme</text></svg>');
+  const recovered = await internals.jinaBrandCandidate('https://example.com/', `<header><a href="/"><img class="site-logo" alt="Acme logo" src="data:image/svg+xml,${logoSvg}"></a></header>`);
+  assert.equal(recovered.source, 'jina-screenshot');
+  assert.equal(recovered.format, 'png');
+  assert.ok(recovered.width >= 200);
+  assert.ok(recovered.height >= 40);
+  assert.match(recovered.dataUrl, /^data:image\/png;base64,/);
+  await assert.rejects(
+    internals.jinaBrandCandidate('https://example.com/', '<header><a aria-label="Acme Home" href="/">Acme</a></header>'),
+    /did not expose a likely home-linked brand element/,
+  );
 });
 
 test('parses favicon, Apple, manifest, and flexible Schema.org logo markup', () => {
@@ -51,6 +93,17 @@ test('uses an SVG viewBox when percentage dimensions are non-intrinsic', () => {
   const bytes = Buffer.from('<svg width="100%" height="100%" viewBox="0 0 800 100"></svg>');
   assert.deepEqual(internals.imageMetadata(bytes, 'image/svg+xml'), {
     format: 'svg', mimeType: 'image/svg+xml', width: 800, height: 100,
+  });
+});
+
+test('infers a missing SVG dimension from the viewBox aspect ratio', () => {
+  const heightOnly = Buffer.from('<svg height="20" viewBox="0 0 300 100"></svg>');
+  const widthOnly = Buffer.from('<svg width="90" viewBox="0 0 300 100"></svg>');
+  assert.deepEqual(internals.imageMetadata(heightOnly, 'image/svg+xml'), {
+    format: 'svg', mimeType: 'image/svg+xml', width: 60, height: 20,
+  });
+  assert.deepEqual(internals.imageMetadata(widthOnly, 'image/svg+xml'), {
+    format: 'svg', mimeType: 'image/svg+xml', width: 90, height: 30,
   });
 });
 
@@ -101,6 +154,20 @@ test('role-specific ranking keeps a wide logo separate from an icon', () => {
   assert.equal(result.selectedByRole.icon.url, icon.url);
   assert.equal(result.selectedByRole.wide.url, wide.url);
   assert.ok(result.selectedByRole.wide.score_reasons.some(reason => reason.startsWith('wide shape')));
+});
+
+test('groups conservative delivery variants without merging distinct artwork', () => {
+  const common = { source: 'html-icon', width: 180, height: 180, predicted_roles: ['icon', 'favicon'], role_scores: { icon: 60, favicon: 80 }, score: 80 };
+  const { candidates, assetFamilies } = buildAssetFamilies([
+    { ...common, url: 'https://cdn.test/brand.png?w=180&h=180' },
+    { ...common, url: 'https://cdn.test/brand.png?w=96&h=96', width: 96, height: 96 },
+    { ...common, url: 'https://cdn.test/product.png?w=180&h=180' },
+  ]);
+  assert.equal(assetFamilies.length, 2);
+  assert.deepEqual(assetFamilies.map(family => family.variantCount), [2, 1]);
+  assert.equal(candidates[0].family_id, candidates[1].family_id);
+  assert.notEqual(candidates[0].family_id, candidates[2].family_id);
+  assert.equal(assetFamilies[0].bestByRole.favicon, 0);
 });
 
 test('does not serialize inline SVG that depends on an external document', () => {
