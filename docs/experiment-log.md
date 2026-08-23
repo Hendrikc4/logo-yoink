@@ -24,6 +24,7 @@ A negative shipping decision does not always mean the underlying signal was usel
 
 | Date | Experiment | Development outcome | Holdout outcome | Cost or risk | Status |
 |---|---|---|---|---|---|
+| 2026-08-23 | First-party brand-asset graph, safe ZIP kits, and bounded SPA entry-bundle probe | Frozen 75-miss paired run: 3 correct wide additions, 0 ambiguous/wrong, 0 icon/favicon movement; named archive controls recover Anthropic, GitHub, Katalon, and Cloudflare assets | Not run; remains explicit/conditional | +47 requests/+15.80 MB across 75 pairs; first SPA iteration was 3/5 correct before company/acronym guard; archive path had zero cohort wins | **Available, optional — development gate passed; archive prevalence unproven** |
 | 2026-08-22 | Remaining-300 extension of precision-gated asynchronous browser warming | Frozen static wide 146→168 with icon/favicon unchanged; 18 correct, 2 ambiguous, and 2 wrong additions after light/dark review | Full untouched operational slice; strict incremental precision 81.82% and two new wrong-brand domains failed the gate | 114 deferred browser invocations; 7,203 requests/209.07 MB; 2.39/5.43 s browser p50/p95; warm replay zero network and byte-identical | **Do not extend — precision-limited** |
 | 2026-08-22 | Remaining-300 missing-wide root-cause audit and targeted CSS-mask ablation | 75 deterministic misses: retained browser path found 10 correct, 2 ambiguous, 0 wrong; narrow masks added 1 correct wide | Not run; mask yield 1.33 correct wins/100 was below the 2.0 gate | Browser 4,859 requests/145.54 MB; mask run 4,970 requests/153.92 MB; zero icon/favicon movement | **Audit complete; masks dropped — prevalence-limited** |
 | 2026-08-22 | Deterministic browser-observation cache freshness | Immediate independent refreshes retained the same 7 browser-wide additions; one vetoed Bhr candidate family changed bytes without changing a selection | Retained the same 4 browser-wide additions; all candidate hashes and selections were stable | TTL reuse: zero requests; always refresh: 67 browsers/3,628 requests/72.56 MB; conditional hybrid: at least 1,122 requests/25.03 MB, zero 304s, and incomplete rendered-DOM freshness | **Kept — explicit TTL expiry; conditional validation dropped** |
@@ -52,6 +53,10 @@ A negative shipping decision does not always mean the underlying signal was usel
 | 2026-08-22 | Multi-observation provenance bonus | Identical selected URLs in all 300 role slots | Not run because benefit was zero | Results grew about 16%; could reinforce wrong identities | **Dropped** |
 
 ## Retained mechanisms
+
+### First-party brand asset graph and SPA entry-bundle probe
+
+The opt-in mechanism and three-iteration evaluation are documented in [the first-party wide-logo discovery report](first-party-wide-discovery-2026-08-23.md). The default homepage path remains unchanged. `--deep-wide` follows at most two strongly evidenced official pages, retains complete provenance, and selectively inspects safe ZIP members; `--spa-bundles` scans at most one capped same-origin entry bundle. The final frozen 75-miss paired treatment added three reviewed-correct, theme-conditional company wordmarks at 100% strict incremental precision and zero icon/favicon movement. The archive path succeeded on named controls but had no frozen-cohort win, so both features remain explicit and conditional rather than default.
 
 ### Precision-gated asynchronous browser warming
 
@@ -350,3 +355,4 @@ For each completed experiment, append one row to the summary table and add detai
 - [Coverage improvement plan](logo-coverage-improvement-plan.md)
 - [Benchmark execution record](benchmark-execution-2026-08-22.md)
 - [Missing-wide root-cause audit](missing-wide-root-cause-audit-2026-08-22.md)
+- [First-party wide-logo discovery](first-party-wide-discovery-2026-08-23.md)

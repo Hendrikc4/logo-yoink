@@ -2,6 +2,7 @@ const SOURCE_WEIGHT = {
   schema: 30, 'og-logo': 27, microdata: 26, 'inline-svg': 24, 'browser-inline-svg': 24, 'browser-img': 12,
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, besticon: 12, 'root-favicon': 5, 'social-banner': -30,
+  'official-archive': 24, 'official-direct': 20, 'spa-bundle': 12,
 };
 const RANKING_VERSION = 1;
 
@@ -84,6 +85,8 @@ export function genericAssetReason(item, companyName = '') {
     /^\s*menu\s*$/i.test(item.evidence?.alt ?? '') || /menu[-_\s]*item__icon|ico[-_\s]*gnb[-_\s]*menu|userpilot[-_\s]*enterprise[-_\s]*icon/i.test(`${semantic} ${url}`)
   )) return 'menu UI control';
   if (/untitled[-_\s]*ui[-_\s]*logo/i.test(url)) return 'Untitled UI template logo';
+  const archiveProduct = String(item.evidence?.archive_member ?? '').match(/(?:^|[\s/_.-])(copilot|claude|connect|checkout|terminal|atlas|slackbot|salesforce)(?:$|[\s/_.-])/i)?.[1]?.toLowerCase();
+  if (item.source === 'official-archive' && archiveProduct && !normalizedWords(companyName).includes(archiveProduct)) return 'product or subbrand archive member';
   if (/(?:works[-_\s]*with[-_\s]*logos|enterprises?[-_\s]*logo[-_\s]*\d+)/i.test(`${semantic} ${url}`) ||
     /(?:customer[-_\s]*logos?|partner[-_\s]*logos?)/i.test(`${semantic} ${url}`) && !companyAgreement(item, companyName || item.evidence?.company_name)) return 'customer or partner logo';
   if (/sloane[-_\s]*logo[-_\s]*2\.webp/i.test(url)) return 'photographic avatar mislabeled as logo';
@@ -110,7 +113,9 @@ export function genericAssetReason(item, companyName = '') {
 
 export function hasWideEvidence(item, companyName = '') {
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
-  return AUTHORITATIVE_SOURCES.includes(item.source) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo;
+  const deepOfficial = item.evidence?.deep_official && (Number(item.evidence?.archive_score) >= 40 || companyAgreement(item, companyName || item.evidence?.company_name));
+  const spaLiteral = item.source === 'spa-bundle' && item.evidence?.spa_bundle_entry && item.evidence?.same_origin && item.evidence?.strong_logo_filename && item.evidence?.spa_identity_agreement;
+  return AUTHORITATIVE_SOURCES.includes(item.source) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || deepOfficial || spaLiteral;
 }
 
 export function scoreCandidate(item, { companyName = '' } = {}) {
@@ -128,6 +133,8 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   if (item.source === 'social-banner') confidence += add('banner exclusion', -30);
   if (item.highResolution) confidence += add('adequate resolution', 8);
   if (item.scalable) confidence += add('vector', 7);
+  if (item.evidence?.theme === 'color') confidence += add('color variant', 3);
+  else if (item.evidence?.theme === 'unknown' && ['official-archive', 'spa-bundle'].includes(item.source)) confidence += add('default variant', 2);
   if (item.width && item.height && Math.min(item.width, item.height) < 32) confidence += add('tiny edge', -15);
 
   const ratio = item.width && item.height ? item.width / item.height : null;

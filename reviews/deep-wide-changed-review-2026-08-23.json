@@ -1,0 +1,14 @@
+{
+  "experiment": "first-party-wide-2026-08-23-paired-v3",
+  "reviewed_on": "2026-08-23",
+  "backgrounds": ["light", "dark"],
+  "verdicts": [
+    { "website": "optilyx.com", "asset": "optilyx-logo-mono-ChB9lZYy.png", "identity": "correct", "role": "wide", "light": "unusable", "dark": "good", "usability": "conditional" },
+    { "website": "amukha.com", "asset": "Amukha-logo-new.svg", "identity": "correct", "role": "wide", "light": "good", "dark": "unusable", "usability": "conditional" },
+    { "website": "remitation.com", "asset": "remitation-logo-CKnR9VEH.png", "identity": "correct", "role": "wide", "light": "good", "dark": "conditional", "usability": "conditional" }
+  ],
+  "rejected_iteration_one": [
+    { "website": "quansys.ai", "asset": "sangrah-logo.png", "identity": "wrong", "reason": "foreign/product name did not agree with Quansys" },
+    { "website": "general-instinct.com", "asset": "samsung-wordmark.svg", "identity": "wrong", "reason": "customer/foreign Samsung mark" }
+  ]
+}
