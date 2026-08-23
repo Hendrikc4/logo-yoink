@@ -1,3 +1,4 @@
+import './load-env.mjs';
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
@@ -9,8 +10,14 @@ const publicRoot = join(projectRoot, 'public');
 const port = Number(process.env.PORT ?? 4310);
 const host = process.env.HOST ?? '127.0.0.1';
 const besticonUrl = process.env.BESTICON_URL || null;
+const jinaApiKey = process.env.JINA_API_KEY || null;
+const browserDiscovery = process.env.BROWSER_DISCOVERY !== '0';
 
-const mimeTypes = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml' };
+const mimeTypes = {
+  '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp',
+  '.ttf': 'font/ttf', '.woff2': 'font/woff2',
+};
 
 function json(response, status, value) {
   const body = JSON.stringify(value);
@@ -48,7 +55,13 @@ const server = createServer(async (request, response) => {
   if (request.method === 'POST' && url.pathname === '/api/extract') {
     try {
       const body = await readJson(request);
-      const result = await extractLogos(body.website, { besticonUrl, roleAwareBudget: true, contentBoundingWide: true });
+      const result = await extractLogos(body.website, {
+        besticonUrl,
+        jinaApiKey,
+        roleAwareBudget: true,
+        contentBoundingWide: true,
+        browser: browserDiscovery,
+      });
       return json(response, 200, result);
     } catch (error) {
       return json(response, 400, { error: error instanceof Error ? error.message : 'Logo extraction failed.' });
@@ -61,4 +74,6 @@ const server = createServer(async (request, response) => {
 server.listen(port, host, () => {
   console.log(`Logo Yoink is running at http://${host}:${port}`);
   console.log(besticonUrl ? `Besticon fallback: ${besticonUrl}` : 'Besticon fallback: disabled');
+  console.log(jinaApiKey ? 'Jina reachability fallback: enabled' : 'Jina reachability fallback: disabled');
+  console.log(`Rendered fallback: ${browserDiscovery ? 'enabled for missing roles' : 'disabled'}`);
 });
