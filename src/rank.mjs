@@ -1,9 +1,10 @@
 const SOURCE_WEIGHT = {
   schema: 30, 'og-logo': 27, microdata: 26, 'inline-svg': 24, 'browser-inline-svg': 24, 'browser-img': 12,
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
-  manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, besticon: 12, 'root-favicon': 5, 'social-banner': -30,
+  manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'root-favicon': 5, 'social-banner': -30,
 };
 const RANKING_VERSION = 1;
+const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
 function round(value) { return Math.round(Math.max(0, Math.min(100, value)) * 10) / 10; }
 function companyAgreement(item, companyName) {
@@ -155,10 +156,76 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
 }
 
 export function rankCandidates(items, options = {}) {
-  const candidates = items.map(item => scoreCandidate(item, options)).sort((a, b) => b.score - a.score || b.bytes - a.bytes);
+  const ranked = items.map(item => scoreCandidate(item, options)).sort((a, b) => b.score - a.score || b.bytes - a.bytes);
+  const { candidates, assetFamilies } = buildAssetFamilies(ranked);
   const eligible = candidates.filter(item => item.source !== 'social-banner');
   const selectedByRole = Object.fromEntries(['icon', 'wide', 'favicon'].map(role => [role, [...eligible].filter(item => item.predicted_roles.includes(role)).sort((a, b) => b.role_scores[role] - a.role_scores[role] || b.bytes - a.bytes)[0] ?? null]));
-  return { candidates, selectedByRole, selected: selectedByRole.icon ?? selectedByRole.wide ?? selectedByRole.favicon ?? null };
+  return { candidates, assetFamilies, selectedByRole, selected: selectedByRole.icon ?? selectedByRole.wide ?? selectedByRole.favicon ?? null };
+}
+
+function familyShape(item) {
+  const ratio = item.contentBox?.width > 0 && item.contentBox?.height > 0
+    ? item.contentBox.width / item.contentBox.height
+    : item.width && item.height ? item.width / item.height : null;
+  if (ratio == null) return 'unknown';
+  if (ratio >= 1.8) return 'wide';
+  if (ratio >= 0.72 && ratio <= 1.4) return 'square';
+  return 'other';
+}
+
+function familyKey(item, index) {
+  const value = item.resolvedUrl ?? item.resolved_url ?? item.url;
+  if (!value || String(value).startsWith('data:')) return `unique:${index}`;
+  try {
+    const url = new URL(value);
+    if (!['http:', 'https:'].includes(url.protocol)) return `unique:${index}`;
+    url.hash = '';
+    for (const name of [...url.searchParams.keys()]) {
+      if (DELIVERY_QUERY_PARAMS.has(name.toLowerCase())) url.searchParams.delete(name);
+    }
+    url.pathname = url.pathname
+      .replace(/\/:\/rs=[^/]+/gi, '')
+      .replace(/([_-])\d{2,4}x\d{2,4}(?=\.[a-z0-9]+$)/i, '')
+      .replace(/@(?:2|3)x(?=\.[a-z0-9]+$)/i, '');
+    return `${familyShape(item)}:${url.href}`;
+  } catch {
+    return `unique:${index}`;
+  }
+}
+
+export function buildAssetFamilies(items) {
+  const groups = new Map();
+  const candidates = items.map((item, index) => {
+    const key = familyKey(item, index);
+    let group = groups.get(key);
+    if (!group) {
+      group = { id: `family-${groups.size + 1}`, candidateIndexes: [] };
+      groups.set(key, group);
+    }
+    group.candidateIndexes.push(index);
+    return { ...item, family_id: group.id };
+  });
+
+  const assetFamilies = [...groups.values()].map(group => {
+    const members = group.candidateIndexes.map(index => candidates[index]);
+    const roles = [...new Set(members.flatMap(item => item.predicted_roles ?? []))];
+    const bestByRole = Object.fromEntries(['icon', 'wide', 'favicon'].map(role => {
+      const best = group.candidateIndexes
+        .filter(index => candidates[index].predicted_roles?.includes(role))
+        .sort((a, b) => (candidates[b].role_scores?.[role] ?? 0) - (candidates[a].role_scores?.[role] ?? 0))[0];
+      return [role, best ?? null];
+    }));
+    return {
+      id: group.id,
+      candidateIndexes: group.candidateIndexes,
+      representativeIndex: group.candidateIndexes[0],
+      variantCount: group.candidateIndexes.length,
+      roles,
+      bestByRole,
+    };
+  });
+
+  return { candidates, assetFamilies };
 }
 
 export { RANKING_VERSION, SOURCE_WEIGHT };

@@ -1,3 +1,4 @@
+import './load-env.mjs';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { extname, resolve } from 'node:path';
 import { extractLogos } from './extractor.mjs';
@@ -15,6 +16,7 @@ if (!website || downloadIndex >= 0 && !downloadDirectory) {
 try {
   const result = await extractLogos(website, {
     besticonUrl: process.env.BESTICON_URL || null,
+    jinaApiKey: process.env.JINA_API_KEY || null,
     roleAwareBudget: true,
     contentBoundingWide: true,
   });

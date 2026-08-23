@@ -26,6 +26,16 @@ npm start
 
 Open <http://127.0.0.1:4310>, enter a website, and download any returned candidate.
 
+The homepage also includes a small Logo Yoink cowboy runner. Press Space, Arrow Up, or W—or tap the playfield—to jump, collect logos, and avoid cacti. A lasso power-up automatically yoinks the next three logos. The game is entirely client-side and leaves the extraction API unchanged.
+
+The web tool conditionally renders JavaScript-driven sites when the static pass cannot find an icon or wide logo. Set `BROWSER_DISCOVERY=0` to disable this slower fallback.
+
+Set `JINA_API_KEY` to enable Jina Reader recovery. When direct homepage retrieval fails, Logo Yoink requests rendered HTML; when no usable logo asset survives normal extraction, it can capture and trim a genuine graphic or explicitly logo-marked home element into a downloadable PNG. Ordinary text home links are never converted into invented logos. Normal successful extractions do not incur Jina usage. The web tool and CLI automatically load a gitignored `.env.local` file.
+
+```bash
+JINA_API_KEY=your_key npm start
+```
+
 To add a locally hosted Besticon fallback:
 
 ```bash
@@ -41,7 +51,7 @@ npm run cli -- stripe.com
 npm run cli -- stripe.com --download ./downloads/stripe
 ```
 
-Set `BESTICON_URL` for the CLI in the same way as the web service.
+Set `BESTICON_URL` and `JINA_API_KEY` for the CLI in the same way as the web service.
 
 ## Test
 
@@ -102,7 +112,7 @@ node scripts/export-company-fixture.mjs \
 
 ## Current limitations
 
-- Many websites block automated clients; the optional browser fallback costs substantially more than static extraction.
+- Many websites block automated clients; the optional browser and Jina fallbacks cost substantially more than static extraction, and Jina respects sites that block its service.
 - A website can expose a product icon rather than its legal-company logo.
 - SVG and raster dimensions do not prove visual quality; padded wordmarks can still look poor in a square UI.
 - Redirected or rebranded domains may expose a logo that no longer matches the database company name.
