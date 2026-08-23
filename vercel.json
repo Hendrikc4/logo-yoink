@@ -18,6 +18,7 @@
   ],
   "functions": {
     "api/extract.mjs": {
+      "includeFiles": "node_modules/@sparticuz/chromium/bin/**",
       "maxDuration": 60
     }
   }

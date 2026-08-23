@@ -54,7 +54,10 @@ export async function discoverBrowserLogos(input, options = {}) {
         diagnostics.errors.push('Playwright does not expose a Chromium launcher.');
         return result([], diagnostics, startedAt);
       }
-      browser = await chromium.launch({ headless: true, ...options.launchOptions });
+      const launchOptions = typeof options.launchOptions === 'function'
+        ? await options.launchOptions()
+        : options.launchOptions;
+      browser = await chromium.launch({ headless: true, ...launchOptions });
       ownsBrowser = true;
     }
 

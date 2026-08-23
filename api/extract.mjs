@@ -1,5 +1,6 @@
 import { extractLogos, normalizeWebsite } from '../src/extractor.mjs';
 import { createDemoGuard, demoLimits, DemoHttpError, publicDemoExtractionOptions, readDemoJson, securityHeaders } from '../src/demo-security.mjs';
+import { serverlessBrowserLaunchOptions } from '../src/serverless-browser.mjs';
 
 const limits = demoLimits();
 const demoGuard = createDemoGuard(limits);
@@ -17,7 +18,10 @@ export default async function handler(request, response) {
     const rate = demoGuard.check(request);
     const body = await readDemoJson(request, limits.bodyBytes);
     const target = normalizeWebsite(body.website);
-    const result = await demoGuard.run(target.url.href, () => extractLogos(target.url.href, publicDemoExtractionOptions()));
+    const result = await demoGuard.run(target.url.href, () => extractLogos(target.url.href, {
+      ...publicDemoExtractionOptions(),
+      browserLaunchOptions: serverlessBrowserLaunchOptions,
+    }));
     response.setHeader('ratelimit-limit', String(rate.limit));
     response.setHeader('ratelimit-remaining', String(rate.remaining));
     return response.status(200).json(result);

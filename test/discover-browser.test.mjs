@@ -11,6 +11,29 @@ test('returns actionable diagnostics when Playwright is unavailable', async () =
   assert.deepEqual(result.candidates, []);
 });
 
+test('resolves lazy serverless launch options only when launching a browser', async () => {
+  let resolved = 0;
+  const launches = [];
+  const result = await discoverBrowserLogos('https://example.com', {
+    importPlaywright: async () => ({ chromium: {
+      async launch(options) {
+        launches.push(options);
+        return {
+          async newPage() { throw new Error('stop after launch'); },
+          async close() {},
+        };
+      },
+    } }),
+    launchOptions: async () => {
+      resolved += 1;
+      return { executablePath: '/tmp/chromium', args: ['--serverless'] };
+    },
+  });
+  assert.equal(resolved, 1);
+  assert.deepEqual(launches, [{ headless: true, executablePath: '/tmp/chromium', args: ['--serverless'] }]);
+  assert.equal(result.diagnostics.status, 'error');
+});
+
 test('uses an injected browser, inspects both themes, and deduplicates URLs', async () => {
   const calls = [];
   const page = {

@@ -666,6 +666,7 @@ export async function extractLogos(website, options = {}) {
       darkMode: true,
       timeoutMs: Math.min(12_000, timeoutMs),
       userAgent: options.userAgent,
+      launchOptions: options.browserLaunchOptions,
     });
     browserDiagnostics = rendered.diagnostics;
     const known = new Set(validated.map(item => item.url));

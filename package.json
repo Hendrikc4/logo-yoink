@@ -37,6 +37,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@sparticuz/chromium": "^149.0.0",
     "htmlparser2": "^10.1.0",
     "playwright": "^1.62.1",
     "sharp": "^0.35.3"
