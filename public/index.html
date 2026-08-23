@@ -3,43 +3,188 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Find the best logo assets exposed by a company website.">
-    <link rel="icon" href="data:,">
+    <meta name="description" content="Ride, lasso, and yoink logos—then find the best logo assets exposed by any company website.">
+    <meta name="theme-color" content="#090b0c">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/game.css">
     <title>Logo Yoink</title>
   </head>
   <body>
-    <main>
-      <header>
-        <a class="brand" href="/" aria-label="Logo Yoink home"><span>LY</span> Logo Yoink</a>
-        <p>Website in. Best logo out.</p>
-      </header>
+    <section id="game" class="game-shell" aria-labelledby="game-title">
+      <canvas id="game-canvas" class="game-canvas" tabindex="0" aria-label="Logo Yoink cowboy runner. Press Space, Arrow Up, or W to jump."></canvas>
+      <div class="game-shade" aria-hidden="true"></div>
 
-      <section class="hero">
-        <div class="kicker">Open-source logo retrieval</div>
-        <h1>Yoink the right<br>company logo.</h1>
-        <p class="intro">We inspect structured data, web manifests, Apple touch icons, favicons, and an optional Besticon service—then validate and rank the actual image files.</p>
-        <form id="extract-form">
-          <label for="website">Company website</label>
-          <div class="input-row">
-            <input id="website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="stripe.com" required>
-            <button type="submit">Find logos <span>↗</span></button>
+      <div class="game-topbar">
+        <div class="game-brand">
+          <h1 id="game-title">Logo-Yoink</h1>
+          <p>An open-source API to find logos.</p>
+        </div>
+        <div class="game-top-actions">
+          <div class="game-hud" aria-label="Game status">
+            <div class="hud-item"><span class="hud-label">Score</span><strong id="game-score">00000</strong></div>
+            <div class="hud-item hud-best"><span class="hud-label">Best</span><strong id="game-best">00000</strong></div>
+            <div class="hud-item hud-lasso"><span class="hud-label">Lasso</span><strong id="game-lasso">×0</strong></div>
           </div>
-        </form>
-        <div id="status" class="status" aria-live="polite"></div>
+          <a class="game-github-link" href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer" aria-label="View Logo Yoink on GitHub">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.04 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.3-5.28-1.29-5.28-5.73 0-1.27.45-2.3 1.2-3.11-.13-.3-.52-1.47.11-3.07 0 0 .97-.31 3.18 1.19a11.1 11.1 0 0 1 5.8 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.6.24 2.78.12 3.07.74.81 1.19 1.84 1.19 3.1 0 4.46-2.72 5.44-5.3 5.73.42.36.79 1.06.79 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="game-actions" aria-label="Game controls">
+        <button id="game-sound" class="game-icon-button" type="button" aria-pressed="true">Sound on</button>
+        <button id="game-pause" class="game-icon-button" type="button">Pause</button>
+      </div>
+
+      <div id="game-start-panel" class="game-panel game-start-panel">
+        <button id="game-start" class="game-start-prompt" type="button">Tap to start yoinking</button>
+      </div>
+
+      <div id="game-over-panel" class="game-panel game-over-panel" hidden>
+        <p class="game-eyebrow">Trail’s end</p>
+        <h2>Nice<br><em>yoinkin’.</em></h2>
+        <p>You rode <strong id="game-final-distance">0</strong>m and scored <strong id="game-final-score">0</strong>.</p>
+        <button id="game-restart" class="game-start-button" type="button">Ride again <span>↻</span></button>
+      </div>
+
+      <div id="game-yoink" class="game-yoink" aria-hidden="true">YOINK!</div>
+      <div class="game-crash-caption" aria-hidden="true">HAY! THAT HURT.</div>
+      <div id="game-live" class="visually-hidden" aria-live="polite"></div>
+      <p class="game-trademarks">Marks belong to their respective owners. No endorsement implied.</p>
+      <a class="game-find-link" href="#finder"><span>Scroll down to learn more</span><i aria-hidden="true"></i></a>
+    </section>
+
+    <main id="main-content" class="lower-page">
+      <section id="finder" class="about-section" aria-labelledby="about-title">
+        <div class="about-copy">
+          <p class="pixel-kicker">What is Logo Yoink?</p>
+          <h2 id="about-title">The open-source<br>API for finding the<br>right logo.</h2>
+          <p class="about-intro">Inspect a website. Get the best logo for every use.</p>
+        </div>
+
+        <div class="about-details">
+          <div class="feature-row">
+            <span class="feature-icon feature-icon--mark" aria-hidden="true"><img src="/assets/brand/logo-yoink-mark.png" alt=""></span>
+            <div><h3>One URL in. Ranked logo candidates out.</h3><p>We scan structured data, manifests, icons, and assets across the target site, then validate and rank the real logo files.</p></div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M24 6H11a5 5 0 0 0-5 5v1m0 0 4-4m-4 4 4 4M8 26h13a5 5 0 0 0 5-5v-1m0 0-4 4m4-4-4-4"/></svg>
+            </span>
+            <div><h3>Open-source and built for developers.</h3><p>Transparent, community-driven, and easy to integrate into your workflow.</p></div>
+          </div>
+          <a class="github-cta" href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.04 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.3-5.28-1.29-5.28-5.73 0-1.27.45-2.3 1.2-3.11-.13-.3-.52-1.47.11-3.07 0 0 .97-.31 3.18 1.19a11.1 11.1 0 0 1 5.8 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.6.24 2.78.12 3.07.74.81 1.19 1.84 1.19 3.1 0 4.46-2.72 5.44-5.3 5.73.42.36.79 1.06.79 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+            <span>View on GitHub</span><b aria-hidden="true">↗</b>
+          </a>
+        </div>
       </section>
 
-      <section id="results" class="results" hidden>
-        <div class="result-heading">
-          <div>
-            <div class="kicker">Ranked candidates</div>
-            <h2 id="result-domain"></h2>
+      <div class="trail-divider" aria-hidden="true">
+        <img class="trail-cactus trail-cactus--left" src="/assets/game/cactus.png" alt="">
+        <img class="trail-rider" src="/assets/game/rider-0.png" alt="">
+        <img class="trail-cactus trail-cactus--right" src="/assets/game/cactus.png" alt="">
+      </div>
+
+      <section class="try-section" aria-labelledby="try-title">
+        <p id="try-title" class="pixel-kicker">Try it out</p>
+        <form id="extract-form" novalidate>
+          <label class="visually-hidden" for="website">Website URL</label>
+          <div class="input-row">
+            <span class="input-link-icon" aria-hidden="true">↗</span>
+            <input id="website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="https://example.com" required aria-describedby="form-hint status">
+            <button type="submit"><span class="button-label">Yoink it</span><span class="button-lasso" aria-hidden="true">↝</span></button>
           </div>
-          <dl id="diagnostics"></dl>
+          <p id="form-hint" class="form-hint">Enter any website URL and we’ll find the right logo.</p>
+        </form>
+        <div id="status" class="status" aria-live="polite" aria-atomic="true"></div>
+      </section>
+
+      <section id="results" class="results" aria-labelledby="results-title" hidden>
+        <div class="results-heading">
+          <p id="results-title" class="pixel-kicker">Recommended by use</p>
+          <p id="result-domain" class="result-domain"></p>
         </div>
-        <div id="candidate-grid" class="candidate-grid"></div>
+        <div id="role-grid" class="role-grid"></div>
+
+        <details id="complete-results" class="complete-results">
+          <summary>
+            <span class="summary-icon" aria-hidden="true">▣</span>
+            <span>View all results <b id="result-count"></b></span>
+            <span class="summary-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="complete-results-body">
+            <div id="diagnostics" class="diagnostics" aria-label="Lookup diagnostics"></div>
+            <div id="family-grid" class="family-grid"></div>
+          </div>
+        </details>
+      </section>
+
+      <section class="api-section" aria-labelledby="api-title">
+        <div class="api-copy">
+          <h2 id="api-title">Use the API</h2>
+          <p>Fast, simple, and developer-friendly.</p>
+          <p>Get ranked logo candidates with a single request.</p>
+        </div>
+        <div class="terminal" aria-label="Example API request and response">
+          <div class="terminal-bar"><span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Terminal</span></div>
+          <div class="terminal-content">
+            <div class="terminal-code">
+              <pre><code><span class="code-accent">$ curl -sS</span> https://logo-yoink.vercel.app/api/extract \
+  <span class="code-accent">-H</span> <span class="code-string">"content-type: application/json"</span> \
+  <span class="code-accent">-d</span> <span class="code-string">'{"website":"nox.energy"}'</span></code></pre>
+              <pre class="response-code"><code>{
+  <span class="code-key">"domain"</span>: <span class="code-string">"nox.energy"</span>,
+  <span class="code-key">"selectedByRole"</span>: {
+    <span class="code-key">"icon"</span>: {<span class="code-key">"format"</span>: <span class="code-string">"png"</span>, <span class="code-key">"width"</span>: 512},
+    <span class="code-key">"wide"</span>: {<span class="code-key">"format"</span>: <span class="code-string">"svg"</span>},
+    <span class="code-key">"favicon"</span>: {<span class="code-key">"format"</span>: <span class="code-string">"ico"</span>}
+  },
+  <span class="code-key">"candidates"</span>: [
+    {<span class="code-key">"type"</span>: <span class="code-string">"icon"</span>, <span class="code-key">"url"</span>: <span class="code-string">"https://…/icon.png"</span>,
+     <span class="code-key">"score"</span>: 98, <span class="code-key">"format"</span>: <span class="code-string">"png"</span>, <span class="code-key">"size"</span>: 512},
+    {<span class="code-key">"type"</span>: <span class="code-string">"wordmark"</span>, <span class="code-key">"url"</span>: <span class="code-string">"https://…/wordmark.svg"</span>,
+     <span class="code-key">"score"</span>: 95, <span class="code-key">"format"</span>: <span class="code-string">"svg"</span>},
+    {<span class="code-key">"type"</span>: <span class="code-string">"favicon"</span>, <span class="code-key">"url"</span>: <span class="code-string">"https://…/favicon.ico"</span>,
+     <span class="code-key">"score"</span>: 93, <span class="code-key">"format"</span>: <span class="code-string">"ico"</span>}
+  ]
+}</code></pre>
+            </div>
+            <ol class="api-steps">
+              <li><span>1</span><div><strong>Send a website URL</strong><p>We inspect structured data, manifests, icons, and more.</p></div></li>
+              <li><span>2</span><div><strong>Get ranked candidates</strong><p>Results are scored for quality and suitability.</p></div></li>
+              <li><span>3</span><div><strong>Pick and integrate</strong><p>Use the best logo for every context.</p></div></li>
+            </ol>
+          </div>
+        </div>
+        <div class="api-bottom">
+          <p>See the docs on GitHub for authentication, parameters, and examples.</p>
+          <a class="github-cta github-cta--small" href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.04 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.3-5.28-1.29-5.28-5.73 0-1.27.45-2.3 1.2-3.11-.13-.3-.52-1.47.11-3.07 0 0 .97-.31 3.18 1.19a11.1 11.1 0 0 1 5.8 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.6.24 2.78.12 3.07.74.81 1.19 1.84 1.19 3.1 0 4.46-2.72 5.44-5.3 5.73.42.36.79 1.06.79 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+            <span>View on GitHub</span><b aria-hidden="true">↗</b>
+          </a>
+        </div>
       </section>
     </main>
+
+    <div class="night-desert" role="img" aria-label="Pixel-art desert at night with a campfire"></div>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#game"><img src="/assets/brand/logo-yoink-mark.png" alt="" width="36" height="36"><span>Logo Yoink</span></a>
+      <nav aria-label="Footer navigation">
+        <a href="https://github.com/Hendrikc4/logo-yoink#readme" target="_blank" rel="noreferrer">Docs</a>
+        <a href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/Hendrikc4/logo-yoink/commits/main" target="_blank" rel="noreferrer">Changelog</a>
+        <a href="https://github.com/Hendrikc4/logo-yoink/blob/main/LICENSE" target="_blank" rel="noreferrer">License</a>
+      </nav>
+      <p>Open source with <span aria-label="love">♥</span></p>
+    </footer>
+    <script type="module" src="/game-ui.js"></script>
     <script type="module" src="/app.js"></script>
   </body>
 </html>
