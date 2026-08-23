@@ -4,6 +4,11 @@
   "private": true,
   "type": "module",
   "description": "Find and rank the best logo assets exposed by a company website.",
+  "homepage": "https://logo-yoink.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hendrikc4/logo-yoink.git"
+  },
   "scripts": {
     "start": "node src/server.mjs",
     "dev": "node --watch src/server.mjs",

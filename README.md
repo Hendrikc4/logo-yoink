@@ -1,130 +1,170 @@
 <p align="center">
-  <img src="public/assets/brand/logo-yoink-mark-512.png" width="160" height="160" alt="Logo Yoink cowboy hat and lasso logo">
+  <a href="https://logo-yoink.com"><img src="public/favicon-32.png" width="96" height="96" alt="Logo Yoink favicon"></a>
 </p>
 
-# Logo Yoink
+<h1 align="center">Logo Yoink</h1>
 
-Give Logo Yoink a company website and it finds, validates, and ranks the logo assets the site exposes.
+<p align="center">
+  <strong>Drop in a website. Ride away with its best logos.</strong>
+</p>
 
-It currently checks:
+<p align="center">
+  <a href="https://logo-yoink.com/">Try the live demo</a>
+  ·
+  <a href="#quick-draw">Run it yourself</a>
+  ·
+  <a href="#use-the-api">Use the API</a>
+</p>
 
-- Schema.org `Organization`, `Corporation`, `Business`, and `Brand` logos
-- visible header/navigation images, lazy-loaded images, `picture` sources, and safe inline SVGs
-- `og:logo`, microdata logo fields, and linked image metadata
-- Web-app manifest icons
-- Apple touch icons, mask icons, Microsoft tiles, and HTML favicon links
-- Root `/favicon.ico` and `/favicon.png`
-- Google and DuckDuckGo favicon caches as a last resort when origin-hosted icons cannot be downloaded
-- An optional self-hosted [Besticon](https://github.com/mat/besticon) service
-- optionally, a bounded Playwright pass for logo assets that appear only after rendering
+<p align="center">
+  <img alt="Node.js 22+" src="https://img.shields.io/badge/Node.js-22%2B-3c873a?style=flat-square">
+  <img alt="MIT licensed" src="https://img.shields.io/badge/license-MIT-f0a23b?style=flat-square">
+  <img alt="Self-hosted" src="https://img.shields.io/badge/self--hosted-yes-31a8ff?style=flat-square">
+</p>
 
-Every candidate is downloaded, byte-validated, deduplicated, and ranked separately as an `icon`, `wide` logo, or `favicon`. The default path is static and homepage-only; expanded-page and browser discovery are explicit fallbacks.
+<p align="center">
+  <img src="docs/design/cowboy-runner/desktop-gameplay-reference.png" alt="Pixel-art Logo Yoink cowboy riding through the desert toward a logo and lasso pickup">
+</p>
 
-## Run the web tool
+Logo hunting should not feel like archaeology. Give Logo Yoink one URL and it finds the real image files a site exposes, checks that they work, removes duplicates, and ranks the best choices for:
 
-Requires Node.js 22 or newer.
+- **Icon** — apps, avatars, and square UI
+- **Wordmark** — headers, cards, and wider layouts
+- **Favicon** — tabs and tiny surfaces
+
+You get the candidates, their evidence, and downloadable files. No mystery black box. No invented logos.
+
+## Quick draw
+
+You need [Node.js 22+](https://nodejs.org/).
 
 ```bash
+git clone https://github.com/Hendrikc4/logo-yoink.git
+cd logo-yoink
 npm install
 npm start
 ```
 
-Open <http://127.0.0.1:4310>, enter a website, and download any returned candidate.
+Open **http://127.0.0.1:4310**, paste a website, and hit **Yoink it**.
 
-The homepage also includes a small Logo Yoink cowboy runner. Press Space, Arrow Up, or W—or tap the playfield—to jump, collect logos, and avoid cacti. A lasso power-up automatically yoinks the next three logos. The game is entirely client-side and leaves the extraction API unchanged.
+> There is also a cowboy runner up top. Jump the cacti, collect logos, and grab a lasso to auto-yoink the next three. Space, Arrow Up, W, and taps all work. 🤠
 
-The web tool conditionally renders JavaScript-driven sites when the static pass cannot find an icon or wide logo. Set `BROWSER_DISCOVERY=0` to disable this slower fallback.
+## Use the CLI
 
-Set `JINA_API_KEY` to enable Jina Reader recovery. When direct homepage retrieval fails, Logo Yoink requests rendered HTML; when no usable logo asset survives normal extraction, it can capture and trim a genuine graphic or explicitly logo-marked home element into a downloadable PNG. Ordinary text home links are never converted into invented logos. Normal successful extractions do not incur Jina usage. The web tool and CLI automatically load a gitignored `.env.local` file.
-
-```bash
-JINA_API_KEY=your_key npm start
-```
-
-To add a locally hosted Besticon fallback:
-
-```bash
-BESTICON_URL=http://127.0.0.1:8080 npm start
-```
-
-Logo Yoink deliberately binds to localhost by default. It resolves and rejects non-public targets and revalidates redirects, but a public deployment should additionally pin the validated IP at connection time and add rate limiting and authentication.
-
-## CLI
+See the ranked results as JSON:
 
 ```bash
 npm run cli -- stripe.com
-npm run cli -- stripe.com --download ./downloads/stripe
-npm run cli -- anthropic.com --deep-wide
-npm run cli -- pnptc.com --deep-wide --spa-bundles
 ```
 
-Set `BESTICON_URL` and `JINA_API_KEY` for the CLI in the same way as the web service.
+Or download the top pick:
 
-`--deep-wide` is an explicit, conditional fallback: only when the homepage path has no accepted wide logo, it follows at most two semantically strong first-party brand/press/media links and can selectively inspect official ZIP kits. `--spa-bundles` additionally scans at most one same-origin SPA entry bundle (2.2 MB maximum) for an expected-company logo literal. Neither flag changes the default homepage path, and the browser fallback remains the broader asynchronous option.
+```bash
+npm run cli -- stripe.com --download ./downloads/stripe
+```
 
-## Test
+## Use the API
+
+Once the local server is running:
+
+```bash
+curl -sS http://127.0.0.1:4310/api/extract \
+  -H 'content-type: application/json' \
+  -d '{"website":"stripe.com"}'
+```
+
+The response includes `selectedByRole`, grouped `assetFamilies`, every ranked `candidate`, and discovery `diagnostics`.
+
+<p align="center">
+  <img src="public/assets/readme/logo-yoink-flow.webp" alt="Pixel-art cowboy lassoing square, wide, and favicon logo assets out of a browser">
+</p>
+
+<p align="center"><em>One URL in. The right logo for every job out.</em></p>
+
+## What gets yoinked?
+
+<table>
+  <tr>
+    <td width="112" align="center"><img src="public/assets/ui/feature-lasso-browser.png" width="88" alt="Pixel-art lasso around a browser window"></td>
+    <td><strong>The obvious stuff</strong><br>Visible header images, picture sources, safe inline SVGs, and lazy-loaded assets.</td>
+  </tr>
+  <tr>
+    <td width="112" align="center"><img src="public/assets/ui/feature-sheriff-badge.png" width="88" alt="Pixel-art sheriff badge"></td>
+    <td><strong>The hidden clues</strong><br>Schema.org data, metadata, manifests, touch icons, mask icons, tiles, and favicons.</td>
+  </tr>
+</table>
+
+Every candidate is downloaded, byte-validated, deduplicated, and scored with role-specific rules. If the fast static pass misses an icon or wordmark, the web app can make a bounded Playwright pass for JavaScript-rendered assets.
+
+<details>
+<summary><strong>Need more horsepower?</strong></summary>
+
+The default path is intentionally homepage-only. Turn on the heavier fallbacks only when you need them.
+
+| Need | How |
+| --- | --- |
+| Skip browser rendering | `BROWSER_DISCOVERY=0 npm start` |
+| Recover from blocked or unusable homepages | Add `JINA_API_KEY` to `.env.local` |
+| Use a local [Besticon](https://github.com/mat/besticon) fallback | `BESTICON_URL=http://127.0.0.1:8080 npm start` |
+| Follow likely brand/press pages in the CLI | Add `--deep-wide` |
+| Inspect one same-origin SPA bundle too | Add `--deep-wide --spa-bundles` |
+
+Logo Yoink automatically loads a gitignored `.env.local` file. Normal successful extractions do not use Jina.
+
+`--deep-wide` only runs when the homepage has no accepted wide logo. It follows at most two strong first-party brand, press, or media links and can inspect official ZIP kits. `--spa-bundles` scans at most one same-origin entry bundle, up to 2.2 MB, for a company-logo asset literal.
+
+</details>
+
+<details>
+<summary><strong>Developing and benchmarking</strong></summary>
+
+Run the tests:
 
 ```bash
 npm test
 ```
 
-## Benchmark
+The main trail map:
 
-Run the frozen 100-company development cohort:
+```text
+src/discover-static.mjs   find candidates in HTML and metadata
+src/discover-browser.mjs  render the bounded browser fallback
+src/discover-deep.mjs     inspect official brand paths and kits
+src/rank.mjs              score icons, wordmarks, and favicons
+src/extractor.mjs         validate, deduplicate, and orchestrate
+src/server.mjs            serve the tiny local web app and API
+src/cli.mjs               print results or download the winner
+```
+
+The repository also includes frozen 100- and 500-company cohorts for repeatable extraction experiments. Start a benchmark with:
 
 ```bash
 npm run benchmark -- --cohort original-100 --output runs/my-run
 npm run review-montage -- runs/my-run
 ```
 
-Other frozen cohorts are `holdout-100`, `remaining-300`, and `all-500`. Use `--browser`, `--expanded-pages 2`, `--deep-wide`, or `--deep-wide --spa-bundles` for measured ablations; none is enabled by default. A labeled score can be recomputed without crawling again:
+See [`docs/`](docs/) for the benchmark methodology, experiment logs, and visual-labeling workflow.
 
-```bash
-node scripts/benchmark.mjs score --run runs/my-run --labels path/to/review-labels.jsonl
-```
+</details>
 
-The automated availability proxy is not a quality score. The 0–100 benchmark score is emitted only after every selected icon and wide logo has a role-specific reviewer label.
+<details>
+<summary><strong>A few honest limits</strong></summary>
 
-## Architecture
+- Some websites block automated clients.
+- A site may expose a product icon instead of its company logo.
+- Dimensions cannot reveal every padded or awkward wordmark.
+- Redirected and rebranded domains can serve stale identity assets.
 
-- `src/extractor.mjs` — reusable extraction, validation, metadata, and scoring logic
-- `src/discover-static.mjs` — parsed-document candidate discovery
-- `src/discover-browser.mjs` — bounded rendered-browser fallback
-- `src/discover-deep.mjs` — opt-in official asset graph, safe ZIP selection, and SPA entry-bundle probe
-- `src/rank.mjs` — interpretable role-specific scoring
-- `src/server.mjs` — small localhost HTTP/API server
-- `src/cli.mjs` — JSON and download CLI
-- `public/` — dependency-free browser interface
-- `fixtures/companies-500.json` — 100 original benchmark companies plus 400 additional canonical database samples
-- `scripts/export-company-fixture.mjs` — reproducible Supabase CLI fixture exporter
-- `scripts/benchmark.mjs` — frozen-cohort runs, comparisons, and labeled scoring
-- `scripts/contact-sheet.mjs` and `scripts/review-montage.mjs` — visual QA artifacts
-- `docs/logo-discovery-plan.md` — researched implementation and evaluation plan
-- `docs/benchmark-2026-08-22.md` — results that informed the initial pipeline
+That is why Logo Yoink returns multiple ranked candidates instead of pretending one guess is always perfect.
 
-## Test dataset
+The server binds to localhost by default and rejects non-public targets while revalidating redirects. Before exposing it publicly, also pin the validated IP at connection time and add rate limiting and authentication.
 
-The repository includes 500 unique company name/website pairs for repeatable extraction experiments. The first 100 preserve the original benchmark cohort; the remaining 400 are deterministic additions from `canonical_v2.startup_directory_projection`.
+</details>
 
-Validate the fixture with:
+<p align="center">
+  <img src="public/assets/game/cowboy-horse.png" width="260" alt="Pixel-art cowboy riding a horse">
+</p>
 
-```bash
-npm run fixtures:validate
-```
+<p align="center"><strong>Happy yoinkin’.</strong></p>
 
-To regenerate it from a linked StartupSeeker Supabase project:
-
-```bash
-node scripts/export-company-fixture.mjs \
-  --source-project /path/to/startupseeker_v2 \
-  --original-sample /path/to/favicon-review-sample.json
-```
-
-## Current limitations
-
-- Many websites block automated clients; the optional browser and Jina fallbacks cost substantially more than static extraction, and Jina respects sites that block its service.
-- A website can expose a product icon rather than its legal-company logo.
-- SVG and raster dimensions do not prove visual quality; padded wordmarks can still look poor in a square UI.
-- Redirected or rebranded domains may expose a logo that no longer matches the database company name.
-
-The tool returns multiple ranked candidates because automatic extraction cannot eliminate all of this ambiguity.
+Released under the [MIT License](LICENSE).
