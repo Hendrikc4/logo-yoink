@@ -38,6 +38,7 @@ export function conflictsWithRequestedIdentity(item, record) {
 }
 
 export async function replayRecord(record, artifacts, assetsDirectory) {
+  if (record.selected_by_role?.wide) return { record, added: 0, conflicts: [] };
   const knownHashes = new Set(record.candidates.map(item => item.observed?.byte_hash).filter(Boolean));
   const knownUrls = new Set(record.candidates.flatMap(item => [item.url, item.resolvedUrl, item.resolved_url]).filter(Boolean));
   const validated = artifacts.flatMap(artifact => (artifact.candidates ?? []).map(entry => entry.validated).filter(Boolean));

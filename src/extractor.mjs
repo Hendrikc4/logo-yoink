@@ -412,5 +412,6 @@ export async function extractLogos(website, options = {}) {
 export const internals = {
   imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
   selectRoleAware, measureContentBox, attachContentBoxes, dedupeBytes,
+  fromBrowserCandidate, discoveryPriority, validateCandidate,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,
 };

@@ -11,6 +11,8 @@
     "benchmark": "node scripts/benchmark.mjs",
     "contact-sheet": "node scripts/contact-sheet.mjs",
     "review-montage": "node scripts/review-montage.mjs",
+    "browser-observations:warm": "node scripts/warm-browser-observations.mjs",
+    "browser-observations:replay": "node scripts/replay-browser-observations.mjs",
     "rerank-run": "node scripts/rerank-run.mjs",
     "merge-review-runs": "node scripts/merge-review-runs.mjs",
     "transfer-review-labels": "node scripts/transfer-review-labels.mjs",
