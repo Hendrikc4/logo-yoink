@@ -24,6 +24,7 @@ A negative shipping decision does not always mean the underlying signal was usel
 
 | Date | Experiment | Development outcome | Holdout outcome | Cost or risk | Status |
 |---|---|---|---|---|---|
+| 2026-08-22 | Remaining-300 extension of precision-gated asynchronous browser warming | Frozen static wide 146→168 with icon/favicon unchanged; 18 correct, 2 ambiguous, and 2 wrong additions after light/dark review | Full untouched operational slice; strict incremental precision 81.82% and two new wrong-brand domains failed the gate | 114 deferred browser invocations; 7,203 requests/209.07 MB; 2.39/5.43 s browser p50/p95; warm replay zero network and byte-identical | **Do not extend — precision-limited** |
 | 2026-08-22 | Precision-gated asynchronous browser warming for missing-wide domains | Precision-ranked original-100 wide 40→47; all seven additions visually confirmed correct; Bhr→RealReports vetoed | Precision-ranked holdout wide 58→62; all four additions visually confirmed correct; icon/favicon unchanged in both cohorts | Off-path cold cost: development about 2,021 requests/41 MB; holdout 1,494 requests/24.9 MB and 2.30/4.39 s browser p50/p95; warm replay zero network and byte-identical | **Kept — asynchronous/off-path** |
 | 2026-08-22 | Full 500-company visual audit and false-positive exclusions | Complete labels: strict selected-role precision 94.35%→98.29%; definite wrong selections 23→0 | All 500 icon/wide selections reviewed; 26 slots changed, with 10 visually confirmed replacements and 16 withheld | Availability icon 359→349, wide 243→237, favicon 350→343; metadata/hash-only, zero runtime network/AI cost | **Kept** |
 | 2026-08-22 | Generic platform, badge, and UI-asset exclusions | Labeled icon/wide precision 89.8%→94.3%; two wrong icons replaced, one wrong icon and two wrong wides withheld | Offline all-500 rerank changed only nine role slots across seven domains; three repeated Wix defaults removed | Icon −1, wide −2, favicon −4 in the stored 500 run; exact signatures only, zero network cost | **Kept** |
@@ -65,6 +66,57 @@ Results on the two frozen 100-company slices:
 The eleven additions are Scoped Solutions, TradeBridge, Grapple, Curiominds AI, Aryval, Utiq, TrialNav, Vention, MindCoord, Wora Delivery, and Rigly. Every stored asset was re-inspected on light and dark panels. Six are good on both backgrounds; Scoped Solutions, Aryval, Vention, MindCoord, and Rigly are conditional because contrast depends on the background. Incremental precision is 100%. Applied to the canonical 500-label baseline, selected availability becomes icon 349, wide 248, favicon 343. Strict icon/wide precision becomes 587/597 = 98.32%, determinate precision remains 100%, and wrong-brand domains remain zero. The benchmark delta from the eleven correct selections and their reviewed usability is +0.97, moving the canonical 71.97 baseline to 72.94 with foreground efficiency unchanged.
 
 The development cache retained the earlier measured cold cost of about 2,021 deferred requests and 41 MB for 36 queued domains. The retained harness's holdout warm queued 27 domains, made 1,457 browser requests plus 37 validation requests, transferred 23.43 MB plus 1.49 MB of validated assets, and measured 2.30/4.39 seconds browser p50/p95. Repeating the holdout warm produced 27 cache hits, zero browser invocations, zero network requests, and byte-identical reranked output. These costs are acceptable only as asynchronous, cacheable enrichment; synchronous/default browser discovery remains rejected.
+
+### Remaining-300 browser-warming extension: rejected
+
+The retained async mechanism was tested without tuning on the untouched `remaining-300` cohort at main revision `1dc320b`. The frozen static control used the current ranker and precision filters with role-aware budgeting and wide-only content bounds enabled. It reached 260/300 companies and selected 226 icons, 146 wide logos, and 223 favicons. Only the 114 successful, reachable records missing a selected wide logo entered the browser queue. The treatment replay selected 226/168/223, so all 22 changes were wide gains and icon/favicon movement was exactly zero.
+
+Both versioned 500-company label sets were used to preserve the prior audit trail: [`review-500-before-precision-2026-08-22.jsonl`](../labels/review-500-before-precision-2026-08-22.jsonl) and [`review-500-final-2026-08-22.jsonl`](../labels/review-500-final-2026-08-22.jsonl). Candidate IDs still covered 347/372 selected control roles. The 25 live-drift selections needed to complete the current 300-company control were reviewed on light and dark panels; the equivalent live all-500 verification required 17 additional reviews in the other two static slices. Every one of the 22 treatment changes was then reviewed on both backgrounds.
+
+| Company/domain | Identity | Light | Dark | Finding |
+|---|---|---|---|---|
+| Amukha | Correct | Good | Unusable | Current first-party wordmark; black text disappears on dark. |
+| Edificex | Correct | Good | Unusable | Current EdificeX wordmark; black text disappears on dark. |
+| OpenSphere | Correct | Unusable | Unusable | First-party inline wordmark, but the serialized SVG renders blank outside the page. |
+| WASPITO | Wrong | Unusable | Unusable | Activa insurance-partner logo from `/images/partners/insurances/`, not WASPITO. |
+| Fratellidesideri | Correct | Unusable | Good | White first-party lockup. |
+| Remitation | Correct | Good | Conditional | Navy text loses contrast on dark. |
+| Synapta | Correct | Good | Good | First-party navigation wordmark. |
+| JustFund | Correct | Good | Conditional | Navy letters lose contrast on dark. |
+| ReflectionAI | Correct | Good | Conditional | Green wordmark has low dark-background contrast. |
+| Artbag Embalagens | Correct | Unusable | Good | White first-party wordmark. |
+| Sondera | Correct | Unusable | Good | White first-party wordmark. |
+| Lydian | Correct | Good | Good | Wordmark includes an opaque dark field. |
+| Optilyx | Correct | Conditional | Good | White wordmark is barely visible on light. |
+| Vetra AI | Ambiguous | Good | Unusable | Fixture says Vetra AI; the current first-party wordmark says PawBeat VET. |
+| Edutechs | Correct | Unusable | Good | White first-party wordmark. |
+| SPIRL | Ambiguous | Good | Unusable | `spirl.com` redirects to Defakto; the current wordmark says Defakto. |
+| Whitebox Editor | Correct | Unusable | Good | Current Gorest wordmark on the fixture domain. |
+| hum.ai | Correct | Unusable | Good | White first-party wordmark. |
+| Quansys | Correct | Unusable | Good | White first-party wordmark. |
+| DNA Chat | Correct | Good | Conditional | Black lettering loses contrast on dark. |
+| agrantis | Correct | Good | Conditional | Black lettering loses contrast on dark. |
+| Medical Network Solutions | Wrong | Unusable | Unusable | Unrelated conveyor/product photograph fetched from `jzdbkj.com`. |
+
+Incremental identity precision was 18/22 = 81.82% when ambiguous results are conservatively counted as non-correct; the additions contained 18 correct, 2 ambiguous, and 2 wrong selections. Seventeen additions were correct and usable on at least one background. The two wrong selections created two new wrong-brand domains, violating both the at-least-95% precision gate and the zero-new-wrong-brand gate. The wrong candidates expose two narrow failure modes: a home-linked partner carousel asset can outrank the company mark, and a home-linked, foreign-hosted body photograph can receive wide eligibility through its measured content box. These are precision-filter opportunities, not evidence for broader browser discovery.
+
+For the remaining-300 slice, complete selected-role labels give:
+
+| Metric | Frozen static control | Browser treatment | Delta |
+|---|---:|---:|---:|
+| Icon / wide / favicon | 226 / 146 / 223 | 226 / 168 / 223 | 0 / +22 / 0 |
+| Correct / ambiguous / wrong icon+wide selections | 364 / 7 / 1 | 382 / 9 / 3 | +18 / +2 / +2 |
+| Strict selected-role precision | 97.85% | 96.95% | -0.90 pp |
+| Wrong-brand domains | 1 | 3 | +2 |
+| Benchmark score | 74.21 | 75.88 | +1.67 |
+
+The one wrong control domain was Monograma selecting an unrelated Xoilac TV wordmark after live-site drift; the treatment added WASPITO and Medical Network Solutions to that set. On a same-session all-500 static verification, current main selected 367/243/366 with 597 correct, 11 ambiguous, and 2 wrong icon/wide labels, for 97.87% strict precision and a 74.01 benchmark score. Replacing only the remaining-300 records with their warmed treatment produced 367/265/366, 615 correct, 13 ambiguous, and 4 wrong selections, 97.31% strict precision, and a 75.03 score. The treatment is therefore +1.02 against the verified current-main score and +3.06 against the documented 71.97 baseline. The latter comparison includes +2.04 of live-site/review drift already present in the verified static control; only +1.02 is attributable to this experiment.
+
+Foreground behavior was unchanged by construction. The remaining-300 control measured 1.36/4.70 seconds p50/p95, 2,501 requests, and 123.16 MB downloaded. The deferred cold phase used concurrency two and 114 browser invocations, plus validation: 7,041 browser requests and 162 validation requests (7,203 total), 198.08 MB of browser-declared transfer and 10.99 MB of validated assets (209.07 MB total), 2.39/5.43 seconds browser p50/p95, and 170.20 seconds wall time. A second warm produced 114 cache hits, zero browser invocations, requests, and bytes. Independent replay outputs had the identical SHA-256 `c9ba9b0f2c7ed3bfb10007d7554e7b1a6c7aa111281bea267c03365adcb46805`.
+
+The existing explicit-name veto rejected three candidates across Crewline and Intelligent Health.tech, but their parsed declarations were generic strings (`Brand` and `Header Light`) rather than foreign organization identities. They did not change a final selection, but they show that the veto's declaration grammar can also suppress recall and should not be broadened casually.
+
+No production code or precision threshold changed. The extension is rejected as precision-limited; the retained first-200 evidence remains valid, but the current warmer must not be expanded to the remaining 300 as a blind batch.
 
 ### Generic non-brand asset exclusions
 
@@ -210,17 +262,17 @@ After collapsing manifest/Apple/HTML/root icon declarations into one source cate
 
 ## Next experiment
 
-Test one small combined change: apply a strong structured identity-conflict veto only to deferred browser promotions. A conflict should require a current JSON-LD organization name or `og:site_name` that disagrees with both the fixture company name and requested-domain tokens. Do not expand browser discovery surfaces.
+Do not broaden browser discovery or batch-enable the remaining-300 queue. Test only narrow vetoes for the two reproduced deferred-browser failures: partner/customer path or context without requested-company agreement, and foreign-hosted document/body raster imagery without positive logo, header/navigation, or company-name evidence. Keep these checks browser-wide-only, and separately tighten the identity declaration parser so generic labels such as `Brand Logo` and `Header Light Logo` are neutral rather than conflicts.
 
 Development success gates:
 
 - at least four visually correct new wide selections per 100;
-- at least 95% reviewed precision;
+- at least 95% strict reviewed precision with ambiguous results counted as non-correct;
 - zero new wrong-brand domains;
 - zero icon or favicon selection changes;
 - bounded browser concurrency of two and deterministic cache replay.
 
-Run the frozen holdout only after every development gate passes.
+Use a new frozen development miss slice before touching the remaining-300 cohort again. Do not tune against the reviewed 22-change result and then claim it as holdout evidence.
 
 ## How to record future experiments
 
