@@ -155,8 +155,9 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
 .footer-brand img { image-rendering: pixelated; }
 .site-footer nav { display: flex; align-items: center; gap: clamp(26px, 4vw, 58px); }
 .site-footer nav a, .site-footer > p { color: #b7b8b6; font: 13px/1.3 var(--mono); text-decoration: none; }
-.site-footer nav a:hover { color: var(--acid); }
+.site-footer nav a:hover, .site-footer > p a:hover { color: var(--acid); }
 .site-footer > p { justify-self: end; margin: 0; }
+.site-footer > p a { color: inherit; text-decoration: underline; text-decoration-color: #596168; text-underline-offset: 3px; }
 .site-footer > p span { color: #ff5a37; font-size: 20px; }
 
 @media (max-width: 900px) {
