@@ -309,7 +309,7 @@ function fromBrowserCandidate(item, homepage, eligibleRoles = ['icon', 'wide']) 
   const proofs = Array.isArray(item.evidence) ? item.evidence : [item.evidence].filter(Boolean);
   const proof = proofs[0] ?? {};
   const semantic = [proof.alt, proof.ariaLabel, proof.title, proof.id, proof.className].filter(Boolean).join(' ');
-  const uiControl = /(?:^|[-_\s])(hamburger|menu-toggle|toggle-menu|close|search|chevron|arrow|whatsapp|tasks?|translate|language-switcher|button-icon)(?:$|[-_\s])/i.test(semantic);
+  const uiControl = /(?:^|[-_\s])(hamburger|menu-toggle|toggle-menu|close|search|chevron|arrow|whatsapp|tasks?|translate|language-switcher|button-icon)(?:$|[-_\s])|(?:^|[-_\s])fa-(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i.test(semantic);
   const positive = /logo|brand|wordmark/i.test(semantic);
   if (uiControl || (!positive && !proof.homeLinked)) return null;
   const url = item.kind === 'inline-svg'
@@ -343,7 +343,9 @@ export async function extractLogos(website, options = {}) {
     catch (error) { reachability.push({ url: attempt, ok: false, error: error.name === 'AbortError' ? 'timeout' : error.message }); }
   }
   if (!homepage) throw new Error(`Could not reach the website. ${reachability.map(item => `${item.url}: ${item.error ?? `HTTP ${item.status}`}`).join(' | ')}`);
-  if (/sedoparking|domain (?:name )?is for sale|buy this domain|hugedomains|afternic/i.test(html)) {
+  const namecheapInterstitial = !/(?:^|\.)namecheap\.com$/i.test(normalized.domain) && /alt=["']Namecheap Logo["']/i.test(html);
+  const vercelInterstitial = !/(?:^|\.)vercel\.com$/i.test(normalized.domain) && /Vercel Security Checkpoint/i.test(html);
+  if (/sedoparking|domain (?:name )?is for sale|buy this domain|hugedomains|afternic|parking-page\.shtml/i.test(html) || namecheapInterstitial || vercelInterstitial) {
     throw new Error('Website appears parked or for sale.');
   }
   const parsed = parseHomepage(html, homepage, { companyName: options.companyName });

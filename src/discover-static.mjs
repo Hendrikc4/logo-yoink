@@ -4,7 +4,7 @@ import { DomUtils, parseDocument } from 'htmlparser2';
 
 const POSITIVE = /(?:^|[-_\s])(logo|brand|wordmark|identity|masthead)(?:$|[-_\s])/i;
 const NEGATIVE = /customer|partner|sponsor|testimonial|payment|app.?store|flag|avatar|badge|award|client/i;
-const UI_CONTROL = /(?:^|[-_\s])(hamburger|menu-toggle|toggle-menu|close|search|chevron|arrow|whatsapp|tasks?|translate|language-switcher|button-icon)(?:$|[-_\s])/i;
+const UI_CONTROL = /(?:^|[-_\s])(hamburger|menu-toggle|toggle-menu|close|search|chevron|arrow|whatsapp|tasks?|translate|language-switcher|button-icon)(?:$|[-_\s])|(?:^|[-_\s])fa-(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i;
 
 export function resolveHttpUrl(value, base) {
   try {

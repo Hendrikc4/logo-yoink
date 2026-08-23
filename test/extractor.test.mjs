@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { internals, normalizeWebsite } from '../src/extractor.mjs';
-import { rankCandidates } from '../src/rank.mjs';
+import { genericAssetReason, rankCandidates } from '../src/rank.mjs';
 
 test('normalizes bare company domains', () => {
   const result = normalizeWebsite('www.Example.com/company');
@@ -130,6 +130,71 @@ test('does not treat the page hostname as company-name agreement for partner log
   const result = rankCandidates([partner], { companyName: 'beebizy' });
   assert.equal(result.selectedByRole.wide, null);
   assert.ok(!result.candidates[0].score_reasons.includes('company agreement +12'));
+});
+
+test('rejects known platform defaults, compliance badges, and UI glyphs without blocking the platform itself', () => {
+  const common = { source: 'dom-img', width: 240, height: 80, highResolution: true, scalable: false, bytes: 100 };
+  const namecheap = { ...common, url: 'https://example.test/logo.svg', evidence: { semantic_text: 'Namecheap Logo', positive_token: true, dom_region: 'header' } };
+  const matomo = { ...common, url: 'https://example.test/plugins/Morpheus/images/logo.svg?matomo', evidence: { semantic_text: 'default-piwik-logo Matomo', positive_token: true, dom_region: 'nav' } };
+  const matomoApp = { ...common, width: 256, height: 256, source: 'manifest', url: 'https://example.test/plugins/CoreHome/images/applogo_256.png', evidence: {} };
+  const badge = { ...common, width: 100, height: 100, url: 'https://example.test/logo-soc-2.svg', evidence: { semantic_text: 'SOC 2 Type I compliant site-footer', positive_token: true, dom_region: 'footer' } };
+  const language = { ...common, width: 100, height: 100, source: 'inline-svg', url: 'data:image/svg+xml;base64,PHN2Zy8+', evidence: { semantic_text: 'svg-inline--fa fa-language navbar', home_linked: true, dom_region: 'nav' } };
+  for (const item of [namecheap, matomo, matomoApp, badge, language]) {
+    const result = rankCandidates([item], { companyName: 'Acme' });
+    assert.deepEqual(result.candidates[0].predicted_roles, []);
+    assert.match(result.candidates[0].score_reasons.join(' '), /generic exclusion/);
+  }
+  assert.equal(genericAssetReason(namecheap, 'Namecheap'), null);
+  assert.equal(genericAssetReason({ ...namecheap, source_page: 'https://www.namecheap.com/' }), null);
+});
+
+test('rejects the shared Wix default favicon but keeps custom Wix-hosted assets', () => {
+  const defaultWix = { source: 'html-icon', url: 'https://static.parastorage.com/client/pfavico.ico', width: 16, height: 16, bytes: 100, evidence: {} };
+  const customWix = { ...defaultWix, url: 'https://static.wixstatic.com/media/site-specific-id.png', width: 180, height: 180, highResolution: true };
+  assert.match(genericAssetReason(defaultWix, 'Acme'), /Wix default favicon/);
+  assert.equal(genericAssetReason(customWix, 'Acme'), null);
+  assert.match(genericAssetReason({ ...customWix, observed: { byte_hash: '33c1436f8c40ca2582d091c449fccc34ed9bf73f02526c5fdef44f4f06c6321b' } }, 'Acme'), /Wix default favicon/);
+  assert.deepEqual(rankCandidates([defaultWix], { companyName: 'Acme' }).candidates[0].predicted_roles, []);
+  assert.deepEqual(rankCandidates([customWix], { companyName: 'Acme' }).candidates[0].predicted_roles, ['icon', 'favicon']);
+});
+
+test('rejects social glyphs, inline controls, template marks, and content imagery', () => {
+  const common = { source: 'dom-img', highResolution: true, scalable: false, bytes: 100, evidence: { dom_region: 'body', home_linked: false } };
+  const cases = [
+    { ...common, url: 'https://example.test/instagram.svg', width: 448, height: 512, scalable: true, evidence: { semantic_text: 'social-icons instagram', dom_region: 'nav' } },
+    { ...common, source: 'inline-svg', url: 'data:image/svg+xml;base64,PHN2Zy8+', width: 64, height: 64, scalable: true, evidence: { semantic_text: 'icon_play lightbox', home_linked: true, dom_region: 'body' } },
+    { ...common, url: 'https://cdn.test/untitled-ui-logo.png', width: 400, height: 100, evidence: { semantic_text: 'uui-logo_component', dom_region: 'footer', home_linked: true } },
+    { ...common, url: 'https://example.test/article.png', width: 700, height: 650, evidence: { ...common.evidence, alt: 'How to grow your business' } },
+    { ...common, url: 'https://example.test/app-demo.jpg', width: 1200, height: 600, evidence: { ...common.evidence, alt: 'Dashboard screenshot' } },
+    { ...common, url: 'https://example.test/product.jpg', width: 400, height: 500, evidence: { semantic_text: 'featured-products Product Image', dom_region: 'header' } },
+    { ...common, url: 'https://example.test/hero-landscaping.webp', width: 1200, height: 500, evidence: { semantic_text: 'hero-section', dom_region: 'body', home_linked: false, positive_token: false } },
+    { ...common, url: 'https://example.test/feature.svg', width: 45, height: 45, scalable: true, evidence: { alt: 'Built for the way you work', dom_region: 'body', home_linked: false, positive_token: false } },
+    { ...common, source: 'inline-svg', url: 'data:image/svg+xml;base64,PHN2Zy8+', width: 14, height: 14, scalable: true, evidence: { semantic_text: 'tabler-icon tabler-icon-copyright', dom_region: 'body', home_linked: true } },
+    { ...common, url: 'https://example.test/ventionWorksWithLogos/Marca.svg', width: 160, height: 40, scalable: true, evidence: { alt: 'Enterprises logo 9', dom_region: 'body' } },
+    { ...common, source: 'schema', url: 'https://example.test/images/og-default.png', width: 1200, height: 630, evidence: { dom_region: 'head' } },
+    { ...common, url: 'https://example.test/logo-789bet.png', width: 500, height: 200, evidence: { alt: '789BET', dom_region: 'header', home_linked: true, positive_token: true } },
+  ];
+  for (const item of cases) assert.deepEqual(rankCandidates([item], { companyName: 'Acme' }).candidates[0].predicted_roles, []);
+
+  const actualBodyLogo = { ...common, url: 'https://example.test/acme-logo.png', width: 512, height: 512, evidence: common.evidence };
+  assert.equal(genericAssetReason(actualBodyLogo, 'Acme'), null);
+});
+
+test('rejects observed application defaults and repurposed-site assets by exact signature', () => {
+  const candidate = hash => ({ source: 'manifest', url: 'https://example.test/logo512.png', width: 512, height: 512, observed: { byte_hash: hash }, evidence: {} });
+  assert.match(genericAssetReason(candidate('9ea4f4da7050c0cc408926f6a39c253624e9babb1d43c7977cd821445a60b461'), 'Edificex'), /Create React App/);
+  assert.match(genericAssetReason(candidate('3646840f40e10d4b14e9d62f41087a09ffe0384628d093f47337580305b18353'), 'Bhr'), /RealReports/);
+  assert.equal(genericAssetReason(candidate('3646840f40e10d4b14e9d62f41087a09ffe0384628d093f47337580305b18353'), 'RealReports'), null);
+  assert.match(genericAssetReason(candidate('edf01f937bdf9c38ebcd30d84cb5acde5e2101e9c64c1c9b3a4a1351ea7886a0'), 'Bhr'), /RealReports/);
+  assert.equal(genericAssetReason(candidate('edf01f937bdf9c38ebcd30d84cb5acde5e2101e9c64c1c9b3a4a1351ea7886a0'), 'RealReports'), null);
+  const godaddy = { ...candidate('custom'), url: 'https://img1.wsimg.com/isteam/ip/static/pwa-app/logo-default.png/:/rs=w:512,h:512,m' };
+  assert.match(genericAssetReason(godaddy, 'Trustiu'), /GoDaddy default/);
+});
+
+test('rejects a non-home-linked foreign named logo but keeps the company logo', () => {
+  const common = { source: 'dom-img', url: 'https://example.test/partner-logo.svg', width: 400, height: 100, scalable: true, evidence: { alt: 'MGH Logo', positive_token: true, dom_region: 'header', home_linked: false } };
+  assert.match(genericAssetReason(common, 'Watershed Informatics'), /foreign named logo|customer or partner logo/);
+  assert.equal(genericAssetReason({ ...common, url: 'https://example.test/watershed-logo.svg', evidence: { ...common.evidence, alt: 'Watershed Logo' } }, 'Watershed Informatics'), null);
 });
 
 test('ignores credentialed and literal private-network asset URLs', () => {

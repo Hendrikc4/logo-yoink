@@ -98,3 +98,50 @@ test('contact sheet emits entity-keyed, data-URL-free raster previews', async ()
   assert.doesNotMatch(page, /data:image/);
   assert.match(page, /(?:assets\/abc|thumbnails\/candidate-1)\.png/);
 });
+
+test('review-label builder rejects invalid or unmatched overrides', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'logo-yoink-labels-'));
+  const record = result('entity-1', [candidate('candidate-1', 'icon')], { icon: 'candidate-1' });
+  record.website = 'example.test';
+  await writeFile(join(directory, 'results.jsonl'), `${JSON.stringify(record)}\n`);
+  const reviewPath = join(directory, 'review.json');
+  await writeFile(reviewPath, JSON.stringify({ overrides: [{ website: 'missing.test', role: 'icon', identity: 'wrong', usability: 'unusable' }] }));
+  const unmatched = spawnSync(process.execPath, [join(ROOT, 'scripts', 'build-review-labels.mjs'), directory, reviewPath], { encoding: 'utf8' });
+  assert.notEqual(unmatched.status, 0);
+  assert.match(unmatched.stderr, /do not match a selected role/);
+
+  await writeFile(reviewPath, JSON.stringify({ overrides: [{ website: 'example.test', role: 'icon', identity: 'maybe', usability: 'good' }] }));
+  const invalid = spawnSync(process.execPath, [join(ROOT, 'scripts', 'build-review-labels.mjs'), directory, reviewPath], { encoding: 'utf8' });
+  assert.notEqual(invalid.status, 0);
+  assert.match(invalid.stderr, /invalid identity/);
+});
+
+test('review-label transfer preserves unchanged judgments and requires changed selections to be reviewed', async () => {
+  const source = await mkdtemp(join(tmpdir(), 'logo-yoink-label-source-'));
+  const target = await mkdtemp(join(tmpdir(), 'logo-yoink-label-target-'));
+  const unchanged = result('unchanged', [candidate('same', 'icon')], { icon: 'same' });
+  const changedBefore = result('changed', [candidate('old', 'icon')], { icon: 'old' });
+  const changedAfter = result('changed', [candidate('new', 'icon')], { icon: 'new' });
+  await writeFile(join(source, 'results.jsonl'), `${JSON.stringify(unchanged)}\n${JSON.stringify(changedBefore)}\n`);
+  await writeFile(join(target, 'results.jsonl'), `${JSON.stringify(unchanged)}\n${JSON.stringify(changedAfter)}\n`);
+  await writeFile(join(source, 'review-labels.jsonl'), [
+    JSON.stringify({ entity_id: 'unchanged', candidate_id: 'same', role: 'icon', identity: 'ambiguous', usability: 'conditional' }),
+    JSON.stringify({ entity_id: 'changed', candidate_id: 'old', role: 'icon', identity: 'wrong', usability: 'unusable' }),
+  ].join('\n') + '\n');
+  const reviewPath = join(target, 'changed-review.json');
+  await writeFile(reviewPath, JSON.stringify({ overrides: [] }));
+  const missing = spawnSync(process.execPath, [join(ROOT, 'scripts', 'transfer-review-labels.mjs'), source, target, reviewPath], { encoding: 'utf8' });
+  assert.notEqual(missing.status, 0);
+  assert.match(missing.stderr, /requires review/);
+
+  await writeFile(reviewPath, JSON.stringify({ overrides: [
+    { website: 'changed.example', role: 'icon', identity: 'correct', usability: 'good' },
+  ] }));
+  const transferred = spawnSync(process.execPath, [join(ROOT, 'scripts', 'transfer-review-labels.mjs'), source, target, reviewPath], { encoding: 'utf8' });
+  assert.equal(transferred.status, 0, transferred.stderr);
+  const labels = (await readFile(join(target, 'review-labels.jsonl'), 'utf8')).trim().split('\n').map(JSON.parse);
+  assert.deepEqual(labels.map(({ identity, usability }) => ({ identity, usability })), [
+    { identity: 'ambiguous', usability: 'conditional' },
+    { identity: 'correct', usability: 'good' },
+  ]);
+});

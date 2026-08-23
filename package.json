@@ -11,6 +11,9 @@
     "benchmark": "node scripts/benchmark.mjs",
     "contact-sheet": "node scripts/contact-sheet.mjs",
     "review-montage": "node scripts/review-montage.mjs",
+    "rerank-run": "node scripts/rerank-run.mjs",
+    "merge-review-runs": "node scripts/merge-review-runs.mjs",
+    "transfer-review-labels": "node scripts/transfer-review-labels.mjs",
     "review-labels": "node scripts/build-review-labels.mjs",
     "test": "node --test && node scripts/validate-fixtures.mjs",
     "fixtures:validate": "node scripts/validate-fixtures.mjs"
