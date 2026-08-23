@@ -51,14 +51,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .github-cta:hover { background: rgba(232,255,97,.08); transform: translateY(-2px); }
 .github-cta:active { transform: translateY(1px); }
 
-.trail-divider { position: relative; height: 102px; margin: 18px -14px 0; overflow: hidden; }
-.trail-divider::before { content: ''; position: absolute; left: 0; right: 0; bottom: 19px; height: 2px; background: repeating-linear-gradient(90deg, transparent 0 5px, #a13812 5px 17px, #a13812 17px 19px); opacity: .9; }
-.trail-divider::after { content: ''; position: absolute; left: 2%; right: 2%; bottom: 15px; height: 14px; opacity: .75; background: linear-gradient(135deg, transparent 42%, #a13812 43% 51%, transparent 52%) 0 0 / 73px 12px repeat-x; clip-path: polygon(0 50%, 5% 50%, 6% 0, 8% 50%, 45% 50%, 47% 25%, 49% 50%, 75% 50%, 77% 5%, 80% 50%, 100% 50%, 100% 100%, 0 100%); }
-.trail-divider img { position: absolute; z-index: 1; object-fit: contain; image-rendering: pixelated; filter: brightness(0) saturate(100%) invert(25%) sepia(92%) saturate(2296%) hue-rotate(355deg) brightness(78%) contrast(104%); }
-.trail-rider { left: 47%; bottom: 17px; width: 78px; height: 58px; }
-.trail-cactus { bottom: 17px; width: 21px; height: 37px; }
-.trail-cactus--left { left: 18%; }
-.trail-cactus--right { right: 10%; }
+.trail-divider { position: relative; height: 112px; margin: 26px -20px 4px; overflow: hidden; background: url('/assets/ui/train-divider.webp') center / cover no-repeat; image-rendering: pixelated; }
+.trail-divider::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--background), transparent 9%, transparent 91%, var(--background)); }
 
 .try-section { padding: 33px 0 12px; }
 #extract-form { margin: 20px 0 0; }
@@ -191,8 +185,7 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
   .feature-icon img { width: 46px; height: 46px; }
   .feature-row p { font-size: 13px; }
   .github-cta { min-height: 64px; padding: 0 18px; font-size: 14px; }
-  .trail-divider { margin-top: 10px; }
-  .trail-rider { left: 42%; }
+  .trail-divider { height: 84px; margin: 22px -14px 2px; background-position: 52% center; }
   .input-row { grid-template-columns: 28px minmax(0,1fr); padding: 9px; }
   .input-row button { grid-column: 1 / -1; width: 100%; min-height: 58px; }
   input { font-size: 15px; }
