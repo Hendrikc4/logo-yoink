@@ -1,0 +1,3767 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-23T05:16:05.081Z",
+  "source_run": "runs/identity-quarantine-current-main-all-500",
+  "source_run_git_revision": "1dc320bea8ab4c4ff5dd7d73e5c7e5200e8987a8",
+  "source_run_summary": {
+    "schema_version": 1,
+    "generated_at": "2026-08-23T05:06:01.626Z",
+    "run_id": "identity-quarantine-current-main-all-500",
+    "cohort": "all-500",
+    "wall_time_ms": 99868,
+    "repeat_comparison": null,
+    "domains": {
+      "total": 500,
+      "reachable": 424,
+      "successful_extractions": 424
+    },
+    "reachability_taxonomy": {
+      "parked_for_sale": 4,
+      "live_html": 387,
+      "redirected_off_domain": 37,
+      "dns_tls_failure": 36,
+      "unknown_failure": 27,
+      "blocked_interstitial": 9
+    },
+    "roles": {
+      "icon": {
+        "domains": 367,
+        "candidates": 1068,
+        "all_domain_rate_pct": 73.4,
+        "reachable_domain_rate_pct": 86.56
+      },
+      "wide": {
+        "domains": 243,
+        "candidates": 513,
+        "all_domain_rate_pct": 48.6,
+        "reachable_domain_rate_pct": 57.31
+      },
+      "favicon": {
+        "domains": 366,
+        "candidates": 925,
+        "all_domain_rate_pct": 73.2,
+        "reachable_domain_rate_pct": 86.32
+      }
+    },
+    "any_candidate": {
+      "domains": 394,
+      "all_domain_rate_pct": 78.8
+    },
+    "automatedProxyScore": {
+      "value": 63.4,
+      "max": 100,
+      "formula": "40% icon domain coverage + 40% wide domain coverage + 20% favicon domain coverage, all-domain denominator",
+      "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+    },
+    "historical_comparison_proxy": {
+      "valid_selected": {
+        "numerator": 383,
+        "denominator": 500,
+        "rate_pct": 76.6
+      },
+      "square_and_high_resolution_selected": {
+        "numerator": 288,
+        "denominator": 500,
+        "rate_pct": 57.6,
+        "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+      }
+    },
+    "performance": {
+      "duration_ms": {
+        "available": 500,
+        "total": 714252,
+        "mean": 1428.5,
+        "p50": 690,
+        "p95": 4086
+      },
+      "requests": {
+        "available": 424,
+        "total": 4024,
+        "mean": 9.5,
+        "p50": 8,
+        "p95": 18
+      },
+      "downloaded_bytes": {
+        "available": 424,
+        "total": 204987643,
+        "mean": 483461.4,
+        "p50": 243251,
+        "p95": 1887540
+      },
+      "browser_invocations": 0
+    },
+    "benchmarkScore": null
+  },
+  "construction": "Union of all non-correct before labels, all ambiguous final labels, and every fresh off-domain redirect.",
+  "entries": [
+    {
+      "entity_id": "03fa0811-70dd-5f4a-8e71-ab93f43e5b82",
+      "name": "Storyline",
+      "website": "storyline-inc.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "03fa0811-70dd-5f4a-8e71-ab93f43e5b82",
+          "candidate_id": "283ff039ba65a76f",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://storyline.co.jp/",
+        "selected_by_role": {
+          "icon": "283ff039ba65a76f",
+          "wide": null,
+          "favicon": "283ff039ba65a76f"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://storyline.co.jp/",
+        "signals": [
+          {
+            "type": "og_site_name",
+            "value": "STORYLINE"
+          },
+          {
+            "type": "og_url",
+            "value": "https://storyline.co.jp/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 20946,
+          "latency_ms": 381
+        }
+      }
+    },
+    {
+      "entity_id": "0824c2da-138b-58a8-bb09-ed617ec87121",
+      "name": "Lokal",
+      "website": "getlokalapp.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "0824c2da-138b-58a8-bb09-ed617ec87121",
+          "candidate_id": "5daa4ef39461cb25",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        },
+        {
+          "entity_id": "0824c2da-138b-58a8-bb09-ed617ec87121",
+          "candidate_id": "2137ecb083e1bd65",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Correct black Lokal wordmark is transparent and disappears on a dark background."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.lokalapps.com/",
+        "selected_by_role": {
+          "icon": "5daa4ef39461cb25",
+          "wide": "2137ecb083e1bd65",
+          "favicon": "5607d27d4353f0df"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.lokalapps.com/",
+        "signals": [
+          {
+            "type": "jsonld_name",
+            "value": "Lokal",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.lokalapps.com/",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Lokal App",
+            "path": "$.brand[0]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.getlokalapp.com/",
+            "path": "$.brand[0]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Agrilokal",
+            "path": "$.brand[1]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.agrilokal.com/",
+            "path": "$.brand[1]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Lokal Matrimony",
+            "path": "$.brand[2]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Gyan TV",
+            "path": "$.brand[3]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://gyantv.in/",
+            "path": "$.brand[3]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Eaze",
+            "path": "$.brand[4]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.eazeapp.com/",
+            "path": "$.brand[4]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "AstroLokal",
+            "path": "$.brand[5]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.astrolokal.com/",
+            "path": "$.brand[5]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Dostt",
+            "path": "$.brand[6]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.dostt.in/",
+            "path": "$.brand[6]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Sahi Jobs",
+            "path": "$.brand[7]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://sahijobs.com/",
+            "path": "$.brand[7]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Lokal Jobs",
+            "path": "$.brand[8]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://getlokalapp.com/hire",
+            "path": "$.brand[8]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Sahi English",
+            "path": "$.brand[9]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://sahienglish.ai/",
+            "path": "$.brand[9]"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 92557,
+          "latency_ms": 1761
+        }
+      }
+    },
+    {
+      "entity_id": "08e1725c-7c8e-5ffc-903e-e6100cfd212c",
+      "name": "Willow",
+      "website": "hiwillow.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "08e1725c-7c8e-5ffc-903e-e6100cfd212c",
+          "candidate_id": "7a3a9a66d5566ace",
+          "role": "wide",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://becausemarket.com/?utm_source=hiwillow",
+        "selected_by_role": {
+          "icon": null,
+          "wide": "7a3a9a66d5566ace",
+          "favicon": "c9fb0d98f0b68bbe"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://becausemarket.com/?utm_source=hiwillow",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://becausemarket.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Because"
+          },
+          {
+            "type": "og_url",
+            "value": "https://becausemarket.com/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Because",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://becausemarket.com/",
+            "path": "$"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 315460,
+          "latency_ms": 314
+        }
+      }
+    },
+    {
+      "entity_id": "08e6ed88-20d5-532c-97d8-737c0f1e4cf9",
+      "name": "Trustiu",
+      "website": "trustiu.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "08e6ed88-20d5-532c-97d8-737c0f1e4cf9",
+          "candidate_id": "858ea766942a48c2",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected manifest image is GoDaddy's generic pwa-app/logo-default.png home glyph, not Trustiu branding."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://trustiu.com/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": null,
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://trustiu.com/",
+        "signals": [
+          {
+            "type": "og_url",
+            "value": "https://trustiu.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "trustiu.com"
+          }
+        ],
+        "metrics": {
+          "requests": 1,
+          "bytes": 104981,
+          "latency_ms": 141
+        }
+      }
+    },
+    {
+      "entity_id": "0a2f83d8-187a-57c1-95d4-48f2fb4b17f2",
+      "name": "Cryptoys",
+      "website": "cryptoys.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "0a2f83d8-187a-57c1-95d4-48f2fb4b17f2",
+          "candidate_id": "bf59d7e0c4fa5965",
+          "role": "icon",
+          "identity": "correct",
+          "usability": {
+            "light": "unusable",
+            "dark": "good"
+          },
+          "note": "Legitimate current Digitoys rebrand mark on the resolved site, but the white asset disappears on light."
+        },
+        {
+          "entity_id": "0a2f83d8-187a-57c1-95d4-48f2fb4b17f2",
+          "candidate_id": "4e2c4e84c8470c57",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "unusable",
+            "dark": "good"
+          },
+          "note": "Legitimate current Digitoys rebrand wordmark on the resolved site, but the white asset disappears on light."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://digitoys.io/",
+        "selected_by_role": {
+          "icon": "bf59d7e0c4fa5965",
+          "wide": "4e2c4e84c8470c57",
+          "favicon": "a383d08c80df8053"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://digitoys.io/",
+        "signals": [
+          {
+            "type": "og_site_name",
+            "value": "Digitoys"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://digitoys.io/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 356620,
+          "latency_ms": 1024
+        }
+      }
+    },
+    {
+      "entity_id": "0dae4932-edb9-4195-b92d-50cd79b5ebce",
+      "name": "Bhr",
+      "website": "bhr.fyi",
+      "expected": "quarantine",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": true
+      },
+      "historical_labels": [
+        {
+          "entity_id": "0dae4932-edb9-4195-b92d-50cd79b5ebce",
+          "candidate_id": "ac9a49b472d3c24c",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "The site now identifies as RealReports; the selected manifest icon belongs to that unrelated current identity, not Bhr."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://bhr.fyi/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": null,
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://bhr.fyi/",
+        "signals": [
+          {
+            "type": "og_site_name",
+            "value": "www.realreports.ai"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.realreports.ai/"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://www.realreports.ai/"
+          }
+        ],
+        "metrics": {
+          "requests": 1,
+          "bytes": 19093,
+          "latency_ms": 372
+        }
+      }
+    },
+    {
+      "entity_id": "116e5175-6298-52eb-9765-a62e4a510150",
+      "name": "Rechat",
+      "website": "rechat.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "116e5175-6298-52eb-9765-a62e4a510150",
+          "candidate_id": "2a77652cf4058355",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        },
+        {
+          "entity_id": "116e5175-6298-52eb-9765-a62e4a510150",
+          "candidate_id": "e5348bd024332f6b",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Correct black Rechat wordmark disappears on a dark background."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://rechat.ai/",
+        "selected_by_role": {
+          "icon": "2a77652cf4058355",
+          "wide": "e5348bd024332f6b",
+          "favicon": "2a77652cf4058355"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://rechat.ai/",
+        "signals": [
+          {
+            "type": "og_url",
+            "value": "https://rechat.ai/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Rechat"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://rechat.ai/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Rechat",
+            "path": "$.@graph[0]"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 292557,
+          "latency_ms": 544
+        }
+      }
+    },
+    {
+      "entity_id": "15d7129b-f412-5429-9dd7-0ea6d827a477",
+      "name": "RapidVerify",
+      "website": "rapidverify.io",
+      "expected": "quarantine",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon",
+          "wide"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "15d7129b-f412-5429-9dd7-0ea6d827a477",
+          "candidate_id": "57d1c90710431ceb",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "The former RapidVerify domain redirects to an unrelated betting site; this is its 789BET favicon."
+        },
+        {
+          "entity_id": "15d7129b-f412-5429-9dd7-0ea6d827a477",
+          "candidate_id": "af442efd5d001bfe",
+          "role": "wide",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "The former RapidVerify domain redirects to an unrelated betting site; this is the 789BET wordmark."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://dewancash.best/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": null,
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://dewancash.best/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://dewancash.best/vi-vn/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://dewancash.best/vi-vn/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "789bets.biz"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://dewancash.best/vi-vn/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "789bet.biz",
+            "path": "$.@graph[0]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://dewancash.best/",
+            "path": "$.@graph[0]"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 91983,
+          "latency_ms": 1999
+        }
+      }
+    },
+    {
+      "entity_id": "15e90d2b-b973-5355-9e78-05cb5aa6aec0",
+      "name": "Userpilot",
+      "website": "userpilot.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "15e90d2b-b973-5355-9e78-05cb5aa6aec0",
+          "candidate_id": "b49b4c1741f5b4c0",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected 18px userpilot-enterprise-icon.svg is a product/menu feature glyph, not Userpilot's brand icon."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "15e90d2b-b973-5355-9e78-05cb5aa6aec0",
+          "candidate_id": "502c41bae6dcf202",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "Correct navy Userpilot wordmark has very low dark-background contrast."
+        }
+      ],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://userpilot.com/",
+        "selected_by_role": {
+          "icon": "cb34d69a1c00e716",
+          "wide": "502c41bae6dcf202",
+          "favicon": "cb34d69a1c00e716"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://userpilot.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://userpilot.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://userpilot.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Userpilot"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Userpilot",
+            "path": "$.@graph[0]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://userpilot.com/",
+            "path": "$.@graph[0]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Userpilot",
+            "path": "$.@graph[0].brand"
+          }
+        ],
+        "metrics": {
+          "requests": 1,
+          "bytes": 245975,
+          "latency_ms": 139
+        }
+      }
+    },
+    {
+      "entity_id": "32ad3db8-a573-48b3-9452-d60ad5ea5939",
+      "name": "Vetra AI",
+      "website": "pawbeatvet.com",
+      "expected": "unresolved",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": true,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "32ad3db8-a573-48b3-9452-d60ad5ea5939",
+          "candidate_id": "19b628b28f72a793",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "conditional",
+          "note": "Fixture says Vetra AI, but the current first-party icon visibly says PawBeat VET; likely rename/rebrand, not safely verifiable as the requested identity."
+        }
+      ],
+      "final_labels": [
+        {
+          "entity_id": "32ad3db8-a573-48b3-9452-d60ad5ea5939",
+          "candidate_id": "19b628b28f72a793",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "conditional",
+          "note": "Fixture says Vetra AI, but the current first-party icon visibly says PawBeat VET; likely rename/rebrand, not safely verifiable as the requested identity."
+        }
+      ],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://www.pawbeatvet.com/",
+        "selected_by_role": {
+          "icon": "19b628b28f72a793",
+          "wide": null,
+          "favicon": "19b628b28f72a793"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.pawbeatvet.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.pawbeatvet.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.pawbeatvet.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Pawbeatvet"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 1436693,
+          "latency_ms": 316
+        }
+      }
+    },
+    {
+      "entity_id": "32afcd61-3dfd-55d1-b618-eb0206117d15",
+      "name": "Skygauge",
+      "website": "skygauge.co",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "32afcd61-3dfd-55d1-b618-eb0206117d15",
+          "candidate_id": "41acc7ef663d2512",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        },
+        {
+          "entity_id": "32afcd61-3dfd-55d1-b618-eb0206117d15",
+          "candidate_id": "c1094c42071dbbb0",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "Correct navy Skygauge lettering has weak contrast on a dark background."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.skygauge.com/",
+        "selected_by_role": {
+          "icon": "41acc7ef663d2512",
+          "wide": "c1094c42071dbbb0",
+          "favicon": "41acc7ef663d2512"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.skygauge.com/",
+        "signals": [],
+        "metrics": {
+          "requests": 2,
+          "bytes": 56018,
+          "latency_ms": 395
+        }
+      }
+    },
+    {
+      "entity_id": "3404e8e1-2b75-549f-aaee-d9535e0c8ce2",
+      "name": "Coordle",
+      "website": "coordleapp.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "3404e8e1-2b75-549f-aaee-d9535e0c8ce2",
+          "candidate_id": "b18edc09ff8b581a",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://coordleai.com/",
+        "selected_by_role": {
+          "icon": "b18edc09ff8b581a",
+          "wide": null,
+          "favicon": "b18edc09ff8b581a"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://coordleai.com/",
+        "signals": [
+          {
+            "type": "og_url",
+            "value": "https://coordleai.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Coordle"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 3336,
+          "latency_ms": 1345
+        }
+      }
+    },
+    {
+      "entity_id": "3c89dfbf-8c28-5bfc-8882-3b90c75ab7ee",
+      "name": "Genopets",
+      "website": "genopets.me",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "3c89dfbf-8c28-5bfc-8882-3b90c75ab7ee",
+          "candidate_id": "7660b3bc8a8741b6",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected Chakra inline SVG is a linked workflow/arrow UI icon; the stored manifest contains a distinct Genopets G/DNA brand mark."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "3c89dfbf-8c28-5bfc-8882-3b90c75ab7ee",
+          "candidate_id": "eda880cf55fb9f70",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed Genopets green DNA-style mark on light and dark review backgrounds."
+        }
+      ],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://www.genopets.me/",
+        "selected_by_role": {
+          "icon": "eda880cf55fb9f70",
+          "wide": null,
+          "favicon": "eda880cf55fb9f70"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.genopets.me/",
+        "signals": [],
+        "metrics": {
+          "requests": 2,
+          "bytes": 249903,
+          "latency_ms": 203
+        }
+      }
+    },
+    {
+      "entity_id": "3e1603d9-261d-5777-a844-defac3d2a745",
+      "name": "Inveztor",
+      "website": "inveztor.io",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "3e1603d9-261d-5777-a844-defac3d2a745",
+          "candidate_id": "c893fd68d8cd22e9",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        },
+        {
+          "entity_id": "3e1603d9-261d-5777-a844-defac3d2a745",
+          "candidate_id": "d68f39935804e7f2",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "Correct Inveztor lockup; the blue symbol survives on dark, but the black name has poor contrast."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://inveztor.com/",
+        "selected_by_role": {
+          "icon": "c893fd68d8cd22e9",
+          "wide": "d68f39935804e7f2",
+          "favicon": "c893fd68d8cd22e9"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://inveztor.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://inveztor.io/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 139571,
+          "latency_ms": 386
+        }
+      }
+    },
+    {
+      "entity_id": "45bc22d9-5246-4d48-b779-579b5eda50e8",
+      "name": "Edificex",
+      "website": "edificex.ai",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "45bc22d9-5246-4d48-b779-579b5eda50e8",
+          "candidate_id": "7f4b256a47dd960f",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected logo512.png is the stock Create React App atom logo, not Edificex branding."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "45bc22d9-5246-4d48-b779-579b5eda50e8",
+          "candidate_id": "d7121cf7d5a89ac3",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed EdificeX magenta house mark on light and dark review backgrounds."
+        }
+      ],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://edificex.ai/",
+        "selected_by_role": {
+          "icon": "d7121cf7d5a89ac3",
+          "wide": null,
+          "favicon": "d7121cf7d5a89ac3"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://edificex.ai/",
+        "signals": [
+          {
+            "type": "og_url",
+            "value": "https://edificex.ai/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "EdificeX"
+          }
+        ],
+        "metrics": {
+          "requests": 1,
+          "bytes": 1905,
+          "latency_ms": 292
+        }
+      }
+    },
+    {
+      "entity_id": "46c4290f-46a0-5fd3-a708-ebd6975b2407",
+      "name": "Btrust",
+      "website": "btrust.finance",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "46c4290f-46a0-5fd3-a708-ebd6975b2407",
+          "candidate_id": "b981887ad1d38447",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        },
+        {
+          "entity_id": "46c4290f-46a0-5fd3-a708-ebd6975b2407",
+          "candidate_id": "5a2d1cb4e45a7478",
+          "role": "wide",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://btrust.io/",
+        "selected_by_role": {
+          "icon": "b981887ad1d38447",
+          "wide": "5a2d1cb4e45a7478",
+          "favicon": "b981887ad1d38447"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://btrust.io/",
+        "signals": [],
+        "metrics": {
+          "requests": 2,
+          "bytes": 41019,
+          "latency_ms": 232
+        }
+      }
+    },
+    {
+      "entity_id": "46fd566f-49b5-5986-a7e6-539e6723d1ad",
+      "name": "Fleetcraft",
+      "website": "getfleetcraft.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "46fd566f-49b5-5986-a7e6-539e6723d1ad",
+          "candidate_id": "ff742a2a1c81d6e9",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        },
+        {
+          "entity_id": "46fd566f-49b5-5986-a7e6-539e6723d1ad",
+          "candidate_id": "04215a44df9c8d0a",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Correct Fleetcraft wordmark; the navy lettering disappears on dark."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://fleetcraft.com/",
+        "selected_by_role": {
+          "icon": "ff742a2a1c81d6e9",
+          "wide": "04215a44df9c8d0a",
+          "favicon": "8f046de3ce4f7955"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://fleetcraft.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://fleetcraft.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Fleetcraft"
+          },
+          {
+            "type": "og_url",
+            "value": "https://fleetcraft.com/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Fleetcraft",
+            "path": "$.@graph[2]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://fleetcraft.com/",
+            "path": "$.@graph[2]"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 42685,
+          "latency_ms": 771
+        }
+      }
+    },
+    {
+      "entity_id": "4ec7bd71-4c91-5fe2-988a-00cda1e2456b",
+      "name": "Vention",
+      "website": "vention.io",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon",
+          "wide"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "4ec7bd71-4c91-5fe2-988a-00cda1e2456b",
+          "candidate_id": "47183caa2e2c220a",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected inline SVG is a Tabler copyright control from the page footer, not the Vention mark."
+        },
+        {
+          "entity_id": "4ec7bd71-4c91-5fe2-988a-00cda1e2456b",
+          "candidate_id": "ea593b96f22538cf",
+          "role": "wide",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected body image is a Marcal enterprise/customer logo, not Vention; alt text is 'Enterprises logo 9'."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "4ec7bd71-4c91-5fe2-988a-00cda1e2456b",
+          "candidate_id": "a2b2f972a9e3660e",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed Vention V mark on light and dark review backgrounds."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://vention.com/",
+        "selected_by_role": {
+          "icon": "a2b2f972a9e3660e",
+          "wide": null,
+          "favicon": "a2b2f972a9e3660e"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://vention.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://vention.com/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 685088,
+          "latency_ms": 863
+        }
+      }
+    },
+    {
+      "entity_id": "504e40b0-2775-5e15-a341-b4e917a35a5b",
+      "name": "Haze Automotive",
+      "website": "hazeautomotive.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "504e40b0-2775-5e15-a341-b4e917a35a5b",
+          "candidate_id": "f582a3295c127b45",
+          "role": "wide",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.hazecarbon.ai/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": "f582a3295c127b45",
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.hazecarbon.ai/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.hazecarbon.ai/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Haze Automotive"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.hazecarbon.ai/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 192295,
+          "latency_ms": 444
+        }
+      }
+    },
+    {
+      "entity_id": "615fb039-f640-554d-9f73-0027b187fd1c",
+      "name": "Ellie Mental Health",
+      "website": "elliementalhealth.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "615fb039-f640-554d-9f73-0027b187fd1c",
+          "candidate_id": "3a4066b06ceb285e",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected inline SVG is the play-video button from a body video module, not the Ellie elephant mark."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "615fb039-f640-554d-9f73-0027b187fd1c",
+          "candidate_id": "541382a0bef2a119",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed Ellie elephant mark on light and dark review backgrounds."
+        },
+        {
+          "entity_id": "615fb039-f640-554d-9f73-0027b187fd1c",
+          "candidate_id": "e7a3845cb2d76cf9",
+          "role": "wide",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://elliementalhealth.com/",
+        "selected_by_role": {
+          "icon": "541382a0bef2a119",
+          "wide": "e7a3845cb2d76cf9",
+          "favicon": "541382a0bef2a119"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://elliementalhealth.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://elliementalhealth.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://elliementalhealth.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Ellie Mental Health"
+          }
+        ],
+        "metrics": {
+          "requests": 1,
+          "bytes": 75361,
+          "latency_ms": 92
+        }
+      }
+    },
+    {
+      "entity_id": "68de1336-2ae6-5d23-807c-4f6f29fef923",
+      "name": "WaitWell",
+      "website": "waitwell.ca",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "68de1336-2ae6-5d23-807c-4f6f29fef923",
+          "candidate_id": "06582fdd142720a6",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "Correct WaitWell logo remains identifiable but its navy portions lose contrast on dark backgrounds."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://waitwellsoftware.com/",
+        "selected_by_role": {
+          "icon": "3d36eba7a5d53a23",
+          "wide": "06582fdd142720a6",
+          "favicon": "3d36eba7a5d53a23"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://waitwellsoftware.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://waitwellsoftware.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://waitwellsoftware.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "WaitWell"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "WaitWell",
+            "path": "$.@graph[0]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://waitwellsoftware.com/",
+            "path": "$.@graph[0]"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 215516,
+          "latency_ms": 558
+        }
+      }
+    },
+    {
+      "entity_id": "6d378ea2-dc13-5307-958a-242c1497e27b",
+      "name": "Mocksi",
+      "website": "mocksi.ai",
+      "expected": "unresolved",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": true,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "6d378ea2-dc13-5307-958a-242c1497e27b",
+          "candidate_id": "0a841b991309d930",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "Mocksi redirects to briefhq.ai and serves a Brief favicon; this may be a rename/acquisition, but the requested identity is not confirmed."
+        },
+        {
+          "entity_id": "6d378ea2-dc13-5307-958a-242c1497e27b",
+          "candidate_id": "687b1c4c70ee97c2",
+          "role": "wide",
+          "identity": "ambiguous",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Mocksi redirects to BriefHQ and serves this Brief wordmark; likely transition, but the requested identity is not confirmed and the dark lettering disappears on dark."
+        }
+      ],
+      "final_labels": [
+        {
+          "entity_id": "6d378ea2-dc13-5307-958a-242c1497e27b",
+          "candidate_id": "0a841b991309d930",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "Mocksi redirects to briefhq.ai and serves a Brief favicon; this may be a rename/acquisition, but the requested identity is not confirmed."
+        },
+        {
+          "entity_id": "6d378ea2-dc13-5307-958a-242c1497e27b",
+          "candidate_id": "687b1c4c70ee97c2",
+          "role": "wide",
+          "identity": "ambiguous",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Mocksi redirects to BriefHQ and serves this Brief wordmark; likely transition, but the requested identity is not confirmed and the dark lettering disappears on dark."
+        }
+      ],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://briefhq.ai/",
+        "selected_by_role": {
+          "icon": "0a841b991309d930",
+          "wide": "687b1c4c70ee97c2",
+          "favicon": "0a841b991309d930"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://briefhq.ai/",
+        "signals": [
+          {
+            "type": "og_site_name",
+            "value": "Brief"
+          },
+          {
+            "type": "og_url",
+            "value": "https://briefhq.ai/"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://briefhq.ai/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Brief",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://briefhq.ai/",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Brief",
+            "path": "$.publisher"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://briefhq.ai/",
+            "path": "$.publisher"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Brief",
+            "path": "$.publisher"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Brief",
+            "path": "$.publisher"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 27823,
+          "latency_ms": 169
+        }
+      }
+    },
+    {
+      "entity_id": "71f9c1b8-ced9-445f-a5c9-86e7bc053784",
+      "name": "TLDR Parents",
+      "website": "tldrparents.com",
+      "expected": "unresolved",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": true,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "71f9c1b8-ced9-445f-a5c9-86e7bc053784",
+          "candidate_id": "cddb434f654eb1ee",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "TLDR Parents redirects to hellopenny.ai and selects a Penny penguin mascot; a legitimate rename versus identity drift is unresolved."
+        }
+      ],
+      "final_labels": [
+        {
+          "entity_id": "71f9c1b8-ced9-445f-a5c9-86e7bc053784",
+          "candidate_id": "cddb434f654eb1ee",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "TLDR Parents redirects to hellopenny.ai and selects a Penny penguin mascot; a legitimate rename versus identity drift is unresolved."
+        }
+      ],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://hellopenny.ai/",
+        "selected_by_role": {
+          "icon": "cddb434f654eb1ee",
+          "wide": null,
+          "favicon": "40162d885251e594"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://hellopenny.ai/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://hellopenny.ai/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://hellopenny.ai/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Penny"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 48794,
+          "latency_ms": 519
+        }
+      }
+    },
+    {
+      "entity_id": "748e1289-5244-5b28-935c-1533aa1f859c",
+      "name": "HUDU",
+      "website": "hudu.uk",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "748e1289-5244-5b28-935c-1533aa1f859c",
+          "candidate_id": "e2be1f28ea9e573b",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        },
+        {
+          "entity_id": "748e1289-5244-5b28-935c-1533aa1f859c",
+          "candidate_id": "cc59e30d6ff9d5e2",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "unusable",
+            "dark": "good"
+          },
+          "note": "Correct HUDU.vu wordmark, but the white letters disappear on light backgrounds."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.hudu.vu/",
+        "selected_by_role": {
+          "icon": "e2be1f28ea9e573b",
+          "wide": "cc59e30d6ff9d5e2",
+          "favicon": "e2be1f28ea9e573b"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.hudu.vu/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.hudu.vu/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "HUDU Insight"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.hudu.vu/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 195991,
+          "latency_ms": 985
+        }
+      }
+    },
+    {
+      "entity_id": "7931e349-d76d-5e26-8dad-85380be04472",
+      "name": "TokenForge",
+      "website": "token-forge.io",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "7931e349-d76d-5e26-8dad-85380be04472",
+          "candidate_id": "d0dffd5958a0b5cb",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        },
+        {
+          "entity_id": "7931e349-d76d-5e26-8dad-85380be04472",
+          "candidate_id": "58eb1c0acaf6cfbe",
+          "role": "wide",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.tokenforge.io/",
+        "selected_by_role": {
+          "icon": "d0dffd5958a0b5cb",
+          "wide": "58eb1c0acaf6cfbe",
+          "favicon": "d0dffd5958a0b5cb"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.tokenforge.io/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.tokenforge.io/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 127738,
+          "latency_ms": 385
+        }
+      }
+    },
+    {
+      "entity_id": "7ee75de3-3e22-5d1e-8ad2-7217090cb217",
+      "name": "Readybit",
+      "website": "readybit.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "7ee75de3-3e22-5d1e-8ad2-7217090cb217",
+          "candidate_id": "a5ded5860cc95e8e",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected body image is a wrench/screwdriver feature illustration with alt 'Built for the way you work', not Readybit's standalone brand mark."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "7ee75de3-3e22-5d1e-8ad2-7217090cb217",
+          "candidate_id": "32301878dcf75e25",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed Readybit circular mark on light and dark review backgrounds."
+        },
+        {
+          "entity_id": "7ee75de3-3e22-5d1e-8ad2-7217090cb217",
+          "candidate_id": "c701fb3441d9242f",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Correct Readybit wordmark, but its dark artwork disappears on dark backgrounds."
+        }
+      ],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://readybit.com/",
+        "selected_by_role": {
+          "icon": "32301878dcf75e25",
+          "wide": "c701fb3441d9242f",
+          "favicon": "32301878dcf75e25"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://readybit.com/",
+        "signals": [
+          {
+            "type": "og_url",
+            "value": "https://readybit.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Readybit"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://readybit.com/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Readybit",
+            "path": "$.@graph[0].author"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Readybit",
+            "path": "$.@graph[4]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://readybit.com/",
+            "path": "$.@graph[4]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Readybit",
+            "path": "$.@graph[5].brand"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Readybit Inc.",
+            "path": "$.@graph[5].manufacturer"
+          }
+        ],
+        "metrics": {
+          "requests": 1,
+          "bytes": 107155,
+          "latency_ms": 99
+        }
+      }
+    },
+    {
+      "entity_id": "8155099c-4c70-51bf-b22f-156da834609e",
+      "name": "Stak",
+      "website": "stak.mx",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "8155099c-4c70-51bf-b22f-156da834609e",
+          "candidate_id": "979ee29144a9ce9a",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected inline SVG is the three-line Wix navigation menu control (role=presentation), not the Stak logo."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "8155099c-4c70-51bf-b22f-156da834609e",
+          "candidate_id": "3e7bdb884231497b",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed Stak orange mark on light and dark review backgrounds."
+        },
+        {
+          "entity_id": "8155099c-4c70-51bf-b22f-156da834609e",
+          "candidate_id": "d99705a0181b5e8c",
+          "role": "wide",
+          "identity": "correct",
+          "usability": "conditional",
+          "note": "Correct Stak wordmark is only 49x17 and the fetched Wix rendition is visibly blurred."
+        }
+      ],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://www.stak.mx/",
+        "selected_by_role": {
+          "icon": "3e7bdb884231497b",
+          "wide": "d99705a0181b5e8c",
+          "favicon": "3e7bdb884231497b"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.stak.mx/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.stak.mx/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.stak.mx/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Stak — Hybrid Workplaces"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 1709719,
+          "latency_ms": 401
+        }
+      }
+    },
+    {
+      "entity_id": "8580f8c8-b43a-58bb-a6b4-ac84e2ccae8c",
+      "name": "SimulPlus Films",
+      "website": "simulpus.org",
+      "expected": "unresolved",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": true,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "8580f8c8-b43a-58bb-a6b4-ac84e2ccae8c",
+          "candidate_id": "74961807afe7c8c5",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "conditional",
+          "note": "Selected 32px terminal/prompt glyph is a generic-looking favicon with no company-name or logo evidence; it may be site branding but cannot be verified from the asset."
+        }
+      ],
+      "final_labels": [
+        {
+          "entity_id": "8580f8c8-b43a-58bb-a6b4-ac84e2ccae8c",
+          "candidate_id": "74961807afe7c8c5",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "conditional",
+          "note": "Selected 32px terminal/prompt glyph is a generic-looking favicon with no company-name or logo evidence; it may be site branding but cannot be verified from the asset."
+        }
+      ],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://www.simulpus.org/",
+        "selected_by_role": {
+          "icon": "74961807afe7c8c5",
+          "wide": null,
+          "favicon": "74961807afe7c8c5"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.simulpus.org/",
+        "signals": [
+          {
+            "type": "og_url",
+            "value": "https://simulpus.org/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Simulpus"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 46982,
+          "latency_ms": 295
+        }
+      }
+    },
+    {
+      "entity_id": "878e3297-0a66-5d68-a3aa-e95b9df5cdee",
+      "name": "Mia AI",
+      "website": "themia.world",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "878e3297-0a66-5d68-a3aa-e95b9df5cdee",
+          "candidate_id": "467bf165ab035eb9",
+          "role": "icon",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Correct black Mia symbol; it disappears on dark."
+        },
+        {
+          "entity_id": "878e3297-0a66-5d68-a3aa-e95b9df5cdee",
+          "candidate_id": "184059b466d12fe2",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Correct black Mia wordmark; it disappears on dark."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://themia.ai/",
+        "selected_by_role": {
+          "icon": "467bf165ab035eb9",
+          "wide": "184059b466d12fe2",
+          "favicon": "467bf165ab035eb9"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://themia.ai/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://themia.ai/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://themia.ai/"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 604335,
+          "latency_ms": 470
+        }
+      }
+    },
+    {
+      "entity_id": "8833fe2c-37ff-5939-ae80-46b6503b3a98",
+      "name": "Haryon (ex Knock Knock)",
+      "website": "knock-knock.fr",
+      "expected": "quarantine",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "8833fe2c-37ff-5939-ae80-46b6503b3a98",
+          "candidate_id": "f06f8a7ef9c1a7b7",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "The former Haryon/Knock Knock domain now serves an unrelated casino ad favicon."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://www.knock-knock.fr/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": null,
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.knock-knock.fr/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://jcpl.fr/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 4767,
+          "latency_ms": 827
+        }
+      }
+    },
+    {
+      "entity_id": "89474692-1338-568c-9077-41c8bb310149",
+      "name": "Driver Technologies Inc.",
+      "website": "driverdashcam.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "89474692-1338-568c-9077-41c8bb310149",
+          "candidate_id": "be096548c2c3fe9f",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.drivertechnologies.com/",
+        "selected_by_role": {
+          "icon": "be096548c2c3fe9f",
+          "wide": null,
+          "favicon": "be096548c2c3fe9f"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.drivertechnologies.com/",
+        "signals": [],
+        "metrics": {
+          "requests": 2,
+          "bytes": 124913,
+          "latency_ms": 404
+        }
+      }
+    },
+    {
+      "entity_id": "8a869fa4-4102-5f45-8208-97a60a05b9b7",
+      "name": "GINT",
+      "website": "gintlab.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "8a869fa4-4102-5f45-8208-97a60a05b9b7",
+          "candidate_id": "2a4b3d1cbae316d8",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected SVG is the three-line navigation menu control (alt=menu, filename ico_gnb_menu_gint.svg), not GINT's icon."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "8a869fa4-4102-5f45-8208-97a60a05b9b7",
+          "candidate_id": "9e3a4bf28862bba1",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed GINT gradient G mark on light and dark review backgrounds."
+        },
+        {
+          "entity_id": "8a869fa4-4102-5f45-8208-97a60a05b9b7",
+          "candidate_id": "25e9a45149485099",
+          "role": "wide",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.gintcorp.com/",
+        "selected_by_role": {
+          "icon": "9e3a4bf28862bba1",
+          "wide": "25e9a45149485099",
+          "favicon": "9e3a4bf28862bba1"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.gintcorp.com/",
+        "signals": [
+          {
+            "type": "og_site_name",
+            "value": "GINT Corp."
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.gintcorp.com/"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://www.gintcorp.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.gintcorp.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "긴트"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 334145,
+          "latency_ms": 2750
+        }
+      }
+    },
+    {
+      "entity_id": "8b33ccd1-cd5d-502f-acc9-182c531c14df",
+      "name": "Leaf Insurance",
+      "website": "leaf-forsikring.dk",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "8b33ccd1-cd5d-502f-acc9-182c531c14df",
+          "candidate_id": "e21af15b54ab24db",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://leaf.dk/",
+        "selected_by_role": {
+          "icon": "e21af15b54ab24db",
+          "wide": null,
+          "favicon": "e21af15b54ab24db"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://leaf.dk/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://leaf.dk/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://leaf.dk/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 410752,
+          "latency_ms": 305
+        }
+      }
+    },
+    {
+      "entity_id": "8c9f58a7-e2d3-5170-89db-5a83663130d5",
+      "name": "SPIRL",
+      "website": "spirl.com",
+      "expected": "unresolved",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": true,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "8c9f58a7-e2d3-5170-89db-5a83663130d5",
+          "candidate_id": "0f9f9774774a8466",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "unusable",
+          "note": "SPIRL redirects to Defakto; selected asset is a generic Defakto theme brain-circuit menu icon, and the relationship to SPIRL is unresolved."
+        },
+        {
+          "entity_id": "8c9f58a7-e2d3-5170-89db-5a83663130d5",
+          "candidate_id": "837bffadcddb7976",
+          "role": "wide",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "SPIRL redirects to Defakto Security and the selected wordmark explicitly says Defakto; legitimate rebrand/acquisition versus wrong identity is unresolved."
+        }
+      ],
+      "final_labels": [
+        {
+          "entity_id": "8c9f58a7-e2d3-5170-89db-5a83663130d5",
+          "candidate_id": "837bffadcddb7976",
+          "role": "wide",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "SPIRL redirects to Defakto Security and the selected wordmark explicitly says Defakto; legitimate rebrand/acquisition versus wrong identity is unresolved."
+        }
+      ],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.defakto.security/",
+        "selected_by_role": {
+          "icon": "a171476402f854c3",
+          "wide": null,
+          "favicon": "a171476402f854c3"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.defakto.security/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.defakto.security/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.defakto.security/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Defakto Security"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Defakto Security",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.defakto.security/",
+            "path": "$"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 131379,
+          "latency_ms": 769
+        }
+      }
+    },
+    {
+      "entity_id": "8f852273-b636-5824-a656-2bf8c27d8f27",
+      "name": "BudID",
+      "website": "budid.se",
+      "expected": "unresolved",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": true,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "8f852273-b636-5824-a656-2bf8c27d8f27",
+          "candidate_id": "2cf7357a8d472d93",
+          "role": "wide",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "BudID redirects to cetti.com and the selected wordmark says Cetti; a legitimate rename versus identity drift is unresolved."
+        }
+      ],
+      "final_labels": [
+        {
+          "entity_id": "8f852273-b636-5824-a656-2bf8c27d8f27",
+          "candidate_id": "2cf7357a8d472d93",
+          "role": "wide",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "BudID redirects to cetti.com and the selected wordmark says Cetti; a legitimate rename versus identity drift is unresolved."
+        }
+      ],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.cetti.com/",
+        "selected_by_role": {
+          "icon": "caaf02be6e671774",
+          "wide": "2cf7357a8d472d93",
+          "favicon": "caaf02be6e671774"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.cetti.com/",
+        "signals": [
+          {
+            "type": "og_site_name",
+            "value": "Cetti"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.cetti.com/"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://www.cetti.com/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Cetti",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.cetti.com/",
+            "path": "$"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 62167,
+          "latency_ms": 1579
+        }
+      }
+    },
+    {
+      "entity_id": "99d1d5df-13a7-5f34-a7e2-9d78935ca9d5",
+      "name": "Sloane",
+      "website": "hi-sloane.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon",
+          "wide"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "99d1d5df-13a7-5f34-a7e2-9d78935ca9d5",
+          "candidate_id": "7e1778319a6a62e0",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "The selected image is a character/avatar labeled as a Sloane logo, not a brand mark."
+        },
+        {
+          "entity_id": "99d1d5df-13a7-5f34-a7e2-9d78935ca9d5",
+          "candidate_id": "c3c03ecfe508cc27",
+          "role": "wide",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "The selected image is a landscaping hero/video photograph, not a wordmark."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://hi-sloane.com/",
+        "selected_by_role": {
+          "icon": "f588250c1e78030f",
+          "wide": null,
+          "favicon": "f588250c1e78030f"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://hi-sloane.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://hi-sloane.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://hi-sloane.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Sloane"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Sloane",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://hi-sloane.com/",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Sloane",
+            "path": "$.publisher"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://hi-sloane.com/",
+            "path": "$.publisher"
+          }
+        ],
+        "metrics": {
+          "requests": 1,
+          "bytes": 296513,
+          "latency_ms": 134
+        }
+      }
+    },
+    {
+      "entity_id": "a2d6b35a-dffb-595f-b021-3e4596aa23f7",
+      "name": "BanterAI",
+      "website": "banterai.business",
+      "expected": "quarantine",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "a2d6b35a-dffb-595f-b021-3e4596aa23f7",
+          "candidate_id": "2cbe448bed81a20b",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Former BanterAI domain redirects to unrelated jwsatinfo.com and selects that site's lightning favicon."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.jwsatinfo.com/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": null,
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.jwsatinfo.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.jwsatinfo.com/en-au/"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 43543,
+          "latency_ms": 1214
+        }
+      }
+    },
+    {
+      "entity_id": "acd0cf1b-a672-518a-8dbc-2c6831d316e6",
+      "name": "Rapid Flight Training",
+      "website": "rapidflighttraining.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "acd0cf1b-a672-518a-8dbc-2c6831d316e6",
+          "candidate_id": "79984196ba0be6f2",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected Wix presentation SVG contains only a solid square path, not the Rapid Flight Training logo; the run contains a distinct first-party touch icon."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "acd0cf1b-a672-518a-8dbc-2c6831d316e6",
+          "candidate_id": "89fa6a065f35ec28",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed Rapid Flight Training blue arrow mark on light and dark review backgrounds."
+        },
+        {
+          "entity_id": "acd0cf1b-a672-518a-8dbc-2c6831d316e6",
+          "candidate_id": "c409678fdbc1e46b",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "Correct black Rapid lettering loses contrast on a dark background."
+        }
+      ],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://www.rapidflighttraining.com/",
+        "selected_by_role": {
+          "icon": "89fa6a065f35ec28",
+          "wide": "c409678fdbc1e46b",
+          "favicon": "89fa6a065f35ec28"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.rapidflighttraining.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.rapidflighttraining.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.rapidflighttraining.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "RFTraining"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 703559,
+          "latency_ms": 357
+        }
+      }
+    },
+    {
+      "entity_id": "b1bd83cc-185e-5f1e-86cc-d087051fec87",
+      "name": "GENIUS ALLIANCE GROUP",
+      "website": "genius-alliance.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "b1bd83cc-185e-5f1e-86cc-d087051fec87",
+          "candidate_id": "21fa3e97c5decb20",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "conditional",
+          "note": "Correct Genius Alliance artwork, but the full wordmark is extremely small inside a padded square touch icon."
+        },
+        {
+          "entity_id": "b1bd83cc-185e-5f1e-86cc-d087051fec87",
+          "candidate_id": "5fc46bbf2c02fc9e",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "conditional",
+            "dark": "good"
+          },
+          "note": "Correct Genius Alliance wordmark; its thin white outline is barely visible on light."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://geniusalliance.website/",
+        "selected_by_role": {
+          "icon": "21fa3e97c5decb20",
+          "wide": "5fc46bbf2c02fc9e",
+          "favicon": "21fa3e97c5decb20"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://geniusalliance.website/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://geniusalliance.website/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "GENIUS ALLIANCE - INTELLIGENCE LEADERSHIP"
+          },
+          {
+            "type": "og_url",
+            "value": "https://geniusalliance.website/"
+          },
+          {
+            "type": "canonical_url",
+            "value": "https://geniusalliance.website/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://geniusalliance.website/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "GENIUS ALLIANCE"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "GENIUS ALLIANCE",
+            "path": "$.@graph[1]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://geniusalliance.website/",
+            "path": "$.@graph[1]"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "GENIUS ALLIANCE",
+            "path": "$.@graph[4]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://geniusalliance.website/",
+            "path": "$.@graph[4]"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 165763,
+          "latency_ms": 1401
+        }
+      }
+    },
+    {
+      "entity_id": "b458cf0f-7bc3-589b-9a18-1ce145f7462a",
+      "name": "Obseva",
+      "website": "obseva.com",
+      "expected": "quarantine",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon",
+          "wide"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "b458cf0f-7bc3-589b-9a18-1ce145f7462a",
+          "candidate_id": "85c43e9d7db7038a",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Former Obseva domain redirects to unrelated 90phutzn.tv football content; selected icon is the 90PHUT brand."
+        },
+        {
+          "entity_id": "b458cf0f-7bc3-589b-9a18-1ce145f7462a",
+          "candidate_id": "9d4475ffd079315d",
+          "role": "wide",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Former Obseva domain redirects to unrelated 90phutzn.tv football content; selected wide logo explicitly says 90PHUT."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://90phutzn.tv/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": null,
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://90phutzn.tv/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://90phutzn.tv/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://90phutzn.tv/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "90Phut TV"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "90Phut TV",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://90phutzn.tv/",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "90Phut TV",
+            "path": "$.memberOf"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "90Phut TV",
+            "path": "$.worksFor"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://90phutzn.tv/",
+            "path": "$.worksFor"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "90Phut TV",
+            "path": "$.affiliation[0]"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 1132303,
+          "latency_ms": 309
+        }
+      }
+    },
+    {
+      "entity_id": "ba444db0-ff0b-59b6-83b9-40418e6481bd",
+      "name": "Impact Food",
+      "website": "eatimpactfood.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "ba444db0-ff0b-59b6-83b9-40418e6481bd",
+          "candidate_id": "5f9dc72b421574e9",
+          "role": "icon",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Correct Impact Food lockup, but the black artwork disappears on dark backgrounds."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://impact.food/",
+        "selected_by_role": {
+          "icon": "5f9dc72b421574e9",
+          "wide": null,
+          "favicon": "ffd9b7c2dd5a4b3b"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://impact.food/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://impact.food/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Impact Food"
+          },
+          {
+            "type": "og_url",
+            "value": "https://impact.food/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 893810,
+          "latency_ms": 537
+        }
+      }
+    },
+    {
+      "entity_id": "c86e510f-e118-5aa5-826f-5d9d7efdcae2",
+      "name": "NUMiX MATERIALS",
+      "website": "numixmaterials.com",
+      "expected": "quarantine",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon",
+          "wide"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "c86e510f-e118-5aa5-826f-5d9d7efdcae2",
+          "candidate_id": "b283ee6f834f9815",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Former Numix domain now serves unrelated Meriam Hoki gambling branding; selected icon is that foreign brand."
+        },
+        {
+          "entity_id": "c86e510f-e118-5aa5-826f-5d9d7efdcae2",
+          "candidate_id": "0b7cf74d9b123ae1",
+          "role": "wide",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Former Numix domain now serves unrelated Meriam Hoki gambling branding; selected wide asset explicitly says MERIAM HOKI."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://itstudie.nl/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": null,
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://itstudie.nl/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://itstudie.nl/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "meriamhoki"
+          },
+          {
+            "type": "og_url",
+            "value": "https://itstudie.nl/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "meriamhoki",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://itstudie.nl/",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "meriamhoki",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://itstudie.nl/",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "meriamhoki",
+            "path": "$.brand"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 419642,
+          "latency_ms": 484
+        }
+      }
+    },
+    {
+      "entity_id": "cc9f66f6-3fb2-559d-87e1-c9aaf4418cb3",
+      "name": "Grapple",
+      "website": "cloudgrapple.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "cc9f66f6-3fb2-559d-87e1-c9aaf4418cb3",
+          "candidate_id": "74a6e5acb8fa95e6",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://askgrapple.com/",
+        "selected_by_role": {
+          "icon": "74a6e5acb8fa95e6",
+          "wide": null,
+          "favicon": "74a6e5acb8fa95e6"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://askgrapple.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://askgrapple.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://askgrapple.com/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 327021,
+          "latency_ms": 327
+        }
+      }
+    },
+    {
+      "entity_id": "d0079f9e-0ab7-5455-bca8-90ee8771b686",
+      "name": "Raiqon",
+      "website": "raiqon.ai",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": true,
+        "historical_wrong_roles": [
+          "icon"
+        ],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "d0079f9e-0ab7-5455-bca8-90ee8771b686",
+          "candidate_id": "58952052e0b011b9",
+          "role": "icon",
+          "identity": "wrong",
+          "usability": "unusable",
+          "note": "Selected inline SVG is Kadence's cog button icon (kb-svg-icon-icon-cog), not Raiqon's raven brand mark."
+        }
+      ],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "d0079f9e-0ab7-5455-bca8-90ee8771b686",
+          "candidate_id": "1831d670aabfd8df",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Confirmed Raiqon raven mark on light and dark review backgrounds."
+        },
+        {
+          "entity_id": "d0079f9e-0ab7-5455-bca8-90ee8771b686",
+          "candidate_id": "2e6e4fcb91777b2d",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "unusable",
+            "dark": "good"
+          },
+          "note": "Correct white Raiqon wordmark is invisible on a light background."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://raiqon.com/",
+        "selected_by_role": {
+          "icon": "1831d670aabfd8df",
+          "wide": "2e6e4fcb91777b2d",
+          "favicon": "1831d670aabfd8df"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://raiqon.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://raiqon.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://raiqon.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Raiqon AI"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Raiqon AI",
+            "path": "$.@graph[4]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://raiqon.com/",
+            "path": "$.@graph[4]"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 299248,
+          "latency_ms": 1828
+        }
+      }
+    },
+    {
+      "entity_id": "d12cbc46-888e-4edb-aa52-a1ff756b9026",
+      "name": "Niche Site Operator",
+      "website": "aidgentic.com",
+      "expected": "unresolved",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": true,
+        "fresh_off_domain_redirect": false,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "d12cbc46-888e-4edb-aa52-a1ff756b9026",
+          "candidate_id": "63f869ed777c982f",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "The requested entity is Niche Site Operator, while its supplied domain now presents Aidgentic branding; likely rename, but not independently established by the asset."
+        },
+        {
+          "entity_id": "d12cbc46-888e-4edb-aa52-a1ff756b9026",
+          "candidate_id": "36a1bcb2159966c0",
+          "role": "wide",
+          "identity": "ambiguous",
+          "usability": {
+            "light": "unusable",
+            "dark": "good"
+          },
+          "note": "Current-domain Aidgentic wordmark for a requested entity named Niche Site Operator; likely rename, and this white variant disappears on light."
+        }
+      ],
+      "final_labels": [
+        {
+          "entity_id": "d12cbc46-888e-4edb-aa52-a1ff756b9026",
+          "candidate_id": "63f869ed777c982f",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "The requested entity is Niche Site Operator, while its supplied domain now presents Aidgentic branding; likely rename, but not independently established by the asset."
+        },
+        {
+          "entity_id": "d12cbc46-888e-4edb-aa52-a1ff756b9026",
+          "candidate_id": "36a1bcb2159966c0",
+          "role": "wide",
+          "identity": "ambiguous",
+          "usability": {
+            "light": "unusable",
+            "dark": "good"
+          },
+          "note": "Current-domain Aidgentic wordmark for a requested entity named Niche Site Operator; likely rename, and this white variant disappears on light."
+        }
+      ],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "live_html",
+        "homepage": "https://aidgentic.com/",
+        "selected_by_role": {
+          "icon": "63f869ed777c982f",
+          "wide": "36a1bcb2159966c0",
+          "favicon": "63f869ed777c982f"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://aidgentic.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://aidgentic.com/"
+          }
+        ],
+        "metrics": {
+          "requests": 1,
+          "bytes": 188605,
+          "latency_ms": 386
+        }
+      }
+    },
+    {
+      "entity_id": "d911e339-12ae-5f76-9a4e-019b40502938",
+      "name": "Apian",
+      "website": "apian.aero",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "d911e339-12ae-5f76-9a4e-019b40502938",
+          "candidate_id": "9985eb3bd4e60ab3",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        },
+        {
+          "entity_id": "d911e339-12ae-5f76-9a4e-019b40502938",
+          "candidate_id": "30547c5f39b08475",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "Correct black Apian lettering has weak contrast on a dark background."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.apian.health/",
+        "selected_by_role": {
+          "icon": "9985eb3bd4e60ab3",
+          "wide": "30547c5f39b08475",
+          "favicon": "9985eb3bd4e60ab3"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.apian.health/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.apian.health/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Apian"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.apian.health/"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 763613,
+          "latency_ms": 562
+        }
+      }
+    },
+    {
+      "entity_id": "e45b6ca8-c18b-5d69-99a1-34ba7a86e4bb",
+      "name": "Klipy",
+      "website": "useklipy.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "e45b6ca8-c18b-5d69-99a1-34ba7a86e4bb",
+          "candidate_id": "d537cab8d64fa03d",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 300-company selection montage."
+        },
+        {
+          "entity_id": "e45b6ca8-c18b-5d69-99a1-34ba7a86e4bb",
+          "candidate_id": "689dc15e1051134e",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "unusable"
+          },
+          "note": "Correct black Klipy wordmark disappears on a dark background."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://klipy.ai/",
+        "selected_by_role": {
+          "icon": "d537cab8d64fa03d",
+          "wide": "689dc15e1051134e",
+          "favicon": "628dab4b812b0f7d"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://klipy.ai/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://klipy.ai/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://klipy.ai/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "Klipy.ai"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Klipy",
+            "path": "$.@graph[0]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://klipy.ai/",
+            "path": "$.@graph[0]"
+          }
+        ],
+        "metrics": {
+          "requests": 3,
+          "bytes": 528578,
+          "latency_ms": 476
+        }
+      }
+    },
+    {
+      "entity_id": "e9535eeb-6a17-54f1-bcef-3633129eec5f",
+      "name": "Drip Labs",
+      "website": "driplabs.xyz",
+      "expected": "unresolved",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": true,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [
+        {
+          "entity_id": "e9535eeb-6a17-54f1-bcef-3633129eec5f",
+          "candidate_id": "bf258a53635d1658",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "Drip Labs redirects to askcolette.ai and the selected Schema asset is an AC monogram; a legitimate rename versus identity drift is unresolved."
+        }
+      ],
+      "final_labels": [
+        {
+          "entity_id": "e9535eeb-6a17-54f1-bcef-3633129eec5f",
+          "candidate_id": "bf258a53635d1658",
+          "role": "icon",
+          "identity": "ambiguous",
+          "usability": "good",
+          "note": "Drip Labs redirects to askcolette.ai and the selected Schema asset is an AC monogram; a legitimate rename versus identity drift is unresolved."
+        }
+      ],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "http://askcolette.ai/",
+        "selected_by_role": {
+          "icon": "bf258a53635d1658",
+          "wide": null,
+          "favicon": "e9ff4dc45acf477d"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "http://askcolette.ai/",
+        "signals": [
+          {
+            "type": "og_url",
+            "value": "https://askcolette.ai/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Ask Colette",
+            "path": "$.creator"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://askcolette.ai/",
+            "path": "$.creator"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "Ask Colette",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://askcolette.ai/",
+            "path": "$"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 13018,
+          "latency_ms": 410
+        }
+      }
+    },
+    {
+      "entity_id": "eb6a497d-5f19-57d2-ac81-599c6f089ca4",
+      "name": "ProClass",
+      "website": "proclassonline.com",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "eb6a497d-5f19-57d2-ac81-599c6f089ca4",
+          "candidate_id": "37c3a48a155fcacf",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        },
+        {
+          "entity_id": "eb6a497d-5f19-57d2-ac81-599c6f089ca4",
+          "candidate_id": "dad48c0e0f5a03ec",
+          "role": "wide",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://proclasssoftware.com/",
+        "selected_by_role": {
+          "icon": "37c3a48a155fcacf",
+          "wide": "dad48c0e0f5a03ec",
+          "favicon": "37c3a48a155fcacf"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://proclasssoftware.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://proclasssoftware.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://proclasssoftware.com/"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "ProClass",
+            "path": "$.@graph[4]"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://proclasssoftware.com/",
+            "path": "$.@graph[4]"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 495268,
+          "latency_ms": 1348
+        }
+      }
+    },
+    {
+      "entity_id": "eeadf1c1-7c69-5be8-b2c1-ac17f493740f",
+      "name": "CommodityAI",
+      "website": "commodityai.io",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [
+        {
+          "entity_id": "eeadf1c1-7c69-5be8-b2c1-ac17f493740f",
+          "candidate_id": "6827a26c4957625b",
+          "role": "icon",
+          "identity": "correct",
+          "usability": "good",
+          "note": "Visually reviewed in the current 100-company selection montage."
+        },
+        {
+          "entity_id": "eeadf1c1-7c69-5be8-b2c1-ac17f493740f",
+          "candidate_id": "f33faca440681f64",
+          "role": "wide",
+          "identity": "correct",
+          "usability": {
+            "light": "good",
+            "dark": "conditional"
+          },
+          "note": "Correct CommodityAI wordmark, but its dark green artwork has low contrast on dark."
+        }
+      ],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://www.commodityai.com/",
+        "selected_by_role": {
+          "icon": "6827a26c4957625b",
+          "wide": "f33faca440681f64",
+          "favicon": "6827a26c4957625b"
+        }
+      },
+      "observation": {
+        "status": "ok",
+        "final_url": "https://www.commodityai.com/",
+        "signals": [
+          {
+            "type": "canonical_url",
+            "value": "https://www.commodityai.com/"
+          },
+          {
+            "type": "og_url",
+            "value": "https://www.commodityai.com/"
+          },
+          {
+            "type": "og_site_name",
+            "value": "CommodityAI"
+          },
+          {
+            "type": "jsonld_name",
+            "value": "CommodityAI",
+            "path": "$"
+          },
+          {
+            "type": "jsonld_url",
+            "value": "https://www.commodityai.com/",
+            "path": "$"
+          }
+        ],
+        "metrics": {
+          "requests": 2,
+          "bytes": 173636,
+          "latency_ms": 190
+        }
+      }
+    },
+    {
+      "entity_id": "fbdc60df-515d-52f6-8ce9-409a4d81cee1",
+      "name": "JUNO Nutrition",
+      "website": "spedition-kleine.de",
+      "expected": "retain",
+      "categories": {
+        "historical_wrong_selection": false,
+        "historical_wrong_roles": [],
+        "final_ambiguous_identity": false,
+        "fresh_off_domain_redirect": true,
+        "same_domain_repurposing": false
+      },
+      "historical_labels": [],
+      "final_labels": [],
+      "final_correct_labels": [],
+      "current_main": {
+        "reachability": "redirected_off_domain",
+        "homepage": "https://auswertung.kleine.eu/",
+        "selected_by_role": {
+          "icon": null,
+          "wide": null,
+          "favicon": null
+        }
+      },
+      "observation": {
+        "status": "failure",
+        "error": "fetch failed",
+        "signals": [],
+        "metrics": null
+      }
+    }
+  ]
+}
