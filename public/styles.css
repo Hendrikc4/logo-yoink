@@ -51,8 +51,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .github-cta:hover { background: rgba(232,255,97,.08); transform: translateY(-2px); }
 .github-cta:active { transform: translateY(1px); }
 
-.trail-divider { position: relative; height: 112px; margin: 26px -20px 4px; overflow: hidden; background: url('/assets/ui/train-divider.webp') center / cover no-repeat; image-rendering: pixelated; }
-.trail-divider::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--background), transparent 9%, transparent 91%, var(--background)); }
+.trail-divider { position: relative; height: 86px; margin: 22px -20px 2px; overflow: hidden; }
+.trail-divider::before { content: ''; position: absolute; inset: 0; background: url('/assets/ui/train-divider-minimal.webp') center / cover no-repeat; filter: brightness(1.32) saturate(1.08); image-rendering: pixelated; mix-blend-mode: screen; opacity: .96; }
+.trail-divider::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--background), transparent 12%, transparent 88%, var(--background)), linear-gradient(180deg, var(--background), transparent 24%, transparent 76%, var(--background)); }
 
 .try-section { padding: 33px 0 12px; }
 #extract-form { margin: 20px 0 0; }
@@ -185,7 +186,8 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
   .feature-icon img { width: 46px; height: 46px; }
   .feature-row p { font-size: 13px; }
   .github-cta { min-height: 64px; padding: 0 18px; font-size: 14px; }
-  .trail-divider { height: 84px; margin: 22px -14px 2px; background-position: 52% center; }
+  .trail-divider { height: 64px; margin: 18px -14px 0; }
+  .trail-divider::before { background-position: 52% center; }
   .input-row { grid-template-columns: 28px minmax(0,1fr); padding: 9px; }
   .input-row button { grid-column: 1 / -1; width: 100%; min-height: 58px; }
   input { font-size: 15px; }
