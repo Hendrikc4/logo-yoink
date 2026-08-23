@@ -24,6 +24,7 @@ A negative shipping decision does not always mean the underlying signal was usel
 
 | Date | Experiment | Development outcome | Holdout outcome | Cost or risk | Status |
 |---|---|---|---|---|---|
+| 2026-08-22 | Remaining-300 missing-wide root-cause audit and targeted CSS-mask ablation | 75 deterministic misses: retained browser path found 10 correct, 2 ambiguous, 0 wrong; narrow masks added 1 correct wide | Not run; mask yield 1.33 correct wins/100 was below the 2.0 gate | Browser 4,859 requests/145.54 MB; mask run 4,970 requests/153.92 MB; zero icon/favicon movement | **Audit complete; masks dropped — prevalence-limited** |
 | 2026-08-22 | Precision-gated asynchronous browser warming for missing-wide domains | Precision-ranked original-100 wide 40→47; all seven additions visually confirmed correct; Bhr→RealReports vetoed | Precision-ranked holdout wide 58→62; all four additions visually confirmed correct; icon/favicon unchanged in both cohorts | Off-path cold cost: development about 2,021 requests/41 MB; holdout 1,494 requests/24.9 MB and 2.30/4.39 s browser p50/p95; warm replay zero network and byte-identical | **Kept — asynchronous/off-path** |
 | 2026-08-22 | Full 500-company visual audit and false-positive exclusions | Complete labels: strict selected-role precision 94.35%→98.29%; definite wrong selections 23→0 | All 500 icon/wide selections reviewed; 26 slots changed, with 10 visually confirmed replacements and 16 withheld | Availability icon 359→349, wide 243→237, favicon 350→343; metadata/hash-only, zero runtime network/AI cost | **Kept** |
 | 2026-08-22 | Generic platform, badge, and UI-asset exclusions | Labeled icon/wide precision 89.8%→94.3%; two wrong icons replaced, one wrong icon and two wrong wides withheld | Offline all-500 rerank changed only nine role slots across seven domains; three repeated Wix defaults removed | Icon −1, wide −2, favicon −4 in the stored 500 run; exact signatures only, zero network cost | **Kept** |
@@ -174,6 +175,16 @@ They should only be reconsidered for a manually labeled miss set and only as URL
 
 ## Zero-yield or prevalence-limited experiments
 
+### Remaining-300 missing-wide audit and CSS masks
+
+A deterministic SHA-256-ranked sample of 75 was taken from the 113 reachable, no-wide records in the frozen precision-ranked remaining-300 control. Every page was visually inspected and assigned one primary root cause. The largest groups were icon-only/stacked brands (18), text-only or absent graphic wordmarks (14), browser-hydrated assets (12), rank/precision rejection (11), and unsafe or changed identities (10). Blocked/incomplete pages accounted for six, CSS masks/backgrounds for three, and a logo embedded in a content image for one.
+
+Replaying the already-retained asynchronous browser mechanism recovered 12 wide selections: 10 correct, two ambiguous current identities, and zero wrong. Strict incremental precision was 83.33%; icon and favicon did not move. The cold run made 4,859 browser-plus-validation requests, transferred 145.54 MB, and measured 2.429/6.798 seconds p50/p95 deferred latency. The ten correct changes contribute +0.84 benchmark points after reviewed light/dark usability, moving verified current `main` from 72.94 to 73.78 when composed with prior retained results. This confirms the retained queue's value on the residual population but is not a new mechanism.
+
+A narrow mask treatment accepted only visible wide data-SVG masks in trusted header/navigation/banner or home-link contexts, without changing precision filters. It added one correct, light-only Planhat wordmark in 75 misses, or 1.33 correct wins per 100. There were zero ambiguous or wrong additions, 100% strict incremental precision, zero wrong-brand domains, and no icon/favicon movement. The run made 4,970 requests and transferred 153.92 MB; live-page/CDN drift prevents attributing the difference to the data-SVG feature, which itself adds no fetch. Its +0.08 benchmark delta does not overcome the predeclared 2.0-wins-per-100 gate. Nth Cycle's audit-time mask was transient and did not reproduce; Daanaa's faint footer background correctly failed trusted-placement evidence. The experimental code was removed and no holdout was run.
+
+The full methodology, taxonomy, company classifications, changed-selection review, costs, and reproduction commands are in [the missing-wide audit report](missing-wide-root-cause-audit-2026-08-22.md).
+
 ### CSS and auxiliary pages
 
 Inline/external CSS, root Apple icon, and browserconfig added about 2.2 requests/domain without a selected-role gain. Generic brand/press/sitemap expansion added 60 requests with no gain, and 25 missing-wide domains contained no press link. These are zero-yield results on the frozen cohort, not precision-limited wins. Revisit only if a labeled miss set specifically contains CSS-only or press-kit-hosted logos.
@@ -210,15 +221,15 @@ After collapsing manifest/Apple/HTML/root icon declarations into one source cate
 
 ## Next experiment
 
-Test one small combined change: apply a strong structured identity-conflict veto only to deferred browser promotions. A conflict should require a current JSON-LD organization name or `og:site_name` that disagrees with both the fixture company name and requested-domain tokens. Do not expand browser discovery surfaces.
+Do not expand discovery surfaces. The residual audit shows that 32/75 misses expose no separate wide graphic, while CSS masks produced only 1.33 correct wins per 100. Instead, label the exact rejecting rule and candidate evidence for the 11 rank/filter-rejection cases, then test at most one narrow positive-evidence rule or veto without lowering current precision thresholds.
 
 Development success gates:
 
-- at least four visually correct new wide selections per 100;
+- at least two defensible visually correct new wide selections per 100 audited misses;
 - at least 95% reviewed precision;
 - zero new wrong-brand domains;
 - zero icon or favicon selection changes;
-- bounded browser concurrency of two and deterministic cache replay.
+- simple deterministic behavior, with bounded browser concurrency and deterministic replay if browser work is involved.
 
 Run the frozen holdout only after every development gate passes.
 
@@ -242,3 +253,4 @@ For each completed experiment, append one row to the summary table and add detai
 - [Round-two coverage experiments](logo-coverage-experiment-results-round2-2026-08-22.md)
 - [Coverage improvement plan](logo-coverage-improvement-plan.md)
 - [Benchmark execution record](benchmark-execution-2026-08-22.md)
+- [Missing-wide root-cause audit](missing-wide-root-cause-audit-2026-08-22.md)
