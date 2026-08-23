@@ -48,7 +48,7 @@ const server = createServer(async (request, response) => {
   if (request.method === 'POST' && url.pathname === '/api/extract') {
     try {
       const body = await readJson(request);
-      const result = await extractLogos(body.website, { besticonUrl });
+      const result = await extractLogos(body.website, { besticonUrl, roleAwareBudget: true, contentBoundingWide: true });
       return json(response, 200, result);
     } catch (error) {
       return json(response, 400, { error: error instanceof Error ? error.message : 'Logo extraction failed.' });

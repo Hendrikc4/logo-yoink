@@ -1,5 +1,7 @@
 node_modules/
 downloads/
+runs/
+token-optimizer/
 output/playwright/
 .playwright-cli/
 .DS_Store

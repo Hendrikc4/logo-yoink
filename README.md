@@ -5,19 +5,22 @@ Give Logo Yoink a company website and it finds, validates, and ranks the logo as
 It currently checks:
 
 - Schema.org `Organization`, `Corporation`, `Business`, and `Brand` logos
+- visible header/navigation images, lazy-loaded images, `picture` sources, and safe inline SVGs
+- `og:logo`, microdata logo fields, and linked image metadata
 - Web-app manifest icons
-- Apple touch icons
-- HTML favicon links
+- Apple touch icons, mask icons, Microsoft tiles, and HTML favicon links
 - Root `/favicon.ico` and `/favicon.png`
 - An optional self-hosted [Besticon](https://github.com/mat/besticon) service
+- optionally, a bounded Playwright pass for logo assets that appear only after rendering
 
-Every candidate is downloaded and inspected. The ranking favors square, high-resolution assets while retaining rectangular wordmarks for review.
+Every candidate is downloaded, byte-validated, deduplicated, and ranked separately as an `icon`, `wide` logo, or `favicon`. The default path is static and homepage-only; expanded-page and browser discovery are explicit fallbacks.
 
 ## Run the web tool
 
-Requires Node.js 22 or newer. There are currently no npm dependencies.
+Requires Node.js 22 or newer.
 
 ```bash
+npm install
 npm start
 ```
 
@@ -29,7 +32,7 @@ To add a locally hosted Besticon fallback:
 BESTICON_URL=http://127.0.0.1:8080 npm start
 ```
 
-Logo Yoink deliberately binds to localhost by default. It fetches user-provided URLs and should not be exposed publicly without stronger network-level SSRF protection, rate limiting, and authentication.
+Logo Yoink deliberately binds to localhost by default. It resolves and rejects non-public targets and revalidates redirects, but a public deployment should additionally pin the validated IP at connection time and add rate limiting and authentication.
 
 ## CLI
 
@@ -46,14 +49,37 @@ Set `BESTICON_URL` for the CLI in the same way as the web service.
 npm test
 ```
 
+## Benchmark
+
+Run the frozen 100-company development cohort:
+
+```bash
+npm run benchmark -- --cohort original-100 --output runs/my-run
+npm run review-montage -- runs/my-run
+```
+
+Other frozen cohorts are `holdout-100`, `remaining-300`, and `all-500`. Use `--browser` or `--expanded-pages 2` for measured ablations; neither is enabled by default. A labeled score can be recomputed without crawling again:
+
+```bash
+node scripts/benchmark.mjs score --run runs/my-run --labels path/to/review-labels.jsonl
+```
+
+The automated availability proxy is not a quality score. The 0–100 benchmark score is emitted only after every selected icon and wide logo has a role-specific reviewer label.
+
 ## Architecture
 
 - `src/extractor.mjs` — reusable extraction, validation, metadata, and scoring logic
+- `src/discover-static.mjs` — parsed-document candidate discovery
+- `src/discover-browser.mjs` — bounded rendered-browser fallback
+- `src/rank.mjs` — interpretable role-specific scoring
 - `src/server.mjs` — small localhost HTTP/API server
 - `src/cli.mjs` — JSON and download CLI
 - `public/` — dependency-free browser interface
 - `fixtures/companies-500.json` — 100 original benchmark companies plus 400 additional canonical database samples
 - `scripts/export-company-fixture.mjs` — reproducible Supabase CLI fixture exporter
+- `scripts/benchmark.mjs` — frozen-cohort runs, comparisons, and labeled scoring
+- `scripts/contact-sheet.mjs` and `scripts/review-montage.mjs` — visual QA artifacts
+- `docs/logo-discovery-plan.md` — researched implementation and evaluation plan
 - `docs/benchmark-2026-08-22.md` — results that informed the initial pipeline
 
 ## Test dataset
@@ -76,10 +102,9 @@ node scripts/export-company-fixture.mjs \
 
 ## Current limitations
 
-- Many websites block non-browser HTTP clients or render metadata only after JavaScript executes.
+- Many websites block automated clients; the optional browser fallback costs substantially more than static extraction.
 - A website can expose a product icon rather than its legal-company logo.
 - SVG and raster dimensions do not prove visual quality; padded wordmarks can still look poor in a square UI.
-- AVIF and WebP candidates without cheaply readable dimensions are retained but score conservatively.
 - Redirected or rebranded domains may expose a logo that no longer matches the database company name.
 
 The tool returns multiple ranked candidates because automatic extraction cannot eliminate all of this ambiguity.

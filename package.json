@@ -8,11 +8,20 @@
     "start": "node src/server.mjs",
     "dev": "node --watch src/server.mjs",
     "cli": "node src/cli.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "contact-sheet": "node scripts/contact-sheet.mjs",
+    "review-montage": "node scripts/review-montage.mjs",
+    "review-labels": "node scripts/build-review-labels.mjs",
     "test": "node --test && node scripts/validate-fixtures.mjs",
     "fixtures:validate": "node scripts/validate-fixtures.mjs"
   },
   "engines": {
     "node": ">=22"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "htmlparser2": "^10.1.0",
+    "playwright": "^1.62.1",
+    "sharp": "^0.35.3"
+  }
 }

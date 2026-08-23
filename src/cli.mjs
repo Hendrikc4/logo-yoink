@@ -13,7 +13,11 @@ if (!website || downloadIndex >= 0 && !downloadDirectory) {
 }
 
 try {
-  const result = await extractLogos(website, { besticonUrl: process.env.BESTICON_URL || null });
+  const result = await extractLogos(website, {
+    besticonUrl: process.env.BESTICON_URL || null,
+    roleAwareBudget: true,
+    contentBoundingWide: true,
+  });
   if (downloadDirectory && result.selected) {
     const targetDirectory = resolve(downloadDirectory);
     await mkdir(targetDirectory, { recursive: true });
