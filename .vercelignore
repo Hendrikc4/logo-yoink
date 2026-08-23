@@ -1,0 +1,16 @@
+.git
+.playwright-cli
+.env*
+benchmarks
+design
+docs
+fixtures
+labels
+node_modules
+output
+reviews
+runs
+schemas
+scripts
+test
+token-optimizer
