@@ -161,7 +161,7 @@ function normalizedScore(candidate, role) {
   return Number(scores?.[role] ?? candidate.score ?? 0);
 }
 
-async function sanitizeCandidate(candidate, entityId, assetsDirectory) {
+export async function sanitizeCandidate(candidate, entityId, assetsDirectory) {
   const output = { ...candidate };
   delete output.dataUrl;
   delete output.data_url;

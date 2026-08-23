@@ -17,6 +17,96 @@ function companyAgreement(item, companyName) {
 
 const AUTHORITATIVE_SOURCES = ['schema', 'og-logo', 'microdata'];
 const FAVICON_SOURCES = ['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'root-favicon'];
+const PLATFORM_NAMES = ['namecheap', 'matomo', 'piwik', 'wix', 'vercel', 'webflow', 'squarespace', 'shopify', 'godaddy', 'netlify', 'framer'];
+const KNOWN_GENERIC_HASHES = new Map([
+  ['33c1436f8c40ca2582d091c449fccc34ed9bf73f02526c5fdef44f4f06c6321b', 'Wix default favicon'],
+  ['c965a500f698483526faf92ac286047cecd825608cd1d83276de392b30a13a83', 'WordPress default favicon'],
+  ['9ea4f4da7050c0cc408926f6a39c253624e9babb1d43c7977cd821445a60b461', 'Create React App default logo'],
+  ['dddd3a41217d3acee3effdec02946e4a26eba182c5994398e7d9dde4d585cebe', 'repurposed casino favicon'],
+  ['788f0397eb26c7151af4afc25d5478ef692b39c10035774158b500b187b4a431', 'photographic avatar mislabeled as logo'],
+  ['3646840f40e10d4b14e9d62f41087a09ffe0384628d093f47337580305b18353', 'foreign RealReports app icon'],
+  ['2f3184d54e08fe74380ab6618c1e03390638714f074b6b63fc0f9ae40212b72a', 'foreign JWSatInfo favicon'],
+  ['242351f0a1c0aee2c1d819844cdb6334140058b4487b4bbe9477c3cc33707616', 'foreign RealReports app icon'],
+  ['edf01f937bdf9c38ebcd30d84cb5acde5e2101e9c64c1c9b3a4a1351ea7886a0', 'foreign RealReports favicon'],
+  ['c386396ec70db3608075b5fbfaac4ab1ccaa86ba05a68ab393ec551eb66c3e00', 'Create React App default logo'],
+]);
+const KNOWN_HASH_OWNERS = new Map([
+  ['33c1436f8c40ca2582d091c449fccc34ed9bf73f02526c5fdef44f4f06c6321b', ['wix']],
+  ['c965a500f698483526faf92ac286047cecd825608cd1d83276de392b30a13a83', ['wordpress']],
+  ['9ea4f4da7050c0cc408926f6a39c253624e9babb1d43c7977cd821445a60b461', ['react']],
+  ['dddd3a41217d3acee3effdec02946e4a26eba182c5994398e7d9dde4d585cebe', ['leon', 'casino']],
+  ['3646840f40e10d4b14e9d62f41087a09ffe0384628d093f47337580305b18353', ['realreports']],
+  ['2f3184d54e08fe74380ab6618c1e03390638714f074b6b63fc0f9ae40212b72a', ['jwsatinfo']],
+  ['242351f0a1c0aee2c1d819844cdb6334140058b4487b4bbe9477c3cc33707616', ['realreports']],
+  ['edf01f937bdf9c38ebcd30d84cb5acde5e2101e9c64c1c9b3a4a1351ea7886a0', ['realreports']],
+  ['c386396ec70db3608075b5fbfaac4ab1ccaa86ba05a68ab393ec551eb66c3e00', ['react']],
+]);
+
+function normalizedWords(value) {
+  return String(value ?? '').toLowerCase().match(/[a-z0-9]+/g) ?? [];
+}
+
+export function genericAssetReason(item, companyName = '') {
+  const semantic = `${item.evidence?.semantic_text ?? ''} ${item.evidence?.alt ?? ''} ${item.evidence?.aria_label ?? ''}`.toLowerCase();
+  const url = String(item.resolvedUrl ?? item.resolved_url ?? item.url ?? '').toLowerCase();
+  const requestedCompanyWords = new Set(normalizedWords(companyName || item.evidence?.company_name));
+  const companyWords = new Set(requestedCompanyWords);
+  try {
+    for (const word of normalizedWords(new URL(item.source_page).hostname)) companyWords.add(word);
+  } catch { /* Inline and synthetic candidates may not have a source page. */ }
+  const itemHash = item.observed?.byte_hash ?? item.content_hash;
+  const knownHashReason = KNOWN_GENERIC_HASHES.get(itemHash);
+  const knownHashOwners = KNOWN_HASH_OWNERS.get(itemHash) ?? [];
+  if (knownHashReason && !knownHashOwners.some(owner => requestedCompanyWords.has(owner))) return knownHashReason;
+  const foreignPlatform = PLATFORM_NAMES.find(platform => !companyWords.has(platform) && (
+    new RegExp(`(?:^|[^a-z0-9])${platform}(?:[\\s_-]+)(?:logo|favicon|brand)(?:[^a-z0-9]|$)`, 'i').test(semantic) ||
+    new RegExp(`(?:powered|hosted|secured)[\\s_-]+by[\\s_-]+${platform}(?:[^a-z0-9]|$)`, 'i').test(semantic)
+  ));
+  if (foreignPlatform) return `foreign platform brand: ${foreignPlatform}`;
+  if (!companyWords.has('wix') && /static\.parastorage\.com\/client\/pfavico\.ico(?:[?#]|$)/i.test(url)) return 'Wix default favicon';
+  if (!companyWords.has('matomo') && !companyWords.has('piwik') && (
+    /(?:^|[-_\s])default-piwik-logo(?:$|[-_\s])/i.test(semantic) ||
+    /\/plugins\/morpheus\/images\/logo\.svg(?:\?matomo)?$/i.test(url) ||
+    /\/plugins\/corehome\/images\/(?:applogo_\d+|favicon)\.(?:png|ico|svg)(?:[?#]|$)/i.test(url)
+  )) return 'Matomo default application logo';
+  if (!companyWords.has('godaddy') && /img1\.wsimg\.com\/isteam\/ip\/static\/pwa-app\/logo-default\.png/i.test(url)) return 'GoDaddy default PWA logo';
+  if (!companyWords.has('789bet') && !companyWords.has('meriamhoki') && !companyWords.has('90phut') && /(?:789bet|dewancash|meriamhoki|90phut)/i.test(`${semantic} ${url}`)) return 'foreign gambling brand';
+  if (/(?:^|[-_\s])(?:logo[-_\s]*)?soc[-_\s]*2(?:$|[-_\s])/i.test(`${semantic} ${url}`)) return 'SOC 2 compliance badge';
+  if (item.evidence?.dom_region === 'footer' && /(?:badge|award|certif(?:ied|ication)|compliant|trustmark|trustpilot)/i.test(semantic)) return 'footer trust badge';
+  if (/(?:^|[-_\s])fa[-_\s]*(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i.test(semantic)) return 'Font Awesome UI control';
+  if (/(?:^|[^a-z0-9])(?:instagram|twitter|facebook|linkedin|youtube|tiktok|pinterest)(?:[-_\s]*(?:logo|icon|glyph))?(?:[^a-z0-9]|$)/i.test(`${semantic} ${url}`)) return 'social-media glyph';
+  const candidateRatio = item.width && item.height ? item.width / item.height : null;
+  if (item.source === 'inline-svg' && (
+    /(?:icon[-_\s]*play|play[-_\s]*circle|play[-_\s]*video|video[-_\s]*(?:wrapper|column)|e-far-play|tabler[-_\s]*icon[-_\s]*(?:copyright|menu|search|play)|chakra[-_\s]*icon|kb[-_\s]*svg[-_\s]*icon|fxfa[-_\s]*icon[\s\S]*menuitem|pointer-events-off[^\n]{0,80}nav[-_\s]*main[-_\s]*link|exp[-_\s]*selector[-_\s]*icon)/i.test(semantic) ||
+    candidateRatio >= 0.72 && candidateRatio <= 1.4 && /presentation[^\n]{0,240}wixui[-_\s]*vector[-_\s]*image/i.test(semantic)
+  )) return 'inline UI control';
+  if (['dom-img', 'dom-picture', 'browser-img'].includes(item.source) && (
+    /^\s*menu\s*$/i.test(item.evidence?.alt ?? '') || /menu[-_\s]*item__icon|ico[-_\s]*gnb[-_\s]*menu|userpilot[-_\s]*enterprise[-_\s]*icon/i.test(`${semantic} ${url}`)
+  )) return 'menu UI control';
+  if (/untitled[-_\s]*ui[-_\s]*logo/i.test(url)) return 'Untitled UI template logo';
+  if (/(?:works[-_\s]*with[-_\s]*logos|enterprises?[-_\s]*logo[-_\s]*\d+)/i.test(`${semantic} ${url}`) ||
+    /(?:customer[-_\s]*logos?|partner[-_\s]*logos?)/i.test(`${semantic} ${url}`) && !companyAgreement(item, companyName || item.evidence?.company_name)) return 'customer or partner logo';
+  if (/sloane[-_\s]*logo[-_\s]*2\.webp/i.test(url)) return 'photographic avatar mislabeled as logo';
+
+  const ratio = item.width && item.height ? item.width / item.height : null;
+  const rasterBodyImage = ['dom-img', 'dom-picture', 'browser-img'].includes(item.source) && !item.scalable &&
+    item.evidence?.dom_region === 'body' && !item.evidence?.home_linked;
+  const explicitBrandAsset = /(?:logo|wordmark|brandmark|logomark)/i.test(`${semantic} ${url}`) && !/logo[-_\s]*editor/i.test(semantic);
+  if (item.evidence?.dom_region === 'body' && !item.evidence?.home_linked && !item.evidence?.positive_token && ratio >= 0.72 && ratio <= 1.4 && !explicitBrandAsset && ['dom-img', 'dom-picture', 'browser-img'].includes(item.source)) return 'unlinked square body illustration';
+  if (rasterBodyImage && ratio >= 0.72 && ratio <= 1.4 && !explicitBrandAsset) return 'unlinked square body image';
+  if (item.evidence?.dom_region === 'body' && !item.evidence?.home_linked && !item.evidence?.positive_token && !explicitBrandAsset && /(?:^|[-_\s])hero(?:$|[-_\s])/i.test(`${semantic} ${url}`)) return 'hero image';
+  if (rasterBodyImage && /(?:app[-_\s]*demo|screenshot|dashboard|mockup|hero[-_\s]*photo|homepage[-_\s]*hero|adobestock|main[-_\s]*story[-_\s]*image|cover__image-background|picture of (?:a|an|the)|inbox with uploaded|logo[-_\s]*(?:editor|color[-_\s]*selection)|editable[-_\s]*brand[-_\s]*palette)/i.test(`${semantic} ${url}`)) return 'body content image';
+  if (/(?:product[-_\s]*image|featured[-_\s]*products)/i.test(`${semantic} ${url}`)) return 'product image';
+  if (ratio >= 1.8 && ratio <= 2.1 && /(?:^|[\/_-])og[-_\s]*default(?:[.\/_-]|$)/i.test(url) && !explicitBrandAsset) return 'default social-card image';
+  if (item.source === 'schema' && /(?:^|[\/_-])og[-_\s]*image(?:[.\/_-]|$)/i.test(url) && !explicitBrandAsset) return 'generic social-card image';
+
+  const alt = String(item.evidence?.alt ?? '').toLowerCase();
+  const matchesCompanyPrefix = word => [...companyWords].some(companyWord => word.length >= 4 && (companyWord.startsWith(word) || word.startsWith(companyWord)));
+  const namedLogo = /(?:^|[^a-z0-9])logos?(?:[^a-z0-9]|$)/i.test(`${alt} ${url}`) && normalizedWords(alt).some(word =>
+    word.length >= 3 && !companyWords.has(word) && !matchesCompanyPrefix(word) && !['logo', 'icon', 'brand', 'header', 'footer', 'light', 'dark', 'white', 'black', 'mode'].includes(word));
+  if (!item.evidence?.home_linked && namedLogo && !companyAgreement(item, companyName || item.evidence?.company_name)) return 'foreign named logo';
+  return null;
+}
 
 export function hasWideEvidence(item, companyName = '') {
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
@@ -31,8 +121,10 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   if (item.evidence?.dom_region === 'header' || item.evidence?.dom_region === 'nav') confidence += add(`${item.evidence.dom_region} placement`, 18);
   if (item.evidence?.home_linked) confidence += add('home linked', 12);
   const agreesWithCompany = companyAgreement(item, companyName || item.evidence?.company_name);
+  const genericReason = genericAssetReason(item, companyName);
   if (agreesWithCompany) confidence += add('company agreement', 12);
   if (item.evidence?.negative_context) confidence += add('negative context', -35);
+  if (genericReason) confidence += add(`generic exclusion (${genericReason})`, -100);
   if (item.source === 'social-banner') confidence += add('banner exclusion', -30);
   if (item.highResolution) confidence += add('adequate resolution', 8);
   if (item.scalable) confidence += add('vector', 7);
@@ -46,7 +138,7 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   const faviconSource = FAVICON_SOURCES.includes(item.source);
   const authoritativeSource = AUTHORITATIVE_SOURCES.includes(item.source);
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
-  const safeContext = !item.evidence?.negative_context;
+  const safeContext = !item.evidence?.negative_context && !genericReason;
   const usableIconSize = !item.width || !item.height || Math.min(item.width, item.height) >= 32 || (item.scalable && (item.evidence?.positive_token || agreesWithCompany));
   const roleEligible = role => !Array.isArray(item.evidence?.eligible_roles) || item.evidence.eligible_roles.includes(role);
   const icon = round(confidence + (square ? add('square shape', 28) : add('non-square icon', -12)) + (faviconSource ? 5 : 0));

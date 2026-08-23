@@ -2,7 +2,11 @@
 
 import { mkdir, readFile } from 'node:fs/promises';
 import { basename, dirname, join, resolve } from 'node:path';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import sharp from 'sharp';
+
+const execFileAsync = promisify(execFile);
 
 const runDirectory = resolve(process.argv[2] ?? '');
 if (!process.argv[2]) throw new Error('Usage: node scripts/review-montage.mjs <run-directory>');
@@ -14,10 +18,19 @@ const xml = value => String(value ?? '').replace(/[<>&"']/g, character => ({ '<'
 
 async function preview(candidate, width) {
   if (!candidate?.asset_path) return null;
+  const assetPath = join(runDirectory, candidate.asset_path);
   try {
-    return await sharp(join(runDirectory, candidate.asset_path), { density: 144, limitInputPixels: 40_000_000, animated: false })
+    return await sharp(assetPath, { density: 144, limitInputPixels: 40_000_000, animated: false })
       .resize({ width: width - 24, height: 58, fit: 'contain', withoutEnlargement: true }).png().toBuffer();
-  } catch { return null; }
+  } catch {
+    if (!/\.ico$/i.test(assetPath)) return null;
+    try {
+      const { stdout } = await execFileAsync('ffmpeg', ['-v', 'error', '-i', assetPath, '-frames:v', '1', '-f', 'image2pipe', '-vcodec', 'png', 'pipe:1'], {
+        encoding: 'buffer', maxBuffer: 8 * 1024 * 1024,
+      });
+      return await sharp(stdout).resize({ width: width - 24, height: 58, fit: 'contain', withoutEnlargement: true }).png().toBuffer();
+    } catch { return null; }
+  }
 }
 
 function selected(result, role) {

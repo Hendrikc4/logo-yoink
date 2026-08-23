@@ -24,6 +24,8 @@ A negative shipping decision does not always mean the underlying signal was usel
 
 | Date | Experiment | Development outcome | Holdout outcome | Cost or risk | Status |
 |---|---|---|---|---|---|
+| 2026-08-22 | Full 500-company visual audit and false-positive exclusions | Complete labels: strict selected-role precision 94.35%→98.29%; definite wrong selections 23→0 | All 500 icon/wide selections reviewed; 26 slots changed, with 10 visually confirmed replacements and 16 withheld | Availability icon 359→349, wide 243→237, favicon 350→343; metadata/hash-only, zero runtime network/AI cost | **Kept** |
+| 2026-08-22 | Generic platform, badge, and UI-asset exclusions | Labeled icon/wide precision 89.8%→94.3%; two wrong icons replaced, one wrong icon and two wrong wides withheld | Offline all-500 rerank changed only nine role slots across seven domains; three repeated Wix defaults removed | Icon −1, wide −2, favicon −4 in the stored 500 run; exact signatures only, zero network cost | **Kept** |
 | 2026-08-22 | Role-aware fixed download budget with strong-evidence gate | Icon +2, favicon +3; removed false body-image candidates | Icon +2, wide +2, favicon +5 when combined with content bounds | Holdout requests/domain −26%; bytes/domain −59% for combined bundle | **Kept** |
 | 2026-08-22 | Wide-only visual content bounds | Three correct padded wordmarks recovered; no icon/favicon flips | Combined bundle wide +2 after one false wide candidate was removed by the evidence gate | Bounded local Sharp scan; no network cost | **Kept** |
 | 2026-08-22 | Existing synchronous browser fallback | Wide 42→48 (+6); confirms JS rendering has meaningful wide-logo recall | Not promoted to default | Requests 1,074→3,351; bytes about 104→159 MB; p95 about 3.6→7.5 s | **Available, optional — cost-limited** |
@@ -44,6 +46,20 @@ A negative shipping decision does not always mean the underlying signal was usel
 | 2026-08-22 | Multi-observation provenance bonus | Identical selected URLs in all 300 role slots | Not run because benefit was zero | Results grew about 16%; could reinforce wrong identities | **Dropped** |
 
 ## Retained mechanisms
+
+### Generic non-brand asset exclusions
+
+Ranking now withholds a small set of visually verified non-brand assets: foreign platform wordmarks on placeholder/application pages, Matomo's default app assets, Wix's shared default favicon, SOC 2/footer trust badges, and common Font Awesome navigation controls. Provider-brand exclusions are bypassed when the requested company or source hostname is the provider itself. Namecheap parking pages and Vercel security checkpoints are also classified before asset discovery.
+
+Offline reranking of the stored 500-domain artifacts changed nine role selections across seven domains. On the fully reviewed development 100, Fleetcraft's SOC 2 seal and Equi-rider's language control were replaced by correct first-party icons; the JUNO/Matomo icon and the Namecheap and Matomo wide logos were withheld. Correct icon/wide selections increased from 97/108 (89.8%) to 99/105 (94.3%). The stored all-500 availability moved from 365/249/354 to 364/247/350 because the treatment intentionally returns no asset instead of a known generic one. Three of the favicon removals were the same Wix default bytes on unrelated domains. No unreviewed icon or wide selection changed outside the known false-positive cases.
+
+### Visually derived content and foreign-mark exclusions
+
+A second pass reviewed every selected icon and wide asset in the stored 500-company montages, then inspected every old/new pair produced by reranking. Narrow metadata rules now reject social-network glyphs; inline play, chevron, and product-selector controls; Untitled UI template artwork; the observed WordPress default favicon; non-home-linked foreign named logos; semantically explicit product/mockup/dashboard/editor imagery; and unlinked square raster images from page content unless their URL or local semantics identify a logo or mark.
+
+The completed audit contains 602 labels for the prior selected icon/wide assets: 568 correct, 23 wrong, and 11 ambiguous. The final rerank changes 26 role slots: 10 false positives are replaced by visually confirmed first-party marks, and 16 are withheld because no defensible alternative remains. It handles repeated platform defaults and foreign identities (Wix, WordPress, Create React App, GoDaddy, RealReports, and several reused gambling assets), plus visually recognizable navigation controls, play icons, copyright glyphs, partner/customer carousels, generic social cards, body illustrations, screenshots, and product imagery.
+
+The final run selects 349 icons, 237 wide logos, and 343 favicons. Its 586 retained icon/wide labels contain 576 correct, zero definite wrong, and 10 ambiguous identity transitions. Strict precision, conservatively counting ambiguous selections as non-correct, is 98.29% (up from 94.35%). Precision among determinate labels is 100%; this should not be interpreted as population-perfect precision because the evaluation reuses the audited cohort. The benchmark score rises from 66.89 to 71.97, primarily because wrong-brand safety improves from 18 affected reachable domains to zero. Both the [`before`](../labels/review-500-before-precision-2026-08-22.jsonl) and [`final`](../labels/review-500-final-2026-08-22.jsonl) label artifacts are versioned.
 
 ### Role-aware candidate budget
 
