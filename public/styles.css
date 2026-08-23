@@ -52,7 +52,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .github-cta:active { transform: translateY(1px); }
 
 .trail-divider { position: relative; height: 86px; margin: 22px -20px 2px; overflow: hidden; }
-.trail-divider::before { content: ''; position: absolute; inset: 0; background: url('/assets/ui/train-divider-minimal.webp') center / cover no-repeat; filter: brightness(1.32) saturate(1.08); image-rendering: pixelated; mix-blend-mode: screen; opacity: .96; }
+.trail-divider::before { content: ''; position: absolute; inset: 0; background: url('/assets/ui/train-divider-minimal.webp') center / cover no-repeat; filter: brightness(1.2) saturate(1.08); image-rendering: pixelated; }
 .trail-divider::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--background), transparent 12%, transparent 88%, var(--background)), linear-gradient(180deg, var(--background), transparent 24%, transparent 76%, var(--background)); }
 
 .try-section { padding: 33px 0 12px; }
