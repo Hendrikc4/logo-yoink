@@ -24,6 +24,7 @@ A negative shipping decision does not always mean the underlying signal was usel
 
 | Date | Experiment | Development outcome | Holdout outcome | Cost or risk | Status |
 |---|---|---|---|---|---|
+| 2026-08-22 | Precision-gated asynchronous browser warming for missing-wide domains | Precision-ranked original-100 wide 40→47; all seven additions visually confirmed correct; Bhr→RealReports vetoed | Precision-ranked holdout wide 58→62; all four additions visually confirmed correct; icon/favicon unchanged in both cohorts | Off-path cold cost: development about 2,021 requests/41 MB; holdout 1,494 requests/24.9 MB and 2.30/4.39 s browser p50/p95; warm replay zero network and byte-identical | **Kept — asynchronous/off-path** |
 | 2026-08-22 | Full 500-company visual audit and false-positive exclusions | Complete labels: strict selected-role precision 94.35%→98.29%; definite wrong selections 23→0 | All 500 icon/wide selections reviewed; 26 slots changed, with 10 visually confirmed replacements and 16 withheld | Availability icon 359→349, wide 243→237, favicon 350→343; metadata/hash-only, zero runtime network/AI cost | **Kept** |
 | 2026-08-22 | Generic platform, badge, and UI-asset exclusions | Labeled icon/wide precision 89.8%→94.3%; two wrong icons replaced, one wrong icon and two wrong wides withheld | Offline all-500 rerank changed only nine role slots across seven domains; three repeated Wix defaults removed | Icon −1, wide −2, favicon −4 in the stored 500 run; exact signatures only, zero network cost | **Kept** |
 | 2026-08-22 | Role-aware fixed download budget with strong-evidence gate | Icon +2, favicon +3; removed false body-image candidates | Icon +2, wide +2, favicon +5 when combined with content bounds | Holdout requests/domain −26%; bytes/domain −59% for combined bundle | **Kept** |
@@ -42,10 +43,28 @@ A negative shipping decision does not always mean the underlying signal was usel
 | 2026-08-22 | Screenshot/canvas extraction | Controls were unreliable; no defensible win | Not run | High browser/vision cost and UI contamination risk | **Dropped** |
 | 2026-08-22 | Asynchronous browser fallback for missing-wide domains | Wide 44→52 with no icon/favicon movement; 7/8 new selections correct | Not run because reviewed precision failed the gate | About 2,021 deferred requests and 41 MB cold-cache; one wrong-brand promotion | **Iterate — precision-limited** |
 | 2026-08-22 | Off-domain identity quarantine | Removed two confirmed wrong-brand domains; accepted seven legitimate moves | One uncorroborated Mocksi→BriefHQ quarantine; eight moves accepted | Approximate suffix parsing, same-domain blind spot, and ambiguous pure renames | **Iterate — safety-policy** |
+| 2026-08-22 | Off-domain quarantine against final 500 labels | Prior redirected selections contained 11 wrong labels; the precision filters removed them without a redirect policy | Final redirected set: 44 correct, 6 ambiguous, 0 wrong across 50 selected-role labels | A default quarantine would now withhold legitimate/ambiguous moves without a measured wrong-brand reduction | **Dropped as a default policy — review signal only** |
 | 2026-08-22 | Theme grouping and light/dark usability | Zero genuine variant pairs and zero corrected rescues | Not run because benefit was zero | Browser probe added 622 requests; classifier-only result | **Dropped** |
 | 2026-08-22 | Multi-observation provenance bonus | Identical selected URLs in all 300 role slots | Not run because benefit was zero | Results grew about 16%; could reinforce wrong identities | **Dropped** |
 
 ## Retained mechanisms
+
+### Precision-gated asynchronous browser warming
+
+The deferred missing-wide browser queue now clears both promotion gates when replayed after the full precision rerank. The implementation is deliberately off the foreground path: [`warm-browser-observations.mjs`](../scripts/warm-browser-observations.mjs) queues only successful, reachable records with no selected wide logo, caps shared-Chromium concurrency at two, and writes content-addressed observations. [`replay-browser-observations.mjs`](../scripts/replay-browser-observations.mjs) performs a zero-network merge, rejects duplicate bytes and URLs before ranking, and marks every browser addition wide-only so icon and favicon cannot move.
+
+A narrow identity-conflict veto applies only to deferred browser candidates. It recognizes an explicit home-linked accessibility declaration such as `RealReports Logo`, compares both tokens and compact spellings against the requested company and domain, and withholds a conflicting candidate. This rejects Bhr→RealReports while preserving spacing variants such as Ahgpay→AHG Pay. It is not a general rebrand classifier and does not loosen any existing generic-asset or content-image exclusion.
+
+Results on the two frozen 100-company slices:
+
+| Cohort | Precision-ranked control | Async treatment | Visually reviewed additions | Wrong-brand domains | Icon/favicon movement |
+|---|---:|---:|---:|---:|---:|
+| Original-100 | wide 40 | wide 47 | 7/7 correct | 0 | 0 |
+| Holdout-100 | wide 58 | wide 62 | 4/4 correct | 0 | 0 |
+
+The eleven additions are Scoped Solutions, TradeBridge, Grapple, Curiominds AI, Aryval, Utiq, TrialNav, Vention, MindCoord, Wora Delivery, and Rigly. Every stored asset was re-inspected on light and dark panels. Six are good on both backgrounds; Scoped Solutions, Aryval, Vention, MindCoord, and Rigly are conditional because contrast depends on the background. Incremental precision is 100%. Applied to the canonical 500-label baseline, selected availability becomes icon 349, wide 248, favicon 343. Strict icon/wide precision becomes 587/597 = 98.32%, determinate precision remains 100%, and wrong-brand domains remain zero. The benchmark delta from the eleven correct selections and their reviewed usability is +0.97, moving the canonical 71.97 baseline to 72.94 with foreground efficiency unchanged.
+
+The development cache retained the earlier measured cold cost of about 2,021 deferred requests and 41 MB for 36 queued domains. The retained harness's holdout warm queued 27 domains, made 1,457 browser requests plus 37 validation requests, transferred 23.43 MB plus 1.49 MB of validated assets, and measured 2.30/4.39 seconds browser p50/p95. Repeating the holdout warm produced 27 cache hits, zero browser invocations, zero network requests, and byte-identical reranked output. These costs are acceptable only as asynchronous, cacheable enrichment; synchronous/default browser discovery remains rejected.
 
 ### Generic non-brand asset exclusions
 
@@ -127,6 +146,8 @@ The experiment is a safety improvement rather than a coverage improvement. It re
 
 **Retest trigger:** a labeled set of off-domain redirects and same-domain repurposed sites large enough to measure both false quarantine and false acceptance. The current 200-domain evidence is directionally good but too small for default identity policy.
 
+The completed 500-label audit now resolves the shipping question for the current cohort. Among domains classified as redirected off-domain in the stored all-500 run, the before-precision labels contained 41 correct, 11 wrong, and 7 ambiguous selected-role records. After the retained precision filters, the final labels contain 44 correct, zero wrong, and 6 ambiguous records. A separate default quarantine therefore has no residual wrong-brand yield to measure, while it would still discard uncorroborated moves such as Mocksi→BriefHQ. The broad policy is dropped from default consideration and retained only as a reviewer/diagnostic state. The browser-wide path uses its narrower candidate-level explicit-name veto because that has a reproduced same-domain failure and no observed false quarantine after compact-name normalization.
+
 ## Supporting signals worth preserving as ideas
 
 ### OCR name agreement
@@ -135,11 +156,15 @@ OCR agreed with the expected company name on 17% of the inspected sample and pro
 
 The result is still potentially useful as a precision feature on a very small ambiguous set—for example, deferred browser wide candidates that otherwise pass shape/source checks. A future test should measure whether OCR rejects partner/UI assets or confirms wordmarks, not whether it increases raw candidate count. It should never override a strong identity conflict, and absence of readable text must remain neutral because symbol-only logos are common.
 
+The new async treatment does not meet that retest trigger: all eleven changed selections were resolved by first-party placement, explicit semantics, the identity veto, and visual review, with zero wrong-brand output. OCR would not add coverage or change a decision, so adding its CPU/runtime dependency would have zero measurable value here. It was not rerun or implemented.
+
 ### Perceptual and byte-level corroboration
 
 Perceptual hashing found repeated assets, but repetition did not create coverage and blank/near-blank assets generated degenerate hashes. The later provenance experiment also showed that multi-source repetition can reinforce a wrong identity such as Willow/Because.
 
 Hashing may still be useful for cache deduplication, montage grouping, and reviewer diagnostics. It should not add ranking points unless independent brand identity is already established. Exact byte hashes were useful in the async experiment because they prevented browser copies from displacing static candidates; that operational use is retained conceptually even though perceptual ranking bonuses are not.
+
+The precision-gated replay confirms that boundary. Exact byte and URL hashes remain part of cache identity and pre-merge deduplication, where they prevent non-wide role movement. Perceptual corroboration would not change any of the eleven reviewed decisions and could still reinforce a coherent wrong owner, so no perceptual-hash ranking or runtime dependency was added.
 
 ### Search, archive, package, and registry hints
 
