@@ -7,3 +7,10 @@
 Each record is keyed by `entity_id`, `candidate_id`, and `role`. `identity` is `correct`, `wrong`, or `ambiguous`; `usability` is `good`, `conditional`, `unusable`, or a light/dark theme-state object. The matching scored run is generated at `runs/review-final-all-500` and is intentionally excluded from version control because it contains downloaded assets.
 
 The prior set has 602 selected-role records: 568 correct, 23 wrong, and 11 ambiguous. The final set has 586 records: 576 correct, 0 wrong, and 10 ambiguous.
+
+`identity-quarantine-challenge-2026-08-23.json` is the frozen adversarial identity set. It is constructed from all non-correct records above plus every off-domain redirect in the fresh current-main all-500 run. It stores bounded structured identity observations and run selections, not raw HTML or asset bytes. Evaluate it offline with:
+
+```sh
+node scripts/identity-quarantine-challenge.mjs evaluate \
+  labels/identity-quarantine-challenge-2026-08-23.json
+```

@@ -44,6 +44,7 @@ A negative shipping decision does not always mean the underlying signal was usel
 | 2026-08-22 | Asynchronous browser fallback for missing-wide domains | Wide 44→52 with no icon/favicon movement; 7/8 new selections correct | Not run because reviewed precision failed the gate | About 2,021 deferred requests and 41 MB cold-cache; one wrong-brand promotion | **Iterate — precision-limited** |
 | 2026-08-22 | Off-domain identity quarantine | Removed two confirmed wrong-brand domains; accepted seven legitimate moves | One uncorroborated Mocksi→BriefHQ quarantine; eight moves accepted | Approximate suffix parsing, same-domain blind spot, and ambiguous pure renames | **Iterate — safety-policy** |
 | 2026-08-22 | Off-domain quarantine against final 500 labels | Prior redirected selections contained 11 wrong labels; the precision filters removed them without a redirect policy | Final redirected set: 44 correct, 6 ambiguous, 0 wrong across 50 selected-role labels | A default quarantine would now withhold legitimate/ambiguous moves without a measured wrong-brand reduction | **Dropped as a default policy — review signal only** |
+| 2026-08-22 | Structured identity quarantine challenge set | Fresh current-main run had zero known harmful selections to veto; strongest two-source rule had 2 confirmed false quarantines and 3 ambiguous quarantines | Frozen adversarial set covered all 23 historical wrong selections, all 10 final ambiguous labels, all 37 fresh off-domain redirects, and Bhr same-domain repurposing | Runtime could reuse homepage HTML, but every tested rule had zero current safety gain | **Dropped — negative result** |
 | 2026-08-22 | Theme grouping and light/dark usability | Zero genuine variant pairs and zero corrected rescues | Not run because benefit was zero | Browser probe added 622 requests; classifier-only result | **Dropped** |
 | 2026-08-22 | Multi-observation provenance bonus | Identical selected URLs in all 300 role slots | Not run because benefit was zero | Results grew about 16%; could reinforce wrong identities | **Dropped** |
 
@@ -148,6 +149,24 @@ The experiment is a safety improvement rather than a coverage improvement. It re
 
 The completed 500-label audit now resolves the shipping question for the current cohort. Among domains classified as redirected off-domain in the stored all-500 run, the before-precision labels contained 41 correct, 11 wrong, and 7 ambiguous selected-role records. After the retained precision filters, the final labels contain 44 correct, zero wrong, and 6 ambiguous records. A separate default quarantine therefore has no residual wrong-brand yield to measure, while it would still discard uncorroborated moves such as Mocksi→BriefHQ. The broad policy is dropped from default consideration and retained only as a reviewer/diagnostic state. The browser-wide path uses its narrower candidate-level explicit-name veto because that has a reproduced same-domain failure and no observed false quarantine after compact-name normalization.
 
+### Structured identity quarantine challenge-set retest
+
+This retest built [`identity-quarantine-challenge-2026-08-23.json`](../labels/identity-quarantine-challenge-2026-08-23.json) from the union of every non-correct record in the two 500-company label files and every off-domain redirect in a fresh all-500 run at current main `1dc320b`. Its 51 entities include all 23 historical wrong selections, all 10 final ambiguous labels, all 37 fresh off-domain redirects, the known expired/reassigned domains, and Bhr→RealReports as the same-domain repurposing control. The fresh baseline reproduced 424 reachable sites and selected 367 icons, 243 wide logos, and 366 favicons. Its 63.4 availability proxy is live-network drift, not a replacement for the verified 71.97 quality baseline. The historical labels matched 572 of 610 fresh selected icon/wide slots, so the fresh quality score is correctly reported as incomplete.
+
+The frozen observation contains only current strong structured identity declarations: JSON-LD Organization/Brand names and URLs, `og:site_name`, canonical URL, and `og:url`. Names were tested only as vetoes; URL fields remained diagnostic. Exact normalized equality was used, without substring acceptance, edit distance, or a positive ranking bonus. Three deterministic policies were evaluated offline:
+
+| Veto policy | Historical harmful selections vetoed | Current harmful selections vetoed | Confirmed false quarantines | Ambiguous quarantines | Fresh icon/wide/favicon delta | Delta from verified 71.97 |
+|---|---:|---:|---:|---:|---:|---:|
+| Any structured-name conflict | 7 | 0 | 7 | 5 | −10 / −8 / −11 | −0.98 |
+| Same foreign name in JSON-LD and `og:site_name` | 4 | 0 | 2 | 3 | −4 / −4 / −5 | −0.27 |
+| Foreign hostname-shaped `og:site_name` | 3 | 0 | 1 | 0 | −1 / −1 / −1 | −0.18 |
+
+Current main already withheld every selected role on the six historically harmful identity domains: Haryon/Knock Knock, Bhr, RapidVerify, BanterAI, NUMiX Materials, and Obseva. Consequently all policies produced zero current wrong-brand-domain reduction. The two-source policy falsely quarantined the visually confirmed Willow→Because move and Raiqon's correct mark because the site consistently declares `Raiqon AI`; it also quarantined unresolved Mocksi→Brief, BudID→Cetti, and SPIRL→Defakto transitions. The narrow hostname policy still falsely quarantined Klipy: `useklipy.com` legitimately serves Klipy while declaring `Klipy.ai`. Every would-be changed current selection was reviewed on light and dark montage panels; confirmed correct examples included Digitoys, Because, HUDU, Raiqon, Rapid Flight Training, Stak, and Klipy, while Penny, Cetti, Brief, Drip Labs/AC, and Defakto remained ambiguous. The harmful controls selected no current assets.
+
+Freezing current observations succeeded for 50/51 homepages; JUNO Nutrition's fresh probe failed and remains represented by its run redirect and historical labels. The freeze cost 103 requests and 15.06 MB, with 404/1,828 ms p50/p95 and 32.49 seconds summed latency. A production implementation could reuse the already-fetched homepage HTML, so it would add no network requests or bytes, but this does not rescue the precision failure or create a current safety benefit. No product rule was implemented. Reproduce with `node scripts/identity-quarantine-challenge.mjs evaluate labels/identity-quarantine-challenge-2026-08-23.json`; use `freeze <all-500-run> <artifact.json>` only to intentionally refresh the web snapshot.
+
+**Decision:** negative result. Zero false quarantines and a clear current safety benefit were both required; no tested rule met either half of that gate. Keep these fields as reviewer diagnostics only. Retest only when a verified current-main run contains residual harmful selections that the existing exact filters do not already withhold, or when external labels resolve the pure-rename cases.
+
 ## Supporting signals worth preserving as ideas
 
 ### OCR name agreement
@@ -210,17 +229,7 @@ After collapsing manifest/Apple/HTML/root icon declarations into one source cate
 
 ## Next experiment
 
-Test one small combined change: apply a strong structured identity-conflict veto only to deferred browser promotions. A conflict should require a current JSON-LD organization name or `og:site_name` that disagrees with both the fixture company name and requested-domain tokens. Do not expand browser discovery surfaces.
-
-Development success gates:
-
-- at least four visually correct new wide selections per 100;
-- at least 95% reviewed precision;
-- zero new wrong-brand domains;
-- zero icon or favicon selection changes;
-- bounded browser concurrency of two and deterministic cache replay.
-
-Run the frozen holdout only after every development gate passes.
+Do not iterate on default identity string matching. The retained exact asset filters and browser-candidate accessibility-name veto already remove the reproduced current failures. Reopen identity quarantine only for a newly verified residual harmful selection or after external labels resolve the pure-rename cases; continue to require zero false quarantines and a measured current-main wrong-brand reduction.
 
 ## How to record future experiments
 
