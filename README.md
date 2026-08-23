@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/design/cowboy-runner/desktop-gameplay-reference.png" alt="Pixel-art Logo Yoink cowboy riding through the desert toward a logo and lasso pickup">
+  <img src="public/assets/readme/logo-yoink-flow.webp" alt="Pixel-art cowboy lassoing square, wide, and favicon logo assets out of a browser">
 </p>
 
 Logo hunting should not feel like archaeology. Give Logo Yoink one URL and it finds the real image files a site exposes, checks that they work, removes duplicates, and ranks the best choices for:
@@ -74,12 +74,6 @@ curl -sS http://127.0.0.1:4310/api/extract \
 ```
 
 The response includes `selectedByRole`, grouped `assetFamilies`, every ranked `candidate`, and discovery `diagnostics`.
-
-<p align="center">
-  <img src="public/assets/readme/logo-yoink-flow.webp" alt="Pixel-art cowboy lassoing square, wide, and favicon logo assets out of a browser">
-</p>
-
-<p align="center"><em>One URL in. The right logo for every job out.</em></p>
 
 ## What gets yoinked?
 
