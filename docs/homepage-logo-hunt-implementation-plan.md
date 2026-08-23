@@ -27,7 +27,7 @@ Success means:
 
 - One fixed digital-marsh scene only.
 - Five core species plus the rare 20-footer for the first release.
-- At most six ordinary creatures active on desktop and four on mobile.
+- At most six ordinary creatures are active on desktop; mobile intentionally shows three or four.
 - No game-over state, levels, accounts, leaderboard, server persistence, inventory economy, audio requirement, or multiple scenery system.
 - A session score, streak, and field-guide count are enough.
 - The game begins in an idle state and starts only after an explicit **Start hunt**, click/tap, or keyboard activation. Merely moving a pointer across the hero does not begin scoring.
@@ -66,7 +66,7 @@ Replay variety comes from creature selection, size, path, speed, spawn timing, w
 ### State B: active hunt
 
 - Pointer, touch, or focused keyboard target controls the flashlight.
-- Three to six logo creatures move on independent but bounded paths.
+- Three to six logo creatures move on independent but bounded paths on desktop; mobile holds the denser composition to three or four.
 - The HUD shows score, streak, field-guide progress, and pause/resume.
 - The flashlight conceals creatures; the company mark becomes visible under the light, but its playful species classification remains unknown until capture.
 
@@ -150,12 +150,22 @@ This is intentionally not a reducer framework, entity-component system, event bu
   spawnIndex,
   lastRareAt,
   creatures: [
-    { id, speciesId, markId, x, y, vx, vy, phase, spawnedAt }
-  ]
+    {
+      id, speciesId, markId, x, y, vx, vy, phase,
+      spawnedAt, expiresAt, captured, capturedAt
+    }
+  ],
+  rare: null | {
+    creatureId, phase, spawnedAt, holdProgressMs, holdTargetMs
+  }
 }
 ```
 
-Positions use normalized scene coordinates so the same model works across viewport sizes. The core advances with a fixed tick (`TICK_MS`, initially 20 ms). `hunt-ui.js` accumulates real frame time, invokes zero or more fixed steps, and caps catch-up steps after tab sleep. Wall-clock delta never enters game rules.
+Positions use normalized scene coordinates so the same model works across viewport sizes. The UI classifies the viewport before session creation and passes immutable `{ minActive, maxActive }` density inputs: desktop allows three to six and mobile three to four. Deterministic replay means the same seed plus the same session configuration produces the same sequence. A later resize changes CSS/rendering bounds only; it never mutates core density or spawn state. Reclassification requires a new session.
+
+`expiresAt` is measured in advancing game time, so paused, hidden, and offscreen time cannot consume TTL. A captured creature is latched by `captured`/`capturedAt` until replacement, preventing duplicate scoring. `rare.holdProgressMs` is core-owned deterministic progress and resets on the cancellation conditions in §6.
+
+The core advances with a fixed tick (`TICK_MS`, initially 20 ms). `hunt-ui.js` accumulates real frame time, invokes zero or more fixed steps, and caps catch-up steps after tab sleep. Pointer capture/release/cancel and keyboard capture/hold/release events enqueue commands; the core consumes that queue at the start of the next fixed step. DOM handlers never mutate score, capture state, TTL, or rare hold progress directly. Wall-clock delta never enters game rules.
 
 ### 5.5 Deterministic randomness
 
@@ -201,12 +211,12 @@ Proposed document structure:
 
 ### Movement
 
-- Maximum six desktop and four mobile creatures.
+- Maximum six desktop creatures; mobile maintains three or four according to the seeded spawn cap.
 - Movement recipes are small functions: glide, dart, hop, wobble, and rare crossing.
 - Each ordinary creature receives a seeded 12–20 second lifetime. An uncaptured creature then escapes and respawns.
 - Captures increment the streak; an uncaptured despawn resets it. Pause/offscreen time does not consume lifetime.
 - Update transforms only; do not read layout inside the animation loop.
-- Use `ResizeObserver` to update scene bounds outside the loop.
+- Use `ResizeObserver` to update CSS/rendering bounds outside the loop; it never changes the current session's core density inputs or deterministic state.
 - Pause animation when the game is offscreen or `document.hidden`.
 
 ### Capture and reveal
@@ -259,21 +269,23 @@ The game scene fades into the below-fold content through the same grid-water lin
 
 ## 8. Production asset plan
 
-ImageGen should create atmosphere and character art, not baked-in UI or runtime text. All masters and prompts must be stored or documented so later poses can match.
+ImageGen should create atmosphere and character art, not baked-in UI or runtime text. Store the production brief, exact prompts, approved reference previews, crop notes, and generation record under `docs/design/logo-hunt-assets/` so later poses can match. Full-resolution masters remain outside the repository as described below.
 
 ### ImageGen assets to generate later
 
 | Asset | Master | Runtime exports | Requirements |
 |---|---:|---:|---|
-| Digital-marsh background | 2560×1440 PNG master, not committed | Desktop AVIF/WebP | Text-free, logo-free, no hand, no flashlight, dark edges, open center playfield |
-| Mobile background crop | 1440×2560 PNG | Mobile AVIF/WebP | Same scene and palette; composition adapted rather than mechanically cropped |
+| Digital-marsh background | 2560×1440 PNG master, not committed | Desktop WebP | Text-free, logo-free, no hand, no flashlight, dark edges, open center playfield |
+| Mobile background crop | 1440×2560 PNG | Mobile WebP | Same scene and palette; composition adapted rather than mechanically cropped |
 | Midground reeds/code signs | 2560×1440 transparent PNG | WebP/PNG | Sparse HTML-tag reeds and ripples; no readable product copy |
 | Hand—open/search pose | 1024×1024 transparent PNG | WebP/PNG | One reusable pointing/search pose; same sleeve, perspective, line work, and skin tone as grab pose |
 | Hand—grab pose | 1024×1024 transparent PNG | WebP/PNG | Thumb/index pinch around a replaceable empty center |
 | Creature frames—tiny, square, wide, vector, blurry | 1024×1024 transparent master sheet or separate masters | WebP/PNG | Consistent illustrated shells and motion accents with empty centers for runtime logo compositing |
 | 20-footer ribbon | 2048×512 transparent PNG | WebP/PNG | Flexible illustrated body with an empty compositing area for a real wide mark; no baked-in company logo or species text |
 
-Generate the two hand poses from one approved reference and validate them together before implementation accepts them. The hand must not contain a logo baked into the pixels; creatures remain separate DOM/image elements. Use CSS for the edge vignette, grain/fog, and capture burst in v1. Full-resolution ImageGen masters are not committed; store the prompt, approved reference preview, crop instructions, and runtime derivatives.
+Generate related smaller assets together when that improves visual consistency: one or more well-spaced transparent asset sheets may contain the two hand poses, creature shells/frames, or small decorative elements. The optimization script then cuts them into individually named, tightly bounded runtime files. Do not combine the large responsive backgrounds or 20-footer with those sheets, and never bake company marks, UI text, overlapping elements, shadows from neighboring cells, or shared backgrounds into a cutout. Preserve the sheet prompt, approved reference preview, cell map/crop coordinates, padding rules, and derivative mapping in `docs/design/logo-hunt-assets/` and the manifest so regeneration is repeatable.
+
+Generate the two hand poses from one approved reference and validate them together before implementation accepts them. The hand must not contain a logo baked into the pixels; creatures remain separate DOM/image elements. Use CSS for the edge vignette, grain/fog, and capture burst in v1. Full-resolution ImageGen masters and asset sheets are not committed; prompts, approved reference previews, crop instructions/cell maps, and derivative mappings live under `docs/design/logo-hunt-assets/`, while runtime derivatives live under `public/assets/hunt/`.
 
 ### Curated real-logo assets
 
@@ -297,7 +309,7 @@ Do not make an LLM produce complex logo SVG paths or intricate production illust
 - Use the existing `sharp` dependency for resize, crop, AVIF/WebP export, and size validation.
 - Add a small repeatable optimization script rather than committing manual one-off conversions.
 - Store final runtime assets under `public/assets/hunt/`.
-- Store a manifest beside them recording filename, purpose, source master, source prompt/reference, dimensions, format, and byte size. Real-mark entries additionally require `tier`, `licenseBasis`, `approvedBy`, `approvedOn`, `lastVerifiedOn`, `sourceUrl`, and `removable`.
+- Store a manifest beside them recording filename, purpose, source master, source prompt/reference, dimensions, format, byte size, and `budgetBytes`. Real-mark entries additionally require `enabled`, `approvalStatus`, `tier`, `licenseBasis`, `approvedBy`, `approvedOn`, `lastVerifiedOn`, `sourceUrl`, and `removable`. Runtime eligibility requires `enabled: true`, `approvalStatus: "approved"`, and all required provenance fields; deletion or `enabled: false` removes a mark without a code edit.
 - Do not ship the existing composited mockup PNGs; they remain design references under `docs/design/`.
 
 ## 9. Expected file changes
@@ -313,8 +325,8 @@ public/
   hunt-ui.js                        # DOM controller and animation/input loop
   assets/hunt/
     manifest.json
-    scene-desktop.avif|webp
-    scene-mobile.avif|webp
+    scene-desktop.webp
+    scene-mobile.webp
     scene-midground.webp
     hand-search.webp
     hand-grab.webp
@@ -329,9 +341,12 @@ src/
   server.mjs                        # Static MIME/cache handling, landed in wave 0
 test/
   hunt-core.test.mjs                # Pure deterministic logic
+  hunt-manifest.test.mjs            # Enabled/approved manifest filtering contract
   homepage-smoke.test.mjs           # Static assets and basic server behavior
-  homepage.e2e.mjs                  # Focused Playwright flows if kept separate
+e2e/
+  homepage.e2e.mjs                  # Programmatic Playwright; excluded from node --test
 docs/
+  design/logo-hunt-assets/          # ImageGen prompts/reference previews/crop notes
   homepage-logo-hunt-implementation-plan.md
 ```
 
@@ -339,7 +354,7 @@ Do not touch extractor discovery/ranking files for this feature. The current wor
 
 ## 10. Multi-thread Codex implementation plan
 
-Each Codex task is its own team in an isolated worktree and branch using the `codex/` prefix. The lead/integration task freezes interfaces first, dispatches work, owns `package.json` and `src/server.mjs`, resolves merges, and reviews Team 3’s shared homepage changes. No other team edits `package.json`; requested script changes go through Team 0.
+Each Codex task is its own team in an isolated worktree and branch using the `codex/` prefix. The lead/integration task freezes interfaces first, dispatches work, owns `package.json` and `src/server.mjs`, resolves merges, and reviews Team 3’s shared homepage changes. No other team edits `package.json`; requested script changes go through Team 0. `package.json` is already modified in the current worktree, so Team 0 must identify its owner and have that work committed on the agreed base (or receive explicit authorization to integrate it) before making the Team-0-only script edit.
 
 ### Contract freeze before parallel work
 
@@ -351,20 +366,23 @@ Commit or communicate one short contract containing:
 4. CSS token names.
 5. Asset filenames, transparent padding rules, and aspect ratios.
 6. `?huntSeed=<integer>` parsing contract and the independent `?huntForceRare=1` QA override.
+7. Full manifest field/schema contract, including approval eligibility and `budgetBytes`.
+8. The exported name/signature of `hunt-ui.js`'s side-effect-free manifest eligibility helper.
+9. Immutable session density inputs for desktop and mobile.
 
 No team may independently rename these contracts after work starts. Proposed changes go to the lead.
 
 ### Team 0 — Lead and integration
 
-**Owns:** architecture contract, `package.json`, `src/server.mjs`, branch coordination, final merges, conflict resolution, end-to-end verification, and this plan. It is reviewer-of-record—not co-author—for Team 3’s homepage integration files.
+**Owns:** architecture contract, `package.json`, `src/server.mjs`, branch coordination, final merges, conflict resolution, end-to-end verification, and this plan. It is reviewer-of-record—not co-author—for Team 3’s homepage integration files after wave 0. The sole carve-out is the prerequisite selector-scoping commit: before Team 3 begins, Team 0 edits `public/index.html`, `public/styles.css`, and `public/app.js`, verifies extraction, and then hands sole ownership of those three paths to Team 3.
 
 **Does not delegate:** final product decisions, shared contract changes, or acceptance sign-off.
 
 **First actions:**
 
-- Record the baseline test and dirty-worktree state. Do not stash, commit, or move existing extractor work without its owner’s authorization.
+- Record the baseline test and dirty-worktree state, including the already-modified `package.json`. Do not stash, commit, or move existing extractor work without its owner’s authorization.
 - If the current extractor changes are not committed, stop before creating implementation worktrees and ask the user/owner to place them on a named branch. All teams must branch from an agreed clean commit.
-- In two standalone wave-0 commits, scope the legacy global selectors and add static MIME/cache support. Verify the extractor UI after the selector commit before adding game code.
+- In two standalone wave-0 commits, scope the legacy global selectors across `public/index.html`, `public/styles.css`, and `public/app.js`, then add static MIME/cache support. Verify the extractor UI after the selector commit before adding game code or transferring those homepage paths to Team 3.
 - Create the integration branch/worktree only after those gates are satisfied.
 - Freeze the contract above.
 - Create the parallel tasks below with exact path ownership.
@@ -377,9 +395,11 @@ No team may independently rename these contracts after work starts. Proposed cha
 
 - Convert the approved visual reference into a production asset brief.
 - Generate and review the background plus consistent hand poses with ImageGen.
+- Prefer coherent multi-asset sheets for compatible small transparent assets, then cut them into frozen runtime filenames with the repeatable optimization script and recorded cell coordinates.
 - Source and verify the curated real-logo set; generate creature frames and the empty 20-footer ribbon without redrawing company marks.
 - Optimize responsive exports and enforce byte budgets.
 - Write the asset manifest and provenance.
+- Keep removal declarative: deletion of an entry or `enabled: false` makes a mark ineligible without edits to JavaScript.
 
 **Can start immediately:** yes, using frozen filenames and transparent bounds.
 
@@ -389,7 +409,8 @@ No team may independently rename these contracts after work starts. Proposed cha
 
 **Work:**
 
-- Implement seeded RNG, spawn selection, movement steps, bounds, capture/scoring, streaks, discovery, persistence parsing, rare gating, cooldown, and reset.
+- Implement seeded RNG, spawn selection, movement steps, bounds, capture/scoring, streaks, discovery, persistence parsing, pure query parsing for `huntSeed`/`huntForceRare`, rare gating, cooldown, and reset.
+- Accept an eligible `markId` pool at session creation and guarantee that spawn selection never emits an ID outside it; the core does not interpret provenance.
 - Supply only simple geometric placeholder marks in tests if the approved logo catalog is not ready; do not reproduce company logos in code.
 - Make every rule testable without the DOM or timers.
 
@@ -402,21 +423,24 @@ No team may independently rename these contracts after work starts. Proposed cha
 **Work:**
 
 - Build the page shell, game DOM, flashlight, creature buttons, animation controller, capture reveal, 20-footer hold interaction, responsive rules, pause/resume, reduced-motion behavior, and below-fold content.
+- Load the manifest, reject incomplete/unapproved entries, filter out deleted or `enabled: false` marks, and pass only the resulting `markId` pool into the core. Export the pure filtering helper without DOM startup side effects so Team 4 can test it under Node.
 - Preserve extraction behavior. The legacy selector-scoping prerequisite has already landed in wave 0; do not combine further unrelated cleanup with game work.
 - Work against CSS placeholders and the frozen core interface; do not wait for final generated art.
 
-**Can start immediately:** yes. This is the sole team allowed to edit homepage integration files.
+**Can start immediately:** yes, after Team 0's verified wave-0 selector-scoping handoff. From that handoff onward, this is the sole team allowed to edit homepage integration files.
 
 ### Team 4 — QA and performance
 
-**Owns only:** `test/homepage-smoke.test.mjs`, focused Playwright QA files, and final QA notes.
+**Owns only:** `test/hunt-manifest.test.mjs`, `test/homepage-smoke.test.mjs`, `e2e/homepage.e2e.mjs`, and final QA notes.
 
 **Work:**
 
 - Add static/server smoke coverage.
 - Exercise desktop, mobile, keyboard, touch, reduced motion, visibility pause, scroll anchor, extractor submission, `?huntSeed`, and `?huntForceRare=1`.
-- Reuse the repository’s existing Playwright dependency. Browser screenshots are temporary/CI review artifacts, not committed files, and visual checks are not brittle pixel-perfect gates.
+- Use the repository’s existing `playwright` dependency programmatically with Node assertions; do not depend on the separate `@playwright/test` runner package. Browser screenshots are temporary/CI review artifacts, not committed files, and visual checks are not brittle pixel-perfect gates.
 - Assert asset sizes against manifest-declared budgets and assert that homepage play makes zero cross-origin requests.
+- Unit-test manifest filtering with copied fixture objects: disabled and incomplete/unapproved entries never enter the core pool, deleting a removable entry requires no code change, and the core never spawns a `markId` outside the supplied eligible pool.
+- Keep Playwright out of the default Node suite. Team 0 alone adds `"test:e2e": "node e2e/homepage.e2e.mjs"` to `package.json`; the script imports the existing `playwright` library directly and exits nonzero on assertion failure. Existing `npm test` remains the unit/fixture gate and does not discover `e2e/**`.
 
 **Starts in wave two:** after Teams 1–3 have reviewable branches. It may prepare test scaffolding earlier but should validate integrated behavior, not invent interfaces.
 
@@ -443,10 +467,17 @@ Recommended merge order: wave-0 prerequisites, game core, homepage/UI with place
 |---|---|---|
 | `package.json` | Team 0 | No other team edits it; teams request scripts or dependency changes |
 | `src/server.mjs` | Team 0 | MIME and one-hour cache/ETag behavior land in wave 0; extractor routes remain untouched |
-| `public/index.html` | Team 3 | Asset filenames and DOM contract are frozen before work starts |
-| `public/styles.css` | Team 3 after wave 0 | Token definitions live in `:root`; Team 0 lands the selector-scoping prerequisite first |
+| `public/index.html` | Team 0 in wave 0 → Team 3 | Team 0 scopes legacy selectors first; after verified handoff, Team 3 alone owns game structure |
+| `public/styles.css` | Team 0 in wave 0 → Team 3 | Team 0 lands selector scoping first; after handoff, token definitions live in `:root` and Team 3 owns further edits |
+| `public/app.js` | Team 0 in wave 0 → Team 3 | Team 0 updates extraction selectors and verifies behavior; Team 3 then preserves extraction ownership boundaries |
+| `public/hunt-ui.js` | Team 3 | DOM/input controller plus pure manifest eligibility filter; consumes frozen core and asset contracts |
+| `public/hunt.css` | Team 3 | Game-only styles; must not restore global selectors |
 | `public/assets/hunt/manifest.json` | Team 1 | Append/update asset metadata only; Teams 2–4 read it but never write it |
 | `public/hunt-species.js` | Team 2 | Behavior and scoring only; no asset provenance |
+| `test/hunt-core.test.mjs` | Team 2 | Core determinism and rules only |
+| `test/hunt-manifest.test.mjs` | Team 4 | Eligibility/removal contract using copied fixture data; never edits the production manifest |
+| `test/homepage-smoke.test.mjs` | Team 4 | Static/server, asset-budget, and local-request assertions |
+| `e2e/homepage.e2e.mjs` | Team 4 | Programmatic Playwright flows only; never included in default `node --test` discovery |
 
 Static cache policy stays simple: `assets/hunt/**` receives `Cache-Control: public, max-age=3600` plus ETag support; HTML and JavaScript revalidate. Do not add asset fingerprinting or cross-team filename rewriting for this Easter egg.
 
@@ -458,19 +489,27 @@ Before implementation, run `npm test` and record the result. The existing extrac
 
 ### Pure game tests
 
-- Same seed produces the same spawn/species sequence.
+- Same seed plus the same immutable session configuration produces the same spawn/species sequence.
 - Fixed-step replay remains identical across different simulated render-frame intervals.
 - Creatures stay in normalized bounds after movement steps.
 - Active IDs do not duplicate.
 - Capture scores only once.
+- Capture and rare-hold input commands take effect on the next fixed step, never directly in the DOM event callback.
 - Streak increments on capture and resets on an uncaptured TTL escape.
 - Rarity weighting respects configured caps.
 - 20-footer cannot appear before its threshold or during cooldown.
 - `?huntForceRare=1` triggers the rare event independently of catalog tuning.
 - `huntSeed` is integer-parsed, bounded to the supported PRNG range, and cannot throw on malformed input.
 - Pause/resume does not advance elapsed game time unexpectedly.
-- A paused, hidden, or offscreen controller makes zero core `step` calls.
 - Corrupt or blocked persistence falls back safely.
+- The core can spawn only IDs from the eligible mark pool supplied at session creation.
+
+### Manifest eligibility tests
+
+- `hunt-ui.js`'s pure manifest filter accepts only entries that are enabled, complete, and approved for release.
+- An entry with `enabled: false` never spawns.
+- Removing a `removable` entry from copied manifest fixture data removes it from the eligible pool with no JavaScript or test-code branch change.
+- OpenAI, Anthropic, and every Tier B mark remain excluded until their same entry passes the recorded approval gate.
 
 ### Browser interaction checks
 
@@ -480,6 +519,7 @@ Before implementation, run `npm test` and record the result. The existing extrac
 - Capture reveal opens, announces itself, dismisses, and returns focus correctly.
 - Hold interaction completes and cancels correctly for pointer and keyboard.
 - Pause/resume works and the animation stops offscreen or in a hidden tab.
+- A paused, hidden, or offscreen controller makes zero core `step` calls, verified in browser instrumentation rather than the pure-core suite.
 - Reduced-motion mode is fully playable with static target positions and no sweeping rare animation.
 - The scroll cue reaches `#about`.
 - The real extraction form still submits, displays status, renders candidates, and downloads results.
@@ -512,12 +552,12 @@ Before implementation, run `npm test` and record the result. The existing extrac
 - No new production dependency or build system.
 - Maximum eight independently transformed entities, including the rare event. Each creature should be one transformed button with at most one child logo image; decorative frames belong in CSS backgrounds where possible.
 - Game controller target: under 20 KB gzip across its modules.
-- Desktop background target: 350 KB or less.
-- Mobile background target: 220 KB or less.
+- Desktop WebP background target: 350 KB or less.
+- Mobile WebP background target: 220 KB or less.
 - Hand and overlay assets combined: 120 KB or less per selected format where practical.
 - 20-footer ribbon: 120 KB or less in its selected runtime format.
 - Self-hosted fonts: 30 KB or less total.
-- Preload only the current viewport’s background; do not preload both desktop and mobile versions.
+- Preload only the current viewport’s background. `index.html` uses two `rel="preload" as="image" type="image/webp"` links with mutually exclusive media queries pointing at `scene-mobile.webp` and `scene-desktop.webp`; matching `@media` rules in `hunt.css` select the same URL. Verify in both viewport classes that the nonmatching background is not requested. If preload-media support proves unreliable in a target browser, remove both hints and let the matching CSS rule fetch one background rather than preloading both.
 - Stop `requestAnimationFrame` and ambient animation when the hero is offscreen, paused, reduced-motion static, or the document is hidden.
 - Update transforms and CSS variables in batches; no per-frame layout reads.
 - Reserve scene dimensions to avoid layout shift.
@@ -575,6 +615,7 @@ Before implementation, run `npm test` and record the result. The existing extrac
 - [ ] Animation pauses offscreen and in background tabs.
 - [ ] No cross-origin request is made for company logos, game state, or fonts; approved real marks are served locally.
 - [ ] Every real mark has a complete approval/provenance manifest entry and can be disabled without a code change.
+- [ ] Deleted, disabled, incomplete, and unapproved manifest entries never spawn; removal is covered by an automated test.
 - [ ] **Lights on**, pause/resume, and unique keyboard target names work.
 - [ ] V1 contains no audio.
 - [ ] Existing extractor and fixture tests remain green.
@@ -590,7 +631,7 @@ Before implementation, run `npm test` and record the result. The existing extrac
 | Mobile interaction assumes hover | Use Pointer Events, larger coarse-pointer light and hit targets, and tap-to-move/tap-to-capture behavior |
 | Cursor-only game is inaccessible | Real buttons, focus-driven light, keyboard capture, pause, live region, static reduced-motion mode |
 | Random rare event cannot be tested | Fixed-step seeded core, guaranteed first encounter, explicit `?huntForceRare=1` QA override |
-| Large imagery harms first load | One scene only, responsive AVIF/WebP, byte gates, CSS fallback, no unnecessary preloads |
+| Large imagery harms first load | One scene only, responsive WebP exports, byte gates, CSS fallback, no unnecessary preloads |
 | Global CSS breaks the extractor | Scope hunt styles and tighten existing broad selectors under owned section classes |
 | Parallel teams conflict | Freeze interfaces, use isolated worktrees, assign exclusive path ownership, one homepage integrator |
 | Existing extractor work is overwritten | Do not create feature worktrees until existing changes are safely committed on an owner-approved branch; prohibit homepage teams from touching discovery/ranking files |
@@ -609,7 +650,7 @@ Before implementation, run `npm test` and record the result. The existing extrac
 
 ## 18. Review record
 
-This section will record the requested Claude Opus review and the revisions incorporated before the plan is considered ready for implementation.
+This section records the independent read-only reviews and the revisions incorporated before the plan is considered ready for implementation.
 
 ### Claude Opus review
 
@@ -636,3 +677,29 @@ It also recommended defining creature TTL/streak behavior, retaining keyboard fo
 - Reduced production art to one desktop/mobile scene, one midground, two hand poses, creature frames, and the 20-footer; removed the foreground, fog tile, effect sheet, JPEG fallback, and extra logo variants.
 - Reused the existing Playwright dependency, kept screenshots out of the repository, simplified static caching, and added cross-origin, asset-budget, fixed-step, hidden-tab, and query-parsing checks.
 - Made “no audio in v1” and “one scene only” final decisions.
+
+### OpenCode ox-alpha review
+
+Reviewed read-only with `openrouter/stealth/ox-alpha` after the first Claude revision pass. It found four remaining contract blockers:
+
+1. Wave-0 selector scoping did not explicitly give Team 0 temporary ownership of all three affected homepage files before Team 3's handoff.
+2. The state schema omitted implemented creature capture/expiry and rare-hold state, and input-to-fixed-step timing was unstated.
+3. Playwright E2E discovery was not explicitly separated from the default `node --test` suite.
+4. Manifest filtering/removal behavior had no implementation owner or automated contract test.
+
+Revisions applied: the wave-0 carve-out and complete conflict map now cover `index.html`, `styles.css`, and `app.js`; §5.4 models expiry, captured state, rare hold progress, and queued next-step inputs; E2E lives under `e2e/` with a Team-0-only `test:e2e` script; and Teams 2–4 have explicit filtering, eligible-pool, and removal-test responsibilities. The useful nonblocking suggestions were also incorporated: ImageGen records are anchored under `docs/design/logo-hunt-assets/`, mobile density is explicitly three or four, the already-dirty `package.json` is a pre-edit gate, UI/CSS/test conflict rows are explicit, and responsive background preload mechanics have a one-request fallback.
+
+### Final Claude Opus review
+
+Reviewed read-only with Claude Code CLI model `opus` after the OpenCode contract fixes. The verdict was **READY** for contract freeze once four small material omissions were closed:
+
+1. Freeze the cross-team manifest schema, pure eligibility-helper signature, and per-asset `budgetBytes` field.
+2. Assign pure query parsing to `hunt-core.js` and test controller pause/offscreen step suppression in browser QA rather than the pure-core suite.
+3. Make viewport density immutable session configuration so seed-replay claims remain precise across resize.
+4. Select one concrete background runtime format so preload and CSS URLs cannot diverge.
+
+All four were incorporated. The plan now freezes the additional shared contracts, assigns pure parsing and controller instrumentation to the correct teams, defines resize as rendering-only for an active session, and uses explicit desktop/mobile WebP filenames. Opus also confirmed that the named stale contradictions were absent and that wave-0 ownership, dirty-worktree protection, extractor preservation, manifest removal, fixed-step input timing, and Node/Playwright separation were coherent.
+
+A post-correction Opus verification then caught one runner ambiguity: the repository declares `playwright`, not a separate `@playwright/test` dependency, while the proposed script used runner syntax. The plan now uses `node e2e/homepage.e2e.mjs` with the existing programmatic Playwright API and Node assertions. This keeps E2E outside default `node --test`, adds no dependency, and leaves the Team-0-only `package.json` rule intact. No optional review notes were used to expand scope.
+
+The final read-only Opus gate was rerun against that corrected document and returned **READY**, with no material implementation-contract blockers.
