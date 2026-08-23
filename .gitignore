@@ -1,5 +1,6 @@
 node_modules/
 downloads/
+runs/
 output/playwright/
 .playwright-cli/
 .DS_Store
