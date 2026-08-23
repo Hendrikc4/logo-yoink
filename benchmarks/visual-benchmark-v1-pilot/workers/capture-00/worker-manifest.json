@@ -1,0 +1,26 @@
+{
+  "schema_version": "visual-benchmark-v1",
+  "manifest_type": "benchmark-worker-manifest",
+  "benchmark_version": 1,
+  "benchmark_manifest": "benchmark-manifest.json",
+  "assignment_digest": "1a0859fa80565f677f1b8606342ccacc563ee8c0df94f93f550e090211a07c97",
+  "worker_id": "capture-shard-00",
+  "task_id": null,
+  "stage": "capture",
+  "shard_id": 0,
+  "entity_ids": [
+    "215c83e5-089c-5461-8958-7aee040626b5",
+    "c1bf359d-b95b-521e-9b69-c3074f9956fe",
+    "45bc22d9-5246-4d48-b779-579b5eda50e8",
+    "f0cb6c5f-6900-594a-b1f6-8772f267f363",
+    "ee76c675-c8e9-5f56-a9ea-cbf312583fec",
+    "4d758b92-af16-5522-aae9-73f9308a2d05",
+    "f23fc3d3-fdf3-5608-88d3-deab8f33d985",
+    "0dae4932-edb9-4195-b92d-50cd79b5ebce",
+    "b6989443-7092-5644-b0bb-f6a7a3e49d2c",
+    "32ad3db8-a573-48b3-9452-d60ad5ea5939"
+  ],
+  "entity_count": 10,
+  "assignment_file": "shards/assignments/capture-00.jsonl",
+  "output_directory": "workers/capture-00"
+}
