@@ -3,19 +3,58 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Find the best logo assets exposed by a company website.">
+    <meta name="description" content="Ride, lasso, and yoink logos—then find the best logo assets exposed by any company website.">
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/game.css">
     <title>Logo Yoink</title>
   </head>
   <body>
+    <section id="game" class="game-shell" aria-labelledby="game-title">
+      <canvas id="game-canvas" class="game-canvas" tabindex="0" aria-label="Logo Yoink cowboy runner. Press Space, Arrow Up, or W to jump."></canvas>
+      <div class="game-shade" aria-hidden="true"></div>
+
+      <div class="game-topbar">
+        <h1 id="game-title" class="game-title"><span>LOGO</span><strong>YOINK</strong></h1>
+        <div class="game-hud" aria-label="Game status">
+          <div class="hud-item"><span class="hud-label">Score</span><strong id="game-score">00000</strong></div>
+          <div class="hud-item hud-best"><span class="hud-label">Best</span><strong id="game-best">00000</strong></div>
+          <div class="hud-item hud-lasso"><span class="hud-label">Lasso</span><strong id="game-lasso">×0</strong></div>
+        </div>
+      </div>
+
+      <div class="game-actions" aria-label="Game controls">
+        <button id="game-sound" class="game-icon-button" type="button" aria-pressed="true">Sound on</button>
+        <button id="game-pause" class="game-icon-button" type="button">Pause</button>
+      </div>
+
+      <div id="game-start-panel" class="game-panel game-start-panel">
+        <p class="game-eyebrow">A tiny endless runner</p>
+        <h2>Ride. Jump.<br><em>Yoink.</em></h2>
+        <p class="game-instructions"><span>SPACE / ↑ / W</span> or tap to jump.<br>Grab the lasso and the next 3 logos come to you.</p>
+        <button id="game-start" class="game-start-button" type="button">Start yoinkin’ <span>→</span></button>
+      </div>
+
+      <div id="game-over-panel" class="game-panel game-over-panel" hidden>
+        <p class="game-eyebrow">Trail’s end</p>
+        <h2>Nice<br><em>yoinkin’.</em></h2>
+        <p>You rode <strong id="game-final-distance">0</strong>m and scored <strong id="game-final-score">0</strong>.</p>
+        <button id="game-restart" class="game-start-button" type="button">Ride again <span>↻</span></button>
+      </div>
+
+      <div id="game-yoink" class="game-yoink" aria-hidden="true">YOINK!</div>
+      <div id="game-live" class="visually-hidden" aria-live="polite"></div>
+      <p class="game-trademarks">Marks belong to their respective owners. No endorsement implied.</p>
+      <a class="game-find-link" href="#finder">Find a logo <span>↓</span></a>
+    </section>
+
     <main>
       <header>
         <a class="brand" href="/" aria-label="Logo Yoink home"><span>LY</span> Logo Yoink</a>
         <p>Website in. Best logo out.</p>
       </header>
 
-      <section class="hero">
+      <section id="finder" class="hero">
         <div class="kicker">Open-source logo retrieval</div>
         <h1>Yoink the right<br>company logo.</h1>
         <p class="intro">We inspect structured data, web manifests, Apple touch icons, favicons, and an optional Besticon service—then validate and rank the actual image files.</p>
@@ -37,9 +76,26 @@
           </div>
           <dl id="diagnostics"></dl>
         </div>
-        <div id="candidate-grid" class="candidate-grid"></div>
+        <div class="section-label">
+          <div>
+            <div class="kicker">Recommended by use</div>
+            <h3>Choose the asset you need.</h3>
+          </div>
+          <p>Each recommendation is ranked for its specific role.</p>
+        </div>
+        <div id="role-grid" class="role-grid"></div>
+
+        <div class="section-label family-label">
+          <div>
+            <div class="kicker">Complete result</div>
+            <h3>All asset families</h3>
+          </div>
+          <p>Related sizes and delivery variants are grouped together.</p>
+        </div>
+        <div id="family-grid" class="family-grid"></div>
       </section>
     </main>
+    <script type="module" src="/game-ui.js"></script>
     <script type="module" src="/app.js"></script>
   </body>
 </html>
