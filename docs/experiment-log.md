@@ -24,6 +24,7 @@ A negative shipping decision does not always mean the underlying signal was usel
 
 | Date | Experiment | Development outcome | Holdout outcome | Cost or risk | Status |
 |---|---|---|---|---|---|
+| 2026-08-22 | Deterministic browser-observation cache freshness | Immediate independent refreshes retained the same 7 browser-wide additions; one vetoed Bhr candidate family changed bytes without changing a selection | Retained the same 4 browser-wide additions; all candidate hashes and selections were stable | TTL reuse: zero requests; always refresh: 67 browsers/3,628 requests/72.56 MB; conditional hybrid: at least 1,122 requests/25.03 MB, zero 304s, and incomplete rendered-DOM freshness | **Kept — explicit TTL expiry; conditional validation dropped** |
 | 2026-08-22 | Precision-gated asynchronous browser warming for missing-wide domains | Precision-ranked original-100 wide 40→47; all seven additions visually confirmed correct; Bhr→RealReports vetoed | Precision-ranked holdout wide 58→62; all four additions visually confirmed correct; icon/favicon unchanged in both cohorts | Off-path cold cost: development about 2,021 requests/41 MB; holdout 1,494 requests/24.9 MB and 2.30/4.39 s browser p50/p95; warm replay zero network and byte-identical | **Kept — asynchronous/off-path** |
 | 2026-08-22 | Full 500-company visual audit and false-positive exclusions | Complete labels: strict selected-role precision 94.35%→98.29%; definite wrong selections 23→0 | All 500 icon/wide selections reviewed; 26 slots changed, with 10 visually confirmed replacements and 16 withheld | Availability icon 359→349, wide 243→237, favicon 350→343; metadata/hash-only, zero runtime network/AI cost | **Kept** |
 | 2026-08-22 | Generic platform, badge, and UI-asset exclusions | Labeled icon/wide precision 89.8%→94.3%; two wrong icons replaced, one wrong icon and two wrong wides withheld | Offline all-500 rerank changed only nine role slots across seven domains; three repeated Wix defaults removed | Icon −1, wide −2, favicon −4 in the stored 500 run; exact signatures only, zero network cost | **Kept** |
@@ -65,6 +66,26 @@ Results on the two frozen 100-company slices:
 The eleven additions are Scoped Solutions, TradeBridge, Grapple, Curiominds AI, Aryval, Utiq, TrialNav, Vention, MindCoord, Wora Delivery, and Rigly. Every stored asset was re-inspected on light and dark panels. Six are good on both backgrounds; Scoped Solutions, Aryval, Vention, MindCoord, and Rigly are conditional because contrast depends on the background. Incremental precision is 100%. Applied to the canonical 500-label baseline, selected availability becomes icon 349, wide 248, favicon 343. Strict icon/wide precision becomes 587/597 = 98.32%, determinate precision remains 100%, and wrong-brand domains remain zero. The benchmark delta from the eleven correct selections and their reviewed usability is +0.97, moving the canonical 71.97 baseline to 72.94 with foreground efficiency unchanged.
 
 The development cache retained the earlier measured cold cost of about 2,021 deferred requests and 41 MB for 36 queued domains. The retained harness's holdout warm queued 27 domains, made 1,457 browser requests plus 37 validation requests, transferred 23.43 MB plus 1.49 MB of validated assets, and measured 2.30/4.39 seconds browser p50/p95. Repeating the holdout warm produced 27 cache hits, zero browser invocations, zero network requests, and byte-identical reranked output. These costs are acceptable only as asynchronous, cacheable enrichment; synchronous/default browser discovery remains rejected.
+
+### Browser-observation cache freshness
+
+The retained cache previously reused an observation indefinitely whenever its content-addressed key existed. A same-main freshness experiment compared immediate full refresh, TTL reuse, and byte-validating conditional requests on freshly reproduced original-100 and frozen holdout parents. The static parents were kept fixed for every replay. Live drift moved today's static availability to 64/39/66 in development and 77/58/77 in holdout, but browser replay recovered exactly the already-reviewed eleven wide selections: development 39→46 and holdout 58→62. The additions were the same named set documented above, so no new visual judgment or precision assumption was introduced.
+
+Two independent cold observation sets covered 40 development and 27 holdout domains. Their replayed selections were identical in all 600 icon/wide/favicon role slots. Holdout candidate hashes were identical. Development had one changed candidate family on Bhr: two hashes disappeared and two appeared between observations, but the explicit RealReports identity veto prevented selection movement. Replaying either fixed observation directory again was byte-identical, confirming that offline replay remains deterministic.
+
+| Policy over 67 queued domains | Browser invocations | Validation/network requests | Downloaded bytes | Deferred latency | Changed assets / selections |
+|---|---:|---:|---:|---|---|
+| Always refresh | 67 | 3,628 | 72.56 MB | Browser p50/p95 1.96/4.42 s | One domain changed candidate hashes; 0 role selections |
+| TTL reuse, before expiry | 0 | 0 | 0 | 77 ms combined harness wall time; no per-domain browser latency | 0 / 0 by reuse |
+| Conditional byte-validation plus refresh on any changed dependency | 14 | At least 1,122 | At least 25.03 MB | Validation-request p50/p95 96/721 ms; fallback browser p50/p95 2.01/5.20 s | 14 homepage byte changes; 0 role selections |
+
+The conditional probe covered 67 homepages and 80 validated candidate assets. ETag or Last-Modified was advertised on 114/147 URLs and every dependency had a byte-hash comparison, but no server returned `304 Not Modified`; all 147 requests returned bodies totaling 20.60 MB. All 80 candidate assets were byte-stable, while 14/67 homepages changed bytes immediately, mostly on dynamic or explicitly no-cache pages. Treating each changed body as stale would then invoke 14 browsers, 941 browser requests, and at least 34 repeated candidate validations. This saves about 69% of requests and 65% of bytes versus unconditional refresh, but refreshed 21% of the queue without changing a selection.
+
+More importantly, URL validation is not a complete validator for a rendered observation. Two explicit Scoped Solutions stress simulations removed the rendered candidate or changed its declared identity while leaving the cached dependency set usable. Indefinite/within-TTL reuse retained the old wide selection; a full browser refresh removed it, and the identity-conflict path recorded the simulated foreign declaration. Thus a validator-only policy can miss 2/2 designed DOM/identity changes. This is a mechanism stress result, not an estimate that real sites go stale at that rate.
+
+The immediate live runs therefore preserve canonical coverage and quality under every policy: icon 349, wide 248, favicon 343; strict icon/wide precision 587/597 = 98.32%; zero wrong-brand domains; score 72.94, unchanged from verified current main and +0.97 over 71.97. In the explicit one-domain stale-identity simulation, reuse would instead make one formerly correct selection wrong: strict precision would become 586/597 = 98.16%, wrong-brand domains would become one, and the canonical score is estimated to fall about 0.32 to 72.62. The safety gate fails even though that inferred score remains above 71.97.
+
+The small retained change is an explicit `max-age-ms` argument on [`warm-browser-observations.mjs`](../scripts/warm-browser-observations.mjs). Before expiry it preserves zero-network reuse; at or after expiry it atomically replaces the artifact through the existing full browser and candidate-validation path. `0` expresses always-refresh, while omitting the argument preserves the earlier infinite-reuse behavior for compatibility. No universal default TTL is claimed from an immediate-repeat experiment: deployments should select a finite maximum age from their freshness SLO, force refreshes for takedown/identity reports, and use full browser refresh on expiry. Conditional validation is not shipped because its apparent cost saving does not close the stale rendered-DOM safety gap.
 
 ### Generic non-brand asset exclusions
 
@@ -210,17 +231,7 @@ After collapsing manifest/Apple/HTML/root icon declarations into one source cate
 
 ## Next experiment
 
-Test one small combined change: apply a strong structured identity-conflict veto only to deferred browser promotions. A conflict should require a current JSON-LD organization name or `og:site_name` that disagrees with both the fixture company name and requested-domain tokens. Do not expand browser discovery surfaces.
-
-Development success gates:
-
-- at least four visually correct new wide selections per 100;
-- at least 95% reviewed precision;
-- zero new wrong-brand domains;
-- zero icon or favicon selection changes;
-- bounded browser concurrency of two and deterministic cache replay.
-
-Run the frozen holdout only after every development gate passes.
+Calibrate a default TTL from normal scheduled operation rather than synthetic waiting. Persist only aggregate age-at-change, candidate-hash change, selected-role change, identity-veto, requests, and bytes; do not retain unrelated page content. A default may be proposed only after at least two genuine selected-role changes or identity events establish a freshness distribution. Until then, keep TTL explicit, refresh fully on expiry, and do not substitute homepage or asset validators for a rendered observation.
 
 ## How to record future experiments
 
