@@ -17,6 +17,13 @@
     "merge-review-runs": "node scripts/merge-review-runs.mjs",
     "transfer-review-labels": "node scripts/transfer-review-labels.mjs",
     "review-labels": "node scripts/build-review-labels.mjs",
+    "visual-benchmark:shards": "node scripts/visual-benchmark-shards.mjs",
+    "visual-benchmark:capture": "node scripts/visual-capture.mjs",
+    "visual-benchmark:review": "node scripts/visual-review-packet.mjs",
+    "visual-benchmark:label-sheets": "node scripts/visual-label-sheets.mjs",
+    "visual-benchmark:validate": "node scripts/visual-benchmark-validate.mjs",
+    "visual-benchmark:merge": "node scripts/visual-benchmark-merge.mjs",
+    "visual-benchmark:agreement": "node scripts/visual-benchmark-agreement.mjs",
     "test": "node --test && node scripts/validate-fixtures.mjs",
     "fixtures:validate": "node scripts/validate-fixtures.mjs"
   },

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "name": "visual-benchmark-v1-pilot",
+  "description": "Stratified pilot for the full-page visual capture and annotation workflow. Prior observations are reference evidence only and must be revalidated during capture.",
+  "fixture_companies": [
+    { "entity_id": "215c83e5-089c-5461-8958-7aee040626b5", "name": "Loxz Digital Group", "website": "loxz.com", "cohort": "original-100", "category": "parked-or-for-sale" },
+    { "entity_id": "09428c34-1f3a-500c-9179-07bd9df7584d", "name": "Fuse Oncology, Inc.", "website": "fuseonc.com", "cohort": "original-100", "category": "static-svg-candidate-mapping" },
+    { "entity_id": "74358840-5eb0-58ad-9386-93e34ba2dbd8", "name": "Maxi Mobility", "website": "ma-xi.it", "cohort": "original-100", "category": "static-raster-wide-and-symbol" },
+    { "entity_id": "5e5fa673-b3a9-53da-9267-4376386694e8", "name": "Scoped Solutions", "website": "scoped.no", "cohort": "original-100", "category": "browser-wide-theme-conditional" },
+    { "entity_id": "f0cb6c5f-6900-594a-b1f6-8772f267f363", "name": "TradeBridge", "website": "tradebridge.co.in", "cohort": "original-100", "category": "browser-hydrated-wide" },
+    { "entity_id": "0dae4932-edb9-4195-b92d-50cd79b5ebce", "name": "Bhr", "website": "bhr.fyi", "cohort": "original-100", "category": "same-domain-identity-drift" },
+    { "entity_id": "f23fc3d3-fdf3-5608-88d3-deab8f33d985", "name": "AttackIQ", "website": "attackiq.com", "cohort": "original-100", "category": "theme-specific-white-wordmark" },
+    { "entity_id": "d3b2b0b7-c25e-52b2-b286-4ea59ebf9381", "name": "Palion", "website": "palion.ai", "cohort": "original-100", "category": "blocked-or-interstitial" },
+    { "entity_id": "07b30609-3a71-50e0-9626-d1f557bf1383", "name": "Amukha", "website": "amukha.com", "cohort": "additional-400", "category": "browser-hydrated-svg-wide" },
+    { "entity_id": "45bc22d9-5246-4d48-b779-579b5eda50e8", "name": "Edificex", "website": "edificex.ai", "cohort": "additional-400", "category": "spa-and-framework-default-negative" },
+    { "entity_id": "e78dee9a-b869-53a9-9cf9-c4a655292737", "name": "Strata", "website": "connectstrata.com", "cohort": "additional-400", "category": "small-header-wordmark-evidence-miss" },
+    { "entity_id": "74a6447a-343b-54ae-a600-e02b47b64e40", "name": "Planhat", "website": "planhat.com", "cohort": "additional-400", "category": "css-data-svg-mask" },
+    { "entity_id": "c1bf359d-b95b-521e-9b69-c3074f9956fe", "name": "Daanaa", "website": "daanaa.com", "cohort": "additional-400", "category": "weak-footer-css-background-negative" },
+    { "entity_id": "32ad3db8-a573-48b3-9452-d60ad5ea5939", "name": "Vetra AI", "website": "pawbeatvet.com", "cohort": "additional-400", "category": "related-or-changed-identity" },
+    { "entity_id": "ee76c675-c8e9-5f56-a9ea-cbf312583fec", "name": "Cavero Quantum", "website": "caveroquantum.com", "cohort": "additional-400", "category": "icon-or-stacked-only-abstention" },
+    { "entity_id": "4d758b92-af16-5522-aae9-73f9308a2d05", "name": "Robomotion", "website": "robomotion.io", "cohort": "additional-400", "category": "inline-svg-ranking-miss" },
+    { "entity_id": "8c9f58a7-e2d3-5170-89db-5a83663130d5", "name": "SPIRL", "website": "spirl.com", "cohort": "additional-400", "category": "off-domain-current-identity" },
+    { "entity_id": "4880a82d-4384-59a8-ab86-43c57935fa7c", "name": "Quansys", "website": "quansys.ai", "cohort": "additional-400", "category": "browser-hydrated-raster-wide" },
+    { "entity_id": "b6989443-7092-5644-b0bb-f6a7a3e49d2c", "name": "MY HEALTHY®", "website": "myhealthy.fr", "cohort": "additional-400", "category": "padded-near-square-wordmark" },
+    { "entity_id": "524d5f75-e5b8-4ebb-9a32-e06227c26a77", "name": "DNA Chat", "website": "dna.chat", "cohort": "additional-400", "category": "browser-horizontal-theme-conditional" }
+  ],
+  "external_positive_controls": [
+    { "entity_id": "external-hoshii-ai", "name": "Hoshii", "website": "hoshii.ai", "category": "single-dimension-inline-svg-wordmark" },
+    { "entity_id": "external-pnptc-com", "name": null, "website": "pnptc.com", "category": "javascript-rendered-first-party-svg-wordmark" }
+  ],
+  "freshness": {
+    "reference_observations_date": "2026-08-22/2026-08-23",
+    "warning": "Live sites and identities may have changed. Capture-time evidence is authoritative."
+  }
+}
