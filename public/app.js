@@ -6,89 +6,138 @@ const domain = document.querySelector('#result-domain');
 const diagnostics = document.querySelector('#diagnostics');
 const roleGrid = document.querySelector('#role-grid');
 const familyGrid = document.querySelector('#family-grid');
+const completeResults = document.querySelector('#complete-results');
+const resultCount = document.querySelector('#result-count');
 const button = form.querySelector('button');
+const buttonLabel = button.querySelector('.button-label');
+
+let activeRequest = null;
+let requestSequence = 0;
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
-  results.hidden = true;
-  setStatus('Searching the website and validating image files…', 'loading');
-  button.disabled = true;
+  const website = input.value.trim();
+  if (!website) {
+    input.setAttribute('aria-invalid', 'true');
+    setStatus('Enter a website URL to start a lookup.', 'error');
+    input.focus();
+    return;
+  }
+
+  input.removeAttribute('aria-invalid');
+  activeRequest?.abort();
+  const controller = new AbortController();
+  activeRequest = controller;
+  const sequence = ++requestSequence;
+
+  clearResults();
+  setLoading(true);
+  setStatus(`Inspecting ${displayWebsite(website)} and validating its logo files…`, 'loading');
+
   try {
     const response = await fetch('/api/extract', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ website: input.value }),
+      body: JSON.stringify({ website }),
+      signal: controller.signal,
     });
-    const payload = await response.json();
-    if (!response.ok) throw new Error(payload.error || 'Extraction failed.');
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(payload.error || 'We could not inspect that website.');
+    if (sequence !== requestSequence) return;
+
+    if (!Array.isArray(payload.candidates) || payload.candidates.length === 0) {
+      setStatus(`No usable logo files were found for ${payload.domain || displayWebsite(website)}. Try the site’s canonical homepage URL.`, 'error');
+      return;
+    }
+
     render(payload);
-    setStatus(payload.candidates.length ? `Found ${payload.candidates.length} validated candidate${payload.candidates.length === 1 ? '' : 's'}.` : 'The website responded, but no usable logo image was found.', payload.candidates.length ? 'success' : 'error');
+    setStatus(`Found logo candidates for ${payload.domain}. Recommended assets are ready below.`, 'success');
   } catch (error) {
-    setStatus(error.message, 'error');
+    if (error.name === 'AbortError' || sequence !== requestSequence) return;
+    setStatus(normalizeError(error), 'error');
   } finally {
-    button.disabled = false;
+    if (sequence === requestSequence) {
+      activeRequest = null;
+      setLoading(false);
+    }
   }
 });
 
-function setStatus(message, state) {
+function setLoading(isLoading) {
+  button.disabled = isLoading;
+  buttonLabel.textContent = isLoading ? 'Yoinking…' : 'Yoink it';
+  form.setAttribute('aria-busy', String(isLoading));
+}
+
+function setStatus(message, state = '') {
   status.textContent = message;
-  status.dataset.state = state;
+  if (state) status.dataset.state = state;
+  else delete status.dataset.state;
+}
+
+function clearResults() {
+  results.hidden = true;
+  roleGrid.replaceChildren();
+  familyGrid.replaceChildren();
+  diagnostics.replaceChildren();
+  completeResults.open = false;
+  resultCount.textContent = '';
 }
 
 function render(payload) {
   domain.textContent = payload.domain;
   diagnostics.innerHTML = [
-    ['validated', payload.diagnostics.validated],
-    ['families', payload.diagnostics.families ?? payload.assetFamilies?.length ?? payload.candidates.length],
-    ['duration', `${(payload.diagnostics.durationMs / 1000).toFixed(1)}s`],
-  ].map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('');
+    ['validated', payload.diagnostics?.validated ?? payload.candidates.length],
+    ['families', payload.diagnostics?.families ?? payload.assetFamilies?.length ?? payload.candidates.length],
+    ['duration', formatDuration(payload.diagnostics?.durationMs)],
+  ].map(([label, value]) => `<span>${escapeHtml(label)}: ${escapeHtml(value)}</span>`).join('');
+
   roleGrid.innerHTML = [
-    ['icon', 'Icon', 'For profiles, cards, and app tiles'],
-    ['wide', 'Wordmark', 'For headers, decks, and brand rows'],
-    ['favicon', 'Favicon', 'For browser tabs and compact UI'],
-  ].map(([role, label, description]) => roleCard(payload.selectedByRole?.[role], role, label, description, payload.domain)).join('');
+    ['icon', 'Icon', 'Square format for app icons, avatars, and small spaces.'],
+    ['wide', 'Wordmark', 'Horizontal logo for headers, navbars, and wide layouts.'],
+    ['favicon', 'Favicon', 'Small favicon for browser tabs and bookmarks.'],
+  ].map(([role, label, description], index) => roleCard(payload.selectedByRole?.[role], role, label, description, payload.domain, index + 1)).join('');
 
   const families = payload.assetFamilies?.length ? payload.assetFamilies : fallbackFamilies(payload.candidates);
   familyGrid.innerHTML = families.map(family => familyCard(family, payload.candidates, payload.domain)).join('');
+  resultCount.textContent = `(${payload.candidates.length})`;
+  completeResults.open = false;
   results.hidden = false;
 }
 
-function roleCard(item, role, label, description, resultDomain) {
+function roleCard(item, role, label, description, resultDomain, index) {
   if (!item) return `<article class="role-card empty">
-    <div class="role-heading"><span>${escapeHtml(label)}</span><em>Not found</em></div>
-    <div class="empty-body"><strong>No reliable ${escapeHtml(label.toLowerCase())}</strong><p>${escapeHtml(description)}.</p></div>
+    <div class="role-heading"><span class="role-number">${index}</span><h3>${escapeHtml(label)}</h3></div>
+    <div class="preview"><span class="empty-mark" aria-hidden="true">—</span></div>
+    <div class="candidate-body"><p>No reliable ${escapeHtml(label.toLowerCase())} was found for this website.</p><div class="candidate-meta"><span>Not found</span></div></div>
   </article>`;
-  const dimensions = item.width && item.height ? `${formatNumber(item.width)} × ${formatNumber(item.height)}` : item.format.toUpperCase();
+
+  const dimensions = dimensionsFor(item);
+  const format = String(item.format || 'file').toUpperCase();
   return `<article class="role-card selected">
-    <div class="role-heading"><span>${escapeHtml(label)}</span><em>Best for this use</em></div>
-    <div class="preview"><img src="${escapeHtml(item.dataUrl)}" alt="Recommended ${escapeHtml(label.toLowerCase())} for ${escapeHtml(resultDomain)}"></div>
-    <div class="candidate-body">
-      <div class="rank"><span>${escapeHtml(item.source)}</span><span>${escapeHtml(item.confidence_band)} confidence</span></div>
-      <h3>${escapeHtml(dimensions)}</h3>
-      <p>${escapeHtml(description)} · role score ${escapeHtml(item.role_scores?.[role] ?? item.score)}</p>
-      <div class="actions">
-        <a href="${escapeHtml(item.dataUrl)}" download="${safeFilename(item, resultDomain, role)}">Download ${escapeHtml(item.format.toUpperCase())}</a>
-        ${sourceLink(item)}
-      </div>
+    <div class="role-heading"><span class="role-number">${index}</span><h3>${escapeHtml(label)}</h3></div>
+    <div class="preview">
+      <img src="${escapeHtml(item.dataUrl)}" alt="Recommended ${escapeHtml(label.toLowerCase())} for ${escapeHtml(resultDomain)}">
+      <a class="download-overlay" href="${escapeHtml(item.dataUrl)}" download="${safeFilename(item, resultDomain, role)}">Download <span aria-hidden="true">↓</span></a>
     </div>
+    <div class="candidate-body"><p>${escapeHtml(description)}</p><div class="candidate-meta"><span>${escapeHtml(format)}</span><span>${escapeHtml(dimensions)}</span></div></div>
   </article>`;
 }
 
 function familyCard(family, candidates, resultDomain) {
-  const members = family.candidateIndexes.map(index => candidates[index]).filter(Boolean);
+  const indexes = Array.isArray(family.candidateIndexes) ? family.candidateIndexes : [];
+  const members = indexes.map(index => candidates[index]).filter(Boolean);
   const item = candidates[family.representativeIndex] ?? members[0];
   if (!item) return '';
   const roles = family.roles?.length ? family.roles : [...new Set(members.flatMap(member => member.predicted_roles ?? []))];
   const roleLabels = roles.map(role => role === 'wide' ? 'wordmark' : role);
   return `<article class="family-card">
-    <div class="preview family-preview"><img src="${escapeHtml(item.dataUrl)}" alt="Logo asset family for ${escapeHtml(resultDomain)}"></div>
+    <div class="preview"><img src="${escapeHtml(item.dataUrl)}" alt="Logo asset family for ${escapeHtml(resultDomain)}"></div>
     <div class="candidate-body">
       <div class="rank"><span>${escapeHtml(roleLabels.join(' · ') || 'candidate')}</span><span>${members.length} file${members.length === 1 ? '' : 's'}</span></div>
       <h3>${familyTitle(item, roles)}</h3>
-      <p>${escapeHtml(item.source)} · ${escapeHtml(item.confidence_band)} confidence</p>
-      <div class="variant-list" aria-label="Available files">
-        ${members.map(member => variantLink(member, resultDomain, roles[0] ?? 'logo')).join('')}
-      </div>
+      <p>${escapeHtml(item.source)} · ${escapeHtml(item.confidence_band || 'ranked')} confidence</p>
+      <div class="variant-list" aria-label="Available files">${members.map(member => variantLink(member, resultDomain, roles[0] ?? 'logo')).join('')}</div>
       <div class="actions">${sourceLink(item)}</div>
     </div>
   </article>`;
@@ -102,14 +151,13 @@ function familyTitle(item, roles) {
 }
 
 function variantLink(item, resultDomain, role) {
-  const dimensions = item.width && item.height ? `${formatNumber(item.width)}×${formatNumber(item.height)}` : 'scalable';
-  return `<a href="${escapeHtml(item.dataUrl)}" download="${safeFilename(item, resultDomain, role)}"><strong>${escapeHtml(item.format.toUpperCase())}</strong><span>${escapeHtml(dimensions)}</span><span>↓</span></a>`;
+  return `<a href="${escapeHtml(item.dataUrl)}" download="${safeFilename(item, resultDomain, role)}"><strong>${escapeHtml(String(item.format || 'file').toUpperCase())}</strong><span>${escapeHtml(dimensionsFor(item))}</span><span aria-hidden="true">↓</span></a>`;
 }
 
 function sourceLink(item) {
   const source = String(item.resolvedUrl ?? item.resolved_url ?? '');
-  const href = source.startsWith('http:') || source.startsWith('https:') ? source : item.source_page;
-  return href ? `<a href="${escapeHtml(href)}" target="_blank" rel="noreferrer">Source ↗</a>` : '';
+  const href = /^https?:/.test(source) ? source : item.source_page;
+  return href ? `<a href="${escapeHtml(href)}" target="_blank" rel="noreferrer">View source ↗</a>` : '';
 }
 
 function fallbackFamilies(candidates) {
@@ -120,9 +168,26 @@ function fallbackFamilies(candidates) {
   }));
 }
 
+function dimensionsFor(item) {
+  return item.width && item.height ? `${formatNumber(item.width)}×${formatNumber(item.height)}` : 'Scalable';
+}
+
 function safeFilename(item, resultDomain, role) {
   const dimensions = item.width && item.height ? `-${formatNumber(item.width)}x${formatNumber(item.height)}` : '';
-  return `${resultDomain}-${role}${dimensions}.${item.format}`.replace(/[^a-z0-9._-]/gi, '-');
+  return `${resultDomain}-${role}${dimensions}.${item.format || 'img'}`.replace(/[^a-z0-9._-]/gi, '-');
+}
+
+function displayWebsite(value) {
+  return value.replace(/^https?:\/\//i, '').replace(/\/$/, '');
+}
+
+function formatDuration(value) {
+  return Number.isFinite(value) ? `${(value / 1000).toFixed(1)}s` : '—';
+}
+
+function normalizeError(error) {
+  const message = String(error?.message || 'Logo lookup failed. Please try again.');
+  return message === 'Failed to fetch' ? 'The lookup service could not be reached. Please try again.' : message;
 }
 
 function formatNumber(value) {
