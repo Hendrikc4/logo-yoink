@@ -208,19 +208,24 @@ async function inspectRenderedCandidates(page, context) {
         ...link,
       };
     };
-    const structuralRoots = [...document.querySelectorAll('header, nav, [role="banner"]')];
-    const homeRoots = headerOnly ? [] : [...document.querySelectorAll('a[href]')].filter(anchor => homeLink(anchor).homeLinked);
-    const roots = [...structuralRoots, ...homeRoots].slice(0, 80);
+    const structuralRoots = [...document.querySelectorAll('header, nav, [role="banner"]')].slice(0, 80);
+    const allHomeRoots = headerOnly ? [] : [...document.querySelectorAll('a[href]')].filter(anchor => homeLink(anchor).homeLinked);
+    const homeRoots = allHomeRoots.filter(anchor => {
+      const rect = anchor.getBoundingClientRect();
+      return visible(anchor, rect, getComputedStyle(anchor)) && rect.bottom > 0 && rect.top < innerHeight && rect.right > 0 && rect.left < innerWidth;
+    }).slice(0, 80);
+    const roots = [...structuralRoots, ...homeRoots];
     const logoScope = headerOnly ? 'header, nav, [role="banner"]' : 'body';
     const scope = document.querySelector(logoScope) ?? document.body;
     const images = new Set(scope.querySelectorAll('img[alt*="logo" i], img[class*="logo" i], img[id*="logo" i]'));
     const svgs = new Set(scope.querySelectorAll('svg[aria-label*="logo" i], svg[class*="logo" i], svg[id*="logo" i]'));
-    const backgrounds = new Set();
-    for (const root of roots.slice(0, 80)) {
-      if (root.matches('header, nav, [role="banner"]') || homeLink(root).homeLinked) backgrounds.add(root);
+    const structuralBackgrounds = new Set();
+    const homeBackgrounds = new Set(homeRoots);
+    for (const root of roots) {
+      if (root.matches('header, nav, [role="banner"]')) structuralBackgrounds.add(root);
       for (const image of root.querySelectorAll('img')) images.add(image);
       for (const svg of root.querySelectorAll('svg')) svgs.add(svg);
-      for (const child of root.querySelectorAll('[style*="background" i], [class*="logo" i], [id*="logo" i]')) backgrounds.add(child);
+      for (const child of root.querySelectorAll('[style*="background" i], [class*="logo" i], [id*="logo" i]')) structuralBackgrounds.add(child);
     }
 
     const output = [];
@@ -287,7 +292,8 @@ async function inspectRenderedCandidates(page, context) {
       });
     }
 
-    for (const element of [...backgrounds].slice(0, 100)) {
+    const backgrounds = [...new Set([...structuralBackgrounds].slice(0, 100).concat([...homeBackgrounds].slice(0, 80)))];
+    for (const element of backgrounds) {
       const rect = element.getBoundingClientRect();
       const style = getComputedStyle(element);
       if (!visible(element, rect, style) || !style.backgroundImage || style.backgroundImage === 'none') continue;
@@ -416,4 +422,4 @@ function result(candidates, diagnostics, startedAt) {
   return { candidates, diagnostics };
 }
 
-export const internals = { dedupeCandidates, isAllowedBrowserUrl, isPrivateIp, normaliseInput, parseSrcsetCandidates };
+export const internals = { dedupeCandidates, inspectRenderedCandidates, isAllowedBrowserUrl, isPrivateIp, normaliseInput, parseSrcsetCandidates };

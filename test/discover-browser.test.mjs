@@ -1,6 +1,29 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { discoverBrowserLogos, internals } from '../src/discover-browser.mjs';
+import { internals as extractorInternals } from '../src/extractor.mjs';
+import { rankCandidates } from '../src/rank.mjs';
+
+async function inspectFixture(html, css = '') {
+  const { chromium } = await import('playwright');
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await page.route('https://acme.test/**', async route => {
+    if (new URL(route.request().url()).pathname === '/site.css') {
+      await route.fulfill({ contentType: 'text/css', body: css });
+    } else {
+      await route.fulfill({ contentType: 'text/html', body: html });
+    }
+  });
+  try {
+    await page.goto('https://acme.test/');
+    return await internals.inspectRenderedCandidates(page, {
+      theme: 'light', company: 'Acme', domain: 'acme.test', headerRetention: true,
+    });
+  } finally {
+    await browser.close();
+  }
+}
 
 test('returns actionable diagnostics when Playwright is unavailable', async () => {
   const result = await discoverBrowserLogos('https://example.com', {
@@ -152,4 +175,45 @@ test('request route blocks resources after the configured request budget', async
   assert.deepEqual(actions, ['continue', 'abort']);
   assert.equal(result.diagnostics.resourceLimitHit, true);
   assert.equal(result.diagnostics.blockedRequests, 1);
+});
+
+test('inspects a bare header home-link background after more than 80 earlier hidden home links', async () => {
+  const earlier = Array.from({ length: 91 }, (_, index) => `<a class="prior" href="/">Link ${index}</a>`).join('');
+  const candidates = await inspectFixture(`
+    <link rel="stylesheet" href="/site.css">
+    ${earlier}<a href="/"></a>
+  `, '.prior { display:none; } body > a:last-child { display:block; width:183px; height:32px; background-image:url("/assets/identity.svg"); }');
+  const candidate = candidates.find(item => item.url === 'https://acme.test/assets/identity.svg');
+  assert.equal(candidate?.source, 'browser-css-background');
+  assert.equal(candidate?.evidence.homeLinked, true);
+  assert.equal(candidate?.evidence.domRegion, 'document');
+});
+
+test('decorative header backgrounds are observed but do not become wide selections', async () => {
+  const [raw] = await inspectFixture(`
+    <link rel="stylesheet" href="/site.css"><header></header>
+  `, 'header { width:400px; height:100px; background-image:url("/assets/decoration.svg"); }');
+  const disposition = extractorInternals.browserCandidateDisposition(raw, 'https://acme.test/', ['wide']);
+  assert.equal(disposition.stage, 'retained');
+  const validated = { ...disposition.candidate, width: 400, height: 100, highResolution: true, scalable: true, bytes: 100 };
+  assert.equal(rankCandidates([validated], { companyName: 'Acme' }).selectedByRole.wide, null);
+});
+
+test('ignores hidden mobile background duplicates when a visible header copy exists', async () => {
+  const candidates = await inspectFixture(`
+    <link rel="stylesheet" href="/site.css"><header><a href="/"></a><a href="/" class="mobile"></a></header>
+  `, 'header a { display:block; width:180px; height:36px; background-image:url("/assets/identity.svg"); } .mobile { display:none; }');
+  const matches = candidates.filter(item => item.url === 'https://acme.test/assets/identity.svg');
+  assert.equal(matches.length, 1);
+  assert.equal(matches[0].evidence.homeLinked, true);
+});
+
+test('strong home-link structure admits a CSS background without logo filename tokens', async () => {
+  const [raw] = await inspectFixture(`
+    <link rel="stylesheet" href="/site.css"><header><a href="/"></a></header>
+  `, 'header a { display:block; width:183px; height:32px; background-image:url("/assets/identity.svg"); }');
+  const disposition = extractorInternals.browserCandidateDisposition(raw, 'https://acme.test/', ['wide']);
+  assert.equal(disposition.reason, 'home-linked');
+  const validated = { ...disposition.candidate, width: 183, height: 32, highResolution: true, scalable: true, bytes: 100 };
+  assert.equal(rankCandidates([validated], { companyName: 'Acme' }).selectedByRole.wide?.url, 'https://acme.test/assets/identity.svg');
 });
