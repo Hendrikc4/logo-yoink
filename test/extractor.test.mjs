@@ -171,6 +171,21 @@ test('browser retention admits only wide weak-text placements and reserves two e
   assert.ok(reserved.every(item => selection.chosen.includes(item)));
 });
 
+test('weak-text header admission still needs independent company identity to become wide-eligible', () => {
+  const disposition = url => internals.browserCandidateDisposition({
+    kind: 'external', source: 'browser-img', url,
+    evidence: [{ domRegion: 'header', homeLinked: false, renderedBox: { width: 240, height: 48 } }],
+  }, 'https://acme.test/');
+  const partner = disposition('https://cdn.example/partner-wordmark.svg');
+  const company = disposition('https://cdn.example/acme-wordmark.svg');
+  assert.equal(partner.stage, 'retained');
+  assert.equal(company.stage, 'retained');
+
+  const validated = item => ({ ...item.candidate, width: 240, height: 48, highResolution: true, scalable: true, bytes: 100 });
+  assert.equal(rankCandidates([validated(partner)], { companyName: 'Acme' }).selectedByRole.wide, null);
+  assert.equal(rankCandidates([validated(company)], { companyName: 'Acme' }).selectedByRole.wide.url, company.candidate.url);
+});
+
 test('resolves document-relative assets against the first base element', () => {
   const result = internals.parseHomepage('<base href="https://cdn.example.com/site/"><img class="logo" src="brand.svg">', 'https://example.com/');
   assert.equal(result.candidates[0].url, 'https://cdn.example.com/site/brand.svg');

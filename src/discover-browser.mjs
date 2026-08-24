@@ -171,9 +171,12 @@ async function inspectRenderedCandidates(page, context) {
     const visible = (element, rect, style) => rect.width >= 4 && rect.height >= 4 &&
       style.display !== 'none' && style.visibility !== 'hidden' && Number(style.opacity || 1) > 0;
     const srcsetUrls = value => {
-      const source = clean(value), urls = [];
-      for (const match of source.matchAll(/(?:^|,\s*)((?:https?:|\/)[\s\S]*?)\s+\d+(?:\.\d+)?[wx](?=\s*(?:,|$))/gi)) urls.push(match[1]);
-      return urls.length ? urls : source ? [source] : [];
+      const source = clean(value);
+      if (!source) return [];
+      return source.split(/\s*,\s+(?=\S)/).flatMap(part => {
+        const match = part.trim().match(/^(\S+)(?:\s+(\d+(?:\.\d+)?[wx]))?$/i);
+        return match && !/^[,\s]+$/.test(match[1]) ? [match[1]] : [];
+      });
     };
     const homeLink = element => {
       const anchor = element.closest('a[href]');
@@ -297,6 +300,15 @@ async function inspectRenderedCandidates(page, context) {
   }, context);
 }
 
+function parseSrcsetCandidates(value) {
+  const source = String(value ?? '').trim();
+  if (!source) return [];
+  return source.split(/\s*,\s+(?=\S)/).flatMap(part => {
+    const match = part.trim().match(/^(\S+)(?:\s+(\d+(?:\.\d+)?[wx]))?$/i);
+    return match && !/^[,\s]+$/.test(match[1]) ? [match[1]] : [];
+  });
+}
+
 function dedupeCandidates(candidates, trace = null) {
   const output = [];
   const positions = new Map();
@@ -404,4 +416,4 @@ function result(candidates, diagnostics, startedAt) {
   return { candidates, diagnostics };
 }
 
-export const internals = { dedupeCandidates, isAllowedBrowserUrl, isPrivateIp, normaliseInput };
+export const internals = { dedupeCandidates, isAllowedBrowserUrl, isPrivateIp, normaliseInput, parseSrcsetCandidates };

@@ -2,13 +2,34 @@
 
 Date: 2026-08-24  
 Baseline: `94161db88442fcfce2a9ecba72eb2325c8bc6eff`  
-Decision: **keep**
+Decision: **merge after follow-up correctness audit**
 
 ## Outcome
 
 The retained bundle adds three correct development selections—Utiq, MattoBoard, and Raywatt—with no wrong additions, wide losses, icon movement, or favicon movement. Blind review accuracy is 3/3 (100%). Applied to the frozen baseline, wide identity/role precision remains 238/246 (96.75%), above the 96% gate.
 
-The one-shot five-site validation pair added no selected wides and caused no role movement. It still exercised the safety boundary: Carbix and Venice Music's `/null` observations resolved to foreign Wix inline SVG badges and remained ineligible; Simuland failed validation/download in both arms; DNA Chat timed out in both arms; beebizy was admitted and validated but was removed as a known URL before its stronger browser evidence could be merged. The keep decision is based on the three accurate development gains, zero development or validation regressions, and the general placement/shape rule. No validation tuning or evaluation live run followed.
+The one-shot five-site validation pair added no selected wides and caused no role movement. It still exercised the safety boundary: Carbix and Venice Music's `/null` observations resolved to foreign Wix inline SVG badges and remained ineligible; Simuland failed validation/download in both arms; DNA Chat timed out in both arms; beebizy was admitted and validated but was removed as a known URL. The follow-up audit below proves that beebizy is stored-selection drift, not a need to merge browser evidence. The keep decision is based on the three accurate development gains, zero development or validation regressions, and the general placement/shape rule. No validation tuning or evaluation live run followed.
+
+## Pre-merge follow-up audit
+
+The follow-up audit found no selection-safety regression and recommends merging the retained change plus the focused correctness tests. It did find that the broader treatment materially increased validation work: 145 to 173 requests (+28, 19.3%) and 8,110,972 to 9,137,878 bytes (+1,026,906, 12.7%). That increase came from 97 additional admissions and srcset variants filling previously unused slices, not from reserved-slot substitution. Browser page load changed by 5,394 to 5,429 requests and 182,090,799 to 180,164,529 declared bytes.
+
+The exact treatment-on-treatment counterfactual shows that only two of 34 marked reservations changed an eight-slot slice across all 88 paired development observations:
+
+| Site | Reserved candidate | Displaced candidate | Selection consequence |
+| --- | --- | --- | --- |
+| Crewline | 16x8 nav SVG | 8x9 Chip Logomark variant | both `predicted_roles: []`; no role movement |
+| Medical Network Solutions | 14,200-byte home-linked JPG | 11,563-byte home-linked JPG | both `predicted_roles: []`; no role movement |
+
+Those substitutions added no validation requests and only 1,751 successful payload bytes. Fratellidesideri and Utiq's reserved candidates were already natural top-eight items; the other 30 reservations occurred on unsaturated slices. Across the paired selected slices, 25 control-selected URLs became treatment-deferred and 13 treatment-selected URLs were control-deferred. The site counts (control displaced / treatment promoted) were Ahgpay 3/2, Arcanite 6/6, Crewline 1/0, Enstyle 5/0, Sloane 2/0, Modulize 6/5, and Utiq 2/0; Medical Network Solutions had one additional redirect-normalized reserve substitution described above. All 25 displaced control candidates had `predicted_roles: []`: third-party/partner assets, tiny UI graphics, or a square company mark whose wide score was below threshold. Because this browser fallback was wide-only, none could produce an icon or favicon, and none could become a wide selection. Full replay confirms zero wide losses and zero icon/favicon movement.
+
+Weak-text admission also remains separated from identity eligibility. A focused test now passes a wide third-party header wordmark through admission and byte-like validation but proves it remains unselected without a home link, company agreement, authoritative source, or another existing identity proof. The corresponding company-matching URL becomes eligible through independent company agreement.
+
+The beebizy same-URL case does not support evidence merging. Its existing `https://www.beebizy.com/beebizy-logo.png` candidate already has a 2.02 ratio, header placement, company agreement from the URL, wide score 93, and `predicted_roles: ["wide"]`; the current ranker selects that base candidate without browser evidence. The browser observation has the identical URL and byte hash and adds no home-link or positive-token proof. The stored `wide: null` is therefore stale relative to the current ranker. A conservative exact-URL development simulation yielded zero selection changes in either arm, so no same-URL evidence merge is bundled. Such a change is separately testable, but it needs its own paired experiment because it can alter ranking and duplicate-source semantics.
+
+The srcset parser was the only genuine correctness fix. The previous expression omitted ordinary relative URLs and could forward a whole malformed value. The simplified parser covers relative and absolute URLs, descriptorless entries, width and density descriptors, query-string commas, empty values, and malformed descriptors; malformed input is dropped rather than normalized as a request URL.
+
+Machine-readable audit results are in `runs/wide-header-retention-2026-08-24/pre-merge-audit.json`.
 
 ## Retained changes
 
@@ -97,6 +118,6 @@ The treatment-only changed assets were reviewed without arm, source, or rank fie
 - Validation pair: `validation-{control,treatment}-observations/`, corresponding replay directories, and `validation-comparison.json`.
 - Consolidated costs and gates: `metrics-summary.json`.
 - Exact stage ledger: `drop-stage-ledger.json`.
-- Full repository verification: 170 tests passed and 500 fixtures validated.
+- Full repository verification after the pre-merge audit: 172 tests passed and 500 fixtures validated.
 
 All experiment artifacts are ignored run data under `/Users/hendrik/.codex/worktrees/2e31/logo-yoink/runs/wide-header-retention-2026-08-24`. The frozen corpus remained read-only at `/Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged`.
