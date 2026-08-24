@@ -72,6 +72,7 @@ async function main() {
   const concurrency = Math.min(2, Number(concurrencyArg));
   const timeoutMs = Number(timeoutArg);
   const maxAgeMs = maxAgeArg === 'Infinity' ? Infinity : Number(maxAgeArg);
+  const headerRetention = process.env.LOGO_YOINK_HEADER_RETENTION_PROFILE !== 'control';
   if (!Number.isInteger(concurrency) || concurrency < 1 || !Number.isInteger(timeoutMs) || timeoutMs < 1 ||
       (maxAgeMs !== Infinity && (!Number.isInteger(maxAgeMs) || maxAgeMs < 0))) {
     throw new Error('Invalid concurrency, timeout, or max age.');
@@ -95,20 +96,28 @@ async function main() {
       if (cacheState === 'fresh') return { entity_id: record.entity_id, key, cache: 'hit' };
       const rendered = await discoverBrowserLogos(
         { url: record.homepage, domain: record.domain, company: record.name },
-        { browser, darkMode: true, timeoutMs },
+        { browser, darkMode: true, timeoutMs, headerRetention },
       );
-      const converted = rendered.candidates
-        .map(item => internals.fromBrowserCandidate(item, record.homepage, ['wide']))
-        .filter(Boolean)
-        .sort((a, b) => internals.discoveryPriority(b) - internals.discoveryPriority(a))
-        .slice(0, 8);
-      const validated = await mapConcurrent(converted, 4, item => internals.validateCandidate(item, timeoutMs, validation));
+      const dispositions = rendered.candidates.map(item => ({ raw: item, ...internals.browserCandidateDisposition(item, record.homepage, ['wide'], { headerRetention }) }));
+      const converted = dispositions.map(item => item.candidate).filter(Boolean);
+      const browserBudget = internals.selectBrowserCandidates(converted, 8, 2, { headerRetention });
+      const selected = new Set(browserBudget.chosen);
+      const reserved = new Set(browserBudget.reserved);
+      const deduped = new Map();
+      for (const item of browserBudget.chosen) if (!deduped.has(item.url)) deduped.set(item.url, item);
+      const budgeted = [...deduped.values()];
+      const validated = await mapConcurrent(budgeted, 4, item => internals.validateCandidate(item, timeoutMs, validation));
       const artifact = {
         schema_version: 1, discovery_version: DISCOVERY_VERSION, observation_key: key,
         entity_id: record.entity_id, domain: record.domain, homepage_url: record.homepage,
         inputs: { url: record.homepage, company: record.name, browser_version: browserVersion, themes: THEMES, viewport: VIEWPORT, eligible_roles: ['wide'] },
-        diagnostics: rendered.diagnostics,
-        candidates: converted.map((item, index) => ({ source: item.source, validated: validated[index] ?? null })),
+        diagnostics: { ...rendered.diagnostics, retention_pipeline: { profile: headerRetention ? 'treatment' : 'control',
+          raw: dispositions.map(item => ({ url: item.raw.url ?? null, kind: item.raw.kind, source: item.raw.source, stage: item.stage, reason: item.reason, rendered_box: item.raw.evidence?.[0]?.renderedBox ?? null })),
+          converted: converted.length, budget_selected: browserBudget.chosen.length, budget_deferred: browserBudget.deferred.length,
+          reserved: browserBudget.reserved.length, url_duplicates: browserBudget.chosen.length - budgeted.length,
+          validation_failures: validated.filter(item => !item).length,
+        } },
+        candidates: budgeted.map((item, index) => ({ source: item.source, budget_reserved: reserved.has(item), budget_selected: selected.has(item), validated: validated[index] ?? null })),
       };
       await atomicWrite(path, `${JSON.stringify(artifact)}\n`);
       return {

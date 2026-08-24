@@ -301,10 +301,11 @@ function candidate(url, source, sizes = '', type = '', extra = {}) {
 function declaredPixels(item) {
   if (/svg/i.test(`${item.type ?? ''} ${item.url}`)) return 1e12;
   if (String(item.sizes).toLowerCase() === 'any') return 1e11;
-  return Math.max(0, ...[...String(item.sizes ?? '').matchAll(/(\d+)x(\d+)/gi)].map(match => Number(match[1]) * Number(match[2])));
+  const rendered = Number(item.declared?.width) * Number(item.declared?.height);
+  return Math.max(Number.isFinite(rendered) ? rendered : 0, ...[...String(item.sizes ?? '').matchAll(/(\d+)x(\d+)/gi)].map(match => Number(match[1]) * Number(match[2])));
 }
 
-function discoveryPriority(item) {
+function discoveryPriority(item, { renderedDimensions = true } = {}) {
   const proof = item.evidence ?? {};
   let score = (SOURCE_WEIGHT[item.source] ?? 0) * 10;
   if (proof.positive_token) score += 90;
@@ -312,7 +313,8 @@ function discoveryPriority(item) {
   if (proof.dom_region === 'header' || proof.dom_region === 'nav') score += 55;
   if (proof.negative_context || proof.banner) score -= 200;
   if (item.source === 'social-banner') score -= 300;
-  score += Math.min(40, Math.log2(Math.max(1, declaredPixels(item))) * 2);
+  const pixels = renderedDimensions ? declaredPixels(item) : Math.max(0, ...[...String(item.sizes ?? '').matchAll(/(\d+)x(\d+)/gi)].map(match => Number(match[1]) * Number(match[2])));
+  score += Math.min(40, Math.log2(Math.max(1, pixels)) * 2);
   return score;
 }
 
@@ -532,18 +534,21 @@ function dedupeBytes(items) {
   return [...deduped.values()];
 }
 
-function fromBrowserCandidate(item, homepage, eligibleRoles = ['icon', 'wide']) {
+function browserCandidateDisposition(item, homepage, eligibleRoles = ['icon', 'wide'], { headerRetention = true } = {}) {
   const proofs = Array.isArray(item.evidence) ? item.evidence : [item.evidence].filter(Boolean);
   const proof = proofs[0] ?? {};
   const semantic = [proof.alt, proof.ariaLabel, proof.title, proof.id, proof.className].filter(Boolean).join(' ');
   const uiControl = /(?:^|[-_\s])(hamburger|menu-toggle|toggle-menu|close|search|chevron|arrow|whatsapp|tasks?|translate|language-switcher|button-icon)(?:$|[-_\s])|(?:^|[-_\s])fa-(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i.test(semantic);
   const positive = /logo|brand|wordmark/i.test(semantic);
-  if (uiControl || (!positive && !proof.homeLinked)) return null;
+  const width = Number(proof.renderedBox?.width), height = Number(proof.renderedBox?.height);
+  const ratio = width > 0 && height > 0 ? width / height : null;
+  const strongWidePlacement = ratio >= 1.8 && ratio <= 12 && (proof.homeLinked || ['header', 'nav'].includes(proof.domRegion));
+  if (uiControl || (!positive && !proof.homeLinked && !(headerRetention && strongWidePlacement))) return { candidate: null, stage: 'semantic_filter', reason: uiControl ? 'ui-control' : 'weak-text-without-strong-placement-shape' };
   const url = item.kind === 'inline-svg'
     ? `data:image/svg+xml;base64,${Buffer.from(item.inlineSvg).toString('base64')}`
     : resolveHttpUrl(item.url, homepage);
-  if (!url) return null;
-  return candidate(url, item.source, '', item.kind === 'inline-svg' ? 'image/svg+xml' : '', {
+  if (!url) return { candidate: null, stage: 'invalid_url', reason: 'unresolvable-or-null-like-url' };
+  return { stage: 'retained', reason: positive ? 'positive-semantic' : proof.homeLinked ? 'home-linked' : 'visible-wide-header', candidate: candidate(url, item.source, '', item.kind === 'inline-svg' ? 'image/svg+xml' : '', {
     source_page: homepage,
     declared: proof.renderedBox ? { width: proof.renderedBox.width, height: proof.renderedBox.height, theme: proof.theme } : {},
     evidence: {
@@ -558,7 +563,24 @@ function fromBrowserCandidate(item, homepage, eligibleRoles = ['icon', 'wide']) 
       themes: [...new Set(proofs.map(value => value?.theme).filter(Boolean))],
       rendered: true,
     },
-  });
+  }) };
+}
+
+function fromBrowserCandidate(item, homepage, eligibleRoles = ['icon', 'wide']) {
+  return browserCandidateDisposition(item, homepage, eligibleRoles).candidate;
+}
+
+function selectBrowserCandidates(items, budget = 8, reserve = 2, { headerRetention = true } = {}) {
+  const sorted = [...items].sort((a, b) => discoveryPriority(b, { renderedDimensions: headerRetention }) - discoveryPriority(a, { renderedDimensions: headerRetention }));
+  const reservable = item => {
+    const width = Number(item.declared?.width), height = Number(item.declared?.height);
+    const ratio = width > 0 && height > 0 ? width / height : null;
+    return ratio >= 1.8 && ratio <= 12 && (item.evidence?.home_linked || ['header', 'nav'].includes(item.evidence?.dom_region));
+  };
+  const reserved = headerRetention ? sorted.filter(reservable).slice(0, Math.min(reserve, budget)) : [];
+  const chosen = [...reserved];
+  for (const item of sorted) if (chosen.length < budget && !chosen.includes(item)) chosen.push(item);
+  return { chosen, deferred: sorted.filter(item => !chosen.includes(item)), reserved };
 }
 
 export function needsRenderedWideFallback(ranked) {
@@ -691,8 +713,8 @@ export async function extractLogos(website, options = {}) {
     });
     browserDiagnostics = rendered.diagnostics;
     const known = new Set(validated.map(item => item.url));
-    const browserItems = rendered.candidates.map(item => fromBrowserCandidate(item, homepage, missingRoles)).filter(item => item && !known.has(item.url))
-      .sort((a, b) => discoveryPriority(b) - discoveryPriority(a)).slice(0, 8);
+    const browserConverted = rendered.candidates.map(item => fromBrowserCandidate(item, homepage, missingRoles)).filter(item => item && !known.has(item.url));
+    const browserItems = selectBrowserCandidates(browserConverted, 8, 2).chosen;
     const extra = (await mapConcurrent(browserItems, 4, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
     validated = dedupeBytes([...validated, ...extra]);
     await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
@@ -730,6 +752,6 @@ export async function extractLogos(website, options = {}) {
 export const internals = {
   imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
   selectRoleAware, measureContentBox, attachContentBoxes, attachTinySuitability, dedupeBytes,
-  fromBrowserCandidate, needsRenderedWideFallback, discoveryPriority, validateCandidate, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
+  fromBrowserCandidate, browserCandidateDisposition, selectBrowserCandidates, needsRenderedWideFallback, discoveryPriority, validateCandidate, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,
 };
