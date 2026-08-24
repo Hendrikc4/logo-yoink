@@ -109,13 +109,34 @@ test('validator reports cross-split content hashes unless explicitly grouped', a
   const second = manifest.entities.find(row => row.benchmark_split === 'validation');
   const provenance = { schema_version: 'visual-benchmark-v1', capture_version: 'test' };
   const hash = 'a'.repeat(64);
-  const row = (entity, suffix) => ({ schema_version: 'visual-benchmark-v1', record_type: 'candidate', candidate_id: `candidate-${suffix}`, entity_id: entity.entity_id, source_type: 'img', content_hash: hash, provenance });
+  const row = (entity, suffix) => ({ schema_version: 'visual-benchmark-v1', record_type: 'candidate', candidate_id: `candidate-${suffix}`, entity_id: entity.entity_id, source_type: 'img', content_hash: hash, score_reasons: ['generic exclusion (customer or partner logo) -100'], provenance });
+  const capture = entity => ({ schema_version: 'visual-benchmark-v1', record_type: 'entity_capture', entity_id: entity.entity_id, company_name: entity.name, requested_website: `https://${entity.website}/`, capture_status: 'success', identity_status: 'current', reachability: 'live_first_party', captured_at: '2026-08-23T00:00:00.000Z', provenance });
   await writeFile(join(run, 'candidates.jsonl'), `${JSON.stringify(row(first, 'one'))}\n${JSON.stringify(row(second, 'two'))}\n`);
+  await jsonl(join(run, 'captures.jsonl'), [capture(first), capture(second)]);
   await assert.rejects(() => validateRun(run), /crosses benchmark splits/);
   manifest.content_hash_groups = [{ group_id: 'shared-logo', content_hashes: [hash], entity_ids: [first.entity_id, second.entity_id], split_policy: 'diagnostic_cross_split' }];
   await writeFile(join(run, 'benchmark-manifest.json'), `${JSON.stringify(manifest)}\n`);
   const summary = await validateRun(run);
   assert.equal(summary.content_hash_leaks[0].group_id, 'shared-logo');
+});
+
+test('validator excludes GoDaddy parked-domain favicon fallbacks from target-content leakage while retaining current-content protection', async () => {
+  const run = await mkdtemp(join(tmpdir(), 'logo-yoink-parked-favicon-'));
+  await generateShards({ inputPath: companyFixture, outputPath: run });
+  const manifest = JSON.parse(await readFile(join(run, 'benchmark-manifest.json'), 'utf8'));
+  const current = manifest.entities.find(row => row.benchmark_split === 'development');
+  const parked = manifest.entities.find(row => row.benchmark_split === 'evaluation');
+  const parkedHash = '44ea786ef9f9ad7f0ee37ab3166580818da36d2cd2721f5a480cc8a06d801fa2';
+  const genuineHash = 'b'.repeat(64);
+  const provenance = { schema_version: 'visual-benchmark-v1', capture_version: 'test' };
+  const candidate = (entity, suffix, content_hash = parkedHash) => ({ schema_version: 'visual-benchmark-v1', record_type: 'candidate', candidate_id: `candidate-${suffix}`, entity_id: entity.entity_id, source_type: 'favicon', source: 'google-favicon', content_hash, provenance });
+  const capture = (entity, identity_status, reachability) => ({ schema_version: 'visual-benchmark-v1', record_type: 'entity_capture', entity_id: entity.entity_id, company_name: entity.name, requested_website: `https://${entity.website}/`, capture_status: 'success', identity_status, reachability, captured_at: '2026-08-23T00:00:00.000Z', provenance });
+  await jsonl(join(run, 'captures.jsonl'), [capture(current, 'current', 'live_first_party'), capture(parked, 'ambiguous', 'redirected_off_domain')]);
+  await jsonl(join(run, 'candidates.jsonl'), [candidate(current, 'current'), candidate(parked, 'parked')]);
+  await assert.doesNotReject(() => validateRun(run));
+  await jsonl(join(run, 'captures.jsonl'), [capture(current, 'current', 'live_first_party'), capture(parked, 'current', 'live_first_party')]);
+  await jsonl(join(run, 'candidates.jsonl'), [candidate(current, 'genuine-current', genuineHash), candidate(parked, 'genuine-second', genuineHash)]);
+  await assert.rejects(() => validateRun(run), /crosses benchmark splits/);
 });
 
 test('manifest-authorized merge materializes worker assets and captures', async () => {

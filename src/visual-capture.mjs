@@ -330,7 +330,7 @@ function candidateFeatureSnapshot(candidate, artifacts) {
     content_hash: artifacts.contentHash, rendered: Boolean(candidate?.evidence?.rendered),
     dom_region: candidate?.evidence?.dom_region ?? null, home_linked: Boolean(candidate?.evidence?.home_linked),
     positive_token: Boolean(candidate?.evidence?.positive_token), negative_context: Boolean(candidate?.evidence?.negative_context),
-    themes: candidate?.evidence?.themes ?? [],
+    themes: candidate?.evidence?.themes ?? [], tiny_suitability: candidate?.tinySuitability ?? null,
   };
 }
 

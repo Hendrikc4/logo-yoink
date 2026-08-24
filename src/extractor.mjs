@@ -6,6 +6,7 @@ import { parseHomepage, resolveHttpUrl } from './discover-static.mjs';
 import { discoverBrowserLogos } from './discover-browser.mjs';
 import { discoverOfficialBrandAssets, discoverSpaBundleAssets } from './discover-deep.mjs';
 import { hasWideEvidence, rankCandidates, scoreCandidate, SOURCE_WEIGHT } from './rank.mjs';
+import { measureTinyImageSuitability } from './tiny-image-suitability.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
 const MAX_HTML_BYTES = 2 * 1024 * 1024;
@@ -510,6 +511,17 @@ async function attachContentBoxes(items, enabled, companyName, stats) {
   }
 }
 
+async function attachTinySuitability(items) {
+  await mapConcurrent(items, 4, async item => {
+    if (item.tinySuitabilityChecked || !item.dataUrl) return;
+    item.tinySuitabilityChecked = true;
+    const ratio = item.width && item.height ? item.width / item.height : null;
+    if (!FAVICON_SOURCES.has(item.source) || (ratio != null && (ratio < 0.72 || ratio > 1.4))) return;
+    const bytes = dataUrlBytes(item.dataUrl);
+    if (bytes) item.tinySuitability = await measureTinyImageSuitability(bytes) ?? { score: 0 };
+  });
+}
+
 function dedupeBytes(items) {
   const deduped = new Map();
   for (const item of items) {
@@ -547,6 +559,10 @@ function fromBrowserCandidate(item, homepage, eligibleRoles = ['icon', 'wide']) 
       rendered: true,
     },
   });
+}
+
+export function needsRenderedWideFallback(ranked) {
+  return !ranked.selectedByRole.wide;
 }
 
 export async function extractLogos(website, options = {}) {
@@ -599,12 +615,14 @@ export async function extractLogos(website, options = {}) {
   let validated = dedupeBytes(validatedRaw);
   const contentStats = { boxes: 0 };
   await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
+  await attachTinySuitability(validated);
   let ranked = rankCandidates(validated, { companyName: options.companyName });
   let cachedFavicon = null;
   if (!ranked.selectedByRole.favicon && options.cachedFavicon !== false) {
     cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
     if (cachedFavicon) {
       validated = dedupeBytes([...validated, cachedFavicon]);
+      await attachTinySuitability(validated);
       ranked = rankCandidates(validated, { companyName: options.companyName });
     }
   }
@@ -627,12 +645,14 @@ export async function extractLogos(website, options = {}) {
     const archive = (await Promise.all(official.candidates.filter(item => item.rawBytes).map(item => validateCandidateBytes(item, item.rawBytes)))).filter(Boolean);
     const extraDirect = (await mapConcurrent(direct, 3, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
     validated = dedupeBytes([...validated, ...archive, ...extraDirect]);
+    await attachTinySuitability(validated);
     ranked = rankCandidates(validated, { companyName: options.companyName });
     if (options.spaBundles && !ranked.selectedByRole.wide) {
       const spa = await discoverSpaBundleAssets({ homepage, parsed, companyName: deepCompanyName, fetchResource });
       deepDiagnostics.spaBundle = spa.diagnostics;
       const spaExtra = (await mapConcurrent(spa.candidates, 2, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
       validated = dedupeBytes([...validated, ...spaExtra]);
+      await attachTinySuitability(validated);
       ranked = rankCandidates(validated, { companyName: options.companyName });
     }
   }
@@ -652,6 +672,7 @@ export async function extractLogos(website, options = {}) {
         const extra = (await mapConcurrent(additions, 4, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
         validated = dedupeBytes([...validated, ...extra]);
         await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
+        await attachTinySuitability(validated);
         ranked = rankCandidates(validated, { companyName: options.companyName });
         if (ranked.selectedByRole.wide) break;
       } catch { /* Secondary pages are a bounded fallback, never a fatal path. */ }
@@ -659,7 +680,7 @@ export async function extractLogos(website, options = {}) {
   }
 
   let browserDiagnostics = null;
-  if (options.browser && !jinaHomepageUsed && (!ranked.selectedByRole.icon || !ranked.selectedByRole.wide)) {
+  if (options.browser && !jinaHomepageUsed && needsRenderedWideFallback(ranked)) {
     const missingRoles = ['icon', 'wide'].filter(role => !ranked.selectedByRole[role]);
     const rendered = await discoverBrowserLogos({ url: homepage, domain: normalized.domain, company: options.companyName }, {
       browser: options.browserInstance,
@@ -675,6 +696,7 @@ export async function extractLogos(website, options = {}) {
     const extra = (await mapConcurrent(browserItems, 4, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
     validated = dedupeBytes([...validated, ...extra]);
     await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
+    await attachTinySuitability(validated);
     ranked = rankCandidates(validated, { companyName: options.companyName });
   }
 
@@ -691,6 +713,7 @@ export async function extractLogos(website, options = {}) {
       }
       validated = dedupeBytes([...validated, screenshot]);
       await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
+      await attachTinySuitability(validated);
       ranked = rankCandidates(validated, { companyName: options.companyName });
       jinaScreenshot = { status: 'ok', mode, width: screenshot.width, height: screenshot.height };
     } catch (error) {
@@ -706,7 +729,7 @@ export async function extractLogos(website, options = {}) {
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.
 export const internals = {
   imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
-  selectRoleAware, measureContentBox, attachContentBoxes, dedupeBytes,
-  fromBrowserCandidate, discoveryPriority, validateCandidate, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
+  selectRoleAware, measureContentBox, attachContentBoxes, attachTinySuitability, dedupeBytes,
+  fromBrowserCandidate, needsRenderedWideFallback, discoveryPriority, validateCandidate, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,
 };

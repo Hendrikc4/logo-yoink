@@ -3,7 +3,7 @@ const SOURCE_WEIGHT = {
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
-const RANKING_VERSION = 1;
+const RANKING_VERSION = 2;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
 function round(value) { return Math.round(Math.max(0, Math.min(100, value)) * 10) / 10; }
@@ -165,8 +165,23 @@ export function rankCandidates(items, options = {}) {
   const ranked = items.map(item => scoreCandidate(item, options)).sort((a, b) => b.score - a.score || b.bytes - a.bytes);
   const { candidates, assetFamilies } = buildAssetFamilies(ranked);
   const eligible = candidates.filter(item => item.source !== 'social-banner');
-  const selectedByRole = Object.fromEntries(['icon', 'wide', 'favicon'].map(role => [role, [...eligible].filter(item => item.predicted_roles.includes(role)).sort((a, b) => b.role_scores[role] - a.role_scores[role] || b.bytes - a.bytes)[0] ?? null]));
+  const selectedByRole = Object.fromEntries(['icon', 'wide', 'favicon'].map(role => [role, [...eligible].filter(item => item.predicted_roles.includes(role)).sort((a, b) => {
+    if (role === 'favicon') {
+      const suitabilityDifference = faviconRankScore(b) - faviconRankScore(a);
+      if (suitabilityDifference) return suitabilityDifference;
+    }
+    return b.role_scores[role] - a.role_scores[role] || b.bytes - a.bytes;
+  })[0] ?? null]));
   return { candidates, assetFamilies, selectedByRole, selected: selectedByRole.icon ?? selectedByRole.wide ?? selectedByRole.favicon ?? null };
+}
+
+export function faviconRankScore(candidate) {
+  const edge = Math.min(Number(candidate.width) || Infinity, Number(candidate.height) || Infinity);
+  const intendedSize = edge <= 64 ? 40 : edge <= 128 ? 25 : edge <= 256 ? 10 : 0;
+  const iconAgreement = candidate.predicted_roles?.includes('icon') ? 8 : 0;
+  const sourceTie = candidate.source === 'html-icon' ? 1 : 0;
+  const pixelSuitability = Number.isFinite(candidate.tinySuitability?.score) ? candidate.tinySuitability.score : 0;
+  return intendedSize + 0.6 * pixelSuitability + iconAgreement + sourceTie + 0.01 * (candidate.role_scores?.favicon ?? 0);
 }
 
 function familyShape(item) {

@@ -4,6 +4,7 @@ import sharp from 'sharp';
 import { internals } from '../src/extractor.mjs';
 import { rankCandidates } from '../src/rank.mjs';
 import { parseArgs } from '../scripts/benchmark.mjs';
+import { measureTinyImageSuitability } from '../src/tiny-image-suitability.mjs';
 
 async function paddedLogo(width = 200, height = 200, rect = { x: 10, y: 80, width: 180, height: 40 }) {
   const mark = await sharp({ create: { width: rect.width, height: rect.height, channels: 4, background: { r: 200, g: 30, b: 30, alpha: 1 } } }).png().toBuffer();
@@ -60,4 +61,14 @@ test('benchmark exposes both experiments as off-by-default booleans', () => {
   const control = parseArgs(['--cohort', 'original-100']);
   assert.equal(control.roleBudget, undefined);
   assert.equal(control.contentBoundingWide, undefined);
+});
+
+test('tiny suitability rewards a clear occupied mark over a blank canvas', async () => {
+  const mark = await sharp({ create: { width: 36, height: 36, channels: 4, background: { r: 20, g: 40, b: 220, alpha: 1 } } }).png().toBuffer();
+  const image = await sharp({ create: { width: 64, height: 64, channels: 4, background: { r: 255, g: 255, b: 255, alpha: 1 } } })
+    .composite([{ input: mark, left: 14, top: 14 }]).png().toBuffer();
+  const blank = await sharp({ create: { width: 64, height: 64, channels: 4, background: { r: 255, g: 255, b: 255, alpha: 1 } } }).png().toBuffer();
+  const [markScore, blankScore] = await Promise.all([measureTinyImageSuitability(image), measureTinyImageSuitability(blank)]);
+  assert.ok(markScore.score > blankScore.score);
+  assert.ok(markScore.foreground_occupancy > 0.1);
 });

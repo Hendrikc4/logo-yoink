@@ -65,6 +65,29 @@ test('preserves missing previews, deduplicates aliases only within a company, an
   assert.ok(company.candidates.some(candidate => candidate.candidate_ids.includes('missing')));
 });
 
+test('omits ambiguous redirect candidates from v3 sheets and records an abstention', async () => {
+  const run = await mkdtemp(join(tmpdir(), 'logo-yoink-label-abstention-'));
+  await mkdir(join(run, 'assets'), { recursive: true });
+  await writeFile(join(run, 'assets', 'one.png'), PNG);
+  await writeJsonl(join(run, 'entities.jsonl'), [
+    { entity_id: 'current', name: 'Current', website: 'current.example' },
+    { entity_id: 'parked', name: 'Parked', website: 'parked.example' },
+  ]);
+  await writeJsonl(join(run, 'captures.jsonl'), [
+    { entity_id: 'current', identity_status: 'current', reachability: 'live_first_party' },
+    { entity_id: 'parked', identity_status: 'ambiguous', reachability: 'redirected_off_domain' },
+  ]);
+  await writeJsonl(join(run, 'candidates.jsonl'), [
+    { entity_id: 'current', candidate_id: 'current-logo', content_hash: 'current', asset_path: 'assets/one.png', format: 'png', width: 1, height: 1 },
+    { entity_id: 'current', candidate_id: 'current-partner-logo', content_hash: 'partner', asset_path: 'assets/one.png', format: 'png', width: 1, height: 1, score_reasons: ['generic exclusion (customer or partner logo) -100'] },
+    { entity_id: 'parked', candidate_id: 'parked-favicon', content_hash: 'parked', asset_path: 'assets/one.png', format: 'png', width: 1, height: 1 },
+  ]);
+  const index = await buildLabelSheets({ runDirectory: run, outputDirectory: join(run, 'packet') });
+  assert.equal(index.candidate_count, 2);
+  assert.ok(index.sheets.flatMap(sheet => sheet.entities).flatMap(entity => entity.candidates).some(candidate => candidate.candidate_ids.includes('current-partner-logo')));
+  assert.deepEqual(index.abstentions.map(item => item.entity_id), ['parked']);
+});
+
 test('chunks an oversized company and never exceeds the readable tile limit', () => {
   const candidates = Array.from({ length: 25 }, (_, index) => ({ candidate_id: `c${index}`, candidate_ids: [`c${index}`] }));
   const sheets = packEntities([{ entity_id: 'large', candidates }], { maxCandidates: 10, maxEntities: 4 });

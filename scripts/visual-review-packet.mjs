@@ -31,6 +31,7 @@ import {
   stableReviewId,
   targetKeyFor,
 } from './visual-benchmark-labels.mjs';
+import { captureAbstention, isPacketLabelableCapture } from '../src/benchmark-content-eligibility.mjs';
 
 export { labelIdFor, stableReviewId, targetKeyFor };
 
@@ -347,14 +348,19 @@ export async function loadBundle(runDirectory) {
   }
 
   const packets = [...entities.values()].map(entity => {
-    const candidates = candidatesByEntity.get(entity.entity_id) ?? [];
-    const instances = (instancesByEntity.get(entity.entity_id) ?? []).map(instance => ({
+    const capturedCandidates = candidatesByEntity.get(entity.entity_id) ?? [];
+    const packetLabelable = isPacketLabelableCapture(entity);
+    const candidates = packetLabelable ? capturedCandidates : [];
+    const excludedCandidates = packetLabelable ? [] : capturedCandidates;
+    const candidateAbstention = !packetLabelable && excludedCandidates.length ? captureAbstention(entity) : null;
+    const capturedInstances = (instancesByEntity.get(entity.entity_id) ?? []).map(instance => ({
       ...instance,
       mapping: mappingsByInstance.get(instance.visual_instance_id) ?? null,
       candidate_id: first(instance.candidate_id, mappingsByInstance.get(instance.visual_instance_id)?.candidate_id, ''),
       mapping_id: first(instance.mapping_id, mappingsByInstance.get(instance.visual_instance_id)?.mapping_id, EMPTY),
       mapping_type: first(instance.mapping_type, mappingsByInstance.get(instance.visual_instance_id)?.mapping_confidence, mappingsByInstance.get(instance.visual_instance_id)?.mapping?.type, mappingsByInstance.get(instance.visual_instance_id)?.type, EMPTY),
     }));
+    const instances = packetLabelable ? capturedInstances : [];
     const capture = entity.capture ?? {};
     const screenshots = uniqueMedia([
       ...pathValues(capture, ['screenshots', 'screenshot_paths', 'screenshotPaths', 'desktop_light_top', 'desktop_light_full', 'desktop_dark_top', 'mobile_light_top', 'top_screenshot']),
@@ -364,6 +370,10 @@ export async function loadBundle(runDirectory) {
       ...entity,
       capture,
       candidates,
+      captured_candidate_count: capturedCandidates.length,
+      excluded_candidate_count: excludedCandidates.length,
+      candidate_abstention: candidateAbstention,
+      captured_visual_instance_count: capturedInstances.length,
       visual_instances: instances,
       mappings: mappingRecords.filter(mapping => String(first(mapping.entity_id, mapping.entityId, '')) === entity.entity_id),
       rejections: rejectionsByEntity.get(entity.entity_id) ?? [],
@@ -506,7 +516,7 @@ async function renderEntity(entity, assetResolver, outputDirectory, packetHref, 
     screenshotHtml.push(`<figure class="screenshot overlay"><figcaption>${escapeHtml(media.label)}</figcaption>${mediaFigure(media, href, `${entity.name} numbered overlay`)}</figure>`);
   }
 
-  const candidateCards = entity.candidates.length ? await Promise.all(entity.candidates.map(async candidate => `<article class="candidate-card" data-candidate-id="${escapeHtml(candidate.candidate_id)}"><div class="candidate-previews">${await candidatePreview(candidate, assetResolver, outputDirectory, candidate.candidate_id)}</div><div class="capture-meta"><b>${escapeHtml(candidate.candidate_id)}</b><span>source: ${escapeHtml(candidate.source || 'not recorded')}</span><span>dimensions: ${escapeHtml(candidate.width || '?')} × ${escapeHtml(candidate.height || '?')}</span><span>format: ${escapeHtml(candidate.format || 'not recorded')}</span><span>scores: ${escapeHtml(scoreText(candidate))}</span><span>score reasons: ${escapeHtml(Array.isArray(candidate.score_reasons) ? candidate.score_reasons.join('; ') || 'none recorded' : candidate.score_reasons || 'none recorded')}</span><span>rejections: ${escapeHtml(rejectionText(candidate))}</span>${snapshotDetails(candidate.feature_snapshot, candidate.evidence_snapshot)}</div><form class="candidate-form" data-record-type="candidate" data-entity-id="${escapeHtml(entity.entity_id)}" data-candidate-id="${escapeHtml(candidate.candidate_id)}">${selectControl('identity', IDENTITY, 'Candidate identity')}${selectControl('roles', ROLES, 'Candidate roles', 'multiple size="5"')}${selectControl('best_for_role', ROLES, 'Best for role', 'multiple size="5"')}${selectControl('usability_light', USABILITY, 'Light usability')}${selectControl('usability_dark', USABILITY, 'Dark usability')}${selectControl('provenance_quality', ['visible_exact_use', 'structured_first_party', 'inferred_first_party', 'unsupported'], 'Provenance')}${textControl('quality_defects', 'Quality defects (comma-separated)')}${textControl('reject_reason', 'Reviewer reject reason')}${textControl('confidence', 'Confidence')}${textControl('note', 'Note', true)}</form></article>`)) : ['<div class="placeholder">No candidate records captured</div>'];
+  const candidateCards = entity.candidates.length ? await Promise.all(entity.candidates.map(async candidate => `<article class="candidate-card" data-candidate-id="${escapeHtml(candidate.candidate_id)}"><div class="candidate-previews">${await candidatePreview(candidate, assetResolver, outputDirectory, candidate.candidate_id)}</div><div class="capture-meta"><b>${escapeHtml(candidate.candidate_id)}</b><span>source: ${escapeHtml(candidate.source || 'not recorded')}</span><span>dimensions: ${escapeHtml(candidate.width || '?')} × ${escapeHtml(candidate.height || '?')}</span><span>format: ${escapeHtml(candidate.format || 'not recorded')}</span><span>scores: ${escapeHtml(scoreText(candidate))}</span><span>score reasons: ${escapeHtml(Array.isArray(candidate.score_reasons) ? candidate.score_reasons.join('; ') || 'none recorded' : candidate.score_reasons || 'none recorded')}</span><span>rejections: ${escapeHtml(rejectionText(candidate))}</span>${snapshotDetails(candidate.feature_snapshot, candidate.evidence_snapshot)}</div><form class="candidate-form" data-record-type="candidate" data-entity-id="${escapeHtml(entity.entity_id)}" data-candidate-id="${escapeHtml(candidate.candidate_id)}">${selectControl('identity', IDENTITY, 'Candidate identity')}${selectControl('roles', ROLES, 'Candidate roles', 'multiple size="5"')}${selectControl('best_for_role', ROLES, 'Best for role', 'multiple size="5"')}${selectControl('usability_light', USABILITY, 'Light usability')}${selectControl('usability_dark', USABILITY, 'Dark usability')}${selectControl('provenance_quality', ['visible_exact_use', 'structured_first_party', 'inferred_first_party', 'unsupported'], 'Provenance')}${textControl('quality_defects', 'Quality defects (comma-separated)')}${textControl('reject_reason', 'Reviewer reject reason')}${textControl('confidence', 'Confidence')}${textControl('note', 'Note', true)}</form></article>`)) : [entity.candidate_abstention ? `<div class="placeholder">Explicit abstention: ${escapeHtml(entity.candidate_abstention)}. ${entity.captured_candidate_count} raw candidate record(s) remain auditable but are not labelable target-company content.</div>` : '<div class="placeholder">No candidate records captured</div>'];
 
   const instanceCards = await Promise.all(entity.visual_instances.map(async instance => {
     const cropHref = await hrefFor(assetResolver, outputDirectory, instance.crop_path);

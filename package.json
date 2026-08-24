@@ -29,6 +29,7 @@
     "visual-benchmark:validate": "node scripts/visual-benchmark-validate.mjs",
     "visual-benchmark:merge": "node scripts/visual-benchmark-merge.mjs",
     "visual-benchmark:agreement": "node scripts/visual-benchmark-agreement.mjs",
+    "visual-benchmark:replay": "node scripts/visual-benchmark-replay.mjs",
     "test": "node --test && node scripts/validate-fixtures.mjs",
     "fixtures:validate": "node scripts/validate-fixtures.mjs"
   },

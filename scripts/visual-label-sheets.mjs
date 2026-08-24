@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import sharp from 'sharp';
 import { CANDIDATE_SHEET_REVIEW_VERSION, normalizeLabelRecord, validateCanonicalLabel } from './visual-benchmark-labels.mjs';
+import { captureAbstention, isPacketLabelableCapture } from '../src/benchmark-content-eligibility.mjs';
 
 const execFileAsync = promisify(execFile);
 
@@ -409,10 +410,24 @@ export async function buildLabelSheets({ runDirectory, outputDirectory, maxCandi
   const output = resolve(outputDirectory ?? join(run, 'label-sheets-v3'));
   if (!Number.isInteger(maxCandidates) || maxCandidates < 1 || maxCandidates > HARD_MAX_CANDIDATES) throw new Error(`maxCandidates must be from 1 to ${HARD_MAX_CANDIDATES}`);
   if (!Number.isInteger(maxEntities) || maxEntities < 1 || maxEntities > HARD_MAX_ENTITIES) throw new Error(`maxEntities must be from 1 to ${HARD_MAX_ENTITIES}`);
-  const [entities, candidates] = await Promise.all([readJsonl(join(run, 'entities.jsonl')), readJsonl(join(run, 'candidates.jsonl'))]);
+  const [entities, candidates, captures] = await Promise.all([readJsonl(join(run, 'entities.jsonl')), readJsonl(join(run, 'candidates.jsonl')), readJsonl(join(run, 'captures.jsonl'))]);
   if (!entities.length) throw new Error(`No entities found in ${join(run, 'entities.jsonl')}`);
   if (!candidates.length) throw new Error(`No candidates found in ${join(run, 'candidates.jsonl')}`);
-  const prepared = prepareEntities(entities, candidates, { seed });
+  const captureByEntity = new Map(captures.map(capture => [entityId(capture), capture]));
+  const excludedByEntity = new Map();
+  const labelableCandidates = candidates.filter(candidate => {
+    const capture = captureByEntity.get(entityId(candidate));
+    if (isPacketLabelableCapture(capture)) return true;
+    const list = excludedByEntity.get(entityId(candidate)) ?? [];
+    list.push(candidate);
+    excludedByEntity.set(entityId(candidate), list);
+    return false;
+  });
+  const abstentions = [...excludedByEntity].map(([id, excluded]) => {
+    const capture = captureByEntity.get(id);
+    return { entity_id: id, identity_status: capture?.identity_status ?? null, reachability: capture?.reachability ?? null, excluded_candidate_count: excluded.length, reason: captureAbstention(capture) };
+  }).sort((a, b) => a.entity_id.localeCompare(b.entity_id));
+  const prepared = prepareEntities(entities, labelableCandidates, { seed });
   const packed = packEntities(prepared, { maxCandidates, maxEntities });
   await mkdir(dirname(output), { recursive: true });
   const temporary = await mkdtemp(`${output}.tmp-`);
@@ -425,7 +440,7 @@ export async function buildLabelSheets({ runDirectory, outputDirectory, maxCandi
       schema_version: PACKET_SCHEMA,
       review_protocol: REVIEW_PROTOCOL,
       run_key: basename(run),
-      capture_key: captureKeyFor(candidates, run),
+      capture_key: captureKeyFor(labelableCandidates, run),
       seed,
       max_candidates_per_sheet: maxCandidates,
       max_entities_per_sheet: maxEntities,
@@ -434,6 +449,7 @@ export async function buildLabelSheets({ runDirectory, outputDirectory, maxCandi
       visual_candidate_count: sheets.flatMap(sheet => sheet.entities.flatMap(entity => entity.candidates)).length,
       candidate_count: allCandidateIds.length,
       candidate_ids_sha256: sha256([...allCandidateIds].sort().join('\n')),
+      abstentions,
       sheets,
     };
     await writeFile(join(temporary, 'index.json'), `${JSON.stringify(packetIndex, null, 2)}\n`);

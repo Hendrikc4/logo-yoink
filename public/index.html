@@ -216,6 +216,57 @@
           </a>
         </div>
       </section>
+
+      <section id="how-it-works" class="how-section" aria-labelledby="how-title">
+        <div class="how-heading">
+          <div>
+            <p class="pixel-kicker">How it works</p>
+            <h2 id="how-title">AI-labeled.<br>Human-readable.</h2>
+          </div>
+          <p class="how-lede">AI helped us measure what “the right logo” means across a frozen dataset. Your API request still runs on fast, deterministic rules—no model call, no invented artwork, and every score keeps its evidence.</p>
+        </div>
+
+        <figure class="how-visual">
+          <img src="/assets/how-it-works/ai-ranking-trail.webp" width="1600" height="757" loading="lazy" alt="Pixel-art process showing website assets flowing into an AI-reviewed candidate grid and then into ranked icon, wordmark, and favicon choices">
+          <figcaption>Discovery → labeled evidence → role-specific winners</figcaption>
+        </figure>
+
+        <div class="how-process" aria-label="Logo Yoink extraction process">
+          <article>
+            <span>01</span>
+            <h3>Cast a wide net</h3>
+            <p>Read the page, metadata, manifests, favicons, image sources, and safe inline SVGs. Use a bounded browser pass only when JavaScript hides the useful assets.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Prove every file</h3>
+            <p>Download within strict budgets, validate the image bytes, measure dimensions, reject obvious impostors, and collapse duplicate URLs and content.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Rank by role</h3>
+            <p>Score icon, wordmark, and favicon separately using shape, source, resolution, page placement, company agreement, and negative context.</p>
+          </article>
+        </div>
+
+        <div class="training-story">
+          <div class="training-copy">
+            <p class="pixel-kicker">The optimization loop</p>
+            <h3>We turned logo hunting into a benchmark.</h3>
+            <p>A frozen 500-company cohort produced numbered candidate sheets. AI reviewers labeled identity, role, best-in-role, and light/dark usability; deterministic validation mapped every judgment back to a stable candidate ID without exposing rank scores or URLs to the reviewer.</p>
+            <p>We then tested one discovery or scoring change at a time. A change stayed only when it recovered more correct logos on development and validation without a material wrong-brand regression. That is how the current algorithm was tuned for high recall while protecting precision.</p>
+            <p class="training-note"><strong>Important:</strong> AI is used offline for labeling and evaluation—not in the live extraction path.</p>
+          </div>
+          <dl class="how-stats">
+            <div><dt>500</dt><dd>frozen company sites</dd></div>
+            <div><dt>2,277</dt><dd>adjudicated candidate labels</dd></div>
+            <div><dt>84.9%</dt><dd>sites with a correct icon or wordmark in the current-identity baseline</dd></div>
+            <div><dt>93.3%</dt><dd>wordmark rank recall when a correct candidate was discovered</dd></div>
+          </dl>
+        </div>
+
+        <p class="method-link">Want the receipts? Read the <a href="https://github.com/Hendrikc4/logo-yoink/blob/main/docs/current-system-logo-optimization-plan.md" target="_blank" rel="noreferrer">optimization plan</a> and <a href="https://github.com/Hendrikc4/logo-yoink/tree/main/schemas/visual-benchmark-v1" target="_blank" rel="noreferrer">benchmark schema</a>.</p>
+      </section>
     </main>
 
     <div class="night-desert" role="img" aria-label="Pixel-art desert at night with a campfire"></div>

@@ -118,6 +118,32 @@ test('generates safe exhaustive review packet with empty annotation defaults', a
   assert.doesNotMatch(entity, /data-field="first_party"/);
 });
 
+test('keeps ambiguous redirect candidate evidence auditable as an explicit abstention', async () => {
+  const run = await syntheticRun();
+  await jsonl(join(run, 'entities.jsonl'), [{ entity_id: 'acme', name: 'Acme', website: 'https://acme.example', final_url: 'https://forsale.example/acme', identity_status: 'ambiguous', reachability: 'redirected_off_domain' }]);
+  const bundle = await loadBundle(run);
+  assert.equal(bundle.packets[0].captured_candidate_count, 2);
+  assert.equal(bundle.packets[0].candidates.length, 0);
+  assert.match(bundle.packets[0].candidate_abstention, /ambiguous/);
+  await buildReviewPacket({ runDirectory: run, outputDirectory: join(run, 'review-packets') });
+  const entity = await readFile(join(run, 'review-packets', 'entities', 'acme.html'), 'utf8');
+  assert.match(entity, /Explicit abstention/);
+  assert.doesNotMatch(entity, /candidate-raster/);
+  assert.doesNotMatch(entity, /data-instance-id="header-1"/);
+});
+
+test('keeps a current-site generic-exclusion candidate in the review packet', async () => {
+  const run = await syntheticRun();
+  const candidates = (await readFile(join(run, 'candidates.jsonl'), 'utf8')).trim().split('\n').map(JSON.parse);
+  candidates[1].score_reasons = ['generic exclusion (customer or partner logo) -100'];
+  await jsonl(join(run, 'candidates.jsonl'), candidates);
+  const bundle = await loadBundle(run);
+  assert.equal(bundle.packets[0].candidates.length, 2);
+  await buildReviewPacket({ runDirectory: run, outputDirectory: join(run, 'review-packets') });
+  const entity = await readFile(join(run, 'review-packets', 'entities', 'acme.html'), 'utf8');
+  assert.match(entity, /candidate-svg/);
+});
+
 test('refuses accidental packet overwrite unless explicitly resumed', async () => {
   const run = await syntheticRun();
   const output = join(run, 'review-packets');

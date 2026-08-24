@@ -156,6 +156,28 @@ test('role-specific ranking keeps a wide logo separate from an icon', () => {
   assert.ok(result.selectedByRole.wide.score_reasons.some(reason => reason.startsWith('wide shape')));
 });
 
+test('favicon ranking prefers measured tiny suitability without changing icon ranking', () => {
+  const common = { highResolution: true, bytes: 100, evidence: {} };
+  const largeApple = { ...common, url: 'https://acme.test/apple.png', source: 'apple', width: 180, height: 180, tinySuitability: { score: 50 } };
+  const intendedHtml = { ...common, url: 'https://acme.test/favicon.png', source: 'html-icon', width: 32, height: 32, tinySuitability: { score: 80 } };
+  const result = rankCandidates([largeApple, intendedHtml], { companyName: 'Acme' });
+  assert.equal(result.selectedByRole.favicon.url, intendedHtml.url);
+  assert.equal(result.selectedByRole.icon.url, largeApple.url);
+});
+
+test('favicon ranking keeps measured and unmeasured candidates on one scale', () => {
+  const common = { highResolution: true, bytes: 100, evidence: {} };
+  const largeMeasured = { ...common, url: 'https://acme.test/apple.png', source: 'apple', width: 180, height: 180, tinySuitability: { score: 20 } };
+  const intendedUnmeasured = { ...common, url: 'https://acme.test/favicon.ico', source: 'html-icon', width: 32, height: 32 };
+  assert.equal(rankCandidates([largeMeasured, intendedUnmeasured], { companyName: 'Acme' }).selectedByRole.favicon.url, intendedUnmeasured.url);
+});
+
+test('rendered fallback is gated by missing wide output, including empty results', () => {
+  assert.equal(internals.needsRenderedWideFallback({ candidates: [], selectedByRole: { icon: null, wide: null } }), true);
+  assert.equal(internals.needsRenderedWideFallback({ candidates: [{}], selectedByRole: { icon: {}, wide: null } }), true);
+  assert.equal(internals.needsRenderedWideFallback({ candidates: [{}], selectedByRole: { icon: null, wide: {} } }), false);
+});
+
 test('groups conservative delivery variants without merging distinct artwork', () => {
   const common = { source: 'html-icon', width: 180, height: 180, predicted_roles: ['icon', 'favicon'], role_scores: { icon: 60, favicon: 80 }, score: 80 };
   const { candidates, assetFamilies } = buildAssetFamilies([

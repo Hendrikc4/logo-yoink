@@ -14,6 +14,8 @@
   <a href="#quick-draw">Run it yourself</a>
   ·
   <a href="#use-the-api">Use the API</a>
+  ·
+  <a href="#how-it-works">How it works</a>
 </p>
 
 <p align="center">
@@ -74,6 +76,26 @@ curl -sS http://127.0.0.1:4310/api/extract \
 ```
 
 The response includes `selectedByRole`, grouped `assetFamilies`, every ranked `candidate`, and discovery `diagnostics`.
+
+## How it works
+
+<p align="center">
+  <img src="public/assets/how-it-works/ai-ranking-trail.webp" alt="Pixel-art pipeline: website assets flow into an AI-reviewed candidate sheet and emerge as ranked icon, wordmark, and favicon choices">
+</p>
+
+Logo Yoink is a deterministic discovery and ranking pipeline. AI helped build the benchmark used to improve it; AI is **not** called when you extract a logo.
+
+1. **Discover broadly.** The static pass reads the page, structured data, manifests, favicon declarations, image sources, and safe inline SVGs. A bounded browser pass can recover assets rendered by JavaScript.
+2. **Validate and deduplicate.** Candidates are downloaded under strict budgets, checked as real image bytes, measured, and collapsed by URL, content hash, and asset family.
+3. **Rank for the job.** Each candidate gets separate icon, wordmark, and favicon scores from its source, shape, resolution, page placement, home-link evidence, company-name agreement, and negative context. The API returns the winners plus the evidence behind every score.
+
+### How the ranking was optimized
+
+The benchmark freezes **500 company websites** and the candidates found on them. AI reviewers inspected numbered contact sheets and produced **2,277 adjudicated candidate labels** covering identity, role, best-in-role, and usability on light and dark backgrounds. Deterministic validators mapped those judgments back to stable candidate IDs; scores and URLs were hidden from the labeling view to reduce bias.
+
+Those labels turned “looks right” into measurable targets: identity precision, role precision, discovery recall, conditional rank recall, end-to-end recall, best-hit rate, and wrong-brand count. Ranking and discovery ideas were then tested as isolated experiments on development data, checked on validation, and rejected when extra coverage cost too much precision. The result is a deliberately simple, interpretable rule set optimized to recover as many usable logos as possible without quietly promoting partner marks, UI icons, or stale brands.
+
+On the frozen current-identity baseline, a correct icon or wordmark was selected for **327 of 385 sites (84.9%)**. When a correct wordmark was present in the candidate set, the ranker selected one **93.3%** of the time. These are benchmark measurements, not a promise that every live website will cooperate; see [`docs/current-system-logo-optimization-plan.md`](docs/current-system-logo-optimization-plan.md) and the [`visual benchmark schema`](schemas/visual-benchmark-v1/README.md) for the full methodology.
 
 ## What gets yoinked?
 

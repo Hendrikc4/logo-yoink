@@ -5,6 +5,7 @@ import { dirname, join, relative, resolve, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { assignmentDigest, assignBenchmark, DEFAULT_SEED, SCHEMA_VERSION } from './visual-benchmark-shards.mjs';
 import { REVIEW_VERSION, validateCanonicalLabel, validateRankerSafeCandidateValues, isCandidateSheetWorkflow, isRankerSafeWorkflow } from './visual-benchmark-labels.mjs';
+import { isLeakageRelevantTargetContent } from '../src/benchmark-content-eligibility.mjs';
 
 const ENUMS = {
   benchmark_split: new Set(['development', 'validation', 'evaluation']),
@@ -366,6 +367,7 @@ export async function validateRun(runPath, { kind = 'all', strict = false } = {}
   const contentHashGroups = Array.isArray(manifest.content_hash_groups) ? manifest.content_hash_groups : [];
   const hashEntities = new Map();
   for (const candidate of candidates.values()) if (candidate.content_hash) {
+    if (!isLeakageRelevantTargetContent(captures.get(`entity_capture:${candidate.entity_id}`), candidate)) continue;
     const list = hashEntities.get(candidate.content_hash) ?? [];
     list.push(candidate.entity_id); hashEntities.set(candidate.content_hash, list);
   }
