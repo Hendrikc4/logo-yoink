@@ -1,5 +1,7 @@
 # Wide logo improvement plan
 
+> Superseded by [wide-logo-improvement-plan-v2.md](wide-logo-improvement-plan-v2.md) after the CSS/pseudo-element and deep-wide experiments produced no additions and the miss population was re-audited.
+
 Date: 2026-08-23
 
 ## Goal
