@@ -76,6 +76,18 @@ test('dedupe rejects non-HTTP external candidates but retains inline SVG evidenc
   assert.deepEqual(result[0].evidence, [{ theme: 'light' }]);
 });
 
+test('parses ordinary srcset URLs without treating malformed input as a URL', () => {
+  assert.deepEqual(internals.parseSrcsetCandidates('images/logo.png 320w, images/logo@2x.png 640w'), [
+    'images/logo.png', 'images/logo@2x.png',
+  ]);
+  assert.deepEqual(internals.parseSrcsetCandidates('/logo.svg 1x, https://cdn.example/logo.svg?crop=1,2 2x'), [
+    '/logo.svg', 'https://cdn.example/logo.svg?crop=1,2',
+  ]);
+  assert.deepEqual(internals.parseSrcsetCandidates('logo.png, logo@2x.png 2x'), ['logo.png', 'logo@2x.png']);
+  assert.deepEqual(internals.parseSrcsetCandidates('logo.png nope, broken value 2q, ,'), []);
+  assert.deepEqual(internals.parseSrcsetCandidates(null), []);
+});
+
 test('rejects credentialed and local browser targets before launch', async () => {
   assert.throws(() => internals.normaliseInput({ url: 'https://user:secret@example.com' }), /without credentials/);
   assert.throws(() => internals.normaliseInput({ url: 'http://127.0.0.1' }), /private-network/);
