@@ -1,0 +1,19 @@
+{
+  "schema_version": "rendered-wide-audit-v1",
+  "source_run": "/Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged",
+  "source_run_name": "merged",
+  "split": "validation",
+  "scope": {
+    "split_entities": 100,
+    "current_entities": 87,
+    "missing_portable_wide_entities": 33
+  },
+  "observations": 76,
+  "companies_with_observations": 8,
+  "gate_accepted_observations": 29,
+  "deduplicated_occurrences": 14,
+  "viewport_picks": 13,
+  "pixel_accepted_viewport_picks": 2,
+  "rendered_wide_results": 1,
+  "rendered_wide_companies": 1
+}
