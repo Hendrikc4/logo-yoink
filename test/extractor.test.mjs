@@ -133,6 +133,44 @@ test('discovers visible logo images, lazy sources, picture srcsets, metadata, an
   assert.match(bySource['inline-svg'][0].url, /^data:image\/svg\+xml;base64,/);
 });
 
+test('browser conversion retains localized-home evidence', () => {
+  const browser = internals.browserCandidateDisposition({
+    kind: 'external', source: 'browser-img', url: 'https://acme.test/mark.svg',
+    evidence: [{ domRegion: 'nav', homeLinked: true, renderedBox: { width: 180, height: 40 } }],
+  }, 'https://acme.test/de/');
+  assert.equal(browser.stage, 'retained');
+});
+
+test('null-like URLs are rejected without suppressing inline SVG evidence', () => {
+  const staticResult = internals.parseHomepage('<header><img class="logo" src="null"><svg class="logo" viewBox="0 0 180 40"><path d="M0 0h20v20z"/></svg></header>', 'https://acme.test/');
+  assert.equal(staticResult.candidates.some(item => /\/null$/.test(item.url)), false);
+  assert.equal(staticResult.candidates.some(item => item.source === 'inline-svg'), true);
+  const inline = internals.browserCandidateDisposition({
+    kind: 'inline-svg', source: 'browser-inline-svg', inlineSvg: '<svg viewBox="0 0 180 40"/>',
+    evidence: [{ domRegion: 'header', homeLinked: true, renderedBox: { width: 180, height: 40 } }],
+  }, 'https://acme.test/');
+  assert.equal(inline.stage, 'retained');
+});
+
+test('browser retention admits only wide weak-text placements and reserves two existing-budget slots', () => {
+  const weakWide = internals.browserCandidateDisposition({
+    kind: 'external', source: 'browser-img', url: 'https://cdn.test/acme.png',
+    evidence: [{ domRegion: 'header', homeLinked: false, renderedBox: { width: 200, height: 40 } }],
+  }, 'https://acme.test/');
+  const weakSquare = internals.browserCandidateDisposition({
+    kind: 'external', source: 'browser-img', url: 'https://cdn.test/photo.png',
+    evidence: [{ domRegion: 'header', homeLinked: false, renderedBox: { width: 40, height: 40 } }],
+  }, 'https://acme.test/');
+  assert.equal(weakWide.stage, 'retained');
+  assert.equal(weakSquare.stage, 'semantic_filter');
+  const ordinary = Array.from({ length: 8 }, (_, index) => ({ url: `https://test/icon-${index}.svg`, source: 'browser-inline-svg', declared: { width: 40, height: 40 }, evidence: { positive_token: true } }));
+  const reserved = [weakWide.candidate, { ...weakWide.candidate, url: 'https://cdn.test/acme-dark.png' }];
+  const selection = internals.selectBrowserCandidates([...ordinary, ...reserved], 8, 2);
+  assert.equal(selection.chosen.length, 8);
+  assert.deepEqual(selection.reserved, reserved);
+  assert.ok(reserved.every(item => selection.chosen.includes(item)));
+});
+
 test('resolves document-relative assets against the first base element', () => {
   const result = internals.parseHomepage('<base href="https://cdn.example.com/site/"><img class="logo" src="brand.svg">', 'https://example.com/');
   assert.equal(result.candidates[0].url, 'https://cdn.example.com/site/brand.svg');

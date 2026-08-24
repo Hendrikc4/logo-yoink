@@ -55,7 +55,9 @@ export async function replayRecord(record, artifacts, assetsDirectory) {
     record: {
       ...record,
       candidates: ranked.candidates,
-      selected_by_role: Object.fromEntries(ROLES.map(role => [role, ranked.selectedByRole[role]?.candidate_id ?? null])),
+      selected_by_role: Object.fromEntries(ROLES.map(role => [role, role === 'wide'
+        ? ranked.selectedByRole[role]?.candidate_id ?? null
+        : record.selected_by_role?.[role] ?? null])),
       diagnostics: { ...record.diagnostics, async_browser_replay: {
         observation_keys: artifacts.map(item => item.observation_key),
         validated_added: sanitized.length,

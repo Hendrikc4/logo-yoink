@@ -81,6 +81,7 @@ export async function discoverBrowserLogos(input, options = {}) {
         theme: 'light',
         company: target.company,
         domain: target.domain,
+        headerRetention: options.headerRetention !== false,
       });
       if (!options.darkMode) return light;
 
@@ -91,6 +92,7 @@ export async function discoverBrowserLogos(input, options = {}) {
         company: target.company,
         domain: target.domain,
         headerOnly: true,
+        headerRetention: options.headerRetention !== false,
       });
       return [...light, ...dark];
     }, timeoutMs, () => page?.close?.().catch(() => {}));
@@ -102,7 +104,10 @@ export async function discoverBrowserLogos(input, options = {}) {
       blockedRequests: budget.blocked,
       resourceLimitHit: budget.limitHit,
     });
-    return result(dedupeCandidates(candidates), diagnostics, startedAt);
+    const discoveryTrace = {};
+    const deduped = dedupeCandidates(candidates, discoveryTrace);
+    diagnostics.discovery = discoveryTrace;
+    return result(deduped, diagnostics, startedAt);
   } catch (error) {
     diagnostics.status = error?.code === 'LOGO_YOINK_BROWSER_TIMEOUT' ? 'timeout' : 'error';
     diagnostics.errors.push(error.message);
@@ -153,17 +158,23 @@ async function boundedHydration(page, hydrationMs, timeoutMs) {
 }
 
 async function inspectRenderedCandidates(page, context) {
-  return page.evaluate(({ theme, company, domain, headerOnly = false }) => {
+  return page.evaluate(({ theme, company, domain, headerOnly = false, headerRetention = true }) => {
     const clean = value => String(value ?? '').trim();
     const httpUrl = value => {
-      if (!value) return null;
+      const raw = clean(value);
+      if (!raw || /^(?:null|undefined|about:blank|blob:)/i.test(raw) || /(?:^|\/)null(?:[?#].*)?$/i.test(raw)) return null;
       try {
-        const url = new URL(value, document.baseURI);
+        const url = new URL(raw, document.baseURI);
         return /^https?:$/.test(url.protocol) ? url.href : null;
       } catch { return null; }
     };
     const visible = (element, rect, style) => rect.width >= 4 && rect.height >= 4 &&
       style.display !== 'none' && style.visibility !== 'hidden' && Number(style.opacity || 1) > 0;
+    const srcsetUrls = value => {
+      const source = clean(value), urls = [];
+      for (const match of source.matchAll(/(?:^|,\s*)((?:https?:|\/)[\s\S]*?)\s+\d+(?:\.\d+)?[wx](?=\s*(?:,|$))/gi)) urls.push(match[1]);
+      return urls.length ? urls : source ? [source] : [];
+    };
     const homeLink = element => {
       const anchor = element.closest('a[href]');
       if (!anchor) return { anchorHref: null, homeLinked: false };
@@ -171,7 +182,9 @@ async function inspectRenderedCandidates(page, context) {
       if (!href) return { anchorHref: null, homeLinked: false };
       const parsed = new URL(href);
       const path = parsed.pathname.replace(/\/+$/, '') || '/';
-      return { anchorHref: href, homeLinked: parsed.hostname === location.hostname && path === '/' };
+      const localizedRoot = /^\/[a-z]{2}(?:-[a-z]{2})?(?:\/index(?:\.html?)?)?$/i.test(path);
+      const hostname = value => value.replace(/^www\./, '');
+      return { anchorHref: href, homeLinked: hostname(parsed.hostname) === hostname(location.hostname) && (path === '/' || (headerRetention && localizedRoot)) };
     };
     const region = element => element.closest('header') ? 'header' :
       element.closest('nav') ? 'nav' : element.closest('[role="banner"]') ? 'banner' : 'document';
@@ -212,8 +225,20 @@ async function inspectRenderedCandidates(page, context) {
       const rect = image.getBoundingClientRect();
       const style = getComputedStyle(image);
       if (!visible(image, rect, style)) continue;
-      const url = httpUrl(image.currentSrc || image.src || image.getAttribute('data-src'));
-      if (url) output.push({ url, source: 'browser-img', kind: 'external', evidence: evidence(image, rect, style) });
+      const rawSources = headerRetention ? [image.currentSrc, image.getAttribute('src'), image.getAttribute('data-src')] : [image.currentSrc || image.src || image.getAttribute('data-src')];
+      if (headerRetention) {
+        for (const attribute of ['srcset', 'data-srcset']) {
+          rawSources.push(...srcsetUrls(image.getAttribute(attribute)));
+        }
+        for (const source of image.closest('picture')?.querySelectorAll('source[srcset],source[data-srcset]') ?? []) {
+          for (const attribute of ['srcset', 'data-srcset']) {
+            rawSources.push(...srcsetUrls(source.getAttribute(attribute)));
+          }
+        }
+      }
+      for (const url of new Set(rawSources.map(httpUrl).filter(Boolean))) {
+        output.push({ url, source: 'browser-img', kind: 'external', evidence: evidence(image, rect, style) });
+      }
     }
 
     for (const svg of [...svgs].slice(0, 30)) {
@@ -272,20 +297,23 @@ async function inspectRenderedCandidates(page, context) {
   }, context);
 }
 
-function dedupeCandidates(candidates) {
+function dedupeCandidates(candidates, trace = null) {
   const output = [];
   const positions = new Map();
+  let invalidExternal = 0, duplicates = 0;
   for (const item of candidates ?? []) {
-    if (!item || (item.kind === 'external' && !/^https?:\/\//i.test(item.url ?? ''))) continue;
+    if (!item || (item.kind === 'external' && !/^https?:\/\//i.test(item.url ?? ''))) { invalidExternal += 1; continue; }
     const key = item.kind === 'inline-svg' ? `svg:${item.inlineSvg}` : `url:${item.url}`;
     const existing = positions.get(key);
     if (existing === undefined) {
       positions.set(key, output.length);
       output.push({ ...item, evidence: [item.evidence] });
     } else {
+      duplicates += 1;
       output[existing].evidence.push(item.evidence);
     }
   }
+  if (trace) Object.assign(trace, { observed: candidates?.length ?? 0, invalid_external: invalidExternal, duplicates, retained: output.length });
   return output;
 }
 

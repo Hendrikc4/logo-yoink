@@ -11,7 +11,7 @@ const CONTEXT_INTENT = /(?:^|[^a-z0-9])(brand(?:ing)?|press(?:room|\s+kit)?|medi
 export function resolveHttpUrl(value, base) {
   try {
     const raw = String(value ?? '').trim();
-    if (!raw) return null;
+    if (!raw || /^(?:null|undefined|about:blank|blob:)/i.test(raw) || /(?:^|\/)null(?:[?#].*)?$/i.test(raw)) return null;
     const url = new URL(raw, base);
     if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password || isLocalAddress(url.hostname)) return null;
     return url.href;
