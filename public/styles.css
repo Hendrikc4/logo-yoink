@@ -168,17 +168,8 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
 .how-process article > span { display: inline-grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--acid); color: var(--acid); font: 400 9px/1 var(--pixel); }
 .how-process h3 { margin: 26px 0 9px; font-size: 19px; letter-spacing: -.025em; }
 .how-process p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.72; }
-.training-story { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr); gap: clamp(52px, 9vw, 120px); padding: clamp(76px, 9vw, 118px) 0 0; }
-.training-copy h3 { max-width: 660px; margin: 22px 0 22px; font-size: clamp(31px, 4.2vw, 52px); line-height: 1.05; letter-spacing: -.045em; text-wrap: balance; }
-.training-copy > p:not(.pixel-kicker) { max-width: 700px; margin: 0 0 17px; color: #b9bbbb; font-size: 15px; line-height: 1.75; }
-.training-copy .training-note { margin-top: 26px; padding: 17px 20px; border-left: 3px solid var(--acid); background: rgba(232,255,97,.045); color: #d7d9d2; }
-.training-note strong { color: var(--acid); }
-.how-stats { display: grid; align-self: start; align-content: start; grid-template-columns: 1fr 1fr; margin: 0; border: 1px solid var(--line); background: var(--line); gap: 1px; }
-.how-stats div { min-height: 168px; padding: 25px 22px; background: var(--surface); }
-.how-stats dt { color: var(--acid); font: 400 clamp(22px, 2.4vw, 34px)/1 var(--pixel); letter-spacing: -.06em; }
-.how-stats dd { margin: 17px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
-.method-link { margin: 47px 0 0; color: var(--muted); font: 12px/1.7 var(--mono); }
-.method-link a { color: var(--acid); text-underline-offset: 4px; }
+.how-footnote { margin: 0; padding: 25px 28px; border: 1px solid var(--line); border-top: 0; background: rgba(232,255,97,.035); color: #b9bbbb; font-size: 13px; line-height: 1.7; }
+.how-footnote strong { color: var(--acid); }
 
 .night-desert { position: relative; z-index: 0; width: 100%; height: clamp(300px, 36vw, 500px); margin-top: 0; background: url('/assets/game/desert-night-campfire.webp') center bottom / cover no-repeat; image-rendering: pixelated; }
 .night-desert::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, var(--background) 0, transparent 30%); pointer-events: none; }
@@ -207,8 +198,6 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
   .api-bottom { grid-column: 1; }
   .how-heading { grid-template-columns: 1fr; gap: 28px; }
   .how-lede { max-width: 720px; }
-  .training-story { grid-template-columns: 1fr; }
-  .how-stats { max-width: 720px; }
   .site-footer { grid-template-columns: 1fr auto; }
   .site-footer nav { order: 3; grid-column: 1 / -1; justify-content: center; padding-bottom: 25px; }
 }
@@ -264,10 +253,7 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
   .how-process { grid-template-columns: 1fr; }
   .how-process article { min-height: 0; padding: 27px 24px 29px; }
   .how-process h3 { margin-top: 20px; }
-  .training-story { gap: 42px; padding-top: 72px; }
-  .training-copy h3 { font-size: 34px; }
-  .how-stats { grid-template-columns: 1fr; }
-  .how-stats div { min-height: 135px; }
+  .how-footnote { padding: 22px 20px; }
   .night-desert { height: 320px; margin-top: 36px; background-position: center bottom; }
   .site-footer { min-height: 210px; grid-template-columns: 1fr; gap: 22px; padding: 30px 22px; }
   .site-footer nav { order: 0; grid-column: auto; flex-wrap: wrap; justify-content: flex-start; gap: 18px 27px; padding: 0; }

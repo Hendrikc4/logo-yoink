@@ -80,7 +80,7 @@ The response includes `selectedByRole`, grouped `assetFamilies`, every ranked `c
 ## How it works
 
 <p align="center">
-  <img src="public/assets/how-it-works/ai-ranking-trail.webp" alt="Pixel-art pipeline: website assets flow into an AI-reviewed candidate sheet and emerge as ranked icon, wordmark, and favicon choices">
+  <img src="public/assets/how-it-works/ai-ranking-trail.webp" alt="Pixel-art cowboy lassoing icon, wordmark, and favicon tiles from a browser window">
 </p>
 
 Logo Yoink is a deterministic discovery and ranking pipeline. AI helped build the benchmark used to improve it; AI is **not** called when you extract a logo.
