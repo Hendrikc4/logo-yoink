@@ -186,6 +186,20 @@ test('weak-text header admission still needs independent company identity to bec
   assert.equal(rankCandidates([validated(company)], { companyName: 'Acme' }).selectedByRole.wide.url, company.candidate.url);
 });
 
+test('first-party logo paths provide narrow production wide evidence without a company name', () => {
+  const common = {
+    source: 'browser-img', source_page: 'https://www.raywatt.com/', width: 620, height: 155,
+    highResolution: true, scalable: true, bytes: 100,
+    evidence: { dom_region: 'nav', home_linked: false, positive_token: false, eligible_roles: ['wide'] },
+  };
+  const firstParty = { ...common, url: 'https://raywatt.com/eng/image/common/raywatt_logo.svg' };
+  const thirdParty = { ...common, url: 'https://cdn.example/raywatt_logo.svg' };
+  const body = { ...common, url: 'https://raywatt.com/eng/image/common/raywatt_logo.svg', evidence: { ...common.evidence, dom_region: 'body' } };
+  assert.equal(rankCandidates([firstParty]).selectedByRole.wide.url, firstParty.url);
+  assert.equal(rankCandidates([thirdParty]).selectedByRole.wide, null);
+  assert.equal(rankCandidates([body]).selectedByRole.wide, null);
+});
+
 test('resolves document-relative assets against the first base element', () => {
   const result = internals.parseHomepage('<base href="https://cdn.example.com/site/"><img class="logo" src="brand.svg">', 'https://example.com/');
   assert.equal(result.candidates[0].url, 'https://cdn.example.com/site/brand.svg');

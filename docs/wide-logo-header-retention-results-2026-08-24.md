@@ -31,13 +31,31 @@ The srcset parser was the only genuine correctness fix. The previous expression 
 
 Machine-readable audit results are in `runs/wide-header-retention-2026-08-24/pre-merge-audit.json`.
 
+## Production-parity follow-up
+
+The public API does not supply `companyName`, while the original experiment replay did. That mismatch prevented Raywatt and MattoBoard's weak-text browser candidates from satisfying the final wide-evidence gate in production even though their URL paths named the asset as a logo. The retained parity fix adds one narrow independent proof: a `browser-img` in a visible header or nav may use a delimited `logo`, `brand`, or `wordmark` token in its decoded URL path only when the asset hostname exactly matches its source-page hostname after `www` normalization. It does not trust arbitrary third-party CDNs, body/footer placement, URL query text, or an unplaced static candidate, and it adds no ranking weight.
+
+Focused tests prove that a Raywatt-like same-site nav `/logo` path becomes wide-eligible without a company name, while the same candidate on a third-party host and the same-site asset in the body remain ineligible.
+
+A production-equivalent live extraction used the public demo limits and browser fallback with no `companyName`:
+
+| Site | Selected wide | Dimensions | Wide score | Requests / bytes / duration |
+| --- | --- | ---: | ---: | ---: |
+| Raywatt | `https://raywatt.com/eng/image/common/raywatt_logo.svg` | 620x155 | 90 | 91 / 20,113,129 / 4,737 ms |
+| MattoBoard | `https://mattoboard.com/images/mattoboard-logo.jpg` | 400x52 | 75 | 112 / 2,062,634 / 3,457 ms |
+| Utiq | `https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png` | 252x85 | 69 | 96 / 1,581,133 / 5,707 ms |
+
+The 225-site full-development safety replay removed every stored `evidence.company_name` and ranked without `companyName` under both the pre-fix and fixed rankers. Control stayed at 141 selected wides with zero changes. Treatment moved from 141 to 143: only the already blind-reviewed correct MattoBoard and Raywatt assets were added. Utiq was already eligible without a name through its existing home-link evidence. Icon and favicon changes were both zero. This restores production transfer for all three claimed development gains with 2/2 (100%) parity-fix addition accuracy and no new review surface. No evaluation data or live evaluation run was used.
+
+Machine-readable parity results are in `runs/wide-header-retention-2026-08-24/production-parity-follow-up.json`.
+
 ## Retained changes
 
 - Reject empty, literal null/undefined, `/null`, `about:blank`, and blob-only URLs before normalization while still checking `currentSrc`, `src`, `data-src`, `srcset`, picture sources, and inline SVG bytes.
 - Give browser discovery and visual capture the same same-host localized-home rule.
 - Include rendered width and height in browser priority.
 - Within the existing eight-item browser budget, reserve no more than two slots for visible 1.8–12 aspect-ratio header/nav or home-linked assets.
-- Let weak-text wide header/nav assets reach byte validation; the existing company agreement, generic-content, shape, and role gates still decide eligibility.
+- Let weak-text wide header/nav assets reach byte validation; existing generic-content, shape, role, and identity gates still decide eligibility, including the narrow same-host placed-logo path proof documented above when no company name is available.
 - Persist per-site retention stages in browser observation artifacts. Browser replay preserves icon and favicon selections because this fallback is wide-only.
 
 No global budget increased, ranking weight changed, identity gate weakened, deeper crawl added, or body/footer relaxation was introduced.
@@ -118,6 +136,6 @@ The treatment-only changed assets were reviewed without arm, source, or rank fie
 - Validation pair: `validation-{control,treatment}-observations/`, corresponding replay directories, and `validation-comparison.json`.
 - Consolidated costs and gates: `metrics-summary.json`.
 - Exact stage ledger: `drop-stage-ledger.json`.
-- Full repository verification after the pre-merge audit: 172 tests passed and 500 fixtures validated.
+- Full repository verification after the production-parity audit: 173 tests passed and 500 fixtures validated.
 
 All experiment artifacts are ignored run data under `/Users/hendrik/.codex/worktrees/2e31/logo-yoink/runs/wide-header-retention-2026-08-24`. The frozen corpus remained read-only at `/Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged`.
