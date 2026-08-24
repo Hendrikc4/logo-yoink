@@ -16,6 +16,20 @@ function companyAgreement(item, companyName) {
   return company.some(token => token.length >= 3 && haystack.includes(token));
 }
 
+function firstPartyPlacedLogoPath(item) {
+  if (item.source !== 'browser-img' || !['header', 'nav'].includes(item.evidence?.dom_region)) return false;
+  try {
+    const asset = new URL(item.resolvedUrl ?? item.resolved_url ?? item.url);
+    const source = new URL(item.source_page);
+    const normalizedHost = url => url.hostname.toLowerCase().replace(/^www\./, '');
+    if (normalizedHost(asset) !== normalizedHost(source)) return false;
+    const path = decodeURIComponent(asset.pathname).toLowerCase();
+    return /(?:^|[\/_.-])(?:logo|brand|wordmark)(?:[\/_.-]|$)/.test(path);
+  } catch {
+    return false;
+  }
+}
+
 const AUTHORITATIVE_SOURCES = ['schema', 'og-logo', 'microdata'];
 const FAVICON_SOURCES = ['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon'];
 const PLATFORM_NAMES = ['namecheap', 'matomo', 'piwik', 'wix', 'vercel', 'webflow', 'squarespace', 'shopify', 'godaddy', 'netlify', 'framer'];
@@ -115,7 +129,7 @@ export function hasWideEvidence(item, companyName = '') {
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
   const deepOfficial = item.evidence?.deep_official && (Number(item.evidence?.archive_score) >= 40 || companyAgreement(item, companyName || item.evidence?.company_name));
   const spaLiteral = item.source === 'spa-bundle' && item.evidence?.spa_bundle_entry && item.evidence?.same_origin && item.evidence?.strong_logo_filename && item.evidence?.spa_identity_agreement;
-  return AUTHORITATIVE_SOURCES.includes(item.source) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || deepOfficial || spaLiteral;
+  return AUTHORITATIVE_SOURCES.includes(item.source) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || firstPartyPlacedLogoPath(item) || deepOfficial || spaLiteral;
 }
 
 export function scoreCandidate(item, { companyName = '' } = {}) {
