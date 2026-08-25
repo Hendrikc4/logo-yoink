@@ -31,8 +31,9 @@
     "visual-benchmark:agreement": "node scripts/review/visual-benchmark-agreement.mjs",
     "visual-benchmark:replay": "node scripts/benchmark/visual-benchmark-replay.mjs",
     "test": "node --test && node scripts/maintenance/validate-fixtures.mjs",
+    "smoke": "node scripts/maintenance/smoke-local.mjs",
     "check:syntax": "node scripts/maintenance/check-syntax.mjs",
-    "check": "npm run check:syntax && npm test",
+    "check": "npm run check:syntax && npm test && npm run smoke",
     "fixtures:validate": "node scripts/maintenance/validate-fixtures.mjs"
   },
   "engines": {
