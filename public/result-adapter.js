@@ -1,6 +1,6 @@
 export const BRAND_ROLES = Object.freeze([
   Object.freeze({ key: 'icon', label: 'Icon', description: 'Square format for app icons, avatars, browser tabs, and small spaces.' }),
-  Object.freeze({ key: 'wide', label: 'Wordmark', description: 'Horizontal logo for headers, navbars, and wide layouts.' }),
+  Object.freeze({ key: 'logo', label: 'Wordmark', description: 'Horizontal logo for headers, navbars, and wide layouts.' }),
 ]);
 
 export function adaptBrandResults(payload) {
@@ -8,7 +8,9 @@ export function adaptBrandResults(payload) {
   const families = Array.isArray(payload?.assetFamilies) ? payload.assetFamilies : [];
 
   return BRAND_ROLES.map(role => {
-    const selected = payload?.selectedByRole?.[role.key] ?? null;
+    const selected = payload?.assets?.[role.key]
+      ?? payload?.selectedByRole?.[role.key === 'logo' ? 'wide' : role.key]
+      ?? null;
     return {
       ...role,
       selected,
@@ -37,6 +39,7 @@ export function describeVariant(item) {
     item?.colorVariant,
   );
   const surface = normalizedValue(
+    item?.variant?.background,
     item?.variant?.surface,
     item?.variant?.transparency,
     item?.appearance?.surface,

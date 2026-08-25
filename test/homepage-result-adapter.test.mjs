@@ -4,10 +4,13 @@ import { adaptBrandResults, brandRoleLabel, describeVariant } from '../public/re
 
 test('homepage adapter presents icon and wordmark without a separate favicon concept', () => {
   const icon = { family_id: 'family-icon', dataUrl: 'data:image/png;base64,icon', format: 'png', width: 128, height: 128 };
+  const legacyIcon = { family_id: 'family-icon', dataUrl: 'data:image/png;base64,legacy-icon', format: 'png', width: 64, height: 64 };
   const favicon = { family_id: 'family-icon', dataUrl: 'data:image/png;base64,favicon', format: 'png', width: 32, height: 32 };
   const wide = { family_id: 'family-wide', dataUrl: 'data:image/svg+xml;base64,wide', format: 'svg', width: 320, height: 80 };
+  const legacyWide = { family_id: 'family-wide', dataUrl: 'data:image/svg+xml;base64,legacy-wide', format: 'svg', width: 240, height: 60 };
   const payload = {
-    selectedByRole: { icon, wide, favicon },
+    assets: { icon, logo: wide },
+    selectedByRole: { icon: legacyIcon, wide: legacyWide, favicon },
     candidates: [icon, favicon, wide],
     assetFamilies: [
       { id: 'family-icon', candidateIndexes: [0, 1] },
@@ -16,14 +19,23 @@ test('homepage adapter presents icon and wordmark without a separate favicon con
   };
 
   const assets = adaptBrandResults(payload);
-  assert.deepEqual(assets.map(asset => asset.key), ['icon', 'wide']);
+  assert.deepEqual(assets.map(asset => asset.key), ['icon', 'logo']);
   assert.deepEqual(assets.map(asset => asset.label), ['Icon', 'Wordmark']);
+  assert.deepEqual(assets.map(asset => asset.selected), [icon, wide]);
   assert.deepEqual(assets[0].variants, [icon, favicon]);
   assert.equal(brandRoleLabel('favicon'), 'icon');
 });
 
+test('homepage adapter falls back to legacy role selections', () => {
+  const icon = { dataUrl: 'data:image/png;base64,icon' };
+  const wide = { dataUrl: 'data:image/svg+xml;base64,wide' };
+  const assets = adaptBrandResults({ selectedByRole: { icon, wide }, candidates: [], assetFamilies: [] });
+  assert.deepEqual(assets.map(asset => asset.selected), [icon, wide]);
+});
+
 test('homepage adapter exposes current and future theme/surface variant metadata', () => {
   assert.deepEqual(describeVariant({ evidence: { theme: 'dark' }, transparent: true }), ['For dark', 'Transparent']);
+  assert.deepEqual(describeVariant({ variant: { theme: 'dark', background: 'transparent' } }), ['For dark', 'Transparent']);
   assert.deepEqual(describeVariant({ variant: { theme: 'light', surface: 'opaque' } }), ['For light', 'Opaque']);
   assert.deepEqual(describeVariant({ variant: { color: 'white', transparency: 'transparent' } }), ['White', 'Transparent']);
 
