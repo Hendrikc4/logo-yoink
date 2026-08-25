@@ -1,3 +1,5 @@
+import { adaptBrandResults, brandRoleLabel, describeVariant } from './result-adapter.js';
+
 const form = document.querySelector('#extract-form');
 const input = document.querySelector('#website');
 const status = document.querySelector('#status');
@@ -13,6 +15,7 @@ const buttonLabel = button.querySelector('.button-label');
 
 let activeRequest = null;
 let requestSequence = 0;
+const renderedAssets = new Map();
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
@@ -82,6 +85,7 @@ function clearResults() {
   diagnostics.replaceChildren();
   completeResults.open = false;
   resultCount.textContent = '';
+  renderedAssets.clear();
 }
 
 function render(payload) {
@@ -92,11 +96,9 @@ function render(payload) {
     ['duration', formatDuration(payload.diagnostics?.durationMs)],
   ].map(([label, value]) => `<span>${escapeHtml(label)}: ${escapeHtml(value)}</span>`).join('');
 
-  roleGrid.innerHTML = [
-    ['icon', 'Icon', 'Square format for app icons, avatars, and small spaces.'],
-    ['wide', 'Wordmark', 'Horizontal logo for headers, navbars, and wide layouts.'],
-    ['favicon', 'Favicon', 'Small favicon for browser tabs and bookmarks.'],
-  ].map(([role, label, description], index) => roleCard(payload.selectedByRole?.[role], role, label, description, payload.domain, index + 1)).join('');
+  roleGrid.innerHTML = adaptBrandResults(payload)
+    .map((asset, index) => roleCard(asset, payload.domain, index + 1))
+    .join('');
 
   const families = payload.assetFamilies?.length ? payload.assetFamilies : fallbackFamilies(payload.candidates);
   familyGrid.innerHTML = families.map(family => familyCard(family, payload.candidates, payload.domain)).join('');
@@ -105,7 +107,8 @@ function render(payload) {
   results.hidden = false;
 }
 
-function roleCard(item, role, label, description, resultDomain, index) {
+function roleCard(asset, resultDomain, index) {
+  const { selected: item, key: role, label, description, variants } = asset;
   if (!item) return `<article class="role-card empty">
     <div class="role-heading"><span class="role-number">${index}</span><h3>${escapeHtml(label)}</h3></div>
     <div class="preview"><span class="empty-mark" aria-hidden="true">—</span></div>
@@ -114,14 +117,41 @@ function roleCard(item, role, label, description, resultDomain, index) {
 
   const dimensions = dimensionsFor(item);
   const format = String(item.format || 'file').toUpperCase();
+  const assetId = `asset-${index}`;
+  renderedAssets.set(assetId, { role, resultDomain, variants });
   return `<article class="role-card selected">
     <div class="role-heading"><span class="role-number">${index}</span><h3>${escapeHtml(label)}</h3></div>
-    <div class="preview">
-      <img src="${escapeHtml(item.dataUrl)}" alt="Recommended ${escapeHtml(label.toLowerCase())} for ${escapeHtml(resultDomain)}">
-      <a class="download-overlay" href="${escapeHtml(item.dataUrl)}" download="${safeFilename(item, resultDomain, role)}">Download <span aria-hidden="true">↓</span></a>
+    ${previewControls(assetId, label)}
+    <div class="preview" data-preview-background="transparent">
+      <img data-asset-image src="${escapeHtml(item.dataUrl)}" alt="Recommended ${escapeHtml(label.toLowerCase())} for ${escapeHtml(resultDomain)}">
+      <a class="download-overlay" data-asset-download href="${escapeHtml(item.dataUrl)}" download="${safeFilename(item, resultDomain, role)}">Download <span aria-hidden="true">↓</span></a>
     </div>
-    <div class="candidate-body"><p>${escapeHtml(description)}</p><div class="candidate-meta"><span>${escapeHtml(format)}</span><span>${escapeHtml(dimensions)}</span></div></div>
+    <div class="candidate-body"><p>${escapeHtml(description)}</p>${variantPicker(assetId, variants)}<div class="candidate-meta"><span data-asset-format>${escapeHtml(format)}</span><span data-asset-dimensions>${escapeHtml(dimensions)}</span></div></div>
   </article>`;
+}
+
+function previewControls(assetId, label) {
+  return `<div class="preview-toolbar">
+    <span>Preview background</span>
+    <div class="preview-options" role="group" aria-label="Preview ${escapeHtml(label.toLowerCase())} background" data-preview-for="${assetId}">
+      ${previewButton('white', 'White', false)}
+      ${previewButton('transparent', 'Transparent', true)}
+      ${previewButton('black', 'Black', false)}
+    </div>
+  </div>`;
+}
+
+function previewButton(value, label, pressed) {
+  return `<button type="button" data-preview-background="${value}" aria-pressed="${pressed}" title="Preview on ${label.toLowerCase()}"><span class="preview-swatch" aria-hidden="true"></span><span>${label}</span></button>`;
+}
+
+function variantPicker(assetId, variants) {
+  if (variants.length < 2) return '';
+  return `<label class="variant-picker"><span>Asset version</span><select data-asset-variant="${assetId}">${variants.map((item, index) => {
+    const descriptors = describeVariant(item);
+    const fallback = `${String(item.format || 'file').toUpperCase()} · ${dimensionsFor(item)}`;
+    return `<option value="${index}">${escapeHtml(descriptors.length ? descriptors.join(' · ') : fallback)}</option>`;
+  }).join('')}</select></label>`;
 }
 
 function familyCard(family, candidates, resultDomain) {
@@ -130,7 +160,7 @@ function familyCard(family, candidates, resultDomain) {
   const item = candidates[family.representativeIndex] ?? members[0];
   if (!item) return '';
   const roles = family.roles?.length ? family.roles : [...new Set(members.flatMap(member => member.predicted_roles ?? []))];
-  const roleLabels = roles.map(role => role === 'wide' ? 'wordmark' : role);
+  const roleLabels = [...new Set(roles.map(brandRoleLabel))];
   return `<article class="family-card">
     <div class="preview"><img src="${escapeHtml(item.dataUrl)}" alt="Logo asset family for ${escapeHtml(resultDomain)}"></div>
     <div class="candidate-body">
@@ -146,7 +176,7 @@ function familyCard(family, candidates, resultDomain) {
 function familyTitle(item, roles) {
   if (roles.includes('wide')) return 'Wordmark family';
   if (roles.includes('icon')) return 'Icon family';
-  if (roles.includes('favicon')) return 'Favicon family';
+  if (roles.includes('favicon')) return 'Icon family';
   return item.squareish ? 'Square asset' : 'Logo candidate';
 }
 
@@ -196,4 +226,44 @@ function formatNumber(value) {
 
 function escapeHtml(value) {
   return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+}
+
+roleGrid.addEventListener('pointerover', event => {
+  if (event.pointerType && event.pointerType !== 'mouse') return;
+  const control = event.target.closest('[data-preview-for] button');
+  if (control) setPreviewBackground(control);
+});
+
+roleGrid.addEventListener('focusin', event => {
+  const control = event.target.closest('[data-preview-for] button');
+  if (control) setPreviewBackground(control);
+});
+
+roleGrid.addEventListener('click', event => {
+  const control = event.target.closest('[data-preview-for] button');
+  if (control) setPreviewBackground(control);
+});
+
+roleGrid.addEventListener('change', event => {
+  const select = event.target.closest('[data-asset-variant]');
+  if (!select) return;
+  const asset = renderedAssets.get(select.dataset.assetVariant);
+  const item = asset?.variants[Number(select.value)];
+  const card = select.closest('.role-card');
+  if (!item || !card) return;
+  card.querySelector('[data-asset-image]').src = item.dataUrl;
+  const download = card.querySelector('[data-asset-download]');
+  download.href = item.dataUrl;
+  download.download = safeFilename(item, asset.resultDomain, asset.role);
+  card.querySelector('[data-asset-format]').textContent = String(item.format || 'file').toUpperCase();
+  card.querySelector('[data-asset-dimensions]').textContent = dimensionsFor(item);
+});
+
+function setPreviewBackground(control) {
+  const controls = control.closest('[data-preview-for]');
+  const card = control.closest('.role-card');
+  const preview = card?.querySelector('.preview');
+  if (!controls || !preview) return;
+  preview.dataset.previewBackground = control.dataset.previewBackground;
+  for (const button of controls.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button === control));
 }
