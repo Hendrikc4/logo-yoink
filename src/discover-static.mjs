@@ -1,6 +1,7 @@
 import { Buffer } from 'node:buffer';
 import { isIP } from 'node:net';
 import { DomUtils, parseDocument } from 'htmlparser2';
+import { describesEmbeddedLogo } from './logo-semantics.mjs';
 
 const POSITIVE = /(?:^|[-_\s])(logo|brand|wordmark|identity|masthead)(?:$|[-_\s])/i;
 const NEGATIVE = /customer|partner|sponsor|testimonial|payment|app.?store|flag|avatar|badge|award|client/i;
@@ -64,7 +65,9 @@ function evidence(node, base, order, extra = {}) {
     class_tokens: String(a.class ?? '').split(/\s+/).filter(Boolean),
     semantic_text: semantic,
     positive_token: POSITIVE.test(localSemantic),
-    negative_context: NEGATIVE.test(semantic) || UI_CONTROL.test(localSemantic) || surroundings.region === 'footer' && /badge|award|partner/i.test(semantic),
+    negative_context: NEGATIVE.test(semantic) || UI_CONTROL.test(localSemantic) ||
+      surroundings.region === 'body' && describesEmbeddedLogo(a.alt) ||
+      surroundings.region === 'footer' && /badge|award|partner/i.test(semantic),
     discovery_order: order,
     inherited_color: inheritedColor ?? null,
     ...extra,

@@ -353,6 +353,24 @@ test('does not treat the page hostname as company-name agreement for partner log
   assert.ok(!result.candidates[0].score_reasons.includes('company agreement +12'));
 });
 
+test('rejects descriptive product photos that merely mention an embedded logo', () => {
+  const applePhoto = {
+    url: 'https://www.apple.com/images/apple-card.jpg', source: 'dom-img', source_page: 'https://www.apple.com/',
+    width: 1262, height: 580, scalable: false,
+    evidence: { dom_region: 'body', home_linked: false, positive_token: true,
+      alt: 'Apple Card, front, Apple logo in top left, cardholder name in middle left, card chip in middle right.' },
+  };
+  const subwayLockup = {
+    ...applePhoto, url: 'https://www.subway.com/honey-logo.avif',
+    evidence: { ...applePhoto.evidence, alt: 'Subway logo with honey dipper stick and dripping honey.' },
+  };
+  assert.match(genericAssetReason(applePhoto, 'Apple'), /embedded in body content/);
+  assert.equal(genericAssetReason(subwayLockup, 'Subway'), null);
+
+  const parsed = internals.parseHomepage('<main><img alt="Phone, rear view, Acme logo in the center" src="/phone.jpg"></main>', 'https://acme.test/');
+  assert.equal(parsed.candidates[0].evidence.negative_context, true);
+});
+
 test('rejects known platform defaults, compliance badges, and UI glyphs without blocking the platform itself', () => {
   const common = { source: 'dom-img', width: 240, height: 80, highResolution: true, scalable: false, bytes: 100 };
   const namecheap = { ...common, url: 'https://example.test/logo.svg', evidence: { semantic_text: 'Namecheap Logo', positive_token: true, dom_region: 'header' } };

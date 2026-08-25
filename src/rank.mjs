@@ -1,11 +1,12 @@
 import { describeAssetVariant, logoPreferenceScore, normalizeAssetPreferences } from './asset-model.mjs';
+import { describesEmbeddedLogo } from './logo-semantics.mjs';
 
 const SOURCE_WEIGHT = {
   schema: 30, 'og-logo': 27, microdata: 26, 'inline-svg': 24, 'browser-inline-svg': 24, 'browser-img': 12,
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
-const RANKING_VERSION = 6;
+const RANKING_VERSION = 7;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
 function round(value) { return Math.round(Math.max(0, Math.min(100, value)) * 10) / 10; }
@@ -105,6 +106,8 @@ export function genericAssetReason(item, companyName = '') {
   if (/(?:^|[-_\s])fa[-_\s]*(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i.test(semantic)) return 'Font Awesome UI control';
   if (/(?:^|[^a-z0-9])(?:instagram|twitter|facebook|linkedin|youtube|tiktok|pinterest)(?:[-_\s]*(?:logo|icon|glyph))?(?:[^a-z0-9]|$)/i.test(`${semantic} ${url}`)) return 'social-media glyph';
   const candidateRatio = item.width && item.height ? item.width / item.height : null;
+  if (['dom-img', 'dom-picture', 'browser-img'].includes(item.source) && item.evidence?.dom_region === 'body' && !item.evidence?.home_linked &&
+    describesEmbeddedLogo(item.evidence?.alt)) return 'logo embedded in body content image';
   if (item.source === 'inline-svg' && (
     /(?:icon[-_\s]*play|play[-_\s]*circle|play[-_\s]*video|video[-_\s]*(?:wrapper|column)|e-far-play|tabler[-_\s]*icon[-_\s]*(?:copyright|menu|search|play)|chakra[-_\s]*icon|kb[-_\s]*svg[-_\s]*icon|fxfa[-_\s]*icon[\s\S]*menuitem|pointer-events-off[^\n]{0,80}nav[-_\s]*main[-_\s]*link|exp[-_\s]*selector[-_\s]*icon)/i.test(semantic) ||
     candidateRatio >= 0.72 && candidateRatio <= 1.4 && /presentation[^\n]{0,240}wixui[-_\s]*vector[-_\s]*image/i.test(semantic)
