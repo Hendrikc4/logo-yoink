@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 import { parseHomepage, resolveHttpUrl } from './discover-static.mjs';
 import { discoverBrowserLogos } from './discover-browser.mjs';
+import { normalizeStandaloneSvg } from './standalone-svg.mjs';
 import { discoverOfficialBrandAssets, discoverSpaBundleAssets } from './discover-deep.mjs';
 import { hasWideEvidence, rankCandidates, scoreCandidate, SOURCE_WEIGHT } from './rank.mjs';
 import { measureTinyImageSuitability } from './tiny-image-suitability.mjs';
@@ -347,8 +348,14 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
   try {
     const response = await fetchTimed(item.url, { timeoutMs, accept: 'image/*,*/*;q=0.6', diagnostics });
     if (!response.ok) return null;
-    const { bytes } = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs });
+    const read = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs });
+    let bytes = read.bytes;
     let metadata = imageMetadata(bytes, response.headers.get('content-type'));
+    if (metadata?.format === 'svg') {
+      bytes = normalizeStandaloneSvg(bytes, { inheritedColor: item.evidence?.inherited_color });
+      metadata = bytes && imageMetadata(bytes, 'image/svg+xml');
+      if (!metadata || !await isRenderableSvg(bytes)) return null;
+    }
     if (metadata && ['webp', 'avif'].includes(metadata.format)) {
       const decoded = await sharp(bytes, { limitInputPixels: 64 * 1024 * 1024 }).metadata();
       metadata = { ...metadata, width: decoded.width ?? null, height: decoded.height ?? null };
@@ -364,6 +371,11 @@ async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, sta
   try {
     const { rawBytes: _rawBytes, ...cleanItem } = item;
     let metadata = imageMetadata(bytes, contentType);
+    if (metadata?.format === 'svg') {
+      bytes = normalizeStandaloneSvg(bytes, { inheritedColor: item.evidence?.inherited_color });
+      metadata = bytes && imageMetadata(bytes, 'image/svg+xml');
+      if (!metadata || !await isRenderableSvg(bytes)) return null;
+    }
     if (metadata && ['webp', 'avif'].includes(metadata.format)) {
       const decoded = await sharp(bytes, { limitInputPixels: 64 * 1024 * 1024 }).metadata();
       metadata = { ...metadata, width: decoded.width ?? null, height: decoded.height ?? null };
@@ -375,6 +387,16 @@ async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, sta
     const background = await imageBackground(bytes, metadata.format);
     return { ...cleanItem, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? [] }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
+}
+
+async function isRenderableSvg(bytes) {
+  try {
+    const { data, info } = await sharp(bytes, { limitInputPixels: 64 * 1024 * 1024 })
+      .ensureAlpha().resize(64, 64, { fit: 'inside' }).raw().toBuffer({ resolveWithObject: true });
+    if (!(info.width > 0 && info.height > 0 && info.channels >= 4)) return false;
+    for (let offset = info.channels - 1; offset < data.length; offset += info.channels) if (data[offset] > 0) return true;
+    return false;
+  } catch { return false; }
 }
 
 async function imageBackground(bytes, format) {
@@ -552,7 +574,7 @@ export async function extractLogos(website, options = {}) {
   if (/sedoparking|domain (?:name )?is for sale|buy this domain|hugedomains|afternic|parking-page\.shtml/i.test(html) || namecheapInterstitial || vercelInterstitial) {
     throw new Error('Website appears parked or for sale.');
   }
-  const parsed = parseHomepage(html, homepage, { companyName: options.companyName });
+  const parsed = parseHomepage(html, homepage, { companyName: options.companyName, collectDeepLinks: Boolean(options.deepWide) });
   const jinaRecoverableLogoMarkup = parsed.candidates.some(item =>
     ['dom-img', 'dom-picture', 'noscript-img', 'inline-svg'].includes(item.source) &&
     (item.evidence?.positive_token || item.evidence?.home_linked));
@@ -684,6 +706,6 @@ export async function extractLogos(website, options = {}) {
 export const internals = {
   imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
   selectRoleAware, measureContentBox, attachContentBoxes, attachTinySuitability, dedupeBytes,
-  fromBrowserCandidate, browserCandidateDisposition, selectBrowserCandidates, needsRenderedWideFallback, discoveryPriority, validateCandidate, imageBackground, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
+  fromBrowserCandidate, browserCandidateDisposition, selectBrowserCandidates, needsRenderedWideFallback, discoveryPriority, validateCandidate, validateCandidateBytes, isRenderableSvg, imageBackground, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,
 };

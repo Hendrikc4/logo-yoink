@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "captured_ranking_version": 3,
+  "acknowledged_runtime_ranking_version": 5,
+  "qualifies_current_runtime": false,
+  "canonical_roles": ["icon", "wide"],
+  "legacy_compatibility_roles": ["favicon"],
+  "published_metrics": {
+    "correct_icon_or_wide": { "numerator": 327, "denominator": 385, "percent": 84.9 },
+    "wide_conditional_rank_recall_percent": 93.3
+  }
+}

@@ -64,6 +64,8 @@ test('summarizes transparent role coverage, historical proxy, and labeled qualit
   const summary = summarizeResults(results, {}, labels);
   assert.equal(summary.roles.icon.domains, 2);
   assert.equal(summary.roles.wide.domains, 1);
+  assert.equal(summary.roles.favicon, undefined);
+  assert.equal(summary.legacy_roles.favicon.compatibility_only, true);
   assert.equal(summary.historical_comparison_proxy.square_and_high_resolution_selected.numerator, 1);
   assert.equal(summary.benchmarkScore.role_components.icon.coverage.numerator, 1);
   assert.equal(summary.benchmarkScore.role_components.wide.top1_visual_usability.weighted_numerator, 0.5);

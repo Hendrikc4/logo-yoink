@@ -4,7 +4,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { measureTinyImageSuitability } from '../../src/tiny-image-suitability.mjs';
-import { faviconRankScore } from '../../src/rank.mjs';
+import { faviconRankScore, RANKING_VERSION } from '../../src/rank.mjs';
 
 const ROLES = ['icon', 'wide', 'favicon'];
 const DEFAULT_ROOT = 'runs/visual-benchmark-v1-500-v1/merged';
@@ -398,7 +398,15 @@ export async function replay(options = {}) {
   const labelsSha = createHash('sha256').update(await readFile(labelsPath)).digest('hex');
   const result = {
     schema_version: 'logo-yoink-offline-replay-v1',
-    methodology: { selection: profiles.length ? 'offline experimental role-specific reordering of stored eligible candidates' : 'highest stored role_score among candidates whose stored predicted_roles contains the requested role', profiles, splits: selectedSplits },
+    methodology: {
+      selection: profiles.length ? 'offline experimental role-specific reordering of stored eligible candidates' : 'highest stored role_score among candidates whose stored predicted_roles contains the requested role',
+      profiles,
+      splits: selectedSplits,
+      captured_ranking_version: 3,
+      current_runtime_ranking_version: RANKING_VERSION,
+      qualifies_current_runtime: RANKING_VERSION === 3,
+      legacy_roles: ['favicon'],
+    },
     artifacts: { capture_root: options.root ?? DEFAULT_ROOT, labels: options.labels ?? DEFAULT_LABELS, labels_sha256: labelsSha },
     population: { assigned: entitiesAll.filter(entity => selectedSplits.includes(entity.benchmark_split)).length, current_identity: entities.length, excluded_abstention: entitiesAll.filter(entity => selectedSplits.includes(entity.benchmark_split)).length - entities.length, current_zero_candidates: entities.filter(entity => !(candidatesByEntity.get(entity.entity_id) ?? []).length).length, labeled_candidate_records: labels.length },
     overall, splits, quality_subtotal: qualitySubtotal(overall, entities, labelsByCandidate, selections),
@@ -426,7 +434,7 @@ async function main() {
     if (expectedSelections.length !== replayed.selections.length || expectedSelections.some(row => actualBySlot.get(`${row.entity_id}\0${row.role}`) !== row.candidate_id)) {
       throw new Error('Offline replay does not reproduce every frozen selection slot exactly.');
     }
-    console.error(`Verified frozen baseline exactly: ${replayed.result.quality_subtotal.total.toFixed(2)}/${replayed.result.quality_subtotal.maximum}`);
+    console.error(`Verified frozen ranking-v3 baseline exactly (current runtime v${RANKING_VERSION} is not qualified by this replay): ${replayed.result.quality_subtotal.total.toFixed(2)}/${replayed.result.quality_subtotal.maximum}`);
   }
   const output = `${JSON.stringify(replayed.result, null, 2)}\n`;
   if (options.output) await writeFile(resolve(options.output), output);

@@ -217,14 +217,15 @@ export async function inspectRemoteZip(url, { fetchResource, companyName, contex
   return { candidates: output, diagnostics: { archive_url: url, archive_size: archiveSize, entries: directory.entryCount, selected_members: output.map(item => item.evidence.archive_member), range_used: !full } };
 }
 
-export function scanEntryBundle(text, { scriptUrl, homepage, companyName }) {
+export function scanEntryBundle(text, { scriptUrl, homepage, companyName, identityNames = [] }) {
   const sameOrigin = new URL(scriptUrl).origin === new URL(homepage).origin;
   if (!sameOrigin || text.length > 2_200_000) return [];
+  const identities = [...new Set([companyName, ...identityNames].map(value => String(value ?? '').trim()).filter(Boolean))];
   const matches = new Set();
   for (const match of text.matchAll(/["'`](?!data:)([^"'`\s]{1,240}\.(?:svg|png|webp)(?:\?[^"'`\s]*)?)["'`]/gi)) {
     const path = match[1];
     if (!LOGO_TERM.test(path) || NEGATIVE.test(path) || /customer|partner|client|sponsor/i.test(path) ||
-      !companyAgreement(path, companyName) && !acronymAgreement(path, companyName)) continue;
+      !identities.some(identity => companyAgreement(path, identity) || acronymAgreement(path, identity))) continue;
     const url = resolveHttpUrl(path, scriptUrl);
     if (url && new URL(url).origin === new URL(homepage).origin) matches.add(url);
   }
@@ -248,7 +249,7 @@ export async function discoverSpaBundleAssets({ homepage, parsed, companyName, f
       const response = await fetchResource(scriptUrl, { maxBytes: 2_200_000, accept: 'text/javascript,application/javascript' });
       if (!response.ok) continue;
       bytes += response.bytes.length;
-      candidates.push(...scanEntryBundle(response.bytes.toString('utf8'), { scriptUrl: response.url, homepage, companyName: `${companyName} ${parsed.pageTitle ?? ''}` }));
+      candidates.push(...scanEntryBundle(response.bytes.toString('utf8'), { scriptUrl: response.url, homepage, companyName, identityNames: [parsed.pageTitle] }));
     } catch (error) { errors.push(error.message); }
   }
   return { candidates, diagnostics: { attempted: scripts.length > 0, scripts: scripts.length, bytes, discovered: candidates.length, errors } };
