@@ -353,6 +353,12 @@ function identityWrong(label) {
   return ['wrong', 'wrong-brand', 'wrong_brand'].includes(String(label?.identity ?? '').toLowerCase());
 }
 
+function roleCorrect(label, role) {
+  if (!label) return false;
+  if (typeof label.correct === 'boolean') return label.correct;
+  return identityCorrect(label) && labelRoles(label).includes(role);
+}
+
 function efficiencyFraction(value, threshold) {
   if (!Number.isFinite(value)) return null;
   const full = threshold.full_points_at_or_below;
@@ -375,11 +381,11 @@ function qualityScore(results, labelRecords, performance, thresholds) {
     for (const result of reachable) {
       const candidates = result.candidates ?? [];
       const labelsForRole = candidates.map(candidate => ({ candidate, label: labels.get(`${result.entity_id}\0${candidate.candidate_id}\0${role}`) }))
-        .filter(item => identityCorrect(item.label) && labelRoles(item.label).includes(role));
+        .filter(item => roleCorrect(item.label, role));
       if (labelsForRole.some(item => (reviewerStateValue(item.label.usability) ?? 0) > 0)) covered++;
       const selectedId = result.selected_by_role?.[role];
       const selectedLabel = labels.get(`${result.entity_id}\0${selectedId}\0${role}`);
-      const correct = identityCorrect(selectedLabel) && labelRoles(selectedLabel).includes(role);
+      const correct = roleCorrect(selectedLabel, role);
       if (correct) topCorrect++;
       usabilityTotal += correct ? (reviewerStateValue(selectedLabel.usability) ?? 0) : 0;
     }

@@ -6,6 +6,7 @@ import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { compareResults, parseArgs, selectCohort, summarizeResults } from '../scripts/benchmark/benchmark.mjs';
+import { adaptSelectedRoleLabels } from '../scripts/benchmark/selected-role-scoring-adapter.mjs';
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
 
@@ -81,6 +82,45 @@ test('withholds a quality score until every selected role has a role-specific la
   assert.equal(partial.status, 'incomplete');
   assert.equal(partial.value, null);
   assert.deepEqual(partial.labels, { records: 1, role_labels: 1, selected_roles: 2, selected_roles_labeled: 1, complete: false });
+});
+
+test('selected-role adapter makes reviewed negatives and role mismatches explicit without changing identity safety', () => {
+  const results = [result('a', [candidate('icon-good', 'icon'), candidate('wide-only', 'wide'), candidate('wrong', 'icon')], { icon: 'icon-good', wide: 'wide-only' }),
+    result('b', [candidate('wrong-icon', 'favicon')], { icon: 'wrong-icon' })];
+  const labels = [
+    { entity_id: 'a', candidate_id: 'icon-good', values: { identity: 'correct', roles: ['icon'], usability_light: 'good', usability_dark: 'good' }, label_id: 'label-good' },
+    { entity_id: 'a', candidate_id: 'wide-only', values: { identity: 'correct', roles: ['wide'], usability_light: 'good', usability_dark: 'good' }, label_id: 'label-wide' },
+    { entity_id: 'a', candidate_id: 'wrong', values: { identity: 'wrong', roles: [], usability_light: 'unusable', usability_dark: 'unusable' }, label_id: 'label-wrong' },
+    { entity_id: 'b', candidate_id: 'wrong-icon', values: { identity: 'correct', roles: ['favicon'], usability_light: 'good', usability_dark: 'good' }, label_id: 'label-favicon' },
+  ];
+  const adapted = adaptSelectedRoleLabels(results, labels);
+  const slots = adapted.filter(row => row.review_role);
+  assert.deepEqual(slots.map(row => ({ entity_id: row.entity_id, role: row.review_role, correct: row.correct, identity: row.identity, reason: row.adjudication_reason })), [
+    { entity_id: 'a', role: 'icon', correct: true, identity: 'correct', reason: 'reviewed_role_match' },
+    { entity_id: 'a', role: 'wide', correct: true, identity: 'correct', reason: 'reviewed_role_match' },
+    { entity_id: 'b', role: 'icon', correct: true, identity: 'correct', reason: 'canonical_icon_favicon_fallback' },
+  ]);
+
+  const mismatchResults = [result('c', [candidate('wide', 'wide')], { icon: 'wide' })];
+  const mismatch = adaptSelectedRoleLabels(mismatchResults, [{
+    entity_id: 'c', candidate_id: 'wide', values: { identity: 'correct', roles: ['wide'], usability_light: 'good', usability_dark: 'good' }, label_id: 'label-mismatch',
+  }]).find(row => row.review_role);
+  assert.deepEqual({ correct: mismatch.correct, identity: mismatch.identity, reason: mismatch.adjudication_reason }, {
+    correct: false, identity: 'correct', reason: 'reviewed_without_selected_role',
+  });
+});
+
+test('selected-role adapter completes canonical scoring with explicit false slots', () => {
+  const results = [result('a', [candidate('good', 'icon'), candidate('wrong', 'wide')], { icon: 'good', wide: 'wrong' })];
+  const labels = [
+    { entity_id: 'a', candidate_id: 'good', values: { identity: 'correct', roles: ['icon'], usability_light: 'good', usability_dark: 'good' }, label_id: 'label-good' },
+    { entity_id: 'a', candidate_id: 'wrong', values: { identity: 'wrong', roles: [], usability_light: 'unusable', usability_dark: 'unusable' }, label_id: 'label-wrong' },
+  ];
+  const summary = summarizeResults(results, {}, adaptSelectedRoleLabels(results, labels)).benchmarkScore;
+  assert.equal(summary.status, 'complete');
+  assert.equal(summary.value, 50);
+  assert.deepEqual(summary.labels, { records: 4, role_labels: 2, selected_roles: 2, selected_roles_labeled: 2, complete: true });
+  assert.equal(summary.safety.wrong_brand_domains, 1);
 });
 
 test('repeat comparison reports availability gains, losses, and flips', () => {
