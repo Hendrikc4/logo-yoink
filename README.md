@@ -38,16 +38,47 @@ You get the candidates, their evidence, and downloadable files. No mystery black
 
 ## Quick draw
 
-You need [Node.js 22+](https://nodejs.org/).
+### Prerequisites
+
+- [Node.js 22+](https://nodejs.org/) and the bundled npm client
+- Internet access to inspect public websites
+
+Logo Yoink does not need a database or a required third-party service. Chromium is used only for the default JavaScript-rendered-logo fallback; the static extractor works without it.
+
+### Install and run
 
 ```bash
 git clone https://github.com/Hendrikc4/logo-yoink.git
 cd logo-yoink
-npm install
+npm ci
+npx playwright install chromium
+cp .env.example .env.local
 npm start
 ```
 
 Open **http://127.0.0.1:4310**, paste a website, and hit **Yoink it**.
+
+For automatic restarts while editing the API or web app, use `npm run dev` instead of `npm start`. Both commands serve the UI and `/api/extract` from the same local address.
+
+On Linux, use `npx playwright install --with-deps chromium` if Chromium's system libraries are not already installed. To skip the browser download and use static discovery only, set `BROWSER_DISCOVERY=0` in `.env.local`.
+
+The checked-in `.env.example` contains safe local defaults and empty placeholders. `.env.local` is gitignored; do not put API keys in tracked files. A fresh setup needs no secret, and the optional `JINA_API_KEY` and `BESTICON_URL` fallbacks can stay blank.
+
+### Verify the setup
+
+After installation, check the UI and local API without contacting a third-party site (the main server does not need to be running):
+
+```bash
+npm run smoke
+```
+
+Then verify a real extraction through either the CLI or the running web app:
+
+```bash
+npm run cli -- logo-yoink.com
+```
+
+The smoke check starts an isolated local server on an available port, verifies the homepage and API request validation, and shuts it down. `npm run check` runs syntax checks, the complete test suite, fixture validation, and this smoke check.
 
 > There is also a cowboy runner up top. Jump the cacti, collect logos, and grab a lasso to auto-yoink the next three. Space, Arrow Up, W, and taps all work. 🤠
 
@@ -127,6 +158,18 @@ The default path is intentionally homepage-only. Turn on the heavier fallbacks o
 
 Logo Yoink automatically loads a gitignored `.env.local` file. Normal successful extractions do not use Jina.
 
+The primary local settings are:
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `HOST` | `127.0.0.1` | Local server bind address |
+| `PORT` | `4310` | Local server port |
+| `BROWSER_DISCOVERY` | `1` | Enable the Chromium fallback |
+| `JINA_API_KEY` | unset | Optional Jina fallback for blocked or unusable homepages |
+| `BESTICON_URL` | unset | Optional URL of a local Besticon service |
+| `PUBLIC_DEMO_ALLOW_JINA` | `1` | Set to `0` to prevent web/API requests from using Jina |
+| `PUBLIC_DEMO_BROWSER` | `1` | Set to `0` to prevent web/API requests from using Chromium |
+
 `--deep-wide` only runs when the homepage has no accepted wide logo. It follows at most two strong first-party brand, press, or media links and can inspect official ZIP kits. `--spa-bundles` scans at most one same-origin entry bundle, up to 2.2 MB, for a company-logo asset literal.
 
 </details>
@@ -145,6 +188,8 @@ Run the same syntax and test checks used by CI:
 ```bash
 npm run check
 ```
+
+The browser-backed tests require Chromium. Install it with `npx playwright install chromium` (or `npx playwright install --with-deps chromium` on a fresh Linux machine).
 
 The main trail map:
 
