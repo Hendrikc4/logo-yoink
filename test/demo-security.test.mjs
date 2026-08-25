@@ -18,9 +18,11 @@ function request({ headers = {}, body = '', address = '203.0.113.10' } = {}) {
   return stream;
 }
 
-test('demo request validation accepts only a small website-only JSON object', async () => {
+test('demo request validation accepts a website and bounded logo preferences', async () => {
   const valid = request({ headers: { 'content-type': 'application/json; charset=utf-8' }, body: '{"website":" example.com "}' });
-  assert.deepEqual(await readDemoJson(valid), { website: 'example.com' });
+  assert.deepEqual(await readDemoJson(valid), { website: 'example.com', preferences: { logo: { theme: 'any', background: 'any' } } });
+  const preferred = request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"logo":{"theme":"dark","background":"transparent"}}}' });
+  assert.deepEqual(await readDemoJson(preferred), { website: 'example.com', preferences: { logo: { theme: 'dark', background: 'transparent' } } });
 
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'text/plain' }, body: '{}' })),
@@ -29,6 +31,10 @@ test('demo request validation accepts only a small website-only JSON object', as
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","extra":true}' })),
     error => error instanceof DemoHttpError && error.status === 400,
+  );
+  await assert.rejects(
+    readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"logo":{"theme":"sepia"}}}' })),
+    error => error instanceof DemoHttpError && error.status === 400 && /theme/.test(error.message),
   );
 });
 

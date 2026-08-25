@@ -36,7 +36,9 @@ export function createDemoExtractionService({
         const rate = guard.check(request);
         const body = await readDemoJson(request, limits.bodyBytes);
         const target = normalize(body.website);
-        const result = await guard.run(target.url.href, () => extract(target.url.href, extractionOptions()));
+        const options = { ...extractionOptions(), preferences: body.preferences };
+        const requestKey = `${target.url.href}\n${JSON.stringify(body.preferences)}`;
+        const result = await guard.run(requestKey, () => extract(target.url.href, options));
         return {
           status: 200,
           headers: {

@@ -1,9 +1,11 @@
+import { describeAssetVariant, logoPreferenceScore, normalizeAssetPreferences } from './asset-model.mjs';
+
 const SOURCE_WEIGHT = {
   schema: 30, 'og-logo': 27, microdata: 26, 'inline-svg': 24, 'browser-inline-svg': 24, 'browser-img': 12,
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
-const RANKING_VERSION = 3;
+const RANKING_VERSION = 4;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
 function round(value) { return Math.round(Math.max(0, Math.min(100, value)) * 10) / 10; }
@@ -191,7 +193,7 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
     ...(roleEligible('wide') && wideScore >= 35 && safeContext && (wide || ratio == null) && hasWideEvidence(item, companyName) ? ['wide'] : []),
     ...(favicon >= 35 && faviconSource ? ['favicon'] : []),
   ];
-  return { ...item, padded_wordmark: paddedWordmark, role_scores, predicted_roles, score, score_reasons: [...new Set(reasons)], confidence_band: score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low' };
+  return { ...item, variant: describeAssetVariant(item), padded_wordmark: paddedWordmark, role_scores, predicted_roles, score, score_reasons: [...new Set(reasons)], confidence_band: score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low' };
 }
 
 const ICON_FALLBACK_MIN_EDGE = 14;
@@ -224,13 +226,14 @@ function pickIconCandidate(eligible, allCandidates) {
 }
 
 export function rankCandidates(items, options = {}) {
+  const preferences = normalizeAssetPreferences(options.preferences);
   const ranked = items.map(item => scoreCandidate(item, options)).sort((a, b) => b.score - a.score || b.bytes - a.bytes);
   const { candidates, assetFamilies } = buildAssetFamilies(ranked);
   const eligible = candidates.filter(item => item.source !== 'social-banner');
-  const selectedByRole = Object.fromEntries(['icon', 'wide', 'favicon'].map(role => [role, [...eligible].filter(item => item.predicted_roles.includes(role)).sort((a, b) => {
-    if (role === 'favicon') {
-      const suitabilityDifference = faviconRankScore(b) - faviconRankScore(a);
-      if (suitabilityDifference) return suitabilityDifference;
+  const selectedByRole = Object.fromEntries(['icon', 'wide'].map(role => [role, [...eligible].filter(item => item.predicted_roles.includes(role)).sort((a, b) => {
+    if (role === 'wide') {
+      const preferenceDifference = logoPreferenceScore(b, preferences) - logoPreferenceScore(a, preferences);
+      if (preferenceDifference) return preferenceDifference;
     }
     if (role === 'icon') {
       const iconDifference = iconEffectiveScore(b) - iconEffectiveScore(a);
@@ -250,7 +253,11 @@ export function rankCandidates(items, options = {}) {
   if (selectedByRole.icon?.source === 'inline-svg') {
     selectedByRole.icon = pickIconCandidate([selectedByRole.icon], candidates);
   }
-  return { candidates, assetFamilies, selectedByRole, selected: selectedByRole.icon ?? selectedByRole.wide ?? selectedByRole.favicon ?? null };
+  // `favicon` remains a response alias for consumers of the pre-canonical model. There is one
+  // icon selection now; declared favicon assets remain valid icon candidates and evidence.
+  selectedByRole.favicon = selectedByRole.icon;
+  const assets = { icon: selectedByRole.icon, logo: selectedByRole.wide };
+  return { candidates, assetFamilies, assets, preferences, selectedByRole, selected: assets.icon ?? assets.logo ?? null };
 }
 
 export function faviconRankScore(candidate) {
@@ -308,12 +315,13 @@ export function buildAssetFamilies(items) {
   const assetFamilies = [...groups.values()].map(group => {
     const members = group.candidateIndexes.map(index => candidates[index]);
     const roles = [...new Set(members.flatMap(item => item.predicted_roles ?? []))];
-    const bestByRole = Object.fromEntries(['icon', 'wide', 'favicon'].map(role => {
+    const bestByRole = Object.fromEntries(['icon', 'wide'].map(role => {
       const best = group.candidateIndexes
         .filter(index => candidates[index].predicted_roles?.includes(role))
         .sort((a, b) => (candidates[b].role_scores?.[role] ?? 0) - (candidates[a].role_scores?.[role] ?? 0))[0];
       return [role, best ?? null];
     }));
+    bestByRole.favicon = bestByRole.icon;
     return {
       id: group.id,
       candidateIndexes: group.candidateIndexes,

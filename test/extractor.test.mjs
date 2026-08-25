@@ -223,26 +223,31 @@ test('role-specific ranking keeps a wide logo separate from an icon', () => {
   assert.ok(result.selectedByRole.wide.score_reasons.some(reason => reason.startsWith('wide shape')));
 });
 
-test('favicon ranking prefers measured tiny suitability without changing icon ranking', () => {
+test('favicon compatibility output aliases the canonical icon selection', () => {
   const common = { highResolution: true, bytes: 100, evidence: {} };
   const largeApple = { ...common, url: 'https://acme.test/apple.png', source: 'apple', width: 180, height: 180, tinySuitability: { score: 50 } };
   const intendedHtml = { ...common, url: 'https://acme.test/favicon.png', source: 'html-icon', width: 32, height: 32, tinySuitability: { score: 80 } };
   const result = rankCandidates([largeApple, intendedHtml], { companyName: 'Acme' });
-  assert.equal(result.selectedByRole.favicon.url, intendedHtml.url);
   assert.equal(result.selectedByRole.icon.url, largeApple.url);
+  assert.strictEqual(result.selectedByRole.favicon, result.selectedByRole.icon);
+  assert.strictEqual(result.assets.icon, result.selectedByRole.icon);
 });
 
-test('favicon ranking keeps measured and unmeasured candidates on one scale', () => {
+test('legacy favicon scoring remains available as candidate metadata', () => {
   const common = { highResolution: true, bytes: 100, evidence: {} };
   const largeMeasured = { ...common, url: 'https://acme.test/apple.png', source: 'apple', width: 180, height: 180, tinySuitability: { score: 20 } };
   const intendedUnmeasured = { ...common, url: 'https://acme.test/favicon.ico', source: 'html-icon', width: 32, height: 32 };
-  assert.equal(rankCandidates([largeMeasured, intendedUnmeasured], { companyName: 'Acme' }).selectedByRole.favicon.url, intendedUnmeasured.url);
+  const result = rankCandidates([largeMeasured, intendedUnmeasured], { companyName: 'Acme' });
+  assert.ok(result.candidates.every(candidate => Number.isFinite(candidate.role_scores.favicon)));
+  assert.strictEqual(result.selectedByRole.favicon, result.selectedByRole.icon);
 });
 
 test('rendered fallback is gated by missing wide output, including empty results', () => {
   assert.equal(internals.needsRenderedWideFallback({ candidates: [], selectedByRole: { icon: null, wide: null } }), true);
   assert.equal(internals.needsRenderedWideFallback({ candidates: [{}], selectedByRole: { icon: {}, wide: null } }), true);
   assert.equal(internals.needsRenderedWideFallback({ candidates: [{}], selectedByRole: { icon: null, wide: {} } }), false);
+  assert.equal(internals.needsRenderedWideFallback({ selectedByRole: { wide: { variant: { theme: 'light', background: 'opaque' } } } }, { logo: { theme: 'dark' } }), true);
+  assert.equal(internals.needsRenderedWideFallback({ selectedByRole: { wide: { variant: { theme: 'dark', background: 'transparent' } } } }, { logo: { theme: 'dark', background: 'transparent' } }), false);
 });
 
 test('groups conservative delivery variants without merging distinct artwork', () => {
@@ -257,6 +262,26 @@ test('groups conservative delivery variants without merging distinct artwork', (
   assert.equal(candidates[0].family_id, candidates[1].family_id);
   assert.notEqual(candidates[0].family_id, candidates[2].family_id);
   assert.equal(assetFamilies[0].bestByRole.favicon, 0);
+});
+
+test('logo preferences select matching theme and background variants with fallback', () => {
+  const common = { source: 'official-archive', width: 500, height: 100, highResolution: true, scalable: true, bytes: 100, evidence: { eligible_roles: ['wide'], archive_score: 90, deep_official: true, positive_token: true } };
+  const darkOpaque = { ...common, url: 'zip+https://acme.test/kit.zip#Acme_Dark.svg', background: 'opaque', evidence: { ...common.evidence, theme: 'light' } };
+  const whiteTransparent = { ...common, url: 'zip+https://acme.test/kit.zip#Acme_White.svg', background: 'transparent', evidence: { ...common.evidence, theme: 'dark' } };
+  const preferred = rankCandidates([darkOpaque, whiteTransparent], { companyName: 'Acme', preferences: { logo: { theme: 'dark', background: 'transparent' } } });
+  assert.equal(preferred.assets.logo.url, whiteTransparent.url);
+  assert.deepEqual(preferred.assets.logo.variant, { theme: 'dark', background: 'transparent' });
+  assert.deepEqual(preferred.preferences, { logo: { theme: 'dark', background: 'transparent' } });
+
+  const fallback = rankCandidates([darkOpaque], { companyName: 'Acme', preferences: { logo: { theme: 'dark', background: 'transparent' } } });
+  assert.equal(fallback.assets.logo.url, darkOpaque.url);
+});
+
+test('image validation distinguishes transparent and opaque backgrounds', async () => {
+  const transparent = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"><path fill="#000" d="M5 5h30v10H5z"/></svg>');
+  const opaque = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"><rect width="40" height="20" fill="#fff"/></svg>');
+  assert.equal(await internals.imageBackground(transparent, 'svg'), 'transparent');
+  assert.equal(await internals.imageBackground(opaque, 'svg'), 'opaque');
 });
 
 test('does not serialize inline SVG that depends on an external document', () => {

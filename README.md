@@ -25,14 +25,13 @@
 </p>
 
 <p align="center">
-  <img src="public/assets/readme/logo-yoink-flow.webp" alt="Pixel-art cowboy lassoing square, wide, and favicon logo assets out of a browser">
+  <img src="public/assets/readme/logo-yoink-flow.webp" alt="Pixel-art cowboy lassoing icon and wide logo assets out of a browser">
 </p>
 
 Logo hunting should not feel like archaeology. Give Logo Yoink one URL and it finds the real image files a site exposes, checks that they work, removes duplicates, and ranks the best choices for:
 
-- **Icon** — apps, avatars, and square UI
+- **Icon** — apps, avatars, square UI, and favicons
 - **Wordmark** — headers, cards, and wider layouts
-- **Favicon** — tabs and tiny surfaces
 
 You get the candidates, their evidence, and downloadable files. No mystery black box. No invented logos.
 
@@ -59,11 +58,19 @@ See the ranked results as JSON:
 npm run cli -- stripe.com
 ```
 
+Prefer a white/light logo for a dark surface and a transparent file:
+
+```bash
+npm run cli -- stripe.com --theme dark --background transparent
+```
+
 Or download the top pick:
 
 ```bash
 npm run cli -- stripe.com --download ./downloads/stripe
 ```
+
+Add `--role logo` to download the preferred wordmark instead of the default icon-first pick.
 
 ## Use the API
 
@@ -72,22 +79,26 @@ Once the local server is running:
 ```bash
 curl -sS http://127.0.0.1:4310/api/extract \
   -H 'content-type: application/json' \
-  -d '{"website":"stripe.com"}'
+  -d '{"website":"stripe.com","preferences":{"logo":{"theme":"dark","background":"transparent"}}}'
 ```
 
-The response includes `selectedByRole`, grouped `assetFamilies`, every ranked `candidate`, and discovery `diagnostics`.
+`preferences.logo.theme` accepts `any`, `light`, or `dark`; the theme describes the surface the logo must work on, so `dark` prefers white/light artwork. `preferences.logo.background` accepts `any`, `transparent`, or `opaque`. Preferences are best-effort: a matching eligible logo wins when available, otherwise ranking falls back to the best eligible logo.
+
+The response includes canonical `assets.icon` and `assets.logo` selections, normalized `preferences`, grouped `assetFamilies`, every ranked `candidate`, and discovery `diagnostics`. Each candidate has a measured `variant` object such as `{"theme":"dark","background":"transparent"}`.
+
+For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available. The deprecated `selectedByRole.favicon` key now aliases `assets.icon`, because favicon is a use of the canonical icon rather than a separate asset concept. Candidate-level favicon scores and role evidence remain present for existing diagnostics consumers.
 
 ## How it works
 
 <p align="center">
-  <img src="public/assets/how-it-works/ai-ranking-trail.webp" alt="Pixel-art cowboy lassoing icon, wordmark, and favicon tiles from a browser window">
+  <img src="public/assets/how-it-works/ai-ranking-trail.webp" alt="Pixel-art cowboy lassoing icon and wordmark tiles from a browser window">
 </p>
 
 Logo Yoink is a deterministic discovery and ranking pipeline. AI helped build the benchmark used to improve it; AI is **not** called when you extract a logo.
 
 1. **Discover broadly.** The static pass reads the page, structured data, manifests, favicon declarations, image sources, and safe inline SVGs. A bounded browser pass can recover assets rendered by JavaScript.
 2. **Validate and deduplicate.** Candidates are downloaded under strict budgets, checked as real image bytes, measured, and collapsed by URL, content hash, and asset family.
-3. **Rank for the job.** Each candidate gets separate icon, wordmark, and favicon scores from its source, shape, resolution, page placement, home-link evidence, company-name agreement, and negative context. The API returns the winners plus the evidence behind every score.
+3. **Rank for the job.** Each candidate gets icon and wordmark selections from its source, shape, resolution, page placement, home-link evidence, company-name agreement, variant fit, and negative context. The API returns the winners plus the evidence behind every score.
 
 ### How the ranking was optimized
 
@@ -152,7 +163,7 @@ The main trail map:
 src/discover-static.mjs   find candidates in HTML and metadata
 src/discover-browser.mjs  render the bounded browser fallback
 src/discover-deep.mjs     inspect official brand paths and kits
-src/rank.mjs              score icons, wordmarks, and favicons
+src/rank.mjs              score icons and wordmarks, then apply logo preferences
 src/extractor.mjs         validate, deduplicate, and orchestrate
 src/http-client.mjs       enforce safe, bounded network reads
 src/demo/                 share demo policy across local and Vercel adapters

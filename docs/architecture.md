@@ -34,7 +34,8 @@ Entrypoints should contain configuration and platform adaptation, not extraction
 - `src/discover-static.mjs` parses HTML and metadata without a browser.
 - `src/discover-browser.mjs` performs the bounded rendered-page fallback.
 - `src/discover-deep.mjs` inspects bounded first-party brand pages, archives, and optional SPA assets.
-- `src/rank.mjs` scores candidates and selects icon, wordmark, and favicon roles.
+- `src/asset-model.mjs` owns canonical asset preferences and variant descriptions.
+- `src/rank.mjs` scores candidates and selects the canonical icon and wordmark assets. Favicon remains an API compatibility alias for icon.
 - `src/tiny-image-suitability.mjs` measures tiny-render suitability.
 - `src/network-safety.mjs` owns canonical host and private-address classification.
 - `src/http-client.mjs` owns public-URL validation, redirect revalidation, timeouts, and bounded response reads.

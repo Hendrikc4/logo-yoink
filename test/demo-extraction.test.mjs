@@ -27,7 +27,7 @@ test('shared demo extraction service validates, normalizes, and executes with ad
     body: '{"website":" example.com "}',
   }));
 
-  assert.deepEqual(calls, [{ website: 'https://example.com/', options: { browser: false, adapter: 'test' } }]);
+  assert.deepEqual(calls, [{ website: 'https://example.com/', options: { browser: false, adapter: 'test', preferences: { logo: { theme: 'any', background: 'any' } } } }]);
   assert.deepEqual(result, {
     status: 200,
     headers: { 'ratelimit-limit': '20', 'ratelimit-remaining': '19' },

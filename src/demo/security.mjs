@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { normalizeAssetPreferences } from '../asset-model.mjs';
 
 const DEFAULTS = {
   bodyBytes: 2 * 1024,
@@ -64,11 +65,17 @@ export function assertDemoRequestOrigin(request) {
 function validatePayload(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new DemoHttpError(400, 'Expected a JSON object.');
   const keys = Object.keys(value);
-  if (keys.length !== 1 || keys[0] !== 'website') throw new DemoHttpError(400, 'Only the website field is accepted.');
+  if (!keys.includes('website') || keys.some(key => !['website', 'preferences'].includes(key))) {
+    throw new DemoHttpError(400, 'Only website and preferences fields are accepted.');
+  }
   if (typeof value.website !== 'string') throw new DemoHttpError(400, 'Website must be a string.');
   const website = value.website.trim();
   if (!website || website.length > 2_048 || /[\u0000-\u001f\u007f]/.test(website)) throw new DemoHttpError(400, 'Enter a valid website URL.');
-  return { website };
+  try {
+    return { website, preferences: normalizeAssetPreferences(value.preferences) };
+  } catch (error) {
+    throw new DemoHttpError(400, error.message);
+  }
 }
 
 export async function readDemoJson(request, maxBytes = DEFAULTS.bodyBytes) {
