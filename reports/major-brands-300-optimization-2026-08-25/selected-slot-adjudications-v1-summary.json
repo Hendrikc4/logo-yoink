@@ -1,0 +1,39 @@
+{
+  "artifact": "reports/major-brands-300-optimization-2026-08-25/selected-slot-adjudications-v1.jsonl",
+  "before": {
+    "selected_slots": 127,
+    "identity_wrong": 127,
+    "safety_class_absent": 127,
+    "scorer_wrong_brand_slots_legacy": 127,
+    "reported_wrong_brand_domains": 103
+  },
+  "after": {
+    "slots_by_adjudicated_class": {
+      "not_logo": 29,
+      "correct_brand": 84,
+      "related_brand": 11,
+      "wrong_brand": 1,
+      "unjudgeable": 2
+    },
+    "true_wrong_brand_domains": 1,
+    "same_brand_corrected_slots": 84,
+    "same_brand_usability_pairs": {
+      "good|good": 42,
+      "good|conditional": 13,
+      "unusable|good": 14,
+      "good|unusable": 10,
+      "conditional|good": 5
+    }
+  },
+  "identity_counts": {
+    "correct": 84,
+    "wrong": 41,
+    "ambiguous": 2
+  },
+  "corrected_role_counts": {
+    "icon": 23,
+    "wide": 61
+  },
+  "artifact_sha256": "b31b42e623feae327f83d9a6dcc7351e7058a0751dc6f529644743c40f92490e",
+  "provenance_note": "Derived read-only from frozen selected slots, v3 labels, and frozen light/dark sheet PNGs. Does not modify or replace tracked labels. DHL icon was reclassified from the initial same-brand bucket to non-logo after sheet review; BYD animated icon was reclassified to unjudgeable because both frozen previews are blank."
+}

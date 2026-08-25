@@ -517,6 +517,7 @@ export function validateResponse(response, sheet) {
       sheet_number: candidate.n,
       entity_id: candidate.entity_id,
       identity: uncertain ? 'ambiguous' : positive ? 'correct' : 'wrong',
+      safety_class: uncertain ? 'unjudgeable' : positive ? 'correct_brand' : 'unclassified_negative',
       roles: positive ? [...positive.roles] : [],
       works_on: positive ? [...positive.works_on] : [],
       best_for_role: bestByNumber.get(candidate.n) ?? [],
@@ -664,6 +665,7 @@ export async function validateLabelResponses({ packetDirectory, labelsPath, outp
       reviewed_at: reviewedAt,
       values: {
         identity: row.identity,
+        safety_class: row.safety_class,
         roles: row.roles,
         best_for_role: row.best_for_role,
         usability_light: row.works_on.includes('light') ? 'good' : 'unusable',

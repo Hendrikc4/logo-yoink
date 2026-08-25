@@ -1,0 +1,28 @@
+{
+  "slots": 127,
+  "domains": 103,
+  "counts": {
+    "non_logo_content_or_ui": 29,
+    "same_brand_logo_label_false_negative": 84,
+    "related_subbrand_product_or_cobrand": 11,
+    "true_foreign_brand": 1,
+    "visual_unusable_or_unjudgeable": 2
+  },
+  "domain_counts": {
+    "non_logo_content_or_ui": 27,
+    "same_brand_logo_label_false_negative": 77,
+    "related_subbrand_product_or_cobrand": 11,
+    "true_foreign_brand": 1,
+    "visual_unusable_or_unjudgeable": 2
+  },
+  "exclusive_domain_profiles": {
+    "non_logo_content_or_ui": 18,
+    "same_brand_logo_label_false_negative": 63,
+    "related_subbrand_product_or_cobrand+same_brand_logo_label_false_negative": 5,
+    "related_subbrand_product_or_cobrand": 6,
+    "non_logo_content_or_ui+same_brand_logo_label_false_negative": 8,
+    "true_foreign_brand": 1,
+    "same_brand_logo_label_false_negative+visual_unusable_or_unjudgeable": 1,
+    "non_logo_content_or_ui+visual_unusable_or_unjudgeable": 1
+  }
+}

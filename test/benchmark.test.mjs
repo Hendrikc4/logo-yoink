@@ -7,6 +7,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { compareResults, parseArgs, selectCohort, summarizeResults } from '../scripts/benchmark/benchmark.mjs';
 import { adaptSelectedRoleLabels } from '../scripts/benchmark/selected-role-scoring-adapter.mjs';
+import { applyCandidateLabelAdjudications } from '../scripts/benchmark/apply-candidate-label-adjudications.mjs';
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
 
@@ -125,6 +126,47 @@ test('selected-role adapter completes canonical scoring with explicit false slot
   assert.equal(summary.value, 50);
   assert.deepEqual(summary.labels, { records: 4, role_labels: 2, selected_roles: 2, selected_roles_labeled: 2, complete: true });
   assert.equal(summary.safety.wrong_brand_domains, 1);
+});
+
+test('explicit safety classes separate non-logo errors from wrong-brand safety', () => {
+  const results = [
+    result('non-logo', [candidate('photo', 'wide')], { wide: 'photo' }),
+    result('foreign', [candidate('partner', 'icon')], { icon: 'partner' }),
+  ];
+  const labels = [
+    { entity_id: 'non-logo', candidate_id: 'photo', identity: 'wrong', role: 'wide', correct: false, safety_class: 'not_logo', usability: 'unusable' },
+    { entity_id: 'foreign', candidate_id: 'partner', identity: 'wrong', role: 'icon', correct: false, safety_class: 'wrong_brand', usability: 'unusable' },
+  ];
+  const summary = summarizeResults(results, {}, labels).benchmarkScore;
+  assert.equal(summary.safety.wrong_brand_domains, 1);
+  assert.deepEqual(summary.safety.selected_classifications, { not_logo: 1, wrong_brand: 1 });
+});
+
+test('selected-role adapter preserves explicit safety classification', () => {
+  const results = [result('a', [candidate('photo', 'wide')], { wide: 'photo' })];
+  const adapted = adaptSelectedRoleLabels(results, [{
+    entity_id: 'a', candidate_id: 'photo',
+    values: { identity: 'wrong', roles: [], safety_class: 'not_logo', usability_light: 'unusable', usability_dark: 'unusable' },
+  }]);
+  const slot = adapted.find(row => row.review_role === 'wide');
+  assert.equal(slot.safety_class, 'not_logo');
+  assert.equal(summarizeResults(results, {}, adapted).benchmarkScore.safety.wrong_brand_domains, 0);
+});
+
+test('candidate adjudications require exact frozen-label provenance', () => {
+  const source = [{ entity_id: 'a', candidate_id: 'logo', label_id: 'label-1', values: { identity: 'wrong', roles: [] } }];
+  const adjudication = {
+    entity_id: 'a', candidate_id: 'logo', schema_version: 'v1', artifact_status: 'proposed',
+    source_label: { label_id: 'label-1', original_values: { identity: 'wrong', roles: [] } },
+    corrected_values: { identity: 'correct', roles: ['wide'], safety_class: 'correct-brand' },
+  };
+  const applied = applyCandidateLabelAdjudications(source, [adjudication]);
+  assert.equal(applied.applied.length, 1);
+  assert.deepEqual(applied.labels[0].values, { identity: 'correct', roles: ['wide'], safety_class: 'correct-brand' });
+  assert.throws(() => applyCandidateLabelAdjudications(
+    [{ ...source[0], label_id: 'different' }],
+    [adjudication],
+  ), /source label ID mismatch/);
 });
 
 test('repeat comparison reports availability gains, losses, and flips', () => {

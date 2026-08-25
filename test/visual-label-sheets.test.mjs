@@ -135,6 +135,9 @@ test('expands aliases and emits canonical labels stamped from importer identity 
   assert.equal(expanded.find(row => row.candidate_id === 'acme-wide').identity, 'correct');
   assert.equal(expanded.find(row => row.candidate_id === 'beta-logo').identity, 'ambiguous');
   assert.equal(expanded.find(row => row.candidate_id === 'acme-icon').identity, 'wrong');
+  assert.equal(expanded.find(row => row.candidate_id === 'acme-wide').safety_class, 'correct_brand');
+  assert.equal(expanded.find(row => row.candidate_id === 'beta-logo').safety_class, 'unjudgeable');
+  assert.equal(expanded.find(row => row.candidate_id === 'acme-icon').safety_class, 'unclassified_negative');
 
   const responses = join(run, 'responses.jsonl');
   await writeJsonl(responses, [response]);
@@ -149,6 +152,7 @@ test('expands aliases and emits canonical labels stamped from importer identity 
   const wide = rows.find(row => row.candidate_id === 'acme-wide');
   assert.equal(wide.values.best_for_role.wide, true);
   assert.equal(wide.values.usability_light, 'good');
+  assert.equal(wide.values.safety_class, 'correct_brand');
 });
 
 test('rejects stale fingerprints, arbitrary reviewer metadata, and tampered packet images', async () => {

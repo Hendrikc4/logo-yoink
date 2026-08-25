@@ -1,0 +1,61 @@
+{
+  "response_sheets": 168,
+  "zero_logo_response_sheets": 5,
+  "zero_logo_sheet_entities": 6,
+  "zero_logo_sheet_candidates": 80,
+  "zero_logo_examples": [
+    {
+      "sheet_id": "sheet-0002-eb45b406",
+      "name": "DHL",
+      "website": "dhl.com",
+      "candidates": 15
+    },
+    {
+      "sheet_id": "sheet-0026-1ac85cb2",
+      "name": "Slack",
+      "website": "slack.com",
+      "candidates": 15
+    },
+    {
+      "sheet_id": "sheet-0055-8b62ea1b",
+      "name": "Hugging Face",
+      "website": "huggingface.co",
+      "candidates": 16
+    },
+    {
+      "sheet_id": "sheet-0092-783232fa",
+      "name": "Vodafone",
+      "website": "vodafone.com",
+      "candidates": 16
+    },
+    {
+      "sheet_id": "sheet-0092-783232fa",
+      "name": "Lowe's",
+      "website": "lowes.com",
+      "candidates": 1
+    },
+    {
+      "sheet_id": "sheet-0095-60e1857d",
+      "name": "Verizon",
+      "website": "verizon.com",
+      "candidates": 17
+    }
+  ],
+  "reviewer_provenance_counts": {
+    "stage-2-ai-primary|ai|primary-2026-08-24|visual-label-sheets-v3-candidate-only": 2732
+  },
+  "false_selected_sources": {
+    "dom-img": 123,
+    "dom-picture": 4
+  },
+  "false_selected_reachability_category": {
+    "live_html|non_logo_content_or_ui": 26,
+    "live_html|same_brand_logo_label_false_negative": 80,
+    "redirected_off_domain|same_brand_logo_label_false_negative": 6,
+    "redirected_off_domain|related_subbrand_product_or_cobrand": 1,
+    "live_html|related_subbrand_product_or_cobrand": 10,
+    "redirected_off_domain|non_logo_content_or_ui": 2,
+    "live_html|true_foreign_brand": 1,
+    "live_html|visual_unusable_or_unjudgeable": 1
+  }
+}

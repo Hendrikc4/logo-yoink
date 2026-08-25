@@ -1,0 +1,30 @@
+{
+  "entities": 300,
+  "domain_cause_prevalence": {
+    "ranking_miss": 28,
+    "label_scoring_defect": 77,
+    "unresolved_discovery_eligibility_or_brand_form": 83,
+    "capture_failure": 73,
+    "identity_redirect_rebrand_review": 10,
+    "role_mismatch": 11,
+    "visual_usability_issue": 2
+  },
+  "role_cause_prevalence": {
+    "icon:selection_correct_under_v3_labels": 176,
+    "wide:ranking_miss": 18,
+    "wide:label_scoring_defect": 61,
+    "wide:unresolved_discovery_eligibility_or_brand_form": 79,
+    "wide:selection_correct_under_v3_labels": 65,
+    "icon:capture_failure": 73,
+    "wide:capture_failure": 73,
+    "icon:unresolved_discovery_eligibility_or_brand_form": 7,
+    "icon:ranking_miss": 12,
+    "icon:label_scoring_defect": 23,
+    "icon:role_mismatch": 8,
+    "wide:role_mismatch": 3,
+    "icon:visual_usability_issue": 1,
+    "wide:visual_usability_issue": 1
+  },
+  "redirect_audit": "10 redirected_off_domain captures are coherent first-party/regional/owned-brand destinations: Canon global, Zoom .com, Notion .com, Burger King bk.com, BMW USA, Volkswagen Germany, Barclays home, Hyundai USA, Rappi Mexico, Fisher-Price on Mattel. No harmful redirect/rebrand observed.",
+  "missing_role_caveat": "86 successful unselected role slots (7 icon, 79 wide) cannot be reliably separated into discovery miss, eligibility/filter miss, or icon-only/text-only using v3 negatives because the same v3 pass has 84 selected same-brand false negatives. The row retains candidate_label_inference only as non-authoritative evidence and uses unresolved_discovery_eligibility_or_brand_form as the cause."
+}

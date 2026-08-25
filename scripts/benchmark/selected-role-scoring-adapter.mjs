@@ -38,6 +38,11 @@ function labelIdentity(label) {
   return labelValues(label).identity ?? label.identity ?? null;
 }
 
+function safetyClass(label) {
+  const values = labelValues(label);
+  return values.safety_class ?? values.error_kind ?? label.safety_class ?? label.error_kind ?? null;
+}
+
 function usability(label) {
   const values = labelValues(label);
   return {
@@ -60,6 +65,7 @@ function sourceRecord(label, { entityId, candidateId, roles, reviewRole, correct
     candidate_id: candidateId,
     roles,
     identity: labelIdentity(label),
+    ...(safetyClass(label) ? { safety_class: safetyClass(label) } : {}),
     usability: usability(label),
     source_label_id: sourceLabelId(label),
     source_prompt_version: sourcePromptVersion(label),

@@ -14,6 +14,7 @@ export const VISUAL_ROLES = ['symbol', 'wordmark', 'horizontal_lockup', 'stacked
 export const IDENTITY = ['correct', 'wrong', 'ambiguous'];
 export const BRAND_MARK_DECISIONS = ['yes', 'no', 'unclear'];
 export const USABILITY = ['good', 'conditional', 'unusable'];
+export const SAFETY_CLASSES = ['correct_brand', 'wrong_brand', 'related_brand', 'not_logo', 'unjudgeable', 'unclassified_negative'];
 export const MAPPING_CONFIDENCE = ['exact', 'derived', 'suggested', 'unmapped'];
 export const MISSING_CAUSES = ['no_graphic_asset_exists', 'icon_only_or_stacked_only', 'asset_visible_not_discovered', 'discovered_not_validated', 'removed_by_url_or_byte_dedupe', 'excluded_by_budget', 'rejected_by_identity_or_evidence', 'rejected_by_shape_or_quality', 'ranked_below_worse_candidate', 'theme_serialization_failure', 'page_blocked_or_incomplete', 'identity_unsafe_or_ambiguous', 'not_missing'];
 export const REGIONS = ['header', 'nav', 'body', 'footer', 'metadata', 'browser_chrome', 'unknown', 'other'];
@@ -21,7 +22,7 @@ export const THEMES = ['light', 'dark', 'both', 'unknown'];
 
 const valueKeys = {
   entity: new Set(['identity_status', 'graphic_logo_present', 'text_only_brand_present', 'confidence', 'note']),
-  candidate: new Set(['identity', 'roles', 'best_for_role', 'usability_light', 'usability_dark', 'provenance_quality', 'quality_defects', 'reject_reason', 'confidence', 'note']),
+  candidate: new Set(['identity', 'roles', 'best_for_role', 'usability_light', 'usability_dark', 'safety_class', 'provenance_quality', 'quality_defects', 'reject_reason', 'confidence', 'note']),
   visual_instance: new Set(['identity', 'visual_role', 'region', 'theme', 'visibility', 'first_party', 'mapping_confidence', 'confidence', 'note']),
   missing_role: new Set(['missing_cause', 'confidence', 'note']),
   review_attestation: new Set(['visual_evidence_reviewed', 'review_workflow', 'visual_instance_count']),
@@ -31,6 +32,7 @@ const aliases = new Map([
   ['identity-status', 'identity_status'], ['graphic-logo-present', 'graphic_logo_present'], ['text-only-brand-present', 'text_only_brand_present'],
   ['identity_correctness', 'identity'], ['identity-correctness', 'identity'], ['applicable_roles', 'roles'], ['applicable-roles', 'roles'], ['notes', 'note'],
   ['best-role', 'best_role'], ['best-for-role', 'best_for_role'], ['usability-light', 'usability_light'], ['usability-dark', 'usability_dark'],
+  ['safety-class', 'safety_class'],
   ['provenance-quality', 'provenance_quality'], ['quality-defects', 'quality_defects'], ['reject-reason', 'reject_reason'],
   ['visual-role', 'visual_role'], ['first-party', 'first_party'], ['mapping-confidence', 'mapping_confidence'], ['missing-cause', 'missing_cause'],
   ['horizontal-lockup', 'horizontal_lockup'], ['stacked-lockup', 'stacked_lockup'], ['social-card', 'social_card'], ['partner-logo', 'partner_logo'],
@@ -210,6 +212,7 @@ export function normalizeLabelRecord(row, { runKey, captureKey, passId, reviewer
   if (values.missing_cause !== undefined) values.missing_cause = canonicalChoice(values.missing_cause, MISSING_CAUSES, 'missing_cause', context);
   if (values.usability_light !== undefined) values.usability_light = canonicalChoice(values.usability_light, USABILITY, 'usability_light', context);
   if (values.usability_dark !== undefined) values.usability_dark = canonicalChoice(values.usability_dark, USABILITY, 'usability_dark', context);
+  if (values.safety_class !== undefined) values.safety_class = canonicalChoice(values.safety_class, SAFETY_CLASSES, 'safety_class', context);
   if (values.provenance_quality !== undefined) values.provenance_quality = canonicalChoice(values.provenance_quality, ['visible_exact_use', 'structured_first_party', 'inferred_first_party', 'unsupported'], 'provenance_quality', context);
   if (values.visual_evidence_reviewed !== undefined) values.visual_evidence_reviewed = canonicalBoolean(values.visual_evidence_reviewed, 'visual_evidence_reviewed', context);
   if (values.review_workflow !== undefined) values.review_workflow = canonicalChoice(values.review_workflow, ['positive_first'], 'review_workflow', context);
@@ -286,7 +289,7 @@ export function validateCanonicalLabel(label, context = 'label') {
   }
   const choiceChecks = {
     identity: IDENTITY, identity_status: ['current', 'related_rebrand', 'wrong_site', 'ambiguous', 'unreachable'],
-    usability_light: USABILITY, usability_dark: USABILITY,
+    usability_light: USABILITY, usability_dark: USABILITY, safety_class: SAFETY_CLASSES,
     visual_role: VISUAL_ROLES, region: REGIONS, theme: THEMES, visibility: USABILITY,
     first_party: ['yes', 'no', 'ambiguous'], mapping_confidence: MAPPING_CONFIDENCE,
     missing_cause: MISSING_CAUSES, provenance_quality: ['visible_exact_use', 'structured_first_party', 'inferred_first_party', 'unsupported'],

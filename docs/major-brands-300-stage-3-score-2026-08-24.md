@@ -1,9 +1,18 @@
 # Major brands 300 stage 3 score — 2026-08-24
 
+> Historical result, superseded for quality claims. A 2026-08-25 semantic audit
+> reproduced `50.62/100` exactly but found that the candidate-only importer mapped
+> every omitted tile to `identity=wrong`, while the scorer treated every such
+> value as wrong-brand. See the
+> [optimization-cycle report](major-brands-300-optimization-cycle-2026-08-25.md).
+> The frozen arithmetic remains reproducible; it is not a trustworthy production-
+> precision baseline.
+
 Stage 3 scored the frozen stage-2 run at `runs/2026-08-24-major-brands-300-stage-2/`.
 The run is a 300-entity `major-brands-300` cohort. The follow-up scoring adapter
 now makes every selected icon/wide slot explicit, so the authoritative canonical
-result is a complete `50.62/100` score.
+result is a mechanically complete `50.62/100` score under the historical label
+semantics.
 
 ## Inputs and versions
 
