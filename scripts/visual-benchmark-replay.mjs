@@ -160,9 +160,152 @@ function recoverableWide(candidate) {
   return ratio >= 1.8 && ratio <= 12 && sameHostname(candidate) && snapshot.positive_token && ['header', 'nav'].includes(snapshot.dom_region) &&
     candidate.score_reasons?.some(reason => reason.includes('generic exclusion (foreign named logo)'));
 }
+const RESCORED_REASON_LINES = ['square shape', 'non-square icon', 'wide shape', 'non-wide shape', 'favicon source', 'non-favicon source'];
+const FAVICON_FAMILY_SOURCES = ['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon'];
+
+function candidateUrl(candidate) { return String(candidate.resolved_url ?? candidate.source_url ?? ''); }
+function hostOf(url) { try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return null; } }
+function candidateRatio(candidate) { return candidate.width && candidate.height ? candidate.width / candidate.height : null; }
+
+// Rebuild the pre-exclusion confidence from stored reason lines. Shape and source lines are
+// stripped so rescues re-apply them from measured geometry instead of double-counting.
+function recomputeConfidence(candidate, { keepExclusion = true } = {}) {
+  let confidence = 0;
+  for (const reason of candidate.score_reasons ?? []) {
+    const match = reason.match(/\s([+-]\d+)$/);
+    if (!match || RESCORED_REASON_LINES.some(line => reason.startsWith(line))) continue;
+    if (!keepExclusion && reason.includes('generic exclusion')) continue;
+    confidence += Number(match[1]);
+  }
+  return confidence;
+}
+
+function rescoredWide(confidence, candidate) {
+  const ratio = candidateRatio(candidate);
+  const faviconSource = FAVICON_FAMILY_SOURCES.includes(candidate.source);
+  return confidence + (ratio != null && ratio >= 1.8 && ratio <= 12 ? 30 : -18) + (faviconSource ? -18 : 0);
+}
+
+function companyWordsOf(name) {
+  return [...String(name ?? '').toLowerCase().replace(/\b(inc|llc|ltd|corp|corporation|company|co)\b\.?/g, ' ').match(/[a-z0-9]+/g) ?? []].filter(word => word.length >= 4);
+}
+
+function firstPartyHosted(candidate, companyName) {
+  const assetHost = hostOf(candidateUrl(candidate));
+  if (!assetHost) return true;
+  if (assetHost === hostOf(candidate.source_url ?? '')) return true;
+  const tokens = new Set(assetHost.match(/[a-z0-9]+/g) ?? []);
+  const words = companyWordsOf(companyName);
+  if (words.some(word => [...tokens].some(token => token.includes(word) || word.includes(token)))) return true;
+  if (/cdn|static|asset|content|media|image|img|user|files|blob|storage|optimole|builder|uploads/.test(assetHost)) return true;
+  try {
+    const path = decodeURIComponent(new URL(candidateUrl(candidate)).pathname).toLowerCase();
+    if (words.some(word => path.includes(word))) return true;
+  } catch { /* data and inline candidates are first-party by construction. */ }
+  return false;
+}
+
+// Selection profile tuned on the development split and confirmed on validation
+// (docs/selection-v2-experiment-2026-08-24.md): padded-wordmark icon demotion, favicon-size
+// preference, rendered-SVG twin preference, relaxed wide shape under strong first-party
+// evidence, same-origin foreign-named-logo rescue, small favicon-family icon fallback,
+// and off-host abstention when every asset lives on an unrelated third-party host.
+function selectionV2(entitiesIn, candidatesByEntity) {
+  const selections = new Map();
+  for (const entity of entitiesIn) {
+    const list = candidatesByEntity.get(entity.entity_id) ?? [];
+    for (const role of ROLES) {
+      if (!list.length) continue;
+      if (list.every(candidate => !firstPartyHosted(candidate, entity.name))) { selections.set(`${entity.entity_id}\0${role}`, null); continue; }
+
+      let pool = list.filter(item => item.predicted_roles?.includes(role));
+      const adjusted = new Map();
+      const rescored = new Set();
+      const effective = item => rescored.has(item.candidate_id) ? (adjusted.get(item.candidate_id) ?? 0) : (item.role_scores?.[role] ?? 0) + (adjusted.get(item.candidate_id) ?? 0);
+
+      if (role === 'icon' && pool.length === 0) {
+        pool = list.filter(item => FAVICON_FAMILY_SOURCES.includes(item.source) &&
+          Math.min(item.width ?? 99, item.height ?? 99) >= 14);
+      }
+      if (role === 'icon') {
+        for (const item of list) {
+          if (item.predicted_roles?.includes('icon') || item.source !== 'browser-inline-svg' ||
+            !(item.feature_snapshot?.home_linked && ['header', 'nav'].includes(item.feature_snapshot?.dom_region))) continue;
+          const edge = Math.min(item.width ?? 99, item.height ?? 99);
+          const ratio = candidateRatio(item);
+          if (edge < 20 || edge >= 32 || (ratio != null && (ratio < 0.72 || ratio > 1.4))) continue;
+          pool.push(item);
+        }
+        for (const item of pool) {
+          if ((item.score_reasons ?? []).some(reason => reason.includes('wide shape (content box)'))) adjusted.set(item.candidate_id, (adjusted.get(item.candidate_id) ?? 0) - 40);
+          const edge = Math.min(item.width ?? Infinity, item.height ?? Infinity);
+          if (FAVICON_FAMILY_SOURCES.includes(item.source)) adjusted.set(item.candidate_id, (adjusted.get(item.candidate_id) ?? 0) + (edge >= 180 ? 8 : edge >= 96 ? 4 : 0));
+        }
+        // A serialized static SVG can render blank outside its page; when a rendered
+        // browser twin of the same geometry exists, prefer the rendered one.
+        for (const item of [...pool]) {
+          if (item.source !== 'inline-svg' || rescored.has(item.candidate_id)) continue;
+          const near = (a, b) => Math.abs(a - b) <= Math.max(4, 0.12 * Math.max(a, b));
+          const twin = list.find(other => other.source === 'browser-inline-svg' &&
+            !(other.score_reasons ?? []).some(reason => reason.startsWith('generic exclusion')) &&
+            near(other.width ?? 0, item.width ?? 0) && near(other.height ?? 0, item.height ?? 0));
+          if (!twin) continue;
+          const staticScore = item.role_scores?.[role] ?? 0;
+          if (!pool.includes(twin)) { pool.push(twin); adjusted.set(twin.candidate_id, Math.max(twin.role_scores?.[role] ?? 0, staticScore)); rescored.add(twin.candidate_id); }
+          adjusted.set(item.candidate_id, (adjusted.get(item.candidate_id) ?? 0) - 25);
+        }
+      }
+      // Same-origin header/nav marks mislabelled as foreign named logos get one re-scored chance.
+      for (const item of list) {
+        if (!(item.score_reasons ?? []).some(reason => reason.includes('foreign named logo'))) continue;
+        const snapshot = item.feature_snapshot ?? {};
+        if (!snapshot.positive_token || !['header', 'nav'].includes(snapshot.dom_region)) continue;
+        if (hostOf(candidateUrl(item)) !== hostOf(item.source_url ?? '')) continue;
+        const confidence = recomputeConfidence(item, { keepExclusion: false });
+        const ratio = candidateRatio(item);
+        if (role === 'wide') {
+          if (ratio == null || ratio < 1.8) continue;
+          const score = rescoredWide(confidence, item);
+          if (score >= 35) { pool.push(item); adjusted.set(item.candidate_id, score); rescored.add(item.candidate_id); }
+        } else if (role === 'icon') {
+          const square = ratio != null && ratio >= 0.72 && ratio <= 1.4;
+          const score = confidence + (square ? 28 : -12);
+          if (score >= 35 && square) { pool.push(item); adjusted.set(item.candidate_id, score); rescored.add(item.candidate_id); }
+        }
+      }
+      if (role === 'wide') {
+        for (const item of list) {
+          if (item.predicted_roles?.includes('wide')) continue;
+          const ratio = candidateRatio(item);
+          if (ratio == null || ratio < 1.45 || ratio > 12 || (item.width ?? 0) < 120 || (item.height ?? 0) < 36) continue;
+          const snapshot = item.feature_snapshot ?? {};
+          const strong = snapshot.home_linked || ['header', 'nav'].includes(snapshot.dom_region) || ['schema', 'og-logo', 'microdata'].includes(item.source);
+          if (!strong || (item.score_reasons ?? []).some(reason => reason.startsWith('generic exclusion'))) continue;
+          const score = rescoredWide(recomputeConfidence(item), item);
+          if (score < 35) continue;
+          pool.push(item); adjusted.set(item.candidate_id, score); rescored.add(item.candidate_id);
+        }
+      }
+
+      pool.sort((left, right) => effective(right) - effective(left));
+      if (pool[0]) selections.set(`${entity.entity_id}\0${role}`, pool[0]);
+    }
+  }
+  return selections;
+}
+
+
 
 function experimentalSelections(entities, candidatesByEntity, profiles) {
   const enabled = new Set(profiles);
+  if (enabled.has('selection-v2')) {
+    const merged = storedSelections(entities, candidatesByEntity);
+    for (const [key, value] of selectionV2(entities, candidatesByEntity)) {
+      if (value === null) merged.delete(key);
+      else merged.set(key, value);
+    }
+    return merged;
+  }
   const selections = new Map();
   for (const entity of entities) for (const role of ROLES) {
     const candidates = (candidatesByEntity.get(entity.entity_id) ?? []).filter(item => item.predicted_roles?.includes(role) || (role === 'wide' && enabled.has('wide-header-recovery-v1') && recoverableWide(item)));
@@ -266,7 +409,7 @@ export async function replay(options = {}) {
 async function main() {
   const options = parseArgs(process.argv.slice(2));
   if (options.help) {
-    console.log('Usage: node scripts/visual-benchmark-replay.mjs [--baseline-check] [--splits development,validation] [--profiles favicon-tiny-v1,icon-evidence-v1,wide-theme-v1,wide-header-recovery-v1] [--output FILE] [--selections-output FILE]');
+    console.log('Usage: node scripts/visual-benchmark-replay.mjs [--baseline-check] [--splits development,validation] [--profiles selection-v2,favicon-tiny-v1,icon-evidence-v1,wide-theme-v1,wide-header-recovery-v1] [--output FILE] [--selections-output FILE]');
     return;
   }
   const replayed = await replay(options);

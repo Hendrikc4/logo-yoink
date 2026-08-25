@@ -3,7 +3,7 @@ const SOURCE_WEIGHT = {
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
-const RANKING_VERSION = 2;
+const RANKING_VERSION = 3;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
 function round(value) { return Math.round(Math.max(0, Math.min(100, value)) * 10) / 10; }
@@ -59,6 +59,16 @@ const KNOWN_HASH_OWNERS = new Map([
 
 function normalizedWords(value) {
   return String(value ?? '').toLowerCase().match(/[a-z0-9]+/g) ?? [];
+}
+
+function sameOriginAsset(item) {
+  try {
+    const asset = new URL(item.resolvedUrl ?? item.resolved_url ?? item.url);
+    const page = new URL(item.source_page);
+    return asset.hostname.replace(/^www\./, '') === page.hostname.replace(/^www\./, '');
+  } catch {
+    return false;
+  }
 }
 
 export function genericAssetReason(item, companyName = '') {
@@ -121,7 +131,10 @@ export function genericAssetReason(item, companyName = '') {
   const matchesCompanyPrefix = word => [...companyWords].some(companyWord => word.length >= 4 && (companyWord.startsWith(word) || word.startsWith(companyWord)));
   const namedLogo = /(?:^|[^a-z0-9])logos?(?:[^a-z0-9]|$)/i.test(`${alt} ${url}`) && normalizedWords(alt).some(word =>
     word.length >= 3 && !companyWords.has(word) && !matchesCompanyPrefix(word) && !['logo', 'icon', 'brand', 'header', 'footer', 'light', 'dark', 'white', 'black', 'mode'].includes(word));
-  if (!item.evidence?.home_linked && namedLogo && !companyAgreement(item, companyName || item.evidence?.company_name)) return 'foreign named logo';
+  // ponytail: same-origin placed header/nav marks with a positive token are first-party even when
+  // the alt text names some other word; only withhold foreign-hosted or unplaced look-alikes.
+  const placedFirstParty = item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region) && sameOriginAsset(item);
+  if (!item.evidence?.home_linked && !placedFirstParty && namedLogo && !companyAgreement(item, companyName || item.evidence?.company_name)) return 'foreign named logo';
   return null;
 }
 
@@ -153,11 +166,17 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
 
   const ratio = item.width && item.height ? item.width / item.height : null;
   const square = ratio != null && ratio >= 0.72 && ratio <= 1.4;
-  const contentRatio = item.contentBox?.width > 0 && item.contentBox?.height > 0 ? item.contentBox.width / item.contentBox.height : null;
-  const wideRatio = contentRatio ?? ratio;
-  const wide = wideRatio != null && wideRatio >= 1.8 && wideRatio <= 12;
   const faviconSource = FAVICON_SOURCES.includes(item.source);
   const authoritativeSource = AUTHORITATIVE_SOURCES.includes(item.source);
+  const contentRatio = item.contentBox?.width > 0 && item.contentBox?.height > 0 ? item.contentBox.width / item.contentBox.height : null;
+  const wideRatio = contentRatio ?? ratio;
+  const strongWideEvidence = Boolean(item.evidence?.home_linked || (['header', 'nav'].includes(item.evidence?.dom_region)) || authoritativeSource);
+  // ponytail: padded wordmarks ship on square canvases; trust the measured content box and a
+  // relaxed 1.45 bound only when first-party placement or authoritative metadata backs it.
+  const wideRelaxed = ratio != null && ratio >= 1.45 && ratio < 1.8 &&
+    item.width >= 120 && Math.min(item.width, item.height) >= 36 && strongWideEvidence;
+  const wide = (wideRatio != null && wideRatio >= 1.8 && wideRatio <= 12) || wideRelaxed;
+  const paddedWordmark = contentRatio != null && contentRatio >= 1.8 && ratio != null && ratio < 1.8;
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
   const safeContext = !item.evidence?.negative_context && !genericReason;
   const usableIconSize = !item.width || !item.height || Math.min(item.width, item.height) >= 32 || (item.scalable && (item.evidence?.positive_token || agreesWithCompany));
@@ -172,7 +191,36 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
     ...(roleEligible('wide') && wideScore >= 35 && safeContext && (wide || ratio == null) && hasWideEvidence(item, companyName) ? ['wide'] : []),
     ...(favicon >= 35 && faviconSource ? ['favicon'] : []),
   ];
-  return { ...item, role_scores, predicted_roles, score, score_reasons: [...new Set(reasons)], confidence_band: score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low' };
+  return { ...item, padded_wordmark: paddedWordmark, role_scores, predicted_roles, score, score_reasons: [...new Set(reasons)], confidence_band: score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low' };
+}
+
+const ICON_FALLBACK_MIN_EDGE = 14;
+
+function iconSizeBonus(candidate) {
+  if (!FAVICON_SOURCES.includes(candidate.source)) return 0;
+  const edge = Math.min(Number(candidate.width) || Infinity, Number(candidate.height) || Infinity);
+  return edge >= 180 ? 8 : edge >= 96 ? 4 : 0;
+}
+
+function nearDimensions(a, b) {
+  const near = (x, y) => Math.abs(x - y) <= Math.max(4, 0.12 * Math.max(x, y));
+  return near(Number(a?.width) || 0, Number(b?.width) || 0) && near(Number(a?.height) || 0, Number(b?.height) || 0);
+}
+
+export function iconEffectiveScore(candidate) {
+  return (candidate.role_scores?.icon ?? 0) - (candidate.padded_wordmark ? 40 : 0) + iconSizeBonus(candidate);
+}
+
+function pickIconCandidate(eligible, allCandidates) {
+  // ponytail: rendered inline SVG twins beat serialized static copies of the same geometry,
+  // whose serialization can render blank outside the page.
+  const winner = [...eligible].sort((a, b) => iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes)[0];
+  if (!winner || winner.source !== 'inline-svg') return winner ?? null;
+  const twin = allCandidates.find(candidate => candidate.source === 'browser-inline-svg' &&
+    !candidate.score_reasons?.some(reason => reason.startsWith('generic exclusion')) &&
+    nearDimensions(candidate, winner));
+  if (!twin || iconEffectiveScore(twin) < iconEffectiveScore(winner) - 5) return winner;
+  return twin;
 }
 
 export function rankCandidates(items, options = {}) {
@@ -184,8 +232,24 @@ export function rankCandidates(items, options = {}) {
       const suitabilityDifference = faviconRankScore(b) - faviconRankScore(a);
       if (suitabilityDifference) return suitabilityDifference;
     }
+    if (role === 'icon') {
+      const iconDifference = iconEffectiveScore(b) - iconEffectiveScore(a);
+      if (iconDifference) return iconDifference;
+      return b.bytes - a.bytes;
+    }
     return b.role_scores[role] - a.role_scores[role] || b.bytes - a.bytes;
   })[0] ?? null]));
+  if (!selectedByRole.icon) {
+    // ponytail: when nothing qualifies as an icon, a declared favicon asset is the brand's own
+    // mark by construction; admit small declared favicons rather than answering with nothing.
+    const fallback = eligible.filter(item => FAVICON_SOURCES.includes(item.source) &&
+      Math.min(Number(item.width) || Infinity, Number(item.height) || Infinity) >= ICON_FALLBACK_MIN_EDGE)
+      .sort((a, b) => iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes)[0];
+    if (fallback) selectedByRole.icon = fallback;
+  }
+  if (selectedByRole.icon?.source === 'inline-svg') {
+    selectedByRole.icon = pickIconCandidate([selectedByRole.icon], candidates);
+  }
   return { candidates, assetFamilies, selectedByRole, selected: selectedByRole.icon ?? selectedByRole.wide ?? selectedByRole.favicon ?? null };
 }
 

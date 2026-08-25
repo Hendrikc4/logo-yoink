@@ -367,3 +367,43 @@ test('retains an oversized response prefix and reports truncation and bytes', as
   assert.equal(result.truncated, true);
   assert.equal(diagnostics.bytesDownloaded, 9);
 });
+
+test('keeps a same-origin placed header mark even when its alt names another word', () => {
+  const item = { source: 'dom-img', url: 'https://acme.test/images/logo-dark.png', width: 256, height: 100, evidence: { alt: 'Sponsor Logo', positive_token: true, dom_region: 'header', home_linked: false }, source_page: 'https://acme.test/' };
+  assert.equal(genericAssetReason(item, 'Acme'), null);
+});
+
+test('demotes a padded wordmark canvas for the icon role in favor of a declared square asset', () => {
+  const result = rankCandidates([
+    { source: 'schema', url: 'https://acme.test/og.png', resolvedUrl: 'https://acme.test/og.png', source_page: 'https://acme.test/', width: 605, height: 605, contentBox: { width: 600, height: 80 }, highResolution: true, evidence: {} },
+    { source: 'apple', url: 'https://acme.test/apple-touch-icon.png', resolvedUrl: 'https://acme.test/apple-touch-icon.png', source_page: 'https://acme.test/', width: 180, height: 180, highResolution: true, evidence: {} },
+  ], { companyName: 'Acme' });
+  assert.equal(result.selectedByRole.icon.source, 'apple');
+  assert.equal(result.candidates.find(item => item.source === 'schema').padded_wordmark, true);
+});
+
+test('admits a relaxed wide shape when first-party placement or authoritative metadata backs it', () => {
+  const placed = { source: 'dom-img', url: 'https://acme.test/uploads/logo-mh-2.png', resolvedUrl: 'https://acme.test/uploads/logo-mh-2.png', source_page: 'https://acme.test/', width: 494, height: 300, highResolution: true, evidence: { dom_region: 'header', home_linked: true } };
+  const ranked = rankCandidates([placed], { companyName: 'Acme' }).candidates[0];
+  assert.ok(ranked.predicted_roles.includes('wide'));
+  assert.ok(ranked.role_scores.wide >= 35);
+  const unplaced = { ...placed, evidence: { dom_region: 'body', home_linked: false } };
+  const rejected = rankCandidates([unplaced], { companyName: 'Acme' }).candidates[0];
+  assert.ok(!rejected.predicted_roles.includes('wide'));
+});
+
+test('falls back to declared small favicons when no candidate qualifies as an icon', () => {
+  const result = rankCandidates([
+    { source: 'html-icon', url: 'https://tiny.test/favicon.ico', resolvedUrl: 'https://tiny.test/favicon.ico', source_page: 'https://tiny.test/', width: 16, height: 16, evidence: {} },
+    { source: 'root-favicon', url: 'https://tiny.test/favicon.ico', resolvedUrl: 'https://tiny.test/favicon.ico', source_page: 'https://tiny.test/', width: 12, height: 12, evidence: {} },
+  ], { companyName: 'Tiny' });
+  assert.equal(result.selectedByRole.icon?.source, 'html-icon');
+});
+
+test('prefers a rendered browser twin over a serialized static inline SVG of the same geometry', () => {
+  const result = rankCandidates([
+    { source: 'inline-svg', url: 'data:image/svg+xml;base64,AAAA', width: 64, height: 64, scalable: true, bytes: 900, highResolution: true, evidence: { dom_region: 'header', home_linked: true } },
+    { source: 'browser-inline-svg', url: 'https://acme.test/', width: 64, height: 64, scalable: true, bytes: 900, highResolution: true, evidence: { dom_region: 'header', home_linked: true } },
+  ], { companyName: 'Acme' });
+  assert.equal(result.selectedByRole.icon.source, 'browser-inline-svg');
+});

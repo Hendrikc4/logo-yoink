@@ -24,6 +24,7 @@ A negative shipping decision does not always mean the underlying signal was usel
 
 | Date | Experiment | Development outcome | Holdout outcome | Cost or risk | Status |
 |---|---|---|---|---|---|
+| 2026-08-24 | Selection v2: padded-wordmark demotion, favicon-size preference, rendered-SVG twins, relaxed wide shape, foreign-named-logo rescue, small-favicon fallback, off-host abstention | Dev +2.96 subtotal: +13 icon, +2 wide, −3 wrong-brand domains, zero correct→wrong flips | Validation confirmed untouched (+1.03); evaluation checked once: all-splits 55.47→56.83 | Offline-only over frozen artifacts; zero network cost; one priced-in wrong fallback admission (Bandit Network) | **Kept — ranking/eligibility in product; full set as `selection-v2` replay profile** |
 | 2026-08-23 | First-party brand-asset graph, safe ZIP kits, and bounded SPA entry-bundle probe | Frozen 75-miss paired run: 3 correct wide additions, 0 ambiguous/wrong, 0 icon/favicon movement; named archive controls recover Anthropic, GitHub, Katalon, and Cloudflare assets | Not run; remains explicit/conditional | +47 requests/+15.80 MB across 75 pairs; first SPA iteration was 3/5 correct before company/acronym guard; archive path had zero cohort wins | **Available, optional — development gate passed; archive prevalence unproven** |
 | 2026-08-22 | Remaining-300 extension of precision-gated asynchronous browser warming | Frozen static wide 146→168 with icon/favicon unchanged; 18 correct, 2 ambiguous, and 2 wrong additions after light/dark review | Full untouched operational slice; strict incremental precision 81.82% and two new wrong-brand domains failed the gate | 114 deferred browser invocations; 7,203 requests/209.07 MB; 2.39/5.43 s browser p50/p95; warm replay zero network and byte-identical | **Do not extend — precision-limited** |
 | 2026-08-22 | Remaining-300 missing-wide root-cause audit and targeted CSS-mask ablation | 75 deterministic misses: retained browser path found 10 correct, 2 ambiguous, 0 wrong; narrow masks added 1 correct wide | Not run; mask yield 1.33 correct wins/100 was below the 2.0 gate | Browser 4,859 requests/145.54 MB; mask run 4,970 requests/153.92 MB; zero icon/favicon movement | **Audit complete; masks dropped — prevalence-limited** |
@@ -53,6 +54,10 @@ A negative shipping decision does not always mean the underlying signal was usel
 | 2026-08-22 | Multi-observation provenance bonus | Identical selected URLs in all 300 role slots | Not run because benefit was zero | Results grew about 16%; could reinforce wrong identities | **Dropped** |
 
 ## Retained mechanisms
+### Selection v2 offline rules
+
+The nine-rule selection experiment is documented in [the selection-v2 report](selection-v2-experiment-2026-08-24.md). Development-tuned, validation-confirmed, evaluation-checked-once. Runtime-mappable rules landed in `src/rank.mjs`; the complete set ships as the `selection-v2` replay profile because two rules depend on fields the frozen artifacts lack (capture-time role marking for small rendered SVGs) or on an identity-safety policy (off-host abstention) that stays out of the default product path pending the quarantine decision below.
+
 
 ### First-party brand asset graph and SPA entry-bundle probe
 
