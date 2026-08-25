@@ -18,6 +18,7 @@
     "review-montage": "node scripts/review/review-montage.mjs",
     "browser-observations:warm": "node scripts/experiments/warm-browser-observations.mjs",
     "browser-observations:replay": "node scripts/experiments/replay-browser-observations.mjs",
+    "identity-verifier": "node scripts/experiments/identity-verifier.mjs",
     "rerank-run": "node scripts/experiments/rerank-run.mjs",
     "merge-review-runs": "node scripts/review/merge-review-runs.mjs",
     "transfer-review-labels": "node scripts/review/transfer-review-labels.mjs",
