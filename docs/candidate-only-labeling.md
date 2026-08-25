@@ -56,14 +56,26 @@ instance. It also never imports or changes rank scores.
    current scorer. A visual label is expanded to every candidate ID folded into
    the same content-hash/URL group, so aliases remain joinable.
 
-The current score command treats its `role` field as both the review slot and
-the candidate's applicable visual role. Consequently, a selected non-logo
-correctly labeled with an empty role (or `other`) will leave that selected score
-slot unlabeled. Do not coerce it to `icon` or `wide`: that would turn a false
-positive into a role match. Final score integration should either adjudicate
-those selected slots separately or extend the scorer to distinguish
-`review_role` from applicable `roles`. This workflow intentionally does not
-change the scorer or ranker.
+The direct score command treats its `role` field as both the review slot and the
+candidate's applicable visual role. Consequently, a selected non-logo or a
+correct logo without the selected role would otherwise leave that selected score
+slot unlabeled. Do not coerce the canonical candidate label to `icon` or `wide`:
+that would turn a role mismatch into a role match. For exhaustive candidate
+labels, use the derived selected-slot adapter before scoring:
+
+```sh
+node scripts/benchmark/selected-role-scoring-adapter.mjs \
+  --run runs/all-500 \
+  --labels runs/all-500/candidate-labels.jsonl \
+  --output runs/all-500/scoring-labels-selected-slots.jsonl
+```
+
+It preserves the canonical candidate label and emits an explicit
+`review_role`/`correct` adjudication for every selected icon/wide slot. A role
+mismatch remains `correct: false` without changing candidate identity to
+`wrong`; canonical icon favicon fallbacks are recognized when no true icon
+candidate qualifies. The adapter is a scoring projection, not a replacement
+for canonical candidate labels or a ranker change.
 
 Use `--allow-partial` only for an intentional intermediate merge. A partial
 file is not adequate for final benchmark scoring. Packet manifests include the

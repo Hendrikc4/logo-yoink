@@ -1,16 +1,16 @@
 # Major brands 300 stage 3 score — 2026-08-24
 
 Stage 3 scored the frozen stage-2 run at `runs/2026-08-24-major-brands-300-stage-2/`.
-The run is a 300-entity `major-brands-300` cohort. The scorer does not produce a
-final 0–100 quality score because 230 of 368 selected role slots have a
-role-specific label; its authoritative result is therefore `status: incomplete`,
-`value: null`.
+The run is a 300-entity `major-brands-300` cohort. The follow-up scoring adapter
+now makes every selected icon/wide slot explicit, so the authoritative canonical
+result is a complete `50.62/100` score.
 
 ## Inputs and versions
 
 | Item | Value |
 | --- | --- |
 | Stage-3 repository commit | `bf1f7c87fea68ff2747f88a406c9ec9247e51641` |
+| Follow-up scoring implementation commit | `e3fe73b66af401257871f042a85333199b1aad7f` |
 | Capture/ranking input commit | `3d07aca74f8d37f85bf0d6d54a6d4f1969bb53ef` |
 | Fixture | `fixtures/companies-500.json` (`98e365f137966e3b1b8d8cff2a45765d71fe4fbbf64f90bc0502b51064f5be2c`) |
 | Runtime schema | benchmark schema v2 |
@@ -26,7 +26,31 @@ results.jsonl                  4184d924fbb81ba5b2f2216b802964c1e790ee8b7ff756dc5
 candidate-labels.jsonl         e9e58cc9866af47184b3d8d17748ac6f01dd8d6b37a8e04ca260735a3b409429
 scoring-labels-adapter.jsonl   fb934396b8958902d5cb72913933a7c9623acaf8a9a244e29f82f92387e48c64
 label-responses/primary.jsonl  991dd074478bd2aa3d8d913fcac0b88aa0eed9d57eea64657be7f8925b20d885
+scoring-labels-selected-slots.jsonl  4fd7b3214a74b66dff3c362e154cb289a3460ac8356702221b350114698af2ac
 ```
+
+## Contract decision and adapter
+
+The canonical candidate label contract stores candidate identity and applicable
+roles; it does not store a separate false value for every non-applicable role.
+The candidate-only workflow documents this distinction explicitly: a selected
+non-logo or a logo without the selected role must not be coerced into an `icon`
+or `wide` candidate label, and final integration should adjudicate the selected
+slot separately. The scorer's existing completeness test confirmed why: its
+flat adapter only created a role key when the candidate label listed that role,
+so exhaustive candidate review still left selected slots absent.
+
+`scripts/benchmark/selected-role-scoring-adapter.mjs` is that derived slot
+adjudication. It preserves source `identity` and applicable `roles`, then emits
+`review_role` and explicit `correct: true|false` records for every persisted
+selected icon/wide slot. A role mismatch is `correct: false` without changing
+identity to `wrong`, so it cannot become a wrong-brand safety error merely from
+being the wrong role. A reviewed `wrong` identity remains a wrong-brand false.
+
+The ranker contract and tests define a favicon-family candidate as a canonical
+icon fallback when no true icon candidate qualifies. All 11 favicon-only icon
+pointers meet that condition, are reviewed correct favicon labels, and are
+therefore emitted as `correct: true` canonical icon fallback adjudications.
 
 ## Coverage and failure accounting
 
@@ -48,14 +72,15 @@ entities.
 | --- | ---: | ---: |
 | Extracted icon candidate | 209/227 (92.07%) | 209/300 (69.67%) |
 | Extracted wide candidate | 148/227 (65.20%) | 148/300 (49.33%) |
-| Reviewer-positive icon candidate in set | 197/227 (86.78%) | 197/300 (65.67%) |
+| Reviewer-positive icon candidate in source labels | 197/227 (86.78%) | 197/300 (65.67%) |
 | Reviewer-positive wide candidate in set | 78/227 (34.36%) | 78/300 (26.00%) |
+| Effective canonical icon candidate set (including 11 favicon fallbacks) | 208/227 (91.63%) | 208/300 (69.33%) |
 
-Thus the effective whole-cohort candidate-set coverage, using the reviewer
-positive labels and counting capture failures as unavailable, is 65.67% for
-icon and 26.00% for wide. The unreviewed automated availability proxy remains
-59.5/100 (50% extracted icon coverage + 50% extracted wide coverage, all-300
-denominator).
+Thus the final canonical whole-cohort candidate-set coverage, using the
+reviewer-positive labels plus canonical icon fallback semantics and counting
+capture failures as unavailable, is 69.33% for icon and 26.00% for wide. The
+unreviewed automated availability proxy remains 59.5/100 (50% extracted icon
+coverage + 50% extracted wide coverage, all-300 denominator).
 
 ## Canonical labeled score
 
@@ -65,22 +90,22 @@ reachable entities as the per-role quality denominator.
 
 | Component | Observed points | Maximum | Notes |
 | --- | ---: | ---: | --- |
-| Candidate-set coverage | 18.17 | 30 | icon 197/227; wide 78/227 |
-| Top-1 correctness | 15.20 | 30 | icon 165/227; wide 65/227 |
-| Top-1 visual usability | 10.13 | 20 | observed labeled correct selections were usable |
-| Wrong-brand safety | 10.00 | 10 | provisional; 138 selected slots remain unlabeled |
+| Candidate-set coverage | 18.90 | 30 | icon 208/227; wide 78/227 |
+| Top-1 correctness | 15.93 | 30 | icon 176/227; wide 65/227 |
+| Top-1 visual usability | 10.62 | 20 | all 241 correct selected slots were usable |
+| Wrong-brand safety | 0.00 | 10 | 103/227 wrong-brand domains; 45.37% |
 | Efficiency | 5.18 | 10 | p95 latency 30,003 ms; mean 16.4 requests; mean 1,447,997 bytes |
-| Observed component sum | 58.68 | 100 | not a final score |
+| **Final canonical score** | **50.62** | **100** | complete |
 
-The 165/227 icon and 65/227 wide top-1 figures are conservative whole-captured-
-entity rates: an unlabeled selected role does not count as correct. Among the
-230 selected role slots that did receive a role-specific label, all were labeled
-identity-correct and usable; this conditional result must not be interpreted as
-complete selected-asset precision.
+The 176/227 icon and 65/227 wide top-1 figures use all 368 explicit selected
+slot adjudications. Of those slots, 230 were direct reviewed role matches, 11
+were canonical icon favicon fallbacks, and 127 were explicit false judgments;
+the 127 false slots were all reviewed wrong-identity candidates in this run.
 
 The run has 2,732 candidate records and 2,732 expanded labels: 875 positive and
-1,857 negative labels, with no uncertain labels. There are 368 selected slots
-(220 icon, 148 wide), of which 230 are role-labeled (165 icon, 65 wide).
+1,857 negative labels, with no uncertain labels. The scoring adapter emits 3,100
+records (2,732 candidate records plus 368 slot adjudications), 1,655 flattened
+role labels, and complete selected-slot coverage: 368/368 (220 icon, 148 wide).
 
 ## Output audit
 
@@ -88,13 +113,16 @@ The run has 2,732 candidate records and 2,732 expanded labels: 875 positive and
 - Duplicate label IDs: 0; duplicate target keys: 0; duplicate response sheet IDs: 0.
 - Unknown or cross-entity label candidate IDs: 0; unknown label entities: 0.
 - Unsafe positive labels: 0. No positive label crossed entity ownership or lacked a valid role/usability judgment.
-- Selection consistency issue: 11 persisted `selected_by_role.icon` pointers reference candidates predicted only as `favicon` (Palo Alto Networks, ExxonMobil, John Deere, UnitedHealth Group, Thermo Fisher Scientific, Illumina, Valve, Zalando, United Nations, Cambridge University, and Alibaba). These are not valid icon-role selections in this audit; the raw scorer still mechanically includes the persisted pointers in its 220 icon-slot count, so this is another reason not to claim a complete score.
+- Selected-slot adapter audit: 368 unique selected slots, 241 explicit true and 127 explicit false; no duplicate slot keys, missing source labels, or cross-entity references.
+- The 11 persisted `selected_by_role.icon` pointers that reference candidates predicted only as `favicon` (Palo Alto Networks, ExxonMobil, John Deere, UnitedHealth Group, Thermo Fisher Scientific, Illumina, Valve, Zalando, United Nations, Cambridge University, and Alibaba) are valid canonical fallbacks under the ranker contract: each entity has no predicted icon candidate and the reviewed favicon is correct.
 - No train/development/validation/evaluation split is attached to this 300-entity run, so split-leakage analysis is not applicable. The run is a single cohort capture and label pass.
 
 The minimal provisioned run does not include the stage-2 `label-sheets-v3/`
 packet directory, so the original PNG/fingerprint packet validator could not
 be rerun here. The expanded labels, response shapes, IDs, ownership, and
 provenance were independently checked from the retained JSONL files.
+The adapter additionally requires exhaustive candidate-label coverage and exact
+selected-slot coverage before writing output.
 
 ## Validation and exact scoring commands
 
@@ -112,29 +140,29 @@ node --test test/benchmark.test.mjs test/company-fixtures.test.mjs \
 npm test
 ```
 
-The targeted suite passed 60/61 tests and the full suite passed 205/206. The
-single failure is pre-existing: `test/visual-capture.test.mjs` asks the pilot
-fixture for the removed `all-500` cohort.
+The follow-up targeted suite passed 42/42 tests. The full suite passed 207/208;
+the one pre-existing failure is `test/visual-capture.test.mjs`, which asks the
+pilot fixture for the removed `all-500` cohort.
 
 The stage-2 report's schema-native label command was also run exactly; it
 returned `incomplete review 0/368` because that file stores labels under
-`values`. The repository scorer's flat-label adapter was then run:
+`values`. The selected-slot adapter and repository scorer were then run:
 
 ```sh
-npm run benchmark -- score \
+node scripts/benchmark/selected-role-scoring-adapter.mjs \
   --run runs/2026-08-24-major-brands-300-stage-2 \
   --labels runs/2026-08-24-major-brands-300-stage-2/candidate-labels.jsonl \
-  --output runs/2026-08-24-major-brands-300-stage-2/summary-labeled-stage3-raw.json
+  --output runs/2026-08-24-major-brands-300-stage-2/scoring-labels-selected-slots.jsonl
 
 npm run benchmark -- score \
   --run runs/2026-08-24-major-brands-300-stage-2 \
-  --labels runs/2026-08-24-major-brands-300-stage-2/scoring-labels-adapter.jsonl \
-  --output runs/2026-08-24-major-brands-300-stage-2/summary-labeled-stage3.json
+  --labels runs/2026-08-24-major-brands-300-stage-2/scoring-labels-selected-slots.jsonl \
+  --output runs/2026-08-24-major-brands-300-stage-2/summary-labeled-stage3-final.json
 ```
 
-The second command is the authoritative stage-3 scoring invocation and returns
-`incomplete review 230/368 selected roles labeled`; its JSON output remains in
-the ignored `runs/` directory.
+The scorer returns `benchmark score 50.62/100` and
+`selected_roles_labeled: 368/368`; generated adapter and summary files remain
+in the ignored `runs/` directory.
 
 ## Comparison limits
 
@@ -151,11 +179,11 @@ the stage-3 metric table.
 
 ## Reproduction
 
-Checkout `bf1f7c87fea68ff2747f88a406c9ec9247e51641`, provision the ignored run
+Checkout `e3fe73b66af401257871f042a85333199b1aad7f`, provision the ignored run
 directory, install from `package-lock.json`, and rerun the validation and score
 commands above. Verify all input hashes with:
 
 ```sh
 sha256sum fixtures/companies-500.json package-lock.json \
-  runs/2026-08-24-major-brands-300-stage-2/{config.json,results.jsonl,candidate-labels.jsonl,scoring-labels-adapter.jsonl,label-responses/primary.jsonl}
+  runs/2026-08-24-major-brands-300-stage-2/{config.json,results.jsonl,candidate-labels.jsonl,scoring-labels-adapter.jsonl,scoring-labels-selected-slots.jsonl,label-responses/primary.jsonl}
 ```
