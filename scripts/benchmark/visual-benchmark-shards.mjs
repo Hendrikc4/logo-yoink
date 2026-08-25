@@ -100,7 +100,7 @@ async function writeJsonl(path, rows) {
   await writeFile(path, rows.length ? `${rows.map(row => JSON.stringify(row)).join('\n')}\n` : '', 'utf8');
 }
 
-export async function generateShards({ inputPath, outputPath, pilotPath = null, pilotOnly = false, seed = DEFAULT_SEED, resume = false, shardCount = 10 }) {
+export async function generateShards({ inputPath, outputPath, pilotPath = null, pilotOnly = false, cohort = 'all-500', seed = DEFAULT_SEED, resume = false, shardCount = 10 }) {
   const sourcePath = resolve(inputPath);
   const outputDirectory = resolve(outputPath);
   if (await exists(join(outputDirectory, 'benchmark-manifest.json')) && !resume) {
@@ -108,8 +108,11 @@ export async function generateShards({ inputPath, outputPath, pilotPath = null, 
   }
   const fixtureText = await readFile(sourcePath, 'utf8');
   const fixture = JSON.parse(fixtureText);
-  let companies = fixture.companies;
-  if (!Array.isArray(companies)) throw new Error('Input fixture must contain a companies array.');
+  const allCompanies = fixture.companies;
+  if (!Array.isArray(allCompanies)) throw new Error('Input fixture must contain a companies array.');
+  let companies = cohort === 'all-500' ? allCompanies.filter(company => ['original-100', 'additional-400'].includes(company.cohort)) :
+    cohort === 'all-800' ? allCompanies : allCompanies.filter(company => company.cohort === cohort);
+  if (!companies.length) throw new Error(`Fixture cohort '${cohort}' is empty or unknown.`);
   let pilot = null;
   if (pilotPath) {
     const pilotText = await readFile(resolve(pilotPath), 'utf8');
@@ -175,6 +178,7 @@ export async function generateShards({ inputPath, outputPath, pilotPath = null, 
     schema_version: SCHEMA_VERSION,
     benchmark_version: 1,
     fixture: inputPath,
+    fixture_cohort: cohort,
     fixture_sha256: fixtureSha256,
     pilot_fixture: pilotPath,
     pilot_entity_ids: [...pilotIds].sort(),
@@ -204,8 +208,8 @@ export async function main(argv = process.argv.slice(2)) {
   const args = argsOf(argv);
   const inputPath = args.input ?? args.fixture ?? 'fixtures/companies-500.json';
   const outputPath = args.output ?? args.out;
-  if (!outputPath) throw new Error('Usage: visual-benchmark-shards.mjs --input <fixture> --output <directory> [--pilot <fixture>] [--pilot-only]');
-  const manifest = await generateShards({ inputPath, outputPath, pilotPath: args.pilot ?? null, pilotOnly: Boolean(args['pilot-only']), seed: args.seed ?? DEFAULT_SEED, resume: Boolean(args.resume), shardCount: Number(args.shards ?? 10) });
+  if (!outputPath) throw new Error('Usage: visual-benchmark-shards.mjs --input <fixture> --output <directory> [--cohort all-500|all-800|COHORT] [--pilot <fixture>] [--pilot-only]');
+  const manifest = await generateShards({ inputPath, outputPath, cohort: args.cohort ?? 'all-500', pilotPath: args.pilot ?? null, pilotOnly: Boolean(args['pilot-only']), seed: args.seed ?? DEFAULT_SEED, resume: Boolean(args.resume), shardCount: Number(args.shards ?? 10) });
   process.stdout.write(`Generated ${manifest.counts.total} assignments in ${manifest.shards.length} shards (${manifest.counts.development}/${manifest.counts.validation}/${manifest.counts.evaluation} split; ${manifest.counts.overlap} overlap).\n`);
 }
 

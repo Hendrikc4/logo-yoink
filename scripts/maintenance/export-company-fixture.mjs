@@ -19,6 +19,14 @@ if (!sourceProject || !originalSamplePath || !Number.isInteger(additionalCount) 
 const originalPayload = JSON.parse(await readFile(resolve(originalSamplePath), 'utf8'));
 const originalRows = Array.isArray(originalPayload) ? originalPayload : originalPayload.rows;
 if (!Array.isArray(originalRows)) throw new Error('Original sample must be an array or contain a rows array.');
+let curatedMajorBrands = [];
+try {
+  const existingPayload = JSON.parse(await readFile(outputPath, 'utf8'));
+  curatedMajorBrands = existingPayload.companies?.filter(row => row.cohort === 'major-brands-300') ?? [];
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
+if (curatedMajorBrands.length !== 300) throw new Error(`Refusing to rewrite the expanded fixture without its 300 curated major-brand rows at ${outputPath}.`);
 
 const fetchCount = Math.max(additionalCount + originalRows.length + 100, additionalCount * 2);
 const escapedSeed = seed.replaceAll("'", "''");
@@ -53,12 +61,13 @@ if (additions.length !== additionalCount) throw new Error(`Only found ${addition
 const companies = [
   ...originalRows.map(row => ({ entity_id: String(row.entity_id), name: String(row.name).trim(), website: String(row.website).trim(), cohort: 'original-100' })),
   ...additions.map(row => ({ ...row, cohort: 'additional-400' })),
+  ...curatedMajorBrands,
 ];
 const payload = {
   generatedAt: new Date().toISOString(),
-  source: 'canonical_v2.startup_directory_projection',
+  source: 'canonical_v2.startup_directory_projection+major-brands-curated',
   seed,
-  counts: { total: companies.length, original: originalRows.length, additional: additions.length },
+  counts: { total: companies.length, original: originalRows.length, additional: additions.length, major_brands: curatedMajorBrands.length },
   companies,
 };
 await mkdir(dirname(outputPath), { recursive: true });

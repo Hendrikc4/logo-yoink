@@ -37,7 +37,7 @@ Score an existing run with reviewer labels:
   node scripts/benchmark/benchmark.mjs score --run runs/a --labels review.jsonl [--output summary-labeled.json]
 
 Run options:
-  --cohort NAME         original-100, holdout-100, remaining-300, or all-500
+  --cohort NAME         original-100, holdout-100, remaining-300, major-brands-300, all-500, or all-800
   --output DIR          Run directory (default: runs/<UTC timestamp>-<cohort>)
   --concurrency N       Domains processed concurrently (default: 4)
   --timeout-ms N        Per-request extractor timeout (default: 10000)
@@ -94,14 +94,17 @@ function seededRank(entityId) {
 export function selectCohort(companies, cohortName) {
   const original = companies.filter(company => company.cohort === 'original-100');
   const additional = companies.filter(company => company.cohort === 'additional-400');
+  const majorBrands = companies.filter(company => company.cohort === 'major-brands-300');
   const rankedAdditional = [...additional].sort((a, b) => seededRank(a.entity_id).localeCompare(seededRank(b.entity_id)) || a.entity_id.localeCompare(b.entity_id));
   const holdoutIds = new Set(rankedAdditional.slice(0, 100).map(company => company.entity_id));
   switch (cohortName) {
     case 'original-100': return original;
     case 'holdout-100': return companies.filter(company => holdoutIds.has(company.entity_id));
     case 'remaining-300': return companies.filter(company => company.cohort === 'additional-400' && !holdoutIds.has(company.entity_id));
-    case 'all-500': return companies;
-    default: throw new Error(`Unknown cohort '${cohortName}'. Expected original-100, holdout-100, remaining-300, or all-500.`);
+    case 'major-brands-300': return majorBrands;
+    case 'all-500': return [...original, ...additional];
+    case 'all-800': return companies;
+    default: throw new Error(`Unknown cohort '${cohortName}'. Expected original-100, holdout-100, remaining-300, major-brands-300, all-500, or all-800.`);
   }
 }
 

@@ -1,8 +1,15 @@
-# 500-Company Candidate Logo Labeling Plan
+# Company Candidate Logo Labeling Plan
 
-Status: labeling workflow implemented; 500-company labeling not yet complete  
+Status: labeling workflow implemented; expanded 800-company capture and labeling not yet complete
 Dataset source: [`fixtures/companies-500.json`](../fixtures/companies-500.json)  
 Tool: [`scripts/review/visual-label-sheets.mjs`](../scripts/review/visual-label-sheets.mjs)
+
+The fixture retains the frozen `original-100` and `additional-400` cohorts and
+adds 300 curated major consumer and enterprise brands as `major-brands-300`.
+Use the benchmark runner's `major-brands-300` or `all-800` cohort explicitly;
+the historical `all-500` cohort remains available for reproducing prior runs.
+Run `npm run fixtures:validate` before capture. No network scrape, labeling, or
+scoring is part of the dataset expansion commit.
 
 ## Goal
 

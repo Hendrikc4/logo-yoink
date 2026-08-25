@@ -216,12 +216,14 @@ src/server.mjs            serve the tiny local web app and API
 src/cli.mjs               print results or download the winner
 ```
 
-The repository also includes frozen 100- and 500-company cohorts for repeatable extraction experiments. Start a benchmark with:
+The repository includes frozen 100-, 500-, and expanded 800-company cohorts for repeatable extraction experiments. The expanded fixture keeps the original 500 rows and adds a curated `major-brands-300` cohort spanning consumer, enterprise, healthcare, finance, media, infrastructure, and multiple geographies. Start a benchmark with:
 
 ```bash
 npm run benchmark -- --cohort original-100 --output runs/my-run
 npm run review-montage -- runs/my-run
 ```
+
+The expanded brand cohort is selected with `--cohort major-brands-300`; the complete fixture uses `--cohort all-800`. Validate the deterministic source data with `npm run fixtures:validate` before starting any network capture.
 
 See [`docs/`](docs/) for the benchmark methodology, experiment logs, and visual-labeling workflow.
 

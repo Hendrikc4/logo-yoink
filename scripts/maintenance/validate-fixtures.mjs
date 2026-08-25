@@ -3,9 +3,10 @@ import { readFile } from 'node:fs/promises';
 const payload = JSON.parse(await readFile(new URL('../../fixtures/companies-500.json', import.meta.url), 'utf8'));
 const companies = payload.companies;
 if (!Array.isArray(companies)) throw new Error('Fixture companies must be an array.');
-if (companies.length !== 500) throw new Error(`Expected 500 companies, found ${companies.length}.`);
-if (companies.filter(row => row.cohort === 'original-100').length !== 100) throw new Error('Expected 100 original benchmark companies.');
-if (companies.filter(row => row.cohort === 'additional-400').length !== 400) throw new Error('Expected 400 additional companies.');
+if (companies.length !== payload.counts?.total) throw new Error(`Fixture counts.total mismatch: metadata=${payload.counts?.total}, rows=${companies.length}.`);
+for (const [cohort, expected] of Object.entries({ 'original-100': payload.counts?.original, 'additional-400': payload.counts?.additional, 'major-brands-300': payload.counts?.major_brands })) {
+  if (companies.filter(row => row.cohort === cohort).length !== expected) throw new Error(`Expected ${expected} ${cohort} companies.`);
+}
 
 const ids = new Set();
 const domains = new Set();
@@ -23,7 +24,12 @@ console.log(`Validated ${companies.length} unique company fixtures.`);
 
 function normalizeDomain(value) {
   try {
-    return new URL(/^https?:\/\//i.test(String(value)) ? String(value) : `https://${value}`).hostname.replace(/^www\./i, '').toLowerCase();
+    const raw = String(value).trim();
+    const url = new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`);
+    if (url.username || url.password || url.pathname !== '/' || url.search || url.hash) return null;
+    const hostname = url.hostname.replace(/^www\./i, '').toLowerCase();
+    if (!hostname.includes('.') || !hostname.split('.').every(label => /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i.test(label))) return null;
+    return hostname;
   } catch {
     return null;
   }
