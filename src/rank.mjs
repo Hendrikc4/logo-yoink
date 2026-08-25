@@ -5,7 +5,7 @@ const SOURCE_WEIGHT = {
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
-const RANKING_VERSION = 5;
+const RANKING_VERSION = 6;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
 function round(value) { return Math.round(Math.max(0, Math.min(100, value)) * 10) / 10; }
@@ -34,6 +34,8 @@ function firstPartyPlacedLogoPath(item) {
 
 const AUTHORITATIVE_SOURCES = ['schema', 'og-logo', 'microdata'];
 const FAVICON_SOURCES = ['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon'];
+const DECLARED_ICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon']);
+const DECLARED_ICON_MIN_SCORE = 49;
 const PLATFORM_NAMES = ['namecheap', 'matomo', 'piwik', 'wix', 'vercel', 'webflow', 'squarespace', 'shopify', 'godaddy', 'netlify', 'framer'];
 const KNOWN_GENERIC_HASHES = new Map([
   ['33c1436f8c40ca2582d091c449fccc34ed9bf73f02526c5fdef44f4f06c6321b', 'Wix default favicon'],
@@ -216,7 +218,16 @@ export function iconEffectiveScore(candidate) {
 function pickIconCandidate(eligible, allCandidates) {
   // ponytail: rendered inline SVG twins beat serialized static copies of the same geometry,
   // whose serialization can render blank outside the page.
-  const winner = [...eligible].sort((a, b) => iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes)[0];
+  let winner = [...eligible].sort((a, b) => iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes)[0];
+  // Unlinked DOM squares are often page content that happens to carry a strong filename or alt
+  // match. When the page also declares a viable icon, prefer that bounded first-party signal.
+  // A home-linked DOM mark remains authoritative and is never displaced by this rule.
+  if (winner && ['dom-img', 'dom-picture', 'browser-img'].includes(winner.source) && !winner.evidence?.home_linked) {
+    const declared = eligible.filter(candidate => DECLARED_ICON_SOURCES.has(candidate.source) &&
+      Number(candidate.role_scores?.icon) >= DECLARED_ICON_MIN_SCORE)
+      .sort((a, b) => iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes)[0];
+    if (declared) winner = declared;
+  }
   if (!winner || winner.source !== 'inline-svg') return winner ?? null;
   const twin = allCandidates.find(candidate => candidate.source === 'browser-inline-svg' &&
     !candidate.score_reasons?.some(reason => reason.startsWith('generic exclusion')) &&
@@ -242,6 +253,7 @@ export function rankCandidates(items, options = {}) {
     }
     return b.role_scores[role] - a.role_scores[role] || b.bytes - a.bytes;
   })[0] ?? null]));
+  selectedByRole.icon = pickIconCandidate(eligible.filter(item => item.predicted_roles.includes('icon')), candidates);
   if (!selectedByRole.icon) {
     // A favicon-role candidate is the bounded fallback for the canonical icon when no true icon
     // candidate qualifies. Prefer the asset intended for favicon use, not an arbitrary source.
@@ -249,9 +261,6 @@ export function rankCandidates(items, options = {}) {
       Math.min(Number(item.width) || Infinity, Number(item.height) || Infinity) >= ICON_FALLBACK_MIN_EDGE)
       .sort((a, b) => faviconRankScore(b) - faviconRankScore(a) || b.bytes - a.bytes)[0];
     if (fallback) selectedByRole.icon = fallback;
-  }
-  if (selectedByRole.icon?.source === 'inline-svg') {
-    selectedByRole.icon = pickIconCandidate([selectedByRole.icon], candidates);
   }
   // Legacy API/CLI consumers still receive the independently ranked best favicon. It does not
   // participate in the canonical `assets` model, whose only roles are icon and logo.

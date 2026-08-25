@@ -1,0 +1,79 @@
+[
+  {
+    "entity_id": "80000208-0000-5000-8000-000000000208",
+    "name": "Tencent",
+    "role": "icon",
+    "candidate_id": "35681e2d80300aca",
+    "sheet_id": "sheet-0093-e4236f98",
+    "sheet_number": 11,
+    "decision": "retain_primary_false",
+    "rationale": "Recognizable Tencent blue-square T mark suitable for an icon.",
+    "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+  },
+  {
+    "entity_id": "80000214-0000-5000-8000-000000000214",
+    "name": "Kia",
+    "role": "icon",
+    "candidate_id": "c923c93b4c781cde",
+    "sheet_id": "sheet-0083-1a258253",
+    "sheet_number": 12,
+    "decision": "retain_primary_false",
+    "rationale": "Low-resolution but recognizable Kia emblem suitable for an icon/favicon.",
+    "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+  },
+  {
+    "entity_id": "80000061-0000-5000-8000-000000000061",
+    "name": "Marks & Spencer",
+    "role": "icon",
+    "candidate_id": "010ed517d692b0fb",
+    "sheet_id": "sheet-0163-de43e7a9",
+    "sheet_number": 11,
+    "decision": "retain_primary_false",
+    "rationale": "Compact M&S wordmark is a genuine usable brand mark.",
+    "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+  },
+  {
+    "entity_id": "80000141-0000-5000-8000-000000000141",
+    "name": "Wells Fargo",
+    "role": "icon",
+    "candidate_id": "b37f3f30f2986037",
+    "sheet_id": "sheet-0118-26610986",
+    "sheet_number": 16,
+    "decision": "retain_primary_false",
+    "rationale": "Official compact Wells Fargo stacked wordmark tile.",
+    "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+  },
+  {
+    "entity_id": "80000144-0000-5000-8000-000000000144",
+    "name": "Morgan Stanley",
+    "role": "icon",
+    "candidate_id": "5be5b013c9245c11",
+    "sheet_id": "sheet-0113-18278d3c",
+    "sheet_number": 6,
+    "decision": "retain_primary_false",
+    "rationale": "Official compact Morgan Stanley stacked wordmark tile.",
+    "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+  },
+  {
+    "entity_id": "80000159-0000-5000-8000-000000000159",
+    "name": "Johnson & Johnson",
+    "role": "icon",
+    "candidate_id": "39769783154a5309",
+    "sheet_id": "sheet-0121-0729dfcb",
+    "sheet_number": 5,
+    "decision": "retain_primary_false",
+    "rationale": "Genuine compact J&J corporate wordmark.",
+    "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+  },
+  {
+    "entity_id": "80000173-0000-5000-8000-000000000173",
+    "name": "BBC",
+    "role": "wide",
+    "candidate_id": "28c95768c91876fd",
+    "sheet_id": "sheet-0114-1c056fc7",
+    "sheet_number": 8,
+    "decision": "retain_primary_false",
+    "rationale": "Genuine horizontal BBC three-box wordmark.",
+    "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+  }
+]

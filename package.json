@@ -27,6 +27,7 @@
     "visual-benchmark:capture": "node scripts/benchmark/visual-capture.mjs",
     "visual-benchmark:review": "node scripts/review/visual-review-packet.mjs",
     "visual-benchmark:label-sheets": "node scripts/review/visual-label-sheets.mjs",
+    "visual-benchmark:label-safety": "node scripts/review/apply-visual-label-safety.mjs",
     "visual-benchmark:validate": "node scripts/benchmark/visual-benchmark-validate.mjs",
     "visual-benchmark:merge": "node scripts/benchmark/visual-benchmark-merge.mjs",
     "visual-benchmark:agreement": "node scripts/review/visual-benchmark-agreement.mjs",

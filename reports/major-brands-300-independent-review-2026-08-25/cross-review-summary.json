@@ -1,0 +1,174 @@
+{
+  "cross_reviewed_slots": 101,
+  "cross_verdicts": {
+    "incorrect": 76,
+    "correct": 19,
+    "ambiguous": 6
+  },
+  "accepted_corrected_slots": [
+    {
+      "name": "American Express",
+      "role": "wide",
+      "candidate_id": "5c3b94e12eecc2f6",
+      "sheet_id": "sheet-0062-005ea95e",
+      "sheet_number": 21
+    },
+    {
+      "name": "Shopify",
+      "role": "wide",
+      "candidate_id": "d315daa60712f05a",
+      "sheet_id": "sheet-0161-85c5d888",
+      "sheet_number": 11
+    },
+    {
+      "name": "Danone",
+      "role": "icon",
+      "candidate_id": "a677bc8a09509c85",
+      "sheet_id": "sheet-0151-cbb7323d",
+      "sheet_number": 1
+    },
+    {
+      "name": "Subway",
+      "role": "wide",
+      "candidate_id": "1112906941ab73cc",
+      "sheet_id": "sheet-0159-fb0972d0",
+      "sheet_number": 13
+    },
+    {
+      "name": "Roche",
+      "role": "icon",
+      "candidate_id": "eeca10f72344b8f2",
+      "sheet_id": "sheet-0138-2d2eabca",
+      "sheet_number": 7
+    },
+    {
+      "name": "Mitsubishi Motors",
+      "role": "icon",
+      "candidate_id": "b8040176248405b8",
+      "sheet_id": "sheet-0155-1a66009e",
+      "sheet_number": 10
+    },
+    {
+      "name": "Tata",
+      "role": "icon",
+      "candidate_id": "7f9d7c39fe423772",
+      "sheet_id": "sheet-0158-512060e7",
+      "sheet_number": 4
+    },
+    {
+      "name": "Stripe",
+      "role": "icon",
+      "candidate_id": "ae6ecee115de343d",
+      "sheet_id": "sheet-0031-67b820d7",
+      "sheet_number": 6
+    },
+    {
+      "name": "Stripe",
+      "role": "wide",
+      "candidate_id": "5bc8c4e32a1c8faa",
+      "sheet_id": "sheet-0031-67b820d7",
+      "sheet_number": 5
+    },
+    {
+      "name": "Mondelez International",
+      "role": "icon",
+      "candidate_id": "5323f5593bc9e95a",
+      "sheet_id": "sheet-0012-ba534f9d",
+      "sheet_number": 7
+    },
+    {
+      "name": "Hasbro",
+      "role": "icon",
+      "candidate_id": "e14c5bb68b507198",
+      "sheet_id": "sheet-0005-431dc58d",
+      "sheet_number": 5
+    },
+    {
+      "name": "edX",
+      "role": "icon",
+      "candidate_id": "b95a60786811e09a",
+      "sheet_id": "sheet-0023-39726436",
+      "sheet_number": 11
+    }
+  ],
+  "rejected_cross_corrections": [
+    {
+      "entity_id": "80000208-0000-5000-8000-000000000208",
+      "name": "Tencent",
+      "role": "icon",
+      "candidate_id": "35681e2d80300aca",
+      "sheet_id": "sheet-0093-e4236f98",
+      "sheet_number": 11,
+      "decision": "retain_primary_false",
+      "rationale": "Recognizable Tencent blue-square T mark suitable for an icon.",
+      "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+    },
+    {
+      "entity_id": "80000214-0000-5000-8000-000000000214",
+      "name": "Kia",
+      "role": "icon",
+      "candidate_id": "c923c93b4c781cde",
+      "sheet_id": "sheet-0083-1a258253",
+      "sheet_number": 12,
+      "decision": "retain_primary_false",
+      "rationale": "Low-resolution but recognizable Kia emblem suitable for an icon/favicon.",
+      "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+    },
+    {
+      "entity_id": "80000061-0000-5000-8000-000000000061",
+      "name": "Marks & Spencer",
+      "role": "icon",
+      "candidate_id": "010ed517d692b0fb",
+      "sheet_id": "sheet-0163-de43e7a9",
+      "sheet_number": 11,
+      "decision": "retain_primary_false",
+      "rationale": "Compact M&S wordmark is a genuine usable brand mark.",
+      "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+    },
+    {
+      "entity_id": "80000141-0000-5000-8000-000000000141",
+      "name": "Wells Fargo",
+      "role": "icon",
+      "candidate_id": "b37f3f30f2986037",
+      "sheet_id": "sheet-0118-26610986",
+      "sheet_number": 16,
+      "decision": "retain_primary_false",
+      "rationale": "Official compact Wells Fargo stacked wordmark tile.",
+      "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+    },
+    {
+      "entity_id": "80000144-0000-5000-8000-000000000144",
+      "name": "Morgan Stanley",
+      "role": "icon",
+      "candidate_id": "5be5b013c9245c11",
+      "sheet_id": "sheet-0113-18278d3c",
+      "sheet_number": 6,
+      "decision": "retain_primary_false",
+      "rationale": "Official compact Morgan Stanley stacked wordmark tile.",
+      "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+    },
+    {
+      "entity_id": "80000159-0000-5000-8000-000000000159",
+      "name": "Johnson & Johnson",
+      "role": "icon",
+      "candidate_id": "39769783154a5309",
+      "sheet_id": "sheet-0121-0729dfcb",
+      "sheet_number": 5,
+      "decision": "retain_primary_false",
+      "rationale": "Genuine compact J&J corporate wordmark.",
+      "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+    },
+    {
+      "entity_id": "80000173-0000-5000-8000-000000000173",
+      "name": "BBC",
+      "role": "wide",
+      "candidate_id": "28c95768c91876fd",
+      "sheet_id": "sheet-0114-1c056fc7",
+      "sheet_number": 8,
+      "decision": "retain_primary_false",
+      "rationale": "Genuine horizontal BBC three-box wordmark.",
+      "root_reason": "Third-pass visual review found a product/app mark, clipped wordmark, or stacked wordmark unsuitable for the requested icon/wide role."
+    }
+  ],
+  "adjudication_rows": 94
+}

@@ -22,14 +22,18 @@ async function preview(candidate, width) {
   try {
     return await sharp(assetPath, { density: 144, limitInputPixels: 40_000_000, animated: false })
       .resize({ width: width - 24, height: 58, fit: 'contain', withoutEnlargement: true }).png().toBuffer();
-  } catch {
-    if (!/\.ico$/i.test(assetPath)) return null;
+  } catch (sharpError) {
+    if (!/\.ico$/i.test(assetPath)) {
+      throw new Error(`Cannot render review asset ${candidate.asset_path}: ${sharpError.message}`);
+    }
     try {
       const { stdout } = await execFileAsync('ffmpeg', ['-v', 'error', '-i', assetPath, '-frames:v', '1', '-f', 'image2pipe', '-vcodec', 'png', 'pipe:1'], {
         encoding: 'buffer', maxBuffer: 8 * 1024 * 1024,
       });
       return await sharp(stdout).resize({ width: width - 24, height: 58, fit: 'contain', withoutEnlargement: true }).png().toBuffer();
-    } catch { return null; }
+    } catch (icoError) {
+      throw new Error(`Cannot render review asset ${candidate.asset_path}: ${icoError.message}`);
+    }
   }
 }
 

@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-25",
+  "cohort": "major-brands-300",
+  "labels": {
+    "candidate_count": 2732,
+    "sha256": "c626fa829de7268911e949f359a74f71e6494c0c5b36cdacfbd271884c8bf4b2",
+    "identity_counts": {
+      "correct": 1019,
+      "wrong": 1682,
+      "ambiguous": 31
+    },
+    "safety_counts": {
+      "correct_brand": 1019,
+      "not_logo": 1149,
+      "wrong_brand": 261,
+      "related_brand": 272,
+      "unjudgeable": 31
+    }
+  },
+  "review": {
+    "initial_visual_judgments": 2732,
+    "selected_slot_cross_reviews": 101,
+    "accepted_cross_corrections": 12,
+    "rejected_cross_corrections": 7,
+    "changed_selection_pair_rows": 22,
+    "pair_adjudications_applied": 30,
+    "exhaustive_negative_safety_judgments": 1689
+  },
+  "ranking_v6": {
+    "hypothesis": "When an unlinked DOM image wins icon ranking and a viable declared icon exists, prefer the declared icon; never displace a home-linked DOM logo.",
+    "development": {
+      "baseline": {
+        "score": 63.7,
+        "selected_slots": 207,
+        "correct_selected_slots": 158,
+        "strict_selected_precision": 0.763285,
+        "wrong_brand_domains": 3,
+        "selected_classifications": {
+          "correct_brand": 173,
+          "related_brand": 8,
+          "wrong_brand": 3,
+          "not_logo": 22,
+          "unjudgeable": 1
+        },
+        "icon": {
+          "denominator": 130,
+          "coverage": {
+            "numerator": 111,
+            "rate": 0.8538461538461538
+          },
+          "top1_correctness": {
+            "numerator": 93,
+            "rate": 0.7153846153846154
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 89.5,
+            "rate": 0.6884615384615385
+          }
+        },
+        "wide": {
+          "denominator": 130,
+          "coverage": {
+            "numerator": 76,
+            "rate": 0.5846153846153846
+          },
+          "top1_correctness": {
+            "numerator": 65,
+            "rate": 0.5
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 53,
+            "rate": 0.4076923076923077
+          }
+        }
+      },
+      "treatment": {
+        "score": 64.51,
+        "selected_slots": 207,
+        "correct_selected_slots": 162,
+        "strict_selected_precision": 0.782609,
+        "wrong_brand_domains": 3,
+        "selected_classifications": {
+          "correct_brand": 177,
+          "wrong_brand": 3,
+          "related_brand": 6,
+          "not_logo": 20,
+          "unjudgeable": 1
+        },
+        "icon": {
+          "denominator": 130,
+          "coverage": {
+            "numerator": 111,
+            "rate": 0.8538461538461538
+          },
+          "top1_correctness": {
+            "numerator": 97,
+            "rate": 0.7461538461538462
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 94,
+            "rate": 0.7230769230769231
+          }
+        },
+        "wide": {
+          "denominator": 130,
+          "coverage": {
+            "numerator": 76,
+            "rate": 0.5846153846153846
+          },
+          "top1_correctness": {
+            "numerator": 65,
+            "rate": 0.5
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 53,
+            "rate": 0.4076923076923077
+          }
+        }
+      }
+    },
+    "validation": {
+      "baseline": {
+        "score": 66.33,
+        "selected_slots": 76,
+        "correct_selected_slots": 59,
+        "strict_selected_precision": 0.776316,
+        "wrong_brand_domains": 1,
+        "selected_classifications": {
+          "correct_brand": 62,
+          "not_logo": 8,
+          "unjudgeable": 2,
+          "related_brand": 3,
+          "wrong_brand": 1
+        },
+        "icon": {
+          "denominator": 47,
+          "coverage": {
+            "numerator": 43,
+            "rate": 0.9148936170212766
+          },
+          "top1_correctness": {
+            "numerator": 36,
+            "rate": 0.7659574468085106
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 35.5,
+            "rate": 0.7553191489361702
+          }
+        },
+        "wide": {
+          "denominator": 47,
+          "coverage": {
+            "numerator": 28,
+            "rate": 0.5957446808510638
+          },
+          "top1_correctness": {
+            "numerator": 23,
+            "rate": 0.48936170212765956
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 20,
+            "rate": 0.425531914893617
+          }
+        }
+      },
+      "treatment": {
+        "score": 68.99,
+        "selected_slots": 76,
+        "correct_selected_slots": 60,
+        "strict_selected_precision": 0.789474,
+        "wrong_brand_domains": 0,
+        "selected_classifications": {
+          "correct_brand": 63,
+          "not_logo": 8,
+          "unjudgeable": 2,
+          "related_brand": 3
+        },
+        "icon": {
+          "denominator": 47,
+          "coverage": {
+            "numerator": 43,
+            "rate": 0.9148936170212766
+          },
+          "top1_correctness": {
+            "numerator": 37,
+            "rate": 0.7872340425531915
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 36.5,
+            "rate": 0.776595744680851
+          }
+        },
+        "wide": {
+          "denominator": 47,
+          "coverage": {
+            "numerator": 28,
+            "rate": 0.5957446808510638
+          },
+          "top1_correctness": {
+            "numerator": 23,
+            "rate": 0.48936170212765956
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 20,
+            "rate": 0.425531914893617
+          }
+        }
+      }
+    },
+    "evaluation": {
+      "baseline": {
+        "score": 68.55,
+        "selected_slots": 85,
+        "correct_selected_slots": 61,
+        "strict_selected_precision": 0.717647,
+        "wrong_brand_domains": 0,
+        "selected_classifications": {
+          "correct_brand": 69,
+          "related_brand": 5,
+          "not_logo": 8,
+          "unjudgeable": 3
+        },
+        "icon": {
+          "denominator": 50,
+          "coverage": {
+            "numerator": 41,
+            "rate": 0.82
+          },
+          "top1_correctness": {
+            "numerator": 33,
+            "rate": 0.66
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 32.5,
+            "rate": 0.65
+          }
+        },
+        "wide": {
+          "denominator": 50,
+          "coverage": {
+            "numerator": 33,
+            "rate": 0.66
+          },
+          "top1_correctness": {
+            "numerator": 28,
+            "rate": 0.56
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 22,
+            "rate": 0.44
+          }
+        }
+      },
+      "treatment": {
+        "score": 70.05,
+        "selected_slots": 85,
+        "correct_selected_slots": 64,
+        "strict_selected_precision": 0.752941,
+        "wrong_brand_domains": 0,
+        "selected_classifications": {
+          "correct_brand": 73,
+          "not_logo": 7,
+          "related_brand": 4,
+          "unjudgeable": 1
+        },
+        "icon": {
+          "denominator": 50,
+          "coverage": {
+            "numerator": 41,
+            "rate": 0.82
+          },
+          "top1_correctness": {
+            "numerator": 36,
+            "rate": 0.72
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 35.5,
+            "rate": 0.71
+          }
+        },
+        "wide": {
+          "denominator": 50,
+          "coverage": {
+            "numerator": 33,
+            "rate": 0.66
+          },
+          "top1_correctness": {
+            "numerator": 28,
+            "rate": 0.56
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 22,
+            "rate": 0.44
+          }
+        }
+      }
+    },
+    "all_300": {
+      "baseline": {
+        "score": 64.85,
+        "selected_slots": 368,
+        "correct_selected_slots": 278,
+        "strict_selected_precision": 0.755435,
+        "wrong_brand_domains": 4,
+        "selected_classifications": {
+          "correct_brand": 304,
+          "not_logo": 38,
+          "related_brand": 16,
+          "wrong_brand": 4,
+          "unjudgeable": 6
+        },
+        "icon": {
+          "denominator": 227,
+          "coverage": {
+            "numerator": 195,
+            "rate": 0.8590308370044053
+          },
+          "top1_correctness": {
+            "numerator": 162,
+            "rate": 0.7136563876651982
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 157.5,
+            "rate": 0.6938325991189427
+          }
+        },
+        "wide": {
+          "denominator": 227,
+          "coverage": {
+            "numerator": 137,
+            "rate": 0.6035242290748899
+          },
+          "top1_correctness": {
+            "numerator": 116,
+            "rate": 0.5110132158590308
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 95,
+            "rate": 0.4185022026431718
+          }
+        }
+      },
+      "treatment": {
+        "score": 66.19,
+        "selected_slots": 368,
+        "correct_selected_slots": 286,
+        "strict_selected_precision": 0.777174,
+        "wrong_brand_domains": 3,
+        "selected_classifications": {
+          "correct_brand": 313,
+          "not_logo": 35,
+          "wrong_brand": 3,
+          "related_brand": 13,
+          "unjudgeable": 4
+        },
+        "icon": {
+          "denominator": 227,
+          "coverage": {
+            "numerator": 195,
+            "rate": 0.8590308370044053
+          },
+          "top1_correctness": {
+            "numerator": 170,
+            "rate": 0.748898678414097
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 166,
+            "rate": 0.7312775330396476
+          }
+        },
+        "wide": {
+          "denominator": 227,
+          "coverage": {
+            "numerator": 137,
+            "rate": 0.6035242290748899
+          },
+          "top1_correctness": {
+            "numerator": 116,
+            "rate": 0.5110132158590308
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 95,
+            "rate": 0.4185022026431718
+          }
+        }
+      }
+    },
+    "changed_slots": {
+      "development": 6,
+      "validation": 3,
+      "evaluation": 5,
+      "total": 14
+    }
+  },
+  "frozen_500_delta_review": {
+    "changed_slots": 8,
+    "gains": 5,
+    "neutral": 3,
+    "regressions": 0,
+    "ambiguous": 0,
+    "wrong_brand_removals": 2
+  },
+  "cost": {
+    "new_network_requests": 0,
+    "new_downloaded_bytes": 0,
+    "api_model_calls": 0,
+    "api_dollars": 0,
+    "review_judgments": 4574,
+    "latency_note": "Offline replay and Codex subscription review; per-model token, dollar, and latency telemetry is unavailable."
+  }
+}

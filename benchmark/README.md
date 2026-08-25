@@ -50,6 +50,7 @@ npm run visual-benchmark:validate -- --help
 npm run visual-benchmark:merge -- --help
 npm run visual-benchmark:review -- --help
 npm run visual-benchmark:label-sheets -- --help
+npm run visual-benchmark:label-safety -- --help
 npm run visual-benchmark:agreement -- --help
 npm run visual-benchmark:replay -- --help
 ```
@@ -62,6 +63,8 @@ Additional commands without package aliases are internal, historical, or migrati
 - Keep raw/generated run directories under `runs/`.
 - Do not commit candidate data URLs; benchmark assets should be content-addressed files.
 - Treat evaluation splits as holdouts and avoid using their labels to tune ranking rules.
+- Candidate-only omissions are not wrong-brand evidence. Exhaustive label sets must classify every negative as `wrong_brand`, `related_brand`, `not_logo`, or `unjudgeable` before scoring. A selected `unclassified_negative` makes the score incomplete.
+- Run the selected-role scoring adapter after candidate review so a correct identity in the wrong visual role remains a role mismatch instead of being rewritten as a wrong brand.
 - Treat `selected_by_role` as the canonical icon+wide metric surface in benchmark schema v2. Legacy favicon availability and selection live under explicitly named compatibility fields and do not contribute to canonical product metrics.
 - Frozen published metrics are scoped by `benchmarks/frozen-baseline-qualification.json`; a ranking-version change must update that qualification review without rewriting the captured claims.
 - Validate fixtures and benchmark records before comparing results: `npm test` includes fixture validation.

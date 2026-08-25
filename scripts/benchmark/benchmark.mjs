@@ -413,13 +413,15 @@ function qualityScore(results, labelRecords, performance, thresholds) {
   }
   let wrongBrandDomains = 0;
   const selectedSafetyClasses = {};
+  let selectedSafetyComplete = true;
   for (const result of reachable) {
     let domainWrongBrand = false;
     for (const role of ['icon', 'wide']) {
       const label = labels.get(`${result.entity_id}\0${result.selected_by_role?.[role]}\0${role}`);
       if (!label) continue;
-      const classification = safetyClass(label) ?? (legacyIdentityWrong(label) ? 'legacy_wrong' : null);
+      const classification = safetyClass(label) ?? (identityCorrect(label) ? 'legacy_correct' : legacyIdentityWrong(label) ? 'legacy_wrong' : null);
       if (classification) selectedSafetyClasses[classification] = (selectedSafetyClasses[classification] ?? 0) + 1;
+      if (!classification || classification === 'unclassified_negative') selectedSafetyComplete = false;
       if (wrongBrandSafety(label)) domainWrongBrand = true;
     }
     if (domainWrongBrand) wrongBrandDomains++;
@@ -443,16 +445,17 @@ function qualityScore(results, labelRecords, performance, thresholds) {
     efficiency: 10 * efficiencyRate,
   };
   const roundedPoints = Object.fromEntries(Object.entries(points).map(([key, value]) => [key, Math.round(value * 100) / 100]));
+  const scoreComplete = reviewComplete && selectedSafetyComplete;
   return {
-    value: reviewComplete ? Math.round(Object.values(points).reduce((sum, value) => sum + value, 0) * 100) / 100 : null,
+    value: scoreComplete ? Math.round(Object.values(points).reduce((sum, value) => sum + value, 0) * 100) / 100 : null,
     max: 100,
-    status: reviewComplete ? 'complete' : 'incomplete',
+    status: scoreComplete ? 'complete' : 'incomplete',
     formula: 'coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10',
     points: roundedPoints,
     role_components: roleComponents,
-    safety: { wrong_brand_domains: wrongBrandDomains, denominator: reachable.length, wrong_brand_rate: wrongBrandRate, selected_classifications: selectedSafetyClasses, scoring: '10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation.' },
+    safety: { complete: selectedSafetyComplete, wrong_brand_domains: wrongBrandDomains, denominator: reachable.length, wrong_brand_rate: wrongBrandRate, selected_classifications: selectedSafetyClasses, scoring: '10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete.' },
     efficiency: { rate: efficiencyRate, available_inputs: availableEfficiency.length, inputs: efficiencyFractions, scoring: 'Mean of available linearly normalized inputs; missing inputs are disclosed and excluded.' },
-    labels: { records: labelRecords.length, role_labels: labels.size, selected_roles: selectedForReview.length, selected_roles_labeled: labeledSelections.length, complete: reviewComplete },
+    labels: { records: labelRecords.length, role_labels: labels.size, selected_roles: selectedForReview.length, selected_roles_labeled: labeledSelections.length, role_complete: reviewComplete, safety_complete: selectedSafetyComplete, complete: scoreComplete },
   };
 }
 

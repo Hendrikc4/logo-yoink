@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { compareResults, parseArgs, selectCohort, summarizeResults } from '../scripts/benchmark/benchmark.mjs';
 import { adaptSelectedRoleLabels } from '../scripts/benchmark/selected-role-scoring-adapter.mjs';
 import { applyCandidateLabelAdjudications } from '../scripts/benchmark/apply-candidate-label-adjudications.mjs';
+import { analyzeRoleLosses } from '../scripts/experiments/analyze-major-brands-labels.mjs';
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
 
@@ -86,7 +87,7 @@ test('withholds a quality score until every selected role has a role-specific la
   ]).benchmarkScore;
   assert.equal(partial.status, 'incomplete');
   assert.equal(partial.value, null);
-  assert.deepEqual(partial.labels, { records: 1, role_labels: 1, selected_roles: 2, selected_roles_labeled: 1, complete: false });
+  assert.deepEqual(partial.labels, { records: 1, role_labels: 1, selected_roles: 2, selected_roles_labeled: 1, role_complete: false, safety_complete: true, complete: false });
 });
 
 test('selected-role adapter makes reviewed negatives and role mismatches explicit without changing identity safety', () => {
@@ -124,7 +125,7 @@ test('selected-role adapter completes canonical scoring with explicit false slot
   const summary = summarizeResults(results, {}, adaptSelectedRoleLabels(results, labels)).benchmarkScore;
   assert.equal(summary.status, 'complete');
   assert.equal(summary.value, 50);
-  assert.deepEqual(summary.labels, { records: 4, role_labels: 2, selected_roles: 2, selected_roles_labeled: 2, complete: true });
+  assert.deepEqual(summary.labels, { records: 4, role_labels: 2, selected_roles: 2, selected_roles_labeled: 2, role_complete: true, safety_complete: true, complete: true });
   assert.equal(summary.safety.wrong_brand_domains, 1);
 });
 
@@ -140,6 +141,19 @@ test('explicit safety classes separate non-logo errors from wrong-brand safety',
   const summary = summarizeResults(results, {}, labels).benchmarkScore;
   assert.equal(summary.safety.wrong_brand_domains, 1);
   assert.deepEqual(summary.safety.selected_classifications, { not_logo: 1, wrong_brand: 1 });
+});
+
+test('withholds a quality score when a selected negative has not been safety-classified', () => {
+  const results = [result('unknown-negative', [candidate('asset', 'wide')], { wide: 'asset' })];
+  const labels = [{
+    entity_id: 'unknown-negative', candidate_id: 'asset', identity: 'wrong', role: 'wide', correct: false,
+    safety_class: 'unclassified_negative', usability: 'unusable',
+  }];
+  const summary = summarizeResults(results, {}, labels).benchmarkScore;
+  assert.equal(summary.status, 'incomplete');
+  assert.equal(summary.value, null);
+  assert.equal(summary.safety.complete, false);
+  assert.equal(summary.labels.safety_complete, false);
 });
 
 test('selected-role adapter preserves explicit safety classification', () => {
@@ -178,6 +192,26 @@ test('repeat comparison reports availability gains, losses, and flips', () => {
   assert.deepEqual(comparison.role_availability.wide, { gains: 1, losses: 0, net: 1 });
 });
 
+test('role-loss analysis separates ranking, eligibility, discovery, and capture losses', () => {
+  const results = [
+    result('rank', [candidate('bad', 'icon'), candidate('good', 'icon')], { icon: 'bad' }),
+    result('eligible', [candidate('hidden', 'wide', { predicted_roles: [] })], {}),
+    result('missing', [candidate('photo', 'wide')], { wide: 'photo' }),
+    { ...result('blocked', [], {}), reachability: 'http_error' },
+  ];
+  const labels = [
+    { entity_id: 'rank', candidate_id: 'bad', values: { identity: 'wrong', roles: [], safety_class: 'not_logo', usability_light: 'unusable', usability_dark: 'unusable' } },
+    { entity_id: 'rank', candidate_id: 'good', values: { identity: 'correct', roles: ['icon'], safety_class: 'correct_brand', usability_light: 'good', usability_dark: 'good' } },
+    { entity_id: 'eligible', candidate_id: 'hidden', values: { identity: 'correct', roles: ['wide'], safety_class: 'correct_brand', usability_light: 'good', usability_dark: 'good' } },
+    { entity_id: 'missing', candidate_id: 'photo', values: { identity: 'wrong', roles: [], safety_class: 'not_logo', usability_light: 'unusable', usability_dark: 'unusable' } },
+  ];
+  const analysis = analyzeRoleLosses(results, labels);
+  assert.equal(analysis.rows.find(row => row.entity_id === 'rank' && row.role === 'icon').outcome, 'ranking_miss');
+  assert.equal(analysis.rows.find(row => row.entity_id === 'eligible' && row.role === 'wide').outcome, 'eligibility_miss');
+  assert.equal(analysis.rows.find(row => row.entity_id === 'missing' && row.role === 'wide').outcome, 'no_captured_candidate');
+  assert.equal(analysis.rows.find(row => row.entity_id === 'blocked' && row.role === 'icon').outcome, 'capture_failure');
+});
+
 test('contact sheet emits entity-keyed, data-URL-free raster previews', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'logo-yoink-contact-'));
   await mkdir(join(directory, 'assets'));
@@ -191,6 +225,18 @@ test('contact sheet emits entity-keyed, data-URL-free raster previews', async ()
   assert.match(page, /data-entity-id="entity-1"/);
   assert.doesNotMatch(page, /data:image/);
   assert.match(page, /(?:assets\/abc|thumbnails\/candidate-1)\.png/);
+});
+
+test('review montage fails instead of silently emitting blank panels for missing assets', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'logo-yoink-montage-'));
+  const record = result('entity-1', [{
+    ...candidate('candidate-1', 'icon'),
+    asset_path: 'assets/missing.png',
+  }], { icon: 'candidate-1' });
+  await writeFile(join(directory, 'results.jsonl'), `${JSON.stringify(record)}\n`);
+  const processResult = spawnSync(process.execPath, [join(ROOT, 'scripts', 'review', 'review-montage.mjs'), directory], { encoding: 'utf8' });
+  assert.notEqual(processResult.status, 0);
+  assert.match(processResult.stderr, /Cannot render review asset assets\/missing\.png/);
 });
 
 test('review-label builder rejects invalid or unmatched overrides', async () => {

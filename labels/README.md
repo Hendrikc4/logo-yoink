@@ -22,3 +22,12 @@ and 1,857 negative judgments with no uncertain rows. Its SHA-256 is
 `e9e58cc9866af47184b3d8d17748ac6f01dd8d6b37a8e04ca260735a3b409429`.
 The corresponding raw packet remains under the gitignored
 `runs/2026-08-24-major-brands-300-stage-2/` directory.
+
+`major-brands-300-candidate-labels-v4-2026-08-25.jsonl` supersedes v3 for
+quality and ranking claims. Three independent visual-review batches cover all
+2,732 frozen candidates, an exhaustive second pass assigns a concrete safety
+class to every negative, and provenance-checked cross-review adjudications
+resolve selected-slot and changed-selection disagreements. It contains 1,019
+correct, 1,682 wrong, and 31 ambiguous identity judgments. Its SHA-256 is
+`c626fa829de7268911e949f359a74f71e6494c0c5b36cdacfbd271884c8bf4b2`.
+The v3 file remains immutable historical evidence and must not be rewritten.

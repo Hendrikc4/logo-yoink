@@ -8,6 +8,7 @@ import {
   buildLabelSheets, packEntities, parseArgs, prepareEntities,
   validateLabelResponses, validatePacket, validateResponse,
 } from '../scripts/review/visual-label-sheets.mjs';
+import { applyVisualLabelSafety } from '../scripts/review/apply-visual-label-safety.mjs';
 import { validateCanonicalLabel } from '../benchmark/lib/labels.mjs';
 import { validateRecord } from '../scripts/benchmark/visual-benchmark-validate.mjs';
 
@@ -153,6 +154,55 @@ test('expands aliases and emits canonical labels stamped from importer identity 
   assert.equal(wide.values.best_for_role.wide, true);
   assert.equal(wide.values.usability_light, 'good');
   assert.equal(wide.values.safety_class, 'correct_brand');
+});
+
+test('requires an exhaustive fingerprint-bound safety partition for reviewed negatives', async () => {
+  const run = await syntheticRun();
+  const packet = join(run, 'packet');
+  const index = await buildLabelSheets({ runDirectory: run, outputDirectory: packet });
+  const sheet = index.sheets[0];
+  const flat = sheet.entities.flatMap(entity => entity.candidates.map(candidate => ({ entity, candidate })));
+  const wideNumber = flat.find(item => item.candidate.candidate_ids.includes('acme-wide')).candidate.n;
+  const ambiguousNumber = flat.find(item => item.candidate.candidate_ids.includes('beta-logo')).candidate.n;
+  const response = {
+    ...emptyResponse(sheet),
+    logos: [{ n: wideNumber, roles: ['wide'], works_on: ['light', 'dark'] }],
+    best: { icon: [], wide: [wideNumber], favicon: [], stacked: [] },
+    uncertain: [ambiguousNumber],
+  };
+  const responses = join(run, 'responses.jsonl');
+  await writeJsonl(responses, [response]);
+  const imported = join(run, 'candidate-labels.jsonl');
+  await validateLabelResponses({ packetDirectory: packet, labelsPath: responses, outputPath: imported, reviewerId: 'identity-reviewer', reviewPass: 'independent' });
+
+  const negativeNumbers = flat.map(item => item.candidate.n).filter(number => ![wideNumber, ambiguousNumber].includes(number));
+  const safety = join(run, 'safety.jsonl');
+  await writeJsonl(safety, [{
+    sheet_id: sheet.sheet_id,
+    packet_fingerprint: sheet.packet_fingerprint,
+    wrong_brand: [], related_brand: [], not_logo: negativeNumbers, unjudgeable: [],
+  }]);
+  const output = join(run, 'candidate-labels-safety-complete.jsonl');
+  const result = await applyVisualLabelSafety({
+    packetDirectory: packet, labelsPath: imported, safetyPath: safety, outputPath: output,
+    reviewerId: 'safety-reviewer', reviewPass: 'exhaustive-negatives',
+  });
+  assert.equal(result.classified_negative_count, 2);
+  const labels = (await readFile(output, 'utf8')).trim().split('\n').map(JSON.parse);
+  assert.ok(labels.filter(label => label.values.identity === 'wrong').every(label => label.values.safety_class === 'not_logo'));
+  assert.ok(labels.filter(label => label.values.identity === 'correct').every(label => label.values.safety_class === 'correct_brand'));
+  assert.ok(labels.filter(label => label.values.identity === 'ambiguous').every(label => label.values.safety_class === 'unjudgeable'));
+  assert.ok(labels.every(label => label.provenance.safety_adjudication.prompt_version === 'visual-label-safety-v1-exhaustive-negatives'));
+
+  await writeJsonl(safety, [{
+    sheet_id: sheet.sheet_id,
+    packet_fingerprint: sheet.packet_fingerprint,
+    wrong_brand: [], related_brand: [], not_logo: negativeNumbers.slice(1), unjudgeable: [],
+  }]);
+  await assert.rejects(applyVisualLabelSafety({
+    packetDirectory: packet, labelsPath: imported, safetyPath: safety, outputPath: join(run, 'incomplete.jsonl'),
+    reviewerId: 'safety-reviewer', reviewPass: 'incomplete',
+  }), /has no safety class/);
 });
 
 test('rejects stale fingerprints, arbitrary reviewer metadata, and tampered packet images', async () => {

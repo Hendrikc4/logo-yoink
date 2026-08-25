@@ -77,6 +77,28 @@ mismatch remains `correct: false` without changing candidate identity to
 candidate qualifies. The adapter is a scoring projection, not a replacement
 for canonical candidate labels or a ranker change.
 
+Candidate identity alone is also insufficient for the safety component. An
+omitted or visually wrong tile can be a non-logo, a related product mark, or a
+foreign brand. The v3 sheet importer therefore uses
+`unclassified_negative` until a fingerprint-bound safety pass partitions every
+negative:
+
+```sh
+npm run visual-benchmark:label-safety -- \
+  --packet runs/all-500/label-sheets-v3 \
+  --labels runs/all-500/candidate-labels.jsonl \
+  --safety runs/all-500/safety-responses.jsonl \
+  --output runs/all-500/candidate-labels-safety-complete.jsonl \
+  --reviewer reviewer-id \
+  --review-pass exhaustive-negative-safety-v1
+```
+
+Each sheet response assigns every reviewed negative exactly once to
+`wrong_brand`, `related_brand`, `not_logo`, or `unjudgeable`. The command rejects
+unknown candidate numbers, duplicate assignments, incomplete sheets, stale
+packet fingerprints, and overwrites without `--overwrite`. A selected
+`unclassified_negative` intentionally makes the benchmark score incomplete.
+
 Use `--allow-partial` only for an intentional intermediate merge. A partial
 file is not adequate for final benchmark scoring. Packet manifests include the
 SHA-256 of the frozen `results.jsonl`; regenerate the packet after any new

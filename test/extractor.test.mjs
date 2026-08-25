@@ -255,6 +255,15 @@ test('canonical icon prefers a true icon and otherwise falls back to the best fa
   assert.equal(withIcon.selectedByRole.favicon.url, favicon.url);
 });
 
+test('declared icons displace unlinked DOM squares but never a home-linked logo', () => {
+  const declared = { source: 'apple', url: 'https://acme.test/apple.png', width: 180, height: 180, highResolution: true, bytes: 100, evidence: {} };
+  const unlinked = { source: 'dom-img', url: 'https://acme.test/acme-icon.png', width: 512, height: 512, highResolution: true, scalable: true, bytes: 200,
+    evidence: { positive_token: true, dom_region: 'body', home_linked: false } };
+  assert.equal(rankCandidates([unlinked, declared], { companyName: 'Acme' }).selectedByRole.icon.url, declared.url);
+  const homeLinked = { ...unlinked, evidence: { ...unlinked.evidence, dom_region: 'header', home_linked: true } };
+  assert.equal(rankCandidates([homeLinked, declared], { companyName: 'Acme' }).selectedByRole.icon.url, homeLinked.url);
+});
+
 test('accepted inline SVGs become standalone and empty SVGs fail renderability', async () => {
   const markup = '<svg viewBox="0 0 120 24"><path fill="currentColor" d="M0 0h120v24H0z"/></svg>';
   const item = { url: `data:image/svg+xml;base64,${Buffer.from(markup).toString('base64')}`, source: 'inline-svg', evidence: { inherited_color: '#5b21b6' } };

@@ -1,5 +1,11 @@
 # Major-brands-300 optimization cycle — 2026-08-25
 
+> Historical stop decision, superseded after the requested full independent
+> review completed. The missing 2,605-candidate audit described below now
+> exists, the scorer's safety semantics are explicit, and ranking v6 passed
+> development, validation, one-shot evaluation, and frozen-500 delta review.
+> See [the independent-review and ranking-v6 report](major-brands-300-independent-review-and-ranking-v6-2026-08-25.md).
+
 ## Decision
 
 Stop: no extraction, discovery, eligibility, or ranking change is promoted. The
