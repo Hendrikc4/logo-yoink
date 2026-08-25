@@ -12,7 +12,7 @@ result is a complete `50.62/100` score.
 | Stage-3 repository commit | `bf1f7c87fea68ff2747f88a406c9ec9247e51641` |
 | Follow-up scoring implementation commit | `e3fe73b66af401257871f042a85333199b1aad7f` |
 | Capture/ranking input commit | `3d07aca74f8d37f85bf0d6d54a6d4f1969bb53ef` |
-| Fixture | `fixtures/companies-500.json` (`98e365f137966e3b1b8d8cff2a45765d71fe4fbbf64f90bc0502b51064f5be2c`) |
+| Fixture | `fixtures/companies-800.json` (`98e365f137966e3b1b8d8cff2a45765d71fe4fbbf64f90bc0502b51064f5be2c`) |
 | Runtime schema | benchmark schema v2 |
 | Runtime ranking | v5; canonical roles `icon`, `wide`; `favicon` compatibility-only |
 | Label schema/workflow | `visual-benchmark-v1`; `visual-label-sheets-v3-candidate-only` |
@@ -151,7 +151,7 @@ returned `incomplete review 0/368` because that file stores labels under
 ```sh
 node scripts/benchmark/selected-role-scoring-adapter.mjs \
   --run runs/2026-08-24-major-brands-300-stage-2 \
-  --labels runs/2026-08-24-major-brands-300-stage-2/candidate-labels.jsonl \
+  --labels labels/major-brands-300-candidate-labels-v3-2026-08-24.jsonl \
   --output runs/2026-08-24-major-brands-300-stage-2/scoring-labels-selected-slots.jsonl
 
 npm run benchmark -- score \
@@ -184,6 +184,6 @@ directory, install from `package-lock.json`, and rerun the validation and score
 commands above. Verify all input hashes with:
 
 ```sh
-sha256sum fixtures/companies-500.json package-lock.json \
+sha256sum fixtures/companies-800.json package-lock.json \
   runs/2026-08-24-major-brands-300-stage-2/{config.json,results.jsonl,candidate-labels.jsonl,scoring-labels-adapter.jsonl,scoring-labels-selected-slots.jsonl,label-responses/primary.jsonl}
 ```

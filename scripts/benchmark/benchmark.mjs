@@ -11,7 +11,10 @@ import { RANKING_VERSION, SOURCE_WEIGHT } from '../../src/rank.mjs';
 import { mapConcurrent } from '../../src/concurrency.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
-const FIXTURE_PATH = join(ROOT, 'fixtures', 'companies-500.json');
+const FIXTURE_PATHS = {
+  legacy: join(ROOT, 'fixtures', 'companies-500.json'),
+  expanded: join(ROOT, 'fixtures', 'companies-800.json'),
+};
 const HOLDOUT_SEED = 'logo-yoink-holdout-v1';
 const SCHEMA_VERSION = 2;
 const REACHABLE = new Set(['live_html', 'redirected_off_domain']);
@@ -608,7 +611,8 @@ async function runCommand(options) {
   const cohort = options.cohort ?? 'original-100';
   const concurrency = options.concurrency ?? 4;
   const timeoutMs = options.timeoutMs ?? 10_000;
-  const fixture = JSON.parse(await readFile(FIXTURE_PATH, 'utf8'));
+  const fixtureName = ['major-brands-300', 'all-800'].includes(cohort) ? 'companies-800.json' : 'companies-500.json';
+  const fixture = JSON.parse(await readFile(['major-brands-300', 'all-800'].includes(cohort) ? FIXTURE_PATHS.expanded : FIXTURE_PATHS.legacy, 'utf8'));
   let companies = selectCohort(fixture.companies, cohort);
   if (options.limit) companies = companies.slice(0, options.limit);
   const outputDirectory = resolve(options.output ?? join(ROOT, 'runs', `${timestampId()}-${cohort}`));
@@ -619,7 +623,7 @@ async function runCommand(options) {
     run_id: basename(outputDirectory),
     created_at: new Date().toISOString(),
     git_revision: gitRevision(),
-    fixture: 'fixtures/companies-500.json',
+    fixture: `fixtures/${fixtureName}`,
     fixture_generated_at: fixture.generatedAt ?? null,
     cohort,
     cohort_count: companies.length,

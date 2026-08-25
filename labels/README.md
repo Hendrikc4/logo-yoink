@@ -14,3 +14,11 @@ The prior set has 602 selected-role records: 568 correct, 23 wrong, and 11 ambig
 node scripts/identity-quarantine-challenge.mjs evaluate \
   labels/identity-quarantine-challenge-2026-08-23.json
 ```
+
+`major-brands-300-candidate-labels-v3-2026-08-24.jsonl` is the exhaustive
+candidate-only visual review for the separate major-brands cohort: 2,732 labels
+covering all candidates from 227 successful captures. It contains 875 positive
+and 1,857 negative judgments with no uncertain rows. Its SHA-256 is
+`e9e58cc9866af47184b3d8d17748ac6f01dd8d6b37a8e04ca260735a3b409429`.
+The corresponding raw packet remains under the gitignored
+`runs/2026-08-24-major-brands-300-stage-2/` directory.

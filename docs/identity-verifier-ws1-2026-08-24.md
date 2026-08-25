@@ -6,7 +6,13 @@ Prompt version: `identity-veto-v1`
 
 Model bundle: `gpt-4o-mini-2024-07-18`, temperature 0
 
-Decision: **NO-GO — calibration-blocked and data-limited**
+Decision: **SUPERSEDED — scaffold kept, subsequent Luna/Sol calibration failed**
+
+This report records the initial API-oriented scaffold and its original blocker.
+Calibration later proceeded through Codex subscription tasks after page context was
+frozen. Luna v2–v4 and a stronger Sol escalation still failed the acceptance gate;
+see the [cycle summary](identity-verifier-cycle-summary-2026-08-25.md). The verifier
+therefore remains disconnected from production selection paths.
 
 ## Outcome
 

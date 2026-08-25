@@ -110,7 +110,7 @@ export async function generateShards({ inputPath, outputPath, pilotPath = null, 
   const fixture = JSON.parse(fixtureText);
   const allCompanies = fixture.companies;
   if (!Array.isArray(allCompanies)) throw new Error('Input fixture must contain a companies array.');
-  let companies = cohort === 'all-500' ? allCompanies.filter(company => ['original-100', 'additional-400'].includes(company.cohort)) :
+  let companies = cohort === 'all-500' ? allCompanies.filter(company => company.cohort !== 'major-brands-300') :
     cohort === 'all-800' ? allCompanies : allCompanies.filter(company => company.cohort === cohort);
   if (!companies.length) throw new Error(`Fixture cohort '${cohort}' is empty or unknown.`);
   let pilot = null;

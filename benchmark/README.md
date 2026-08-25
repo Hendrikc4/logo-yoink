@@ -28,13 +28,13 @@ Runtime extraction, the public demo, and frontend code do not belong here.
 | Selected experiment output | `reports/`, `reviews/` | Tracked only when needed to support a documented result |
 | Generated captures and runs | `runs/` | Generated and gitignored |
 
-The source fixture at `fixtures/companies-500.json` now contains 800 rows: the
-legacy `original-100` and `additional-400` cohorts plus the curated
+`fixtures/companies-500.json` remains the immutable legacy source. The separate
+`fixtures/companies-800.json` preserves those 500 rows and adds the curated
 `major-brands-300` expansion. Rows retain the established `entity_id`, `name`,
 `website`, and `cohort` schema. The expansion uses canonical bare hostnames,
 deterministic IDs, and a single normalized domain per row; run
-`npm run fixtures:validate` to check syntax, counts, IDs, and cross-cohort
-domain uniqueness.
+`npm run fixtures:validate` to check syntax, counts, IDs, cross-cohort domain
+uniqueness, and exact preservation of the original 500 rows.
 
 ## Supported commands
 

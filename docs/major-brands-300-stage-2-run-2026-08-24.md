@@ -4,6 +4,10 @@ Run directory: `runs/2026-08-24-major-brands-300-stage-2/`
 
 The run started from dataset commit `3d07aca74f8d37f85bf0d6d54a6d4f1969bb53ef` and used the lockfile dependencies, extractor concurrency 4, and a 10,000 ms per-request timeout. Raw results, failures, and content-addressed assets are retained in the ignored run directory.
 
+Integration moved the exact expanded fixture bytes to `fixtures/companies-800.json`
+so `fixtures/companies-500.json` remains frozen. The validated candidate labels are
+also tracked at `labels/major-brands-300-candidate-labels-v3-2026-08-24.jsonl`.
+
 ## Coverage
 
 | Measure | Count |

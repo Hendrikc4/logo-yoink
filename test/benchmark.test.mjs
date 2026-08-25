@@ -12,6 +12,7 @@ const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
 
 test('selects frozen, mutually exclusive benchmark cohorts', async () => {
   const fixture = JSON.parse(await readFile(join(ROOT, 'fixtures', 'companies-500.json'), 'utf8'));
+  const expandedFixture = JSON.parse(await readFile(join(ROOT, 'fixtures', 'companies-800.json'), 'utf8'));
   const original = selectCohort(fixture.companies, 'original-100');
   const holdout = selectCohort(fixture.companies, 'holdout-100');
   const remaining = selectCohort(fixture.companies, 'remaining-300');
@@ -20,6 +21,9 @@ test('selects frozen, mutually exclusive benchmark cohorts', async () => {
   assert.equal(remaining.length, 300);
   assert.equal(new Set([...holdout, ...remaining].map(company => company.entity_id)).size, 400);
   assert.deepEqual(selectCohort(fixture.companies, 'holdout-100').map(company => company.entity_id), holdout.map(company => company.entity_id));
+  assert.equal(selectCohort(expandedFixture.companies, 'major-brands-300').length, 300);
+  assert.equal(selectCohort(expandedFixture.companies, 'all-800').length, 800);
+  assert.deepEqual(selectCohort(expandedFixture.companies, 'all-500'), fixture.companies);
 });
 
 test('parses run and comparison command options', () => {
