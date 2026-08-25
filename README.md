@@ -117,7 +117,7 @@ curl -sS http://127.0.0.1:4310/api/extract \
 
 The response includes canonical `assets.icon` and `assets.logo` selections, normalized `preferences`, grouped `assetFamilies`, every ranked `candidate`, and discovery `diagnostics`. Each candidate has a measured `variant` object such as `{"theme":"dark","background":"transparent"}`.
 
-For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available. The deprecated `selectedByRole.favicon` key now aliases `assets.icon`, because favicon is a use of the canonical icon rather than a separate asset concept. Candidate-level favicon scores and role evidence remain present for existing diagnostics consumers.
+For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available. The deprecated `selectedByRole.favicon` key independently reports the best favicon-sized legacy selection; it never changes canonical `assets.icon` or `assets.logo`. When no true icon qualifies, a valid favicon-role candidate may become the canonical icon fallback.
 
 ## How it works
 
@@ -137,7 +137,7 @@ The benchmark freezes **500 company websites** and the candidates found on them.
 
 Those labels turned “looks right” into measurable targets: identity precision, role precision, discovery recall, conditional rank recall, end-to-end recall, best-hit rate, and wrong-brand count. Ranking and discovery ideas were then tested as isolated experiments on development data, checked on validation, and rejected when extra coverage cost too much precision. The result is a deliberately simple, interpretable rule set optimized to recover as many usable logos as possible without quietly promoting partner marks, UI icons, or stale brands.
 
-On the frozen current-identity baseline, a correct icon or wordmark was selected for **327 of 385 sites (84.9%)**. When a correct wordmark was present in the candidate set, the ranker selected one **93.3%** of the time. These are benchmark measurements, not a promise that every live website will cooperate; see [`docs/current-system-logo-optimization-plan.md`](docs/current-system-logo-optimization-plan.md) and the [`visual benchmark schema`](schemas/visual-benchmark-v1/README.md) for the full methodology.
+On the frozen current-identity baseline, captured under ranking version 3, a correct icon or wordmark was selected for **327 of 385 sites (84.9%)**. When a correct wordmark was present in that frozen candidate set, the captured ranker selected one **93.3%** of the time. These historical frozen measurements do not qualify later runtime ranking or discovery changes; see [`docs/current-system-logo-optimization-plan.md`](docs/current-system-logo-optimization-plan.md) and the [`visual benchmark schema`](schemas/visual-benchmark-v1/README.md) for the full methodology.
 
 ## What gets yoinked?
 
@@ -237,7 +237,7 @@ See [`docs/`](docs/) for the benchmark methodology, experiment logs, and visual-
 
 That is why Logo Yoink returns multiple ranked candidates instead of pretending one guess is always perfect.
 
-The server binds to localhost by default and rejects non-public targets while revalidating redirects. The included public demo route also enforces small JSON-only requests, same-origin browser calls, per-client and global rate limits, a two-extraction concurrency ceiling, duplicate-request coalescing, bounded extractor work, generic errors, and restrictive browser security headers. Jina (when `JINA_API_KEY` is configured) and local browser discovery are enabled as bounded missing-logo fallbacks. Set `PUBLIC_DEMO_ALLOW_JINA=0` or `PUBLIC_DEMO_BROWSER=0` to opt out.
+The server binds to localhost by default and rejects non-public targets while revalidating redirects. The included public demo route also enforces small JSON-only requests, same-origin browser calls, per-client and global rate limits, a two-extraction concurrency ceiling, duplicate-request coalescing, bounded extractor work, generic errors, and restrictive browser security headers. Jina (when `JINA_API_KEY` is configured), local browser discovery, and the one-entry first-party SPA-bundle probe are enabled as bounded missing-logo fallbacks. Set `PUBLIC_DEMO_ALLOW_JINA=0` or `PUBLIC_DEMO_BROWSER=0` to opt out of the remote or rendered browser fallback; the SPA probe remains capped at one same-origin bundle and 2.2 MB.
 
 The in-process rate limiter is intentionally dependency-free, so limits apply per running instance. A multi-instance public deployment should add a distributed edge rate limit or authentication, and should pin the validated public IP at connection time or enforce equivalent outbound-network rules to close the remaining DNS-rebinding window.
 

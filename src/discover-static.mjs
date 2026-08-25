@@ -51,6 +51,10 @@ function evidence(node, base, order, extra = {}) {
   const linkAttributes = attrs(surroundings.link);
   const localSemantic = [a.id, a.class, a.alt, a['aria-label'], a.title, a['data-ux'], linkAttributes.id, linkAttributes.class, linkAttributes['aria-label'], linkAttributes.title].filter(Boolean).join(' ');
   const semantic = [a.id, a.class, a.alt, a['aria-label'], a.title, surroundings.tokens].filter(Boolean).join(' ');
+  const inheritedColor = [node, ...ancestors(node)].map(item => {
+    const a = attrs(item);
+    return a.color ?? String(a.style ?? '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i)?.[1];
+  }).find(Boolean);
   return {
     element: node.name,
     dom_region: surroundings.region,
@@ -62,6 +66,7 @@ function evidence(node, base, order, extra = {}) {
     positive_token: POSITIVE.test(localSemantic),
     negative_context: NEGATIVE.test(semantic) || UI_CONTROL.test(localSemantic) || surroundings.region === 'footer' && /badge|award|partner/i.test(semantic),
     discovery_order: order,
+    inherited_color: inheritedColor ?? null,
     ...extra,
   };
 }

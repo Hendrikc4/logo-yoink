@@ -33,7 +33,7 @@
     "test": "node --test && node scripts/maintenance/validate-fixtures.mjs",
     "smoke": "node scripts/maintenance/smoke-local.mjs",
     "check:syntax": "node scripts/maintenance/check-syntax.mjs",
-    "check": "npm run check:syntax && npm test && npm run smoke",
+    "check": "npm run check:syntax && node scripts/maintenance/validate-benchmark-qualification.mjs && npm test && npm run smoke",
     "fixtures:validate": "node scripts/maintenance/validate-fixtures.mjs"
   },
   "engines": {

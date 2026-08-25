@@ -13,9 +13,11 @@ import { mapConcurrent } from '../../src/concurrency.mjs';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const FIXTURE_PATH = join(ROOT, 'fixtures', 'companies-500.json');
 const HOLDOUT_SEED = 'logo-yoink-holdout-v1';
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 const REACHABLE = new Set(['live_html', 'redirected_off_domain']);
-const ROLE_NAMES = ['icon', 'wide', 'favicon'];
+const ROLE_NAMES = ['icon', 'wide'];
+const LEGACY_ROLE_NAMES = ['favicon'];
+const ALL_ROLE_NAMES = [...ROLE_NAMES, ...LEGACY_ROLE_NAMES];
 const DEFAULT_EFFICIENCY_THRESHOLDS = {
   p95_latency_ms: { full_points_at_or_below: 5_000, zero_points_at_or_above: 20_000 },
   mean_requests_per_domain: { full_points_at_or_below: 8, zero_points_at_or_above: 30 },
@@ -143,10 +145,10 @@ function stableCandidateId(entityId, candidate, hash = '') {
 
 function inferRoles(candidate) {
   const explicit = candidate.roles ?? candidate.predictedRoles ?? candidate.predicted_roles;
-  if (Array.isArray(explicit)) return [...new Set(explicit.filter(role => ROLE_NAMES.includes(role)))];
+  if (Array.isArray(explicit)) return [...new Set(explicit.filter(role => ALL_ROLE_NAMES.includes(role)))];
   const roleScores = candidate.roleScores ?? candidate.role_scores;
   if (roleScores && typeof roleScores === 'object') {
-    const roles = ROLE_NAMES.filter(role => Number(roleScores[role]) > 0);
+    const roles = ALL_ROLE_NAMES.filter(role => Number(roleScores[role]) > 0);
     if (roles.length) return roles;
   }
   const roles = [];
@@ -219,10 +221,10 @@ function classifySuccess(company, extraction) {
   return finalHost && inputHost && !relatedHost(inputHost, finalHost) ? 'redirected_off_domain' : 'live_html';
 }
 
-function selectedByRole(candidates, extraction) {
+function selectedByRole(candidates, extraction, roles = ROLE_NAMES) {
   const explicit = extraction.selectedByRole ?? extraction.selected_by_role ?? {};
   const result = {};
-  for (const role of ROLE_NAMES) {
+  for (const role of roles) {
     const specified = explicit[role];
     if (specified) {
       const match = candidates.find(candidate => candidate.candidate_id === specified.candidate_id ||
@@ -259,6 +261,7 @@ async function runCompany(company, extractorOptions, assetsDirectory) {
       domain: extraction.domain ?? hostnameFor(company.website),
       homepage: extraction.homepage ?? extraction.finalUrl ?? extraction.final_url ?? null,
       selected_by_role: selectedByRole(candidates, extraction),
+      legacy_selected_by_role: selectedByRole(candidates, extraction, LEGACY_ROLE_NAMES),
       legacy_selected_candidate_id: legacySelected?.candidate_id ?? null,
       candidates,
       diagnostics: extraction.diagnostics ?? {},
@@ -281,6 +284,7 @@ async function runCompany(company, extractorOptions, assetsDirectory) {
       reachability: classifyFailure(error),
       error: { name: error?.name ?? 'Error', message: String(error?.message ?? error) },
       selected_by_role: Object.fromEntries(ROLE_NAMES.map(role => [role, null])),
+      legacy_selected_by_role: Object.fromEntries(LEGACY_ROLE_NAMES.map(role => [role, null])),
       legacy_selected_candidate_id: null,
       candidates: [],
       diagnostics: {},
@@ -335,7 +339,7 @@ function flattenLabels(records) {
 
 function labelRoles(label) {
   const raw = label?.roles ?? label?.role;
-  return (Array.isArray(raw) ? raw : [raw]).filter(role => ROLE_NAMES.includes(role));
+  return (Array.isArray(raw) ? raw : [raw]).filter(role => ALL_ROLE_NAMES.includes(role));
 }
 
 function identityCorrect(label) {
@@ -435,8 +439,16 @@ export function summarizeResults(results, metadata = {}, labelRecords = null, ef
       reachable_domain_rate_pct: rate(reachableWithCandidate.length, reachable.length),
     };
   }
-  const coverageComponents = { icon: roles.icon.domains, wide: roles.wide.domains, favicon: roles.favicon.domains };
-  const automatedProxyScore = results.length ? Math.round((coverageComponents.icon * 0.4 + coverageComponents.wide * 0.4 + coverageComponents.favicon * 0.2) / results.length * 1000) / 10 : 0;
+  const legacyRoles = Object.fromEntries(LEGACY_ROLE_NAMES.map(role => {
+    const withCandidate = results.filter(result => result.candidates.some(candidate => candidate.predicted_roles?.includes(role)));
+    return [role, {
+      domains: withCandidate.length,
+      candidates: results.reduce((sum, result) => sum + result.candidates.filter(candidate => candidate.predicted_roles?.includes(role)).length, 0),
+      all_domain_rate_pct: rate(withCandidate.length, results.length),
+      compatibility_only: true,
+    }];
+  }));
+  const automatedProxyScore = results.length ? Math.round((roles.icon.domains + roles.wide.domains) / (2 * results.length) * 1000) / 10 : 0;
   const performance = {
     duration_ms: metricAggregate(results.map(result => result.metrics?.duration_ms)),
     requests: metricAggregate(results.map(result => result.metrics?.requests)),
@@ -451,6 +463,7 @@ export function summarizeResults(results, metadata = {}, labelRecords = null, ef
     domains: { total: results.length, reachable: reachable.length, successful_extractions: results.filter(result => result.status === 'success').length },
     reachability_taxonomy: taxonomy,
     roles,
+    legacy_roles: legacyRoles,
     any_candidate: {
       domains: results.filter(result => result.candidates.length).length,
       all_domain_rate_pct: rate(results.filter(result => result.candidates.length).length, results.length),
@@ -458,7 +471,7 @@ export function summarizeResults(results, metadata = {}, labelRecords = null, ef
     automatedProxyScore: {
       value: automatedProxyScore,
       max: 100,
-      formula: '40% icon domain coverage + 40% wide domain coverage + 20% favicon domain coverage, all-domain denominator',
+      formula: '50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator',
       caveat: 'Availability proxy, not a quality score. Correctness and visual usability require reviewer labels.',
     },
     historical_comparison_proxy: {
@@ -611,7 +624,7 @@ async function runCommand(options) {
       user_agent: options.userAgent ?? 'extractor default',
     },
     efficiency_thresholds: DEFAULT_EFFICIENCY_THRESHOLDS,
-    ranking: { version: RANKING_VERSION, source_weights: SOURCE_WEIGHT, role_score_threshold: 35 },
+    ranking: { version: RANKING_VERSION, canonical_roles: ROLE_NAMES, legacy_compatibility_roles: LEGACY_ROLE_NAMES, source_weights: SOURCE_WEIGHT, role_score_threshold: 35 },
   };
   await writeAtomic(join(outputDirectory, 'config.json'), `${JSON.stringify(config, null, 2)}\n`);
   const lines = new Array(companies.length);
@@ -667,7 +680,7 @@ async function runCommand(options) {
   await writeAtomic(join(outputDirectory, 'failures.csv'), `${failureCsv}\n`);
   process.stdout.write(`${outputDirectory}\n`);
   const score = summary.benchmarkScore ? `benchmark score ${summary.benchmarkScore.value}/100` : `automated availability proxy ${summary.automatedProxyScore.value}/100`;
-  process.stdout.write(`${score}; icon ${summary.roles.icon.domains}, wide ${summary.roles.wide.domains}, favicon ${summary.roles.favicon.domains} of ${summary.domains.total}\n`);
+  process.stdout.write(`${score}; canonical icon ${summary.roles.icon.domains}, canonical wide ${summary.roles.wide.domains} of ${summary.domains.total}; legacy favicon ${summary.legacy_roles.favicon.domains}\n`);
 }
 
 async function main() {

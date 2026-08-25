@@ -52,6 +52,8 @@ Additional commands without package aliases are internal, historical, or migrati
 - Keep raw/generated run directories under `runs/`.
 - Do not commit candidate data URLs; benchmark assets should be content-addressed files.
 - Treat evaluation splits as holdouts and avoid using their labels to tune ranking rules.
+- Treat `selected_by_role` as the canonical icon+wide metric surface in benchmark schema v2. Legacy favicon availability and selection live under explicitly named compatibility fields and do not contribute to canonical product metrics.
+- Frozen published metrics are scoped by `benchmarks/frozen-baseline-qualification.json`; a ranking-version change must update that qualification review without rewriting the captured claims.
 - Validate fixtures and benchmark records before comparing results: `npm test` includes fixture validation.
 
 ## Local run retention

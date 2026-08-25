@@ -122,6 +122,24 @@ test('oversized SPA entry bundles are a recorded miss, not an extraction failure
   assert.deepEqual(result.diagnostics.errors, ['Response exceeds 2200000 bytes.']);
 });
 
+test('bounded SPA recovery discovers a PNPTC-style first-party SVG from one entry bundle', async () => {
+  const parsed = parseHomepage('<title>Plug and Play Tech Center</title><script type="module" src="/main-X.js"></script>', 'https://www.plugandplaytechcenter.com/', { collectDeepLinks: true });
+  const requests = [];
+  const result = await discoverSpaBundleAssets({
+    homepage: 'https://www.plugandplaytechcenter.com/',
+    parsed,
+    companyName: 'Plug and Play Tech Center',
+    fetchResource: async url => {
+      requests.push(url);
+      return { ok: true, url, bytes: Buffer.from('const primary="assets/pnp-logo.svg"; const customer="assets/customer-logo.svg";') };
+    },
+  });
+  assert.deepEqual(requests, ['https://www.plugandplaytechcenter.com/main-X.js']);
+  assert.deepEqual(result.candidates.map(item => item.url), ['https://www.plugandplaytechcenter.com/assets/pnp-logo.svg']);
+  assert.deepEqual(result.candidates[0].evidence.eligible_roles, ['wide']);
+  assert.equal(result.diagnostics.scripts, 1);
+});
+
 test('deep candidates cannot move icon or favicon and product archive members are withheld', () => {
   const icon = { url: 'https://acme.test/icon.svg', source: 'manifest', width: 256, height: 256, highResolution: true, scalable: true, bytes: 20, evidence: {} };
   const favicon = { ...icon, url: 'https://acme.test/favicon.svg', source: 'html-icon' };

@@ -181,6 +181,8 @@ export function publicDemoExtractionOptions(environment = process.env) {
     roleAwareBudget: true,
     contentBoundingWide: true,
     browser: environment.PUBLIC_DEMO_BROWSER !== '0',
+    deepWide: true,
+    spaBundles: true,
     cachedFavicon: true,
     maxCandidates: boundedInteger(environment.DEMO_MAX_CANDIDATES, 8, 3, 16),
     maxImageBytes: boundedInteger(environment.DEMO_MAX_IMAGE_BYTES, 768 * 1024, 128 * 1024, 3 * 1024 * 1024),

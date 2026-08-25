@@ -84,6 +84,8 @@ test('public demo enables fallbacks while keeping their work tightly bounded', (
   const options = publicDemoExtractionOptions({ JINA_API_KEY: 'secret', BROWSER_DISCOVERY: '1' });
   assert.equal(options.jinaApiKey, 'secret');
   assert.equal(options.browser, true);
+  assert.equal(options.deepWide, true);
+  assert.equal(options.spaBundles, true);
   assert.equal(options.maxCandidates, 8);
   assert.equal(options.maxImageBytes, 768 * 1024);
   assert.equal(options.timeoutMs, 8_000);

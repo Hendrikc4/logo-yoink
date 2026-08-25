@@ -5,7 +5,7 @@ const SOURCE_WEIGHT = {
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
-const RANKING_VERSION = 4;
+const RANKING_VERSION = 5;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
 function round(value) { return Math.round(Math.max(0, Math.min(100, value)) * 10) / 10; }
@@ -243,19 +243,20 @@ export function rankCandidates(items, options = {}) {
     return b.role_scores[role] - a.role_scores[role] || b.bytes - a.bytes;
   })[0] ?? null]));
   if (!selectedByRole.icon) {
-    // ponytail: when nothing qualifies as an icon, a declared favicon asset is the brand's own
-    // mark by construction; admit small declared favicons rather than answering with nothing.
-    const fallback = eligible.filter(item => FAVICON_SOURCES.includes(item.source) &&
+    // A favicon-role candidate is the bounded fallback for the canonical icon when no true icon
+    // candidate qualifies. Prefer the asset intended for favicon use, not an arbitrary source.
+    const fallback = eligible.filter(item => item.predicted_roles.includes('favicon') &&
       Math.min(Number(item.width) || Infinity, Number(item.height) || Infinity) >= ICON_FALLBACK_MIN_EDGE)
-      .sort((a, b) => iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes)[0];
+      .sort((a, b) => faviconRankScore(b) - faviconRankScore(a) || b.bytes - a.bytes)[0];
     if (fallback) selectedByRole.icon = fallback;
   }
   if (selectedByRole.icon?.source === 'inline-svg') {
     selectedByRole.icon = pickIconCandidate([selectedByRole.icon], candidates);
   }
-  // `favicon` remains a response alias for consumers of the pre-canonical model. There is one
-  // icon selection now; declared favicon assets remain valid icon candidates and evidence.
-  selectedByRole.favicon = selectedByRole.icon;
+  // Legacy API/CLI consumers still receive the independently ranked best favicon. It does not
+  // participate in the canonical `assets` model, whose only roles are icon and logo.
+  selectedByRole.favicon = eligible.filter(item => item.predicted_roles.includes('favicon'))
+    .sort((a, b) => faviconRankScore(b) - faviconRankScore(a) || b.bytes - a.bytes)[0] ?? null;
   const assets = { icon: selectedByRole.icon, logo: selectedByRole.wide };
   return { candidates, assetFamilies, assets, preferences, selectedByRole, selected: assets.icon ?? assets.logo ?? null };
 }
@@ -321,7 +322,9 @@ export function buildAssetFamilies(items) {
         .sort((a, b) => (candidates[b].role_scores?.[role] ?? 0) - (candidates[a].role_scores?.[role] ?? 0))[0];
       return [role, best ?? null];
     }));
-    bestByRole.favicon = bestByRole.icon;
+    bestByRole.favicon = group.candidateIndexes
+      .filter(index => candidates[index].predicted_roles?.includes('favicon'))
+      .sort((a, b) => faviconRankScore(candidates[b]) - faviconRankScore(candidates[a]))[0] ?? null;
     return {
       id: group.id,
       candidateIndexes: group.candidateIndexes,
