@@ -4,9 +4,9 @@ import { mkdtemp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-import { generateShards } from '../scripts/visual-benchmark-shards.mjs';
-import { validateRun } from '../scripts/visual-benchmark-validate.mjs';
-import { overlayRemediationRuns, validateRemediationInputs } from '../scripts/visual-benchmark-remediation-merge.mjs';
+import { generateShards } from '../scripts/benchmark/visual-benchmark-shards.mjs';
+import { validateRun } from '../scripts/benchmark/visual-benchmark-validate.mjs';
+import { overlayRemediationRuns, validateRemediationInputs } from '../scripts/benchmark/visual-benchmark-remediation-merge.mjs';
 
 const fixture = new URL('../fixtures/companies-500.json', import.meta.url).pathname;
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');

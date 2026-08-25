@@ -61,7 +61,7 @@ The existing `deepWide` plus one-entry SPA path was run on the same residual tre
 
 All generated artifacts are ignored run data under:
 
-`/Users/hendrik/.codex/worktrees/6f92/logo-yoink/runs/wide-css-recovery-2026-08-24`
+`runs/wide-css-recovery-2026-08-24`
 
 - `offline-baseline.json` and `offline-baseline-selections.jsonl`: exact frozen replay.
 - `dev-missing-control/sample.json` and `results.jsonl`: frozen 67-site development set.
@@ -74,4 +74,4 @@ All generated artifacts are ignored run data under:
 
 The external frozen corpus and adjudicated labels remain at:
 
-`/Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged`
+`runs/visual-benchmark-v1-500-v1/merged`

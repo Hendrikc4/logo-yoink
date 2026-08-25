@@ -138,4 +138,4 @@ The treatment-only changed assets were reviewed without arm, source, or rank fie
 - Exact stage ledger: `drop-stage-ledger.json`.
 - Full repository verification after the production-parity audit: 173 tests passed and 500 fixtures validated.
 
-All experiment artifacts are ignored run data under `/Users/hendrik/.codex/worktrees/2e31/logo-yoink/runs/wide-header-retention-2026-08-24`. The frozen corpus remained read-only at `/Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged`.
+All experiment artifacts are ignored run data under `runs/wide-header-retention-2026-08-24`. The frozen corpus remained read-only at `runs/visual-benchmark-v1-500-v1/merged`.

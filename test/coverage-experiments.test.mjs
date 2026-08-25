@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import sharp from 'sharp';
 import { internals } from '../src/extractor.mjs';
 import { rankCandidates } from '../src/rank.mjs';
-import { parseArgs } from '../scripts/benchmark.mjs';
+import { parseArgs } from '../scripts/benchmark/benchmark.mjs';
 import { measureTinyImageSuitability } from '../src/tiny-image-suitability.mjs';
 
 async function paddedLogo(width = 200, height = 200, rect = { x: 10, y: 80, width: 180, height: 40 }) {

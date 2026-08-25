@@ -10,13 +10,13 @@ instance. It also never imports or changes rank scores.
    extraction and ranking behavior while saving candidate assets:
 
    ```sh
-   node scripts/benchmark.mjs --cohort all-500 --output runs/all-500
+   npm run benchmark -- --cohort all-500 --output runs/all-500
    ```
 
 2. Deduplicate candidates and render numbered, batched PNG contact sheets:
 
    ```sh
-   node scripts/candidate-labeling.mjs prepare --run runs/all-500
+   node scripts/review/candidate-labeling.mjs prepare --run runs/all-500
    ```
 
    The packet is written to `runs/all-500/candidate-labeling/`. Candidate bytes
@@ -41,7 +41,7 @@ instance. It also never imports or changes rank scores.
 4. Validate and merge one or more response shards:
 
    ```sh
-   node scripts/candidate-labeling.mjs merge \
+   node scripts/review/candidate-labeling.mjs merge \
      --packet runs/all-500/candidate-labeling \
      --input labels/batch-01.jsonl \
      --input labels/batch-02.jsonl

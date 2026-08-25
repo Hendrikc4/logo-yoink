@@ -12,10 +12,10 @@ import {
   normaliseTarget,
   safeEntityPath,
   shardFor,
-} from '../src/visual-capture.mjs';
-import { validateRecord } from '../scripts/visual-benchmark-validate.mjs';
-import { generateShards } from '../scripts/visual-benchmark-shards.mjs';
-import { validateRun } from '../scripts/visual-benchmark-validate.mjs';
+} from '../benchmark/lib/capture.mjs';
+import { validateRecord } from '../scripts/benchmark/visual-benchmark-validate.mjs';
+import { generateShards } from '../scripts/benchmark/visual-benchmark-shards.mjs';
+import { validateRun } from '../scripts/benchmark/visual-benchmark-validate.mjs';
 
 const SAFE_SVG_DATA_URL = `data:image/svg+xml;base64,${Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 24"><path fill="#000" d="M0 0h120v24H0z"/></svg>').toString('base64')}`;
 

@@ -64,7 +64,7 @@ Final verification: `npm test` passed all 167 tests and validated 500 unique com
 
 ## Frozen artifacts
 
-Read-only root: `/Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged`
+Read-only root: `runs/visual-benchmark-v1-500-v1/merged` (ignored local run data)
 
 | Artifact | SHA-256 |
 | --- | --- |

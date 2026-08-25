@@ -5,8 +5,8 @@ Scope: cheap candidate-identity labeling only; no ranker changes
 
 ## Outcome
 
-Use `scripts/contact-sheet.mjs` as the base for a small AI-labeling path. Do not
-route this task through `scripts/visual-review-packet.mjs` or require the model
+Use `scripts/review/contact-sheet.mjs` as the base for a small AI-labeling path. Do not
+route this task through `scripts/review/visual-review-packet.mjs` or require the model
 to emit canonical visual-benchmark records.
 
 The required addition is deliberately narrow:
@@ -24,7 +24,7 @@ judge rank, or establish exhaustive on-page logo recall.
 
 ### 1. The lightweight contact sheet is already close, but its labels are not AI-friendly
 
-`scripts/contact-sheet.mjs` already renders several candidates per entity on
+`scripts/review/contact-sheet.mjs` already renders several candidates per entity on
 light and dark backgrounds and writes a label template. However:
 
 - the visible handle is a long `candidate_id`, not a short number;
@@ -42,7 +42,7 @@ change.
 
 ### 2. The exhaustive visual review packet is the wrong abstraction for this pass
 
-`scripts/visual-review-packet.mjs` supports a substantially broader protocol:
+`scripts/review/visual-review-packet.mjs` supports a substantially broader protocol:
 entity identity, screenshot and overlay review, DOM visual instances, exact
 candidate mappings, candidate roles, five `best_for_role` decisions, two-theme
 usability, provenance, defects, missing-role causes, reviewer/pass scoping,
@@ -68,7 +68,7 @@ code, if a downstream consumer needs them.
 
 ### 3. The PNG montage is compact but only shows selected winners
 
-`scripts/review-montage.mjs` produces convenient raster pages, but it displays
+`scripts/review/review-montage.mjs` produces convenient raster pages, but it displays
 only the selected icon and wide candidate. Extending the contact sheet is
 smaller and safer than turning the winner montage into a candidate-labeling
 system.
@@ -184,7 +184,7 @@ cheaper and more auditable than permissive normalization.
 
 ## Small implementation plan
 
-1. Add an identity-only/AI mode to `scripts/contact-sheet.mjs` rather than a
+1. Add an identity-only/AI mode to `scripts/review/contact-sheet.mjs` rather than a
    third review UI.
 2. In that mode, collapse `reviewCandidates(result)` entries by `candidate_id`,
    assign `display_number`, render the badge, and write `candidate-map.jsonl`.

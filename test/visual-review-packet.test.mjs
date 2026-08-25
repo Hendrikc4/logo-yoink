@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, readFile, readdir, unlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
-import { buildReviewPacket, draftStorageKey, labelIdFor, loadBundle, parseArgs, targetKeyFor } from '../scripts/visual-review-packet.mjs';
-import { RANKER_SAFE_REVIEW_VERSION, normalizeLabelRecord, validateCanonicalLabel } from '../scripts/visual-benchmark-labels.mjs';
+import { buildReviewPacket, draftStorageKey, labelIdFor, loadBundle, parseArgs, targetKeyFor } from '../scripts/review/visual-review-packet.mjs';
+import { RANKER_SAFE_REVIEW_VERSION, normalizeLabelRecord, validateCanonicalLabel } from '../benchmark/lib/labels.mjs';
 
 const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64');
 

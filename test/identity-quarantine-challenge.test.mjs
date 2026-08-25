@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { evaluate } from '../scripts/identity-quarantine-challenge.mjs';
+import { evaluate } from '../scripts/experiments/identity-quarantine-challenge.mjs';
 
 function record(name, website, signals) {
   return { name, website, observation: { signals } };

@@ -3,8 +3,8 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { extractLogos, normalizeWebsite } from './extractor.mjs';
-import { createDemoGuard, demoLimits, DemoHttpError, publicDemoExtractionOptions, readDemoJson, securityHeaders } from './demo-security.mjs';
+import { createDemoExtractionService } from './demo/extraction-service.mjs';
+import { demoLimits, publicDemoExtractionOptions, securityHeaders } from './demo/security.mjs';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 const publicRoot = join(projectRoot, 'public');
@@ -14,7 +14,13 @@ const besticonUrl = process.env.BESTICON_URL || null;
 const jinaApiKey = process.env.JINA_API_KEY || null;
 const browserDiscovery = process.env.BROWSER_DISCOVERY !== '0';
 const limits = demoLimits();
-const demoGuard = createDemoGuard(limits);
+const demoService = createDemoExtractionService({
+  limits,
+  extractionOptions: () => {
+    const options = publicDemoExtractionOptions(process.env);
+    return { ...options, besticonUrl, browser: browserDiscovery && options.browser };
+  },
+});
 
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -45,23 +51,9 @@ async function serveFile(pathname, response) {
 const server = createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host ?? `${host}:${port}`}`);
   if (request.method === 'POST' && url.pathname === '/api/extract') {
-    try {
-      const rate = demoGuard.check(request);
-      const body = await readDemoJson(request, limits.bodyBytes);
-      const target = normalizeWebsite(body.website);
-      const demoOptions = publicDemoExtractionOptions(process.env);
-      const result = await demoGuard.run(target.url.href, () => extractLogos(target.url.href, {
-        ...demoOptions, besticonUrl, browser: browserDiscovery && demoOptions.browser,
-      }));
-      response.setHeader('ratelimit-limit', String(rate.limit));
-      response.setHeader('ratelimit-remaining', String(rate.remaining));
-      return json(response, 200, result);
-    } catch (error) {
-      const status = error instanceof DemoHttpError ? error.status : 400;
-      if (error instanceof DemoHttpError && error.retryAfter) response.setHeader('retry-after', String(error.retryAfter));
-      const message = error instanceof DemoHttpError ? error.message : 'We could not inspect that website.';
-      return json(response, status, { error: message });
-    }
+    const result = await demoService.handle(request);
+    for (const [name, value] of Object.entries(result.headers)) response.setHeader(name, value);
+    return json(response, result.status, result.payload);
   }
   if (request.method === 'GET') return serveFile(url.pathname, response);
   return json(response, 405, { error: 'Method not allowed.' });

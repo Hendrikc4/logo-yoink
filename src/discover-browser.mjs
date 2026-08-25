@@ -1,5 +1,5 @@
-import { isIP } from 'node:net';
 import { lookup as dnsLookup } from 'node:dns/promises';
+import { canonicalHostname, isIpAddress, isPrivateIp } from './network-safety.mjs';
 
 const DEFAULT_TIMEOUT_MS = 12_000;
 const DEFAULT_HYDRATION_MS = 700;
@@ -353,33 +353,6 @@ function normaliseInput(input) {
   };
 }
 
-function isPrivateIp(hostname) {
-  hostname = canonicalHostname(hostname);
-  const family = isIP(hostname);
-  if (!family) return false;
-  if (family === 6) {
-    if (hostname === '::' || hostname === '::1' || /^(fc|fd|fe[89ab])/i.test(hostname) || /^2001:db8:/i.test(hostname)) return true;
-    const mapped = hostname.match(/^::ffff:([\da-f]{1,4}):([\da-f]{1,4})$/i);
-    if (mapped) {
-      const number = Number.parseInt(mapped[1], 16) * 65536 + Number.parseInt(mapped[2], 16);
-      return isPrivateIp(`${number >>> 24}.${number >>> 16 & 255}.${number >>> 8 & 255}.${number & 255}`);
-    }
-    return false;
-  }
-  const parts = hostname.split('.').map(Number);
-  return parts[0] === 10 || parts[0] === 127 || (parts[0] === 0) ||
-    (parts[0] === 100 && parts[1] >= 64 && parts[1] <= 127) ||
-    (parts[0] === 169 && parts[1] === 254) ||
-    (parts[0] === 172 && parts[1] >= 16 && parts[1] <= 31) ||
-    (parts[0] === 192 && ((parts[1] === 0 && [0, 2].includes(parts[2])) || (parts[1] === 88 && parts[2] === 99) || parts[1] === 168)) ||
-    (parts[0] === 198 && (parts[1] === 18 || parts[1] === 19 || (parts[1] === 51 && parts[2] === 100))) ||
-    (parts[0] === 203 && parts[1] === 0 && parts[2] === 113) || parts[0] >= 224;
-}
-
-function canonicalHostname(hostname) {
-  return String(hostname ?? '').toLowerCase().replace(/^\[|\]$/g, '').replace(/\.$/, '');
-}
-
 async function isAllowedBrowserUrl(value, cache, lookup = dnsLookup) {
   let url;
   try { url = new URL(value); } catch { return false; }
@@ -387,7 +360,7 @@ async function isAllowedBrowserUrl(value, cache, lookup = dnsLookup) {
   if (!expectedPort || url.username || url.password || (url.port && url.port !== expectedPort)) return false;
   const hostname = canonicalHostname(url.hostname);
   if (hostname === 'localhost' || hostname.endsWith('.localhost') || hostname.endsWith('.local') || isPrivateIp(hostname)) return false;
-  if (isIP(hostname)) return true;
+  if (isIpAddress(hostname)) return true;
   if (!cache.has(hostname)) {
     cache.set(hostname, Promise.resolve(lookup(hostname, { all: true, verbatim: true }))
       .then(addresses => addresses.length > 0 && addresses.every(item => !isPrivateIp(item.address)))

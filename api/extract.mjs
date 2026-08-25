@@ -1,9 +1,13 @@
-import { extractLogos, normalizeWebsite } from '../src/extractor.mjs';
-import { createDemoGuard, demoLimits, DemoHttpError, publicDemoExtractionOptions, readDemoJson, securityHeaders } from '../src/demo-security.mjs';
-import { serverlessBrowserLaunchOptions } from '../src/serverless-browser.mjs';
+import { createDemoExtractionService } from '../src/demo/extraction-service.mjs';
+import { publicDemoExtractionOptions, securityHeaders } from '../src/demo/security.mjs';
+import { serverlessBrowserLaunchOptions } from '../src/demo/serverless-browser.mjs';
 
-const limits = demoLimits();
-const demoGuard = createDemoGuard(limits);
+const demoService = createDemoExtractionService({
+  extractionOptions: () => ({
+    ...publicDemoExtractionOptions(),
+    browserLaunchOptions: serverlessBrowserLaunchOptions,
+  }),
+});
 
 export default async function handler(request, response) {
   for (const [name, value] of Object.entries(securityHeaders)) response.setHeader(name, value);
@@ -14,21 +18,7 @@ export default async function handler(request, response) {
     return response.status(405).json({ error: 'Method not allowed.' });
   }
 
-  try {
-    const rate = demoGuard.check(request);
-    const body = await readDemoJson(request, limits.bodyBytes);
-    const target = normalizeWebsite(body.website);
-    const result = await demoGuard.run(target.url.href, () => extractLogos(target.url.href, {
-      ...publicDemoExtractionOptions(),
-      browserLaunchOptions: serverlessBrowserLaunchOptions,
-    }));
-    response.setHeader('ratelimit-limit', String(rate.limit));
-    response.setHeader('ratelimit-remaining', String(rate.remaining));
-    return response.status(200).json(result);
-  } catch (error) {
-    const status = error instanceof DemoHttpError ? error.status : 400;
-    if (error instanceof DemoHttpError && error.retryAfter) response.setHeader('retry-after', String(error.retryAfter));
-    const message = error instanceof DemoHttpError ? error.message : 'We could not inspect that website.';
-    return response.status(status).json({ error: message });
-  }
+  const result = await demoService.handle(request);
+  for (const [name, value] of Object.entries(result.headers)) response.setHeader(name, value);
+  return response.status(result.status).json(result.payload);
 }

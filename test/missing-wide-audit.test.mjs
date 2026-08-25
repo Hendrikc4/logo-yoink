@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { selectMissingWideSample } from '../scripts/prepare-missing-wide-audit.mjs';
+import { selectMissingWideSample } from '../scripts/experiments/prepare-missing-wide-audit.mjs';
 
 test('missing-wide audit sampling is deterministic and eligibility-gated', () => {
   const eligible = index => ({

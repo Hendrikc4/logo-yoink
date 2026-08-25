@@ -32,7 +32,7 @@ The requested ox-alpha critique ran twice through `openrouter/stealth/ox-alpha`:
 
 ## Frozen paired result
 
-Source control: `/Users/hendrik/Documents/logo-yoink/runs/review-final-remaining-300/results.jsonl`. The experiment deterministically reproduced the existing `missing-wide-root-cause-audit-v1` 75-domain slice and ran live control then treatment for each domain.
+Source control: `runs/review-final-remaining-300/results.jsonl` in the intentionally ignored local run tree. The experiment deterministically reproduced the existing `missing-wide-root-cause-audit-v1` 75-domain slice and ran live control then treatment for each domain.
 
 | Metric | Result |
 |---|---:|
@@ -54,7 +54,7 @@ Visual verdicts are tracked in [`deep-wide-changed-review-2026-08-23.json`](../r
 The reproducible control harness writes full diagnostics with:
 
 ```sh
-node scripts/deep-wide-controls.mjs runs/first-party-wide-controls-2026-08-23/results.json
+node scripts/experiments/deep-wide-controls.mjs runs/first-party-wide-controls-2026-08-23/results.json
 ```
 
 Observed on 2026-08-23:
@@ -86,11 +86,11 @@ Three additional fresh pnptc repetitions were stable at 19 requests and 1,975,19
 ```sh
 npm ci
 node --test
-node scripts/validate-fixtures.mjs
-node scripts/deep-wide-experiment.mjs \
-  /Users/hendrik/Documents/logo-yoink/runs/review-final-remaining-300/results.jsonl \
+npm run fixtures:validate
+node scripts/experiments/deep-wide-experiment.mjs \
+  runs/review-final-remaining-300/results.jsonl \
   runs/first-party-wide-2026-08-23-paired-v3 75
-node scripts/deep-wide-controls.mjs \
+node scripts/experiments/deep-wide-controls.mjs \
   runs/first-party-wide-controls-2026-08-23/results.json
 npm run cli -- anthropic.com --deep-wide
 npm run cli -- pnptc.com --deep-wide --spa-bundles

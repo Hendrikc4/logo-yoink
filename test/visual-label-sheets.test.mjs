@@ -7,9 +7,9 @@ import sharp from 'sharp';
 import {
   buildLabelSheets, packEntities, parseArgs, prepareEntities,
   validateLabelResponses, validatePacket, validateResponse,
-} from '../scripts/visual-label-sheets.mjs';
-import { validateCanonicalLabel } from '../scripts/visual-benchmark-labels.mjs';
-import { validateRecord } from '../scripts/visual-benchmark-validate.mjs';
+} from '../scripts/review/visual-label-sheets.mjs';
+import { validateCanonicalLabel } from '../benchmark/lib/labels.mjs';
+import { validateRecord } from '../scripts/benchmark/visual-benchmark-validate.mjs';
 
 const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=', 'base64');
 

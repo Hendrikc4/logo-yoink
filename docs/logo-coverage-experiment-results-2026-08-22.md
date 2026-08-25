@@ -91,18 +91,18 @@ The practical next step, if more recall is needed, is an asynchronous missing-wi
 ```sh
 npm test
 
-node scripts/benchmark.mjs --cohort original-100 \
+npm run benchmark -- --cohort original-100 \
   --role-budget --content-bounding-wide \
   --output runs/orchestrated-winners-original100 --concurrency 8
 
-node scripts/benchmark.mjs --cohort holdout-100 \
+npm run benchmark -- --cohort holdout-100 \
   --output runs/orchestrated-control-holdout100 --concurrency 8
 
-node scripts/benchmark.mjs --cohort holdout-100 \
+npm run benchmark -- --cohort holdout-100 \
   --role-budget --content-bounding-wide \
   --output runs/orchestrated-winners-holdout100 --concurrency 8
 
-node scripts/benchmark.mjs compare \
+npm run benchmark -- compare \
   --before runs/orchestrated-control-holdout100 \
   --after runs/orchestrated-winners-holdout100 \
   --output runs/orchestrated-holdout-comparison.json

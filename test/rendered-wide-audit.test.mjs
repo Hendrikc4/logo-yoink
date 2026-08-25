@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import sharp from 'sharp';
-import { analyzeCropBuffer, candidateGate, chooseSmallestDescendant, hasPositiveLogoToken, isLocalizedHomeLink } from '../scripts/rendered-wide-audit.mjs';
+import { analyzeCropBuffer, candidateGate, chooseSmallestDescendant, hasPositiveLogoToken, isLocalizedHomeLink } from '../scripts/experiments/rendered-wide-audit.mjs';
 
 test('rendered-wide evidence accepts localized home links and separated logo tokens', () => {
   assert.equal(isLocalizedHomeLink('https://example.com/de/', 'example.com'), true);

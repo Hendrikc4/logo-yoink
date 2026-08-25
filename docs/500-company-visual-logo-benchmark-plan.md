@@ -2,7 +2,7 @@
 
 Status: labeling workflow implemented; 500-company labeling not yet complete  
 Dataset source: [`fixtures/companies-500.json`](../fixtures/companies-500.json)  
-Tool: [`scripts/visual-label-sheets.mjs`](../scripts/visual-label-sheets.mjs)
+Tool: [`scripts/review/visual-label-sheets.mjs`](../scripts/review/visual-label-sheets.mjs)
 
 ## Goal
 
@@ -39,7 +39,7 @@ labeling pass.
 Build a packet with:
 
 ```sh
-node scripts/visual-label-sheets.mjs build \
+npm run visual-benchmark:label-sheets -- build \
   --run runs/visual-benchmark-v1 \
   --output runs/visual-benchmark-v1/label-sheets-v3 \
   --max-candidates 24 \
@@ -130,7 +130,7 @@ whose visible content is a horizontal wordmark is still `wide`.
 Place completed JSON or JSONL responses in one file or directory, then run:
 
 ```sh
-node scripts/visual-label-sheets.mjs validate \
+npm run visual-benchmark:label-sheets -- validate \
   --packet runs/visual-benchmark-v1/label-sheets-v3 \
   --labels runs/visual-benchmark-v1/label-responses \
   --output runs/visual-benchmark-v1/candidate-labels.jsonl \

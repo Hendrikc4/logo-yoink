@@ -32,5 +32,5 @@ The one-time frozen evaluation replay covered 73 current-identity entities: 34 c
 
 - `npm test`: 181 tests passed and all 500 fixtures validated.
 - Focused browser and extraction tests: `node --test test/discover-browser.test.mjs test/extractor.test.mjs`.
-- Frozen replay: `node scripts/visual-benchmark-replay.mjs --root /Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged --labels /Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged/label-sheets-v3/candidate-labels-500-v1-adjudicated.jsonl --splits evaluation`.
+- Frozen replay: `npm run visual-benchmark:replay -- --root runs/visual-benchmark-v1-500-v1/merged --labels runs/visual-benchmark-v1-500-v1/merged/label-sheets-v3/candidate-labels-500-v1-adjudicated.jsonl --splits evaluation`. These inputs are restored or generated in the ignored `runs/` tree.
 - Ignored experiment artifacts: `runs/harker-wide-logo-discovery-2026-08-24/`.

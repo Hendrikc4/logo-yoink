@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { serverlessBrowserLaunchOptions } from '../src/serverless-browser.mjs';
+import { serverlessBrowserLaunchOptions } from '../src/demo/serverless-browser.mjs';
 
 test('serverless browser options stay dormant outside Vercel or Lambda', async () => {
   const chromium = { executablePath: async () => { throw new Error('must stay lazy'); } };

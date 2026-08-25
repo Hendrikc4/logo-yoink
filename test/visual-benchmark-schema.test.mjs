@@ -4,10 +4,10 @@ import { mkdtemp, readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-import { assignBenchmark, generateShards } from '../scripts/visual-benchmark-shards.mjs';
-import { validateRun } from '../scripts/visual-benchmark-validate.mjs';
-import { mergeRuns } from '../scripts/visual-benchmark-merge.mjs';
-import { RANKER_SAFE_REVIEW_VERSION, REVIEW_VERSION, identityForBrandMarkDecision, labelIdFor, normalizeLabelRecord, targetKeyFor, validateCanonicalLabel } from '../scripts/visual-benchmark-labels.mjs';
+import { assignBenchmark, generateShards } from '../scripts/benchmark/visual-benchmark-shards.mjs';
+import { validateRun } from '../scripts/benchmark/visual-benchmark-validate.mjs';
+import { mergeRuns } from '../scripts/benchmark/visual-benchmark-merge.mjs';
+import { RANKER_SAFE_REVIEW_VERSION, REVIEW_VERSION, identityForBrandMarkDecision, labelIdFor, normalizeLabelRecord, targetKeyFor, validateCanonicalLabel } from '../benchmark/lib/labels.mjs';
 
 const companyFixture = new URL('../fixtures/companies-500.json', import.meta.url).pathname;
 const pilotFixture = new URL('../fixtures/visual-benchmark-pilot-20.json', import.meta.url).pathname;

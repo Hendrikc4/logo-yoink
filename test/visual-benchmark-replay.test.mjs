@@ -3,7 +3,7 @@ import { mkdtemp, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
-import { replay } from '../scripts/visual-benchmark-replay.mjs';
+import { replay } from '../scripts/benchmark/visual-benchmark-replay.mjs';
 
 test('offline replay scores stored selections and explicit current-site abstentions', async () => {
   const root = await mkdtemp(join(tmpdir(), 'logo-replay-'));

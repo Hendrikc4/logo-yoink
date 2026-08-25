@@ -9,7 +9,7 @@ import {
   publicDemoExtractionOptions,
   readDemoJson,
   securityHeaders,
-} from '../src/demo-security.mjs';
+} from '../src/demo/security.mjs';
 
 function request({ headers = {}, body = '', address = '203.0.113.10' } = {}) {
   const stream = Readable.from(body ? [Buffer.from(body)] : []);

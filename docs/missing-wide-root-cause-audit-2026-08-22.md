@@ -6,22 +6,22 @@ No new discovery surface should be enabled. The already-retained asynchronous br
 
 ## Frozen cohort and method
 
-The control is the precision-ranked remaining-300 run at `/Users/hendrik/Documents/logo-yoink/runs/review-final-remaining-300/results.jsonl`, produced by current `main` (`1dc320b`). It contains 300 records: 257 reachable companies, 144 accepted wide logos, and 113 reachable records without an accepted wide logo.
+The control is the precision-ranked remaining-300 run at `runs/review-final-remaining-300/results.jsonl`, produced by current `main` (`1dc320b`). It contains 300 records: 257 reachable companies, 144 accepted wide logos, and 113 reachable records without an accepted wide logo. This input lives in the intentionally ignored `runs/` tree and is not included in a fresh clone.
 
-[`prepare-missing-wide-audit.mjs`](../scripts/prepare-missing-wide-audit.mjs) ranks those 113 eligible records by SHA-256 of the fixed seed `missing-wide-root-cause-audit-v1` and entity ID, then takes the first 75. Input order does not affect the sample. The frozen sample and observations are in the ignored local run directory `runs/missing-wide-audit-2026-08-22/`.
+[`prepare-missing-wide-audit.mjs`](../scripts/experiments/prepare-missing-wide-audit.mjs) ranks those 113 eligible records by SHA-256 of the fixed seed `missing-wide-root-cause-audit-v1` and entity ID, then takes the first 75. Input order does not affect the sample. The frozen sample and observations are in the ignored local run directory `runs/missing-wide-audit-2026-08-22/`.
 
 Every company page was captured in a real browser and visually inspected. Each miss received exactly one primary cause: the earliest cause that explains why the precision-ranked static control has no defensible wide winner. Every treatment-changed asset was also rendered on light and dark panels. “Ambiguous” means the current page clearly presents a coherent brand but the fixture-to-current-identity relationship cannot be established from first-party evidence; ambiguous is counted as non-correct in strict precision.
 
 Reproduction commands:
 
 ```sh
-node scripts/prepare-missing-wide-audit.mjs \
-  /Users/hendrik/Documents/logo-yoink/runs/review-final-remaining-300 \
+node scripts/experiments/prepare-missing-wide-audit.mjs \
+  runs/review-final-remaining-300 \
   runs/missing-wide-audit-2026-08-22/control 75
-node scripts/warm-browser-observations.mjs \
+node scripts/experiments/warm-browser-observations.mjs \
   runs/missing-wide-audit-2026-08-22/control \
   runs/missing-wide-audit-2026-08-22/browser-observations 2 12000
-node scripts/replay-browser-observations.mjs \
+node scripts/experiments/replay-browser-observations.mjs \
   runs/missing-wide-audit-2026-08-22/control \
   runs/missing-wide-audit-2026-08-22/browser-observations \
   runs/missing-wide-audit-2026-08-22/browser-treatment

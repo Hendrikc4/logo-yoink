@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { conflictsWithRequestedIdentity, explicitBrowserIdentity } from '../scripts/replay-browser-observations.mjs';
-import { missingWideQueue, observationCacheState, observationKey } from '../scripts/warm-browser-observations.mjs';
+import { conflictsWithRequestedIdentity, explicitBrowserIdentity } from '../scripts/experiments/replay-browser-observations.mjs';
+import { missingWideQueue, observationCacheState, observationKey } from '../scripts/experiments/warm-browser-observations.mjs';
 
 function candidate(alt, overrides = {}) {
   return { evidence: { alt, aria_label: '', home_linked: true, positive_token: true, ...overrides } };

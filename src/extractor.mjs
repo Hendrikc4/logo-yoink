@@ -1,12 +1,13 @@
 import { createHash } from 'node:crypto';
-import { isIP } from 'node:net';
-import { lookup as dnsLookup } from 'node:dns/promises';
 import sharp from 'sharp';
 import { parseHomepage, resolveHttpUrl } from './discover-static.mjs';
 import { discoverBrowserLogos } from './discover-browser.mjs';
 import { discoverOfficialBrandAssets, discoverSpaBundleAssets } from './discover-deep.mjs';
 import { hasWideEvidence, rankCandidates, scoreCandidate, SOURCE_WEIGHT } from './rank.mjs';
 import { measureTinyImageSuitability } from './tiny-image-suitability.mjs';
+import { mapConcurrent } from './concurrency.mjs';
+import { isPrivateIp } from './network-safety.mjs';
+import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
 const MAX_HTML_BYTES = 2 * 1024 * 1024;
@@ -104,59 +105,6 @@ export function normalizeWebsite(value) {
   const hostname = url.hostname.toLowerCase();
   if (hostname === 'localhost' || hostname.endsWith('.localhost') || isPrivateIp(hostname)) throw new Error('Local and private-network addresses are not supported.');
   return { url, domain: hostname.replace(/^www\./, '') };
-}
-
-function isPrivateIp(hostname) {
-  if (!isIP(hostname)) return false;
-  if (hostname === '::' || hostname === '::1' || /^(fc|fd|fe[89ab])/i.test(hostname) || /^2001:db8:/i.test(hostname)) return true;
-  const mapped = hostname.match(/^::ffff:([\da-f]{1,4}):([\da-f]{1,4})$/i);
-  if (mapped) {
-    const number = Number.parseInt(mapped[1], 16) * 65536 + Number.parseInt(mapped[2], 16);
-    return isPrivateIp(`${number >>> 24}.${number >>> 16 & 255}.${number >>> 8 & 255}.${number & 255}`);
-  }
-  const parts = hostname.split('.').map(Number);
-  return parts[0] === 0 || parts[0] === 10 || parts[0] === 127 ||
-    (parts[0] === 100 && parts[1] >= 64 && parts[1] <= 127) ||
-    (parts[0] === 169 && parts[1] === 254) ||
-    (parts[0] === 172 && parts[1] >= 16 && parts[1] <= 31) ||
-    (parts[0] === 192 && ((parts[1] === 0 && [0, 2].includes(parts[2])) || (parts[1] === 88 && parts[2] === 99) || parts[1] === 168)) ||
-    (parts[0] === 198 && (parts[1] === 18 || parts[1] === 19 || (parts[1] === 51 && parts[2] === 100))) ||
-    (parts[0] === 203 && parts[1] === 0 && parts[2] === 113) || parts[0] >= 224;
-}
-
-async function assertPublicUrl(value) {
-  const url = new URL(value);
-  const expectedPort = url.protocol === 'http:' ? '80' : url.protocol === 'https:' ? '443' : null;
-  if (!expectedPort || url.username || url.password || (url.port && url.port !== expectedPort)) throw new Error('Unsafe or unsupported URL.');
-  const hostname = url.hostname.toLowerCase().replace(/^\[|\]$/g, '').replace(/\.$/, '');
-  if (hostname === 'localhost' || hostname.endsWith('.localhost') || hostname.endsWith('.local') || isPrivateIp(hostname)) throw new Error('Local and private-network addresses are not supported.');
-  if (!isIP(hostname)) {
-    const addresses = await dnsLookup(hostname, { all: true, verbatim: true });
-    if (!addresses.length || addresses.some(item => isPrivateIp(item.address))) throw new Error('Hostname resolves to a non-public address.');
-  }
-  return url;
-}
-
-async function fetchTimed(url, { timeoutMs, accept = '*/*', diagnostics, allowPrivate = false, headers = {} } = {}) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs ?? DEFAULT_TIMEOUT_MS);
-  try {
-    let current = String(url);
-    if (current.startsWith('data:')) return await fetch(current, { signal: controller.signal });
-    for (let redirects = 0; redirects <= 5; redirects++) {
-      if (!allowPrivate) await assertPublicUrl(current);
-      if (diagnostics) diagnostics.requests += 1;
-      const response = await fetch(current, { redirect: 'manual', signal: controller.signal, headers: { accept, 'user-agent': 'Mozilla/5.0 (compatible; LogoYoink/0.2; +https://github.com/Hendrikc4/logo-yoink)', ...headers } });
-      if (![301, 302, 303, 307, 308].includes(response.status)) return response;
-      const location = response.headers.get('location');
-      if (!location) return response;
-      current = new URL(location, current).href;
-    }
-    throw new Error('Too many redirects.');
-  } catch (error) {
-    controller.abort();
-    throw error;
-  } finally { clearTimeout(timer); }
 }
 
 async function fetchJinaHomepage(targetUrl, { apiKey, timeoutMs = DEFAULT_TIMEOUT_MS, diagnostics, fetchImpl = fetch, validateUrl = assertPublicUrl } = {}) {
@@ -259,40 +207,6 @@ async function jinaBrandCandidate(targetUrl, html, { timeoutMs = 12_000 } = {}) 
     await browser.close();
   }
   return brandScreenshotCandidate(targetUrl, bytes, 'jina-reader-html-local-render');
-}
-
-async function readLimited(response, maxBytes, { truncate = false, diagnostics, timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
-  const declared = Number(response.headers.get('content-length') ?? 0);
-  if (declared > maxBytes && !truncate) throw new Error(`Response exceeds ${maxBytes} bytes.`);
-  if (!response.body) return { bytes: Buffer.alloc(0), truncated: false };
-  const reader = response.body.getReader(), chunks = [];
-  let total = 0, truncated = false;
-  const deadline = Date.now() + timeoutMs;
-  while (true) {
-    const remaining = deadline - Date.now();
-    if (remaining <= 0) { await reader.cancel(); throw new DOMException('Body read timed out.', 'AbortError'); }
-    let timer;
-    let read;
-    try {
-      read = await Promise.race([
-        reader.read(),
-        new Promise((_, reject) => { timer = setTimeout(() => reject(new DOMException('Body read timed out.', 'AbortError')), remaining); }),
-      ]);
-    } catch (error) {
-      await reader.cancel().catch(() => {});
-      throw error;
-    } finally { clearTimeout(timer); }
-    const { done, value } = read;
-    if (done) break;
-    if (total + value.length > maxBytes) {
-      if (!truncate) { await reader.cancel(); throw new Error(`Response exceeds ${maxBytes} bytes.`); }
-      chunks.push(Buffer.from(value.subarray(0, maxBytes - total))); total = maxBytes; truncated = true; await reader.cancel(); break;
-    }
-    total += value.length; chunks.push(Buffer.from(value));
-  }
-  const bytes = Buffer.concat(chunks);
-  if (diagnostics) diagnostics.bytesDownloaded += bytes.length;
-  return { bytes, truncated: truncated || declared > maxBytes };
 }
 
 function candidate(url, source, sizes = '', type = '', extra = {}) {
@@ -459,8 +373,6 @@ async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, sta
     return { ...cleanItem, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? [] }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
-async function mapConcurrent(items, concurrency, mapper) { const output = new Array(items.length); let cursor = 0; await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, async () => { while (cursor < items.length) { const index = cursor++; output[index] = await mapper(items[index], index); } })); return output; }
-
 function dataUrlBytes(value) {
   const match = /^data:[^;,]+(;base64)?,([\s\S]*)$/.exec(String(value ?? ''));
   if (!match) return null;

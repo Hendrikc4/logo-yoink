@@ -6,7 +6,7 @@ Date: 2026-08-23
 
 Improve the current system against the frozen 500-company labels without changing the benchmark, adding a new architecture, or tuning on the evaluation split.
 
-The baseline is in [`baseline-current-system-v1.md`](../runs/visual-benchmark-v1-500-v1/merged/label-sheets-v3/baseline-current-system-v1.md).
+The baseline was generated at `runs/visual-benchmark-v1-500-v1/merged/label-sheets-v3/baseline-current-system-v1.md`. The `runs/` tree is intentionally ignored, so this artifact is available only in a workspace that has produced or restored the frozen run.
 
 ## What the baseline says
 

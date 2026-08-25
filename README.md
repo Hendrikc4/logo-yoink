@@ -140,6 +140,12 @@ Run the tests:
 npm test
 ```
 
+Run the same syntax and test checks used by CI:
+
+```bash
+npm run check
+```
+
 The main trail map:
 
 ```text
@@ -148,6 +154,8 @@ src/discover-browser.mjs  render the bounded browser fallback
 src/discover-deep.mjs     inspect official brand paths and kits
 src/rank.mjs              score icons, wordmarks, and favicons
 src/extractor.mjs         validate, deduplicate, and orchestrate
+src/http-client.mjs       enforce safe, bounded network reads
+src/demo/                 share demo policy across local and Vercel adapters
 src/server.mjs            serve the tiny local web app and API
 src/cli.mjs               print results or download the winner
 ```

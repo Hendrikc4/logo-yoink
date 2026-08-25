@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { compareResults, parseArgs, selectCohort, summarizeResults } from '../scripts/benchmark.mjs';
+import { compareResults, parseArgs, selectCohort, summarizeResults } from '../scripts/benchmark/benchmark.mjs';
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
 
@@ -97,7 +97,7 @@ test('contact sheet emits entity-keyed, data-URL-free raster previews', async ()
   await writeFile(join(directory, 'assets', 'abc.png'), png);
   const record = result('entity-1', [{ ...candidate('candidate-1', 'icon'), asset_path: 'assets/abc.png', format: 'png', url: 'https://example.test/logo.png' }], { icon: 'candidate-1' });
   await writeFile(join(directory, 'results.jsonl'), `${JSON.stringify(record)}\n`);
-  const processResult = spawnSync(process.execPath, [join(ROOT, 'scripts', 'contact-sheet.mjs'), '--run', directory], { encoding: 'utf8' });
+  const processResult = spawnSync(process.execPath, [join(ROOT, 'scripts', 'review', 'contact-sheet.mjs'), '--run', directory], { encoding: 'utf8' });
   assert.equal(processResult.status, 0, processResult.stderr);
   const page = await readFile(join(directory, 'contact-sheets', 'page-001.html'), 'utf8');
   assert.match(page, /data-entity-id="entity-1"/);
@@ -112,12 +112,12 @@ test('review-label builder rejects invalid or unmatched overrides', async () => 
   await writeFile(join(directory, 'results.jsonl'), `${JSON.stringify(record)}\n`);
   const reviewPath = join(directory, 'review.json');
   await writeFile(reviewPath, JSON.stringify({ overrides: [{ website: 'missing.test', role: 'icon', identity: 'wrong', usability: 'unusable' }] }));
-  const unmatched = spawnSync(process.execPath, [join(ROOT, 'scripts', 'build-review-labels.mjs'), directory, reviewPath], { encoding: 'utf8' });
+  const unmatched = spawnSync(process.execPath, [join(ROOT, 'scripts', 'review', 'build-review-labels.mjs'), directory, reviewPath], { encoding: 'utf8' });
   assert.notEqual(unmatched.status, 0);
   assert.match(unmatched.stderr, /do not match a selected role/);
 
   await writeFile(reviewPath, JSON.stringify({ overrides: [{ website: 'example.test', role: 'icon', identity: 'maybe', usability: 'good' }] }));
-  const invalid = spawnSync(process.execPath, [join(ROOT, 'scripts', 'build-review-labels.mjs'), directory, reviewPath], { encoding: 'utf8' });
+  const invalid = spawnSync(process.execPath, [join(ROOT, 'scripts', 'review', 'build-review-labels.mjs'), directory, reviewPath], { encoding: 'utf8' });
   assert.notEqual(invalid.status, 0);
   assert.match(invalid.stderr, /invalid identity/);
 });
@@ -136,14 +136,14 @@ test('review-label transfer preserves unchanged judgments and requires changed s
   ].join('\n') + '\n');
   const reviewPath = join(target, 'changed-review.json');
   await writeFile(reviewPath, JSON.stringify({ overrides: [] }));
-  const missing = spawnSync(process.execPath, [join(ROOT, 'scripts', 'transfer-review-labels.mjs'), source, target, reviewPath], { encoding: 'utf8' });
+  const missing = spawnSync(process.execPath, [join(ROOT, 'scripts', 'review', 'transfer-review-labels.mjs'), source, target, reviewPath], { encoding: 'utf8' });
   assert.notEqual(missing.status, 0);
   assert.match(missing.stderr, /requires review/);
 
   await writeFile(reviewPath, JSON.stringify({ overrides: [
     { website: 'changed.example', role: 'icon', identity: 'correct', usability: 'good' },
   ] }));
-  const transferred = spawnSync(process.execPath, [join(ROOT, 'scripts', 'transfer-review-labels.mjs'), source, target, reviewPath], { encoding: 'utf8' });
+  const transferred = spawnSync(process.execPath, [join(ROOT, 'scripts', 'review', 'transfer-review-labels.mjs'), source, target, reviewPath], { encoding: 'utf8' });
   assert.equal(transferred.status, 0, transferred.stderr);
   const labels = (await readFile(join(target, 'review-labels.jsonl'), 'utf8')).trim().split('\n').map(JSON.parse);
   assert.deepEqual(labels.map(({ identity, usability }) => ({ identity, usability })), [

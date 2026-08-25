@@ -4,7 +4,7 @@ Date: 2026-08-23
 
 Baseline: `94161db88442fcfce2a9ecba72eb2325c8bc6eff`
 
-Frozen source: `/Users/hendrik/Documents/logo-yoink/runs/visual-benchmark-v1-500-v1/merged`
+Frozen source: `runs/visual-benchmark-v1-500-v1/merged` (ignored local run data)
 
 ## Decision
 
@@ -56,7 +56,7 @@ The development prefilter also demonstrated the intended deterministic rejection
 
 ## Exact artifacts
 
-- Reusable audit/filter: `scripts/rendered-wide-audit.mjs`
+- Reusable audit/filter: `scripts/experiments/rendered-wide-audit.mjs`
 - Tests: `test/rendered-wide-audit.test.mjs`
 - Development: `reports/rendered-wide-experiment-3/development/{summary.json,audit.jsonl,proposals.jsonl,blind-review.jsonl,crops/}`
 - Validation: `reports/rendered-wide-experiment-3/validation/{summary.json,audit.jsonl,proposals.jsonl,blind-review.jsonl,crops/}`

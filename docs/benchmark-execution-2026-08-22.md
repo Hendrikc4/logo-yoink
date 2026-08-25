@@ -88,7 +88,7 @@ npm run benchmark -- --cohort holdout-100 --output runs/final-holdout-100
 npm run benchmark -- --cohort remaining-300 --output runs/final-remaining-300
 npm run review-montage -- runs/final-static-100
 npm run review-labels -- runs/final-static-100 reviews/original-100-final.json
-node scripts/benchmark.mjs score \
+npm run benchmark -- score \
   --run runs/final-static-100 \
   --labels runs/final-static-100/review-labels.jsonl
 ```

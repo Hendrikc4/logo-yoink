@@ -4,8 +4,8 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { computeAgreement, cohenKappa, writeAgreementReports } from '../scripts/visual-benchmark-agreement.mjs';
-import { REVIEW_VERSION, normalizeLabelRecord } from '../scripts/visual-benchmark-labels.mjs';
+import { computeAgreement, cohenKappa, writeAgreementReports } from '../scripts/review/visual-benchmark-agreement.mjs';
+import { REVIEW_VERSION, normalizeLabelRecord } from '../benchmark/lib/labels.mjs';
 
 async function jsonl(path, rows) { await writeFile(path, rows.map(row => JSON.stringify(row)).join('\n') + '\n'); }
 
@@ -130,7 +130,7 @@ test('agreement CLI selects reviewers and prints both explicit report paths', as
   const { run } = await fixture();
   t.after(() => rm(run, { recursive: true, force: true }));
   const json = join(run, 'custom', 'agreement.json'), markdown = join(run, 'custom', 'agreement.md');
-  const command = [new URL('../scripts/visual-benchmark-agreement.mjs', import.meta.url).pathname, '--run', run, '--reviewer-a', 'reviewer-a', '--reviewer-b', 'reviewer-b', '--json', json, '--markdown', markdown];
+  const command = [new URL('../scripts/review/visual-benchmark-agreement.mjs', import.meta.url).pathname, '--run', run, '--reviewer-a', 'reviewer-a', '--reviewer-b', 'reviewer-b', '--json', json, '--markdown', markdown];
   const first = spawnSync(process.execPath, command, { encoding: 'utf8' });
   assert.equal(first.status, 0, first.stderr);
   assert.deepEqual(first.stdout.trim().split('\n'), [json, markdown]);
