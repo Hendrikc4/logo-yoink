@@ -11,6 +11,8 @@
 <p align="center">
   <a href="https://logo-yoink.com/">Try the live demo</a>
   ·
+  <a href="https://logo-yoink.com/docs">Read the docs</a>
+  ·
   <a href="#quick-draw">Run it yourself</a>
   ·
   <a href="#use-the-api">Use the API</a>

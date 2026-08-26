@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentation — Logo Yoink</title>
+    <meta name="description" content="Install, self-host, and integrate the Logo Yoink API. Complete request, response, CLI, deployment, and architecture documentation.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080b0d">
+    <link rel="canonical" href="https://logo-yoink.com/docs">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Logo Yoink">
+    <meta property="og:title" content="Logo Yoink Documentation">
+    <meta property="og:description" content="Everything you need to run, deploy, and integrate the open-source logo extraction API.">
+    <meta property="og:url" content="https://logo-yoink.com/docs">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
+    <link rel="stylesheet" href="/docs.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#documentation">Skip to documentation</a>
+    <header class="docs-header">
+      <a class="docs-brand" href="/" aria-label="Logo Yoink home">
+        <span class="brand-mark"><img src="/assets/brand/logo-yoink-mark.png" width="30" height="30" alt=""></span>
+        <span>Logo Yoink</span><i>Docs</i>
+      </a>
+      <nav aria-label="Global navigation">
+        <a href="/">Demo</a>
+        <a class="is-current" href="/docs" aria-current="page">Docs</a>
+        <a href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+      <button class="menu-button" type="button" aria-controls="docs-sidebar" aria-expanded="false"><span></span><span></span><b class="visually-hidden">Open documentation menu</b></button>
+    </header>
+
+    <div class="docs-layout">
+      <aside class="docs-sidebar" id="docs-sidebar">
+        <label class="docs-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+          <span class="visually-hidden">Filter documentation</span>
+          <input id="docs-filter" type="search" placeholder="Find in the docs" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <nav class="section-nav" aria-label="Documentation sections">
+          <div>
+            <p>Start here</p>
+            <a href="#overview">Overview</a>
+            <a href="#quickstart">Quickstart</a>
+            <a href="#first-request">First request</a>
+          </div>
+          <div>
+            <p>API reference</p>
+            <a href="#extract"><span class="method-dot">POST</span> Extract logos</a>
+            <a href="#preferences">Preferences</a>
+            <a href="#response">Response</a>
+            <a href="#errors">Errors &amp; limits</a>
+          </div>
+          <div>
+            <p>Run it yourself</p>
+            <a href="#cli">CLI</a>
+            <a href="#configuration">Configuration</a>
+            <a href="#deployment">Deployment</a>
+          </div>
+          <div>
+            <p>Under the hood</p>
+            <a href="#pipeline">How it works</a>
+            <a href="#ranking">Ranking model</a>
+            <a href="#security">Security</a>
+            <a href="#limitations">Limitations</a>
+          </div>
+        </nav>
+        <p class="sidebar-foot"><span></span> Open source · MIT</p>
+      </aside>
+
+      <main id="documentation" class="docs-main">
+        <section id="overview" class="docs-hero doc-section" data-doc-title="Overview introduction API logo finder">
+          <div class="eyebrow"><span>Documentation</span><i>v0.1.0</i></div>
+          <h1>One URL in.<br><em>The right logos out.</em></h1>
+          <p class="hero-lede">Logo Yoink is a self-hosted API and CLI that discovers the real logo files a website exposes, validates them, and ranks the best icon and wordmark—without generating or inventing artwork.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#quickstart"><span>Start building</span><i aria-hidden="true">↓</i></a>
+            <a class="secondary-action" href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="status-strip" aria-label="Project characteristics">
+            <span><i></i> Deterministic runtime</span>
+            <span>Node.js 22+</span>
+            <span>No database</span>
+            <span>MIT licensed</span>
+          </div>
+        </section>
+
+        <section class="concept-grid doc-section" data-doc-title="Core concepts icon logo wordmark transparent candidates evidence">
+          <article><span>01</span><div><h2>Two canonical roles</h2><p><code>assets.icon</code> is for compact, square placements. <code>assets.logo</code> is the wider wordmark for headers and cards.</p></div></article>
+          <article><span>02</span><div><h2>Evidence, not guesses</h2><p>Every returned candidate includes its source, dimensions, role scores, variant metadata, and the reasons behind its score.</p></div></article>
+          <article><span>03</span><div><h2>Preference-aware</h2><p>Ask for light or dark surfaces, color treatment, and transparent or opaque backgrounds. Matching is best-effort.</p></div></article>
+        </section>
+
+        <section id="quickstart" class="doc-section" data-doc-title="Quickstart install setup prerequisites Node npm Playwright Chromium">
+          <div class="section-heading"><span>01</span><div><p>Quickstart</p><h2>Run locally in five commands.</h2></div></div>
+          <p class="section-lede">You need Node.js 22 or newer, npm, and internet access to inspect public websites. No database or API key is required.</p>
+          <div class="code-window">
+            <div class="code-top"><span><i></i><i></i><i></i></span><b>Terminal</b><button class="copy-button" type="button" data-copy-target="install-code">Copy</button></div>
+            <pre id="install-code"><code><span class="token-prompt">$</span> git clone https://github.com/Hendrikc4/logo-yoink.git
+<span class="token-prompt">$</span> cd logo-yoink
+<span class="token-prompt">$</span> npm ci
+<span class="token-prompt">$</span> npx playwright install chromium
+<span class="token-prompt">$</span> cp .env.example .env.local
+<span class="token-prompt">$</span> npm start</code></pre>
+          </div>
+          <aside class="callout"><span>Ready</span><p>Open <a href="http://127.0.0.1:4310">127.0.0.1:4310</a>. On a fresh Linux machine, use <code>npx playwright install --with-deps chromium</code>.</p></aside>
+          <h3>Verify your setup</h3>
+          <p><code>npm run smoke</code> starts an isolated local server, verifies the homepage and API validation, then shuts it down. It does not contact a third-party site. For the full suite, run <code>npm run check</code>.</p>
+        </section>
+
+        <section id="first-request" class="doc-section" data-doc-title="First API request curl JavaScript fetch example">
+          <div class="section-heading"><span>02</span><div><p>First request</p><h2>Extract from any public website.</h2></div></div>
+          <p class="section-lede">Send JSON to the endpoint on the instance you control. The hosted endpoint powers the public demo and is intentionally rate-limited.</p>
+          <div class="code-window">
+            <div class="code-top"><span class="code-tabs"><button type="button" class="code-tab is-active" data-language="curl">cURL</button><button type="button" class="code-tab" data-language="javascript">JavaScript</button></span><button class="copy-button" type="button" data-copy-group="first-request">Copy</button></div>
+            <pre data-code-panel="curl"><code><span class="token-prompt">$</span> curl -sS http://127.0.0.1:4310/api/extract \
+  -H <span class="token-string">'content-type: application/json'</span> \
+  -d <span class="token-string">'{"website":"stripe.com"}'</span></code></pre>
+            <pre data-code-panel="javascript" hidden><code><span class="token-keyword">const</span> response = <span class="token-keyword">await</span> fetch(<span class="token-string">'http://127.0.0.1:4310/api/extract'</span>, {
+  method: <span class="token-string">'POST'</span>,
+  headers: { <span class="token-property">'content-type'</span>: <span class="token-string">'application/json'</span> },
+  body: JSON.stringify({ website: <span class="token-string">'stripe.com'</span> }),
+});
+
+<span class="token-keyword">if</span> (!response.ok) <span class="token-keyword">throw new</span> Error(<span class="token-string">`Extraction failed: ${response.status}`</span>);
+<span class="token-keyword">const</span> { assets, assetVariants } = <span class="token-keyword">await</span> response.json();
+
+console.log(assets.icon?.resolvedUrl);
+console.log(assets.logo?.resolvedUrl);</code></pre>
+          </div>
+        </section>
+
+        <section id="extract" class="doc-section" data-doc-title="POST API extract endpoint request body content type headers">
+          <div class="endpoint-heading"><span>POST</span><code>/api/extract</code></div>
+          <p>Discovers, validates, deduplicates, and ranks logo assets for one public HTTP or HTTPS website.</p>
+          <h3>Request body</h3>
+          <div class="property-table" role="table" aria-label="Request body fields">
+            <div class="property-row" role="row"><div role="cell"><code>website</code><b>string · required</b></div><p role="cell">A hostname or public HTTP(S) URL, up to 2,048 characters. Bare domains such as <code>stripe.com</code> are accepted.</p></div>
+            <div class="property-row" role="row"><div role="cell"><code>preferences</code><b>object · optional</b></div><p role="cell">Role-specific appearance preferences. Only <code>icon</code> and <code>logo</code> keys are accepted.</p></div>
+          </div>
+          <aside class="callout callout--warning"><span>Important</span><p>The public route accepts only these two top-level fields and requires <code>Content-Type: application/json</code>. Unknown fields are rejected.</p></aside>
+        </section>
+
+        <section id="preferences" class="doc-section" data-doc-title="Preferences theme color background any light dark transparent opaque white black">
+          <div class="section-heading"><span>03</span><div><p>Request options</p><h2>Choose the right treatment.</h2></div></div>
+          <p class="section-lede">Icon and logo preferences use the same fields. Omitted values normalize to <code>any</code>.</p>
+          <div class="property-table" role="table" aria-label="Preference fields">
+            <div class="property-row" role="row"><div role="cell"><code>theme</code><b>any | light | dark</b></div><p role="cell">The <strong>surface the asset will sit on</strong>. Use <code>dark</code> to prefer light artwork for a dark UI.</p></div>
+            <div class="property-row" role="row"><div role="cell"><code>color</code><b>any | color | white | black</b></div><p role="cell">The desired artwork treatment.</p></div>
+            <div class="property-row" role="row"><div role="cell"><code>background</code><b>any | transparent | opaque</b></div><p role="cell">Whether the returned file should carry transparency.</p></div>
+          </div>
+          <div class="code-window compact">
+            <div class="code-top"><b>Request with role-specific preferences</b><button class="copy-button" type="button" data-copy-target="preference-code">Copy</button></div>
+            <pre id="preference-code"><code>{
+  <span class="token-property">"website"</span>: <span class="token-string">"stripe.com"</span>,
+  <span class="token-property">"preferences"</span>: {
+    <span class="token-property">"icon"</span>: { <span class="token-property">"color"</span>: <span class="token-string">"color"</span> },
+    <span class="token-property">"logo"</span>: {
+      <span class="token-property">"theme"</span>: <span class="token-string">"dark"</span>,
+      <span class="token-property">"color"</span>: <span class="token-string">"white"</span>,
+      <span class="token-property">"background"</span>: <span class="token-string">"transparent"</span>
+    }
+  }
+}</code></pre>
+          </div>
+          <p>Preferences are best-effort. A matching eligible asset ranks first when available; otherwise Logo Yoink returns the strongest eligible fallback.</p>
+        </section>
+
+        <section id="response" class="doc-section" data-doc-title="Response schema assets assetVariants candidate families diagnostics selectedByRole dataUrl">
+          <div class="section-heading"><span>04</span><div><p>Response</p><h2>Canonical picks, variants, and proof.</h2></div></div>
+          <div class="response-map">
+            <article><code>assets</code><p>The canonical <code>icon</code> and <code>logo</code>. Start here for most integrations.</p></article>
+            <article><code>assetVariants</code><p>Ordered, semantically distinct treatments. The selected asset is first.</p></article>
+            <article><code>assetFamilies</code><p>Related delivery-size copies grouped into artwork families.</p></article>
+            <article><code>candidates</code><p>Every validated candidate with scores and evidence.</p></article>
+            <article><code>diagnostics</code><p>Discovery counts, fallbacks, network work, and duration.</p></article>
+            <article><code>selectedByRole</code><p>Compatibility aliases: <code>icon</code>, <code>wide</code>, and legacy <code>favicon</code>.</p></article>
+          </div>
+          <h3>Representative response</h3>
+          <div class="code-window tall">
+            <div class="code-top"><b>200 OK · application/json</b><button class="copy-button" type="button" data-copy-target="response-code">Copy</button></div>
+            <pre id="response-code"><code>{
+  <span class="token-property">"input"</span>: <span class="token-string">"stripe.com"</span>,
+  <span class="token-property">"domain"</span>: <span class="token-string">"stripe.com"</span>,
+  <span class="token-property">"homepage"</span>: <span class="token-string">"https://stripe.com/"</span>,
+  <span class="token-property">"preferences"</span>: {
+    <span class="token-property">"icon"</span>: { <span class="token-property">"theme"</span>: <span class="token-string">"any"</span>, <span class="token-property">"color"</span>: <span class="token-string">"any"</span>, <span class="token-property">"background"</span>: <span class="token-string">"any"</span> },
+    <span class="token-property">"logo"</span>: { <span class="token-property">"theme"</span>: <span class="token-string">"dark"</span>, <span class="token-property">"color"</span>: <span class="token-string">"white"</span>, <span class="token-property">"background"</span>: <span class="token-string">"transparent"</span> }
+  },
+  <span class="token-property">"assets"</span>: {
+    <span class="token-property">"icon"</span>: <span class="token-keyword">null</span>,
+    <span class="token-property">"logo"</span>: {
+      <span class="token-property">"resolvedUrl"</span>: <span class="token-string">"https://…/logo.svg"</span>,
+      <span class="token-property">"dataUrl"</span>: <span class="token-string">"data:image/svg+xml;base64,…"</span>,
+      <span class="token-property">"format"</span>: <span class="token-string">"svg"</span>,
+      <span class="token-property">"width"</span>: <span class="token-number">512</span>,
+      <span class="token-property">"height"</span>: <span class="token-number">170</span>,
+      <span class="token-property">"source"</span>: <span class="token-string">"dom-img"</span>,
+      <span class="token-property">"variant"</span>: { <span class="token-property">"theme"</span>: <span class="token-string">"dark"</span>, <span class="token-property">"color"</span>: <span class="token-string">"white"</span>, <span class="token-property">"background"</span>: <span class="token-string">"transparent"</span> },
+      <span class="token-property">"role_scores"</span>: { <span class="token-property">"icon"</span>: <span class="token-number">28</span>, <span class="token-property">"wide"</span>: <span class="token-number">84</span>, <span class="token-property">"favicon"</span>: <span class="token-number">12</span> },
+      <span class="token-property">"predicted_roles"</span>: [<span class="token-string">"wide"</span>],
+      <span class="token-property">"score_reasons"</span>: [<span class="token-string">"wide shape +30"</span>, <span class="token-string">"home linked +12"</span>]
+    }
+  },
+  <span class="token-property">"assetVariants"</span>: {
+    <span class="token-property">"icon"</span>: [],
+    <span class="token-property">"logo"</span>: [{
+      <span class="token-property">"resolvedUrl"</span>: <span class="token-string">"https://…/logo.svg"</span>,
+      <span class="token-property">"certainty"</span>: { <span class="token-property">"score"</span>: <span class="token-number">84</span>, <span class="token-property">"band"</span>: <span class="token-string">"high"</span> }
+    }]
+  },
+  <span class="token-property">"variantPolicy"</span>: { <span class="token-property">"minimumRoleScore"</span>: <span class="token-number">45</span> },
+  <span class="token-property">"assetFamilies"</span>: [],
+  <span class="token-property">"candidates"</span>: [],
+  <span class="token-property">"diagnostics"</span>: { <span class="token-property">"discovered"</span>: <span class="token-number">19</span>, <span class="token-property">"validated"</span>: <span class="token-number">8</span>, <span class="token-property">"browserUsed"</span>: <span class="token-keyword">false</span>, <span class="token-property">"durationMs"</span>: <span class="token-number">1240</span> }
+}</code></pre>
+          </div>
+          <aside class="callout"><span>Tip</span><p>Use <code>resolvedUrl</code> when you want the original asset URL. Use <code>dataUrl</code> when you need the validated bytes immediately. The CLI omits embedded data URLs from printed JSON to keep output manageable.</p></aside>
+        </section>
+
+        <section id="errors" class="doc-section" data-doc-title="Errors status codes 400 403 413 415 429 503 rate limit retry">
+          <div class="section-heading"><span>05</span><div><p>Errors &amp; limits</p><h2>Predictable failure modes.</h2></div></div>
+          <div class="status-table">
+            <div><code>400</code><p>Invalid JSON fields, preference values, URL, or an extraction that could not complete.</p></div>
+            <div><code>403</code><p>A cross-site browser request was rejected by the demo origin policy.</p></div>
+            <div><code>413</code><p>The JSON request body is larger than the configured limit (2 KB by default).</p></div>
+            <div><code>415</code><p>The request is not <code>application/json</code>.</p></div>
+            <div><code>429</code><p>The per-client or global rate window is exhausted. Respect <code>Retry-After</code>.</p></div>
+            <div><code>503</code><p>All extraction slots are busy. Retry after the provided delay.</p></div>
+          </div>
+          <p>Successful responses expose <code>RateLimit-Limit</code> and <code>RateLimit-Remaining</code>. Errors use the stable shape <code>{ "error": "Human-readable message." }</code>.</p>
+        </section>
+
+        <section id="cli" class="doc-section" data-doc-title="CLI command flags download theme background role deep wide spa bundles">
+          <div class="section-heading"><span>06</span><div><p>CLI</p><h2>Use it without a server.</h2></div></div>
+          <div class="code-window compact"><div class="code-top"><b>Rank and print JSON</b><button class="copy-button" type="button" data-copy-target="cli-code">Copy</button></div><pre id="cli-code"><code><span class="token-prompt">$</span> npm run cli -- stripe.com
+<span class="token-prompt">$</span> npm run cli -- stripe.com --theme dark --background transparent
+<span class="token-prompt">$</span> npm run cli -- stripe.com --role logo --download ./downloads/stripe</code></pre></div>
+          <div class="property-table" role="table" aria-label="CLI options">
+            <div class="property-row"><div><code>--theme</code><b>any | light | dark</b></div><p>Preference for the logo destination surface.</p></div>
+            <div class="property-row"><div><code>--background</code><b>any | transparent | opaque</b></div><p>Preference for the logo file background.</p></div>
+            <div class="property-row"><div><code>--role</code><b>icon | logo</b></div><p>Choose which canonical winner to download. Icon-first is the default.</p></div>
+            <div class="property-row"><div><code>--download</code><b>directory</b></div><p>Write the selected validated asset to disk.</p></div>
+            <div class="property-row"><div><code>--deep-wide</code><b>flag</b></div><p>When needed, follow up to two strong first-party brand, press, or media links and inspect official ZIP kits.</p></div>
+            <div class="property-row"><div><code>--spa-bundles</code><b>flag</b></div><p>With deep discovery, inspect one same-origin entry bundle (up to 2.2 MB) for strong logo asset literals.</p></div>
+          </div>
+        </section>
+
+        <section id="configuration" class="doc-section" data-doc-title="Environment configuration env variables HOST PORT browser Jina Besticon rate limits">
+          <div class="section-heading"><span>07</span><div><p>Configuration</p><h2>Safe defaults, optional horsepower.</h2></div></div>
+          <div class="config-table" role="table" aria-label="Environment variables">
+            <div class="config-head" role="row"><span>Variable</span><span>Default</span><span>Purpose</span></div>
+            <div role="row"><code>HOST</code><b>127.0.0.1</b><p>Local server bind address.</p></div>
+            <div role="row"><code>PORT</code><b>4310</b><p>Local server port.</p></div>
+            <div role="row"><code>BROWSER_DISCOVERY</code><b>1</b><p>Set to <code>0</code> to disable local Chromium discovery.</p></div>
+            <div role="row"><code>JINA_API_KEY</code><b>unset</b><p>Optional recovery for blocked or unusable homepages.</p></div>
+            <div role="row"><code>BESTICON_URL</code><b>unset</b><p>Optional URL for a self-hosted Besticon service.</p></div>
+            <div role="row"><code>PUBLIC_DEMO_ALLOW_JINA</code><b>1</b><p>Set to <code>0</code> to keep web/API requests off Jina.</p></div>
+            <div role="row"><code>PUBLIC_DEMO_BROWSER</code><b>1</b><p>Set to <code>0</code> to disable Chromium for web/API requests.</p></div>
+            <div role="row"><code>DEMO_RATE_LIMIT</code><b>20 / 10 min</b><p>Per-client in-process request window.</p></div>
+            <div role="row"><code>DEMO_GLOBAL_RATE_LIMIT</code><b>60 / min</b><p>Per-instance global request window.</p></div>
+            <div role="row"><code>DEMO_MAX_CONCURRENT</code><b>2</b><p>Simultaneous extraction ceiling.</p></div>
+          </div>
+          <p>Logo Yoink loads <code>.env.local</code> automatically. Keep secrets there; it is gitignored. The checked-in <code>.env.example</code> contains safe local defaults.</p>
+        </section>
+
+        <section id="deployment" class="doc-section" data-doc-title="Deployment production host Vercel Docker serverless public API distributed rate limits">
+          <div class="section-heading"><span>08</span><div><p>Deployment</p><h2>Host it where your app lives.</h2></div></div>
+          <p class="section-lede">The repository includes a Vercel function adapter and static configuration. The same app can run as a long-lived Node process with <code>npm start</code>.</p>
+          <div class="deployment-grid">
+            <article><span>01</span><h3>Node process</h3><p>Set <code>HOST=0.0.0.0</code> in a container or VM, expose <code>PORT</code>, install Chromium, and run <code>npm start</code>.</p></article>
+            <article><span>02</span><h3>Vercel</h3><p>Import the repository. <code>vercel.json</code> serves the static site, maps the API function, includes serverless Chromium, and applies security headers.</p></article>
+          </div>
+          <aside class="callout callout--warning"><span>Production</span><p>The built-in limiter is in-memory and applies per instance. A multi-instance public API should add authentication or a distributed edge rate limit and enforce outbound-network controls that pin the validated public IP at connection time.</p></aside>
+        </section>
+
+        <section id="pipeline" class="doc-section" data-doc-title="How it works pipeline discover validate deduplicate rank fallbacks browser">
+          <div class="section-heading"><span>09</span><div><p>Under the hood</p><h2>A bounded extraction pipeline.</h2></div></div>
+          <div class="pipeline">
+            <article><b>1</b><div><span>Discover</span><h3>Read the public signals.</h3><p>HTML images, picture sources, safe inline SVGs, schema data, metadata, manifests, touch icons, mask icons, tiles, and favicons.</p></div></article>
+            <article><b>2</b><div><span>Validate</span><h3>Prove every asset.</h3><p>Fetch under byte and time budgets, verify actual image bytes, measure dimensions and visible content, then reject unsafe or unusable files.</p></div></article>
+            <article><b>3</b><div><span>Consolidate</span><h3>Collapse the duplicates.</h3><p>Deduplicate by URL and byte hash, then group delivery-size variations of the same artwork into asset families.</p></div></article>
+            <article><b>4</b><div><span>Rank</span><h3>Select by role.</h3><p>Score source quality, shape, size, placement, home-link evidence, company agreement, visual treatment, and negative context separately for icon and wordmark.</p></div></article>
+            <article><b>5</b><div><span>Recover</span><h3>Escalate only when needed.</h3><p>Bounded browser, deep first-party, SPA-bundle, cached favicon, Besticon, or optional Jina recovery can fill a missing role.</p></div></article>
+          </div>
+        </section>
+
+        <section id="ranking" class="doc-section" data-doc-title="Ranking deterministic AI benchmark score certainty precision candidate role">
+          <div class="section-heading"><span>10</span><div><p>Ranking</p><h2>AI-labeled. Deterministic at runtime.</h2></div></div>
+          <p class="section-lede">No model is called during extraction. AI-assisted review was used offline to label benchmark candidates and evaluate changes; the live ranker is an interpretable ruleset.</p>
+          <div class="ranking-card">
+            <div><strong>45</strong><span>Medium certainty</span><p>Minimum role score for an additional semantic variant.</p></div>
+            <div><strong>70</strong><span>High certainty</span><p>Threshold for the high confidence band.</p></div>
+            <div><strong>2,277</strong><span>Adjudicated labels</span><p>Frozen candidate judgments used to measure identity, role, and usability.</p></div>
+          </div>
+          <p>The ranker deliberately abstains when evidence is weak. A <code>null</code> canonical role is safer than silently returning a partner mark, product icon, UI glyph, or stale identity.</p>
+        </section>
+
+        <section id="security" class="doc-section" data-doc-title="Security SSRF private URL redirect origin headers timeout byte budget concurrency">
+          <div class="section-heading"><span>11</span><div><p>Security</p><h2>Designed for hostile URLs.</h2></div></div>
+          <ul class="check-list">
+            <li><span>✓</span><p><strong>Public targets only.</strong> Private, loopback, and reserved network destinations are rejected, including after redirects.</p></li>
+            <li><span>✓</span><p><strong>Bounded network work.</strong> HTML, images, bundles, redirects, time, and candidate counts have explicit ceilings.</p></li>
+            <li><span>✓</span><p><strong>Validated content.</strong> A response claiming to be an image is not trusted until its bytes pass format and renderability checks.</p></li>
+            <li><span>✓</span><p><strong>Hardened demo route.</strong> JSON-only input, origin checks, rate limits, coalescing, concurrency control, generic errors, and restrictive browser headers.</p></li>
+          </ul>
+        </section>
+
+        <section id="limitations" class="doc-section" data-doc-title="Limitations blocked sites wrong logo product rebrand stale results honest">
+          <div class="section-heading"><span>12</span><div><p>Limitations</p><h2>Know where certainty ends.</h2></div></div>
+          <ul class="limit-list">
+            <li>Some websites block automated clients or hide assets behind interactions that a bounded pass will not perform.</li>
+            <li>A site may expose a product icon instead of its corporate identity.</li>
+            <li>Dimensions and transparent-pixel bounds cannot identify every padded or unusually composed wordmark.</li>
+            <li>Redirected, acquired, or rebranded domains can continue serving stale assets.</li>
+          </ul>
+          <p>Use the canonical picks for the common path, but preserve the candidate evidence and variants when human review matters.</p>
+        </section>
+
+        <section class="docs-cta doc-section" data-doc-title="GitHub contribute source issues license">
+          <img src="/assets/game/cowboy-horse.png" width="210" height="140" alt="Pixel-art cowboy riding a horse">
+          <div><p>Ready to ride?</p><h2>Self-host the whole thing.</h2><span>Open source, inspectable, and yours to deploy.</span></div>
+          <a href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer"><span>Get the source</span><i aria-hidden="true">↗</i></a>
+        </section>
+
+        <footer class="docs-footer"><p>Logo Yoink · MIT License</p><nav><a href="/">Demo</a><a href="https://github.com/Hendrikc4/logo-yoink/issues" target="_blank" rel="noreferrer">Issues</a><a href="https://github.com/Hendrikc4/logo-yoink/blob/main/LICENSE" target="_blank" rel="noreferrer">License</a></nav></footer>
+      </main>
+
+      <aside class="on-this-page" aria-label="On this page">
+        <p>On this page</p>
+        <nav><a href="#overview">Overview</a><a href="#quickstart">Quickstart</a><a href="#extract">API reference</a><a href="#response">Response</a><a href="#deployment">Deployment</a><a href="#pipeline">How it works</a></nav>
+        <a class="edit-link" href="https://github.com/Hendrikc4/logo-yoink/edit/main/public/docs.html" target="_blank" rel="noreferrer">Edit this page <span>↗</span></a>
+      </aside>
+    </div>
+    <div class="menu-scrim" hidden></div>
+    <script src="/analytics.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script type="module" src="/docs.js"></script>
+  </body>
+</html>

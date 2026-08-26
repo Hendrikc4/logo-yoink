@@ -35,7 +35,7 @@ function json(response, status, value) {
 }
 
 async function serveFile(pathname, response) {
-  const requested = pathname === '/' ? 'index.html' : pathname.slice(1);
+  const requested = pathname === '/' ? 'index.html' : ['/docs', '/docs/'].includes(pathname) ? 'docs.html' : pathname.slice(1);
   const safePath = normalize(requested).replace(/^(\.\.(\/|\\|$))+/, '');
   const path = join(publicRoot, safePath);
   if (!path.startsWith(publicRoot)) return json(response, 404, { error: 'Not found.' });
