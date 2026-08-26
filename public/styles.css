@@ -54,6 +54,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .trail-divider { position: relative; height: 86px; margin: 22px -20px 2px; overflow: hidden; }
 .trail-divider::before { content: ''; position: absolute; inset: 0; background: url('/assets/ui/train-divider-minimal.webp') center / cover no-repeat; filter: brightness(1.2) saturate(1.08); image-rendering: pixelated; }
 .trail-divider::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--background), transparent 12%, transparent 88%, var(--background)), linear-gradient(180deg, var(--background), transparent 24%, transparent 76%, var(--background)); }
+.is-extracting .trail-divider { height: 0; margin-block: 0; opacity: 0; }
 
 .try-section { padding: 33px 0 12px; }
 #extract-form { margin: 20px 0 0; }
@@ -70,11 +71,36 @@ input::placeholder { color: #74797e; }
 .form-hint { margin: 13px 0 0; color: var(--muted); font-size: 13px; }
 .status { min-height: 30px; margin-top: 12px; color: var(--muted); font-size: 13px; }
 .status:empty { min-height: 0; margin-top: 0; }
-.status[data-state='loading'] { display: flex; align-items: center; gap: 12px; color: #d1d2cf; }
-.status[data-state='loading']::before { content: ''; width: 92px; height: 5px; background: repeating-linear-gradient(90deg, var(--acid) 0 8px, transparent 8px 13px); animation: search-track .75s steps(5,end) infinite; }
+.status[data-state='loading'] { color: #d1d2cf; }
+.train-loader { position: relative; display: block; height: clamp(96px, 11vw, 126px); overflow: hidden; border: 1px solid #222b30; border-radius: 4px; background: #03070b url('/assets/ui/train-loader-station.webp') left center / cover no-repeat; box-shadow: inset 0 0 30px rgba(0,0,0,.5); image-rendering: pixelated; }
+.train-loader::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(7,11,14,.62), transparent 9%, transparent 91%, rgba(7,11,14,.76)), linear-gradient(180deg, rgba(7,11,14,.42), transparent 28%, transparent 78%, rgba(7,11,14,.7)); }
+.train-loader__engine { position: absolute; z-index: 1; bottom: 10%; left: 0; width: clamp(175px, 22vw, 250px); aspect-ratio: 440 / 123; will-change: left, transform, opacity; filter: drop-shadow(0 4px 5px rgba(0,0,0,.65)); animation: train-crossing 5.4s linear infinite; }
+.train-loader__engine::after { content: ''; position: absolute; z-index: 3; top: 29%; left: 90%; width: 7%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(255,234,137,.68), rgba(255,166,43,.14) 42%, transparent 70%); animation: train-headlamp-flicker .28s steps(2, end) infinite alternate; }
+.train-loader__body { position: absolute; inset: 0; width: 100%; height: 100%; }
+.train-loader__wheel { position: absolute; z-index: 2; top: 71%; width: 6.35%; aspect-ratio: 1; border: clamp(1px, .12vw, 2px) solid #9a3d12; border-radius: 50%; background: radial-gradient(circle, #ffd65c 0 10%, #4d2415 11% 19%, transparent 20%), repeating-conic-gradient(#dd681b 0 8deg, #101722 9deg 72deg); box-shadow: inset 0 0 0 2px #1c1b1b, 0 0 0 1px #26110d; animation: train-wheel-spin .52s linear infinite; }
+.train-loader__wheel--rear { left: 48.2%; }
+.train-loader__wheel--middle { left: 59%; }
+.train-loader__wheel--front { left: 69.5%; }
+.train-loader__rod { position: absolute; z-index: 3; top: 82.6%; left: 50.5%; width: 24.6%; height: max(2px, .65%); border-radius: 2px; background: #f6a529; box-shadow: 0 1px #6f2d13; transform-origin: left center; animation: train-rod-pump .52s ease-in-out infinite alternate; }
+.train-loader__smoke { --smoke-delay: 0s; position: absolute; z-index: -1; top: -4%; left: 81%; width: 9%; aspect-ratio: 1.35; opacity: 0; background: radial-gradient(circle at 24% 68%, #363c44 0 19%, transparent 21%), radial-gradient(circle at 53% 38%, #4a4d4d 0 29%, transparent 31%), radial-gradient(circle at 82% 65%, #2a313a 0 22%, transparent 24%); filter: drop-shadow(2px 2px 0 rgba(2,5,8,.55)); image-rendering: pixelated; animation: train-smoke-puff 1.52s steps(8, end) var(--smoke-delay) infinite; }
+.status-message { display: block; margin-top: 9px; font-family: var(--mono); }
 .status[data-state='error'] { color: var(--danger); }
 .status[data-state='success'] { color: var(--acid); }
-@keyframes search-track { to { background-position: 26px 0; } }
+@keyframes train-crossing {
+  0%, 7% { left: 0; opacity: 1; transform: translateX(-58%) translateY(0); }
+  46% { transform: translateX(-58%) translateY(-1px); }
+  84% { left: 100%; opacity: 1; transform: translateX(0) translateY(0); }
+  85%, 100% { left: 100%; opacity: 0; transform: translateX(0) translateY(0); }
+}
+@keyframes train-wheel-spin { to { transform: rotate(1turn); } }
+@keyframes train-rod-pump { from { transform: translateX(-3%) rotate(-1.5deg); } to { transform: translateX(3%) rotate(1.5deg); } }
+@keyframes train-headlamp-flicker { from { opacity: .66; transform: scale(.9); } to { opacity: 1; transform: scale(1.08); } }
+@keyframes train-smoke-puff {
+  0% { opacity: 0; transform: translate(0, 14%) scale(.48); }
+  16% { opacity: .9; }
+  70% { opacity: .48; }
+  100% { opacity: 0; transform: translate(-175%, -105%) scale(1.72); }
+}
 
 .results { padding: 65px 0 0; }
 .results-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
@@ -235,6 +261,8 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
   .github-cta { min-height: 64px; padding: 0 18px; font-size: 14px; }
   .trail-divider { height: 64px; margin: 18px -14px 0; }
   .trail-divider::before { background-position: 52% center; }
+  .train-loader { height: 92px; background-position: 6% center; }
+  .train-loader__engine { bottom: 11%; width: 178px; animation-duration: 4.8s; }
   .input-row { grid-template-columns: 28px minmax(0,1fr); padding: 9px; }
   .input-row button { grid-column: 1 / -1; width: 100%; min-height: 58px; }
   input { font-size: 15px; }
@@ -286,4 +314,6 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .train-loader__engine { left: 50%; opacity: 1; transform: translateX(-30%); }
+  .train-loader__smoke { display: none; }
 }

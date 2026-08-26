@@ -70,10 +70,53 @@ function setLoading(isLoading) {
   button.disabled = isLoading;
   buttonLabel.textContent = isLoading ? 'Yoinking…' : 'Yoink it';
   form.setAttribute('aria-busy', String(isLoading));
+  document.body.classList.toggle('is-extracting', isLoading);
 }
 
 function setStatus(message, state = '') {
-  status.textContent = message;
+  status.replaceChildren();
+
+  if (state === 'loading') {
+    const loader = document.createElement('span');
+    loader.className = 'train-loader';
+    loader.setAttribute('aria-hidden', 'true');
+
+    const train = document.createElement('span');
+    train.className = 'train-loader__engine';
+
+    const trainBody = document.createElement('img');
+    trainBody.className = 'train-loader__body';
+    trainBody.src = '/assets/ui/train-loader-engine-v2.webp';
+    trainBody.alt = '';
+    train.append(trainBody);
+
+    for (const position of ['rear', 'middle', 'front']) {
+      const wheel = document.createElement('i');
+      wheel.className = `train-loader__wheel train-loader__wheel--${position}`;
+      train.append(wheel);
+    }
+
+    const rod = document.createElement('i');
+    rod.className = 'train-loader__rod';
+    train.append(rod);
+
+    for (let index = 0; index < 4; index += 1) {
+      const smoke = document.createElement('i');
+      smoke.className = 'train-loader__smoke';
+      smoke.style.setProperty('--smoke-delay', `${index * -.38}s`);
+      train.append(smoke);
+    }
+
+    loader.append(train);
+
+    const label = document.createElement('span');
+    label.className = 'status-message';
+    label.textContent = message;
+    status.append(loader, label);
+  } else {
+    status.textContent = message;
+  }
+
   if (state) status.dataset.state = state;
   else delete status.dataset.state;
 }
