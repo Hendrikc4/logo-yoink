@@ -6,7 +6,7 @@ const SOURCE_WEIGHT = {
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
-const RANKING_VERSION = 8;
+const RANKING_VERSION = 9;
 export const ROLE_VARIANT_MIN_SCORE = 45;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
@@ -183,7 +183,7 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   // relaxed 1.45 bound only when first-party placement or authoritative metadata backs it.
   const wideRelaxed = ratio != null && ratio >= 1.45 && ratio < 1.8 &&
     item.width >= 120 && Math.min(item.width, item.height) >= 36 && strongWideEvidence;
-  const wide = (wideRatio != null && wideRatio >= 1.8 && wideRatio <= 12) || wideRelaxed;
+  const wide = (wideRatio != null && wideRatio >= 1.8 && (wideRatio <= 12 || wideRatio <= 14 && strongWideEvidence)) || wideRelaxed;
   const paddedWordmark = contentRatio != null && contentRatio >= 1.8 && ratio != null && ratio < 1.8;
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
   const safeContext = !item.evidence?.negative_context && !genericReason;

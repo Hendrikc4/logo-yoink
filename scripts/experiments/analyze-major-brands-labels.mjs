@@ -54,6 +54,38 @@ function selectedFailureKind(label, role) {
   return 'unknown';
 }
 
+function rejectionSignals(candidate, role) {
+  const signals = [];
+  if (Array.isArray(candidate.evidence?.eligible_roles) && !candidate.evidence.eligible_roles.includes(role)) {
+    signals.push('explicit_role_exclusion');
+  }
+  if (Number(candidate.role_scores?.[role] ?? 0) < 35) signals.push('role_score_below_threshold');
+  for (const reason of candidate.score_reasons ?? []) {
+    if (/^(?:generic exclusion|negative context|banner exclusion|tiny edge|non-(?:square|wide))/.test(reason)) signals.push(reason);
+  }
+  if (!candidate.predicted_roles?.includes(role)) signals.push('stored_predicted_role_missing');
+  return [...new Set(signals)];
+}
+
+function diagnosticCandidate(candidate, role, label) {
+  return {
+    candidate_id: candidate.candidate_id,
+    source: candidate.source,
+    predicted_roles: candidate.predicted_roles ?? [],
+    role_score: candidate.role_scores?.[role] ?? null,
+    best_for_role: Boolean(values(label).best_for_role?.[role]),
+    asset_path: candidate.asset_path ?? null,
+    rejection_signals: rejectionSignals(candidate, role),
+    score_reasons: candidate.score_reasons ?? [],
+    evidence: {
+      dom_region: candidate.evidence?.dom_region ?? null,
+      home_linked: Boolean(candidate.evidence?.home_linked),
+      positive_token: Boolean(candidate.evidence?.positive_token),
+      negative_context: Boolean(candidate.evidence?.negative_context),
+    },
+  };
+}
+
 export function analyzeRoleLosses(results, labels, { entityIds } = {}) {
   const allowed = entityIds ? new Set(entityIds) : null;
   const labelByCandidate = new Map(labels.map(label => [candidateKey(label.entity_id, label.candidate_id), label]));
@@ -71,6 +103,8 @@ export function analyzeRoleLosses(results, labels, { entityIds } = {}) {
       const selectedId = result.selected_by_role?.[role] ?? null;
       const selected = candidates.find(item => item.candidate.candidate_id === selectedId) ?? null;
       const correctSelection = selected ? selectedCorrect(result, selected.candidate, selected.label, role) : false;
+      const bestEligibleCorrect = [...eligibleCorrect].sort((left, right) =>
+        Number(right.candidate.role_scores?.[role] ?? 0) - Number(left.candidate.role_scores?.[role] ?? 0))[0] ?? null;
       let outcome;
       if (correctSelection) outcome = 'selected_correct';
       else if (eligibleCorrect.length) outcome = selectedId ? 'ranking_miss' : 'selection_miss';
@@ -84,18 +118,15 @@ export function analyzeRoleLosses(results, labels, { entityIds } = {}) {
         outcome,
         reachability: result.reachability,
         selected_candidate_id: selectedId,
+        selected_candidate: selected ? diagnosticCandidate(selected.candidate, role, selected.label) : null,
         selected_failure_kind: !selectedId || correctSelection ? null : selectedFailureKind(selected?.label, role),
         selected_safety_class: selected ? values(selected.label).safety_class ?? null : null,
+        outranking_role_score_delta: selected && bestEligibleCorrect
+          ? Number(selected.candidate.role_scores?.[role] ?? 0) - Number(bestEligibleCorrect.candidate.role_scores?.[role] ?? 0)
+          : null,
         correct_candidate_count: correct.length,
         eligible_correct_candidate_count: eligibleCorrect.length,
-        correct_candidates: correct.map(({ candidate, label }) => ({
-          candidate_id: candidate.candidate_id,
-          source: candidate.source,
-          predicted_roles: candidate.predicted_roles ?? [],
-          role_score: candidate.role_scores?.[role] ?? null,
-          best_for_role: Boolean(values(label).best_for_role?.[role]),
-          asset_path: candidate.asset_path ?? null,
-        })),
+        correct_candidates: correct.map(({ candidate, label }) => diagnosticCandidate(candidate, role, label)),
       });
     }
   }

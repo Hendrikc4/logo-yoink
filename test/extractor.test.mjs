@@ -496,6 +496,11 @@ test('admits a relaxed wide shape when first-party placement or authoritative me
   const unplaced = { ...placed, evidence: { dom_region: 'body', home_linked: false } };
   const rejected = rankCandidates([unplaced], { companyName: 'Acme' }).candidates[0];
   assert.ok(!rejected.predicted_roles.includes('wide'));
+
+  const ultrawide = { ...placed, width: 650, height: 50 };
+  assert.ok(rankCandidates([ultrawide], { companyName: 'Acme' }).candidates[0].predicted_roles.includes('wide'));
+  assert.ok(!rankCandidates([{ ...ultrawide, evidence: { dom_region: 'body', home_linked: false } }],
+    { companyName: 'Acme' }).candidates[0].predicted_roles.includes('wide'));
 });
 
 test('falls back to declared small favicons when no candidate qualifies as an icon', () => {

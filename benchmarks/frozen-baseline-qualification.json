@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "captured_ranking_version": 3,
-  "acknowledged_runtime_ranking_version": 8,
+  "acknowledged_runtime_ranking_version": 9,
   "qualifies_current_runtime": false,
   "canonical_roles": ["icon", "wide"],
   "legacy_compatibility_roles": ["favicon"],
