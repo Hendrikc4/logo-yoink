@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "experiment": "bimi-before-third-party-cache-ordering",
+  "third_party_cache_configuration": {
+    "besticon_enabled": false,
+    "google_favicon_enabled": true,
+    "duckduckgo_favicon_enabled": true
+  },
+  "changed_selections": 4,
+  "correct_role_coverage": {
+    "control": 4,
+    "bimi_before_cache": 4,
+    "delta": 0
+  },
+  "wrong_brand_selections": 0,
+  "provenance": {
+    "control_domain_controlled": 0,
+    "bimi_domain_controlled": 4,
+    "certificate_validated": 0
+  },
+  "delivery": {
+    "control_vectors": 0,
+    "bimi_vectors": 4,
+    "control_min_edge_px": 32,
+    "bimi_min_intrinsic_edge": 100
+  },
+  "tiny_suitability": {
+    "control_mean": 97.825,
+    "bimi_mean": 96.65,
+    "mean_delta": -1.175,
+    "improved": 1,
+    "unchanged": 1,
+    "worsened": 2
+  },
+  "gated_cost": {
+    "domains_attempted": 22,
+    "dns_requests": 22,
+    "http_requests": 7,
+    "downloaded_bytes": 9089,
+    "latency_ms": {
+      "mean": 101.6,
+      "p50": 58,
+      "p95": 203,
+      "max": 414
+    }
+  },
+  "conclusion": "provenance_and_scalability_gain_without_correct_role_coverage_gain"
+}

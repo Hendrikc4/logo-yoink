@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "experiment": "bimi-before-third-party-cache-ordering",
+  "source_run_config_sha256": {
+    "development_control": "d61e3d2faafd50134e0ce109e59ed8e440705b224beaa4f43d7765c28a1f710b",
+    "development_treatment": "e22fe1e9e23a2c16a90a987894e7f132933689ede76a99c539616341bb299593",
+    "validation_control": "a793875ce68119fcbde878401ac94a4c2e82226abbb6724196488c6fa2661439",
+    "validation_treatment": "d8194fe3aba9cef5af97d3f76246faf8cd46a583a811340d86326a63e8b3241a"
+  },
+  "third_party_cache_configuration": {
+    "besticon_enabled": false,
+    "google_favicon_enabled": true,
+    "duckduckgo_favicon_enabled": true
+  },
+  "gated_cost": {
+    "domains_attempted": 22,
+    "dns_requests": 22,
+    "http_requests": 7,
+    "downloaded_bytes": 9089,
+    "latency_ms": { "mean": 101.6, "p50": 58, "p95": 203, "max": 414 }
+  },
+  "changed_selections": [
+    {
+      "split": "development", "name": "Workday", "website": "workday.com",
+      "control": { "source": "google-favicon", "content_sha256": "615adc2bb8bd91c4df61ab03312c9d7adfa4ee98d4777f259ad07a528012543e", "format": "png", "width": 32, "height": 32, "bytes": 784, "tiny_suitability": 100, "identity": "correct_brand", "icon_role": "correct", "domain_controlled_provenance": false },
+      "bimi": { "content_sha256": "51e61f856c38633476458b59151ae004260f51c7f35a969e3f73a04c121fe1d0", "record_sha256": "bc7ad7d4ff5565404374d26d559812fb2d63349509adf8d269e50ef9ebb25728", "format": "svg", "width": 800, "height": 800, "bytes": 821, "tiny_suitability": 97.1, "identity": "correct_brand", "icon_role": "correct", "domain_controlled_provenance": true, "certificate_validation": "not_performed" }
+    },
+    {
+      "split": "development", "name": "Adobe", "website": "adobe.com",
+      "control": { "source": "google-favicon", "content_sha256": "8359fa4d7fc40524aaf7fc1d8a2ded9befb69311dbad7f3a17a05299dece3635", "format": "png", "width": 180, "height": 180, "bytes": 1549, "tiny_suitability": 100, "identity": "correct_brand", "icon_role": "correct", "domain_controlled_provenance": false },
+      "bimi": { "content_sha256": "58799d3143dedf840ab6d4029fb735f2b8c79867e9fe23a08ae179150f4d932d", "record_sha256": "cb5eb10ec503f0bd8c4b20e7d13ab49478d9c6cfbda20fa61d4940c1b3887920", "format": "svg", "width": 810.48, "height": 810.48, "bytes": 474, "tiny_suitability": 100, "identity": "correct_brand", "icon_role": "correct", "domain_controlled_provenance": true, "certificate_validation": "not_performed" }
+    },
+    {
+      "split": "development", "name": "Nvidia", "website": "nvidia.com",
+      "control": { "source": "google-favicon", "content_sha256": "1207a1db73c91e6be15dfe28b153d9e232af6491ef0a70d588da62ae6450a26c", "format": "jpg", "width": 48, "height": 48, "bytes": 1035, "tiny_suitability": 91.3, "identity": "correct_brand", "icon_role": "correct", "domain_controlled_provenance": false },
+      "bimi": { "content_sha256": "0711730ac9306dab641ce51880dd2ac3a873891340ff5b36fffdf5658e6ac95b", "record_sha256": "3dc76448845fbcbf8cbb38867812723a6e9f2b51a8c5b39800b41012643cf7be", "format": "svg", "width": 100, "height": 100, "bytes": 2257, "tiny_suitability": 91.9, "identity": "correct_brand", "icon_role": "correct", "domain_controlled_provenance": true, "certificate_validation": "not_performed" }
+    },
+    {
+      "split": "validation", "name": "Salesforce", "website": "salesforce.com",
+      "control": { "source": "google-favicon", "content_sha256": "abcc0840c906aef643ba63da8d2d3f1487a8324ccc6ea7f122dd06168099e586", "format": "png", "width": 32, "height": 32, "bytes": 652, "tiny_suitability": 100, "identity": "correct_brand", "icon_role": "correct", "domain_controlled_provenance": false },
+      "bimi": { "content_sha256": "6724d72f2f0fec3d72baf89ec6a90232024bf2147a5d121eb01af46a8e117c59", "record_sha256": "80ff101fc341408780eb98b775fc940c6c592dc95db023031cfb26807e1c1bfe", "format": "svg", "width": 640, "height": 640, "bytes": 912, "tiny_suitability": 97.6, "identity": "correct_brand", "icon_role": "correct", "domain_controlled_provenance": true, "certificate_validation": "not_performed" }
+    }
+  ]
+}

@@ -100,6 +100,8 @@ test('public demo enables fallbacks while keeping their work tightly bounded', (
   assert.equal(options.maxCandidates, 8);
   assert.equal(options.maxImageBytes, 768 * 1024);
   assert.equal(options.timeoutMs, 8_000);
+  assert.equal(options.bimi, false);
+  assert.equal(publicDemoExtractionOptions({ PUBLIC_DEMO_BIMI: '1' }).bimi, true);
   assert.equal(publicDemoExtractionOptions({ JINA_API_KEY: 'secret', PUBLIC_DEMO_ALLOW_JINA: '0' }).jinaApiKey, null);
   assert.equal(publicDemoExtractionOptions({ PUBLIC_DEMO_BROWSER: '0' }).browser, false);
   assert.match(securityHeaders['content-security-policy'], /frame-ancestors 'none'/);

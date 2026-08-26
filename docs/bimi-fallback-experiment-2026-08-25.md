@@ -12,7 +12,7 @@ BIMI is treated as a domain-controlled self-assertion, not as a certificate-veri
 - Require exactly one `v=BIMI1` TXT assertion, tolerate split TXT chunks and tag whitespace/casing, reject ambiguous records and duplicate tags, and require a nonempty HTTPS `l=` URL.
 - Bound DNS to 2 seconds by default and cache at most 512 outcomes for 15 minutes.
 - Fetch the SVG through the existing public-address/DNS, redirect-revalidation, timeout, response-size, byte-budget, MIME, and image-validation path. Additionally reject active, animated, externally referenced, or document-dependent SVG content.
-- Run only after stronger first-party/static/deep/browser/Jina icon recovery is exhausted and before third-party favicon caches. Never displace an existing canonical icon.
+- Run after the existing eligible first-party static/deep/browser/Jina recovery gates and before Besticon, Google, or DuckDuckGo cached favicon fallbacks. BIMI does not trigger an additional icon-only browser crawl. Never displace an existing canonical icon.
 - Restrict BIMI to icon/favicon roles. It can never produce `assets.logo` / wide. Measure nontransparent artwork; a content ratio of 1.8 or wider is a padded wordmark and cannot become the canonical icon.
 
 ## Live results
@@ -24,6 +24,14 @@ The runtime-gated development pair queried BIMI only for 18 of 133 reachable ico
 One-shot validation admitted Salesforce: 1/1 correct, zero wrong-brand, and again zero incremental correct selections over its correct cached icon. Gated cost was 4 DNS + 2 HTTP requests (one redirect), 912 bytes, and p50 22 ms / p95 99 ms. Unrelated live reachability varied between paired crawls, so aggregate crawl coverage and wall-clock differences are not attributed to BIMI; the per-domain BIMI diagnostics are the cost surface used here.
 
 After the rule was frozen, direct non-scoring controls observed Apple with an accepted default assertion and Google, Nike, and Pepsi with no default assertion. In the actual fallback run Apple was not queried because a stronger first-party icon already existed; Pepsi was queried and abstained. Google and Nike are evaluation-split entities and were not used for tuning or scored.
+
+## Follow-up ordering audit
+
+The follow-up compared the four selections that actually changed when BIMI was placed before the configured Google and DuckDuckGo caches. Besticon was disabled in the frozen runs, so it contributed no selection or latency changes to inspect; the runtime ordering now also defers it when configured. Workday, Adobe, Nvidia, and Salesforce each remained a correct-brand, correct-role icon, so correct-role coverage stayed 4/4 and wrong-brand selections stayed at zero. All four selections changed from third-party cached rasters to domain-controlled, self-asserted SVGs; none was certificate-validated.
+
+That is a provenance and scalability improvement, not a correctness improvement. Mean tiny-render suitability changed from 97.825 to 96.650 (-1.175): one candidate improved, one was unchanged, and two worsened. The combined gated cost across development and validation was 22 DNS requests, 7 HTTP requests, 9,089 bytes, and BIMI-stage latency of 58 ms p50 / 203 ms p95 / 414 ms maximum. This bounded cost is acceptable for the opt-in mode, but the lack of incremental correct-role coverage and mixed tiny-render quality do not justify enabling BIMI by default merely because its provenance is first-party.
+
+The audit also found and fixed generally applicable defects: injected DNS resolvers no longer share the process-global system-resolver cache; cached results are copied before return; organizational-domain fallback counts both DNS attempts; IP literals are rejected as input domains; the parser requires `v=` to be the first tag; API/demo option plumbing now exposes the same explicit opt-in; safety validation no longer claims BIMI SVG profile conformance; and benchmark configs record both dirty-worktree state and a reproducible worktree snapshot digest.
 
 ## Reproduction
 
@@ -54,7 +62,18 @@ npm run benchmark -- --cohort major-brands-300 --split validation \
 npm run check
 ```
 
-Compact machine metrics and fingerprint-bound judgments are in `reports/bimi-fallback-2026-08-25/`. Raw live runs remain in ignored `runs/` and the canonical split/fixture inputs remain unchanged.
+The changed-selection audit is deterministically derived from fingerprint-bound, sanitized evidence:
+
+```sh
+audit_dir=$(mktemp -d)
+node scripts/experiments/bimi-ordering-audit.mjs \
+  --input reports/bimi-fallback-2026-08-25/ordering-inputs.json \
+  --output "$audit_dir/ordering-audit.json"
+diff -u reports/bimi-fallback-2026-08-25/ordering-audit.json \
+  "$audit_dir/ordering-audit.json"
+```
+
+Compact machine metrics and fingerprint-bound judgments are in `reports/bimi-fallback-2026-08-25/`. The original raw live runs remain in ignored `runs/`; their recorded config hashes are preserved in the sanitized ordering inputs. Future benchmark configs also include a worktree snapshot digest, so evidence produced from a dirty tree can be tied to its exact source bytes. The canonical split/fixture inputs remain unchanged.
 
 ## Remaining risks
 

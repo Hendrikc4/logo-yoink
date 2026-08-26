@@ -184,6 +184,7 @@ export function publicDemoExtractionOptions(environment = process.env) {
     deepWide: true,
     spaBundles: true,
     cachedFavicon: true,
+    bimi: environment.PUBLIC_DEMO_BIMI === '1',
     maxCandidates: boundedInteger(environment.DEMO_MAX_CANDIDATES, 8, 3, 16),
     maxImageBytes: boundedInteger(environment.DEMO_MAX_IMAGE_BYTES, 768 * 1024, 128 * 1024, 3 * 1024 * 1024),
     timeoutMs: boundedInteger(environment.DEMO_FETCH_TIMEOUT_MS, 8_000, 2_000, 10_000),

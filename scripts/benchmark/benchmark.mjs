@@ -2,7 +2,7 @@
 
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { basename, dirname, extname, join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -117,9 +117,25 @@ function timestampId() {
   return new Date().toISOString().replace(/[:.]/g, '-');
 }
 
-function gitRevision() {
-  const result = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' });
-  return result.status === 0 ? result.stdout.trim() : null;
+function gitProvenance() {
+  const revision = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' });
+  const status = spawnSync('git', ['status', '--porcelain=v1', '--untracked-files=all'], { cwd: ROOT, encoding: 'utf8' });
+  const files = spawnSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], { cwd: ROOT, encoding: 'buffer' });
+  let snapshotSha256 = null;
+  if (files.status === 0) {
+    const paths = files.stdout.toString('utf8').split('\0').filter(Boolean).sort();
+    const hash = createHash('sha256');
+    for (const path of paths) {
+      try { hash.update(path).update('\0').update(readFileSync(join(ROOT, path))).update('\0'); }
+      catch { hash.update('<unreadable>\0'); }
+    }
+    snapshotSha256 = hash.digest('hex');
+  }
+  return {
+    revision: revision.status === 0 ? revision.stdout.trim() : null,
+    worktreeDirty: status.status === 0 ? Boolean(status.stdout.trim()) : null,
+    worktreeSnapshotSha256: snapshotSha256,
+  };
 }
 
 function extensionFor(candidate, mimeType) {
@@ -666,11 +682,14 @@ async function runCommand(options) {
   const outputDirectory = resolve(options.output ?? join(ROOT, 'runs', `${timestampId()}-${cohort}`));
   const assetsDirectory = join(outputDirectory, 'assets');
   await mkdir(assetsDirectory, { recursive: true });
+  const git = gitProvenance();
   const config = {
     schema_version: SCHEMA_VERSION,
     run_id: basename(outputDirectory),
     created_at: new Date().toISOString(),
-    git_revision: gitRevision(),
+    git_revision: git.revision,
+    git_worktree_dirty: git.worktreeDirty,
+    git_worktree_snapshot_sha256: git.worktreeSnapshotSha256,
     fixture: `fixtures/${fixtureName}`,
     fixture_generated_at: fixture.generatedAt ?? null,
     cohort: options.split ? `${cohort}-${options.split}` : cohort,

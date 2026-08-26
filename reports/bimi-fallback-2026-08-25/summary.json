@@ -26,6 +26,25 @@
     "nike.com": "not_found",
     "pepsi.com": "not_found"
   },
+  "ordering_audit": {
+    "changed_selections": 4,
+    "correct_role_coverage": { "control": 4, "bimi_before_cache": 4, "delta": 0 },
+    "wrong_brand_selections": 0,
+    "domain_controlled_selections": { "control": 0, "bimi_before_cache": 4 },
+    "vector_selections": { "control": 0, "bimi_before_cache": 4 },
+    "tiny_suitability": { "control_mean": 97.825, "bimi_mean": 96.65, "mean_delta": -1.175, "improved": 1, "unchanged": 1, "worsened": 2 },
+    "gated_cost": { "domains_attempted": 22, "dns_requests": 22, "http_requests": 7, "downloaded_bytes": 9089, "latency_ms": { "mean": 101.6, "p50": 58, "p95": 203, "max": 414 } },
+    "conclusion": "provenance_and_scalability_gain_without_correct_role_coverage_gain"
+  },
+  "follow_up_fixes": [
+    "isolate injectable resolver caches and copy cached values",
+    "count organizational-domain DNS fallback attempts",
+    "require the BIMI version tag first and reject IP-literal domains",
+    "defer every configured third-party favicon cache until after BIMI",
+    "expose explicit BIMI opt-in in public-demo API configuration",
+    "distinguish SVG safety validation from unperformed BIMI profile conformance",
+    "fingerprint dirty benchmark worktrees"
+  ],
   "certificate_validation": "not_performed",
   "trademark_or_license_verified": false
 }

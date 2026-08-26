@@ -433,7 +433,7 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     const width = metadata.width ?? item.declared?.width ?? item.discoveredWidth ?? null, height = metadata.height ?? item.declared?.height ?? item.discoveredHeight ?? null;
     const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4, scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
     const background = await imageBackground(bytes, metadata.format);
-    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_at: new Date().toISOString(), http_status: response.status, svg_safety_validated: metadata.format === 'svg', bimi_svg_profile_validated: item.source === 'bimi' ? true : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_at: new Date().toISOString(), http_status: response.status, svg_safety_validated: metadata.format === 'svg', bimi_svg_safety_validated: item.source === 'bimi' ? true : undefined, bimi_svg_profile_conformance: item.source === 'bimi' ? 'not_performed' : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, status = 200, contentType = '' } = {}) {
@@ -686,9 +686,12 @@ export async function extractLogos(website, options = {}) {
   const jinaRecoverableLogoMarkup = parsed.candidates.some(item =>
     ['dom-img', 'dom-picture', 'noscript-img', 'inline-svg'].includes(item.source) &&
     (item.evidence?.positive_token || item.evidence?.home_linked));
-  const [manifest, besticon] = await Promise.all([Promise.all(parsed.manifests.slice(0, 2).map(url => manifestCandidates(url, timeoutMs, network))).then(groups => groups.flat()), besticonCandidates(normalized.domain, options.besticonUrl, timeoutMs, network)]);
+  const [manifest, initialBesticon] = await Promise.all([
+    Promise.all(parsed.manifests.slice(0, 2).map(url => manifestCandidates(url, timeoutMs, network))).then(groups => groups.flat()),
+    options.bimi ? Promise.resolve([]) : besticonCandidates(normalized.domain, options.besticonUrl, timeoutMs, network),
+  ]);
   const root = new URL(homepage); root.pathname = '/favicon.ico'; root.search = ''; root.hash = ''; const rootPng = new URL(root); rootPng.pathname = '/favicon.png';
-  const all = [...parsed.candidates, ...manifest, ...besticon, candidate(root.href, 'root-favicon', '', 'image/x-icon', { source_page: homepage }), candidate(rootPng.href, 'root-favicon', '', 'image/png', { source_page: homepage })];
+  const all = [...parsed.candidates, ...manifest, ...initialBesticon, candidate(root.href, 'root-favicon', '', 'image/x-icon', { source_page: homepage }), candidate(rootPng.href, 'root-favicon', '', 'image/png', { source_page: homepage })];
   const rankedUnique = dedupeUrls(all)
     .sort((a, b) => discoveryPriority(b) - discoveryPriority(a) || declaredPixels(b) - declaredPixels(a));
   const budget = options.maxCandidates ?? MAX_CANDIDATES_TO_DOWNLOAD;
@@ -871,6 +874,19 @@ export async function extractLogos(website, options = {}) {
     };
   }
 
+  let deferredBesticon = { attempted: false, discovered: 0, validated: 0 };
+  if (options.bimi && !ranked.selectedByRole.icon && options.besticonUrl) {
+    const discovered = await besticonCandidates(normalized.domain, options.besticonUrl, timeoutMs, network);
+    const known = new Set(validated.map(item => item.url));
+    const additions = dedupeUrls(discovered.filter(item => !known.has(item.url)))
+      .sort((a, b) => discoveryPriority(b) - discoveryPriority(a)).slice(0, Math.min(4, budget));
+    const extra = (await mapConcurrent(additions, 2, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
+    validated = dedupeBytes([...validated, ...extra]);
+    await attachTinySuitability(validated);
+    ranked = rankValidated();
+    deferredBesticon = { attempted: true, discovered: discovered.length, validated: extra.length };
+  }
+
   if (options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
     cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
     if (cachedFavicon) {
@@ -882,7 +898,7 @@ export async function extractLogos(website, options = {}) {
 
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0) + (bimiDiagnostics.dnsRequests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
-  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length + deferredBesticon.discovered, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), besticonDeferred: deferredBesticon, cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.

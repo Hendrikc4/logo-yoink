@@ -44,6 +44,7 @@ test('strict parser rejects malformed, duplicate, empty, and non-HTTPS logo loca
   assert.equal(parseBimiRecord('v=BIMI1; l= ; a=').reason, 'empty_logo_location');
   assert.equal(parseBimiRecord('v=BIMI1; l=http://a.test/logo.svg').reason, 'unsafe_logo_url');
   assert.equal(parseBimiRecord('v=DMARC1; l=https://a.test/logo.svg').reason, 'not_bimi1');
+  assert.equal(parseBimiRecord('l=https://a.test/logo.svg; v=BIMI1').reason, 'version_not_first');
 });
 
 test('models missing and invalid certificate pointers without claiming verification', () => {
@@ -80,12 +81,57 @@ test('resolver failures and timeouts abstain and cache bounded outcomes', async 
   await lookupBimiAssertion('new.example', { cache: bounded, cacheMaxEntries: 1, resolveTxt, now: () => 100 });
   assert.equal(bounded.size, 1);
   assert.equal(bounded.has('older'), false);
+
+  let isolatedCalls = 0;
+  const isolatedResolver = async () => { isolatedCalls += 1; return [['v=BIMI1; l=https://isolated.test/logo.svg']]; };
+  await lookupBimiAssertion('isolated.example', { resolveTxt: isolatedResolver });
+  await lookupBimiAssertion('isolated.example', { resolveTxt: isolatedResolver });
+  assert.equal(isolatedCalls, 2);
 });
 
 test('organizational-domain fallback is explicit, bounded, and suffix checked', () => {
   assert.deepEqual(bimiQueryDomains('mail.brand.example'), ['mail.brand.example']);
   assert.deepEqual(bimiQueryDomains('mail.brand.example', { organizationalDomain: 'brand.example' }), ['mail.brand.example', 'brand.example']);
   assert.throws(() => bimiQueryDomains('brand.example', { organizationalDomain: 'other.example' }), /must contain/);
+  assert.throws(() => bimiQueryDomains('8.8.8.8'), /valid public domain/);
+});
+
+test('organizational-domain success counts every uncached DNS attempt and isolates cached objects', async () => {
+  const cache = new Map();
+  const result = await lookupBimiAssertion('mail.brand.example', {
+    organizationalDomain: 'brand.example', cache,
+    resolveTxt: async name => name.includes('mail.brand.example') ? [] : [['v=BIMI1; l=https://brand.example/logo.svg']],
+  });
+  assert.equal(result.status, 'accepted');
+  assert.equal(result.queryDomain, 'brand.example');
+  assert.equal(result.dnsRequests, 2);
+  result.attempts[1].logoUrl = 'https://mutated.example/logo.svg';
+  const cached = await lookupBimiAssertion('mail.brand.example', {
+    organizationalDomain: 'brand.example', cache,
+    resolveTxt: async () => assert.fail('cache should satisfy both lookups'),
+  });
+  assert.equal(cached.logoUrl, 'https://brand.example/logo.svg');
+  assert.equal(cached.dnsRequests, 0);
+});
+
+test('organizational-domain fallback abstains after an ambiguous or failed exact assertion', async () => {
+  for (const [exactAnswer, status] of [
+    [[['v=BIMI1; l=https://one.example/logo.svg'], ['v=BIMI1; l=https://two.example/logo.svg']], 'ambiguous_records'],
+    [Object.assign(new Error('resolver failed'), { code: 'SERVFAIL' }), 'resolver_error'],
+  ]) {
+    let calls = 0;
+    const result = await lookupBimiAssertion('mail.brand.example', {
+      organizationalDomain: 'brand.example', cache: new Map(),
+      resolveTxt: async () => {
+        calls += 1;
+        if (exactAnswer instanceof Error) throw exactAnswer;
+        return exactAnswer;
+      },
+    });
+    assert.equal(result.status, status);
+    assert.equal(result.dnsRequests, 1);
+    assert.equal(calls, 1);
+  }
 });
 
 test('BIMI provenance is domain-controlled but not certificate or license verified', () => {
@@ -99,7 +145,7 @@ test('BIMI provenance is domain-controlled but not certificate or license verifi
   assert.equal(item.provenance.trademark_or_license_verified, false);
 });
 
-test('BIMI SVG profile rejects active and external content', () => {
+test('BIMI SVG safety gate rejects active and external content', () => {
   assert.equal(isSafeBimiSvg(SAFE_SVG), true);
   assert.equal(isSafeBimiSvg('<svg><script>alert(1)</script></svg>'), false);
   assert.equal(isSafeBimiSvg('<svg><image href="https://tracker.test/a.png"/></svg>'), false);
@@ -156,6 +202,8 @@ test('BIMI can fill icon and favicon roles but can never create a wide-logo answ
   const checked = await extractorInternals.validateCandidate(item, 500, { requests: 0, bytesDownloaded: 0 }, 128 * 1024, {
     validateUrl: async () => {}, fetchImpl: async () => new Response(SAFE_SVG, { headers: { 'content-type': 'image/svg+xml' } }),
   });
+  assert.equal(checked.provenance.bimi_svg_safety_validated, true);
+  assert.equal(checked.provenance.bimi_svg_profile_conformance, 'not_performed');
   const ranked = rankCandidates([checked]);
   assert.equal(ranked.selectedByRole.icon.source, 'bimi');
   assert.equal(ranked.selectedByRole.favicon.source, 'bimi');

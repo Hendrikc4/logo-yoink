@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { resolveTxt as systemResolveTxt } from 'node:dns/promises';
+import { isIP } from 'node:net';
 import { domainToASCII } from 'node:url';
 
 const DEFAULT_TIMEOUT_MS = 2_000;
@@ -14,7 +15,7 @@ function sha256(value) {
 
 function normalizedDomain(value) {
   const domain = domainToASCII(String(value ?? '').trim().toLowerCase().replace(/^\.+|\.+$/g, ''));
-  if (!domain || domain.length > 253 || !domain.includes('.') || domain.split('.').some(label => !label || label.length > 63 || !/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i.test(label))) {
+  if (!domain || isIP(domain) || domain.length > 253 || !domain.includes('.') || domain.split('.').some(label => !label || label.length > 63 || !/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i.test(label))) {
     throw new Error('BIMI requires a valid public domain name.');
   }
   return domain;
@@ -40,6 +41,7 @@ export function parseBimiRecord(rawRecord) {
   const raw = String(rawRecord ?? '');
   if (!raw || raw.length > MAX_RECORD_CHARS) return { ok: false, reason: 'malformed_record' };
   const tags = new Map();
+  const tagOrder = [];
   for (const segment of raw.split(';')) {
     if (!segment.trim()) continue;
     const match = segment.match(/^\s*([a-z][a-z0-9_-]*)\s*=\s*(.*?)\s*$/i);
@@ -47,7 +49,9 @@ export function parseBimiRecord(rawRecord) {
     const key = match[1].toLowerCase();
     if (tags.has(key)) return { ok: false, reason: 'duplicate_tag' };
     tags.set(key, match[2]);
+    tagOrder.push(key);
   }
+  if (tagOrder[0] !== 'v') return { ok: false, reason: 'version_not_first' };
   if (String(tags.get('v') ?? '').toUpperCase() !== 'BIMI1') return { ok: false, reason: 'not_bimi1' };
   if (!tags.has('l')) return { ok: false, reason: 'missing_logo_location' };
   const logoUrl = String(tags.get('l') ?? '').trim();
@@ -85,25 +89,38 @@ function timeout(promise, timeoutMs) {
   ]).finally(() => clearTimeout(timer));
 }
 
-export async function lookupBimiAssertion(domain, {
-  organizationalDomain,
-  resolveTxt = systemResolveTxt,
-  timeoutMs = DEFAULT_TIMEOUT_MS,
-  cache = assertionCache,
-  cacheTtlMs = DEFAULT_CACHE_TTL_MS,
-  now = () => Date.now(),
-  cacheMaxEntries = DEFAULT_CACHE_MAX_ENTRIES,
-} = {}) {
+export async function lookupBimiAssertion(domain, options = {}) {
+  const {
+    organizationalDomain,
+    resolveTxt = systemResolveTxt,
+    timeoutMs = DEFAULT_TIMEOUT_MS,
+    cacheTtlMs = DEFAULT_CACHE_TTL_MS,
+    now = () => Date.now(),
+    cacheMaxEntries = DEFAULT_CACHE_MAX_ENTRIES,
+  } = options;
+  // An injected resolver is a separate trust/test context. It must not read or poison the
+  // process-global system-resolver cache unless the caller explicitly supplies a cache.
+  const cache = Object.hasOwn(options, 'cache') && options.cache !== undefined
+    ? options.cache
+    : resolveTxt === systemResolveTxt ? assertionCache : null;
   const queryDomains = bimiQueryDomains(domain, { organizationalDomain });
   const attempts = [];
+  const resultWithAttempts = (outcome, extras = {}) => ({
+    ...outcome,
+    ...extras,
+    dnsRequests: attempts.filter(item => !item.cached).reduce((sum, item) => sum + (item.dnsRequests ?? 0), 0),
+    attempts: attempts.map(item => ({ ...item })),
+  });
   for (const queryDomain of queryDomains) {
     const selector = 'default';
     const queryName = `${selector}._bimi.${queryDomain}`;
     const cacheKey = queryName.toLowerCase();
     const cached = cache?.get(cacheKey);
     if (cached && cached.expiresAt > now()) {
-      attempts.push({ ...cached.value, cached: true });
-      if (cached.value.status === 'accepted') return { ...cached.value, cached: true, dnsRequests: 0, attempts };
+      const cachedOutcome = { ...cached.value, cached: true };
+      attempts.push(cachedOutcome);
+      if (cached.value.status === 'accepted') return resultWithAttempts(cachedOutcome, { cached: true });
+      if (cached.value.status !== 'not_found') return resultWithAttempts(cachedOutcome, { cached: true });
       continue;
     }
     let outcome;
@@ -125,13 +142,16 @@ export async function lookupBimiAssertion(domain, {
     }
     if (cache) {
       if (!cache.has(cacheKey) && cache.size >= Math.max(1, cacheMaxEntries)) cache.delete(cache.keys().next().value);
-      cache.set(cacheKey, { expiresAt: now() + Math.max(0, cacheTtlMs), value: outcome });
+      cache.set(cacheKey, { expiresAt: now() + Math.max(0, cacheTtlMs), value: { ...outcome } });
     }
     attempts.push(outcome);
-    if (outcome.status === 'accepted') return { ...outcome, attempts };
+    if (outcome.status === 'accepted') return resultWithAttempts(outcome);
+    // Parent-domain fallback is appropriate only for an absent exact assertion. An
+    // ambiguous, malformed, failed, or timed-out exact assertion must abstain.
+    if (outcome.status !== 'not_found') return resultWithAttempts(outcome);
   }
   const final = attempts.at(-1) ?? { status: 'not_found', dnsRequests: 0 };
-  return { ...final, attempts, dnsRequests: attempts.filter(item => !item.cached).reduce((sum, item) => sum + (item.dnsRequests ?? 0), 0) };
+  return resultWithAttempts(final);
 }
 
 export function bimiCandidate(assertion, { discoveredAt = new Date().toISOString() } = {}) {
