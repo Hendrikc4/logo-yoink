@@ -34,6 +34,12 @@ try {
     throw new Error(`Homepage check failed with HTTP ${page.status}.`);
   }
 
+  const docsPage = await fetch(`${origin}/docs`);
+  const docsHtml = await docsPage.text();
+  if (!docsPage.ok || !docsHtml.includes('<title>Documentation — Logo Yoink</title>')) {
+    throw new Error(`Documentation check failed with HTTP ${docsPage.status}.`);
+  }
+
   const api = await fetch(`${origin}/api/extract`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -44,7 +50,7 @@ try {
     throw new Error(`API validation check failed with HTTP ${api.status}.`);
   }
 
-  console.log(`Local smoke test passed at ${origin} (homepage + API validation).`);
+  console.log(`Local smoke test passed at ${origin} (homepage + docs + API validation).`);
 } catch (error) {
   if (output.trim()) console.error(output.trim());
   throw error;
