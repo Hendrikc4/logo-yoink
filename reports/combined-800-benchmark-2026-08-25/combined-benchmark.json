@@ -1,8 +1,8 @@
 {
   "schema_version": "logo-yoink-combined-benchmark-v1",
-  "generated_at": "2026-08-26T01:31:17.797Z",
+  "generated_at": "2026-08-26T01:43:07.903Z",
   "methodology": {
-    "current_runtime_ranking_version": 7,
+    "current_runtime_ranking_version": 8,
     "canonical_roles": [
       "icon",
       "wide"
@@ -44,7 +44,7 @@
   },
   "combined": {
     "schema_version": 2,
-    "generated_at": "2026-08-26T01:31:17.767Z",
+    "generated_at": "2026-08-26T01:43:07.874Z",
     "cohort": "all-800",
     "domains": {
       "total": 800,
@@ -232,7 +232,7 @@
   "cohorts": {
     "original-500": {
       "schema_version": 2,
-      "generated_at": "2026-08-26T01:31:17.752Z",
+      "generated_at": "2026-08-26T01:43:07.858Z",
       "cohort": "original-500",
       "domains": {
         "total": 500,
@@ -415,7 +415,7 @@
     },
     "major-brands-300": {
       "schema_version": 2,
-      "generated_at": "2026-08-26T01:31:17.760Z",
+      "generated_at": "2026-08-26T01:43:07.866Z",
       "cohort": "major-brands-300",
       "domains": {
         "total": 300,
@@ -602,7 +602,7 @@
   "splits": {
     "development": {
       "schema_version": 2,
-      "generated_at": "2026-08-26T01:31:17.790Z",
+      "generated_at": "2026-08-26T01:43:07.896Z",
       "cohort": "all-800",
       "benchmark_split": "development",
       "domains": {
@@ -790,7 +790,7 @@
     },
     "validation": {
       "schema_version": 2,
-      "generated_at": "2026-08-26T01:31:17.794Z",
+      "generated_at": "2026-08-26T01:43:07.900Z",
       "cohort": "all-800",
       "benchmark_split": "validation",
       "domains": {
@@ -976,7 +976,7 @@
     },
     "evaluation": {
       "schema_version": 2,
-      "generated_at": "2026-08-26T01:31:17.796Z",
+      "generated_at": "2026-08-26T01:43:07.902Z",
       "cohort": "all-800",
       "benchmark_split": "evaluation",
       "domains": {
@@ -1166,7 +1166,7 @@
     "original-500": {
       "development": {
         "schema_version": 2,
-        "generated_at": "2026-08-26T01:31:17.775Z",
+        "generated_at": "2026-08-26T01:43:07.882Z",
         "cohort": "original-500",
         "benchmark_split": "development",
         "domains": {
@@ -1350,7 +1350,7 @@
       },
       "validation": {
         "schema_version": 2,
-        "generated_at": "2026-08-26T01:31:17.777Z",
+        "generated_at": "2026-08-26T01:43:07.884Z",
         "cohort": "original-500",
         "benchmark_split": "validation",
         "domains": {
@@ -1533,7 +1533,7 @@
       },
       "evaluation": {
         "schema_version": 2,
-        "generated_at": "2026-08-26T01:31:17.784Z",
+        "generated_at": "2026-08-26T01:43:07.890Z",
         "cohort": "original-500",
         "benchmark_split": "evaluation",
         "domains": {
@@ -1719,7 +1719,7 @@
     "major-brands-300": {
       "development": {
         "schema_version": 2,
-        "generated_at": "2026-08-26T01:31:17.785Z",
+        "generated_at": "2026-08-26T01:43:07.891Z",
         "cohort": "major-brands-300",
         "benchmark_split": "development",
         "domains": {
@@ -1905,7 +1905,7 @@
       },
       "validation": {
         "schema_version": 2,
-        "generated_at": "2026-08-26T01:31:17.787Z",
+        "generated_at": "2026-08-26T01:43:07.893Z",
         "cohort": "major-brands-300",
         "benchmark_split": "validation",
         "domains": {
@@ -2089,7 +2089,7 @@
       },
       "evaluation": {
         "schema_version": 2,
-        "generated_at": "2026-08-26T01:31:17.787Z",
+        "generated_at": "2026-08-26T01:43:07.894Z",
         "cohort": "major-brands-300",
         "benchmark_split": "evaluation",
         "domains": {
