@@ -7,8 +7,11 @@ the qualified major-brands-300 ranking-v7 snapshot scores **70.67/100** across
 800 assigned companies and 650 reachable companies. This is the cross-cohort
 snapshot supported by the repository's present labels. It is not a
 qualification of ranking v7 on the original 500: the preserved ranking-v7
-500-company rows contain 44 icon/wide selections without matching labels, so
-using them would make the score incomplete.
+500-company rows contain 51 icon/wide role slots without exact labels (50
+selected candidates have no label in either role), so using them would make the
+score incomplete. The previously stated 44 count belongs to the ranking-v5
+reference and is reconciled in
+`original-500-exhaustive-qualification-and-ranking-v8-2026-08-25.md`.
 
 The combined number is computed from all raw result and label rows with the
 existing scorer. It is not the weighted average of the two published headline

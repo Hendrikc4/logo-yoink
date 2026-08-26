@@ -99,6 +99,61 @@ async function readJsonl(path) {
   });
 }
 
+async function sourceSha256(path) {
+  if (!existsSync(path)) return null;
+  return sha256(await readFile(path));
+}
+
+async function loadReviewSource(run) {
+  const typedPaths = {
+    entities: join(run, 'entities.jsonl'),
+    candidates: join(run, 'candidates.jsonl'),
+    captures: join(run, 'captures.jsonl'),
+  };
+  const [entities, candidates, captures] = await Promise.all(Object.values(typedPaths).map(readJsonl));
+  if (entities.length || candidates.length || captures.length) {
+    if (!entities.length) throw new Error(`No entities found in ${typedPaths.entities}`);
+    if (!candidates.length) throw new Error(`No candidates found in ${typedPaths.candidates}`);
+    const sourceEntries = await Promise.all(Object.entries(typedPaths).map(async ([name, path]) => [name, {
+      path: basename(path),
+      sha256: await sourceSha256(path),
+    }]));
+    return {
+      entities,
+      candidates,
+      captures,
+      source_artifacts: Object.fromEntries(sourceEntries.filter(([, artifact]) => artifact.sha256)),
+    };
+  }
+
+  const resultsPath = join(run, 'results.jsonl');
+  const results = await readJsonl(resultsPath);
+  if (!results.length) throw new Error(`No typed review files or benchmark results found in ${run}`);
+  const resultEntities = results.map(result => ({
+    entity_id: entityId(result),
+    name: result.name ?? result.company_name ?? entityId(result),
+    website: result.website ?? result.requested_website ?? '',
+  }));
+  const resultCandidates = results.flatMap(result => (result.candidates ?? []).map(candidate => ({
+    ...candidate,
+    entity_id: entityId(result),
+  })));
+  const resultCaptures = results.map(result => ({
+    entity_id: entityId(result),
+    identity_status: result.identity_status ?? result.identityStatus ?? null,
+    reachability: result.reachability ?? null,
+  }));
+  if (!resultCandidates.length) throw new Error(`No candidates found in ${resultsPath}`);
+  return {
+    entities: resultEntities,
+    candidates: resultCandidates,
+    captures: resultCaptures,
+    source_artifacts: {
+      results: { path: basename(resultsPath), sha256: await sourceSha256(resultsPath) },
+    },
+  };
+}
+
 function stableOrder(seed, value) {
   return createHash('sha256').update(`${seed}\0${value}`).digest('hex');
 }
@@ -410,9 +465,7 @@ export async function buildLabelSheets({ runDirectory, outputDirectory, maxCandi
   const output = resolve(outputDirectory ?? join(run, 'label-sheets-v3'));
   if (!Number.isInteger(maxCandidates) || maxCandidates < 1 || maxCandidates > HARD_MAX_CANDIDATES) throw new Error(`maxCandidates must be from 1 to ${HARD_MAX_CANDIDATES}`);
   if (!Number.isInteger(maxEntities) || maxEntities < 1 || maxEntities > HARD_MAX_ENTITIES) throw new Error(`maxEntities must be from 1 to ${HARD_MAX_ENTITIES}`);
-  const [entities, candidates, captures] = await Promise.all([readJsonl(join(run, 'entities.jsonl')), readJsonl(join(run, 'candidates.jsonl')), readJsonl(join(run, 'captures.jsonl'))]);
-  if (!entities.length) throw new Error(`No entities found in ${join(run, 'entities.jsonl')}`);
-  if (!candidates.length) throw new Error(`No candidates found in ${join(run, 'candidates.jsonl')}`);
+  const { entities, candidates, captures, source_artifacts: sourceArtifacts } = await loadReviewSource(run);
   const captureByEntity = new Map(captures.map(capture => [entityId(capture), capture]));
   const excludedByEntity = new Map();
   const labelableCandidates = candidates.filter(candidate => {
@@ -440,6 +493,7 @@ export async function buildLabelSheets({ runDirectory, outputDirectory, maxCandi
       schema_version: PACKET_SCHEMA,
       review_protocol: REVIEW_PROTOCOL,
       run_key: basename(run),
+      run_path: run,
       capture_key: captureKeyFor(labelableCandidates, run),
       seed,
       max_candidates_per_sheet: maxCandidates,
@@ -449,6 +503,7 @@ export async function buildLabelSheets({ runDirectory, outputDirectory, maxCandi
       visual_candidate_count: sheets.flatMap(sheet => sheet.entities.flatMap(entity => entity.candidates)).length,
       candidate_count: allCandidateIds.length,
       candidate_ids_sha256: sha256([...allCandidateIds].sort().join('\n')),
+      source_artifacts: sourceArtifacts,
       abstentions,
       sheets,
     };
@@ -545,7 +600,14 @@ export async function validatePacket(packetDirectory) {
   const packet = resolve(packetDirectory);
   const index = JSON.parse(await readFile(join(packet, 'index.json'), 'utf8'));
   if (index.schema_version !== PACKET_SCHEMA || index.review_protocol !== REVIEW_PROTOCOL) throw new Error(`Unsupported packet schema; expected ${PACKET_SCHEMA}`);
-  if (![index.run_key, index.capture_key, index.seed].every(value => typeof value === 'string' && value)) throw new Error('Packet run, capture, and seed identities are required');
+  if (![index.run_key, index.run_path, index.capture_key, index.seed].every(value => typeof value === 'string' && value)) throw new Error('Packet run, capture, and seed identities are required');
+  if (resolve(index.run_path) !== index.run_path || basename(index.run_path) !== index.run_key) throw new Error('Packet run_path must be an absolute path matching run_key');
+  if (!index.source_artifacts || typeof index.source_artifacts !== 'object' || !Object.keys(index.source_artifacts).length) throw new Error('Packet source artifact fingerprints are required');
+  for (const [name, artifact] of Object.entries(index.source_artifacts)) {
+    if (!artifact || typeof artifact.path !== 'string' || basename(artifact.path) !== artifact.path || !/^[a-f0-9]{64}$/.test(artifact.sha256 ?? '')) throw new Error(`Packet source artifact ${name} is invalid`);
+    const path = join(index.run_path, artifact.path);
+    if (!existsSync(path) || await sourceSha256(path) !== artifact.sha256) throw new Error(`source_artifacts.${name}.sha256 mismatch`);
+  }
   if (!Array.isArray(index.sheets) || index.sheet_count !== index.sheets.length) throw new Error('Packet sheet_count invariant failed');
   if (!Number.isInteger(index.max_candidates_per_sheet) || index.max_candidates_per_sheet < 1 || index.max_candidates_per_sheet > HARD_MAX_CANDIDATES) throw new Error('Packet has an unreadable max_candidates_per_sheet');
   if (!Number.isInteger(index.max_entities_per_sheet) || index.max_entities_per_sheet < 1 || index.max_entities_per_sheet > HARD_MAX_ENTITIES) throw new Error('Packet has an invalid max_entities_per_sheet');
