@@ -4,7 +4,7 @@ import { describesEmbeddedLogo } from './logo-semantics.mjs';
 const SOURCE_WEIGHT = {
   schema: 30, 'og-logo': 27, microdata: 26, 'inline-svg': 24, 'browser-inline-svg': 24, 'browser-img': 12,
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
-  manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
+  manifest: 22, apple: 20, 'mask-icon': 20, bimi: 18, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
 const RANKING_VERSION = 10;
 export const ROLE_VARIANT_MIN_SCORE = 45;
@@ -35,7 +35,7 @@ function firstPartyPlacedLogoPath(item) {
 }
 
 const AUTHORITATIVE_SOURCES = ['schema', 'og-logo', 'microdata'];
-const FAVICON_SOURCES = ['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon'];
+const FAVICON_SOURCES = ['manifest', 'apple', 'mask-icon', 'bimi', 'ms-tile', 'html-icon', 'besticon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon'];
 const DECLARED_ICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon']);
 const DECLARED_ICON_MIN_SCORE = 49;
 const PLATFORM_NAMES = ['namecheap', 'matomo', 'piwik', 'wix', 'vercel', 'webflow', 'squarespace', 'shopify', 'godaddy', 'netlify', 'framer'];
@@ -229,7 +229,8 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   const role_scores = { icon, wide: wideScore, favicon };
   const score = Math.max(...Object.values(role_scores));
   const predicted_roles = [
-    ...(roleEligible('icon') && icon >= 35 && safeContext && usableIconSize && (square || ratio == null) && (faviconSource || authoritativeSource || agreesWithCompany || placedLogo) ? ['icon'] : []),
+    ...(roleEligible('icon') && icon >= 35 && safeContext && usableIconSize && (square || ratio == null) &&
+      (item.source !== 'bimi' || !paddedWordmark) && (faviconSource || authoritativeSource || agreesWithCompany || placedLogo) ? ['icon'] : []),
     ...(roleEligible('wide') && wideScore >= 35 && safeContext && (wide || ratio == null) && hasWideEvidence(item, companyName) ? ['wide'] : []),
     ...(favicon >= 35 && faviconSource ? ['favicon'] : []),
   ];
@@ -356,6 +357,7 @@ export function rankCandidates(items, options = {}) {
     // A favicon-role candidate is the bounded fallback for the canonical icon when no true icon
     // candidate qualifies. Prefer the asset intended for favicon use, not an arbitrary source.
     const fallback = eligible.filter(item => item.predicted_roles.includes('favicon') &&
+      !(item.source === 'bimi' && item.padded_wordmark) &&
       Math.min(Number(item.width) || Infinity, Number(item.height) || Infinity) >= ICON_FALLBACK_MIN_EDGE)
       .sort((a, b) => faviconRankScore(b) - faviconRankScore(a) || b.bytes - a.bytes)[0];
     if (fallback) selectedByRole.icon = fallback;

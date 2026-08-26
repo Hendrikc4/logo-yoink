@@ -10,6 +10,7 @@ import { mapConcurrent } from './concurrency.mjs';
 import { isPrivateIp } from './network-safety.mjs';
 import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
 import { matchesLogoPreferences, normalizeAssetPreferences } from './asset-model.mjs';
+import { bimiCandidate, isSafeBimiSvg, lookupBimiAssertion } from './discover-bimi.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
 const HOMEPAGE_FALLBACK_TIMEOUT_MS = 3_000;
@@ -18,7 +19,7 @@ const MAX_HTML_BYTES = 2 * 1024 * 1024;
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
 const MAX_CANDIDATES_TO_DOWNLOAD = 16;
 const ROLE_QUEUE_CAPS = { icon: 6, wide: 8, favicon: 4 };
-const FAVICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'root-favicon', 'google-favicon', 'duckduckgo-favicon']);
+const FAVICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'bimi', 'ms-tile', 'html-icon', 'besticon', 'root-favicon', 'google-favicon', 'duckduckgo-favicon']);
 const STRUCTURED_LOGO_SOURCES = new Set(['schema', 'og-logo', 'microdata']);
 const DOM_IMAGE_SOURCES = new Set(['dom-img', 'dom-picture', 'noscript-img']);
 const CONTENT_BOX_MAX_SAMPLES = 96;
@@ -406,12 +407,18 @@ function imageMetadata(bytes, contentType) {
   return null;
 }
 
-async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES) {
+async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES, { fetchImpl, validateUrl } = {}) {
   try {
-    const response = await fetchTimed(item.url, { timeoutMs, accept: 'image/*,*/*;q=0.6', diagnostics });
+    const candidateValidateUrl = item.source === 'bimi' ? async value => {
+      if (new URL(value).protocol !== 'https:') throw new Error('BIMI logo redirects must remain HTTPS.');
+      return (validateUrl ?? assertPublicUrl)(value);
+    } : validateUrl;
+    const response = await fetchTimed(item.url, { timeoutMs, accept: item.source === 'bimi' ? 'image/svg+xml' : 'image/*,*/*;q=0.6', diagnostics, fetchImpl, validateUrl: candidateValidateUrl });
     if (!response.ok) return null;
     const read = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs });
     let bytes = read.bytes;
+    if (item.source === 'bimi' && String(response.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase() !== 'image/svg+xml') return null;
+    if (item.source === 'bimi' && !isSafeBimiSvg(bytes)) return null;
     let metadata = imageMetadata(bytes, response.headers.get('content-type'));
     if (metadata?.format === 'svg') {
       bytes = normalizeStandaloneSvg(bytes, { inheritedColor: item.evidence?.inherited_color });
@@ -426,7 +433,7 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     const width = metadata.width ?? item.declared?.width ?? item.discoveredWidth ?? null, height = metadata.height ?? item.declared?.height ?? item.discoveredHeight ?? null;
     const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4, scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
     const background = await imageBackground(bytes, metadata.format);
-    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { retrieved_at: new Date().toISOString(), http_status: response.status }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_at: new Date().toISOString(), http_status: response.status, svg_safety_validated: metadata.format === 'svg', bimi_svg_profile_validated: item.source === 'bimi' ? true : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, status = 200, contentType = '' } = {}) {
@@ -695,7 +702,7 @@ export async function extractLogos(website, options = {}) {
   await attachTinySuitability(validated);
   let ranked = rankValidated();
   let cachedFavicon = null;
-  if (!ranked.selectedByRole.icon && options.cachedFavicon !== false) {
+  if (!options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
     cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
     if (cachedFavicon) {
       validated = dedupeBytes([...validated, cachedFavicon]);
@@ -799,9 +806,83 @@ export async function extractLogos(website, options = {}) {
     }
   }
 
-  const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
+  let bimiDiagnostics = { enabled: Boolean(options.bimi), status: options.bimi ? 'not_needed' : 'disabled', dnsRequests: 0, httpRequests: 0, bytesDownloaded: 0 };
+  if (options.bimi && !ranked.selectedByRole.icon) {
+    const bimiStartedAt = performance.now();
+    const assertion = await lookupBimiAssertion(normalized.domain, {
+      organizationalDomain: options.bimiOrganizationalDomain,
+      resolveTxt: options.bimiResolveTxt,
+      timeoutMs: Math.min(timeoutMs, options.bimiTimeoutMs ?? 2_000),
+      cache: options.bimiCache,
+      cacheTtlMs: options.bimiCacheTtlMs,
+      now: options.bimiNow,
+    });
+    const beforeRequests = network.requests;
+    const beforeBytes = network.bytesDownloaded;
+    let admitted = false;
+    let duplicateBytes = false;
+    let logoValidation = assertion.status === 'accepted' ? 'fetch_or_validation_failed' : 'not_attempted';
+    const assertionCandidate = bimiCandidate(assertion, { discoveredAt: new Date().toISOString() });
+    if (assertionCandidate) {
+      const checked = await validateCandidate(assertionCandidate, Math.min(timeoutMs, options.bimiTimeoutMs ?? 2_000), network, maxImageBytes, {
+        fetchImpl: options.bimiFetchImpl,
+        validateUrl: options.bimiValidateUrl,
+      });
+      if (checked) {
+        const checkedBytes = dataUrlBytes(checked.dataUrl);
+        const contentBox = checkedBytes ? await measureContentBox(checkedBytes, { width: checked.width, height: checked.height }) : null;
+        if (contentBox) checked.contentBox = contentBox;
+        const priorHashes = new Set(validated.map(item => item.observed?.byte_hash).filter(Boolean));
+        duplicateBytes = priorHashes.has(checked.observed?.byte_hash);
+        if (duplicateBytes) {
+          const prior = validated.find(item => item.observed?.byte_hash === checked.observed?.byte_hash);
+          if (prior) prior.evidence = { ...prior.evidence, bimi_duplicate_provenance: checked.provenance };
+        }
+        validated = dedupeBytes([...validated, checked]);
+        await attachTinySuitability(validated);
+        ranked = rankValidated();
+        admitted = ranked.selectedByRole.icon?.source === 'bimi';
+        logoValidation = admitted ? 'valid_icon_admitted' : duplicateBytes ? 'valid_duplicate' : 'valid_non_icon';
+      }
+    }
+    bimiDiagnostics = {
+      enabled: true,
+      status: assertion.status,
+      reason: assertion.reason,
+      queryName: assertion.queryName,
+      queryDomain: assertion.queryDomain,
+      selector: assertion.selector,
+      recordSha256: assertion.recordDigest,
+      logoUrl: assertion.logoUrl,
+      evidenceDocumentUrl: assertion.authorityUrl,
+      authorityPointer: assertion.authorityPointer,
+      cached: Boolean(assertion.cached),
+      dnsRequests: assertion.dnsRequests ?? 0,
+      httpRequests: network.requests - beforeRequests,
+      bytesDownloaded: network.bytesDownloaded - beforeBytes,
+      logoFetchAttempted: Boolean(assertionCandidate && network.requests > beforeRequests),
+      logoValidated: logoValidation.startsWith('valid_'),
+      logoValidation,
+      admitted,
+      duplicateBytes,
+      certificateValidation: assertion.certificateValidation ?? 'not_performed',
+      evidenceDocumentPresent: assertion.evidenceDocumentPresent ?? false,
+      durationMs: Math.round(performance.now() - bimiStartedAt),
+    };
+  }
+
+  if (options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
+    cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
+    if (cachedFavicon) {
+      validated = dedupeBytes([...validated, cachedFavicon]);
+      await attachTinySuitability(validated);
+      ranked = rankValidated();
+    }
+  }
+
+  const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0) + (bimiDiagnostics.dnsRequests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
-  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.

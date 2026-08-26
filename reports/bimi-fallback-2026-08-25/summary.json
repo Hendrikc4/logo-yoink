@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "decision": "retain_opt_in",
+  "runtime_default": false,
+  "frozen_inputs": {
+    "fixture": "fixtures/companies-800.json",
+    "fixture_sha256": "98e365f137966e3b1b8d8cff2a45765d71fe4fbbf64f90bc0502b51064f5be2c",
+    "development_split": "benchmarks/major-brands-300-v1/splits/development.jsonl",
+    "development_split_sha256": "6750e75ba64306dbf7784661c5c317bb2635b6a6149790b377dfe3d1b9abe720",
+    "validation_split": "benchmarks/major-brands-300-v1/splits/validation.jsonl",
+    "validation_split_sha256": "55568d6b5bdaf25713afe11d53778d2e9258d68d8e30c3338856f2f66186d25a",
+    "evaluation_opened_for_tuning": false
+  },
+  "prevalence": {
+    "development": { "domains": 180, "domains_with_bimi": 46, "retrievable_valid_safe_svgs": 44, "dns_requests": 180, "http_requests": 47, "downloaded_bytes": 149742, "latency_ms": { "p50": 52, "p95": 383 } },
+    "validation": { "domains": 60, "domains_with_bimi": 26, "retrievable_valid_safe_svgs": 25, "dns_requests": 60, "http_requests": 27, "downloaded_bytes": 49581, "latency_ms": { "p50": 63, "p95": 272 } }
+  },
+  "gated_paired_fallback": {
+    "development": { "reachable_domains": 133, "bimi_attempts": 18, "domains_with_bimi": 5, "retrievable_valid_safe_svgs": 5, "admitted_icons": 3, "correct_admissions": 3, "strict_precision": 1, "wrong_brand_admissions": 0, "incremental_correct_selections": 0, "duplicate_candidate_bytes": 0, "dns_requests": 18, "http_requests": 5, "downloaded_bytes": 8177, "latency_ms": { "p50": 68, "p95": 414 } },
+    "validation": { "reachable_domains": 46, "bimi_attempts": 4, "domains_with_bimi": 1, "retrievable_valid_safe_svgs": 1, "admitted_icons": 1, "correct_admissions": 1, "strict_precision": 1, "wrong_brand_admissions": 0, "incremental_correct_selections": 0, "duplicate_candidate_bytes": 0, "dns_requests": 4, "http_requests": 2, "downloaded_bytes": 912, "latency_ms": { "p50": 22, "p95": 99 } }
+  },
+  "iteration": { "trigger": "Correct-brand wide lockups padded onto square canvases were icon-role false admissions.", "frozen_rule": "Measure nontransparent content and withhold BIMI from canonical icon fallback when content ratio is at least 1.8.", "company_specific_exceptions": 0 },
+  "controls_after_rule_freeze": {
+    "apple.com": "accepted",
+    "google.com": "not_found",
+    "nike.com": "not_found",
+    "pepsi.com": "not_found"
+  },
+  "certificate_validation": "not_performed",
+  "trademark_or_license_verified": false
+}

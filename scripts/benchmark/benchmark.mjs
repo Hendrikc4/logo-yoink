@@ -57,6 +57,7 @@ Run options:
   --role-budget         Reserve the fixed download budget by candidate role (default off)
   --content-bounding-wide
                         Use bounded content boxes for wide-role ranking only (default off)
+  --bimi                Enable the bounded BIMI icon fallback (default off)
   --help
 
 The run directory receives config.json, results.jsonl, summary.json, assets/, and
@@ -67,7 +68,7 @@ export function parseArgs(argv) {
   const args = [...argv];
   const command = ['compare', 'score'].includes(args[0]) ? args.shift() : 'run';
   const options = { command };
-  const booleans = new Set(['browser', 'help', 'role-budget', 'content-bounding-wide', 'deep-wide', 'spa-bundles']);
+  const booleans = new Set(['browser', 'help', 'role-budget', 'content-bounding-wide', 'deep-wide', 'spa-bundles', 'bimi']);
   for (let index = 0; index < args.length; index++) {
     const raw = args[index];
     if (!raw.startsWith('--')) throw new Error(`Unexpected argument: ${raw}`);
@@ -682,6 +683,7 @@ async function runCommand(options) {
       browser: Boolean(options.browser), expanded_pages: options.expandedPages ?? 0,
       deep_wide: Boolean(options.deepWide), spa_bundles: Boolean(options.spaBundles),
       role_budget: Boolean(options.roleBudget), content_bounding_wide: Boolean(options.contentBoundingWide),
+      bimi: Boolean(options.bimi),
       user_agent: options.userAgent ?? 'extractor default',
     },
     efficiency_thresholds: DEFAULT_EFFICIENCY_THRESHOLDS,
@@ -708,6 +710,7 @@ async function runCommand(options) {
     spaBundles: Boolean(options.spaBundles),
     roleAwareBudget: Boolean(options.roleBudget),
     contentBoundingWide: Boolean(options.contentBoundingWide),
+    bimi: Boolean(options.bimi),
     userAgent: options.userAgent,
     browserInstance,
   };

@@ -168,6 +168,7 @@ The default path is intentionally homepage-only. Turn on the heavier fallbacks o
 | Use a local [Besticon](https://github.com/mat/besticon) fallback | `BESTICON_URL=http://127.0.0.1:8080 npm start` |
 | Follow likely brand/press pages in the CLI | Add `--deep-wide` |
 | Inspect one same-origin SPA bundle too | Add `--deep-wide --spa-bundles` |
+| Try the measured BIMI icon fallback | Add `--bimi` (experimental, off by default) |
 
 Logo Yoink automatically loads a gitignored `.env.local` file. Normal successful extractions do not use Jina.
 
@@ -184,6 +185,8 @@ The primary local settings are:
 | `PUBLIC_DEMO_BROWSER` | `1` | Set to `0` to prevent web/API requests from using Chromium |
 
 `--deep-wide` only runs when the homepage has no accepted wide logo. It follows at most two strong first-party brand, press, or media links and can inspect official ZIP kits. `--spa-bundles` scans at most one same-origin entry bundle, up to 2.2 MB, for a company-logo asset literal.
+
+`--bimi` queries `default._bimi.<domain>` only after stronger first-party icon recovery is exhausted and before third-party favicon caches. It accepts one unambiguous `v=BIMI1` assertion with a nonempty HTTPS `l=` URL, then applies the normal public-address, redirect, timeout, byte, MIME, and SVG-safety checks. BIMI is restricted to icon/favicon-like roles and never supplies `assets.logo`. An `a=` evidence-document pointer is recorded but not certificate-validated, and no trademark or license permission is inferred. The option remains experimental because the frozen development/validation experiment found safe selections but no incremental correct selections over the existing cached-icon fallback.
 
 </details>
 
