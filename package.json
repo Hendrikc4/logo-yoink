@@ -32,6 +32,7 @@
     "visual-benchmark:merge": "node scripts/benchmark/visual-benchmark-merge.mjs",
     "visual-benchmark:agreement": "node scripts/review/visual-benchmark-agreement.mjs",
     "visual-benchmark:replay": "node scripts/benchmark/visual-benchmark-replay.mjs",
+    "benchmark:combined": "node scripts/benchmark/combined-benchmark-report.mjs",
     "test": "node --test && node scripts/maintenance/validate-fixtures.mjs",
     "smoke": "node scripts/maintenance/smoke-local.mjs",
     "check:syntax": "node scripts/maintenance/check-syntax.mjs",

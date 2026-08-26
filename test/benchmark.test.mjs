@@ -143,6 +143,16 @@ test('explicit safety classes separate non-logo errors from wrong-brand safety',
   assert.deepEqual(summary.safety.selected_classifications, { not_logo: 1, wrong_brand: 1 });
 });
 
+test('legacy ambiguous identity is an explicit unjudgeable safety outcome', () => {
+  const results = [result('ambiguous', [candidate('asset', 'icon')], { icon: 'asset' })];
+  const summary = summarizeResults(results, {}, [{
+    entity_id: 'ambiguous', candidate_id: 'asset', identity: 'ambiguous', role: 'icon', usability: 'unusable',
+  }]).benchmarkScore;
+  assert.equal(summary.status, 'complete');
+  assert.equal(summary.safety.wrong_brand_domains, 0);
+  assert.deepEqual(summary.safety.selected_classifications, { unjudgeable: 1 });
+});
+
 test('withholds a quality score when a selected negative has not been safety-classified', () => {
   const results = [result('unknown-negative', [candidate('asset', 'wide')], { wide: 'asset' })];
   const labels = [{

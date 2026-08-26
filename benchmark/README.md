@@ -44,6 +44,7 @@ Use package scripts where one exists:
 npm run benchmark -- --cohort original-100 --output runs/my-run
 npm run benchmark -- --cohort major-brands-300 --output runs/major-brands-run
 npm run benchmark -- --cohort all-800 --output runs/all-800-run
+npm run benchmark:combined -- --help
 npm run visual-benchmark:shards -- --help
 npm run visual-benchmark:capture -- --help
 npm run visual-benchmark:validate -- --help
