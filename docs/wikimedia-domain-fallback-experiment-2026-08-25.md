@@ -124,3 +124,55 @@ results, and delta review. Raw assets and captures remain under ignored `runs/`.
   to unreachable sites requires a separate reachability-policy experiment.
 - A second independent visual review and a larger validation admission set are
   needed before enabling the option by default.
+
+## Independent operational-cost iteration
+
+A follow-up review retained the opt-in decision and added a conservative
+identity refinement: among exact-domain P856 matches, product paths are rejected
+while a root, locale, or conventional corporate path remains identity evidence.
+This resolves Google Search for `google.com`; Apple Inc. becomes the sole entity
+match but still abstains because its multiple current P154 files are ambiguous
+and neither is suitable for the missing wide role. No entity-type, name-only, or
+company-specific tie-break was added.
+
+The first cost experiment tried a single label search and eight entity results.
+Development exposed an unsafe Amazon admission because the smaller search union
+hid a second exact-domain entity, so that optimization was rejected before
+validation. The frozen v4 treatment keeps two searches and twelve candidates.
+It instead bounds the shared cache to 32 MiB, isolates injected transports by
+default, coalesces concurrent identical requests, applies a five-second overall
+resolver deadline, retries one 429/503/maxlag response without caching it, and
+skips the asset-body request when declared Commons dimensions cannot satisfy an
+icon-only gap. Commons results without usable license evidence are rejected;
+redirect, page ID, canonical filename, license, and trademark provenance are
+preserved. The CLI/programmatic cache TTL is now plumbed through explicitly.
+
+| Split | Correct icon | Correct wide | Strict precision | Wrong/related | Selection change vs prior |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Development v4 (180) | 0 | 22 | 22/22 (100%) | 0 | +1 Anthropic wide |
+| Validation v4 (60) | 0 | 3 | 3/3 (100%) | 0 | none |
+
+Fallback-local instrumentation measured 235 requests, 25,909,729 bytes, and
+50,294 ms across 57 development attempts; validation measured 80 requests,
+9,078,887 bytes, and 17,912 ms across 21 attempts. Compared with the prior
+request accounting (232 development, 82 validation), development added three
+requests while admitting Anthropic and validation removed two. The deterministic
+declared-dimension gate avoids three known asset downloads (Cisco in development;
+BlackRock and Subway in validation), totaling 12,031 bytes, without changing a
+selection. Live reachability and upstream response changes make aggregate byte
+and latency comparisons across independent runs directional rather than paired.
+
+Post-freeze controls selected `Google Search 2026.svg` as the missing Google wide
+role (five fallback requests); Apple abstained on multiple current P154 claims
+(three); Nike needed no fallback; Pepsi validated a current logo but correctly
+left the missing wide role null. The fallback therefore remains opt-in.
+
+```sh
+node scripts/benchmark/benchmark.mjs --cohort major-brands-300 --split development \
+  --output runs/wikimedia-fallback-2026-08-25/treatment-development-cost-v4 \
+  --concurrency 4 --timeout-ms 10000 --role-budget --content-bounding-wide --wikimedia-fallback
+node scripts/benchmark/benchmark.mjs --cohort major-brands-300 --split validation \
+  --output runs/wikimedia-fallback-2026-08-25/treatment-validation-cost-v4 \
+  --concurrency 4 --timeout-ms 10000 --role-budget --content-bounding-wide --wikimedia-fallback
+npm run check
+```

@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "split": "validation",
+  "frozen_inputs": {
+    "split_file": "/Users/hendrik/.codex/worktrees/175b/logo-yoink/benchmarks/major-brands-300-v1/splits/validation.jsonl",
+    "split_sha256": "55568d6b5bdaf25713afe11d53778d2e9258d68d8e30c3338856f2f66186d25a",
+    "control_results": "/Users/hendrik/.codex/worktrees/175b/logo-yoink/runs/wikimedia-fallback-2026-08-25/control-validation/results.jsonl",
+    "control_sha256": "91975b9c17c70ca94200d116ad1b157a0c73bd3acae77926d9961c82ae1a0952",
+    "treatment_results": "/Users/hendrik/.codex/worktrees/175b/logo-yoink/runs/wikimedia-fallback-2026-08-25/treatment-validation-cost-v4/results.jsonl",
+    "treatment_sha256": "0dc96e36ca48a75c91157e283fd59590c8378132336547aaf0bc1209a935b503",
+    "delta_reviews": "/Users/hendrik/.codex/worktrees/175b/logo-yoink/reports/wikimedia-fallback-2026-08-25/delta-reviews.jsonl",
+    "delta_reviews_sha256": "bed7d79adc542c166004cb673d70e38159f95c8ff9d8d6e7688220b8aea1010d"
+  },
+  "incremental_selections": {
+    "total": 3,
+    "correct": 3,
+    "icon_correct": 0,
+    "wide_correct": 3,
+    "strict_precision": 1,
+    "wrong_brand": 0,
+    "related_brand": 0,
+    "first_party_displacements": 0,
+    "selections": [
+      {
+        "entity_id": "80000132-0000-5000-8000-000000000132",
+        "name": "John Deere",
+        "website": "deere.com",
+        "role": "wide",
+        "candidate_id": "05670ff04bfac3a3",
+        "commons_filename": "John Deere text only.png",
+        "review": {
+          "split": "validation",
+          "entity_id": "80000132-0000-5000-8000-000000000132",
+          "name": "John Deere",
+          "role": "wide",
+          "candidate_id": "05670ff04bfac3a3",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000147-0000-5000-8000-000000000147",
+        "name": "UBS",
+        "website": "ubs.com",
+        "role": "wide",
+        "candidate_id": "a87d99250235dd8f",
+        "commons_filename": "UBS Logo.png",
+        "review": {
+          "split": "validation",
+          "entity_id": "80000147-0000-5000-8000-000000000147",
+          "name": "UBS",
+          "role": "wide",
+          "candidate_id": "a87d99250235dd8f",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000189-0000-5000-8000-000000000189",
+        "name": "Reddit",
+        "website": "reddit.com",
+        "role": "wide",
+        "candidate_id": "85566416e9357303",
+        "commons_filename": "Reddit wordmark.svg",
+        "review": {
+          "split": "validation",
+          "entity_id": "80000189-0000-5000-8000-000000000189",
+          "name": "Reddit",
+          "role": "wide",
+          "candidate_id": "85566416e9357303",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      }
+    ]
+  },
+  "fallback": {
+    "attempts": 21,
+    "status_counts": {
+      "not_needed": 26,
+      "no_verified_current_logo": 5,
+      "not_reached": 13,
+      "ambiguous_entities": 3,
+      "ok": 8,
+      "ambiguous_logo_claims": 2,
+      "unsafe_or_missing_commons_file": 2,
+      "no_search_candidates": 1
+    },
+    "technical_failures": 0,
+    "technical_failure_rate": 0
+  },
+  "performance": {
+    "control": {
+      "latency_ms": {
+        "mean": 2618.1,
+        "p50": 1185,
+        "p95": 13005
+      },
+      "requests": {
+        "mean": 11.8,
+        "p50": 10,
+        "p95": 19
+      },
+      "downloaded_bytes": {
+        "mean": 453064.6,
+        "p50": 333819,
+        "p95": 1264695
+      },
+      "extraction_failures": 14,
+      "extraction_failure_rate": 0.23333333333333334
+    },
+    "treatment": {
+      "latency_ms": {
+        "mean": 3023.8,
+        "p50": 1664,
+        "p95": 13004
+      },
+      "requests": {
+        "mean": 13.7,
+        "p50": 13,
+        "p95": 23
+      },
+      "downloaded_bytes": {
+        "mean": 666662.4,
+        "p50": 426299,
+        "p95": 1452254
+      },
+      "extraction_failures": 13,
+      "extraction_failure_rate": 0.21666666666666667
+    }
+  },
+  "caveat": "Control and treatment are separate live captures; reachability drift is disclosed by extraction failures. Incremental selection metrics count only selected Wikimedia candidates and never attribute unrelated first-party live drift to the fallback."
+}

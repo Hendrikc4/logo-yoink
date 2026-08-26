@@ -137,7 +137,7 @@ test('does not let a product subdomain prove corporate identity but permits corp
 
 test('abstains when two entities or two current files remain domain-verified', async () => {
   const twoEntities = mockApi({
-    searches: { 'example.com': [{ id: 'Q1' }, { id: 'Q2' }], example: [{ id: 'Q2' }] },
+    searches: { 'example.com': [{ id: 'Q1' }, { id: 'Q2' }], example: [{ id: 'Q1' }, { id: 'Q2' }] },
     entities: { Q1: entity('Q1', 'https://example.com', 'One.svg'), Q2: entity('Q2', 'https://www.example.com', 'Two.svg') }, commons: [],
   });
   const ambiguousEntities = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, { fetchImpl: twoEntities.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW });
@@ -172,13 +172,42 @@ test('rejects unsafe Commons file URLs and survives malformed, rate-limited, and
 });
 
 test('cache avoids repeat API requests', async () => {
-  const api = mockApi({ searches: { 'none.example': [] }, entities: {}, commons: [] });
+  const api = mockApi({ searches: { 'none.example': [], none: [] }, entities: {}, commons: [] });
   const cache = new Map();
   const args = { domain: 'none.example', missingRoles: ['icon'] };
   await discoverWikimediaLogoCandidates(args, { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache, now: () => NOW });
   const result = await discoverWikimediaLogoCandidates(args, { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache, now: () => NOW });
   assert.equal(api.calls.length, 2);
   assert.equal(result.diagnostics.cacheHits, 2);
+});
+
+test('rejects product paths, requires license evidence, and skips wide files for icon-only requests', async () => {
+  for (const [website, page, expected] of [
+    ['https://www.example.com/music', commonsPage('Example.svg'), 'no_verified_current_logo'],
+    ['https://example.com/', commonsPage('Example.svg', { extmetadata: {} }), 'unsafe_or_missing_commons_file'],
+    ['https://example.com/', commonsPage('Example.svg', { width: 800, height: 100 }), 'unsafe_or_missing_commons_file'],
+  ]) {
+    const api = mockApi({ searches: { example: [{ id: 'Q1' }] }, entities: { Q1: entity('Q1', website, 'Example.svg') }, commons: [page] });
+    const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['icon'] }, {
+      fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW,
+    });
+    assert.equal(result.diagnostics.status, expected);
+    assert.equal(result.candidates.length, 0);
+  }
+});
+
+test('retries maxlag responses without caching the transient error', async () => {
+  let calls = 0;
+  const fetchImpl = async () => {
+    calls += 1;
+    return new Response(JSON.stringify(calls === 1 ? { error: { code: 'maxlag' } } : { search: [] }), { headers: { 'content-type': 'application/json' } });
+  };
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+    fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW, delay: async () => {},
+  });
+  assert.equal(result.diagnostics.status, 'no_search_candidates');
+  assert.equal(result.diagnostics.retries, 1);
+  assert.equal(calls, 3);
 });
 
 test('shared SVG safety rejects active content and classifies safe light/dark Commons variants', async () => {

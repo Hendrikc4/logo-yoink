@@ -95,6 +95,8 @@ requires exact registrable-domain agreement with an active Wikidata official
 website statement before validating a current Commons logo through the normal
 network/image/SVG safety pipeline. It may abstain, and Commons license metadata
 does not waive trademark restrictions.
+The fallback is exposed through the CLI and programmatic extractor only; the
+demo HTTP service does not enable it.
 
 Prefer a white/light logo for a dark surface and a transparent file:
 

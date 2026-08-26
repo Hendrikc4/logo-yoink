@@ -46,7 +46,7 @@ export async function fetchTimed(url, {
         signal: controller.signal,
         headers: {
           accept,
-          'user-agent': 'Mozilla/5.0 (compatible; LogoYoink/0.2; +https://github.com/Hendrikc4/logo-yoink)',
+          'user-agent': 'Mozilla/5.0 (compatible; LogoYoink; +https://github.com/Hendrikc4/logo-yoink)',
           ...headers,
         },
       });

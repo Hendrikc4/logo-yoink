@@ -407,9 +407,9 @@ function imageMetadata(bytes, contentType) {
   return null;
 }
 
-async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES) {
+async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES, requestOptions = {}) {
   try {
-    const response = await fetchTimed(item.url, { timeoutMs, accept: 'image/*,*/*;q=0.6', diagnostics });
+    const response = await fetchTimed(item.url, { timeoutMs, accept: 'image/*,*/*;q=0.6', diagnostics, ...requestOptions });
     if (!response.ok) return null;
     if (item.source === 'wikimedia-commons' && !safeCommonsUrl(response.url, 'upload.wikimedia.org', '/wikipedia/commons/')) return null;
     const read = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs });
@@ -812,6 +812,9 @@ export async function extractLogos(website, options = {}) {
   if (options.wikimediaFallback) {
     const missingRoles = missingWikimediaRoles(ranked, preferences);
     if (missingRoles.length) {
+      const fallbackStarted = performance.now();
+      const fallbackRequestsBefore = network.requests;
+      const fallbackBytesBefore = network.bytesDownloaded;
       const resolver = options.wikimediaResolver ?? discoverWikimediaLogoCandidates;
       const discovered = await resolver({ domain: normalized.domain, missingRoles }, {
         timeoutMs: Math.min(timeoutMs, options.wikimediaTimeoutMs ?? 5_000),
@@ -819,11 +822,15 @@ export async function extractLogos(website, options = {}) {
         fetchImpl: options.wikimediaFetch,
         validateUrl: options.wikimediaValidateUrl,
         cache: options.wikimediaCache,
+        cacheTtlMs: options.wikimediaCacheTtlMs,
         now: options.wikimediaNow,
       });
       wikimediaDiagnostics = { enabled: true, ...discovered.diagnostics, requestedRoles: missingRoles };
       const additions = (await mapConcurrent((discovered.candidates ?? []).slice(0, 2), 2,
-        item => validateCandidate(item, Math.min(timeoutMs, options.wikimediaTimeoutMs ?? 5_000), network, maxImageBytes))).filter(Boolean);
+        item => validateCandidate(item, Math.min(timeoutMs, options.wikimediaTimeoutMs ?? 5_000), network, maxImageBytes, {
+          fetchImpl: options.wikimediaFetch,
+          validateUrl: options.wikimediaValidateUrl,
+        }))).filter(Boolean);
       if (additions.length) {
         const before = Object.fromEntries(['icon', 'wide'].map(role => [role, ranked.selectedByRole[role]]));
         validated = dedupeBytes([...validated, ...additions]);
@@ -833,8 +840,14 @@ export async function extractLogos(website, options = {}) {
         const displaced = ['icon', 'wide'].filter(role => !missingRoles.includes(role) &&
           (treatment.selectedByRole[role]?.observed?.byte_hash ?? null) !== (before[role]?.observed?.byte_hash ?? null));
         if (!displaced.length) ranked = treatment;
-        wikimediaDiagnostics = { ...wikimediaDiagnostics, validated: additions.length, admitted: displaced.length ? 0 : additions.length, displacedRoles: displaced };
+        const admittedRoles = displaced.length ? [] : missingRoles.filter(role => ranked.selectedByRole[role]?.source === 'wikimedia-commons');
+        wikimediaDiagnostics = { ...wikimediaDiagnostics, validated: additions.length, admitted: admittedRoles.length, admittedRoles, displacedRoles: displaced };
       }
+      wikimediaDiagnostics = { ...wikimediaDiagnostics,
+        requests: network.requests - fallbackRequestsBefore,
+        downloadedBytes: network.bytesDownloaded - fallbackBytesBefore,
+        durationMs: Math.round(performance.now() - fallbackStarted),
+      };
     } else wikimediaDiagnostics = { enabled: true, status: 'not_needed', requestedRoles: [] };
   }
 
