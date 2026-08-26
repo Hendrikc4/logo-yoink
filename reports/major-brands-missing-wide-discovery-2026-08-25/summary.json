@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "decision": "stop_no_runtime_change",
+  "benchmark_revision": "00dd2d9ab3fe367afb004cfa8e54e0ade70fea32",
+  "holdout_discipline": {
+    "development_used_for_diagnosis_and_tuning": true,
+    "validation_used_only_for_deep_surface_confirmation": true,
+    "evaluation_opened": false,
+    "company_specific_rules_added": 0,
+    "frozen_artifacts_modified": 0
+  },
+  "development_loss_population": {
+    "entities": 180,
+    "reachable": 130,
+    "usable_correct_wide_candidate_available": 76,
+    "no_captured_usable_correct_wide_candidate": 54,
+    "target_domains_with_no_selected_wide": 41,
+    "other_no_selected_wide_domains_in_browser_safety_denominator": 7
+  },
+  "rendered_browser": {
+    "development_queue": 48,
+    "successful_observations": 46,
+    "failed_observations": 2,
+    "selected_wide_additions": 9,
+    "selected_wide_additions_in_target_loss_category": 8,
+    "reviewed_correct_additions": 7,
+    "reviewed_correct_target_additions": 6,
+    "reviewed_wrong_brand_additions": 1,
+    "reviewed_related_brand_additions": 1,
+    "strict_precision": {
+      "all_additions": "7/9",
+      "target_additions": "6/8"
+    },
+    "selected_sources": {
+      "browser-inline-svg": 5,
+      "browser-img": 4,
+      "browser-css-background": 0
+    },
+    "cost": {
+      "browser_requests": 4109,
+      "browser_declared_bytes": 142376391,
+      "validation_requests": 54,
+      "validation_downloaded_bytes": 2889999,
+      "wall_ms": 61854,
+      "latency_p50_ms": 2388,
+      "latency_p95_ms": 3788,
+      "max_observed_requests_per_domain_including_blocked": 394,
+      "max_declared_bytes_per_domain": 35445144,
+      "resource_limit_hit_domains": 29
+    },
+    "gate_result": "fail_precision_wrong_brand_and_resource_bounds"
+  },
+  "deep_official_and_spa": {
+    "development": {
+      "attempted": 48,
+      "successful": 48,
+      "new_wides": 1,
+      "new_target_wides": 0,
+      "source": "official-archive",
+      "requests_delta": 65,
+      "bytes_delta": 18325430,
+      "duration_ms_delta": 14005,
+      "icon_movements": 0,
+      "favicon_movements": 0
+    },
+    "validation": {
+      "attempted": 16,
+      "successful": 16,
+      "new_wides": 0,
+      "requests_delta": 20,
+      "bytes_delta": 4617141,
+      "duration_ms_delta": -4407,
+      "icon_movements": 0,
+      "favicon_movements": 0
+    },
+    "gate_result": "fail_target_yield_and_validation_confirmation"
+  },
+  "static_surface_evidence": {
+    "schema_candidates_in_54_development_target_domains": 7,
+    "schema_selected_non_correct_wides_in_target_domains": 2,
+    "note": "The exhaustive v4 labels contain no usable correct wide candidate from any frozen static source in these 54 domains."
+  },
+  "immutable_input_sha256": {
+    "v4_labels": "c626fa829de7268911e949f359a74f71e6494c0c5b36cdacfbd271884c8bf4b2",
+    "development_split": "6750e75ba64306dbf7784661c5c317bb2635b6a6149790b377dfe3d1b9abe720",
+    "validation_split": "55568d6b5bdaf25713afe11d53778d2e9258d68d8e30c3338856f2f66186d25a",
+    "rank_v6_development_results": "d650b0a423bf730962eef5276e186fe33e531045a3f8c259c56da285cf959359",
+    "rank_v6_validation_results": "22451cb39032df010f444ed7c7a2fee4bcf3cd7681721812ec4888846b7bc3a4"
+  }
+}
