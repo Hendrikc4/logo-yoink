@@ -64,6 +64,7 @@ server.listen(port, host, () => {
   console.log(besticonUrl ? `Besticon fallback: ${besticonUrl}` : 'Besticon fallback: disabled');
   console.log(jinaApiKey && process.env.PUBLIC_DEMO_ALLOW_JINA !== '0' ? 'Public demo Jina fallback: enabled' : 'Public demo Jina fallback: disabled');
   console.log(`Public demo rendered fallback: ${browserDiscovery && process.env.PUBLIC_DEMO_BROWSER !== '0' ? 'enabled for missing roles' : 'disabled'}`);
+  console.log(`Public demo Wikimedia fallback: ${process.env.PUBLIC_DEMO_WIKIMEDIA !== '0' ? 'enabled for missing roles' : 'disabled'}`);
 });
 
 server.headersTimeout = 10_000;

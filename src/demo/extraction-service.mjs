@@ -37,7 +37,8 @@ export function createDemoExtractionService({
         const body = await readDemoJson(request, limits.bodyBytes);
         const target = normalize(body.website);
         const options = { ...extractionOptions(), preferences: body.preferences };
-        const requestKey = `${target.url.href}\n${JSON.stringify(body.preferences)}`;
+        if (body.wikimediaFallback !== undefined) options.wikimediaFallback = body.wikimediaFallback;
+        const requestKey = `${target.url.href}\n${JSON.stringify(body.preferences)}\n${options.wikimediaFallback !== false}`;
         const result = await guard.run(requestKey, () => extract(target.url.href, options));
         return {
           status: 200,

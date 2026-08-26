@@ -65,14 +65,21 @@ export function assertDemoRequestOrigin(request) {
 function validatePayload(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new DemoHttpError(400, 'Expected a JSON object.');
   const keys = Object.keys(value);
-  if (!keys.includes('website') || keys.some(key => !['website', 'preferences'].includes(key))) {
-    throw new DemoHttpError(400, 'Only website and preferences fields are accepted.');
+  if (!keys.includes('website') || keys.some(key => !['website', 'preferences', 'wikimediaFallback'].includes(key))) {
+    throw new DemoHttpError(400, 'Only website, preferences, and wikimediaFallback fields are accepted.');
   }
   if (typeof value.website !== 'string') throw new DemoHttpError(400, 'Website must be a string.');
   const website = value.website.trim();
   if (!website || website.length > 2_048 || /[\u0000-\u001f\u007f]/.test(website)) throw new DemoHttpError(400, 'Enter a valid website URL.');
   try {
-    return { website, preferences: normalizeAssetPreferences(value.preferences) };
+    if (value.wikimediaFallback !== undefined && typeof value.wikimediaFallback !== 'boolean') {
+      throw new DemoHttpError(400, 'wikimediaFallback must be a boolean.');
+    }
+    return {
+      website,
+      preferences: normalizeAssetPreferences(value.preferences),
+      ...(value.wikimediaFallback === undefined ? {} : { wikimediaFallback: value.wikimediaFallback }),
+    };
   } catch (error) {
     throw new DemoHttpError(400, error.message);
   }
@@ -181,6 +188,7 @@ export function publicDemoExtractionOptions(environment = process.env) {
     roleAwareBudget: true,
     contentBoundingWide: true,
     browser: environment.PUBLIC_DEMO_BROWSER !== '0',
+    wikimediaFallback: environment.PUBLIC_DEMO_WIKIMEDIA !== '0',
     deepWide: true,
     spaBundles: true,
     cachedFavicon: true,

@@ -141,8 +141,9 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
           <div class="property-table" role="table" aria-label="Request body fields">
             <div class="property-row" role="row"><div role="cell"><code>website</code><b>string · required</b></div><p role="cell">A hostname or public HTTP(S) URL, up to 2,048 characters. Bare domains such as <code>stripe.com</code> are accepted.</p></div>
             <div class="property-row" role="row"><div role="cell"><code>preferences</code><b>object · optional</b></div><p role="cell">Role-specific appearance preferences. Only <code>icon</code> and <code>logo</code> keys are accepted.</p></div>
+            <div class="property-row" role="row"><div role="cell"><code>wikimediaFallback</code><b>boolean · optional</b></div><p role="cell">Defaults to <code>true</code>. Set to <code>false</code> to keep this request first-party-only.</p></div>
           </div>
-          <aside class="callout callout--warning"><span>Important</span><p>The public route accepts only these two top-level fields and requires <code>Content-Type: application/json</code>. Unknown fields are rejected.</p></aside>
+          <aside class="callout callout--warning"><span>Important</span><p>The public route accepts only these three top-level fields and requires <code>Content-Type: application/json</code>. Unknown fields are rejected.</p></aside>
         </section>
 
         <section id="preferences" class="doc-section" data-doc-title="Preferences theme color background any light dark transparent opaque white black">
@@ -239,6 +240,7 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
           <div class="section-heading"><span>06</span><div><p>CLI</p><h2>Use it without a server.</h2></div></div>
           <div class="code-window compact"><div class="code-top"><b>Rank and print JSON</b><button class="copy-button" type="button" data-copy-target="cli-code">Copy</button></div><pre id="cli-code"><code><span class="token-prompt">$</span> npm run cli -- stripe.com
 <span class="token-prompt">$</span> npm run cli -- stripe.com --theme dark --background transparent
+<span class="token-prompt">$</span> npm run cli -- stripe.com --no-wikimedia-fallback
 <span class="token-prompt">$</span> npm run cli -- stripe.com --role logo --download ./downloads/stripe</code></pre></div>
           <div class="property-table" role="table" aria-label="CLI options">
             <div class="property-row"><div><code>--theme</code><b>any | light | dark</b></div><p>Preference for the logo destination surface.</p></div>
@@ -247,6 +249,7 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
             <div class="property-row"><div><code>--download</code><b>directory</b></div><p>Write the selected validated asset to disk.</p></div>
             <div class="property-row"><div><code>--deep-wide</code><b>flag</b></div><p>When needed, follow up to two strong first-party brand, press, or media links and inspect official ZIP kits.</p></div>
             <div class="property-row"><div><code>--spa-bundles</code><b>flag</b></div><p>With deep discovery, inspect one same-origin entry bundle (up to 2.2 MB) for strong logo asset literals.</p></div>
+            <div class="property-row"><div><code>--no-wikimedia-fallback</code><b>flag</b></div><p>Disable the default exact-domain Wikidata/Commons missing-role fallback.</p></div>
           </div>
         </section>
 
@@ -261,6 +264,7 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
             <div role="row"><code>BESTICON_URL</code><b>unset</b><p>Optional URL for a self-hosted Besticon service.</p></div>
             <div role="row"><code>PUBLIC_DEMO_ALLOW_JINA</code><b>1</b><p>Set to <code>0</code> to keep web/API requests off Jina.</p></div>
             <div role="row"><code>PUBLIC_DEMO_BROWSER</code><b>1</b><p>Set to <code>0</code> to disable Chromium for web/API requests.</p></div>
+            <div role="row"><code>PUBLIC_DEMO_WIKIMEDIA</code><b>1</b><p>Set to <code>0</code> to disable exact-domain Wikidata/Commons recovery.</p></div>
             <div role="row"><code>DEMO_RATE_LIMIT</code><b>20 / 10 min</b><p>Per-client in-process request window.</p></div>
             <div role="row"><code>DEMO_GLOBAL_RATE_LIMIT</code><b>60 / min</b><p>Per-instance global request window.</p></div>
             <div role="row"><code>DEMO_MAX_CONCURRENT</code><b>2</b><p>Simultaneous extraction ceiling.</p></div>
@@ -285,7 +289,7 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
             <article><b>2</b><div><span>Validate</span><h3>Prove every asset.</h3><p>Fetch under byte and time budgets, verify actual image bytes, measure dimensions and visible content, then reject unsafe or unusable files.</p></div></article>
             <article><b>3</b><div><span>Consolidate</span><h3>Collapse the duplicates.</h3><p>Deduplicate by URL and byte hash, then group delivery-size variations of the same artwork into asset families.</p></div></article>
             <article><b>4</b><div><span>Rank</span><h3>Select by role.</h3><p>Score source quality, shape, size, placement, home-link evidence, company agreement, visual treatment, and negative context separately for icon and wordmark.</p></div></article>
-            <article><b>5</b><div><span>Recover</span><h3>Escalate only when needed.</h3><p>Bounded browser, deep first-party, SPA-bundle, cached favicon, Besticon, or optional Jina recovery can fill a missing role.</p></div></article>
+            <article><b>5</b><div><span>Recover</span><h3>Escalate only when needed.</h3><p>Bounded browser, deep first-party, SPA-bundle, cached favicon, Besticon, optional Jina, or exact-domain Wikidata/Commons recovery can fill a missing role.</p></div></article>
           </div>
         </section>
 

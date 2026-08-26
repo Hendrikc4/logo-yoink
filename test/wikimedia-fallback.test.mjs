@@ -296,3 +296,9 @@ test('fallback role gate requests only absent or preference-incompatible roles',
   }]);
   assert.deepEqual(extractorInternals.missingWikimediaRoles(ranked, preferences), ['icon']);
 });
+
+test('Wikimedia fallback is enabled by default and supports explicit opt-out', () => {
+  assert.equal(extractorInternals.wikimediaFallbackEnabled(), true);
+  assert.equal(extractorInternals.wikimediaFallbackEnabled({ wikimediaFallback: true }), true);
+  assert.equal(extractorInternals.wikimediaFallbackEnabled({ wikimediaFallback: false }), false);
+});

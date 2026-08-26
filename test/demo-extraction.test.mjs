@@ -38,6 +38,20 @@ test('shared demo extraction service validates, normalizes, and executes with ad
   });
 });
 
+test('shared demo extraction service forwards request-level Wikimedia opt-out', async () => {
+  const calls = [];
+  const service = createDemoExtractionService({
+    environment: {},
+    extractionOptions: () => ({ wikimediaFallback: true }),
+    extract: async (_website, options) => { calls.push(options); return {}; },
+  });
+  await service.handle(request({
+    headers: { 'content-type': 'application/json' },
+    body: '{"website":"example.com","wikimediaFallback":false}',
+  }));
+  assert.equal(calls[0].wikimediaFallback, false);
+});
+
 test('shared demo extraction service maps request and extraction failures consistently', async () => {
   const invalidRequest = createDemoExtractionService({ environment: {}, extract: async () => ({}) });
   assert.deepEqual(await invalidRequest.handle(request({ headers: { 'content-type': 'text/plain' }, body: '{}' })), {

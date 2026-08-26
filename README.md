@@ -89,16 +89,16 @@ See the ranked results as JSON:
 
 ```bash
 npm run cli -- stripe.com
-npm run cli -- stripe.com --wikimedia-fallback
+npm run cli -- stripe.com --no-wikimedia-fallback
 ```
 
-`--wikimedia-fallback` is an experimental, opt-in missing-role fallback. It
+The Wikidata/Wikimedia Commons missing-role fallback is enabled by default. It
 requires exact registrable-domain agreement with an active Wikidata official
 website statement before validating a current Commons logo through the normal
 network/image/SVG safety pipeline. It may abstain, and Commons license metadata
 does not waive trademark restrictions.
-The fallback is exposed through the CLI and programmatic extractor only; the
-demo HTTP service does not enable it.
+Use `--no-wikimedia-fallback` in the CLI, `{ wikimediaFallback: false }` with
+`extractLogos`, or `"wikimediaFallback": false` in an API request to opt out.
 
 Prefer a white/light logo for a dark surface and a transparent file:
 
@@ -123,6 +123,10 @@ curl -sS http://127.0.0.1:4310/api/extract \
   -H 'content-type: application/json' \
   -d '{"website":"stripe.com","preferences":{"icon":{"color":"white"},"logo":{"theme":"dark","background":"transparent"}}}'
 ```
+
+The demo and API use the same default-on Wikidata/Commons fallback. Add
+`"wikimediaFallback": false` to the request body when a lookup must remain
+first-party-only.
 
 Both `preferences.icon` and `preferences.logo` accept the same optional fields. `theme` accepts `any`, `light`, or `dark` and describes the surface the asset must work on, so `dark` prefers light artwork. `color` accepts `any`, `color`, `white`, or `black`. `background` accepts `any`, `transparent`, or `opaque`. Preferences are best-effort: a matching eligible asset wins when available, otherwise ranking falls back to the best eligible asset.
 
@@ -170,13 +174,14 @@ Every candidate is downloaded, byte-validated, deduplicated, and scored with rol
 <details>
 <summary><strong>Need more horsepower?</strong></summary>
 
-The default path is intentionally homepage-only. Turn on the heavier fallbacks only when you need them.
+First-party homepage discovery still runs first. The bounded recovery stages only run for missing eligible roles.
 
 | Need | How |
 | --- | --- |
 | Skip browser rendering | `BROWSER_DISCOVERY=0 npm start` |
 | Recover from blocked or unusable homepages | Add `JINA_API_KEY` to `.env.local` |
 | Use a local [Besticon](https://github.com/mat/besticon) fallback | `BESTICON_URL=http://127.0.0.1:8080 npm start` |
+| Disable exact-domain Wikidata/Commons recovery | Add `--no-wikimedia-fallback` or set `PUBLIC_DEMO_WIKIMEDIA=0` |
 | Follow likely brand/press pages in the CLI | Add `--deep-wide` |
 | Inspect one same-origin SPA bundle too | Add `--deep-wide --spa-bundles` |
 
@@ -193,6 +198,7 @@ The primary local settings are:
 | `BESTICON_URL` | unset | Optional URL of a local Besticon service |
 | `PUBLIC_DEMO_ALLOW_JINA` | `1` | Set to `0` to prevent web/API requests from using Jina |
 | `PUBLIC_DEMO_BROWSER` | `1` | Set to `0` to prevent web/API requests from using Chromium |
+| `PUBLIC_DEMO_WIKIMEDIA` | `1` | Set to `0` to disable Wikidata/Commons missing-role recovery in the demo |
 
 `--deep-wide` only runs when the homepage has no accepted wide logo. It follows at most two strong first-party brand, press, or media links and can inspect official ZIP kits. `--spa-bundles` scans at most one same-origin entry bundle, up to 2.2 MB, for a company-logo asset literal.
 
@@ -252,7 +258,7 @@ See [`docs/`](docs/) for the benchmark methodology, experiment logs, and visual-
 
 That is why Logo Yoink returns multiple ranked candidates instead of pretending one guess is always perfect.
 
-The server binds to localhost by default and rejects non-public targets while revalidating redirects. The included public demo route also enforces small JSON-only requests, same-origin browser calls, per-client and global rate limits, a two-extraction concurrency ceiling, duplicate-request coalescing, bounded extractor work, generic errors, and restrictive browser security headers. Jina (when `JINA_API_KEY` is configured), local browser discovery, and the one-entry first-party SPA-bundle probe are enabled as bounded missing-logo fallbacks. Set `PUBLIC_DEMO_ALLOW_JINA=0` or `PUBLIC_DEMO_BROWSER=0` to opt out of the remote or rendered browser fallback; the SPA probe remains capped at one same-origin bundle and 2.2 MB.
+The server binds to localhost by default and rejects non-public targets while revalidating redirects. The included public demo route also enforces small JSON-only requests, same-origin browser calls, per-client and global rate limits, a two-extraction concurrency ceiling, duplicate-request coalescing, bounded extractor work, generic errors, and restrictive browser security headers. Jina (when `JINA_API_KEY` is configured), local browser discovery, the one-entry first-party SPA-bundle probe, and exact-domain Wikidata/Commons recovery are enabled as bounded missing-logo fallbacks. Set `PUBLIC_DEMO_ALLOW_JINA=0`, `PUBLIC_DEMO_BROWSER=0`, or `PUBLIC_DEMO_WIKIMEDIA=0` to opt out of the corresponding fallback; the SPA probe remains capped at one same-origin bundle and 2.2 MB.
 
 The in-process rate limiter is intentionally dependency-free, so limits apply per running instance. A multi-instance public deployment should add a distributed edge rate limit or authentication, and should pin the validated public IP at connection time or enforce equivalent outbound-network rules to close the remaining DNS-rebinding window.
 

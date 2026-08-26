@@ -610,8 +610,13 @@ export function missingWikimediaRoles(ranked, preferences) {
   ];
 }
 
+export function wikimediaFallbackEnabled(options = {}) {
+  return options.wikimediaFallback !== false;
+}
+
 export async function extractLogos(website, options = {}) {
   const preferences = normalizeAssetPreferences(options.preferences);
+  const wikimediaFallback = wikimediaFallbackEnabled(options);
   const startedAt = performance.now(), timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS, normalized = normalizeWebsite(website), network = { requests: 0, bytesDownloaded: 0 };
   const maxImageBytes = Number.isFinite(options.maxImageBytes) ? Math.max(128 * 1024, Math.min(MAX_IMAGE_BYTES, options.maxImageBytes)) : MAX_IMAGE_BYTES;
   const attempts = homepageAttemptPlan(normalized, timeoutMs);
@@ -808,8 +813,8 @@ export async function extractLogos(website, options = {}) {
     }
   }
 
-  let wikimediaDiagnostics = { enabled: Boolean(options.wikimediaFallback), status: 'disabled' };
-  if (options.wikimediaFallback) {
+  let wikimediaDiagnostics = { enabled: wikimediaFallback, status: 'disabled' };
+  if (wikimediaFallback) {
     const missingRoles = missingWikimediaRoles(ranked, preferences);
     if (missingRoles.length) {
       const fallbackStarted = performance.now();
@@ -864,6 +869,7 @@ export const internals = {
   selectRoleAware, measureContentBox, attachContentBoxes, attachTinySuitability, dedupeBytes,
   fromBrowserCandidate, browserCandidateDisposition, selectBrowserCandidates, needsRenderedWideFallback, discoveryPriority, validateCandidate, validateCandidateBytes, isRenderableSvg, imageBackground, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
   missingWikimediaRoles,
+  wikimediaFallbackEnabled,
   homepageAttemptPlan, homepageFailureKind, aggregateHomepageFailure,
   applyBlockedRecoverySafety,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,

@@ -30,6 +30,8 @@ test('demo request validation accepts a website and bounded logo preferences', a
     icon: { theme: 'any', color: 'white', background: 'any' },
     logo: { theme: 'dark', color: 'any', background: 'transparent' },
   } });
+  const optedOut = request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","wikimediaFallback":false}' });
+  assert.deepEqual(await readDemoJson(optedOut), { website: 'example.com', preferences: defaults, wikimediaFallback: false });
 
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'text/plain' }, body: '{}' })),
@@ -38,6 +40,10 @@ test('demo request validation accepts a website and bounded logo preferences', a
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","extra":true}' })),
     error => error instanceof DemoHttpError && error.status === 400,
+  );
+  await assert.rejects(
+    readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","wikimediaFallback":"no"}' })),
+    error => error instanceof DemoHttpError && error.status === 400 && /boolean/.test(error.message),
   );
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"logo":{"theme":"sepia"}}}' })),
@@ -95,6 +101,7 @@ test('public demo enables fallbacks while keeping their work tightly bounded', (
   const options = publicDemoExtractionOptions({ JINA_API_KEY: 'secret', BROWSER_DISCOVERY: '1' });
   assert.equal(options.jinaApiKey, 'secret');
   assert.equal(options.browser, true);
+  assert.equal(options.wikimediaFallback, true);
   assert.equal(options.deepWide, true);
   assert.equal(options.spaBundles, true);
   assert.equal(options.maxCandidates, 8);
@@ -102,6 +109,7 @@ test('public demo enables fallbacks while keeping their work tightly bounded', (
   assert.equal(options.timeoutMs, 8_000);
   assert.equal(publicDemoExtractionOptions({ JINA_API_KEY: 'secret', PUBLIC_DEMO_ALLOW_JINA: '0' }).jinaApiKey, null);
   assert.equal(publicDemoExtractionOptions({ PUBLIC_DEMO_BROWSER: '0' }).browser, false);
+  assert.equal(publicDemoExtractionOptions({ PUBLIC_DEMO_WIKIMEDIA: '0' }).wikimediaFallback, false);
   assert.match(securityHeaders['content-security-policy'], /frame-ancestors 'none'/);
   assert.doesNotMatch(securityHeaders['content-security-policy'], /unsafe-inline|unsafe-eval/);
 });
