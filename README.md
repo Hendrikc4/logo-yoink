@@ -184,6 +184,7 @@ First-party homepage discovery still runs first. The bounded recovery stages onl
 | Disable exact-domain Wikidata/Commons recovery | Add `--no-wikimedia-fallback` or set `PUBLIC_DEMO_WIKIMEDIA=0` |
 | Follow likely brand/press pages in the CLI | Add `--deep-wide` |
 | Inspect one same-origin SPA bundle too | Add `--deep-wide --spa-bundles` |
+| Try the measured BIMI icon fallback | Add `--bimi` (experimental, off by default) |
 
 Logo Yoink automatically loads a gitignored `.env.local` file. Normal successful extractions do not use Jina.
 
@@ -199,8 +200,11 @@ The primary local settings are:
 | `PUBLIC_DEMO_ALLOW_JINA` | `1` | Set to `0` to prevent web/API requests from using Jina |
 | `PUBLIC_DEMO_BROWSER` | `1` | Set to `0` to prevent web/API requests from using Chromium |
 | `PUBLIC_DEMO_WIKIMEDIA` | `1` | Set to `0` to disable Wikidata/Commons missing-role recovery in the demo |
+| `PUBLIC_DEMO_BIMI` | `0` | Set to `1` to enable the experimental BIMI fallback for web/API requests |
 
 `--deep-wide` only runs when the homepage has no accepted wide logo. It follows at most two strong first-party brand, press, or media links and can inspect official ZIP kits. `--spa-bundles` scans at most one same-origin entry bundle, up to 2.2 MB, for a company-logo asset literal.
+
+`--bimi` queries `default._bimi.<domain>` after the first-party recovery stages admitted by the pipeline's existing static/deep/browser gates and before the built-in Google or DuckDuckGo favicon fallbacks. Optional Besticon keeps its existing budgeted discovery position because the frozen BIMI runs did not enable or compare it. BIMI does not trigger a new browser crawl or Jina screenshot solely for a missing icon. It accepts one unambiguous `v=BIMI1` assertion with a nonempty HTTPS `l=` URL, then applies the normal public-address, redirect, timeout, byte, MIME, and conservative SVG-safety checks. Full BIMI SVG profile conformance is not claimed, so canonical icon admission additionally requires measured icon-shaped artwork. BIMI is restricted to icon/favicon-like roles and never supplies `assets.logo`. An `a=` evidence-document pointer is recorded but not certificate-validated, and no trademark or license permission is inferred. The option remains experimental because the frozen development/validation experiment found safe selections but no incremental correct selections over the existing cached-icon fallback.
 
 </details>
 

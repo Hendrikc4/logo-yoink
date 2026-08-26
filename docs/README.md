@@ -9,6 +9,7 @@ Start with the root [README](../README.md) for installation, CLI/API usage, and 
 - [500-company visual benchmark plan](500-company-visual-logo-benchmark-plan.md) — benchmark design and evaluation protocol.
 - [Benchmark execution guide](benchmark-execution-2026-08-22.md) — capture and review execution details.
 - [Combined 800-company benchmark](combined-800-benchmark-2026-08-25.md) — current cross-cohort result, qualification limits, and overfit audit.
+- [BIMI icon fallback experiment](bimi-fallback-experiment-2026-08-25.md) — opt-in DNS fallback, frozen prevalence/ordering evidence, and independent review iteration.
 - [Expansion reachability recovery](expansion-reachability-recovery-2026-08-25.md) — failure taxonomy, bounded homepage recovery, and development/validation results.
 - [Candidate-only labeling](candidate-only-labeling.md) — current candidate-sheet labeling workflow.
 - [Experiment log](experiment-log.md) — chronological index of ranking and discovery experiments.

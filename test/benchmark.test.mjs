@@ -44,8 +44,8 @@ test('parses run and comparison command options', () => {
 });
 
 test('parses opt-in deep discovery flags independently from the default path', () => {
-  assert.deepEqual(parseArgs(['--cohort', 'original-100', '--deep-wide', '--spa-bundles']), {
-    command: 'run', cohort: 'original-100', deepWide: true, spaBundles: true,
+  assert.deepEqual(parseArgs(['--cohort', 'original-100', '--deep-wide', '--spa-bundles', '--bimi']), {
+    command: 'run', cohort: 'original-100', deepWide: true, spaBundles: true, bimi: true,
   });
 });
 

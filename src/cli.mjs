@@ -22,13 +22,14 @@ const requestedRole = option('--role');
 const deepWide = args.includes('--deep-wide');
 const spaBundles = args.includes('--spa-bundles');
 const wikimediaFallback = !args.includes('--no-wikimedia-fallback');
+const bimi = args.includes('--bimi');
 
 if (!website || downloadIndex >= 0 && !downloadDirectory ||
     ['--theme', '--background', '--role'].some(name => args.includes(name) && (!option(name) || option(name).startsWith('--'))) ||
     !['any', 'light', 'dark'].includes(theme) ||
     !['any', 'transparent', 'opaque'].includes(background) ||
     requestedRole && !['icon', 'logo', 'wide', 'favicon'].includes(requestedRole)) {
-  console.error('Usage: npm run cli -- <website> [--theme any|light|dark] [--background any|transparent|opaque] [--role icon|logo] [--download <directory>] [--deep-wide] [--spa-bundles] [--no-wikimedia-fallback]');
+  console.error('Usage: npm run cli -- <website> [--theme any|light|dark] [--background any|transparent|opaque] [--role icon|logo] [--download <directory>] [--deep-wide] [--spa-bundles] [--no-wikimedia-fallback] [--bimi]');
   process.exit(1);
 }
 
@@ -41,6 +42,7 @@ try {
     deepWide,
     spaBundles,
     wikimediaFallback,
+    bimi,
     preferences: { logo: { theme, background } },
   });
   const downloadSelection = requestedRole === 'logo' || requestedRole === 'wide'

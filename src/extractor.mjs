@@ -11,6 +11,7 @@ import { isPrivateIp } from './network-safety.mjs';
 import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
 import { matchesAssetPreferences, matchesLogoPreferences, normalizeAssetPreferences } from './asset-model.mjs';
 import { discoverWikimediaLogoCandidates, safeCommonsUrl } from './wikimedia-fallback.mjs';
+import { bimiCandidate, isSafeBimiSvg, lookupBimiAssertion } from './discover-bimi.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
 const HOMEPAGE_FALLBACK_TIMEOUT_MS = 3_000;
@@ -19,7 +20,7 @@ const MAX_HTML_BYTES = 2 * 1024 * 1024;
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
 const MAX_CANDIDATES_TO_DOWNLOAD = 16;
 const ROLE_QUEUE_CAPS = { icon: 6, wide: 8, favicon: 4 };
-const FAVICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'besticon', 'root-favicon', 'google-favicon', 'duckduckgo-favicon']);
+const FAVICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'bimi', 'ms-tile', 'html-icon', 'besticon', 'root-favicon', 'google-favicon', 'duckduckgo-favicon']);
 const STRUCTURED_LOGO_SOURCES = new Set(['schema', 'og-logo', 'microdata']);
 const DOM_IMAGE_SOURCES = new Set(['dom-img', 'dom-picture', 'noscript-img']);
 const CONTENT_BOX_MAX_SAMPLES = 96;
@@ -369,6 +370,11 @@ function cachedFaviconSources(domain) {
   ];
 }
 
+async function lookupBimiSafely(domain, options) {
+  try { return await lookupBimiAssertion(domain, options); }
+  catch (error) { return { status: 'unsupported_domain', reason: error.message, dnsRequests: 0 }; }
+}
+
 async function cachedFaviconCandidate(domain, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES) {
   for (const item of cachedFaviconSources(domain)) {
     const validated = await validateCandidate(item, timeoutMs, diagnostics, maxImageBytes);
@@ -409,12 +415,21 @@ function imageMetadata(bytes, contentType) {
 
 async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES, requestOptions = {}) {
   try {
-    const response = await fetchTimed(item.url, { timeoutMs, accept: 'image/*,*/*;q=0.6', diagnostics, ...requestOptions });
+    const { validateUrl, ...fetchOptions } = requestOptions;
+    const candidateValidateUrl = item.source === 'bimi' ? async value => {
+      if (new URL(value).protocol !== 'https:') throw new Error('BIMI logo redirects must remain HTTPS.');
+      return (validateUrl ?? assertPublicUrl)(value);
+    } : validateUrl;
+    const response = await fetchTimed(item.url, { timeoutMs, accept: item.source === 'bimi' ? 'image/svg+xml' : 'image/*,*/*;q=0.6', diagnostics, ...fetchOptions, validateUrl: candidateValidateUrl });
     if (!response.ok) return null;
     if (item.source === 'wikimedia-commons' && !safeCommonsUrl(response.url, 'upload.wikimedia.org', '/wikipedia/commons/')) return null;
     const read = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs });
     let bytes = read.bytes;
+    if (item.source === 'bimi' && String(response.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase() !== 'image/svg+xml') return null;
     let metadata = imageMetadata(bytes, response.headers.get('content-type'));
+    const svgSafetyValidated = metadata?.format === 'svg' ? isSafeBimiSvg(bytes) : null;
+    if (item.source === 'bimi' && svgSafetyValidated === false) return null;
+    if (item.source === 'bimi' && metadata?.format !== 'svg') return null;
     if (metadata?.format === 'svg') {
       bytes = normalizeStandaloneSvg(bytes, { inheritedColor: item.evidence?.inherited_color });
       metadata = bytes && imageMetadata(bytes, 'image/svg+xml');
@@ -428,13 +443,14 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     const width = metadata.width ?? item.declared?.width ?? item.discoveredWidth ?? null, height = metadata.height ?? item.declared?.height ?? item.discoveredHeight ?? null;
     const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4, scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
     const background = await imageBackground(bytes, metadata.format);
-    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: response.url, retrieved_at: new Date().toISOString(), http_status: response.status }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: response.url, retrieved_at: new Date().toISOString(), http_status: response.status, svg_safety_validated: svgSafetyValidated === true ? true : undefined, bimi_svg_safety_validated: item.source === 'bimi' ? true : undefined, bimi_svg_profile_conformance: item.source === 'bimi' ? 'not_performed' : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, status = 200, contentType = '' } = {}) {
   try {
     const { rawBytes: _rawBytes, ...cleanItem } = item;
     let metadata = imageMetadata(bytes, contentType);
+    const svgSafetyValidated = metadata?.format === 'svg' ? isSafeBimiSvg(bytes) : null;
     if (metadata?.format === 'svg') {
       bytes = normalizeStandaloneSvg(bytes, { inheritedColor: item.evidence?.inherited_color });
       metadata = bytes && imageMetadata(bytes, 'image/svg+xml');
@@ -449,7 +465,7 @@ async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, sta
     const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4;
     const scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
     const background = await imageBackground(bytes, metadata.format);
-    return { ...cleanItem, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: resolvedUrl, retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? item.provenance?.source_chain ?? [] }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    return { ...cleanItem, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: resolvedUrl, retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? item.provenance?.source_chain ?? [], svg_safety_validated: svgSafetyValidated === true ? true : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 
@@ -693,7 +709,10 @@ export async function extractLogos(website, options = {}) {
   const jinaRecoverableLogoMarkup = parsed.candidates.some(item =>
     ['dom-img', 'dom-picture', 'noscript-img', 'inline-svg'].includes(item.source) &&
     (item.evidence?.positive_token || item.evidence?.home_linked));
-  const [manifest, besticon] = await Promise.all([Promise.all(parsed.manifests.slice(0, 2).map(url => manifestCandidates(url, timeoutMs, network))).then(groups => groups.flat()), besticonCandidates(normalized.domain, options.besticonUrl, timeoutMs, network)]);
+  const [manifest, besticon] = await Promise.all([
+    Promise.all(parsed.manifests.slice(0, 2).map(url => manifestCandidates(url, timeoutMs, network))).then(groups => groups.flat()),
+    besticonCandidates(normalized.domain, options.besticonUrl, timeoutMs, network),
+  ]);
   const root = new URL(homepage); root.pathname = '/favicon.ico'; root.search = ''; root.hash = ''; const rootPng = new URL(root); rootPng.pathname = '/favicon.png';
   const all = [...parsed.candidates, ...manifest, ...besticon, candidate(root.href, 'root-favicon', '', 'image/x-icon', { source_page: homepage }), candidate(rootPng.href, 'root-favicon', '', 'image/png', { source_page: homepage })];
   const rankedUnique = dedupeUrls(all)
@@ -704,12 +723,12 @@ export async function extractLogos(website, options = {}) {
   const validatedRaw = (await mapConcurrent(unique, 6, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
   let validated = dedupeBytes(validatedRaw);
   const rankValidated = () => rankCandidates(applyBlockedRecoverySafety(validated, blockedRecovery), { companyName: options.companyName, preferences });
-  const contentStats = { boxes: 0 };
+  const contentStats = { boxes: 0, bimiSafetyBoxes: 0 };
   await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
   await attachTinySuitability(validated);
   let ranked = rankValidated();
   let cachedFavicon = null;
-  if (!ranked.selectedByRole.icon && options.cachedFavicon !== false) {
+  if (!options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
     cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
     if (cachedFavicon) {
       validated = dedupeBytes([...validated, cachedFavicon]);
@@ -793,7 +812,8 @@ export async function extractLogos(website, options = {}) {
   }
 
   let jinaScreenshot = null;
-  if (jinaApiKey && jinaRecoverableLogoMarkup && !ranked.selectedByRole.icon && !ranked.selectedByRole.wide) {
+  const attemptJinaScreenshot = async () => {
+    if (!jinaApiKey || !jinaRecoverableLogoMarkup || ranked.selectedByRole.icon || ranked.selectedByRole.wide) return;
     try {
       let screenshot;
       let mode = 'remote';
@@ -811,7 +831,89 @@ export async function extractLogos(website, options = {}) {
     } catch (error) {
       jinaScreenshot = { status: 'error', error: error.name === 'AbortError' ? 'timeout' : error.message };
     }
+  };
+  // With BIMI enabled, wait until BIMI and the normal cached favicon both abstain.
+  // This keeps the Jina side effect identical to the control pipeline.
+  if (!options.bimi) await attemptJinaScreenshot();
+
+  let bimiDiagnostics = { enabled: Boolean(options.bimi), status: options.bimi ? 'not_needed' : 'disabled', dnsRequests: 0, httpRequests: 0, bytesDownloaded: 0, logoFetchAttempted: false, logoValidated: false, admitted: false, duplicateBytes: false, certificateValidation: 'not_performed', evidenceDocumentPresent: false };
+  if (options.bimi && !ranked.selectedByRole.icon) {
+    const bimiStartedAt = performance.now();
+    const assertion = await lookupBimiSafely(normalized.domain, {
+        organizationalDomain: options.bimiOrganizationalDomain,
+        resolveTxt: options.bimiResolveTxt,
+        timeoutMs: Math.min(timeoutMs, options.bimiTimeoutMs ?? 2_000),
+        cache: options.bimiCache,
+        cacheTtlMs: options.bimiCacheTtlMs,
+        now: options.bimiNow,
+      });
+    const beforeRequests = network.requests;
+    const beforeBytes = network.bytesDownloaded;
+    let admitted = false;
+    let duplicateBytes = false;
+    let logoValidation = assertion.status === 'accepted' ? 'fetch_or_validation_failed' : 'not_attempted';
+    const assertionCandidate = bimiCandidate(assertion, { discoveredAt: new Date().toISOString() });
+    if (assertionCandidate) {
+      const checked = await validateCandidate(assertionCandidate, Math.min(timeoutMs, options.bimiTimeoutMs ?? 2_000), network, maxImageBytes, {
+        fetchImpl: options.bimiFetchImpl,
+        validateUrl: options.bimiValidateUrl,
+      });
+      if (checked) {
+        const checkedBytes = dataUrlBytes(checked.dataUrl);
+        const contentBox = checkedBytes ? await measureContentBox(checkedBytes, { width: checked.width, height: checked.height }) : null;
+        if (contentBox) {
+          checked.contentBox = contentBox;
+          contentStats.bimiSafetyBoxes += 1;
+        }
+        const priorHashes = new Set(validated.map(item => item.observed?.byte_hash).filter(Boolean));
+        duplicateBytes = priorHashes.has(checked.observed?.byte_hash);
+        if (duplicateBytes) {
+          const prior = validated.find(item => item.observed?.byte_hash === checked.observed?.byte_hash);
+          if (prior) prior.evidence = { ...prior.evidence, bimi_duplicate_provenance: checked.provenance };
+        }
+        validated = dedupeBytes([...validated, checked]);
+        await attachTinySuitability(validated);
+        ranked = rankValidated();
+        admitted = ranked.selectedByRole.icon?.source === 'bimi';
+        logoValidation = admitted ? 'valid_icon_admitted' : duplicateBytes ? 'valid_duplicate' : 'valid_non_icon';
+      }
+    }
+    bimiDiagnostics = {
+      enabled: true,
+      status: assertion.status,
+      reason: assertion.reason,
+      queryName: assertion.queryName,
+      queryDomain: assertion.queryDomain,
+      selector: assertion.selector,
+      recordSha256: assertion.recordDigest,
+      logoUrl: assertion.logoUrl,
+      evidenceDocumentUrl: assertion.authorityUrl,
+      authorityPointer: assertion.authorityPointer,
+      cached: Boolean(assertion.cached),
+      dnsRequests: assertion.dnsRequests ?? 0,
+      httpRequests: network.requests - beforeRequests,
+      bytesDownloaded: network.bytesDownloaded - beforeBytes,
+      logoFetchAttempted: Boolean(assertionCandidate),
+      logoValidated: logoValidation.startsWith('valid_'),
+      logoValidation,
+      admitted,
+      duplicateBytes,
+      certificateValidation: assertion.certificateValidation ?? 'not_performed',
+      evidenceDocumentPresent: assertion.evidenceDocumentPresent ?? false,
+      durationMs: Math.round(performance.now() - bimiStartedAt),
+    };
   }
+
+  if (options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
+    cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
+    if (cachedFavicon) {
+      validated = dedupeBytes([...validated, cachedFavicon]);
+      await attachTinySuitability(validated);
+      ranked = rankValidated();
+    }
+  }
+
+  if (options.bimi) await attemptJinaScreenshot();
 
   let wikimediaDiagnostics = { enabled: wikimediaFallback, status: 'disabled' };
   if (wikimediaFallback) {
@@ -860,7 +962,7 @@ export async function extractLogos(website, options = {}) {
 
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
-  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, wikimedia: wikimediaDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, wikimedia: wikimediaDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.
@@ -870,7 +972,7 @@ export const internals = {
   fromBrowserCandidate, browserCandidateDisposition, selectBrowserCandidates, needsRenderedWideFallback, discoveryPriority, validateCandidate, validateCandidateBytes, isRenderableSvg, imageBackground, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
   missingWikimediaRoles,
   wikimediaFallbackEnabled,
-  homepageAttemptPlan, homepageFailureKind, aggregateHomepageFailure,
+  homepageAttemptPlan, homepageFailureKind, aggregateHomepageFailure, lookupBimiSafely,
   applyBlockedRecoverySafety,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,
 };
