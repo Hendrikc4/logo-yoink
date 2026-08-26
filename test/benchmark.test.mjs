@@ -38,6 +38,9 @@ test('parses run and comparison command options', () => {
   assert.deepEqual(parseArgs(['score', '--run', 'runs/a', '--labels', 'review.jsonl']), {
     command: 'score', run: 'runs/a', labels: 'review.jsonl',
   });
+  assert.deepEqual(parseArgs(['--cohort', 'major-brands-300', '--split', 'development']), {
+    command: 'run', cohort: 'major-brands-300', split: 'development',
+  });
 });
 
 test('parses opt-in deep discovery flags independently from the default path', () => {
@@ -200,6 +203,14 @@ test('repeat comparison reports availability gains, losses, and flips', () => {
   assert.equal(comparison.flip_count, 2);
   assert.deepEqual(comparison.role_availability.icon, { gains: 0, losses: 1, net: -1 });
   assert.deepEqual(comparison.role_availability.wide, { gains: 1, losses: 0, net: 1 });
+});
+
+test('repeat comparison ignores legacy favicon keys outside the canonical role surface', () => {
+  const before = result('same', [candidate('icon', 'icon')], { icon: 'icon', favicon: 'legacy' });
+  const after = result('same', [candidate('icon', 'icon')], { icon: 'icon' });
+  const comparison = compareResults([before], [after]);
+  assert.equal(comparison.flip_count, 0);
+  assert.equal(comparison.stable_count, 1);
 });
 
 test('role-loss analysis separates ranking, eligibility, discovery, and capture losses', () => {
