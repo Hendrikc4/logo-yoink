@@ -265,6 +265,9 @@ export function rankCandidates(items, options = {}) {
       .sort((a, b) => faviconRankScore(b) - faviconRankScore(a) || b.bytes - a.bytes)[0];
     if (fallback) selectedByRole.icon = fallback;
   }
+  if (selectedByRole.icon?.source === 'inline-svg') {
+    selectedByRole.icon = pickIconCandidate([selectedByRole.icon], candidates);
+  }
   // Legacy API/CLI consumers still receive the independently ranked best favicon. It does not
   // participate in the canonical `assets` model, whose only roles are icon and logo.
   selectedByRole.favicon = eligible.filter(item => item.predicted_roles.includes('favicon'))
