@@ -67,6 +67,38 @@ function normalizedWords(value) {
   return String(value ?? '').toLowerCase().match(/[a-z0-9]+/g) ?? [];
 }
 
+function companyWords(companyName) {
+  return normalizedWords(companyName).filter(word => !['inc', 'llc', 'ltd', 'corp', 'corporation', 'company', 'co'].includes(word));
+}
+
+function explicitLogoSubject(item) {
+  const label = `${item.evidence?.alt ?? ''} ${item.evidence?.aria_label ?? ''}`.trim();
+  const match = label.match(/^\s*(.+?)\s+(?:company\s+)?(?:logo|wordmark|brandmark|logomark)\s*$/i);
+  if (!match) return [];
+  return normalizedWords(match[1]).filter(word => !['the', 'official'].includes(word));
+}
+
+function exactCompanyLabel(item, companyName) {
+  const subject = explicitLogoSubject(item);
+  const requested = companyWords(companyName || item.evidence?.company_name);
+  return subject.length > 0 && requested.length > 0 && subject.length === requested.length &&
+    subject.every((word, index) => word === requested[index]);
+}
+
+function foreignOrganizationContext(item) {
+  const semantic = `${item.evidence?.semantic_text ?? ''} ${item.evidence?.class_tokens?.join?.(' ') ?? ''}`;
+  return /(?:carousel|customer|partner|testimonial|card[-_\s]|dropdown|menuitem|listitem|product|subbrand)/i.test(semantic);
+}
+
+function explicitForeignOrganization(item, companyName) {
+  if (item.evidence?.home_linked || !foreignOrganizationContext(item)) return false;
+  const subject = explicitLogoSubject(item);
+  if (!subject.length) return false;
+  const requested = companyWords(companyName || item.evidence?.company_name);
+  return requested.length > 0 && !subject.some(word => requested.some(companyWord =>
+    word.length >= 3 && companyWord.length >= 3 && (word.startsWith(companyWord) || companyWord.startsWith(word))));
+}
+
 function sameOriginAsset(item) {
   try {
     const asset = new URL(item.resolvedUrl ?? item.resolved_url ?? item.url);
@@ -121,6 +153,7 @@ export function genericAssetReason(item, companyName = '') {
   if (item.source === 'official-archive' && archiveProduct && !normalizedWords(companyName).includes(archiveProduct)) return 'product or subbrand archive member';
   if (/(?:works[-_\s]*with[-_\s]*logos|enterprises?[-_\s]*logo[-_\s]*\d+)/i.test(`${semantic} ${url}`) ||
     /(?:customer[-_\s]*logos?|partner[-_\s]*logos?)/i.test(`${semantic} ${url}`) && !companyAgreement(item, companyName || item.evidence?.company_name)) return 'customer or partner logo';
+  if (explicitForeignOrganization(item, companyName)) return 'foreign organization named in product or partner context';
   if (/sloane[-_\s]*logo[-_\s]*2\.webp/i.test(url)) return 'photographic avatar mislabeled as logo';
 
   const ratio = item.width && item.height ? item.width / item.height : null;
@@ -163,6 +196,7 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   const agreesWithCompany = companyAgreement(item, companyName || item.evidence?.company_name);
   const genericReason = genericAssetReason(item, companyName);
   if (agreesWithCompany) confidence += add('company agreement', 12);
+  if (exactCompanyLabel(item, companyName)) confidence += add('exact company label', 6);
   if (item.evidence?.negative_context) confidence += add('negative context', -35);
   if (genericReason) confidence += add(`generic exclusion (${genericReason})`, -100);
   if (item.source === 'social-banner') confidence += add('banner exclusion', -30);
@@ -248,6 +282,30 @@ function pickIconCandidate(eligible, allCandidates, preferences) {
   return twin;
 }
 
+function genericApplicationIcon(item) {
+  try {
+    const filename = decodeURIComponent(new URL(item.resolvedUrl ?? item.resolved_url ?? item.url).pathname).split('/').pop() ?? '';
+    return /^(?:app|application)[-_]?(?:ico|icon)(?:[-_.]|$)/i.test(filename);
+  } catch {
+    return false;
+  }
+}
+
+function corporateIconEvidence(candidate, companyName) {
+  return Boolean(candidate.evidence?.home_linked || exactCompanyLabel(candidate, companyName) ||
+    AUTHORITATIVE_SOURCES.includes(candidate.source));
+}
+
+function shouldAbstainFromApplicationIcon(winner, candidates, companyName) {
+  if (!winner || !DECLARED_ICON_SOURCES.has(winner.source) || winner.evidence?.home_linked ||
+    !genericApplicationIcon(winner) || exactCompanyLabel(winner, companyName)) return false;
+  const sameFamilyCorroborated = candidates.some(candidate => candidate.family_id === winner.family_id &&
+    candidate !== winner && corporateIconEvidence(candidate, companyName));
+  const otherCorporateIcon = candidates.some(candidate => candidate.family_id !== winner.family_id &&
+    candidate.predicted_roles?.includes('icon') && corporateIconEvidence(candidate, companyName));
+  return !sameFamilyCorroborated && !otherCorporateIcon;
+}
+
 function roleScore(candidate, role) {
   return Number(candidate?.role_scores?.[role === 'logo' ? 'wide' : role]) || 0;
 }
@@ -292,7 +350,9 @@ export function rankCandidates(items, options = {}) {
     return compareRoleCandidates(a, b, role === 'wide' ? 'logo' : role, preferences);
   })[0] ?? null]));
   selectedByRole.icon = pickIconCandidate(eligible.filter(item => item.predicted_roles.includes('icon')), candidates, preferences);
-  if (!selectedByRole.icon) {
+  const applicationIconAbstention = shouldAbstainFromApplicationIcon(selectedByRole.icon, candidates, options.companyName);
+  if (applicationIconAbstention) selectedByRole.icon = null;
+  if (!selectedByRole.icon && !applicationIconAbstention) {
     // A favicon-role candidate is the bounded fallback for the canonical icon when no true icon
     // candidate qualifies. Prefer the asset intended for favicon use, not an arbitrary source.
     const fallback = eligible.filter(item => item.predicted_roles.includes('favicon') &&

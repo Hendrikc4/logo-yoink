@@ -459,6 +459,53 @@ test('rejects a non-home-linked foreign named logo but keeps the company logo', 
   assert.equal(genericAssetReason({ ...common, url: 'https://example.test/watershed-logo.svg', evidence: { ...common.evidence, alt: 'Watershed Logo' } }, 'Watershed Informatics'), null);
 });
 
+test('uses explicit organization labels in product contexts without penalizing localized or CDN-hosted official assets', () => {
+  const common = {
+    source: 'dom-img', source_page: 'https://acme.test/', width: 160, height: 40, scalable: true,
+    url: 'https://cdn.example/assets/mark.svg',
+    evidence: { positive_token: true, dom_region: 'nav', home_linked: false, semantic_text: 'product dropdown menuitem' },
+  };
+  assert.match(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Partner Labs logo' } }, 'Acme'), /foreign organization/);
+  assert.equal(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Acme Deutschland logo' } }, 'Acme'), null);
+  assert.equal(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Acme logo' } }, 'Acme'), null);
+  assert.equal(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Partner Labs logo', home_linked: true } }, 'Acme'), null);
+});
+
+test('exact company labels outrank related product labels in the same navigation context', () => {
+  const common = {
+    source: 'dom-img', source_page: 'https://acme.test/', width: 64, height: 64, scalable: true,
+    highResolution: true, bytes: 100,
+    evidence: { positive_token: true, dom_region: 'nav', home_linked: false, semantic_text: 'product dropdown menuitem' },
+  };
+  const product = { ...common, url: 'https://cdn.example/acme-sign.svg', evidence: { ...common.evidence, alt: 'Acme Sign logo' } };
+  const corporate = { ...common, url: 'https://cdn.example/acme.svg', evidence: { ...common.evidence, alt: 'Acme logo' } };
+  const result = rankCandidates([product, corporate], { companyName: 'Acme' });
+  assert.equal(result.selectedByRole.icon.url, corporate.url);
+  assert.ok(result.selectedByRole.icon.score_reasons.includes('exact company label +6'));
+});
+
+test('abstains from an uncorroborated generic application icon but preserves corroborated families', () => {
+  const application = {
+    source: 'apple', source_page: 'https://acme.test/', url: 'https://cdn.example/app_ico.png',
+    width: 180, height: 180, highResolution: true, bytes: 100, evidence: {},
+  };
+  assert.equal(rankCandidates([application], { companyName: 'Acme' }).selectedByRole.icon, null);
+
+  const corroborated = {
+    ...application, source: 'schema', url: application.url, width: 256, height: 256,
+    content_hash: 'same-artwork', evidence: { dom_region: 'head' },
+  };
+  const declared = { ...application, content_hash: 'same-artwork' };
+  assert.equal(rankCandidates([declared, corroborated], { companyName: 'Acme' }).selectedByRole.icon.url, application.url);
+
+  const homeLinked = {
+    source: 'inline-svg', url: 'data:image/svg+xml;base64,AAAA', width: 64, height: 64,
+    scalable: true, highResolution: true, bytes: 100,
+    evidence: { positive_token: true, dom_region: 'header', home_linked: true },
+  };
+  assert.equal(rankCandidates([application, homeLinked], { companyName: 'Acme' }).selectedByRole.icon.url, homeLinked.url);
+});
+
 test('ignores credentialed and literal private-network asset URLs', () => {
   const html = '<img src="http://127.0.0.1/logo.png"><img src="https://user:pass@example.com/logo.png"><img src="https://cdn.example.com/logo.png">';
   const result = internals.parseHomepage(html, 'https://acme.test/');
