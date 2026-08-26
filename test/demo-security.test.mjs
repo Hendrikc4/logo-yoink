@@ -19,10 +19,17 @@ function request({ headers = {}, body = '', address = '203.0.113.10' } = {}) {
 }
 
 test('demo request validation accepts a website and bounded logo preferences', async () => {
+  const defaults = {
+    icon: { theme: 'any', color: 'any', background: 'any' },
+    logo: { theme: 'any', color: 'any', background: 'any' },
+  };
   const valid = request({ headers: { 'content-type': 'application/json; charset=utf-8' }, body: '{"website":" example.com "}' });
-  assert.deepEqual(await readDemoJson(valid), { website: 'example.com', preferences: { logo: { theme: 'any', background: 'any' } } });
-  const preferred = request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"logo":{"theme":"dark","background":"transparent"}}}' });
-  assert.deepEqual(await readDemoJson(preferred), { website: 'example.com', preferences: { logo: { theme: 'dark', background: 'transparent' } } });
+  assert.deepEqual(await readDemoJson(valid), { website: 'example.com', preferences: defaults });
+  const preferred = request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"icon":{"color":"white"},"logo":{"theme":"dark","background":"transparent"}}}' });
+  assert.deepEqual(await readDemoJson(preferred), { website: 'example.com', preferences: {
+    icon: { theme: 'any', color: 'white', background: 'any' },
+    logo: { theme: 'dark', color: 'any', background: 'transparent' },
+  } });
 
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'text/plain' }, body: '{}' })),
@@ -35,6 +42,10 @@ test('demo request validation accepts a website and bounded logo preferences', a
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"logo":{"theme":"sepia"}}}' })),
     error => error instanceof DemoHttpError && error.status === 400 && /theme/.test(error.message),
+  );
+  await assert.rejects(
+    readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"icon":{"color":"sepia"}}}' })),
+    error => error instanceof DemoHttpError && error.status === 400 && /color/.test(error.message),
   );
 });
 

@@ -310,11 +310,34 @@ test('logo preferences select matching theme and background variants with fallba
   const whiteTransparent = { ...common, url: 'zip+https://acme.test/kit.zip#Acme_White.svg', background: 'transparent', evidence: { ...common.evidence, theme: 'dark' } };
   const preferred = rankCandidates([darkOpaque, whiteTransparent], { companyName: 'Acme', preferences: { logo: { theme: 'dark', background: 'transparent' } } });
   assert.equal(preferred.assets.logo.url, whiteTransparent.url);
-  assert.deepEqual(preferred.assets.logo.variant, { theme: 'dark', background: 'transparent' });
-  assert.deepEqual(preferred.preferences, { logo: { theme: 'dark', background: 'transparent' } });
+  assert.deepEqual(preferred.assets.logo.variant, { theme: 'dark', color: 'white', background: 'transparent' });
+  assert.deepEqual(preferred.preferences, {
+    icon: { theme: 'any', color: 'any', background: 'any' },
+    logo: { theme: 'dark', color: 'any', background: 'transparent' },
+  });
+  assert.deepEqual(preferred.assetVariants.logo.map(item => item.url), [whiteTransparent.url, darkOpaque.url]);
+  assert.deepEqual(preferred.assetVariants.logo.map(item => item.certainty.band), ['medium', 'medium']);
+  assert.deepEqual(preferred.variantPolicy, { minimumRoleScore: 45 });
 
   const fallback = rankCandidates([darkOpaque], { companyName: 'Acme', preferences: { logo: { theme: 'dark', background: 'transparent' } } });
   assert.equal(fallback.assets.logo.url, darkOpaque.url);
+});
+
+test('role variants require medium role certainty and icon preferences can select white artwork', () => {
+  const commonIcon = { source: 'browser-img', width: 128, height: 128, highResolution: true, bytes: 100, background: 'transparent', evidence: { eligible_roles: ['icon'], positive_token: true, home_linked: true, dom_region: 'header' } };
+  const black = { ...commonIcon, url: 'https://acme.test/acme-black.svg', evidence: { ...commonIcon.evidence, theme: 'light' } };
+  const white = { ...commonIcon, url: 'https://acme.test/acme-white.svg', evidence: { ...commonIcon.evidence, theme: 'dark' } };
+  const iconResult = rankCandidates([black, white], { companyName: 'Acme', preferences: { icon: { color: 'white', theme: 'dark' } } });
+  assert.equal(iconResult.assets.icon.url, white.url);
+  assert.deepEqual(iconResult.assetVariants.icon.map(item => item.variant.color), ['white', 'black']);
+
+  const commonWide = { source: 'official-archive', width: 500, height: 100, bytes: 100, evidence: { eligible_roles: ['wide'], archive_score: 90, deep_official: true } };
+  const certain = { ...commonWide, url: 'zip+https://acme.test/kit.zip#Acme_White.svg', highResolution: true, scalable: true, background: 'transparent' };
+  const low = { ...commonWide, url: 'zip+https://acme.test/kit.zip#Acme_Mark.svg', highResolution: true, evidence: { ...commonWide.evidence, theme: 'unknown' } };
+  const logoResult = rankCandidates([certain, low], { companyName: 'Acme' });
+  assert.ok(logoResult.candidates.find(item => item.url === low.url).predicted_roles.includes('wide'));
+  assert.ok(logoResult.candidates.find(item => item.url === low.url).role_scores.wide < logoResult.variantPolicy.minimumRoleScore);
+  assert.deepEqual(logoResult.assetVariants.logo.map(item => item.url), [certain.url]);
 });
 
 test('image validation distinguishes transparent and opaque backgrounds', async () => {

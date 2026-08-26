@@ -1,4 +1,4 @@
-import { describeAssetVariant, logoPreferenceScore, normalizeAssetPreferences } from './asset-model.mjs';
+import { assetPreferenceScore, describeAssetVariant, normalizeAssetPreferences } from './asset-model.mjs';
 import { describesEmbeddedLogo } from './logo-semantics.mjs';
 
 const SOURCE_WEIGHT = {
@@ -6,7 +6,8 @@ const SOURCE_WEIGHT = {
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
 };
-const RANKING_VERSION = 7;
+const RANKING_VERSION = 8;
+export const ROLE_VARIANT_MIN_SCORE = 45;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
 function round(value) { return Math.round(Math.max(0, Math.min(100, value)) * 10) / 10; }
@@ -218,17 +219,25 @@ export function iconEffectiveScore(candidate) {
   return (candidate.role_scores?.icon ?? 0) - (candidate.padded_wordmark ? 40 : 0) + iconSizeBonus(candidate);
 }
 
-function pickIconCandidate(eligible, allCandidates) {
+function compareRoleCandidates(a, b, role, preferences) {
+  if (role === 'icon' && Boolean(a.padded_wordmark) !== Boolean(b.padded_wordmark)) return a.padded_wordmark ? 1 : -1;
+  const preferenceDifference = assetPreferenceScore(b, preferences, role) - assetPreferenceScore(a, preferences, role);
+  if (preferenceDifference) return preferenceDifference;
+  if (role === 'icon') return iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes;
+  return (b.role_scores?.wide ?? 0) - (a.role_scores?.wide ?? 0) || b.bytes - a.bytes;
+}
+
+function pickIconCandidate(eligible, allCandidates, preferences) {
   // ponytail: rendered inline SVG twins beat serialized static copies of the same geometry,
   // whose serialization can render blank outside the page.
-  let winner = [...eligible].sort((a, b) => iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes)[0];
+  let winner = [...eligible].sort((a, b) => compareRoleCandidates(a, b, 'icon', preferences))[0];
   // Unlinked DOM squares are often page content that happens to carry a strong filename or alt
   // match. When the page also declares a viable icon, prefer that bounded first-party signal.
   // A home-linked DOM mark remains authoritative and is never displaced by this rule.
   if (winner && ['dom-img', 'dom-picture', 'browser-img'].includes(winner.source) && !winner.evidence?.home_linked) {
     const declared = eligible.filter(candidate => DECLARED_ICON_SOURCES.has(candidate.source) &&
       Number(candidate.role_scores?.icon) >= DECLARED_ICON_MIN_SCORE)
-      .sort((a, b) => iconEffectiveScore(b) - iconEffectiveScore(a) || b.bytes - a.bytes)[0];
+      .sort((a, b) => compareRoleCandidates(a, b, 'icon', preferences))[0];
     if (declared) winner = declared;
   }
   if (!winner || winner.source !== 'inline-svg') return winner ?? null;
@@ -239,24 +248,50 @@ function pickIconCandidate(eligible, allCandidates) {
   return twin;
 }
 
+function roleScore(candidate, role) {
+  return Number(candidate?.role_scores?.[role === 'logo' ? 'wide' : role]) || 0;
+}
+
+function roleCertainty(candidate, role) {
+  const score = roleScore(candidate, role);
+  return { score, band: score >= 70 ? 'high' : score >= ROLE_VARIANT_MIN_SCORE ? 'medium' : 'low' };
+}
+
+function variantSignature(candidate) {
+  const variant = candidate?.variant ?? describeAssetVariant(candidate ?? {});
+  return ['theme', 'color', 'background'].map(key => `${key}:${variant[key] ?? 'unknown'}`).join('|');
+}
+
+function buildRoleVariants(role, selected, candidates, preferences) {
+  if (!selected) return [];
+  const ranked = candidates
+    .filter(candidate => candidate.predicted_roles?.includes(role === 'logo' ? 'wide' : role) &&
+      !(role === 'icon' && candidate.padded_wordmark) && roleScore(candidate, role) >= ROLE_VARIANT_MIN_SCORE)
+    .sort((a, b) => compareRoleCandidates(a, b, role, preferences));
+  const ordered = [selected, ...ranked];
+  const seenAssets = new Set();
+  const seenVariants = new Set();
+  const result = [];
+  for (const candidate of ordered) {
+    const assetKey = candidate.family_id ?? candidate.dataUrl ?? candidate.resolvedUrl ?? candidate.resolved_url ?? candidate.url;
+    const signature = variantSignature(candidate);
+    if (!assetKey || seenAssets.has(assetKey) || seenVariants.has(signature)) continue;
+    seenAssets.add(assetKey);
+    seenVariants.add(signature);
+    result.push({ ...candidate, certainty: roleCertainty(candidate, role) });
+  }
+  return result;
+}
+
 export function rankCandidates(items, options = {}) {
   const preferences = normalizeAssetPreferences(options.preferences);
   const ranked = items.map(item => scoreCandidate(item, options)).sort((a, b) => b.score - a.score || b.bytes - a.bytes);
   const { candidates, assetFamilies } = buildAssetFamilies(ranked);
   const eligible = candidates.filter(item => item.source !== 'social-banner');
   const selectedByRole = Object.fromEntries(['icon', 'wide'].map(role => [role, [...eligible].filter(item => item.predicted_roles.includes(role)).sort((a, b) => {
-    if (role === 'wide') {
-      const preferenceDifference = logoPreferenceScore(b, preferences) - logoPreferenceScore(a, preferences);
-      if (preferenceDifference) return preferenceDifference;
-    }
-    if (role === 'icon') {
-      const iconDifference = iconEffectiveScore(b) - iconEffectiveScore(a);
-      if (iconDifference) return iconDifference;
-      return b.bytes - a.bytes;
-    }
-    return b.role_scores[role] - a.role_scores[role] || b.bytes - a.bytes;
+    return compareRoleCandidates(a, b, role === 'wide' ? 'logo' : role, preferences);
   })[0] ?? null]));
-  selectedByRole.icon = pickIconCandidate(eligible.filter(item => item.predicted_roles.includes('icon')), candidates);
+  selectedByRole.icon = pickIconCandidate(eligible.filter(item => item.predicted_roles.includes('icon')), candidates, preferences);
   if (!selectedByRole.icon) {
     // A favicon-role candidate is the bounded fallback for the canonical icon when no true icon
     // candidate qualifies. Prefer the asset intended for favicon use, not an arbitrary source.
@@ -266,14 +301,22 @@ export function rankCandidates(items, options = {}) {
     if (fallback) selectedByRole.icon = fallback;
   }
   if (selectedByRole.icon?.source === 'inline-svg') {
-    selectedByRole.icon = pickIconCandidate([selectedByRole.icon], candidates);
+    selectedByRole.icon = pickIconCandidate([selectedByRole.icon], candidates, preferences);
   }
   // Legacy API/CLI consumers still receive the independently ranked best favicon. It does not
   // participate in the canonical `assets` model, whose only roles are icon and logo.
   selectedByRole.favicon = eligible.filter(item => item.predicted_roles.includes('favicon'))
     .sort((a, b) => faviconRankScore(b) - faviconRankScore(a) || b.bytes - a.bytes)[0] ?? null;
   const assets = { icon: selectedByRole.icon, logo: selectedByRole.wide };
-  return { candidates, assetFamilies, assets, preferences, selectedByRole, selected: assets.icon ?? assets.logo ?? null };
+  const assetVariants = {
+    icon: buildRoleVariants('icon', assets.icon, candidates, preferences),
+    logo: buildRoleVariants('logo', assets.logo, candidates, preferences),
+  };
+  return {
+    candidates, assetFamilies, assets, assetVariants,
+    variantPolicy: { minimumRoleScore: ROLE_VARIANT_MIN_SCORE },
+    preferences, selectedByRole, selected: assets.icon ?? assets.logo ?? null,
+  };
 }
 
 export function faviconRankScore(candidate) {

@@ -110,12 +110,14 @@ Once the local server is running:
 ```bash
 curl -sS http://127.0.0.1:4310/api/extract \
   -H 'content-type: application/json' \
-  -d '{"website":"stripe.com","preferences":{"logo":{"theme":"dark","background":"transparent"}}}'
+  -d '{"website":"stripe.com","preferences":{"icon":{"color":"white"},"logo":{"theme":"dark","background":"transparent"}}}'
 ```
 
-`preferences.logo.theme` accepts `any`, `light`, or `dark`; the theme describes the surface the logo must work on, so `dark` prefers white/light artwork. `preferences.logo.background` accepts `any`, `transparent`, or `opaque`. Preferences are best-effort: a matching eligible logo wins when available, otherwise ranking falls back to the best eligible logo.
+Both `preferences.icon` and `preferences.logo` accept the same optional fields. `theme` accepts `any`, `light`, or `dark` and describes the surface the asset must work on, so `dark` prefers light artwork. `color` accepts `any`, `color`, `white`, or `black`. `background` accepts `any`, `transparent`, or `opaque`. Preferences are best-effort: a matching eligible asset wins when available, otherwise ranking falls back to the best eligible asset.
 
-The response includes canonical `assets.icon` and `assets.logo` selections, normalized `preferences`, grouped `assetFamilies`, every ranked `candidate`, and discovery `diagnostics`. Each candidate has a measured `variant` object such as `{"theme":"dark","background":"transparent"}`.
+The response keeps canonical `assets.icon` and `assets.logo` selections and adds ordered `assetVariants.icon` and `assetVariants.logo` arrays. The selected asset is first. Additional entries must represent a distinct theme/color/background combination and clear `variantPolicy.minimumRoleScore` (currently 45, the medium-certainty boundary); delivery-size copies of the same artwork are not promoted as semantic variants. Every variant includes explicit metadata such as `{"theme":"dark","color":"white","background":"transparent"}` plus role-specific `certainty: { score, band }`.
+
+Grouped `assetFamilies`, every ranked `candidate`, normalized `preferences`, and discovery `diagnostics` remain available. The homepage uses the canonical variant arrays for its inline icon and wordmark selectors. “More assets” contains only other high-confidence families and excludes every family already represented by a selected-role variant.
 
 For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available. The deprecated `selectedByRole.favicon` key independently reports the best favicon-sized legacy selection; it never changes canonical `assets.icon` or `assets.logo`. When no true icon qualifies, a valid favicon-role candidate may become the canonical icon fallback.
 

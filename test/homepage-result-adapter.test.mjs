@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { adaptBrandResults, brandRoleLabel, describeVariant } from '../public/result-adapter.js';
+import { adaptBrandResults, additionalAssetFamilies, brandRoleLabel, describeVariant } from '../public/result-adapter.js';
 
 test('homepage adapter presents icon and wordmark without a separate favicon concept', () => {
   const icon = { family_id: 'family-icon', dataUrl: 'data:image/png;base64,icon', format: 'png', width: 128, height: 128 };
@@ -50,4 +50,26 @@ test('homepage adapter exposes current and future theme/surface variant metadata
   assert.equal(asset.variants.length, 2);
   assert.deepEqual(describeVariant(asset.variants[0]), ['For light']);
   assert.deepEqual(describeVariant(asset.variants[1]), ['For dark']);
+});
+
+test('homepage uses canonical role variants and reserves More assets for unselected high-confidence families', () => {
+  const selected = { family_id: 'family-selected', dataUrl: 'data:selected', variant: { theme: 'light', color: 'black', background: 'transparent' }, confidence_band: 'high' };
+  const deliveryTwin = { family_id: 'family-selected', dataUrl: 'data:twin', confidence_band: 'high' };
+  const reverse = { family_id: 'family-reverse', dataUrl: 'data:reverse', variant: { theme: 'dark', color: 'white', background: 'transparent' }, confidence_band: 'high' };
+  const other = { family_id: 'family-other', dataUrl: 'data:other', confidence_band: 'high', predicted_roles: ['favicon'] };
+  const uncertain = { family_id: 'family-uncertain', dataUrl: 'data:uncertain', confidence_band: 'medium' };
+  const payload = {
+    assets: { icon: selected, logo: null },
+    assetVariants: { icon: [selected, reverse], logo: [] },
+    candidates: [selected, deliveryTwin, reverse, other, uncertain],
+    assetFamilies: [
+      { id: 'family-selected', candidateIndexes: [0, 1], representativeIndex: 0 },
+      { id: 'family-reverse', candidateIndexes: [2], representativeIndex: 2 },
+      { id: 'family-other', candidateIndexes: [3], representativeIndex: 3 },
+      { id: 'family-uncertain', candidateIndexes: [4], representativeIndex: 4 },
+    ],
+  };
+
+  assert.deepEqual(adaptBrandResults(payload)[0].variants, [selected, reverse]);
+  assert.deepEqual(additionalAssetFamilies(payload).map(family => family.id), ['family-other']);
 });

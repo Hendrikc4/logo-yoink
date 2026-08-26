@@ -11,11 +11,39 @@ export function adaptBrandResults(payload) {
     const selected = payload?.assets?.[role.key]
       ?? payload?.selectedByRole?.[role.key === 'logo' ? 'wide' : role.key]
       ?? null;
+    const canonicalVariants = payload?.assetVariants?.[role.key];
     return {
       ...role,
       selected,
-      variants: selected ? collectVariants(selected, candidates, families) : [],
+      variants: selected ? collectVariants(selected, candidates, families, canonicalVariants) : [],
     };
+  });
+}
+
+export function additionalAssetFamilies(payload) {
+  const candidates = Array.isArray(payload?.candidates) ? payload.candidates : [];
+  const families = Array.isArray(payload?.assetFamilies) && payload.assetFamilies.length
+    ? payload.assetFamilies
+    : candidates.map((item, index) => ({
+      id: item.family_id ?? `family-${index + 1}`, candidateIndexes: [index], representativeIndex: index,
+    }));
+  const brandResults = adaptBrandResults(payload);
+  const selectedFamilies = new Set(brandResults
+    .flatMap(role => [role.selected, ...role.variants])
+    .map(item => item?.family_id)
+    .filter(Boolean));
+  const selectedAssets = new Set(brandResults
+    .flatMap(role => [role.selected, ...role.variants])
+    .map(assetKey)
+    .filter(Boolean));
+
+  return families.flatMap(family => {
+    if (family?.id && selectedFamilies.has(family.id)) return [];
+    const indexes = (Array.isArray(family?.candidateIndexes) ? family.candidateIndexes : [])
+      .filter(index => candidates[index]?.confidence_band === 'high' && !selectedAssets.has(assetKey(candidates[index])));
+    if (!indexes.length) return [];
+    const roles = [...new Set(indexes.flatMap(index => candidates[index]?.predicted_roles ?? []))];
+    return [{ ...family, candidateIndexes: indexes, representativeIndex: indexes[0], variantCount: indexes.length, roles }];
   });
 }
 
@@ -60,7 +88,8 @@ export function describeVariant(item) {
   return labels;
 }
 
-function collectVariants(selected, candidates, families) {
+function collectVariants(selected, candidates, families, canonicalVariants) {
+  if (Array.isArray(canonicalVariants)) return uniqueAssets([selected, ...canonicalVariants]);
   const family = families.find(value => value?.id && value.id === selected.family_id);
   const familyMembers = Array.isArray(family?.candidateIndexes)
     ? family.candidateIndexes.map(index => candidates[index]).filter(Boolean)
@@ -70,7 +99,10 @@ function collectVariants(selected, candidates, families) {
   const explicit = Array.isArray(selected.variants) ? selected.variants.filter(value => value?.dataUrl) : [];
   const matchingExplicit = explicit.find(value => assetKey(value) === assetKey(selected));
   const selectedWithMetadata = matchingExplicit ? { ...selected, ...matchingExplicit } : selected;
-  const values = [selectedWithMetadata, ...explicit, ...familyMembers];
+  return uniqueAssets([selectedWithMetadata, ...explicit, ...familyMembers]);
+}
+
+function uniqueAssets(values) {
   const seen = new Set();
   return values.filter(value => {
     const key = assetKey(value);

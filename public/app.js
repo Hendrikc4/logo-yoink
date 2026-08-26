@@ -1,4 +1,4 @@
-import { adaptBrandResults, brandRoleLabel, describeVariant } from './result-adapter.js';
+import { adaptBrandResults, additionalAssetFamilies, brandRoleLabel, describeVariant } from './result-adapter.js';
 
 const form = document.querySelector('#extract-form');
 const input = document.querySelector('#website');
@@ -84,6 +84,7 @@ function clearResults() {
   familyGrid.replaceChildren();
   diagnostics.replaceChildren();
   completeResults.open = false;
+  completeResults.hidden = true;
   resultCount.textContent = '';
   renderedAssets.clear();
 }
@@ -100,10 +101,12 @@ function render(payload) {
     .map((asset, index) => roleCard(asset, payload.domain, index + 1))
     .join('');
 
-  const families = payload.assetFamilies?.length ? payload.assetFamilies : fallbackFamilies(payload.candidates);
+  const families = additionalAssetFamilies(payload);
   familyGrid.innerHTML = families.map(family => familyCard(family, payload.candidates, payload.domain)).join('');
-  resultCount.textContent = `(${payload.candidates.length})`;
+  const additionalCount = families.reduce((sum, family) => sum + (family.candidateIndexes?.length ?? 0), 0);
+  resultCount.textContent = `(${additionalCount})`;
   completeResults.open = false;
+  completeResults.hidden = families.length === 0;
   results.hidden = false;
 }
 
@@ -188,14 +191,6 @@ function sourceLink(item) {
   const source = String(item.resolvedUrl ?? item.resolved_url ?? '');
   const href = /^https?:/.test(source) ? source : item.source_page;
   return href ? `<a href="${escapeHtml(href)}" target="_blank" rel="noreferrer">View source ↗</a>` : '';
-}
-
-function fallbackFamilies(candidates) {
-  return candidates.map((item, index) => ({
-    id: item.family_id ?? `family-${index + 1}`,
-    candidateIndexes: [index], representativeIndex: index, variantCount: 1,
-    roles: item.predicted_roles ?? [],
-  }));
 }
 
 function dimensionsFor(item) {

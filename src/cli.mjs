@@ -58,6 +58,9 @@ try {
   }
   const printable = structuredClone(result);
   for (const item of printable.candidates) delete item.dataUrl;
+  for (const variants of Object.values(printable.assetVariants ?? {})) {
+    for (const item of variants) delete item.dataUrl;
+  }
   for (const item of [printable.selected, ...Object.values(printable.assets), ...Object.values(printable.selectedByRole)]) {
     if (item) delete item.dataUrl;
   }

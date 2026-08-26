@@ -17,8 +17,15 @@ async function validatedSvg(markup, evidence = {}) {
 
 test('Chromium renders Hoshii-style canonical cards and a SPA-discovered wordmark', async () => {
   const hoshiiIcon = await validatedSvg('<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="currentColor"/></svg>', { inherited_color: '#7c3aed' });
+  const hoshiiIconReverse = await validatedSvg('<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="currentColor"/></svg>', { inherited_color: '#ffffff' });
   const hoshiiLogo = await validatedSvg('<svg viewBox="0 0 180 36"><path fill="currentColor" d="M0 4h176v28H0z"/></svg>', { inherited_color: '#111827' });
-  assert.ok(hoshiiIcon && hoshiiLogo);
+  const hoshiiOther = await validatedSvg('<svg viewBox="0 0 48 48"><path fill="#7c3aed" d="M4 4h40v40H4z"/></svg>');
+  assert.ok(hoshiiIcon && hoshiiIconReverse && hoshiiLogo && hoshiiOther);
+
+  const icon = { ...hoshiiIcon, family_id: 'family-icon', variant: { theme: 'light', color: 'color', background: 'transparent' }, confidence_band: 'high' };
+  const reverseIcon = { ...hoshiiIconReverse, family_id: 'family-icon-reverse', variant: { theme: 'dark', color: 'white', background: 'transparent' }, confidence_band: 'high', certainty: { score: 82, band: 'high' } };
+  const logo = { ...hoshiiLogo, family_id: 'family-logo', confidence_band: 'high' };
+  const other = { ...hoshiiOther, family_id: 'family-other', confidence_band: 'high' };
 
   const [spaCandidate] = scanEntryBundle('const logo="assets/pnp-logo.svg";', {
     scriptUrl: 'https://www.plugandplaytechcenter.com/main-X.js',
@@ -31,9 +38,16 @@ test('Chromium renders Hoshii-style canonical cards and a SPA-discovered wordmar
 
   const payloads = {
     hoshii: {
-      domain: 'hoshii.ai', assets: { icon: hoshiiIcon, logo: hoshiiLogo },
-      selectedByRole: { icon: hoshiiIcon, wide: hoshiiLogo, favicon: null },
-      candidates: [hoshiiIcon, hoshiiLogo], assetFamilies: [], diagnostics: { validated: 2, families: 2, durationMs: 10 },
+      domain: 'hoshii.ai', assets: { icon, logo }, assetVariants: { icon: [icon, reverseIcon], logo: [logo] },
+      selectedByRole: { icon, wide: logo, favicon: null },
+      candidates: [icon, reverseIcon, logo, other],
+      assetFamilies: [
+        { id: 'family-icon', candidateIndexes: [0], representativeIndex: 0 },
+        { id: 'family-icon-reverse', candidateIndexes: [1], representativeIndex: 1 },
+        { id: 'family-logo', candidateIndexes: [2], representativeIndex: 2 },
+        { id: 'family-other', candidateIndexes: [3], representativeIndex: 3 },
+      ],
+      diagnostics: { validated: 4, families: 4, durationMs: 10 },
     },
     pnptc: {
       domain: 'plugandplaytechcenter.com', assets: { icon: null, logo: pnpLogo },
@@ -70,6 +84,12 @@ test('Chromium renders Hoshii-style canonical cards and a SPA-discovered wordmar
     })));
     assert.equal(hoshiiDimensions.length, 2);
     assert.ok(hoshiiDimensions.every(item => item.complete && item.naturalWidth > 0), JSON.stringify(hoshiiDimensions));
+    const iconVariant = page.locator('[data-asset-variant="asset-1"]');
+    assert.equal(await iconVariant.locator('option').count(), 2);
+    await iconVariant.selectOption('1');
+    assert.equal(await page.locator('.role-card').first().locator('[data-asset-image]').getAttribute('src'), reverseIcon.dataUrl);
+    assert.equal(await page.locator('#family-grid .family-card').count(), 1);
+    assert.match(await page.locator('#complete-results summary').innerText(), /More assets \(1\)/);
 
     await page.locator('#website').fill('pnptc.com');
     await page.locator('#extract-form button[type="submit"]').click();
