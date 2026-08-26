@@ -216,8 +216,14 @@ test('role-loss analysis separates ranking, eligibility, discovery, and capture 
     { entity_id: 'missing', candidate_id: 'photo', values: { identity: 'wrong', roles: [], safety_class: 'not_logo', usability_light: 'unusable', usability_dark: 'unusable' } },
   ];
   const analysis = analyzeRoleLosses(results, labels);
-  assert.equal(analysis.rows.find(row => row.entity_id === 'rank' && row.role === 'icon').outcome, 'ranking_miss');
-  assert.equal(analysis.rows.find(row => row.entity_id === 'eligible' && row.role === 'wide').outcome, 'eligibility_miss');
+  const ranking = analysis.rows.find(row => row.entity_id === 'rank' && row.role === 'icon');
+  assert.equal(ranking.outcome, 'ranking_miss');
+  assert.equal(ranking.selected_candidate.candidate_id, 'bad');
+  assert.equal(ranking.outranking_role_score_delta, 0);
+  const eligibility = analysis.rows.find(row => row.entity_id === 'eligible' && row.role === 'wide');
+  assert.equal(eligibility.outcome, 'eligibility_miss');
+  assert.deepEqual(eligibility.correct_candidates[0].rejection_signals,
+    ['role_score_below_threshold', 'stored_predicted_role_missing']);
   assert.equal(analysis.rows.find(row => row.entity_id === 'missing' && row.role === 'wide').outcome, 'no_captured_candidate');
   assert.equal(analysis.rows.find(row => row.entity_id === 'blocked' && row.role === 'icon').outcome, 'capture_failure');
 });
