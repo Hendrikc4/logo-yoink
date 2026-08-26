@@ -74,6 +74,20 @@ function setLoading(isLoading) {
 }
 
 function setStatus(message, state = '') {
+  document.body.classList.toggle('has-extraction-results', state === 'success');
+
+  if (state === 'success') {
+    const loader = status.querySelector('.train-loader');
+    const label = status.querySelector('.status-message');
+
+    if (loader && label) {
+      loader.classList.add('train-loader--complete');
+      label.textContent = message;
+      status.dataset.state = state;
+      return;
+    }
+  }
+
   status.replaceChildren();
 
   if (state === 'loading') {
