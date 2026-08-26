@@ -179,7 +179,7 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
 .how-lede { max-width: 610px; margin: 0; color: #c3c4c4; font-size: clamp(16px, 1.6vw, 20px); line-height: 1.65; text-wrap: pretty; }
 .how-visual { position: relative; margin: clamp(45px, 6vw, 76px) 0 0; overflow: hidden; border: 1px solid #333b40; border-radius: 8px; background: #080c0e; }
 .how-visual::after { content: ''; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 90px rgba(0,0,0,.38); }
-.how-visual img { width: 100%; height: auto; aspect-ratio: 1600 / 757; object-fit: cover; image-rendering: pixelated; }
+.how-visual img { width: 100%; height: auto; aspect-ratio: 1824 / 862; object-fit: cover; image-rendering: pixelated; }
 .how-visual figcaption { position: absolute; z-index: 1; right: 17px; bottom: 15px; padding: 9px 12px; border: 1px solid rgba(232,255,97,.48); background: rgba(7,11,14,.88); color: var(--acid); font: 400 8px/1.5 var(--pixel); text-transform: uppercase; }
 .how-process { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 1px; border: 1px solid var(--line); background: var(--line); gap: 1px; }
 .how-process article { min-height: 255px; padding: 31px 30px 34px; background: var(--surface); }

@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <img src="public/assets/readme/logo-yoink-flow.webp" alt="Pixel-art cowboy lassoing icon and wide logo assets out of a browser">
+  <img src="public/assets/how-it-works/logo-yoink-twilight-trail.webp" alt="Pixel-art cowboy on horseback lassoing icon and wordmark tiles from a browser portal in a twilight desert">
 </p>
 
 Logo hunting should not feel like archaeology. Give Logo Yoink one URL and it finds the real image files a site exposes, checks that they work, removes duplicates, and ranks the best choices for:
