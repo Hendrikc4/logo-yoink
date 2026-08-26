@@ -150,6 +150,41 @@ test('abstains when two entities or two current files remain domain-verified', a
   assert.equal(ambiguousFiles.diagnostics.status, 'ambiguous_logo_claims');
 });
 
+test('identity ambiguity includes exact-domain entities that have no logo claim', async () => {
+  const api = mockApi({
+    searches: { 'example.com': [{ id: 'Q1' }, { id: 'Q2' }], example: [{ id: 'Q1' }, { id: 'Q2' }] },
+    entities: {
+      Q1: entity('Q1', 'https://example.com/', null),
+      Q2: entity('Q2', 'https://www.example.com/', 'Product.svg'),
+    },
+    commons: [commonsPage('Product.svg')],
+  });
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+    fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW,
+  });
+  assert.equal(result.diagnostics.status, 'ambiguous_entities');
+  assert.deepEqual(result.diagnostics.domainMatchedEntityIds, ['Q1', 'Q2']);
+  assert.equal(api.calls.length, 3);
+});
+
+test('examines the full bounded two-search candidate union before declaring identity unique', async () => {
+  const first = [], second = [], entities = {};
+  for (let index = 1; index <= 20; index += 1) {
+    const id = `Q${index}`;
+    (index <= 10 ? first : second).push({ id });
+    const exact = index === 1 || index === 20;
+    entities[id] = entity(id, exact ? `https://${index === 1 ? '' : 'www.'}example.com/` : `https://unrelated-${index}.example/`, exact ? `${id}.svg` : null);
+  }
+  const api = mockApi({ searches: { 'example.com': first, example: second }, entities, commons: [] });
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+    fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW,
+  });
+  assert.equal(result.diagnostics.searchCandidateCount, 20);
+  assert.equal(result.diagnostics.searchCandidatesTruncated, false);
+  assert.equal(result.diagnostics.status, 'ambiguous_entities');
+  assert.deepEqual(result.diagnostics.domainMatchedEntityIds, ['Q1', 'Q20']);
+});
+
 test('rejects unsafe Commons file URLs and survives malformed, rate-limited, and timed-out APIs', async () => {
   const base = {
     searches: { 'example.com': [{ id: 'Q1' }], example: [{ id: 'Q1' }] },
@@ -208,6 +243,32 @@ test('retries maxlag responses without caching the transient error', async () =>
   assert.equal(result.diagnostics.status, 'no_search_candidates');
   assert.equal(result.diagnostics.retries, 1);
   assert.equal(calls, 3);
+});
+
+test('enforces one overall deadline across headers and body reads', async () => {
+  const started = performance.now();
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+    fetchImpl: async () => {
+      await new Promise(resolve => setTimeout(resolve, 220));
+      const body = new ReadableStream({ start(controller) { controller.enqueue(new TextEncoder().encode('{"search":')); } });
+      return new Response(body, { headers: { 'content-type': 'application/json' } });
+    },
+    validateUrl: noDnsValidation, cache: new Map(), timeoutMs: 300, now: () => NOW,
+  });
+  assert.equal(result.diagnostics.status, 'timeout');
+  assert.ok(performance.now() - started < 500);
+});
+
+test('does not retry before a Retry-After delay that exceeds the resolver deadline', async () => {
+  let calls = 0, delays = 0;
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+    fetchImpl: async () => { calls += 1; return new Response('', { status: 429, headers: { 'retry-after': '120' } }); },
+    validateUrl: noDnsValidation, cache: new Map(), timeoutMs: 500, now: () => NOW,
+    delay: async () => { delays += 1; },
+  });
+  assert.equal(result.diagnostics.status, 'rate_limited');
+  assert.equal(calls, 1);
+  assert.equal(delays, 0);
 });
 
 test('shared SVG safety rejects active content and classifies safe light/dark Commons variants', async () => {

@@ -176,3 +176,49 @@ node scripts/benchmark/benchmark.mjs --cohort major-brands-300 --split validatio
   --concurrency 4 --timeout-ms 10000 --role-budget --content-bounding-wide --wikimedia-fallback
 npm run check
 ```
+
+## Claude Opus 5 independent review
+
+A read-only Claude Code MCP review of commits `017d0fa` and `e53fcd6`
+reproduced a high-severity identity bug: an exact-domain entity without a usable
+P154 claim was discarded before entity ambiguity was evaluated. That allowed a
+second exact-domain product/service entity with a logo to appear uniquely
+identified. Identity matching now includes every exact-domain entity and must be
+unique before logo availability, rank, role, or usability is considered.
+
+The review also demonstrated that the 12-candidate slice could hide a rival at
+the end of the two-search union. The resolver now examines the complete bounded
+20-result union and records whether truncation occurred. Additional fixes enforce
+one deadline across response headers and body reads, honor both delta-seconds and
+HTTP-date `Retry-After` values when the delay fits the remaining budget, isolate
+caller caches from global in-flight requests, bound the shared cache by estimated
+retained size and entry count, preserve first-party records for byte-identical
+Commons assets, source-gate Wikidata ranking evidence, restore a versioned User
+Agent, and make validation/admission and Commons rejection diagnostics explicit.
+
+Development was rerun before validation. Four previously correct selections
+(Duolingo, Ryanair, Vimeo, and Netflix) now conservatively abstain because each
+has distinct company/service entities carrying the same root-domain P856. This
+is an intentional recall reduction: logo availability cannot resolve identity
+ambiguity. Validation was then run unchanged.
+
+| Split | Correct icon | Correct wide | Strict precision | Wrong/related | Change vs v4 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Development Opus v5 (180) | 0 | 18 | 18/18 (100%) | 0 | four conservative abstentions |
+| Validation Opus v5 (60) | 0 | 3 | 3/3 (100%) | 0 | none |
+
+Fallback-local totals were 223 requests and 26,159,119 bytes across 56
+development attempts, and 75 requests and 8,241,515 bytes across 20 validation
+attempts. Independent live runs remain subject to homepage reachability and
+upstream-response drift. The precision result and new abstentions reinforce the
+decision to keep the fallback opt-in.
+
+```sh
+node scripts/benchmark/benchmark.mjs --cohort major-brands-300 --split development \
+  --output runs/wikimedia-fallback-2026-08-25/treatment-development-opus-v5 \
+  --concurrency 4 --timeout-ms 10000 --role-budget --content-bounding-wide --wikimedia-fallback
+node scripts/benchmark/benchmark.mjs --cohort major-brands-300 --split validation \
+  --output runs/wikimedia-fallback-2026-08-25/treatment-validation-opus-v5 \
+  --concurrency 4 --timeout-ms 10000 --role-budget --content-bounding-wide --wikimedia-fallback
+npm run check
+```

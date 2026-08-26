@@ -7,10 +7,11 @@ const MAX_JSON_BYTES = 4 * 1024 * 1024;
 const DEFAULT_TIMEOUT_MS = 5_000;
 const DEFAULT_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
 const MAX_SEARCH_RESULTS = 10;
-const MAX_ENTITY_CANDIDATES = 12;
+const MAX_ENTITY_CANDIDATES = 20;
 const DEFAULT_CACHE = new Map();
 const DEFAULT_PENDING = new Map();
 const MAX_CACHE_BYTES = 32 * 1024 * 1024;
+const MAX_CACHE_ENTRIES = 256;
 let defaultCacheBytes = 0;
 
 function cleanDomainInput(value) {
@@ -178,17 +179,27 @@ function cached(cache, key, nowMs) {
     cache.delete?.(key);
     return null;
   }
+  if (cache === DEFAULT_CACHE) {
+    cache.delete(key);
+    cache.set(key, item);
+  }
   return structuredClone(item.value);
 }
 
 function storeCache(cache, key, value, nowMs, ttlMs, bytes) {
   if (!cache?.set) return;
   if (cache === DEFAULT_CACHE) {
+    for (const [cachedKey, item] of cache) {
+      if (item.expiresAt > nowMs) continue;
+      defaultCacheBytes -= item.bytes ?? 0;
+      cache.delete(cachedKey);
+    }
     defaultCacheBytes -= cache.get(key)?.bytes ?? 0;
     defaultCacheBytes += bytes;
+    cache.delete(key);
   }
   cache.set(key, { expiresAt: nowMs + ttlMs, value: structuredClone(value), bytes });
-  while (cache === DEFAULT_CACHE && defaultCacheBytes > MAX_CACHE_BYTES && cache.size) {
+  while (cache === DEFAULT_CACHE && (defaultCacheBytes > MAX_CACHE_BYTES || cache.size > MAX_CACHE_ENTRIES) && cache.size) {
     const oldest = cache.keys().next().value;
     defaultCacheBytes -= cache.get(oldest)?.bytes ?? 0;
     cache.delete(oldest);
@@ -203,17 +214,34 @@ function apiUrl(base, parameters) {
   return url.href;
 }
 
-function retryDelay(response) {
-  const seconds = Number(response?.headers?.get?.('retry-after'));
-  return Number.isFinite(seconds) && seconds >= 0 ? Math.min(1_000, seconds * 1_000) : 250;
+function retryDelay(response, nowMs = Date.now()) {
+  const value = response?.headers?.get?.('retry-after');
+  const seconds = Number(value);
+  if (Number.isFinite(seconds) && seconds >= 0) return seconds * 1_000;
+  const date = Date.parse(value);
+  return Number.isFinite(date) ? Math.max(0, date - nowMs) : 250;
+}
+
+function remainingBudget(options) {
+  const remaining = options.deadlineAt - performance.now();
+  if (remaining <= 0) throw Object.assign(new Error('Wikimedia fallback timed out.'), { name: 'AbortError' });
+  return Math.max(1, Math.min(options.timeoutMs, remaining));
+}
+
+async function waitForRetry(milliseconds, options) {
+  const remaining = remainingBudget(options);
+  if (milliseconds >= remaining) {
+    const error = new Error('Wikimedia API retry delay exceeds the fallback deadline.');
+    error.code = 'rate_limited';
+    throw error;
+  }
+  await options.delay(milliseconds);
 }
 
 async function requestJsonUncached(url, options) {
   for (let attempt = 0; attempt < 2; attempt += 1) {
-    const remaining = options.deadlineAt - performance.now();
-    if (remaining <= 0) throw Object.assign(new Error('Wikimedia fallback timed out.'), { name: 'AbortError' });
     const response = await fetchTimed(url, {
-      timeoutMs: Math.max(1, Math.min(options.timeoutMs, remaining)),
+      timeoutMs: remainingBudget(options),
       accept: 'application/json',
       diagnostics: options.network,
       fetchImpl: options.fetchImpl,
@@ -224,7 +252,7 @@ async function requestJsonUncached(url, options) {
       const retryable = response.status === 429 || response.status === 503;
       if (retryable && attempt === 0) {
         options.stats.retries += 1;
-        await options.delay(retryDelay(response));
+        await waitForRetry(retryDelay(response), options);
         continue;
       }
       const error = new Error(`Wikimedia API returned HTTP ${response.status}.`);
@@ -232,14 +260,14 @@ async function requestJsonUncached(url, options) {
       error.code = retryable ? 'rate_limited' : 'http_error';
       throw error;
     }
-    const { bytes } = await readLimited(response, MAX_JSON_BYTES, { diagnostics: options.network, timeoutMs: Math.max(1, Math.min(options.timeoutMs, remaining)) });
+    const { bytes } = await readLimited(response, MAX_JSON_BYTES, { diagnostics: options.network, timeoutMs: remainingBudget(options) });
     const value = JSON.parse(bytes.toString('utf8'));
     if (!value || typeof value !== 'object') throw new Error('Wikimedia API returned malformed JSON.');
     if (value.error) {
       const retryable = ['maxlag', 'ratelimited'].includes(String(value.error.code));
       if (retryable && attempt === 0) {
         options.stats.retries += 1;
-        await options.delay(250);
+        await waitForRetry(250, options);
         continue;
       }
       const error = new Error(`Wikimedia API error: ${value.error.code ?? 'unknown'}.`);
@@ -259,7 +287,8 @@ async function requestJson(url, options) {
   let pending = options.pending.get(pendingKey);
   if (!pending) {
     pending = requestJsonUncached(url, options).then(result => {
-      storeCache(options.cache, url, result.value, nowMs, options.cacheTtlMs, result.bytes);
+      // Parsed object graphs retain substantially more heap than their wire representation.
+      storeCache(options.cache, url, result.value, nowMs, options.cacheTtlMs, result.bytes * 4);
       return result.value;
     }).finally(() => options.pending.delete(pendingKey));
     options.pending.set(pendingKey, pending);
@@ -288,7 +317,7 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
   const stats = { status: 'skipped', requestedDomain, missingRoles: roles, searchTerms: [], candidateEntityIds: [], cacheHits: 0, retries: 0, coalescedRequests: 0 };
   if (!requestedDomain || !roles.length) return { candidates: [], diagnostics: stats };
 
-  const injectedTransport = Boolean(options.fetchImpl || options.validateUrl);
+  const isolatedRuntime = Boolean(options.fetchImpl || options.validateUrl || options.cache !== undefined);
   const timeoutMs = Math.max(250, Math.min(10_000, options.timeoutMs ?? DEFAULT_TIMEOUT_MS));
   const runtime = {
     fetchImpl: options.fetchImpl ?? fetch,
@@ -296,9 +325,9 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
     timeoutMs,
     deadlineAt: performance.now() + timeoutMs,
     now: options.now ?? (() => new Date()),
-    cache: options.cache ?? (injectedTransport ? new Map() : DEFAULT_CACHE),
-    pending: options.pending ?? (injectedTransport ? new Map() : DEFAULT_PENDING),
-    cacheScope: options.cacheScope ?? (injectedTransport ? 'injected' : 'default'),
+    cache: options.cache ?? (isolatedRuntime ? new Map() : DEFAULT_CACHE),
+    pending: options.pending ?? (isolatedRuntime ? new Map() : DEFAULT_PENDING),
+    cacheScope: options.cacheScope ?? (isolatedRuntime ? 'isolated' : 'default'),
     cacheTtlMs: Math.max(0, options.cacheTtlMs ?? DEFAULT_CACHE_TTL_MS),
     network: options.diagnostics,
     stats,
@@ -314,7 +343,10 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
         action: 'wbsearchentities', search: term, language: 'en', uselang: 'en', type: 'item', limit: MAX_SEARCH_RESULTS,
       }), runtime));
     }
-    const ids = [...new Set(searches.flatMap(searchIds))].slice(0, MAX_ENTITY_CANDIDATES);
+    const allIds = [...new Set(searches.flatMap(searchIds))];
+    const ids = allIds.slice(0, MAX_ENTITY_CANDIDATES);
+    stats.searchCandidateCount = allIds.length;
+    stats.searchCandidatesTruncated = allIds.length > ids.length;
     stats.candidateEntityIds = ids;
     if (!ids.length) return { candidates: [], diagnostics: { ...stats, status: 'no_search_candidates' } };
 
@@ -329,22 +361,23 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
       const websites = officialWebsiteEvidence(entity, requestedDomain, runtime.now());
       if (!websites.length) continue;
       const logoSelection = selectCurrentLogoClaims(entity?.claims?.P154, runtime.now());
-      if (logoSelection.ambiguous) {
-        matches.push({ id, websites, ambiguousLogoClaims: true, claims: [] });
-      } else if (logoSelection.claims.length) {
-        matches.push({ id, websites, ambiguousLogoClaims: false, claims: logoSelection.claims });
-      }
+      matches.push({ id, websites, ambiguousLogoClaims: logoSelection.ambiguous, claims: logoSelection.claims });
     }
     stats.domainMatchedEntityIds = matches.map(match => match.id);
-    if (matches.some(match => match.ambiguousLogoClaims)) {
+    if (stats.searchCandidatesTruncated && matches.length === 1) {
+      return { candidates: [], diagnostics: { ...stats, status: 'search_candidates_truncated' } };
+    }
+    if (matches.length !== 1) {
+      return { candidates: [], diagnostics: { ...stats, status: matches.length ? 'ambiguous_entities' : 'no_verified_current_logo' } };
+    }
+    if (matches[0].ambiguousLogoClaims) {
       return { candidates: [], diagnostics: { ...stats, status: 'ambiguous_logo_claims' } };
     }
-    const viable = matches.filter(match => match.claims.length);
-    if (viable.length !== 1) {
-      return { candidates: [], diagnostics: { ...stats, status: viable.length ? 'ambiguous_entities' : 'no_verified_current_logo' } };
+    if (!matches[0].claims.length) {
+      return { candidates: [], diagnostics: { ...stats, status: 'no_verified_current_logo' } };
     }
 
-    const chosen = viable[0];
+    const chosen = matches[0];
     const titles = chosen.claims.map(claim => `File:${claim.filename}`).join('|');
     const commons = await requestJson(apiUrl(COMMONS_API, {
       prop: 'imageinfo', titles, redirects: 1, iiprop: 'url|mime|size|timestamp|extmetadata', iiextmetadatafilter: 'LicenseShortName|LicenseUrl|UsageTerms|AttributionRequired|Artist|Credit|Copyrighted|Restrictions',
@@ -354,6 +387,7 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
     const byNormalizedTitle = new Map(pagesFromCommons(commons).map(page => [normalizeTitle(page?.title), page]));
     const retrievedAt = runtime.now().toISOString();
     const candidates = [];
+    const rejections = { missingPage: 0, unsafeUrl: 0, insufficientLicense: 0, incompatibleRole: 0 };
     for (const claim of chosen.claims) {
       const key = normalizeTitle(claim.filename);
       const canonicalKey = redirects.get(key) ?? key;
@@ -362,10 +396,12 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
       const assetUrl = safeCommonsUrl(info?.url, 'upload.wikimedia.org', '/wikipedia/commons/');
       const descriptionUrl = safeCommonsUrl(info?.descriptionurl, 'commons.wikimedia.org', '/wiki/File:');
       const license = licenseMetadata(info);
-      if (!assetUrl || !descriptionUrl || !hasSufficientLicense(license)) continue;
+      if (!info) { rejections.missingPage += 1; continue; }
+      if (!assetUrl || !descriptionUrl) { rejections.unsafeUrl += 1; continue; }
+      if (!hasSufficientLicense(license)) { rejections.insufficientLicense += 1; continue; }
       const ratio = Number(info?.width) / Number(info?.height);
       const eligibleRoles = roles.filter(role => role !== 'icon' || !Number.isFinite(ratio) || (ratio >= 0.72 && ratio <= 1.4));
-      if (!eligibleRoles.length) continue;
+      if (!eligibleRoles.length) { rejections.incompatibleRole += 1; continue; }
       candidates.push({
         url: assetUrl,
         source: 'wikimedia-commons',
@@ -392,7 +428,7 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
         },
       });
     }
-    return { candidates, diagnostics: { ...stats, status: candidates.length ? 'ok' : 'unsafe_or_missing_commons_file', entityId: chosen.id, files: candidates.length } };
+    return { candidates, diagnostics: { ...stats, status: candidates.length ? 'ok' : 'unsafe_or_missing_commons_file', entityId: chosen.id, files: candidates.length, rejections } };
   } catch (error) {
     return {
       candidates: [],

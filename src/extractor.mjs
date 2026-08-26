@@ -825,7 +825,7 @@ export async function extractLogos(website, options = {}) {
         cacheTtlMs: options.wikimediaCacheTtlMs,
         now: options.wikimediaNow,
       });
-      wikimediaDiagnostics = { enabled: true, ...discovered.diagnostics, requestedRoles: missingRoles };
+      wikimediaDiagnostics = { enabled: true, validated: 0, admitted: 0, admittedRoles: [], ...discovered.diagnostics, requestedRoles: missingRoles };
       const additions = (await mapConcurrent((discovered.candidates ?? []).slice(0, 2), 2,
         item => validateCandidate(item, Math.min(timeoutMs, options.wikimediaTimeoutMs ?? 5_000), network, maxImageBytes, {
           fetchImpl: options.wikimediaFetch,
@@ -833,7 +833,9 @@ export async function extractLogos(website, options = {}) {
         }))).filter(Boolean);
       if (additions.length) {
         const before = Object.fromEntries(['icon', 'wide'].map(role => [role, ranked.selectedByRole[role]]));
-        validated = dedupeBytes([...validated, ...additions]);
+        const existingHashes = new Set(validated.map(item => item.observed?.byte_hash).filter(Boolean));
+        const novelAdditions = additions.filter(item => !existingHashes.has(item.observed?.byte_hash));
+        validated = dedupeBytes([...validated, ...novelAdditions]);
         await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
         await attachTinySuitability(validated);
         const treatment = rankValidated();
@@ -841,7 +843,7 @@ export async function extractLogos(website, options = {}) {
           (treatment.selectedByRole[role]?.observed?.byte_hash ?? null) !== (before[role]?.observed?.byte_hash ?? null));
         if (!displaced.length) ranked = treatment;
         const admittedRoles = displaced.length ? [] : missingRoles.filter(role => ranked.selectedByRole[role]?.source === 'wikimedia-commons');
-        wikimediaDiagnostics = { ...wikimediaDiagnostics, validated: additions.length, admitted: admittedRoles.length, admittedRoles, displacedRoles: displaced };
+        wikimediaDiagnostics = { ...wikimediaDiagnostics, validated: additions.length, duplicateFirstParty: additions.length - novelAdditions.length, admitted: admittedRoles.length, admittedRoles, displacedRoles: displaced };
       }
       wikimediaDiagnostics = { ...wikimediaDiagnostics,
         requests: network.requests - fallbackRequestsBefore,

@@ -184,7 +184,7 @@ export function hasWideEvidence(item, companyName = '') {
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
   const deepOfficial = item.evidence?.deep_official && (Number(item.evidence?.archive_score) >= 40 || companyAgreement(item, companyName || item.evidence?.company_name));
   const spaLiteral = item.source === 'spa-bundle' && item.evidence?.spa_bundle_entry && item.evidence?.same_origin && item.evidence?.strong_logo_filename && item.evidence?.spa_identity_agreement;
-  return AUTHORITATIVE_SOURCES.includes(item.source) || item.evidence?.wikidata_identity_verified === true || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || firstPartyPlacedLogoPath(item) || deepOfficial || spaLiteral;
+  return AUTHORITATIVE_SOURCES.includes(item.source) || (item.source === 'wikimedia-commons' && item.evidence?.wikidata_identity_verified === true) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || firstPartyPlacedLogoPath(item) || deepOfficial || spaLiteral;
 }
 
 export function scoreCandidate(item, { companyName = '' } = {}) {
@@ -211,7 +211,7 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   const square = ratio != null && ratio >= 0.72 && ratio <= 1.4;
   const faviconSource = FAVICON_SOURCES.includes(item.source);
   const authoritativeSource = AUTHORITATIVE_SOURCES.includes(item.source);
-  const externallyVerifiedIdentity = item.evidence?.wikidata_identity_verified === true;
+  const externallyVerifiedIdentity = item.source === 'wikimedia-commons' && item.evidence?.wikidata_identity_verified === true;
   const contentRatio = item.contentBox?.width > 0 && item.contentBox?.height > 0 ? item.contentBox.width / item.contentBox.height : null;
   const wideRatio = contentRatio ?? ratio;
   const strongWideEvidence = Boolean(item.evidence?.home_linked || (['header', 'nav'].includes(item.evidence?.dom_region)) || authoritativeSource);
