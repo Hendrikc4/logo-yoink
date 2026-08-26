@@ -219,6 +219,9 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
     item.width >= 120 && Math.min(item.width, item.height) >= 36 && strongWideEvidence;
   const wide = (wideRatio != null && wideRatio >= 1.8 && (wideRatio <= 12 || wideRatio <= 14 && strongWideEvidence)) || wideRelaxed;
   const paddedWordmark = contentRatio != null && contentRatio >= 1.8 && ratio != null && ratio < 1.8;
+  // BIMI profile conformance is not verified, so canonical icon admission must
+  // fail closed unless the rendered artwork itself was measured as icon-shaped.
+  const bimiIconShapeOk = item.source !== 'bimi' || (contentRatio != null && contentRatio < 1.8 && square);
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
   const safeContext = !item.evidence?.negative_context && !genericReason;
   const usableIconSize = !item.width || !item.height || Math.min(item.width, item.height) >= 32 || (item.scalable && (item.evidence?.positive_token || agreesWithCompany));
@@ -230,11 +233,11 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   const score = Math.max(...Object.values(role_scores));
   const predicted_roles = [
     ...(roleEligible('icon') && icon >= 35 && safeContext && usableIconSize && (square || ratio == null) &&
-      (item.source !== 'bimi' || !paddedWordmark) && (faviconSource || authoritativeSource || agreesWithCompany || placedLogo) ? ['icon'] : []),
+      bimiIconShapeOk && (faviconSource || authoritativeSource || agreesWithCompany || placedLogo) ? ['icon'] : []),
     ...(roleEligible('wide') && wideScore >= 35 && safeContext && (wide || ratio == null) && hasWideEvidence(item, companyName) ? ['wide'] : []),
     ...(favicon >= 35 && faviconSource ? ['favicon'] : []),
   ];
-  return { ...item, variant: describeAssetVariant(item), padded_wordmark: paddedWordmark, role_scores, predicted_roles, score, score_reasons: [...new Set(reasons)], confidence_band: score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low' };
+  return { ...item, variant: describeAssetVariant(item), padded_wordmark: paddedWordmark, bimi_icon_shape_ok: bimiIconShapeOk, role_scores, predicted_roles, score, score_reasons: [...new Set(reasons)], confidence_band: score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low' };
 }
 
 const ICON_FALLBACK_MIN_EDGE = 14;
@@ -357,7 +360,7 @@ export function rankCandidates(items, options = {}) {
     // A favicon-role candidate is the bounded fallback for the canonical icon when no true icon
     // candidate qualifies. Prefer the asset intended for favicon use, not an arbitrary source.
     const fallback = eligible.filter(item => item.predicted_roles.includes('favicon') &&
-      !(item.source === 'bimi' && item.padded_wordmark) &&
+      item.bimi_icon_shape_ok !== false &&
       Math.min(Number(item.width) || Infinity, Number(item.height) || Infinity) >= ICON_FALLBACK_MIN_EDGE)
       .sort((a, b) => faviconRankScore(b) - faviconRankScore(a) || b.bytes - a.bytes)[0];
     if (fallback) selectedByRole.icon = fallback;

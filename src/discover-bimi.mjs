@@ -140,7 +140,7 @@ export async function lookupBimiAssertion(domain, options = {}) {
       const noRecord = ['ENODATA', 'ENOTFOUND', 'NXDOMAIN', 'NOTFOUND'].includes(String(error?.code ?? '').toUpperCase());
       outcome = { status: error?.name === 'AbortError' ? 'timeout' : noRecord ? 'not_found' : 'resolver_error', error: error?.code ?? error?.name ?? 'error', queryName, queryDomain, selector, dnsRequests: 1 };
     }
-    if (cache) {
+    if (cache && !['timeout', 'resolver_error'].includes(outcome.status)) {
       if (!cache.has(cacheKey) && cache.size >= Math.max(1, cacheMaxEntries)) cache.delete(cache.keys().next().value);
       cache.set(cacheKey, { expiresAt: now() + Math.max(0, cacheTtlMs), value: { ...outcome } });
     }

@@ -87,6 +87,19 @@ test('resolver failures and timeouts abstain and cache bounded outcomes', async 
   await lookupBimiAssertion('isolated.example', { resolveTxt: isolatedResolver });
   await lookupBimiAssertion('isolated.example', { resolveTxt: isolatedResolver });
   assert.equal(isolatedCalls, 2);
+
+  for (const failure of [
+    () => new Promise(() => {}),
+    () => { throw Object.assign(new Error('temporary failure'), { code: 'SERVFAIL' }); },
+  ]) {
+    let transientCalls = 0;
+    const transientCache = new Map();
+    const transientResolver = async () => { transientCalls += 1; return failure(); };
+    await lookupBimiAssertion('transient.example', { cache: transientCache, timeoutMs: 5, resolveTxt: transientResolver });
+    await lookupBimiAssertion('transient.example', { cache: transientCache, timeoutMs: 5, resolveTxt: transientResolver });
+    assert.equal(transientCalls, 2);
+    assert.equal(transientCache.size, 0);
+  }
 });
 
 test('organizational-domain fallback is explicit, bounded, and suffix checked', () => {
@@ -94,6 +107,12 @@ test('organizational-domain fallback is explicit, bounded, and suffix checked', 
   assert.deepEqual(bimiQueryDomains('mail.brand.example', { organizationalDomain: 'brand.example' }), ['mail.brand.example', 'brand.example']);
   assert.throws(() => bimiQueryDomains('brand.example', { organizationalDomain: 'other.example' }), /must contain/);
   assert.throws(() => bimiQueryDomains('8.8.8.8'), /valid public domain/);
+});
+
+test('runtime BIMI lookup abstains instead of failing extraction for IP literals', async () => {
+  const result = await extractorInternals.lookupBimiSafely('93.184.216.34', {});
+  assert.equal(result.status, 'unsupported_domain');
+  assert.equal(result.dnsRequests, 0);
 });
 
 test('organizational-domain success counts every uncached DNS attempt and isolates cached objects', async () => {
@@ -204,7 +223,7 @@ test('BIMI can fill icon and favicon roles but can never create a wide-logo answ
   });
   assert.equal(checked.provenance.bimi_svg_safety_validated, true);
   assert.equal(checked.provenance.bimi_svg_profile_conformance, 'not_performed');
-  const ranked = rankCandidates([checked]);
+  const ranked = rankCandidates([{ ...checked, contentBox: { width: 100, height: 100 } }]);
   assert.equal(ranked.selectedByRole.icon.source, 'bimi');
   assert.equal(ranked.selectedByRole.favicon.source, 'bimi');
   assert.equal(ranked.selectedByRole.wide, null);
@@ -214,6 +233,32 @@ test('BIMI can fill icon and favicon roles but can never create a wide-logo answ
   assert.equal(paddedWordmark.selectedByRole.icon, null);
   assert.equal(paddedWordmark.selectedByRole.wide, null);
   assert.equal(paddedWordmark.selectedByRole.favicon.source, 'bimi');
+
+  const wideCanvas = rankCandidates([{ ...checked, width: 300, height: 100, contentBox: { width: 300, height: 100 } }]);
+  assert.equal(wideCanvas.selectedByRole.icon, null);
+  assert.equal(wideCanvas.selectedByRole.favicon.source, 'bimi');
+  const unmeasured = rankCandidates([{ ...checked, contentBox: undefined }]);
+  assert.equal(unmeasured.selectedByRole.icon, null);
+  const measuredSquare = rankCandidates([{ ...checked, contentBox: { width: 90, height: 90 } }]);
+  assert.equal(measuredSquare.selectedByRole.icon.source, 'bimi');
+});
+
+test('SVG safety provenance is emitted only after the inert-content check runs', async () => {
+  const ordinary = { url: 'https://cdn.example/logo.svg', source: 'schema', evidence: {}, provenance: {} };
+  const safe = await extractorInternals.validateCandidate(ordinary, 500, { requests: 0, bytesDownloaded: 0 }, 128 * 1024, {
+    validateUrl: async () => {}, fetchImpl: async () => new Response(SAFE_SVG, { headers: { 'content-type': 'image/svg+xml' } }),
+  });
+  assert.equal(safe.provenance.svg_safety_validated, true);
+  const active = await extractorInternals.validateCandidate(ordinary, 500, { requests: 0, bytesDownloaded: 0 }, 128 * 1024, {
+    validateUrl: async () => {}, fetchImpl: async () => new Response('<svg><script/></svg>', { headers: { 'content-type': 'image/svg+xml' } }),
+  });
+  assert.equal(active, null);
+  const embeddedRasterSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><image width="10" height="10" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="/></svg>';
+  const conservativeMiss = await extractorInternals.validateCandidate(ordinary, 500, { requests: 0, bytesDownloaded: 0 }, 128 * 1024, {
+    validateUrl: async () => {}, fetchImpl: async () => new Response(embeddedRasterSvg, { headers: { 'content-type': 'image/svg+xml' } }),
+  });
+  assert.ok(conservativeMiss);
+  assert.equal(conservativeMiss.provenance.svg_safety_validated, undefined);
 });
 
 test('duplicate BIMI bytes retain the stronger existing candidate and record duplicate provenance', () => {

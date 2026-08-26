@@ -703,6 +703,7 @@ async function runCommand(options) {
       deep_wide: Boolean(options.deepWide), spa_bundles: Boolean(options.spaBundles),
       role_budget: Boolean(options.roleBudget), content_bounding_wide: Boolean(options.contentBoundingWide),
       bimi: Boolean(options.bimi),
+      jina_enabled: Boolean(process.env.JINA_API_KEY?.trim()),
       user_agent: options.userAgent ?? 'extractor default',
     },
     efficiency_thresholds: DEFAULT_EFFICIENCY_THRESHOLDS,

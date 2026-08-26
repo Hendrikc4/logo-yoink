@@ -22,10 +22,20 @@ const mean = values => values.length ? values.reduce((sum, value) => sum + value
 export function summarizeOrderingEvidence(input) {
   if (input?.schema_version !== 1 || !Array.isArray(input.changed_selections)) throw new Error('Unsupported ordering evidence.');
   const changes = input.changed_selections;
+  if (!changes.length) throw new Error('Ordering evidence must contain at least one changed selection.');
+  const finiteNonnegative = value => Number.isFinite(value) && value >= 0;
+  const cacheConfiguration = input.third_party_cache_configuration;
+  if (!cacheConfiguration || !['besticon_enabled', 'google_favicon_enabled', 'duckduckgo_favicon_enabled'].every(key => typeof cacheConfiguration[key] === 'boolean')) throw new Error('Invalid third-party cache configuration.');
+  const cost = input.gated_cost;
+  if (!cost || !['domains_attempted', 'dns_requests', 'http_requests', 'downloaded_bytes'].every(key => finiteNonnegative(cost[key])) ||
+    !cost.latency_ms || !['mean', 'p50', 'p95', 'max'].every(key => finiteNonnegative(cost.latency_ms[key]))) {
+    throw new Error('Invalid gated cost evidence.');
+  }
   for (const item of changes) {
     for (const candidate of [item.control, item.bimi]) {
       if (!/^[a-f0-9]{64}$/.test(candidate?.content_sha256 ?? '')) throw new Error(`Invalid content fingerprint for ${item.website}.`);
       if (!['correct_brand', 'wrong_brand'].includes(candidate.identity) || !['correct', 'wrong_role'].includes(candidate.icon_role)) throw new Error(`Incomplete review for ${item.website}.`);
+      if (![candidate.width, candidate.height, candidate.bytes, candidate.tiny_suitability].every(finiteNonnegative) || candidate.width === 0 || candidate.height === 0 || candidate.bytes === 0) throw new Error(`Invalid candidate measurements for ${item.website}.`);
     }
     if (!/^[a-f0-9]{64}$/.test(item.bimi.record_sha256 ?? '')) throw new Error(`Invalid BIMI record fingerprint for ${item.website}.`);
   }
@@ -33,7 +43,7 @@ export function summarizeOrderingEvidence(input) {
   return {
     schema_version: 1,
     experiment: input.experiment,
-    third_party_cache_configuration: input.third_party_cache_configuration,
+    third_party_cache_configuration: cacheConfiguration,
     changed_selections: changes.length,
     correct_role_coverage: {
       control: changes.filter(item => item.control.identity === 'correct_brand' && item.control.icon_role === 'correct').length,
@@ -60,7 +70,7 @@ export function summarizeOrderingEvidence(input) {
       unchanged: qualityMovement.filter(value => value === 0).length,
       worsened: qualityMovement.filter(value => value < 0).length,
     },
-    gated_cost: input.gated_cost,
+    gated_cost: cost,
     conclusion: 'provenance_and_scalability_gain_without_correct_role_coverage_gain',
   };
 }

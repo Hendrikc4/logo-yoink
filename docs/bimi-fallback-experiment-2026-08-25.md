@@ -10,10 +10,10 @@ BIMI is treated as a domain-controlled self-assertion, not as a certificate-veri
 
 - Query only `default._bimi.<normalized-domain>`. The extractor does not guess public-suffix boundaries; a caller may supply a PSL-derived organizational domain explicitly, and it must contain the requested domain.
 - Require exactly one `v=BIMI1` TXT assertion, tolerate split TXT chunks and tag whitespace/casing, reject ambiguous records and duplicate tags, and require a nonempty HTTPS `l=` URL.
-- Bound DNS to 2 seconds by default and cache at most 512 outcomes for 15 minutes.
+- Bound DNS to 2 seconds by default and cache at most 512 stable outcomes for 15 minutes. Resolver errors and timeouts are not cached.
 - Fetch the SVG through the existing public-address/DNS, redirect-revalidation, timeout, response-size, byte-budget, MIME, and image-validation path. Additionally reject active, animated, externally referenced, or document-dependent SVG content.
-- Run after the existing eligible first-party static/deep/browser/Jina recovery gates and before Besticon, Google, or DuckDuckGo cached favicon fallbacks. BIMI does not trigger an additional icon-only browser crawl. Never displace an existing canonical icon.
-- Restrict BIMI to icon/favicon roles. It can never produce `assets.logo` / wide. Measure nontransparent artwork; a content ratio of 1.8 or wider is a padded wordmark and cannot become the canonical icon.
+- Run after the existing eligible first-party static/deep/browser recovery gates and before the built-in Google or DuckDuckGo cached favicon fallbacks. Optional Besticon retains its existing budgeted position because it was disabled in the frozen experiment. If BIMI and the cached favicon both abstain, the existing Jina screenshot gate may still run; BIMI itself does not trigger an additional icon-only browser crawl or Jina screenshot. Never displace an existing canonical icon.
+- Restrict BIMI to icon/favicon roles. It can never produce `assets.logo` / wide. Canonical icon admission requires a measured square canvas and a measured content ratio below 1.8; unmeasurable artwork abstains.
 
 ## Live results
 
@@ -27,17 +27,20 @@ After the rule was frozen, direct non-scoring controls observed Apple with an ac
 
 ## Follow-up ordering audit
 
-The follow-up compared the four selections that actually changed when BIMI was placed before the configured Google and DuckDuckGo caches. Besticon was disabled in the frozen runs, so it contributed no selection or latency changes to inspect; the runtime ordering now also defers it when configured. Workday, Adobe, Nvidia, and Salesforce each remained a correct-brand, correct-role icon, so correct-role coverage stayed 4/4 and wrong-brand selections stayed at zero. All four selections changed from third-party cached rasters to domain-controlled, self-asserted SVGs; none was certificate-validated.
+The follow-up compared the four selections that actually changed when BIMI was placed before the configured Google and DuckDuckGo caches. Besticon was disabled in the frozen runs, so it contributed no selection or latency changes to inspect; the runtime keeps its existing budgeted discovery position, unchanged by `--bimi`. Workday, Adobe, Nvidia, and Salesforce each remained a correct-brand, correct-role icon, so correct-role coverage stayed 4/4 and wrong-brand selections stayed at zero. All four selections changed from third-party cached rasters to domain-controlled, self-asserted SVGs; none was certificate-validated.
 
 That is a provenance and scalability improvement, not a correctness improvement. Mean tiny-render suitability changed from 97.825 to 96.650 (-1.175): one candidate improved, one was unchanged, and two worsened. The combined gated cost across development and validation was 22 DNS requests, 7 HTTP requests, 9,089 bytes, and BIMI-stage latency of 58 ms p50 / 203 ms p95 / 414 ms maximum. This bounded cost is acceptable for the opt-in mode, but the lack of incremental correct-role coverage and mixed tiny-render quality do not justify enabling BIMI by default merely because its provenance is first-party.
 
-The audit also found and fixed generally applicable defects: injected DNS resolvers no longer share the process-global system-resolver cache; cached results are copied before return; organizational-domain fallback counts both DNS attempts; IP literals are rejected as input domains; the parser requires `v=` to be the first tag; API/demo option plumbing now exposes the same explicit opt-in; safety validation no longer claims BIMI SVG profile conformance; and benchmark configs record both dirty-worktree state and a reproducible worktree snapshot digest.
+The audit also found and fixed generally applicable defects: injected DNS resolvers no longer share the process-global system-resolver cache; cached results are copied before return; organizational-domain fallback counts both DNS attempts; IP literals abstain safely at runtime; the parser requires `v=` to be the first tag; API/demo option plumbing now exposes the same explicit opt-in; safety validation no longer claims BIMI SVG profile conformance; and benchmark configs record both dirty-worktree state and a reproducible worktree snapshot digest.
+
+An independent Claude Opus 5 review then traced the full ranking and retrieval paths. It found that the first shape iteration failed open for intrinsically wide SVG canvases or unmeasurable artwork, that favicon deferral could accidentally enable an unrelated Jina screenshot, that transient DNS failures were cached for 15 minutes, and that HTTP request metrics included DNS lookups. The generally applicable fixes now require a measured, square canvas and non-wide measured artwork for BIMI canonical-icon admission; run the Jina path only after both BIMI and the normal cached favicon abstain; avoid caching resolver errors/timeouts; apply the inert-SVG check before claiming SVG safety for every source; record Jina availability in future benchmark configs; and report DNS separately from HTTP requests. The review also showed that Besticon ordering had no evidence because it was disabled in every frozen run, so its existing position was restored rather than promoted on provenance alone.
 
 ## Reproduction
 
 ```sh
 npm ci
-node --test test/bimi.test.mjs test/extractor.test.mjs test/benchmark.test.mjs
+node --test test/bimi.test.mjs test/bimi-ordering-audit.test.mjs \
+  test/demo-security.test.mjs test/extractor.test.mjs test/benchmark.test.mjs
 
 node scripts/experiments/bimi-prevalence.mjs \
   --split development \
@@ -81,4 +84,7 @@ Compact machine metrics and fingerprint-bound judgments are in `reports/bimi-fal
 - No license or trademark permission follows from DNS control or an unvalidated evidence pointer.
 - DNS promises cannot be cancelled after the caller's timeout; the extractor stops awaiting them, but the underlying resolver may finish later.
 - Registrable-domain fallback requires an explicitly supplied organizational domain because the project has no public-suffix-list dependency.
+- No shipped CLI/API option currently supplies an organizational domain; that fallback is available only to direct library callers.
+- The frozen runs had Besticon disabled and did not record Jina availability. The measured 22-DNS/7-HTTP cost describes the BIMI stage, not an untested Besticon configuration; future configs now record Jina state.
+- The sanitized audit deterministically recomputes metrics from fingerprint-bound reviewed pairs, but the ignored raw live runs remain the source for asserting that the four-pair change set was exhaustive.
 - Live DNS and assets can change after this dated experiment. The frozen hashes identify inputs and reviewed bytes, not future network state.

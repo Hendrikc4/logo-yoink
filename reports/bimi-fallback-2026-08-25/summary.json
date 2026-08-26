@@ -19,7 +19,7 @@
     "development": { "reachable_domains": 133, "bimi_attempts": 18, "domains_with_bimi": 5, "retrievable_valid_safe_svgs": 5, "admitted_icons": 3, "correct_admissions": 3, "strict_precision": 1, "wrong_brand_admissions": 0, "incremental_correct_selections": 0, "duplicate_candidate_bytes": 0, "dns_requests": 18, "http_requests": 5, "downloaded_bytes": 8177, "latency_ms": { "p50": 68, "p95": 414 } },
     "validation": { "reachable_domains": 46, "bimi_attempts": 4, "domains_with_bimi": 1, "retrievable_valid_safe_svgs": 1, "admitted_icons": 1, "correct_admissions": 1, "strict_precision": 1, "wrong_brand_admissions": 0, "incremental_correct_selections": 0, "duplicate_candidate_bytes": 0, "dns_requests": 4, "http_requests": 2, "downloaded_bytes": 912, "latency_ms": { "p50": 22, "p95": 99 } }
   },
-  "iteration": { "trigger": "Correct-brand wide lockups padded onto square canvases were icon-role false admissions.", "frozen_rule": "Measure nontransparent content and withhold BIMI from canonical icon fallback when content ratio is at least 1.8.", "company_specific_exceptions": 0 },
+  "iteration": { "trigger": "Correct-brand wide lockups padded onto square canvases were icon-role false admissions.", "frozen_rule": "Require a measured square canvas and non-wide measured artwork for BIMI canonical-icon admission.", "company_specific_exceptions": 0 },
   "controls_after_rule_freeze": {
     "apple.com": "accepted",
     "google.com": "not_found",
@@ -27,23 +27,67 @@
     "pepsi.com": "not_found"
   },
   "ordering_audit": {
+    "schema_version": 1,
+    "experiment": "bimi-before-third-party-cache-ordering",
+    "third_party_cache_configuration": {
+      "besticon_enabled": false,
+      "google_favicon_enabled": true,
+      "duckduckgo_favicon_enabled": true
+    },
     "changed_selections": 4,
-    "correct_role_coverage": { "control": 4, "bimi_before_cache": 4, "delta": 0 },
+    "correct_role_coverage": {
+      "control": 4,
+      "bimi_before_cache": 4,
+      "delta": 0
+    },
     "wrong_brand_selections": 0,
-    "domain_controlled_selections": { "control": 0, "bimi_before_cache": 4 },
-    "vector_selections": { "control": 0, "bimi_before_cache": 4 },
-    "tiny_suitability": { "control_mean": 97.825, "bimi_mean": 96.65, "mean_delta": -1.175, "improved": 1, "unchanged": 1, "worsened": 2 },
-    "gated_cost": { "domains_attempted": 22, "dns_requests": 22, "http_requests": 7, "downloaded_bytes": 9089, "latency_ms": { "mean": 101.6, "p50": 58, "p95": 203, "max": 414 } },
+    "provenance": {
+      "control_domain_controlled": 0,
+      "bimi_domain_controlled": 4,
+      "certificate_validated": 0
+    },
+    "delivery": {
+      "control_vectors": 0,
+      "bimi_vectors": 4,
+      "control_min_edge_px": 32,
+      "bimi_min_intrinsic_edge": 100
+    },
+    "tiny_suitability": {
+      "control_mean": 97.825,
+      "bimi_mean": 96.65,
+      "mean_delta": -1.175,
+      "improved": 1,
+      "unchanged": 1,
+      "worsened": 2
+    },
+    "gated_cost": {
+      "domains_attempted": 22,
+      "dns_requests": 22,
+      "http_requests": 7,
+      "downloaded_bytes": 9089,
+      "latency_ms": {
+        "mean": 101.6,
+        "p50": 58,
+        "p95": 203,
+        "max": 414
+      }
+    },
     "conclusion": "provenance_and_scalability_gain_without_correct_role_coverage_gain"
   },
   "follow_up_fixes": [
     "isolate injectable resolver caches and copy cached values",
     "count organizational-domain DNS fallback attempts",
     "require the BIMI version tag first and reject IP-literal domains",
-    "defer every configured third-party favicon cache until after BIMI",
+    "place BIMI before the measured Google and DuckDuckGo caches without changing optional Besticon ordering",
     "expose explicit BIMI opt-in in public-demo API configuration",
     "distinguish SVG safety validation from unperformed BIMI profile conformance",
-    "fingerprint dirty benchmark worktrees"
+    "fingerprint dirty benchmark worktrees",
+    "fail closed on wide-canvas or unmeasurable BIMI artwork",
+    "avoid BIMI-only Jina screenshot side effects",
+    "do not cache transient DNS failures",
+    "apply inert-SVG validation before claiming safety for every source",
+    "separate DNS lookups from HTTP request metrics and record Jina benchmark state",
+    "validate ordering evidence numerics and cross-check duplicated summaries"
   ],
   "certificate_validation": "not_performed",
   "trademark_or_license_verified": false
