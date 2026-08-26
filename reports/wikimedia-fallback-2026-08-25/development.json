@@ -1,0 +1,480 @@
+{
+  "schema_version": 1,
+  "split": "development",
+  "frozen_inputs": {
+    "split_file": "/Users/hendrik/.codex/worktrees/175b/logo-yoink/benchmarks/major-brands-300-v1/splits/development.jsonl",
+    "split_sha256": "6750e75ba64306dbf7784661c5c317bb2635b6a6149790b377dfe3d1b9abe720",
+    "control_results": "/Users/hendrik/.codex/worktrees/175b/logo-yoink/runs/wikimedia-fallback-2026-08-25/control-development/results.jsonl",
+    "control_sha256": "115fa17ab4b16c43a9aff88aded2c8cfe0f203805afdfb4acb6929a7ab570607",
+    "treatment_results": "/Users/hendrik/.codex/worktrees/175b/logo-yoink/runs/wikimedia-fallback-2026-08-25/treatment-development-v2/results.jsonl",
+    "treatment_sha256": "8fda64e4574068066b74bcbdd5c8014ae8d787bc523e31911799fa711d9fe499",
+    "delta_reviews": "/Users/hendrik/.codex/worktrees/175b/logo-yoink/reports/wikimedia-fallback-2026-08-25/delta-reviews.jsonl",
+    "delta_reviews_sha256": "206f232b433ff394f9c1dfee594fd2fc8c9566a13ba8348848d544198f047d2c"
+  },
+  "incremental_selections": {
+    "total": 21,
+    "correct": 21,
+    "icon_correct": 0,
+    "wide_correct": 21,
+    "strict_precision": 1,
+    "wrong_brand": 0,
+    "related_brand": 0,
+    "first_party_displacements": 0,
+    "selections": [
+      {
+        "entity_id": "80000029-0000-5000-8000-000000000029",
+        "name": "Block",
+        "website": "block.xyz",
+        "role": "wide",
+        "candidate_id": "1785416bd5ed21e9",
+        "commons_filename": "Block-lockup black.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000029-0000-5000-8000-000000000029",
+          "name": "Block",
+          "role": "wide",
+          "candidate_id": "1785416bd5ed21e9",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000088-0000-5000-8000-000000000088",
+        "name": "Heineken",
+        "website": "heineken.com",
+        "role": "wide",
+        "candidate_id": "15cfcc7d4ca0d29e",
+        "commons_filename": "Heineken logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000088-0000-5000-8000-000000000088",
+          "name": "Heineken",
+          "role": "wide",
+          "candidate_id": "15cfcc7d4ca0d29e",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000113-0000-5000-8000-000000000113",
+        "name": "General Motors",
+        "website": "gm.com",
+        "role": "wide",
+        "candidate_id": "3321fc0f7700ddb5",
+        "commons_filename": "General motors logo with wordmark.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000113-0000-5000-8000-000000000113",
+          "name": "General Motors",
+          "role": "wide",
+          "candidate_id": "3321fc0f7700ddb5",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000295-0000-5000-8000-000000000295",
+        "name": "Playmobil",
+        "website": "playmobil.com",
+        "role": "wide",
+        "candidate_id": "477ad43cac37b864",
+        "commons_filename": "Playmobil logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000295-0000-5000-8000-000000000295",
+          "name": "Playmobil",
+          "role": "wide",
+          "candidate_id": "477ad43cac37b864",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000252-0000-5000-8000-000000000252",
+        "name": "Khan Academy",
+        "website": "khanacademy.org",
+        "role": "wide",
+        "candidate_id": "8274b8ffbc049685",
+        "commons_filename": "Khan Academy logo (2018).svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000252-0000-5000-8000-000000000252",
+          "name": "Khan Academy",
+          "role": "wide",
+          "candidate_id": "8274b8ffbc049685",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000268-0000-5000-8000-000000000268",
+        "name": "SAS",
+        "website": "sas.com",
+        "role": "wide",
+        "candidate_id": "082f6c791c660266",
+        "commons_filename": "Sas-logo-blue.png",
+        "review": {
+          "split": "development",
+          "entity_id": "80000268-0000-5000-8000-000000000268",
+          "name": "SAS",
+          "role": "wide",
+          "candidate_id": "082f6c791c660266",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000269-0000-5000-8000-000000000269",
+        "name": "Palantir",
+        "website": "palantir.com",
+        "role": "wide",
+        "candidate_id": "00e19bf9668d8625",
+        "commons_filename": "Palantir Technologies logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000269-0000-5000-8000-000000000269",
+          "name": "Palantir",
+          "role": "wide",
+          "candidate_id": "00e19bf9668d8625",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000169-0000-5000-8000-000000000169",
+        "name": "Thermo Fisher Scientific",
+        "website": "thermofisher.com",
+        "role": "wide",
+        "candidate_id": "a704a5879e763da7",
+        "commons_filename": "Thermo Fisher Scientific logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000169-0000-5000-8000-000000000169",
+          "name": "Thermo Fisher Scientific",
+          "role": "wide",
+          "candidate_id": "a704a5879e763da7",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000094-0000-5000-8000-000000000094",
+        "name": "Domino's",
+        "website": "dominos.com",
+        "role": "wide",
+        "candidate_id": "021805c5dbdf9d1d",
+        "commons_filename": "Domino's 2025.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000094-0000-5000-8000-000000000094",
+          "name": "Domino's",
+          "role": "wide",
+          "candidate_id": "021805c5dbdf9d1d",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000245-0000-5000-8000-000000000245",
+        "name": "United Nations",
+        "website": "un.org",
+        "role": "wide",
+        "candidate_id": "db5ac4fdd0e64123",
+        "commons_filename": "Logo of the United Nations.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000245-0000-5000-8000-000000000245",
+          "name": "United Nations",
+          "role": "wide",
+          "candidate_id": "db5ac4fdd0e64123",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000005-0000-5000-8000-000000000005",
+        "name": "Meta",
+        "website": "meta.com",
+        "role": "wide",
+        "candidate_id": "54211b5bc8ed3d9d",
+        "commons_filename": "Meta Platforms Inc. logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000005-0000-5000-8000-000000000005",
+          "name": "Meta",
+          "role": "wide",
+          "candidate_id": "54211b5bc8ed3d9d",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000282-0000-5000-8000-000000000282",
+        "name": "Temu",
+        "website": "temu.com",
+        "role": "wide",
+        "candidate_id": "eceac455a752f006",
+        "commons_filename": "Temu logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000282-0000-5000-8000-000000000282",
+          "name": "Temu",
+          "role": "wide",
+          "candidate_id": "eceac455a752f006",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000253-0000-5000-8000-000000000253",
+        "name": "Duolingo",
+        "website": "duolingo.com",
+        "role": "wide",
+        "candidate_id": "ef9b5c16f89fd32d",
+        "commons_filename": "Duolingo logo (2019).svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000253-0000-5000-8000-000000000253",
+          "name": "Duolingo",
+          "role": "wide",
+          "candidate_id": "ef9b5c16f89fd32d",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000263-0000-5000-8000-000000000263",
+        "name": "Canva",
+        "website": "canva.com",
+        "role": "wide",
+        "candidate_id": "db1b5c4fb0e7dbe2",
+        "commons_filename": "Canva logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000263-0000-5000-8000-000000000263",
+          "name": "Canva",
+          "role": "wide",
+          "candidate_id": "db1b5c4fb0e7dbe2",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000203-0000-5000-8000-000000000203",
+        "name": "Ryanair",
+        "website": "ryanair.com",
+        "role": "wide",
+        "candidate_id": "24e0dad65a5ba01b",
+        "commons_filename": "Ryanair wordmark.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000203-0000-5000-8000-000000000203",
+          "name": "Ryanair",
+          "role": "wide",
+          "candidate_id": "24e0dad65a5ba01b",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000055-0000-5000-8000-000000000055",
+        "name": "Lowe's",
+        "website": "lowes.com",
+        "role": "wide",
+        "candidate_id": "e4b0013a65cb8672",
+        "commons_filename": "Lowes Companies Logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000055-0000-5000-8000-000000000055",
+          "name": "Lowe's",
+          "role": "wide",
+          "candidate_id": "e4b0013a65cb8672",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000182-0000-5000-8000-000000000182",
+        "name": "Vimeo",
+        "website": "vimeo.com",
+        "role": "wide",
+        "candidate_id": "a62fe5e57b6ac566",
+        "commons_filename": "Vimeo Logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000182-0000-5000-8000-000000000182",
+          "name": "Vimeo",
+          "role": "wide",
+          "candidate_id": "a62fe5e57b6ac566",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000204-0000-5000-8000-000000000204",
+        "name": "Zalando",
+        "website": "zalando.com",
+        "role": "wide",
+        "candidate_id": "94d5c8883aba17a4",
+        "commons_filename": "Zalando Logo 2024.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000204-0000-5000-8000-000000000204",
+          "name": "Zalando",
+          "role": "wide",
+          "candidate_id": "94d5c8883aba17a4",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000183-0000-5000-8000-000000000183",
+        "name": "Electronic Arts",
+        "website": "ea.com",
+        "role": "wide",
+        "candidate_id": "c05c60fcfe42e811",
+        "commons_filename": "Electronic Arts 2020.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000183-0000-5000-8000-000000000183",
+          "name": "Electronic Arts",
+          "role": "wide",
+          "candidate_id": "c05c60fcfe42e811",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000006-0000-5000-8000-000000000006",
+        "name": "Netflix",
+        "website": "netflix.com",
+        "role": "wide",
+        "candidate_id": "4aa074b4a6ac0194",
+        "commons_filename": "Netflix 2015 logo.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000006-0000-5000-8000-000000000006",
+          "name": "Netflix",
+          "role": "wide",
+          "candidate_id": "4aa074b4a6ac0194",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      },
+      {
+        "entity_id": "80000298-0000-5000-8000-000000000298",
+        "name": "UNESCO",
+        "website": "unesco.org",
+        "role": "wide",
+        "candidate_id": "4d8089756f08a7a0",
+        "commons_filename": "Logo UNESCO 2021.svg",
+        "review": {
+          "split": "development",
+          "entity_id": "80000298-0000-5000-8000-000000000298",
+          "name": "UNESCO",
+          "role": "wide",
+          "candidate_id": "4d8089756f08a7a0",
+          "identity": "correct",
+          "role_correct": true,
+          "safety_class": "correct_brand",
+          "review_basis": "visual_inspection_and_exact_domain_provenance"
+        }
+      }
+    ]
+  },
+  "fallback": {
+    "attempts": 57,
+    "status_counts": {
+      "ok": 34,
+      "not_needed": 74,
+      "not_reached": 49,
+      "no_verified_current_logo": 8,
+      "ambiguous_logo_claims": 2,
+      "ambiguous_entities": 6,
+      "no_search_candidates": 7
+    },
+    "technical_failures": 0,
+    "technical_failure_rate": 0
+  },
+  "performance": {
+    "control": {
+      "latency_ms": {
+        "mean": 2144.6,
+        "p50": 1039,
+        "p95": 13001
+      },
+      "requests": {
+        "mean": 11.9,
+        "p50": 10,
+        "p95": 20
+      },
+      "downloaded_bytes": {
+        "mean": 657394.1,
+        "p50": 467795,
+        "p95": 2048648
+      },
+      "extraction_failures": 46,
+      "extraction_failure_rate": 0.25555555555555554
+    },
+    "treatment": {
+      "latency_ms": {
+        "mean": 2497.7,
+        "p50": 1259,
+        "p95": 13001
+      },
+      "requests": {
+        "mean": 13.7,
+        "p50": 13,
+        "p95": 23
+      },
+      "downloaded_bytes": {
+        "mean": 845357.2,
+        "p50": 683578,
+        "p95": 2213254
+      },
+      "extraction_failures": 49,
+      "extraction_failure_rate": 0.2722222222222222
+    }
+  },
+  "caveat": "Control and treatment are separate live captures; reachability drift is disclosed by extraction failures. Incremental selection metrics count only selected Wikimedia candidates and never attribute unrelated first-party live drift to the fallback."
+}

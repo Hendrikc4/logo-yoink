@@ -9,7 +9,8 @@ import { measureTinyImageSuitability } from './tiny-image-suitability.mjs';
 import { mapConcurrent } from './concurrency.mjs';
 import { isPrivateIp } from './network-safety.mjs';
 import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
-import { matchesLogoPreferences, normalizeAssetPreferences } from './asset-model.mjs';
+import { matchesAssetPreferences, matchesLogoPreferences, normalizeAssetPreferences } from './asset-model.mjs';
+import { discoverWikimediaLogoCandidates, safeCommonsUrl } from './wikimedia-fallback.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
 const HOMEPAGE_FALLBACK_TIMEOUT_MS = 3_000;
@@ -410,6 +411,7 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
   try {
     const response = await fetchTimed(item.url, { timeoutMs, accept: 'image/*,*/*;q=0.6', diagnostics });
     if (!response.ok) return null;
+    if (item.source === 'wikimedia-commons' && !safeCommonsUrl(response.url, 'upload.wikimedia.org', '/wikipedia/commons/')) return null;
     const read = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs });
     let bytes = read.bytes;
     let metadata = imageMetadata(bytes, response.headers.get('content-type'));
@@ -426,7 +428,7 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     const width = metadata.width ?? item.declared?.width ?? item.discoveredWidth ?? null, height = metadata.height ?? item.declared?.height ?? item.discoveredHeight ?? null;
     const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4, scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
     const background = await imageBackground(bytes, metadata.format);
-    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { retrieved_at: new Date().toISOString(), http_status: response.status }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: response.url, retrieved_at: new Date().toISOString(), http_status: response.status }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, status = 200, contentType = '' } = {}) {
@@ -447,7 +449,7 @@ async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, sta
     const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4;
     const scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
     const background = await imageBackground(bytes, metadata.format);
-    return { ...cleanItem, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? [] }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    return { ...cleanItem, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: resolvedUrl, retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? item.provenance?.source_chain ?? [] }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 
@@ -599,6 +601,13 @@ function selectBrowserCandidates(items, budget = 8, reserve = 2, { headerRetenti
 
 export function needsRenderedWideFallback(ranked, preferences) {
   return !matchesLogoPreferences(ranked.selectedByRole.wide, preferences);
+}
+
+export function missingWikimediaRoles(ranked, preferences) {
+  return [
+    ...(!matchesAssetPreferences(ranked.selectedByRole.icon, preferences, 'icon') ? ['icon'] : []),
+    ...(!matchesLogoPreferences(ranked.selectedByRole.wide, preferences) ? ['wide'] : []),
+  ];
 }
 
 export async function extractLogos(website, options = {}) {
@@ -799,9 +808,39 @@ export async function extractLogos(website, options = {}) {
     }
   }
 
+  let wikimediaDiagnostics = { enabled: Boolean(options.wikimediaFallback), status: 'disabled' };
+  if (options.wikimediaFallback) {
+    const missingRoles = missingWikimediaRoles(ranked, preferences);
+    if (missingRoles.length) {
+      const resolver = options.wikimediaResolver ?? discoverWikimediaLogoCandidates;
+      const discovered = await resolver({ domain: normalized.domain, missingRoles }, {
+        timeoutMs: Math.min(timeoutMs, options.wikimediaTimeoutMs ?? 5_000),
+        diagnostics: network,
+        fetchImpl: options.wikimediaFetch,
+        validateUrl: options.wikimediaValidateUrl,
+        cache: options.wikimediaCache,
+        now: options.wikimediaNow,
+      });
+      wikimediaDiagnostics = { enabled: true, ...discovered.diagnostics, requestedRoles: missingRoles };
+      const additions = (await mapConcurrent((discovered.candidates ?? []).slice(0, 2), 2,
+        item => validateCandidate(item, Math.min(timeoutMs, options.wikimediaTimeoutMs ?? 5_000), network, maxImageBytes))).filter(Boolean);
+      if (additions.length) {
+        const before = Object.fromEntries(['icon', 'wide'].map(role => [role, ranked.selectedByRole[role]]));
+        validated = dedupeBytes([...validated, ...additions]);
+        await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
+        await attachTinySuitability(validated);
+        const treatment = rankValidated();
+        const displaced = ['icon', 'wide'].filter(role => !missingRoles.includes(role) &&
+          (treatment.selectedByRole[role]?.observed?.byte_hash ?? null) !== (before[role]?.observed?.byte_hash ?? null));
+        if (!displaced.length) ranked = treatment;
+        wikimediaDiagnostics = { ...wikimediaDiagnostics, validated: additions.length, admitted: displaced.length ? 0 : additions.length, displacedRoles: displaced };
+      }
+    } else wikimediaDiagnostics = { enabled: true, status: 'not_needed', requestedRoles: [] };
+  }
+
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
-  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, wikimedia: wikimediaDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.
@@ -809,6 +848,7 @@ export const internals = {
   imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
   selectRoleAware, measureContentBox, attachContentBoxes, attachTinySuitability, dedupeBytes,
   fromBrowserCandidate, browserCandidateDisposition, selectBrowserCandidates, needsRenderedWideFallback, discoveryPriority, validateCandidate, validateCandidateBytes, isRenderableSvg, imageBackground, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
+  missingWikimediaRoles,
   homepageAttemptPlan, homepageFailureKind, aggregateHomepageFailure,
   applyBlockedRecoverySafety,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,

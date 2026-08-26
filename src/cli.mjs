@@ -21,13 +21,14 @@ const background = option('--background') ?? 'any';
 const requestedRole = option('--role');
 const deepWide = args.includes('--deep-wide');
 const spaBundles = args.includes('--spa-bundles');
+const wikimediaFallback = args.includes('--wikimedia-fallback');
 
 if (!website || downloadIndex >= 0 && !downloadDirectory ||
     ['--theme', '--background', '--role'].some(name => args.includes(name) && (!option(name) || option(name).startsWith('--'))) ||
     !['any', 'light', 'dark'].includes(theme) ||
     !['any', 'transparent', 'opaque'].includes(background) ||
     requestedRole && !['icon', 'logo', 'wide', 'favicon'].includes(requestedRole)) {
-  console.error('Usage: npm run cli -- <website> [--theme any|light|dark] [--background any|transparent|opaque] [--role icon|logo] [--download <directory>] [--deep-wide] [--spa-bundles]');
+  console.error('Usage: npm run cli -- <website> [--theme any|light|dark] [--background any|transparent|opaque] [--role icon|logo] [--download <directory>] [--deep-wide] [--spa-bundles] [--wikimedia-fallback]');
   process.exit(1);
 }
 
@@ -39,6 +40,7 @@ try {
     contentBoundingWide: true,
     deepWide,
     spaBundles,
+    wikimediaFallback,
     preferences: { logo: { theme, background } },
   });
   const downloadSelection = requestedRole === 'logo' || requestedRole === 'wide'

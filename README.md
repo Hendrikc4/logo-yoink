@@ -87,7 +87,14 @@ See the ranked results as JSON:
 
 ```bash
 npm run cli -- stripe.com
+npm run cli -- stripe.com --wikimedia-fallback
 ```
+
+`--wikimedia-fallback` is an experimental, opt-in missing-role fallback. It
+requires exact registrable-domain agreement with an active Wikidata official
+website statement before validating a current Commons logo through the normal
+network/image/SVG safety pipeline. It may abstain, and Commons license metadata
+does not waive trademark restrictions.
 
 Prefer a white/light logo for a dark surface and a transparent file:
 
