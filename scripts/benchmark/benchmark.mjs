@@ -357,7 +357,13 @@ function legacyIdentityWrong(label) {
 }
 
 function safetyClass(label) {
-  return label?.safety_class ?? label?.error_kind ?? null;
+  const explicit = label?.safety_class ?? label?.error_kind ?? null;
+  if (explicit !== null && explicit !== undefined && explicit !== '') return explicit;
+  // Legacy reviewed labels predate safety_class but already distinguish an
+  // ambiguous identity from an unreviewed negative. Preserve that information
+  // as unjudgeable instead of making an otherwise complete frozen review fail.
+  if (String(label?.identity ?? '').toLowerCase() === 'ambiguous') return 'unjudgeable';
+  return null;
 }
 
 function wrongBrandSafety(label) {

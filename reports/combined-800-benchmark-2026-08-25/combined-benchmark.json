@@ -1,0 +1,2286 @@
+{
+  "schema_version": "logo-yoink-combined-benchmark-v1",
+  "generated_at": "2026-08-26T01:31:17.797Z",
+  "methodology": {
+    "current_runtime_ranking_version": 7,
+    "canonical_roles": [
+      "icon",
+      "wide"
+    ],
+    "population": "All assigned entities are retained; quality denominators use reachable entities under the canonical scorer.",
+    "aggregation": "Raw result and label rows are unioned, then scored once. Cohort scores are diagnostics, not inputs to an averaged score.",
+    "holdout_policy": "Split assignments are frozen inputs. This command reports evaluation labels but exposes no tuning mechanism.",
+    "qualification": "The report qualifies only the exact hashed cohort snapshots supplied to it. It does not imply that both snapshots used the current runtime ranking version."
+  },
+  "artifacts": {
+    "original-500": {
+      "run": {
+        "path": "/Users/hendrik/Documents/logo-yoink/runs/review-final-all-500/results.jsonl",
+        "sha256": "bb3553967088c93c59cfbdf3fd83ebaa44c728fa425311d81352558be7eb66a2"
+      },
+      "labels": {
+        "path": "labels/review-500-final-2026-08-22.jsonl",
+        "sha256": "98db71a9d92c1e4b3ae67163b5e08fc01c561bdc1ff18f92c0df7fff3fec21d5"
+      },
+      "assignments": {
+        "path": "benchmarks/visual-benchmark-v1-500/entities.jsonl",
+        "sha256": "aecca251a7862d64dec7ec3f668cba7e98450ea707e842515202d7e48cfb7ddc"
+      }
+    },
+    "major-brands-300": {
+      "run": {
+        "path": "/Users/hendrik/Documents/logo-yoink/runs/major-brands-embedded-logo-fix/all/results.jsonl",
+        "sha256": "e6f7881ada1d37de9936eaca0c9075c71bc227c2fb2181ab8ef37bd2555ab6aa"
+      },
+      "labels": {
+        "path": "/Users/hendrik/Documents/logo-yoink/runs/major-brands-embedded-logo-fix/all/scoring.jsonl",
+        "sha256": "a0d0869caa1af4df00d5afab0254d90012e90b847461eb4870895610bbd3c6ce"
+      },
+      "assignments": {
+        "path": "benchmarks/major-brands-300-v1/entities.jsonl",
+        "sha256": "c55ab8c0a75ec84a7850e78401a6851c0b0a6dda3f391cc093fe4471d0e999c0"
+      }
+    }
+  },
+  "combined": {
+    "schema_version": 2,
+    "generated_at": "2026-08-26T01:31:17.767Z",
+    "cohort": "all-800",
+    "domains": {
+      "total": 800,
+      "reachable": 650,
+      "successful_extractions": 650
+    },
+    "reachability_taxonomy": {
+      "parked_for_sale": 3,
+      "live_html": 603,
+      "redirected_off_domain": 47,
+      "dns_tls_failure": 37,
+      "unknown_failure": 52,
+      "blocked_interstitial": 58
+    },
+    "roles": {
+      "icon": {
+        "domains": 558,
+        "candidates": 1908,
+        "all_domain_rate_pct": 69.75,
+        "reachable_domain_rate_pct": 85.85
+      },
+      "wide": {
+        "domains": 383,
+        "candidates": 982,
+        "all_domain_rate_pct": 47.88,
+        "reachable_domain_rate_pct": 58.92
+      }
+    },
+    "legacy_roles": {
+      "favicon": {
+        "domains": 543,
+        "candidates": 1559,
+        "all_domain_rate_pct": 67.88,
+        "compatibility_only": true
+      }
+    },
+    "any_candidate": {
+      "domains": 625,
+      "all_domain_rate_pct": 78.13
+    },
+    "automatedProxyScore": {
+      "value": 58.8,
+      "max": 100,
+      "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+      "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+    },
+    "historical_comparison_proxy": {
+      "valid_selected": {
+        "numerator": 611,
+        "denominator": 800,
+        "rate_pct": 76.38
+      },
+      "square_and_high_resolution_selected": {
+        "numerator": 464,
+        "denominator": 800,
+        "rate_pct": 58,
+        "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+      }
+    },
+    "performance": {
+      "duration_ms": {
+        "available": 800,
+        "total": 1952179,
+        "mean": 2440.2,
+        "p50": 1180,
+        "p95": 7069
+      },
+      "requests": {
+        "available": 650,
+        "total": 9573,
+        "mean": 14.7,
+        "p50": 17,
+        "p95": 20
+      },
+      "downloaded_bytes": {
+        "available": 650,
+        "total": 836528387,
+        "mean": 1286966.7,
+        "p50": 691720,
+        "p95": 4880162
+      },
+      "browser_invocations": 0
+    },
+    "benchmarkScore": {
+      "value": 70.67,
+      "max": 100,
+      "status": "complete",
+      "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+      "points": {
+        "coverage": 20.95,
+        "top1_correctness": 19.89,
+        "visual_usability": 11.89,
+        "safety": 9.54,
+        "efficiency": 8.39
+      },
+      "role_components": {
+        "icon": {
+          "denominator": 650,
+          "coverage": {
+            "numerator": 538,
+            "rate": 0.8276923076923077
+          },
+          "top1_correctness": {
+            "numerator": 513,
+            "rate": 0.7892307692307692
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 490.25,
+            "rate": 0.7542307692307693
+          }
+        },
+        "wide": {
+          "denominator": 650,
+          "coverage": {
+            "numerator": 370,
+            "rate": 0.5692307692307692
+          },
+          "top1_correctness": {
+            "numerator": 349,
+            "rate": 0.536923076923077
+          },
+          "top1_visual_usability": {
+            "weighted_numerator": 282.75,
+            "rate": 0.435
+          }
+        }
+      },
+      "safety": {
+        "complete": true,
+        "wrong_brand_domains": 3,
+        "denominator": 650,
+        "wrong_brand_rate": 0.004615384615384616,
+        "selected_classifications": {
+          "legacy_correct": 576,
+          "unjudgeable": 14,
+          "correct_brand": 313,
+          "wrong_brand": 3,
+          "related_brand": 14,
+          "not_logo": 32
+        },
+        "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+      },
+      "efficiency": {
+        "rate": 0.8388419897546897,
+        "available_inputs": 3,
+        "inputs": {
+          "p95_latency_ms": {
+            "value": 7069,
+            "fraction": 0.8620666666666666,
+            "threshold": {
+              "full_points_at_or_below": 5000,
+              "zero_points_at_or_above": 20000
+            }
+          },
+          "mean_requests_per_domain": {
+            "value": 14.7,
+            "fraction": 0.6954545454545454,
+            "threshold": {
+              "full_points_at_or_below": 8,
+              "zero_points_at_or_above": 30
+            }
+          },
+          "mean_downloaded_bytes_per_domain": {
+            "value": 1286966.7,
+            "fraction": 0.9590047571428572,
+            "threshold": {
+              "full_points_at_or_below": 1000000,
+              "zero_points_at_or_above": 8000000
+            }
+          }
+        },
+        "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+      },
+      "labels": {
+        "records": 3684,
+        "role_labels": 2148,
+        "selected_roles": 952,
+        "selected_roles_labeled": 952,
+        "role_complete": true,
+        "safety_complete": true,
+        "complete": true
+      }
+    }
+  },
+  "cohorts": {
+    "original-500": {
+      "schema_version": 2,
+      "generated_at": "2026-08-26T01:31:17.752Z",
+      "cohort": "original-500",
+      "domains": {
+        "total": 500,
+        "reachable": 423,
+        "successful_extractions": 423
+      },
+      "reachability_taxonomy": {
+        "parked_for_sale": 3,
+        "live_html": 386,
+        "redirected_off_domain": 37,
+        "dns_tls_failure": 36,
+        "unknown_failure": 28,
+        "blocked_interstitial": 10
+      },
+      "roles": {
+        "icon": {
+          "domains": 349,
+          "candidates": 1037,
+          "all_domain_rate_pct": 69.8,
+          "reachable_domain_rate_pct": 82.51
+        },
+        "wide": {
+          "domains": 237,
+          "candidates": 558,
+          "all_domain_rate_pct": 47.4,
+          "reachable_domain_rate_pct": 56.03
+        }
+      },
+      "legacy_roles": {
+        "favicon": {
+          "domains": 343,
+          "candidates": 857,
+          "all_domain_rate_pct": 68.6,
+          "compatibility_only": true
+        }
+      },
+      "any_candidate": {
+        "domains": 398,
+        "all_domain_rate_pct": 79.6
+      },
+      "automatedProxyScore": {
+        "value": 58.6,
+        "max": 100,
+        "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+        "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+      },
+      "historical_comparison_proxy": {
+        "valid_selected": {
+          "numerator": 387,
+          "denominator": 500,
+          "rate_pct": 77.4
+        },
+        "square_and_high_resolution_selected": {
+          "numerator": 302,
+          "denominator": 500,
+          "rate_pct": 60.4,
+          "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+        }
+      },
+      "performance": {
+        "duration_ms": {
+          "available": 500,
+          "total": 946233,
+          "mean": 1892.5,
+          "p50": 1236,
+          "p95": 4502
+        },
+        "requests": {
+          "available": 423,
+          "total": 5859,
+          "mean": 13.9,
+          "p50": 17,
+          "p95": 19
+        },
+        "downloaded_bytes": {
+          "available": 423,
+          "total": 507833072,
+          "mean": 1200551,
+          "p50": 629261,
+          "p95": 4769881
+        },
+        "browser_invocations": 0
+      },
+      "benchmarkScore": {
+        "value": 71.97,
+        "max": 100,
+        "status": "complete",
+        "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+        "points": {
+          "coverage": 20.43,
+          "top1_correctness": 20.43,
+          "visual_usability": 12.1,
+          "safety": 10,
+          "efficiency": 9.01
+        },
+        "role_components": {
+          "icon": {
+            "denominator": 423,
+            "coverage": {
+              "numerator": 343,
+              "rate": 0.8108747044917257
+            },
+            "top1_correctness": {
+              "numerator": 343,
+              "rate": 0.8108747044917257
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 324.25,
+              "rate": 0.766548463356974
+            }
+          },
+          "wide": {
+            "denominator": 423,
+            "coverage": {
+              "numerator": 233,
+              "rate": 0.5508274231678487
+            },
+            "top1_correctness": {
+              "numerator": 233,
+              "rate": 0.5508274231678487
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 187.75,
+              "rate": 0.4438534278959811
+            }
+          }
+        },
+        "safety": {
+          "complete": true,
+          "wrong_brand_domains": 0,
+          "denominator": 423,
+          "wrong_brand_rate": 0,
+          "selected_classifications": {
+            "legacy_correct": 576,
+            "unjudgeable": 10
+          },
+          "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+        },
+        "efficiency": {
+          "rate": 0.901056012987013,
+          "available_inputs": 3,
+          "inputs": {
+            "p95_latency_ms": {
+              "value": 4502,
+              "fraction": 1,
+              "threshold": {
+                "full_points_at_or_below": 5000,
+                "zero_points_at_or_above": 20000
+              }
+            },
+            "mean_requests_per_domain": {
+              "value": 13.9,
+              "fraction": 0.7318181818181819,
+              "threshold": {
+                "full_points_at_or_below": 8,
+                "zero_points_at_or_above": 30
+              }
+            },
+            "mean_downloaded_bytes_per_domain": {
+              "value": 1200551,
+              "fraction": 0.9713498571428572,
+              "threshold": {
+                "full_points_at_or_below": 1000000,
+                "zero_points_at_or_above": 8000000
+              }
+            }
+          },
+          "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+        },
+        "labels": {
+          "records": 586,
+          "role_labels": 586,
+          "selected_roles": 586,
+          "selected_roles_labeled": 586,
+          "role_complete": true,
+          "safety_complete": true,
+          "complete": true
+        }
+      }
+    },
+    "major-brands-300": {
+      "schema_version": 2,
+      "generated_at": "2026-08-26T01:31:17.760Z",
+      "cohort": "major-brands-300",
+      "domains": {
+        "total": 300,
+        "reachable": 227,
+        "successful_extractions": 227
+      },
+      "reachability_taxonomy": {
+        "live_html": 217,
+        "blocked_interstitial": 48,
+        "unknown_failure": 24,
+        "redirected_off_domain": 10,
+        "dns_tls_failure": 1
+      },
+      "roles": {
+        "icon": {
+          "domains": 209,
+          "candidates": 871,
+          "all_domain_rate_pct": 69.67,
+          "reachable_domain_rate_pct": 92.07
+        },
+        "wide": {
+          "domains": 146,
+          "candidates": 424,
+          "all_domain_rate_pct": 48.67,
+          "reachable_domain_rate_pct": 64.32
+        }
+      },
+      "legacy_roles": {
+        "favicon": {
+          "domains": 200,
+          "candidates": 702,
+          "all_domain_rate_pct": 66.67,
+          "compatibility_only": true
+        }
+      },
+      "any_candidate": {
+        "domains": 227,
+        "all_domain_rate_pct": 75.67
+      },
+      "automatedProxyScore": {
+        "value": 59.2,
+        "max": 100,
+        "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+        "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+      },
+      "historical_comparison_proxy": {
+        "valid_selected": {
+          "numerator": 224,
+          "denominator": 300,
+          "rate_pct": 74.67
+        },
+        "square_and_high_resolution_selected": {
+          "numerator": 162,
+          "denominator": 300,
+          "rate_pct": 54,
+          "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+        }
+      },
+      "performance": {
+        "duration_ms": {
+          "available": 300,
+          "total": 1005946,
+          "mean": 3353.2,
+          "p50": 1078,
+          "p95": 30003
+        },
+        "requests": {
+          "available": 227,
+          "total": 3714,
+          "mean": 16.4,
+          "p50": 18,
+          "p95": 21
+        },
+        "downloaded_bytes": {
+          "available": 227,
+          "total": 328695315,
+          "mean": 1447997,
+          "p50": 801159,
+          "p95": 5067339
+        },
+        "browser_invocations": 0
+      },
+      "benchmarkScore": {
+        "value": 66.19,
+        "max": 100,
+        "status": "complete",
+        "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+        "points": {
+          "coverage": 21.94,
+          "top1_correctness": 18.9,
+          "visual_usability": 11.5,
+          "safety": 8.68,
+          "efficiency": 5.18
+        },
+        "role_components": {
+          "icon": {
+            "denominator": 227,
+            "coverage": {
+              "numerator": 195,
+              "rate": 0.8590308370044053
+            },
+            "top1_correctness": {
+              "numerator": 170,
+              "rate": 0.748898678414097
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 166,
+              "rate": 0.7312775330396476
+            }
+          },
+          "wide": {
+            "denominator": 227,
+            "coverage": {
+              "numerator": 137,
+              "rate": 0.6035242290748899
+            },
+            "top1_correctness": {
+              "numerator": 116,
+              "rate": 0.5110132158590308
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 95,
+              "rate": 0.4185022026431718
+            }
+          }
+        },
+        "safety": {
+          "complete": true,
+          "wrong_brand_domains": 3,
+          "denominator": 227,
+          "wrong_brand_rate": 0.013215859030837005,
+          "selected_classifications": {
+            "correct_brand": 313,
+            "wrong_brand": 3,
+            "related_brand": 14,
+            "unjudgeable": 4,
+            "not_logo": 32
+          },
+          "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+        },
+        "efficiency": {
+          "rate": 0.518060748917749,
+          "available_inputs": 3,
+          "inputs": {
+            "p95_latency_ms": {
+              "value": 30003,
+              "fraction": 0,
+              "threshold": {
+                "full_points_at_or_below": 5000,
+                "zero_points_at_or_above": 20000
+              }
+            },
+            "mean_requests_per_domain": {
+              "value": 16.4,
+              "fraction": 0.6181818181818183,
+              "threshold": {
+                "full_points_at_or_below": 8,
+                "zero_points_at_or_above": 30
+              }
+            },
+            "mean_downloaded_bytes_per_domain": {
+              "value": 1447997,
+              "fraction": 0.9360004285714286,
+              "threshold": {
+                "full_points_at_or_below": 1000000,
+                "zero_points_at_or_above": 8000000
+              }
+            }
+          },
+          "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+        },
+        "labels": {
+          "records": 3098,
+          "role_labels": 1562,
+          "selected_roles": 366,
+          "selected_roles_labeled": 366,
+          "role_complete": true,
+          "safety_complete": true,
+          "complete": true
+        }
+      }
+    }
+  },
+  "splits": {
+    "development": {
+      "schema_version": 2,
+      "generated_at": "2026-08-26T01:31:17.790Z",
+      "cohort": "all-800",
+      "benchmark_split": "development",
+      "domains": {
+        "total": 480,
+        "reachable": 385,
+        "successful_extractions": 385
+      },
+      "reachability_taxonomy": {
+        "parked_for_sale": 2,
+        "live_html": 358,
+        "redirected_off_domain": 27,
+        "unknown_failure": 25,
+        "dns_tls_failure": 26,
+        "blocked_interstitial": 42
+      },
+      "roles": {
+        "icon": {
+          "domains": 333,
+          "candidates": 1127,
+          "all_domain_rate_pct": 69.38,
+          "reachable_domain_rate_pct": 86.49
+        },
+        "wide": {
+          "domains": 228,
+          "candidates": 569,
+          "all_domain_rate_pct": 47.5,
+          "reachable_domain_rate_pct": 59.22
+        }
+      },
+      "legacy_roles": {
+        "favicon": {
+          "domains": 320,
+          "candidates": 916,
+          "all_domain_rate_pct": 66.67,
+          "compatibility_only": true
+        }
+      },
+      "any_candidate": {
+        "domains": 372,
+        "all_domain_rate_pct": 77.5
+      },
+      "automatedProxyScore": {
+        "value": 58.4,
+        "max": 100,
+        "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+        "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+      },
+      "historical_comparison_proxy": {
+        "valid_selected": {
+          "numerator": 362,
+          "denominator": 480,
+          "rate_pct": 75.42
+        },
+        "square_and_high_resolution_selected": {
+          "numerator": 275,
+          "denominator": 480,
+          "rate_pct": 57.29,
+          "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+        }
+      },
+      "performance": {
+        "duration_ms": {
+          "available": 480,
+          "total": 1097365,
+          "mean": 2286.2,
+          "p50": 1154,
+          "p95": 7046
+        },
+        "requests": {
+          "available": 385,
+          "total": 5608,
+          "mean": 14.6,
+          "p50": 17,
+          "p95": 20
+        },
+        "downloaded_bytes": {
+          "available": 385,
+          "total": 505698738,
+          "mean": 1313503.2,
+          "p50": 709263,
+          "p95": 4880162
+        },
+        "browser_invocations": 0
+      },
+      "benchmarkScore": {
+        "value": 70.9,
+        "max": 100,
+        "status": "complete",
+        "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+        "points": {
+          "coverage": 21.12,
+          "top1_correctness": 20.14,
+          "visual_usability": 12.02,
+          "safety": 9.22,
+          "efficiency": 8.4
+        },
+        "role_components": {
+          "icon": {
+            "denominator": 385,
+            "coverage": {
+              "numerator": 320,
+              "rate": 0.8311688311688312
+            },
+            "top1_correctness": {
+              "numerator": 306,
+              "rate": 0.7948051948051948
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 290.75,
+              "rate": 0.7551948051948052
+            }
+          },
+          "wide": {
+            "denominator": 385,
+            "coverage": {
+              "numerator": 222,
+              "rate": 0.5766233766233766
+            },
+            "top1_correctness": {
+              "numerator": 211,
+              "rate": 0.548051948051948
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 172,
+              "rate": 0.44675324675324674
+            }
+          }
+        },
+        "safety": {
+          "complete": true,
+          "wrong_brand_domains": 3,
+          "denominator": 385,
+          "wrong_brand_rate": 0.007792207792207792,
+          "selected_classifications": {
+            "legacy_correct": 355,
+            "unjudgeable": 6,
+            "correct_brand": 177,
+            "wrong_brand": 3,
+            "related_brand": 6,
+            "not_logo": 19
+          },
+          "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+        },
+        "efficiency": {
+          "rate": 0.8396046095238096,
+          "available_inputs": 3,
+          "inputs": {
+            "p95_latency_ms": {
+              "value": 7046,
+              "fraction": 0.8636,
+              "threshold": {
+                "full_points_at_or_below": 5000,
+                "zero_points_at_or_above": 20000
+              }
+            },
+            "mean_requests_per_domain": {
+              "value": 14.6,
+              "fraction": 0.7000000000000001,
+              "threshold": {
+                "full_points_at_or_below": 8,
+                "zero_points_at_or_above": 30
+              }
+            },
+            "mean_downloaded_bytes_per_domain": {
+              "value": 1313503.2,
+              "fraction": 0.9552138285714286,
+              "threshold": {
+                "full_points_at_or_below": 1000000,
+                "zero_points_at_or_above": 8000000
+              }
+            }
+          },
+          "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+        },
+        "labels": {
+          "records": 2088,
+          "role_labels": 1253,
+          "selected_roles": 566,
+          "selected_roles_labeled": 566,
+          "role_complete": true,
+          "safety_complete": true,
+          "complete": true
+        }
+      }
+    },
+    "validation": {
+      "schema_version": 2,
+      "generated_at": "2026-08-26T01:31:17.794Z",
+      "cohort": "all-800",
+      "benchmark_split": "validation",
+      "domains": {
+        "total": 160,
+        "reachable": 135,
+        "successful_extractions": 135
+      },
+      "reachability_taxonomy": {
+        "dns_tls_failure": 7,
+        "live_html": 131,
+        "unknown_failure": 11,
+        "blocked_interstitial": 7,
+        "redirected_off_domain": 4
+      },
+      "roles": {
+        "icon": {
+          "domains": 116,
+          "candidates": 374,
+          "all_domain_rate_pct": 72.5,
+          "reachable_domain_rate_pct": 85.93
+        },
+        "wide": {
+          "domains": 81,
+          "candidates": 183,
+          "all_domain_rate_pct": 50.63,
+          "reachable_domain_rate_pct": 60
+        }
+      },
+      "legacy_roles": {
+        "favicon": {
+          "domains": 117,
+          "candidates": 321,
+          "all_domain_rate_pct": 73.13,
+          "compatibility_only": true
+        }
+      },
+      "any_candidate": {
+        "domains": 127,
+        "all_domain_rate_pct": 79.38
+      },
+      "automatedProxyScore": {
+        "value": 61.6,
+        "max": 100,
+        "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+        "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+      },
+      "historical_comparison_proxy": {
+        "valid_selected": {
+          "numerator": 126,
+          "denominator": 160,
+          "rate_pct": 78.75
+        },
+        "square_and_high_resolution_selected": {
+          "numerator": 95,
+          "denominator": 160,
+          "rate_pct": 59.38,
+          "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+        }
+      },
+      "performance": {
+        "duration_ms": {
+          "available": 160,
+          "total": 459042,
+          "mean": 2869,
+          "p50": 1347,
+          "p95": 6456
+        },
+        "requests": {
+          "available": 135,
+          "total": 2031,
+          "mean": 15,
+          "p50": 17,
+          "p95": 20
+        },
+        "downloaded_bytes": {
+          "available": 135,
+          "total": 193839818,
+          "mean": 1435850.5,
+          "p50": 713460,
+          "p95": 5586358
+        },
+        "browser_invocations": 0
+      },
+      "benchmarkScore": {
+        "value": 72.26,
+        "max": 100,
+        "status": "complete",
+        "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+        "points": {
+          "coverage": 21.44,
+          "top1_correctness": 20.22,
+          "visual_usability": 12.19,
+          "safety": 10,
+          "efficiency": 8.41
+        },
+        "role_components": {
+          "icon": {
+            "denominator": 135,
+            "coverage": {
+              "numerator": 116,
+              "rate": 0.8592592592592593
+            },
+            "top1_correctness": {
+              "numerator": 110,
+              "rate": 0.8148148148148148
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 106,
+              "rate": 0.7851851851851852
+            }
+          },
+          "wide": {
+            "denominator": 135,
+            "coverage": {
+              "numerator": 77,
+              "rate": 0.5703703703703704
+            },
+            "top1_correctness": {
+              "numerator": 72,
+              "rate": 0.5333333333333333
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 58.5,
+              "rate": 0.43333333333333335
+            }
+          }
+        },
+        "safety": {
+          "complete": true,
+          "wrong_brand_domains": 0,
+          "denominator": 135,
+          "wrong_brand_rate": 0,
+          "selected_classifications": {
+            "legacy_correct": 122,
+            "unjudgeable": 6,
+            "correct_brand": 63,
+            "not_logo": 7,
+            "related_brand": 3
+          },
+          "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+        },
+        "efficiency": {
+          "rate": 0.8408290526695525,
+          "available_inputs": 3,
+          "inputs": {
+            "p95_latency_ms": {
+              "value": 6456,
+              "fraction": 0.9029333333333334,
+              "threshold": {
+                "full_points_at_or_below": 5000,
+                "zero_points_at_or_above": 20000
+              }
+            },
+            "mean_requests_per_domain": {
+              "value": 15,
+              "fraction": 0.6818181818181818,
+              "threshold": {
+                "full_points_at_or_below": 8,
+                "zero_points_at_or_above": 30
+              }
+            },
+            "mean_downloaded_bytes_per_domain": {
+              "value": 1435850.5,
+              "fraction": 0.9377356428571428,
+              "threshold": {
+                "full_points_at_or_below": 1000000,
+                "zero_points_at_or_above": 8000000
+              }
+            }
+          },
+          "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+        },
+        "labels": {
+          "records": 758,
+          "role_labels": 434,
+          "selected_roles": 201,
+          "selected_roles_labeled": 201,
+          "role_complete": true,
+          "safety_complete": true,
+          "complete": true
+        }
+      }
+    },
+    "evaluation": {
+      "schema_version": 2,
+      "generated_at": "2026-08-26T01:31:17.796Z",
+      "cohort": "all-800",
+      "benchmark_split": "evaluation",
+      "domains": {
+        "total": 160,
+        "reachable": 130,
+        "successful_extractions": 130
+      },
+      "reachability_taxonomy": {
+        "live_html": 114,
+        "redirected_off_domain": 16,
+        "unknown_failure": 16,
+        "dns_tls_failure": 4,
+        "blocked_interstitial": 9,
+        "parked_for_sale": 1
+      },
+      "roles": {
+        "icon": {
+          "domains": 109,
+          "candidates": 407,
+          "all_domain_rate_pct": 68.13,
+          "reachable_domain_rate_pct": 83.85
+        },
+        "wide": {
+          "domains": 74,
+          "candidates": 230,
+          "all_domain_rate_pct": 46.25,
+          "reachable_domain_rate_pct": 56.92
+        }
+      },
+      "legacy_roles": {
+        "favicon": {
+          "domains": 106,
+          "candidates": 322,
+          "all_domain_rate_pct": 66.25,
+          "compatibility_only": true
+        }
+      },
+      "any_candidate": {
+        "domains": 126,
+        "all_domain_rate_pct": 78.75
+      },
+      "automatedProxyScore": {
+        "value": 57.2,
+        "max": 100,
+        "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+        "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+      },
+      "historical_comparison_proxy": {
+        "valid_selected": {
+          "numerator": 123,
+          "denominator": 160,
+          "rate_pct": 76.88
+        },
+        "square_and_high_resolution_selected": {
+          "numerator": 94,
+          "denominator": 160,
+          "rate_pct": 58.75,
+          "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+        }
+      },
+      "performance": {
+        "duration_ms": {
+          "available": 160,
+          "total": 395772,
+          "mean": 2473.6,
+          "p50": 1184,
+          "p95": 7266
+        },
+        "requests": {
+          "available": 130,
+          "total": 1934,
+          "mean": 14.9,
+          "p50": 17,
+          "p95": 20
+        },
+        "downloaded_bytes": {
+          "available": 130,
+          "total": 136989831,
+          "mean": 1053767.9,
+          "p50": 583401,
+          "p95": 3601126
+        },
+        "browser_invocations": 0
+      },
+      "benchmarkScore": {
+        "value": 68.41,
+        "max": 100,
+        "status": "complete",
+        "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+        "points": {
+          "coverage": 19.96,
+          "top1_correctness": 18.81,
+          "visual_usability": 11.21,
+          "safety": 10,
+          "efficiency": 8.43
+        },
+        "role_components": {
+          "icon": {
+            "denominator": 130,
+            "coverage": {
+              "numerator": 102,
+              "rate": 0.7846153846153846
+            },
+            "top1_correctness": {
+              "numerator": 97,
+              "rate": 0.7461538461538462
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 93.5,
+              "rate": 0.7192307692307692
+            }
+          },
+          "wide": {
+            "denominator": 130,
+            "coverage": {
+              "numerator": 71,
+              "rate": 0.5461538461538461
+            },
+            "top1_correctness": {
+              "numerator": 66,
+              "rate": 0.5076923076923077
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 52.25,
+              "rate": 0.40192307692307694
+            }
+          }
+        },
+        "safety": {
+          "complete": true,
+          "wrong_brand_domains": 0,
+          "denominator": 130,
+          "wrong_brand_rate": 0,
+          "selected_classifications": {
+            "legacy_correct": 99,
+            "unjudgeable": 2,
+            "correct_brand": 73,
+            "not_logo": 6,
+            "related_brand": 5
+          },
+          "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+        },
+        "efficiency": {
+          "rate": 0.8425386137085136,
+          "available_inputs": 3,
+          "inputs": {
+            "p95_latency_ms": {
+              "value": 7266,
+              "fraction": 0.8489333333333333,
+              "threshold": {
+                "full_points_at_or_below": 5000,
+                "zero_points_at_or_above": 20000
+              }
+            },
+            "mean_requests_per_domain": {
+              "value": 14.9,
+              "fraction": 0.6863636363636364,
+              "threshold": {
+                "full_points_at_or_below": 8,
+                "zero_points_at_or_above": 30
+              }
+            },
+            "mean_downloaded_bytes_per_domain": {
+              "value": 1053767.9,
+              "fraction": 0.9923188714285713,
+              "threshold": {
+                "full_points_at_or_below": 1000000,
+                "zero_points_at_or_above": 8000000
+              }
+            }
+          },
+          "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+        },
+        "labels": {
+          "records": 838,
+          "role_labels": 461,
+          "selected_roles": 185,
+          "selected_roles_labeled": 185,
+          "role_complete": true,
+          "safety_complete": true,
+          "complete": true
+        }
+      }
+    }
+  },
+  "cohort_splits": {
+    "original-500": {
+      "development": {
+        "schema_version": 2,
+        "generated_at": "2026-08-26T01:31:17.775Z",
+        "cohort": "original-500",
+        "benchmark_split": "development",
+        "domains": {
+          "total": 300,
+          "reachable": 255,
+          "successful_extractions": 255
+        },
+        "reachability_taxonomy": {
+          "parked_for_sale": 2,
+          "live_html": 231,
+          "redirected_off_domain": 24,
+          "unknown_failure": 10,
+          "dns_tls_failure": 25,
+          "blocked_interstitial": 8
+        },
+        "roles": {
+          "icon": {
+            "domains": 213,
+            "candidates": 632,
+            "all_domain_rate_pct": 71,
+            "reachable_domain_rate_pct": 83.53
+          },
+          "wide": {
+            "domains": 147,
+            "candidates": 338,
+            "all_domain_rate_pct": 49,
+            "reachable_domain_rate_pct": 57.65
+          }
+        },
+        "legacy_roles": {
+          "favicon": {
+            "domains": 209,
+            "candidates": 527,
+            "all_domain_rate_pct": 69.67,
+            "compatibility_only": true
+          }
+        },
+        "any_candidate": {
+          "domains": 242,
+          "all_domain_rate_pct": 80.67
+        },
+        "automatedProxyScore": {
+          "value": 60,
+          "max": 100,
+          "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+          "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+        },
+        "historical_comparison_proxy": {
+          "valid_selected": {
+            "numerator": 235,
+            "denominator": 300,
+            "rate_pct": 78.33
+          },
+          "square_and_high_resolution_selected": {
+            "numerator": 184,
+            "denominator": 300,
+            "rate_pct": 61.33,
+            "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+          }
+        },
+        "performance": {
+          "duration_ms": {
+            "available": 300,
+            "total": 544985,
+            "mean": 1816.6,
+            "p50": 1235,
+            "p95": 4475
+          },
+          "requests": {
+            "available": 255,
+            "total": 3538,
+            "mean": 13.9,
+            "p50": 17,
+            "p95": 19
+          },
+          "downloaded_bytes": {
+            "available": 255,
+            "total": 312694477,
+            "mean": 1226252.9,
+            "p50": 640093,
+            "p95": 4880162
+          },
+          "browser_invocations": 0
+        },
+        "benchmarkScore": {
+          "value": 73.15,
+          "max": 100,
+          "status": "complete",
+          "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+          "points": {
+            "coverage": 20.88,
+            "top1_correctness": 20.88,
+            "visual_usability": 12.38,
+            "safety": 10,
+            "efficiency": 9
+          },
+          "role_components": {
+            "icon": {
+              "denominator": 255,
+              "coverage": {
+                "numerator": 209,
+                "rate": 0.8196078431372549
+              },
+              "top1_correctness": {
+                "numerator": 209,
+                "rate": 0.8196078431372549
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 196.75,
+                "rate": 0.7715686274509804
+              }
+            },
+            "wide": {
+              "denominator": 255,
+              "coverage": {
+                "numerator": 146,
+                "rate": 0.5725490196078431
+              },
+              "top1_correctness": {
+                "numerator": 146,
+                "rate": 0.5725490196078431
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 119,
+                "rate": 0.4666666666666667
+              }
+            }
+          },
+          "safety": {
+            "complete": true,
+            "wrong_brand_domains": 0,
+            "denominator": 255,
+            "wrong_brand_rate": 0,
+            "selected_classifications": {
+              "legacy_correct": 355,
+              "unjudgeable": 5
+            },
+            "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+          },
+          "efficiency": {
+            "rate": 0.899832112987013,
+            "available_inputs": 3,
+            "inputs": {
+              "p95_latency_ms": {
+                "value": 4475,
+                "fraction": 1,
+                "threshold": {
+                  "full_points_at_or_below": 5000,
+                  "zero_points_at_or_above": 20000
+                }
+              },
+              "mean_requests_per_domain": {
+                "value": 13.9,
+                "fraction": 0.7318181818181819,
+                "threshold": {
+                  "full_points_at_or_below": 8,
+                  "zero_points_at_or_above": 30
+                }
+              },
+              "mean_downloaded_bytes_per_domain": {
+                "value": 1226252.9,
+                "fraction": 0.9676781571428571,
+                "threshold": {
+                  "full_points_at_or_below": 1000000,
+                  "zero_points_at_or_above": 8000000
+                }
+              }
+            },
+            "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+          },
+          "labels": {
+            "records": 360,
+            "role_labels": 360,
+            "selected_roles": 360,
+            "selected_roles_labeled": 360,
+            "role_complete": true,
+            "safety_complete": true,
+            "complete": true
+          }
+        }
+      },
+      "validation": {
+        "schema_version": 2,
+        "generated_at": "2026-08-26T01:31:17.777Z",
+        "cohort": "original-500",
+        "benchmark_split": "validation",
+        "domains": {
+          "total": 100,
+          "reachable": 88,
+          "successful_extractions": 88
+        },
+        "reachability_taxonomy": {
+          "dns_tls_failure": 7,
+          "live_html": 87,
+          "unknown_failure": 4,
+          "blocked_interstitial": 1,
+          "redirected_off_domain": 1
+        },
+        "roles": {
+          "icon": {
+            "domains": 75,
+            "candidates": 224,
+            "all_domain_rate_pct": 75,
+            "reachable_domain_rate_pct": 85.23
+          },
+          "wide": {
+            "domains": 51,
+            "candidates": 110,
+            "all_domain_rate_pct": 51,
+            "reachable_domain_rate_pct": 57.95
+          }
+        },
+        "legacy_roles": {
+          "favicon": {
+            "domains": 73,
+            "candidates": 179,
+            "all_domain_rate_pct": 73,
+            "compatibility_only": true
+          }
+        },
+        "any_candidate": {
+          "domains": 80,
+          "all_domain_rate_pct": 80
+        },
+        "automatedProxyScore": {
+          "value": 63,
+          "max": 100,
+          "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+          "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+        },
+        "historical_comparison_proxy": {
+          "valid_selected": {
+            "numerator": 79,
+            "denominator": 100,
+            "rate_pct": 79
+          },
+          "square_and_high_resolution_selected": {
+            "numerator": 63,
+            "denominator": 100,
+            "rate_pct": 63,
+            "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+          }
+        },
+        "performance": {
+          "duration_ms": {
+            "available": 100,
+            "total": 170463,
+            "mean": 1704.6,
+            "p50": 1347,
+            "p95": 3650
+          },
+          "requests": {
+            "available": 88,
+            "total": 1240,
+            "mean": 14.1,
+            "p50": 17,
+            "p95": 18
+          },
+          "downloaded_bytes": {
+            "available": 88,
+            "total": 129915384,
+            "mean": 1476311.2,
+            "p50": 735429,
+            "p95": 5482780
+          },
+          "browser_invocations": 0
+        },
+        "benchmarkScore": {
+          "value": 72.71,
+          "max": 100,
+          "status": "complete",
+          "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+          "points": {
+            "coverage": 20.8,
+            "top1_correctness": 20.8,
+            "visual_usability": 12.27,
+            "safety": 10,
+            "efficiency": 8.85
+          },
+          "role_components": {
+            "icon": {
+              "denominator": 88,
+              "coverage": {
+                "numerator": 73,
+                "rate": 0.8295454545454546
+              },
+              "top1_correctness": {
+                "numerator": 73,
+                "rate": 0.8295454545454546
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 69.5,
+                "rate": 0.7897727272727273
+              }
+            },
+            "wide": {
+              "denominator": 88,
+              "coverage": {
+                "numerator": 49,
+                "rate": 0.5568181818181818
+              },
+              "top1_correctness": {
+                "numerator": 49,
+                "rate": 0.5568181818181818
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 38.5,
+                "rate": 0.4375
+              }
+            }
+          },
+          "safety": {
+            "complete": true,
+            "wrong_brand_domains": 0,
+            "denominator": 88,
+            "wrong_brand_rate": 0,
+            "selected_classifications": {
+              "legacy_correct": 122,
+              "unjudgeable": 4
+            },
+            "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+          },
+          "efficiency": {
+            "rate": 0.8848942718614717,
+            "available_inputs": 3,
+            "inputs": {
+              "p95_latency_ms": {
+                "value": 3650,
+                "fraction": 1,
+                "threshold": {
+                  "full_points_at_or_below": 5000,
+                  "zero_points_at_or_above": 20000
+                }
+              },
+              "mean_requests_per_domain": {
+                "value": 14.1,
+                "fraction": 0.7227272727272728,
+                "threshold": {
+                  "full_points_at_or_below": 8,
+                  "zero_points_at_or_above": 30
+                }
+              },
+              "mean_downloaded_bytes_per_domain": {
+                "value": 1476311.2,
+                "fraction": 0.9319555428571429,
+                "threshold": {
+                  "full_points_at_or_below": 1000000,
+                  "zero_points_at_or_above": 8000000
+                }
+              }
+            },
+            "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+          },
+          "labels": {
+            "records": 126,
+            "role_labels": 126,
+            "selected_roles": 126,
+            "selected_roles_labeled": 126,
+            "role_complete": true,
+            "safety_complete": true,
+            "complete": true
+          }
+        }
+      },
+      "evaluation": {
+        "schema_version": 2,
+        "generated_at": "2026-08-26T01:31:17.784Z",
+        "cohort": "original-500",
+        "benchmark_split": "evaluation",
+        "domains": {
+          "total": 100,
+          "reachable": 80,
+          "successful_extractions": 80
+        },
+        "reachability_taxonomy": {
+          "live_html": 68,
+          "redirected_off_domain": 12,
+          "unknown_failure": 14,
+          "dns_tls_failure": 4,
+          "blocked_interstitial": 1,
+          "parked_for_sale": 1
+        },
+        "roles": {
+          "icon": {
+            "domains": 61,
+            "candidates": 181,
+            "all_domain_rate_pct": 61,
+            "reachable_domain_rate_pct": 76.25
+          },
+          "wide": {
+            "domains": 39,
+            "candidates": 110,
+            "all_domain_rate_pct": 39,
+            "reachable_domain_rate_pct": 48.75
+          }
+        },
+        "legacy_roles": {
+          "favicon": {
+            "domains": 61,
+            "candidates": 151,
+            "all_domain_rate_pct": 61,
+            "compatibility_only": true
+          }
+        },
+        "any_candidate": {
+          "domains": 76,
+          "all_domain_rate_pct": 76
+        },
+        "automatedProxyScore": {
+          "value": 50,
+          "max": 100,
+          "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+          "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+        },
+        "historical_comparison_proxy": {
+          "valid_selected": {
+            "numerator": 73,
+            "denominator": 100,
+            "rate_pct": 73
+          },
+          "square_and_high_resolution_selected": {
+            "numerator": 55,
+            "denominator": 100,
+            "rate_pct": 55,
+            "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+          }
+        },
+        "performance": {
+          "duration_ms": {
+            "available": 100,
+            "total": 230785,
+            "mean": 2307.9,
+            "p50": 1217,
+            "p95": 6081
+          },
+          "requests": {
+            "available": 80,
+            "total": 1081,
+            "mean": 13.5,
+            "p50": 17,
+            "p95": 19
+          },
+          "downloaded_bytes": {
+            "available": 80,
+            "total": 65223211,
+            "mean": 815290.1,
+            "p50": 404487,
+            "p95": 2702826
+          },
+          "browser_invocations": 0
+        },
+        "benchmarkScore": {
+          "value": 67.08,
+          "max": 100,
+          "status": "complete",
+          "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+          "points": {
+            "coverage": 18.56,
+            "top1_correctness": 18.56,
+            "visual_usability": 11.03,
+            "safety": 10,
+            "efficiency": 8.93
+          },
+          "role_components": {
+            "icon": {
+              "denominator": 80,
+              "coverage": {
+                "numerator": 61,
+                "rate": 0.7625
+              },
+              "top1_correctness": {
+                "numerator": 61,
+                "rate": 0.7625
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 58,
+                "rate": 0.725
+              }
+            },
+            "wide": {
+              "denominator": 80,
+              "coverage": {
+                "numerator": 38,
+                "rate": 0.475
+              },
+              "top1_correctness": {
+                "numerator": 38,
+                "rate": 0.475
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 30.25,
+                "rate": 0.378125
+              }
+            }
+          },
+          "safety": {
+            "complete": true,
+            "wrong_brand_domains": 0,
+            "denominator": 80,
+            "wrong_brand_rate": 0,
+            "selected_classifications": {
+              "legacy_correct": 99,
+              "unjudgeable": 1
+            },
+            "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+          },
+          "efficiency": {
+            "rate": 0.8926444444444445,
+            "available_inputs": 3,
+            "inputs": {
+              "p95_latency_ms": {
+                "value": 6081,
+                "fraction": 0.9279333333333334,
+                "threshold": {
+                  "full_points_at_or_below": 5000,
+                  "zero_points_at_or_above": 20000
+                }
+              },
+              "mean_requests_per_domain": {
+                "value": 13.5,
+                "fraction": 0.75,
+                "threshold": {
+                  "full_points_at_or_below": 8,
+                  "zero_points_at_or_above": 30
+                }
+              },
+              "mean_downloaded_bytes_per_domain": {
+                "value": 815290.1,
+                "fraction": 1,
+                "threshold": {
+                  "full_points_at_or_below": 1000000,
+                  "zero_points_at_or_above": 8000000
+                }
+              }
+            },
+            "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+          },
+          "labels": {
+            "records": 100,
+            "role_labels": 100,
+            "selected_roles": 100,
+            "selected_roles_labeled": 100,
+            "role_complete": true,
+            "safety_complete": true,
+            "complete": true
+          }
+        }
+      }
+    },
+    "major-brands-300": {
+      "development": {
+        "schema_version": 2,
+        "generated_at": "2026-08-26T01:31:17.785Z",
+        "cohort": "major-brands-300",
+        "benchmark_split": "development",
+        "domains": {
+          "total": 180,
+          "reachable": 130,
+          "successful_extractions": 130
+        },
+        "reachability_taxonomy": {
+          "live_html": 127,
+          "blocked_interstitial": 34,
+          "unknown_failure": 15,
+          "redirected_off_domain": 3,
+          "dns_tls_failure": 1
+        },
+        "roles": {
+          "icon": {
+            "domains": 120,
+            "candidates": 495,
+            "all_domain_rate_pct": 66.67,
+            "reachable_domain_rate_pct": 92.31
+          },
+          "wide": {
+            "domains": 81,
+            "candidates": 231,
+            "all_domain_rate_pct": 45,
+            "reachable_domain_rate_pct": 62.31
+          }
+        },
+        "legacy_roles": {
+          "favicon": {
+            "domains": 111,
+            "candidates": 389,
+            "all_domain_rate_pct": 61.67,
+            "compatibility_only": true
+          }
+        },
+        "any_candidate": {
+          "domains": 130,
+          "all_domain_rate_pct": 72.22
+        },
+        "automatedProxyScore": {
+          "value": 55.8,
+          "max": 100,
+          "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+          "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+        },
+        "historical_comparison_proxy": {
+          "valid_selected": {
+            "numerator": 127,
+            "denominator": 180,
+            "rate_pct": 70.56
+          },
+          "square_and_high_resolution_selected": {
+            "numerator": 91,
+            "denominator": 180,
+            "rate_pct": 50.56,
+            "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+          }
+        },
+        "performance": {
+          "duration_ms": {
+            "available": 180,
+            "total": 552380,
+            "mean": 3068.8,
+            "p50": 1004,
+            "p95": 20210
+          },
+          "requests": {
+            "available": 130,
+            "total": 2070,
+            "mean": 15.9,
+            "p50": 18,
+            "p95": 21
+          },
+          "downloaded_bytes": {
+            "available": 130,
+            "total": 193004261,
+            "mean": 1484648.2,
+            "p50": 801159,
+            "p95": 5067339
+          },
+          "browser_invocations": 0
+        },
+        "benchmarkScore": {
+          "value": 64.51,
+          "max": 100,
+          "status": "complete",
+          "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+          "points": {
+            "coverage": 21.58,
+            "top1_correctness": 18.69,
+            "visual_usability": 11.31,
+            "safety": 7.69,
+            "efficiency": 5.24
+          },
+          "role_components": {
+            "icon": {
+              "denominator": 130,
+              "coverage": {
+                "numerator": 111,
+                "rate": 0.8538461538461538
+              },
+              "top1_correctness": {
+                "numerator": 97,
+                "rate": 0.7461538461538462
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 94,
+                "rate": 0.7230769230769231
+              }
+            },
+            "wide": {
+              "denominator": 130,
+              "coverage": {
+                "numerator": 76,
+                "rate": 0.5846153846153846
+              },
+              "top1_correctness": {
+                "numerator": 65,
+                "rate": 0.5
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 53,
+                "rate": 0.4076923076923077
+              }
+            }
+          },
+          "safety": {
+            "complete": true,
+            "wrong_brand_domains": 3,
+            "denominator": 130,
+            "wrong_brand_rate": 0.023076923076923078,
+            "selected_classifications": {
+              "correct_brand": 177,
+              "wrong_brand": 3,
+              "related_brand": 6,
+              "not_logo": 19,
+              "unjudgeable": 1
+            },
+            "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+          },
+          "efficiency": {
+            "rate": 0.5238912112554113,
+            "available_inputs": 3,
+            "inputs": {
+              "p95_latency_ms": {
+                "value": 20210,
+                "fraction": 0,
+                "threshold": {
+                  "full_points_at_or_below": 5000,
+                  "zero_points_at_or_above": 20000
+                }
+              },
+              "mean_requests_per_domain": {
+                "value": 15.9,
+                "fraction": 0.6409090909090909,
+                "threshold": {
+                  "full_points_at_or_below": 8,
+                  "zero_points_at_or_above": 30
+                }
+              },
+              "mean_downloaded_bytes_per_domain": {
+                "value": 1484648.2,
+                "fraction": 0.9307645428571428,
+                "threshold": {
+                  "full_points_at_or_below": 1000000,
+                  "zero_points_at_or_above": 8000000
+                }
+              }
+            },
+            "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+          },
+          "labels": {
+            "records": 1728,
+            "role_labels": 893,
+            "selected_roles": 206,
+            "selected_roles_labeled": 206,
+            "role_complete": true,
+            "safety_complete": true,
+            "complete": true
+          }
+        }
+      },
+      "validation": {
+        "schema_version": 2,
+        "generated_at": "2026-08-26T01:31:17.787Z",
+        "cohort": "major-brands-300",
+        "benchmark_split": "validation",
+        "domains": {
+          "total": 60,
+          "reachable": 47,
+          "successful_extractions": 47
+        },
+        "reachability_taxonomy": {
+          "live_html": 44,
+          "blocked_interstitial": 6,
+          "redirected_off_domain": 3,
+          "unknown_failure": 7
+        },
+        "roles": {
+          "icon": {
+            "domains": 41,
+            "candidates": 150,
+            "all_domain_rate_pct": 68.33,
+            "reachable_domain_rate_pct": 87.23
+          },
+          "wide": {
+            "domains": 30,
+            "candidates": 73,
+            "all_domain_rate_pct": 50,
+            "reachable_domain_rate_pct": 63.83
+          }
+        },
+        "legacy_roles": {
+          "favicon": {
+            "domains": 44,
+            "candidates": 142,
+            "all_domain_rate_pct": 73.33,
+            "compatibility_only": true
+          }
+        },
+        "any_candidate": {
+          "domains": 47,
+          "all_domain_rate_pct": 78.33
+        },
+        "automatedProxyScore": {
+          "value": 59.2,
+          "max": 100,
+          "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+          "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+        },
+        "historical_comparison_proxy": {
+          "valid_selected": {
+            "numerator": 47,
+            "denominator": 60,
+            "rate_pct": 78.33
+          },
+          "square_and_high_resolution_selected": {
+            "numerator": 32,
+            "denominator": 60,
+            "rate_pct": 53.33,
+            "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+          }
+        },
+        "performance": {
+          "duration_ms": {
+            "available": 60,
+            "total": 288579,
+            "mean": 4809.7,
+            "p50": 1287,
+            "p95": 30011
+          },
+          "requests": {
+            "available": 47,
+            "total": 791,
+            "mean": 16.8,
+            "p50": 18,
+            "p95": 21
+          },
+          "downloaded_bytes": {
+            "available": 47,
+            "total": 63924434,
+            "mean": 1360094.3,
+            "p50": 645456,
+            "p95": 5586358
+          },
+          "browser_invocations": 0
+        },
+        "benchmarkScore": {
+          "value": 68.99,
+          "max": 100,
+          "status": "complete",
+          "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+          "points": {
+            "coverage": 22.66,
+            "top1_correctness": 19.15,
+            "visual_usability": 12.02,
+            "safety": 10,
+            "efficiency": 5.16
+          },
+          "role_components": {
+            "icon": {
+              "denominator": 47,
+              "coverage": {
+                "numerator": 43,
+                "rate": 0.9148936170212766
+              },
+              "top1_correctness": {
+                "numerator": 37,
+                "rate": 0.7872340425531915
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 36.5,
+                "rate": 0.776595744680851
+              }
+            },
+            "wide": {
+              "denominator": 47,
+              "coverage": {
+                "numerator": 28,
+                "rate": 0.5957446808510638
+              },
+              "top1_correctness": {
+                "numerator": 23,
+                "rate": 0.48936170212765956
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 20,
+                "rate": 0.425531914893617
+              }
+            }
+          },
+          "safety": {
+            "complete": true,
+            "wrong_brand_domains": 0,
+            "denominator": 47,
+            "wrong_brand_rate": 0,
+            "selected_classifications": {
+              "correct_brand": 63,
+              "unjudgeable": 2,
+              "not_logo": 7,
+              "related_brand": 3
+            },
+            "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+          },
+          "efficiency": {
+            "rate": 0.5161859857142858,
+            "available_inputs": 3,
+            "inputs": {
+              "p95_latency_ms": {
+                "value": 30011,
+                "fraction": 0,
+                "threshold": {
+                  "full_points_at_or_below": 5000,
+                  "zero_points_at_or_above": 20000
+                }
+              },
+              "mean_requests_per_domain": {
+                "value": 16.8,
+                "fraction": 0.6,
+                "threshold": {
+                  "full_points_at_or_below": 8,
+                  "zero_points_at_or_above": 30
+                }
+              },
+              "mean_downloaded_bytes_per_domain": {
+                "value": 1360094.3,
+                "fraction": 0.9485579571428572,
+                "threshold": {
+                  "full_points_at_or_below": 1000000,
+                  "zero_points_at_or_above": 8000000
+                }
+              }
+            },
+            "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+          },
+          "labels": {
+            "records": 632,
+            "role_labels": 308,
+            "selected_roles": 75,
+            "selected_roles_labeled": 75,
+            "role_complete": true,
+            "safety_complete": true,
+            "complete": true
+          }
+        }
+      },
+      "evaluation": {
+        "schema_version": 2,
+        "generated_at": "2026-08-26T01:31:17.787Z",
+        "cohort": "major-brands-300",
+        "benchmark_split": "evaluation",
+        "domains": {
+          "total": 60,
+          "reachable": 50,
+          "successful_extractions": 50
+        },
+        "reachability_taxonomy": {
+          "live_html": 46,
+          "blocked_interstitial": 8,
+          "redirected_off_domain": 4,
+          "unknown_failure": 2
+        },
+        "roles": {
+          "icon": {
+            "domains": 48,
+            "candidates": 226,
+            "all_domain_rate_pct": 80,
+            "reachable_domain_rate_pct": 96
+          },
+          "wide": {
+            "domains": 35,
+            "candidates": 120,
+            "all_domain_rate_pct": 58.33,
+            "reachable_domain_rate_pct": 70
+          }
+        },
+        "legacy_roles": {
+          "favicon": {
+            "domains": 45,
+            "candidates": 171,
+            "all_domain_rate_pct": 75,
+            "compatibility_only": true
+          }
+        },
+        "any_candidate": {
+          "domains": 50,
+          "all_domain_rate_pct": 83.33
+        },
+        "automatedProxyScore": {
+          "value": 69.2,
+          "max": 100,
+          "formula": "50% canonical icon domain coverage + 50% canonical wide/logo domain coverage, all-domain denominator",
+          "caveat": "Availability proxy, not a quality score. Correctness and visual usability require reviewer labels."
+        },
+        "historical_comparison_proxy": {
+          "valid_selected": {
+            "numerator": 50,
+            "denominator": 60,
+            "rate_pct": 83.33
+          },
+          "square_and_high_resolution_selected": {
+            "numerator": 39,
+            "denominator": 60,
+            "rate_pct": 65,
+            "definition": "Legacy global selected candidate is squareish and highResolution; retained only for historical comparison."
+          }
+        },
+        "performance": {
+          "duration_ms": {
+            "available": 60,
+            "total": 164987,
+            "mean": 2749.8,
+            "p50": 1150,
+            "p95": 10677
+          },
+          "requests": {
+            "available": 50,
+            "total": 853,
+            "mean": 17.1,
+            "p50": 18,
+            "p95": 20
+          },
+          "downloaded_bytes": {
+            "available": 50,
+            "total": 71766620,
+            "mean": 1435332.4,
+            "p50": 930708,
+            "p95": 4946237
+          },
+          "browser_invocations": 0
+        },
+        "benchmarkScore": {
+          "value": 70.05,
+          "max": 100,
+          "status": "complete",
+          "formula": "coverage 30 + top-1 correctness 30 + visual usability 20 + wrong-brand safety 10 + efficiency 10",
+          "points": {
+            "coverage": 22.2,
+            "top1_correctness": 19.2,
+            "visual_usability": 11.5,
+            "safety": 10,
+            "efficiency": 7.15
+          },
+          "role_components": {
+            "icon": {
+              "denominator": 50,
+              "coverage": {
+                "numerator": 41,
+                "rate": 0.82
+              },
+              "top1_correctness": {
+                "numerator": 36,
+                "rate": 0.72
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 35.5,
+                "rate": 0.71
+              }
+            },
+            "wide": {
+              "denominator": 50,
+              "coverage": {
+                "numerator": 33,
+                "rate": 0.66
+              },
+              "top1_correctness": {
+                "numerator": 28,
+                "rate": 0.56
+              },
+              "top1_visual_usability": {
+                "weighted_numerator": 22,
+                "rate": 0.44
+              }
+            }
+          },
+          "safety": {
+            "complete": true,
+            "wrong_brand_domains": 0,
+            "denominator": 50,
+            "wrong_brand_rate": 0,
+            "selected_classifications": {
+              "correct_brand": 73,
+              "not_logo": 6,
+              "related_brand": 5,
+              "unjudgeable": 1
+            },
+            "scoring": "10 points at 0%; linear to 0 points at >=10%. Explicit safety_class overrides legacy identity-based interpretation. unclassified_negative makes the score incomplete."
+          },
+          "efficiency": {
+            "rate": 0.7152355422799422,
+            "available_inputs": 3,
+            "inputs": {
+              "p95_latency_ms": {
+                "value": 10677,
+                "fraction": 0.6215333333333334,
+                "threshold": {
+                  "full_points_at_or_below": 5000,
+                  "zero_points_at_or_above": 20000
+                }
+              },
+              "mean_requests_per_domain": {
+                "value": 17.1,
+                "fraction": 0.5863636363636363,
+                "threshold": {
+                  "full_points_at_or_below": 8,
+                  "zero_points_at_or_above": 30
+                }
+              },
+              "mean_downloaded_bytes_per_domain": {
+                "value": 1435332.4,
+                "fraction": 0.9378096571428571,
+                "threshold": {
+                  "full_points_at_or_below": 1000000,
+                  "zero_points_at_or_above": 8000000
+                }
+              }
+            },
+            "scoring": "Mean of available linearly normalized inputs; missing inputs are disclosed and excluded."
+          },
+          "labels": {
+            "records": 738,
+            "role_labels": 361,
+            "selected_roles": 85,
+            "selected_roles_labeled": 85,
+            "role_complete": true,
+            "safety_complete": true,
+            "complete": true
+          }
+        }
+      }
+    }
+  },
+  "cohort_delta_additional_minus_original": {
+    "score_points": -5.780000000000001,
+    "reachable_rate_points": -8.933333333333326,
+    "icon_coverage_points": 4.815613251267958,
+    "icon_top1_points": -6.197602607762875,
+    "wide_coverage_points": 5.269680590704118,
+    "wide_top1_points": -3.9814207308817906,
+    "strict_selected_precision_points": -20.151438855629532,
+    "p95_latency_ms": 25501
+  }
+}
