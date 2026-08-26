@@ -103,10 +103,12 @@ test('builds stable v3 PNG sheets including unavailable previews without rank si
     { entity_id: 'beta', candidate_id: 'beta-corrupt', content_hash: 'corrupt-preview', asset_path: 'assets/not-an-image.png' },
   ] });
   const first = await buildLabelSheets({ runDirectory: run, outputDirectory: join(run, 'packet-a') });
+  await validatePacket(join(run, 'packet-a'));
   const sourceRows = (await readFile(join(run, 'candidates.jsonl'), 'utf8')).trim().split('\n').map(JSON.parse).reverse();
   await writeJsonl(join(run, 'candidates.jsonl'), sourceRows);
   const second = await buildLabelSheets({ runDirectory: run, outputDirectory: join(run, 'packet-b') });
-  assert.deepEqual(second, first);
+  assert.deepEqual(second.sheets, first.sheets);
+  assert.notEqual(second.source_artifacts.candidates.sha256, first.source_artifacts.candidates.sha256);
   assert.equal(first.schema_version, 'visual-label-sheets-v3');
   assert.equal(first.candidate_count, 6);
   assert.equal(first.visual_candidate_count, 5);
@@ -116,7 +118,24 @@ test('builds stable v3 PNG sheets including unavailable previews without rank si
   assert.ok(metadata.height < 3000);
   assert.match(await readFile(join(run, 'packet-a', 'prompt.md'), 'utf8'), /packet_fingerprint/);
   assert.doesNotMatch(await readFile(join(run, 'packet-a', 'sheets.jsonl'), 'utf8'), /role_scores|predicted_roles|score_reasons|"score"/);
-  await validatePacket(join(run, 'packet-a'));
+});
+
+test('builds a fingerprint-bound packet directly from benchmark results', async () => {
+  const run = await mkdtemp(join(tmpdir(), 'logo-label-results-'));
+  await mkdir(join(run, 'assets'));
+  await writeFile(join(run, 'assets', 'one.png'), PNG);
+  await writeJsonl(join(run, 'results.jsonl'), [{
+    entity_id: 'acme', name: 'Acme', website: 'acme.example', status: 'success', reachability: 'live_html',
+    candidates: [{ entity_id: undefined, candidate_id: 'acme-icon', content_hash: 'one', asset_path: 'assets/one.png', format: 'png', width: 1, height: 1 }],
+  }]);
+  const packet = join(run, 'packet');
+  const index = await buildLabelSheets({ runDirectory: run, outputDirectory: packet });
+  assert.equal(index.candidate_count, 1);
+  assert.match(index.source_artifacts.results.sha256, /^[a-f0-9]{64}$/);
+  assert.equal(index.source_artifacts.results.path, 'results.jsonl');
+  await validatePacket(packet);
+  await writeJsonl(join(run, 'results.jsonl'), []);
+  await assert.rejects(validatePacket(packet), /source_artifacts\.results\.sha256 mismatch/);
 });
 
 test('expands aliases and emits canonical labels stamped from importer identity and pass', async () => {

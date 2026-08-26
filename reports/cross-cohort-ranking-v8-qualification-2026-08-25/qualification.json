@@ -1,0 +1,755 @@
+{
+  "schema_version": "logo-yoink-cross-cohort-ranking-qualification-v1",
+  "generated_at": "2026-08-26T02:07:53.786Z",
+  "current_runtime_ranking_version": 8,
+  "holdout_policy": "Diagnostic only. The audit has no tuning profile and does not use split or evaluation labels to choose ranking behavior.",
+  "cohorts": {
+    "original-500": {
+      "cohort": "original-500",
+      "artifacts": {
+        "run": {
+          "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-cross-cohort-ranking-v8-qualification/original-500-v8/results.jsonl",
+          "sha256": "9a144ce7d34799042f8e66a6ad20e5987792ccc9ba082dbbccf5902679157dee"
+        },
+        "labels": {
+          "path": "labels/review-500-final-2026-08-22.jsonl",
+          "sha256": "98db71a9d92c1e4b3ae67163b5e08fc01c561bdc1ff18f92c0df7fff3fec21d5"
+        },
+        "assignments": {
+          "path": "benchmarks/visual-benchmark-v1-500/entities.jsonl",
+          "sha256": "aecca251a7862d64dec7ec3f668cba7e98450ea707e842515202d7e48cfb7ddc"
+        },
+        "rerank": {
+          "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-cross-cohort-ranking-v8-qualification/original-500-v8/rerank.json",
+          "sha256": "cca4b6ff473d7748de7d91472e60f463705cd44edc18ca73b411db701133f890",
+          "source_run": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-frozen-500-embedded-logo-fix",
+          "source_results_sha256": "087e0577a707a5f732477e312af8308bb1e2cfb89a7f16ab8bd74f0dc3364e7c",
+          "output_results_sha256": "9a144ce7d34799042f8e66a6ad20e5987792ccc9ba082dbbccf5902679157dee",
+          "ranking_version": 8,
+          "changed_selected_slots": 0,
+          "changed_selected_slots_by_role": {
+            "icon": 0,
+            "wide": 0
+          },
+          "result_count": 500
+        }
+      },
+      "counts": {
+        "assigned_entities": 500,
+        "captured_candidates": 4454,
+        "canonical_candidate_labels": 0,
+        "legacy_selected_role_labels": 586,
+        "selected_icon_wide_slots": 605,
+        "selected_slots_labeled": 554,
+        "missing_selected_role_slots": 51,
+        "selected_candidates_without_any_label": 50,
+        "canonical_candidates_unlabeled": 4454,
+        "fingerprint_bound_candidate_labels": 0,
+        "concrete_safety_candidate_labels": 0,
+        "reviewed_negative_candidate_labels": 0,
+        "fingerprint_bound_negative_safety_labels": 0,
+        "derived_scoring_records": 0
+      },
+      "missing_selected_slots": [
+        {
+          "entity_id": "08e1725c-7c8e-5ffc-903e-e6100cfd212c",
+          "company_name": "Willow",
+          "website": "hiwillow.com",
+          "role": "icon",
+          "candidate_id": "c9fb0d98f0b68bbe",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "8833fe2c-37ff-5939-ae80-46b6503b3a98",
+          "company_name": "Haryon (ex Knock Knock)",
+          "website": "knock-knock.fr",
+          "role": "wide",
+          "candidate_id": "39fe65d380c2073e",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "f0cb6c5f-6900-594a-b1f6-8772f267f363",
+          "company_name": "TradeBridge",
+          "website": "tradebridge.co.in",
+          "role": "icon",
+          "candidate_id": "688cf77f346fca8b",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "46fd566f-49b5-5986-a7e6-539e6723d1ad",
+          "company_name": "Fleetcraft",
+          "website": "getfleetcraft.com",
+          "role": "icon",
+          "candidate_id": "8f046de3ce4f7955",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "eadf6c0b-2900-51f9-89aa-7f637a22d12d",
+          "company_name": "Lisa",
+          "website": "lisaand.com",
+          "role": "wide",
+          "candidate_id": "9502410b10e44886",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "7b2900ba-5dac-5555-b5b0-4e2d9536aadd",
+          "company_name": "Nui",
+          "website": "nui.earth",
+          "role": "wide",
+          "candidate_id": "573a9d5bf8f58a69",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "3ff2f9ac-2574-53d9-bbdb-e6adfd1b0404",
+          "company_name": "Utiq",
+          "website": "utiq.com",
+          "role": "icon",
+          "candidate_id": "ead0d5fa1da412a8",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "6ae191a4-9509-4fc6-9edb-5454e84adf47",
+          "company_name": "Tenvos",
+          "website": "tenvos.ai",
+          "role": "icon",
+          "candidate_id": "bccf39bf985332f5",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "2964ae5b-aadf-482c-b5b9-1def504daf45",
+          "company_name": "DAR.fm",
+          "website": "mp3tunes.com",
+          "role": "icon",
+          "candidate_id": "6dbfda0680c9e76e",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "7f0b0ca0-b29c-5a72-b6e8-cc8591c58ea6",
+          "company_name": "Hystar",
+          "website": "hystar.com",
+          "role": "icon",
+          "candidate_id": "c6a935963aeed0a5",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "ee06b299-d9c2-5060-a25a-9ac446e0d49c",
+          "company_name": "CoReport",
+          "website": "coreport.io",
+          "role": "icon",
+          "candidate_id": "c18e06953e8a7d72",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "cd73156e-19a2-45fc-8ca8-cc5f878a6fe8",
+          "company_name": "CompositeEdge",
+          "website": "compositeedge.de",
+          "role": "wide",
+          "candidate_id": "48e665ba642efc54",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "47af618c-5b04-50f6-a19c-f4ae2c7c8927",
+          "company_name": "trampay",
+          "website": "trampay.com",
+          "role": "wide",
+          "candidate_id": "e0deb65a9384dc49",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "55e82e29-547b-50a6-b940-24db844c9253",
+          "company_name": "MindCoord",
+          "website": "mindcoord.com",
+          "role": "icon",
+          "candidate_id": "4e68c7f7d1b87ee1",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "d37c3d35-5cb6-5129-b1eb-90241614081e",
+          "company_name": "Level Up Basketball 🏀",
+          "website": "levelupbasket.com",
+          "role": "wide",
+          "candidate_id": "68921724a80522be",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "2cb18965-898f-417a-a5f2-48b12fcbd031",
+          "company_name": "Simuland",
+          "website": "simuland.ai",
+          "role": "icon",
+          "candidate_id": "0ee14c824ba62a90",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "7ae01b9b-bb1b-58b6-875c-fa7cdad22c5c",
+          "company_name": "Sipn Bourbon",
+          "website": "sipnbourbon.com",
+          "role": "icon",
+          "candidate_id": "46665338c4220353",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "eb799ba0-28d7-5257-918b-8972c7592ab9",
+          "company_name": "Clikalia",
+          "website": "clikalia.es",
+          "role": "icon",
+          "candidate_id": "3c4c0bf1acb2576d",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "3cca6dea-b223-5a79-a93d-51a6f4efd429",
+          "company_name": "Voithru 보이스루",
+          "website": "voithru.com",
+          "role": "icon",
+          "candidate_id": "d62cb052f0028955",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "005d7c0a-6658-5f35-9db2-421520a15a22",
+          "company_name": "i2o Retail",
+          "website": "i2oretail.com",
+          "role": "icon",
+          "candidate_id": "d2ff19a87d506783",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": true
+        },
+        {
+          "entity_id": "005d7c0a-6658-5f35-9db2-421520a15a22",
+          "company_name": "i2o Retail",
+          "website": "i2oretail.com",
+          "role": "wide",
+          "candidate_id": "0bb266451e3028a3",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "94a95d32-a433-4f75-9995-c1e60de84db5",
+          "company_name": "Femma",
+          "website": "femma.app",
+          "role": "icon",
+          "candidate_id": "3d9e0a65d1608283",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "89474692-1338-568c-9077-41c8bb310149",
+          "company_name": "Driver Technologies Inc.",
+          "website": "driverdashcam.com",
+          "role": "icon",
+          "candidate_id": "fdd6b233e6a19603",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "07b30609-3a71-50e0-9626-d1f557bf1383",
+          "company_name": "Amukha",
+          "website": "amukha.com",
+          "role": "icon",
+          "candidate_id": "0d70c91863a8d5da",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "ad0f5ad7-9d3d-5266-9626-380128b1237a",
+          "company_name": "OpenSphere",
+          "website": "opensphere.ai",
+          "role": "icon",
+          "candidate_id": "86eb3f2ff61b551a",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "7f5028b0-6648-58e4-a158-f96d0b9333df",
+          "company_name": "Podisensetech",
+          "website": "podisensetech.com",
+          "role": "wide",
+          "candidate_id": "d5e41ff96760f41c",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "fd7b6186-a506-523a-b8fe-6d43324aca5d",
+          "company_name": "The Folklore Group",
+          "website": "thefolklore.com",
+          "role": "icon",
+          "candidate_id": "7e4732318fbd4394",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "de403477-119e-5109-b912-6c9eed27452f",
+          "company_name": "Carefeed",
+          "website": "carefeed.com",
+          "role": "icon",
+          "candidate_id": "118e238f8af11950",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "780d3f8c-68bd-5472-b8f3-edef2fbd6895",
+          "company_name": "ICS Nett, Inc. (ICS)",
+          "website": "ics-net.com",
+          "role": "icon",
+          "candidate_id": "70a1fe376c8bb3c6",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "b03b9f38-711b-57fe-aba1-7ee861160fe7",
+          "company_name": "HEXANIKA",
+          "website": "hexanika.com",
+          "role": "icon",
+          "candidate_id": "91fd9f600277a74d",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "16ef38e7-a7e3-5687-8e59-5bde301d3267",
+          "company_name": "EyeTell",
+          "website": "eyetell.com",
+          "role": "icon",
+          "candidate_id": "1f16a8894480797d",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "efb5ebf6-4fdf-5e4b-a5f7-6007a46ab16d",
+          "company_name": "Bandit Network",
+          "website": "bandit.network",
+          "role": "icon",
+          "candidate_id": "d89afc7068cfd1eb",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "a78e25eb-2511-4b50-aadb-a2cb4c31cc6c",
+          "company_name": "Regumint",
+          "website": "regumint.com",
+          "role": "icon",
+          "candidate_id": "6a17af9174fc9395",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "e9535eeb-6a17-54f1-bcef-3633129eec5f",
+          "company_name": "Drip Labs",
+          "website": "driplabs.xyz",
+          "role": "icon",
+          "candidate_id": "e9ff4dc45acf477d",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "3624dca6-b8a3-5a27-b301-b4c1b6222d4e",
+          "company_name": "ions.bio",
+          "website": "ions.bio",
+          "role": "icon",
+          "candidate_id": "5d81ed10e180426e",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "d21d8179-202d-5711-9daa-fb3d532f23c1",
+          "company_name": "Opix",
+          "website": "opix.com.br",
+          "role": "icon",
+          "candidate_id": "d149b92a403aae12",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "df7259c7-8bf2-541a-bc88-27917c6ced74",
+          "company_name": "HopeNation",
+          "website": "hopenationcounseling.com",
+          "role": "icon",
+          "candidate_id": "260fe5f71ffc4631",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "05ce1126-f0b1-51ad-ba11-d38774ecccf2",
+          "company_name": "DigiParser",
+          "website": "digiparser.com",
+          "role": "wide",
+          "candidate_id": "6c45a944870fbf29",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "ec602b42-bf9b-59ad-ba2d-392a8467dd0d",
+          "company_name": "Papillon Therapeutics",
+          "website": "papillon-tx.com",
+          "role": "icon",
+          "candidate_id": "f27c82f55223a159",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "05d0ba9f-1b73-56ea-892a-503934dc56ec",
+          "company_name": "Pool",
+          "website": "soypool.com",
+          "role": "icon",
+          "candidate_id": "07e273cc9bb6bfd1",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "6a8217d4-2f39-5104-b6a4-590afefcf25f",
+          "company_name": "Cashwalk",
+          "website": "cashwalk.com",
+          "role": "icon",
+          "candidate_id": "90df202e9d379945",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "3391b89b-f8b8-5059-958b-7f58ad91c41b",
+          "company_name": "Split Pay",
+          "website": "splitpay.com",
+          "role": "icon",
+          "candidate_id": "633ca676ce447ee3",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "b6989443-7092-5644-b0bb-f6a7a3e49d2c",
+          "company_name": "MY HEALTHY®",
+          "website": "myhealthy.fr",
+          "role": "icon",
+          "candidate_id": "ca641512cefc3c6a",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "b6989443-7092-5644-b0bb-f6a7a3e49d2c",
+          "company_name": "MY HEALTHY®",
+          "website": "myhealthy.fr",
+          "role": "wide",
+          "candidate_id": "7c2e4a429f99bc60",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "7753d99f-772d-558c-b51e-a9d0638c65e9",
+          "company_name": "Arcanite",
+          "website": "arcnet.com.au",
+          "role": "icon",
+          "candidate_id": "a87f48d2d91a130a",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "5b33bae5-9b49-5205-a36a-eff48f453c49",
+          "company_name": "Yumlish",
+          "website": "yumlish.com",
+          "role": "icon",
+          "candidate_id": "41c468c0177504c6",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "29c2a3db-6499-546d-96f0-f1eda56a9650",
+          "company_name": "PharmaCare S.r.l.",
+          "website": "pharmacare.srl",
+          "role": "icon",
+          "candidate_id": "76e9d01b4be051f8",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "af64525d-37aa-4365-971c-a3c1a8e12ba9",
+          "company_name": "Arkenintelligence",
+          "website": "arkenintelligence.com",
+          "role": "icon",
+          "candidate_id": "8a7151d51885831c",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "0f3b1b3e-5586-5e6b-a347-6b064c83a02f",
+          "company_name": "NestSTEPS Employee Benefits",
+          "website": "neststepsbenefits.com",
+          "role": "icon",
+          "candidate_id": "71189f79d083edbb",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "f71c7b18-64f5-5e7d-b712-083451b5cf74",
+          "company_name": "Checkmyguest",
+          "website": "checkmyguest.fr",
+          "role": "icon",
+          "candidate_id": "83fbabc48e36bcb1",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        },
+        {
+          "entity_id": "a9c760e5-2fb7-5cc8-82d3-6d8fcff5c15f",
+          "company_name": "Sherdeepai",
+          "website": "sherdeepai.com",
+          "role": "icon",
+          "candidate_id": "99ec1d5edb8209dc",
+          "canonical_candidate_label": false,
+          "exact_selected_role_label": false,
+          "other_role_label": false
+        }
+      ],
+      "qualified_score": null,
+      "qualification": {
+        "selected_slot_snapshot_score": {
+          "qualified": false,
+          "scope": "Exact selected icon/wide slots only; candidate coverage is not implied unless the exhaustive surface also qualifies."
+        },
+        "exact_snapshot_exhaustive_surface": {
+          "qualified": false,
+          "requirements": {
+            "canonical_candidate_complete": false,
+            "fingerprint_complete": false,
+            "safety_complete": false,
+            "selected_role_adapter_complete": false
+          }
+        },
+        "current_ranking_runtime_on_frozen_capture": {
+          "qualified": false,
+          "captured_ranking_version": 8,
+          "current_runtime_ranking_version": 8,
+          "scope": "Ranking behavior on the exact hashed frozen candidates; extraction and website state are not recaptured."
+        },
+        "current_end_to_end_runtime": {
+          "qualified": false,
+          "reason": "The audit reuses frozen capture bytes and therefore does not qualify current extraction, reachability, or live website state."
+        }
+      }
+    },
+    "major-brands-300": {
+      "cohort": "major-brands-300",
+      "artifacts": {
+        "run": {
+          "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-cross-cohort-ranking-v8-qualification/major-brands-300-v8/results.jsonl",
+          "sha256": "b843df65e5fceb3597a2f463c84c51be63bbbac5e21184ab5d65ce574bc10343"
+        },
+        "labels": {
+          "path": "labels/major-brands-300-candidate-labels-v4-2026-08-25.jsonl",
+          "sha256": "c626fa829de7268911e949f359a74f71e6494c0c5b36cdacfbd271884c8bf4b2"
+        },
+        "assignments": {
+          "path": "benchmarks/major-brands-300-v1/entities.jsonl",
+          "sha256": "c55ab8c0a75ec84a7850e78401a6851c0b0a6dda3f391cc093fe4471d0e999c0"
+        },
+        "rerank": {
+          "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-cross-cohort-ranking-v8-qualification/major-brands-300-v8/rerank.json",
+          "sha256": "ab9ba3e816a936f03e9416adb08d747d8697c63ce5b72c560597f303fdd47169",
+          "source_run": "/Users/hendrik/Documents/logo-yoink/runs/major-brands-embedded-logo-fix/all",
+          "source_results_sha256": "e6f7881ada1d37de9936eaca0c9075c71bc227c2fb2181ab8ef37bd2555ab6aa",
+          "output_results_sha256": "b843df65e5fceb3597a2f463c84c51be63bbbac5e21184ab5d65ce574bc10343",
+          "ranking_version": 8,
+          "changed_selected_slots": 0,
+          "changed_selected_slots_by_role": {
+            "icon": 0,
+            "wide": 0
+          },
+          "result_count": 300
+        }
+      },
+      "counts": {
+        "assigned_entities": 300,
+        "captured_candidates": 2732,
+        "canonical_candidate_labels": 2732,
+        "legacy_selected_role_labels": 0,
+        "selected_icon_wide_slots": 366,
+        "selected_slots_labeled": 366,
+        "missing_selected_role_slots": 0,
+        "selected_candidates_without_any_label": 0,
+        "canonical_candidates_unlabeled": 0,
+        "fingerprint_bound_candidate_labels": 2732,
+        "concrete_safety_candidate_labels": 2732,
+        "reviewed_negative_candidate_labels": 1682,
+        "fingerprint_bound_negative_safety_labels": 1682,
+        "derived_scoring_records": 3098
+      },
+      "missing_selected_slots": [],
+      "qualified_score": {
+        "value": 66.19,
+        "status": "complete",
+        "selected_roles": 366,
+        "selected_roles_labeled": 366,
+        "role_components": {
+          "icon": {
+            "denominator": 227,
+            "coverage": {
+              "numerator": 195,
+              "rate": 0.8590308370044053
+            },
+            "top1_correctness": {
+              "numerator": 170,
+              "rate": 0.748898678414097
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 166,
+              "rate": 0.7312775330396476
+            }
+          },
+          "wide": {
+            "denominator": 227,
+            "coverage": {
+              "numerator": 137,
+              "rate": 0.6035242290748899
+            },
+            "top1_correctness": {
+              "numerator": 116,
+              "rate": 0.5110132158590308
+            },
+            "top1_visual_usability": {
+              "weighted_numerator": 95,
+              "rate": 0.4185022026431718
+            }
+          }
+        },
+        "wrong_brand_domains": 3
+      },
+      "qualification": {
+        "selected_slot_snapshot_score": {
+          "qualified": true,
+          "scope": "Exact selected icon/wide slots only; candidate coverage is not implied unless the exhaustive surface also qualifies."
+        },
+        "exact_snapshot_exhaustive_surface": {
+          "qualified": true,
+          "requirements": {
+            "canonical_candidate_complete": true,
+            "fingerprint_complete": true,
+            "safety_complete": true,
+            "selected_role_adapter_complete": true
+          }
+        },
+        "current_ranking_runtime_on_frozen_capture": {
+          "qualified": true,
+          "captured_ranking_version": 8,
+          "current_runtime_ranking_version": 8,
+          "scope": "Ranking behavior on the exact hashed frozen candidates; extraction and website state are not recaptured."
+        },
+        "current_end_to_end_runtime": {
+          "qualified": false,
+          "reason": "The audit reuses frozen capture bytes and therefore does not qualify current extraction, reachability, or live website state."
+        }
+      }
+    }
+  },
+  "documented_gap_reconciliation": {
+    "reference_run": {
+      "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-frozen-500-rank-v5/results.jsonl",
+      "sha256": "5efa36ef479b83a30703a0d1a3ee6b3b2dabd6d4c90968ce6f27a93b3d55e7c2"
+    },
+    "reference": {
+      "selected_icon_wide_slots": 605,
+      "missing_selected_role_slots": 45,
+      "selected_candidates_without_any_label": 44
+    },
+    "current_ranking_v8_replay": {
+      "selected_icon_wide_slots": 605,
+      "missing_selected_role_slots": 51,
+      "selected_candidates_without_any_label": 50
+    },
+    "conclusion": "The documented 44 count is reproduced only as selected candidates with no label in the retained ranking-v5 reference. The current ranking-v8 frozen replay has a larger role-slot and candidate-level gap."
+  },
+  "original_500_review_preparation": {
+    "status": "prepared_not_adjudicated",
+    "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-cross-cohort-ranking-v8-qualification/original-500-v8/label-sheets-v3",
+    "index": {
+      "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-cross-cohort-ranking-v8-qualification/original-500-v8/label-sheets-v3/index.json",
+      "sha256": "9445dbc2b32b17470c4b413c6995b3a7b0ae03139ab75c57d2bef7466445753e"
+    },
+    "response_template": {
+      "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-cross-cohort-ranking-v8-qualification/original-500-v8/label-sheets-v3/responses-template.jsonl",
+      "sha256": "a9c1fd245295e02e205ec5c907b1a42413ee9a39b6abbe920d0f25c6f990abc9"
+    },
+    "prompt": {
+      "path": "/Users/hendrik/Documents/logo-yoink/runs/2026-08-25-cross-cohort-ranking-v8-qualification/original-500-v8/label-sheets-v3/prompt.md",
+      "sha256": "8e7667b445fcb608dfea4f567038b8cc1b8f1e23327ff3437130f79b6c78074f"
+    },
+    "sheet_count": 269,
+    "entity_count": 398,
+    "visual_candidate_count": 4454,
+    "candidate_count": 4454,
+    "candidate_ids_sha256": "cef97993add56444e4a18496ea7459dc7e4028efe1979c9c2b3815b463951bb8",
+    "source_artifacts": {
+      "results": {
+        "path": "results.jsonl",
+        "sha256": "9a144ce7d34799042f8e66a6ad20e5987792ccc9ba082dbbccf5902679157dee"
+      }
+    },
+    "limitation": "This proves a blinded, fingerprint-bound review surface exists. It is not a label artifact and confers no qualification until every response and the exhaustive negative-safety pass validate."
+  },
+  "cross_cohort_qualification": {
+    "exact_snapshot_exhaustive_surface": false,
+    "current_ranking_runtime_on_frozen_captures": false,
+    "current_end_to_end_runtime": false
+  }
+}

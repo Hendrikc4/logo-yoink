@@ -6,55 +6,54 @@ instance. It also never imports or changes rank scores.
 
 ## Workflow
 
-1. Scrape the benchmark with the existing runner. This retains the current
-   extraction and ranking behavior while saving candidate assets:
+1. Scrape or frozen-rerank the benchmark with the existing runner. This retains
+   candidate assets and writes `results.jsonl`:
 
    ```sh
    npm run benchmark -- --cohort all-500 --output runs/all-500
    ```
 
-2. Deduplicate candidates and render numbered, batched PNG contact sheets:
+2. Deduplicate candidates and render numbered, batched PNG contact sheets. The
+   sheet builder accepts benchmark `results.jsonl` directly as well as the
+   typed `entities.jsonl`/`candidates.jsonl` capture layout:
 
    ```sh
-   node scripts/review/candidate-labeling.mjs prepare --run runs/all-500
+   npm run visual-benchmark:label-sheets -- build --run runs/all-500
    ```
 
-   The packet is written to `runs/all-500/candidate-labeling/`. Candidate bytes
+   The packet is written to `runs/all-500/label-sheets-v3/`. Candidate bytes
    are deduplicated by content hash, then resolved URL, within each entity. The
-   packet contains `manifest.json`, `candidates.jsonl`, `AI-INSTRUCTIONS.txt`,
-   and `sheets/*.png`. Candidate numbering is global within this frozen packet.
+   packet contains `index.json`, `prompt.md`, `responses-template.jsonl`, and
+   `sheets/*.png`. Each source JSONL file is SHA-256-bound in the index, and each
+   sheet fingerprint binds its company/candidate mapping and rendered PNG.
+   Candidate numbering is local to each frozen sheet.
 
-3. Give the sheets and `AI-INSTRUCTIONS.txt` to a vision-capable reviewer. Its
-   response must be JSONL only, with no IDs, scores, prose, or Markdown:
+3. Give the sheets and `prompt.md` to a vision-capable reviewer. Start from the
+   response template and return one fingerprint-bound JSON object per sheet:
 
    ```json
-   {"candidate_number":17,"roles":["wide"],"flags":["correct","good","best"]}
+   {"sheet_id":"sheet-0001-abcd1234","packet_fingerprint":"sha256:...","reviewed":true,"logos":[{"n":17,"roles":["wide"],"works_on":["light","dark"]}],"best":{"icon":[],"wide":[17],"favicon":[],"stacked":[]},"uncertain":[]}
    ```
 
-   Every number must appear once. Roles are `icon`, `wide`, `favicon`, or
-   `other`. Flags contain exactly one identity (`correct`, `wrong`,
-   `ambiguous`), exactly one usability (`good`, `conditional`, `unusable`), and
-   optional `best`, `theme_specific`, `stale`, `composite`, or
-   `preview_missing`. A reviewer must use `ambiguous`, `unusable`, and
-   `preview_missing` for a tile that could not be safely rasterized.
+   Omitted numbers become reviewed negatives only when `reviewed` is true.
+   Unclear tiles belong in `uncertain`; they must not also appear in `logos`.
 
 4. Validate and merge one or more response shards:
 
    ```sh
-   node scripts/review/candidate-labeling.mjs merge \
-     --packet runs/all-500/candidate-labeling \
-     --input labels/batch-01.jsonl \
-     --input labels/batch-02.jsonl
+   npm run visual-benchmark:label-sheets -- validate \
+     --packet runs/all-500/label-sheets-v3 \
+     --labels labels/responses \
+     --reviewer reviewer-id \
+     --review-pass independent-full-review-v1 \
+     --output runs/all-500/candidate-labels.jsonl
    ```
 
-   The command rejects unknown or duplicate numbers, extra semantic keys,
-   invalid flags, incomplete coverage, and multiple `best` candidates for the
-   same entity/role. The output `candidate-labels.jsonl` restores stable
-   `entity_id` and `candidate_id` values. `icon`, `wide`, and `favicon` rows use
-   the flat label shape consumed by the current benchmark tooling; `other` and
-   empty-role labels are retained as candidate ground truth but ignored by the
-   current scorer. A visual label is expanded to every candidate ID folded into
-   the same content-hash/URL group, so aliases remain joinable.
+   The command rejects unknown or duplicate numbers, stale fingerprints, extra
+   semantic keys, incomplete sheets, and multiple `best` candidates for the
+   same entity/role. The output restores stable `entity_id` and `candidate_id`
+   values and expands a visual judgment to every candidate ID folded into the
+   same content-hash group.
 
 The direct score command treats its `role` field as both the review slot and the
 candidate's applicable visual role. Consequently, a selected non-logo or a
@@ -99,7 +98,7 @@ unknown candidate numbers, duplicate assignments, incomplete sheets, stale
 packet fingerprints, and overwrites without `--overwrite`. A selected
 `unclassified_negative` intentionally makes the benchmark score incomplete.
 
-Use `--allow-partial` only for an intentional intermediate merge. A partial
-file is not adequate for final benchmark scoring. Packet manifests include the
-SHA-256 of the frozen `results.jsonl`; regenerate the packet after any new
-scrape instead of reusing candidate numbers.
+A partial file is not adequate for final benchmark scoring. Packet manifests
+include the SHA-256 of the frozen `results.jsonl` (or each typed capture input),
+and packet validation rejects changed source bytes. Regenerate the packet after
+any new scrape or rerank instead of reusing candidate numbers.
