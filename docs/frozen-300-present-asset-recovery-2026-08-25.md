@@ -2,7 +2,9 @@
 
 ## Decision
 
-Promote ranking v9's bounded ultrawide-wordmark eligibility rule. A candidate
+Promote the bounded ultrawide-wordmark eligibility rule, evaluated in isolation
+as ranking v9 and released together with the corporate-identity gate as ranking
+v10. A candidate
 whose measured ratio is between `12:1` and `14:1` can qualify as wide only when
 the existing strong first-party evidence is present: home linkage, header/nav
 placement, or an authoritative metadata source. The change reuses frozen

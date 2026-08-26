@@ -2,7 +2,9 @@
 
 ## Decision
 
-Promote ranking v9's deterministic corporate-identity gate. It removes the
+Promote the deterministic corporate-identity gate, evaluated in isolation as
+ranking v9 and released together with bounded ultrawide eligibility as ranking
+v10. It removes the
 three remaining reviewed wrong-brand domains in development without a
 company-specific allowlist, a broad DOM-source demotion, or an AI veto.
 Validation has no changed selection and no regression. No evaluation row was
@@ -118,7 +120,7 @@ are regenerated with `selected-role-scoring-adapter.mjs`, and the normal
 qualification is `npm run check`.
 
 The release safeguard requires the qualification metadata to acknowledge every
-runtime ranking version. The v9 change updates only
+runtime ranking version. The isolated v9 change updates only
 `acknowledged_runtime_ranking_version`; captured ranking v3, its published
 metrics, canonical roles, and `qualifies_current_runtime: false` remain
 unchanged. No frozen measurement or input is rewritten.

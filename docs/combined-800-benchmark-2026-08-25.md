@@ -18,6 +18,12 @@ existing scorer. It is not the weighted average of the two published headline
 scores. In particular, p95 latency is recomputed from all 800 durations and
 wrong-brand safety is recomputed over all 650 reachable domains.
 
+The machine report records ranking v10 as the current runtime, but the 70.67
+score remains an exact historical-snapshot result. It is not a score for v10.
+The composed v10 replay changes four canonical original-500 selections whose
+replacement candidates lack exhaustive labels, so current-runtime
+qualification remains explicitly false.
+
 ## Combined result
 
 | Metric | Combined 800 | Original 500 | Major brands 300 |
