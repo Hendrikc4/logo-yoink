@@ -12,6 +12,8 @@ import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
 import { matchesLogoPreferences, normalizeAssetPreferences } from './asset-model.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
+const HOMEPAGE_FALLBACK_TIMEOUT_MS = 3_000;
+const BLOCKED_HTTP_STATUSES = new Set([401, 403, 407, 418, 429, 444]);
 const MAX_HTML_BYTES = 2 * 1024 * 1024;
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
 const MAX_CANDIDATES_TO_DOWNLOAD = 16;
@@ -107,6 +109,66 @@ export function normalizeWebsite(value) {
   const hostname = url.hostname.toLowerCase();
   if (hostname === 'localhost' || hostname.endsWith('.localhost') || isPrivateIp(hostname)) throw new Error('Local and private-network addresses are not supported.');
   return { url, domain: hostname.replace(/^www\./, '') };
+}
+
+function homepageAttemptPlan(normalized, timeoutMs) {
+  const fallbackTimeoutMs = Math.min(timeoutMs, HOMEPAGE_FALLBACK_TIMEOUT_MS);
+  const alternateHostname = normalized.url.hostname.toLowerCase() === normalized.domain
+    ? `www.${normalized.domain}`
+    : normalized.domain;
+  const raw = [
+    { url: normalized.url.href, stage: 'primary', timeoutMs },
+    { url: `https://${alternateHostname}/`, stage: 'alternate_https_host', timeoutMs: fallbackTimeoutMs },
+    { url: `http://${normalized.domain}/`, stage: 'http_compatibility', timeoutMs: fallbackTimeoutMs },
+  ];
+  return [...new Map(raw.map(item => [item.url, item])).values()];
+}
+
+function homepageFailureKind({ status, error } = {}) {
+  if (BLOCKED_HTTP_STATUSES.has(Number(status))) return 'blocked_interstitial';
+  const message = String(error?.message ?? error ?? '').toLowerCase();
+  if (error?.name === 'AbortError' || /timed out|timeout/.test(message)) return 'timeout';
+  if (/enotfound|eai_again|dns/.test(message)) return 'dns';
+  if (/certificate|cert_|tls|ssl|self[- ]signed|hostname.*match/.test(message)) return 'tls';
+  if (/too many redirects/.test(message)) return 'redirect';
+  if (status) return 'http_status';
+  return 'transport';
+}
+
+function aggregateHomepageFailure(reachability) {
+  const attempted = reachability.filter(item => !item.skipped);
+  const kinds = attempted.map(item => item.failureKind);
+  if (kinds.some(kind => kind === 'blocked_interstitial')) return 'blocked_interstitial';
+  if (kinds.length && kinds.every(kind => kind === 'dns' || kind === 'tls')) return 'dns_tls_failure';
+  if (kinds.filter(kind => kind === 'timeout').length >= 2) return 'timeout';
+  if (kinds.some(kind => kind === 'redirect')) return 'redirect';
+  return kinds.at(-1) ?? 'unknown';
+}
+
+function extractionFailure(message, { network, reachability, failureStage, failureClass }) {
+  const error = new Error(message);
+  error.reachabilityCategory = ({ blocked_interstitial: 'blocked_interstitial', dns_tls_failure: 'dns_tls_failure', parked_for_sale: 'parked_for_sale' })[failureClass];
+  error.diagnostics = {
+    failureStage,
+    failureClass,
+    timeoutSource: reachability.filter(item => item.failureKind === 'timeout').map(item => item.stage),
+    reachability,
+    requests: network.requests,
+    bytesDownloaded: network.bytesDownloaded,
+    downloadedBytes: network.bytesDownloaded,
+  };
+  return error;
+}
+
+function applyBlockedRecoverySafety(items, enabled) {
+  if (!enabled) return items;
+  for (const item of items) {
+    const proof = item.evidence ?? {};
+    const verified = FAVICON_SOURCES.has(item.source) || STRUCTURED_LOGO_SOURCES.has(item.source) ||
+      proof.positive_token || proof.home_linked || proof.deep_official;
+    if (!verified) item.evidence = { ...proof, eligible_roles: [] };
+  }
+  return items;
 }
 
 async function fetchJinaHomepage(targetUrl, { apiKey, timeoutMs = DEFAULT_TIMEOUT_MS, diagnostics, fetchImpl = fetch, validateUrl = assertPublicUrl } = {}) {
@@ -541,17 +603,46 @@ export function needsRenderedWideFallback(ranked, preferences) {
 
 export async function extractLogos(website, options = {}) {
   const preferences = normalizeAssetPreferences(options.preferences);
-  const startedAt = performance.now(), timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS, normalized = normalizeWebsite(website), network = { requests: 0, bytesDownloaded: 0 }, isBare = normalized.url.hostname.toLowerCase() === normalized.domain;
+  const startedAt = performance.now(), timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS, normalized = normalizeWebsite(website), network = { requests: 0, bytesDownloaded: 0 };
   const maxImageBytes = Number.isFinite(options.maxImageBytes) ? Math.max(128 * 1024, Math.min(MAX_IMAGE_BYTES, options.maxImageBytes)) : MAX_IMAGE_BYTES;
-  const attempts = [...new Set([normalized.url.href, `https://${normalized.domain}/`, `http://${normalized.domain}/`, ...(isBare ? [`https://www.${normalized.domain}/`] : [])])];
+  const attempts = homepageAttemptPlan(normalized, timeoutMs);
   let homepage = null, html = '', htmlTruncated = false, jinaHomepageUsed = false; const reachability = [];
+  const dnsFailedHosts = new Set();
+  let consecutiveTimeouts = 0;
   for (const attempt of attempts) {
-    try { const response = await fetchTimed(attempt, { timeoutMs, accept: 'text/html,application/xhtml+xml', diagnostics: network }); if (!response.ok) { reachability.push({ url: attempt, ok: false, status: response.status }); continue; } homepage = response.url; const read = await readLimited(response, MAX_HTML_BYTES, { truncate: true, diagnostics: network }); html = read.bytes.toString('utf8'); htmlTruncated = read.truncated; reachability.push({ url: attempt, ok: true, status: response.status, finalUrl: response.url }); break; }
-    catch (error) { reachability.push({ url: attempt, ok: false, error: error.name === 'AbortError' ? 'timeout' : error.message }); }
+    const hostname = new URL(attempt.url).hostname.toLowerCase();
+    if (dnsFailedHosts.has(hostname)) {
+      reachability.push({ url: attempt.url, stage: attempt.stage, ok: false, skipped: 'dns-host-known-unreachable', failureKind: 'dns' });
+      continue;
+    }
+    try {
+      const response = await fetchTimed(attempt.url, { timeoutMs: attempt.timeoutMs, accept: 'text/html,application/xhtml+xml', diagnostics: network });
+      if (!response.ok) {
+        const failureKind = homepageFailureKind({ status: response.status });
+        reachability.push({ url: attempt.url, stage: attempt.stage, ok: false, status: response.status, failureKind });
+        consecutiveTimeouts = 0;
+        await response.body?.cancel().catch(() => {});
+        continue;
+      }
+      homepage = response.url;
+      const read = await readLimited(response, MAX_HTML_BYTES, { truncate: true, diagnostics: network, timeoutMs: attempt.timeoutMs });
+      html = read.bytes.toString('utf8'); htmlTruncated = read.truncated;
+      reachability.push({ url: attempt.url, stage: attempt.stage, ok: true, status: response.status, finalUrl: response.url });
+      break;
+    } catch (error) {
+      const failureKind = homepageFailureKind({ error });
+      reachability.push({ url: attempt.url, stage: attempt.stage, ok: false, error: failureKind === 'timeout' ? 'timeout' : error.message, failureKind });
+      if (failureKind === 'dns') dnsFailedHosts.add(hostname);
+      consecutiveTimeouts = failureKind === 'timeout' ? consecutiveTimeouts + 1 : 0;
+      if (consecutiveTimeouts >= 2) break;
+    }
   }
   const jinaApiKey = Object.hasOwn(options, 'jinaApiKey') ? options.jinaApiKey : process.env.JINA_API_KEY?.trim();
   if (!homepage && jinaApiKey) {
-    const target = attempts.find((_, index) => reachability[index]?.status !== 404) ?? attempts[0];
+    const target = attempts.find(item => {
+      const outcome = reachability.find(value => value.url === item.url);
+      return outcome && outcome.status !== 404 && !outcome.skipped;
+    })?.url ?? attempts[0].url;
     try {
       const response = await fetchJinaHomepage(target, { apiKey: jinaApiKey, timeoutMs: Math.max(timeoutMs, 20_000), diagnostics: network });
       if (!response.ok) {
@@ -568,13 +659,23 @@ export async function extractLogos(website, options = {}) {
       reachability.push({ url: target, via: 'jina', ok: false, error: error.name === 'AbortError' ? 'timeout' : error.message });
     }
   }
-  if (!homepage) throw new Error(`Could not reach the website. ${reachability.map(item => `${item.url}${item.via ? ` via ${item.via}` : ''}: ${item.error ?? `HTTP ${item.status}`}`).join(' | ')}`);
+  if (!homepage) {
+    const failureClass = aggregateHomepageFailure(reachability);
+    throw extractionFailure(`Could not reach the website. ${reachability.map(item => `${item.url}${item.via ? ` via ${item.via}` : ''}: ${item.skipped ?? item.error ?? `HTTP ${item.status}`}`).join(' | ')}`, {
+      network, reachability, failureStage: 'homepage_acquisition', failureClass,
+    });
+  }
   const namecheapInterstitial = !/(?:^|\.)namecheap\.com$/i.test(normalized.domain) && /alt=["']Namecheap Logo["']/i.test(html);
   const vercelInterstitial = !/(?:^|\.)vercel\.com$/i.test(normalized.domain) && /Vercel Security Checkpoint/i.test(html);
-  if (/sedoparking|domain (?:name )?is for sale|buy this domain|hugedomains|afternic|parking-page\.shtml/i.test(html) || namecheapInterstitial || vercelInterstitial) {
-    throw new Error('Website appears parked or for sale.');
+  if (/sedoparking|domain (?:name )?is for sale|buy this domain|hugedomains|afternic|parking-page\.shtml/i.test(html) || namecheapInterstitial) {
+    throw extractionFailure('Website appears parked or for sale.', { network, reachability, failureStage: 'homepage_content', failureClass: 'parked_for_sale' });
+  }
+  if (vercelInterstitial) {
+    throw extractionFailure('Website appears blocked by a security interstitial.', { network, reachability, failureStage: 'homepage_content', failureClass: 'blocked_interstitial' });
   }
   const parsed = parseHomepage(html, homepage, { companyName: options.companyName, collectDeepLinks: Boolean(options.deepWide) });
+  const blockedRecovery = reachability.some(item => item.failureKind === 'blocked_interstitial') &&
+    reachability.some(item => item.ok && item.stage !== 'primary');
   const jinaRecoverableLogoMarkup = parsed.candidates.some(item =>
     ['dom-img', 'dom-picture', 'noscript-img', 'inline-svg'].includes(item.source) &&
     (item.evidence?.positive_token || item.evidence?.home_linked));
@@ -588,17 +689,18 @@ export async function extractLogos(website, options = {}) {
   const unique = queueSelection?.chosen ?? rankedUnique.slice(0, budget);
   const validatedRaw = (await mapConcurrent(unique, 6, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
   let validated = dedupeBytes(validatedRaw);
+  const rankValidated = () => rankCandidates(applyBlockedRecoverySafety(validated, blockedRecovery), { companyName: options.companyName, preferences });
   const contentStats = { boxes: 0 };
   await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
   await attachTinySuitability(validated);
-  let ranked = rankCandidates(validated, { companyName: options.companyName, preferences });
+  let ranked = rankValidated();
   let cachedFavicon = null;
   if (!ranked.selectedByRole.icon && options.cachedFavicon !== false) {
     cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
     if (cachedFavicon) {
       validated = dedupeBytes([...validated, cachedFavicon]);
       await attachTinySuitability(validated);
-      ranked = rankCandidates(validated, { companyName: options.companyName, preferences });
+      ranked = rankValidated();
     }
   }
 
@@ -621,14 +723,14 @@ export async function extractLogos(website, options = {}) {
     const extraDirect = (await mapConcurrent(direct, 3, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
     validated = dedupeBytes([...validated, ...archive, ...extraDirect]);
     await attachTinySuitability(validated);
-    ranked = rankCandidates(validated, { companyName: options.companyName, preferences });
+    ranked = rankValidated();
     if (options.spaBundles && needsRenderedWideFallback(ranked, preferences)) {
       const spa = await discoverSpaBundleAssets({ homepage, parsed, companyName: deepCompanyName, fetchResource });
       deepDiagnostics.spaBundle = spa.diagnostics;
       const spaExtra = (await mapConcurrent(spa.candidates, 2, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
       validated = dedupeBytes([...validated, ...spaExtra]);
       await attachTinySuitability(validated);
-      ranked = rankCandidates(validated, { companyName: options.companyName, preferences });
+      ranked = rankValidated();
     }
   }
 
@@ -648,7 +750,7 @@ export async function extractLogos(website, options = {}) {
         validated = dedupeBytes([...validated, ...extra]);
         await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
         await attachTinySuitability(validated);
-        ranked = rankCandidates(validated, { companyName: options.companyName, preferences });
+        ranked = rankValidated();
         if (!needsRenderedWideFallback(ranked, preferences)) break;
       } catch { /* Secondary pages are a bounded fallback, never a fatal path. */ }
     }
@@ -673,7 +775,7 @@ export async function extractLogos(website, options = {}) {
     validated = dedupeBytes([...validated, ...extra]);
     await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
     await attachTinySuitability(validated);
-    ranked = rankCandidates(validated, { companyName: options.companyName, preferences });
+    ranked = rankValidated();
   }
 
   let jinaScreenshot = null;
@@ -690,7 +792,7 @@ export async function extractLogos(website, options = {}) {
       validated = dedupeBytes([...validated, screenshot]);
       await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
       await attachTinySuitability(validated);
-      ranked = rankCandidates(validated, { companyName: options.companyName, preferences });
+      ranked = rankValidated();
       jinaScreenshot = { status: 'ok', mode, width: screenshot.width, height: screenshot.height };
     } catch (error) {
       jinaScreenshot = { status: 'error', error: error.name === 'AbortError' ? 'timeout' : error.message };
@@ -707,5 +809,7 @@ export const internals = {
   imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
   selectRoleAware, measureContentBox, attachContentBoxes, attachTinySuitability, dedupeBytes,
   fromBrowserCandidate, browserCandidateDisposition, selectBrowserCandidates, needsRenderedWideFallback, discoveryPriority, validateCandidate, validateCandidateBytes, isRenderableSvg, imageBackground, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
+  homepageAttemptPlan, homepageFailureKind, aggregateHomepageFailure,
+  applyBlockedRecoverySafety,
   scoreCandidate: item => scoreCandidate(item).role_scores.icon,
 };

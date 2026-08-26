@@ -41,6 +41,7 @@ Score an existing run with reviewer labels:
 
 Run options:
   --cohort NAME         original-100, holdout-100, remaining-300, major-brands-300, all-500, or all-800
+  --split NAME          development or validation assignment subset (major-brands-300 only)
   --output DIR          Run directory (default: runs/<UTC timestamp>-<cohort>)
   --concurrency N       Domains processed concurrently (default: 4)
   --timeout-ms N        Per-request extractor timeout (default: 10000)
@@ -210,6 +211,7 @@ function relatedHost(a, b) {
 }
 
 export function classifyFailure(error) {
+  if (error?.reachabilityCategory) return error.reachabilityCategory;
   const message = String(error?.message ?? error ?? '').toLowerCase();
   if (/enotfound|eai_again|dns|certificate|cert_|tls|ssl|self[- ]signed|hostname.*match/.test(message)) return 'dns_tls_failure';
   if (/403|429|captcha|cloudflare|access denied|forbidden|bot|interstitial|blocked/.test(message)) return 'blocked_interstitial';
@@ -280,6 +282,7 @@ async function runCompany(company, extractorOptions, assetsDirectory) {
       },
     };
   } catch (error) {
+    const diagnostics = error?.diagnostics ?? {};
     return {
       schema_version: SCHEMA_VERSION,
       entity_id: company.entity_id,
@@ -293,8 +296,13 @@ async function runCompany(company, extractorOptions, assetsDirectory) {
       legacy_selected_by_role: Object.fromEntries(LEGACY_ROLE_NAMES.map(role => [role, null])),
       legacy_selected_candidate_id: null,
       candidates: [],
-      diagnostics: {},
-      metrics: { duration_ms: Math.round(performance.now() - startedAt), requests: null, downloaded_bytes: null, browser_used: false },
+      diagnostics,
+      metrics: {
+        duration_ms: Math.round(performance.now() - startedAt),
+        requests: diagnostics.requests ?? null,
+        downloaded_bytes: diagnostics.downloadedBytes ?? diagnostics.downloaded_bytes ?? null,
+        browser_used: diagnostics.browserUsed ?? diagnostics.browser_used ?? false,
+      },
     };
   }
 }
@@ -493,8 +501,8 @@ export function summarizeResults(results, metadata = {}, labelRecords = null, ef
   const automatedProxyScore = results.length ? Math.round((roles.icon.domains + roles.wide.domains) / (2 * results.length) * 1000) / 10 : 0;
   const performance = {
     duration_ms: metricAggregate(results.map(result => result.metrics?.duration_ms)),
-    requests: metricAggregate(results.map(result => result.metrics?.requests)),
-    downloaded_bytes: metricAggregate(results.map(result => result.metrics?.downloaded_bytes)),
+    requests: metricAggregate(reachable.map(result => result.metrics?.requests)),
+    downloaded_bytes: metricAggregate(reachable.map(result => result.metrics?.downloaded_bytes)),
     browser_invocations: results.filter(result => result.metrics?.browser_used).length,
   };
   const legacySelected = results.map(result => result.candidates.find(candidate => candidate.candidate_id === result.legacy_selected_candidate_id)).filter(Boolean);
@@ -548,7 +556,7 @@ function outcomeSignature(result) {
   return JSON.stringify({
     status: result.status,
     reachability: result.reachability,
-    selected: result.selected_by_role ?? {},
+    selected: Object.fromEntries(ROLE_NAMES.map(role => [role, result.selected_by_role?.[role] ?? null])),
     roles: Object.fromEntries(ROLE_NAMES.map(role => [role, Boolean(result.candidates?.some(candidate => candidate.predicted_roles?.includes(role)))])),
   });
 }
@@ -644,6 +652,15 @@ async function runCommand(options) {
   const fixtureName = ['major-brands-300', 'all-800'].includes(cohort) ? 'companies-800.json' : 'companies-500.json';
   const fixture = JSON.parse(await readFile(['major-brands-300', 'all-800'].includes(cohort) ? FIXTURE_PATHS.expanded : FIXTURE_PATHS.legacy, 'utf8'));
   let companies = selectCohort(fixture.companies, cohort);
+  if (options.split) {
+    if (cohort !== 'major-brands-300' || !['development', 'validation'].includes(options.split)) {
+      throw new Error('--split supports only development or validation with --cohort major-brands-300.');
+    }
+    const assignments = await readJsonl(join(ROOT, 'benchmarks', 'major-brands-300-v1', 'splits', `${options.split}.jsonl`));
+    const byId = new Map(companies.map(company => [company.entity_id, company]));
+    companies = assignments.map(assignment => byId.get(assignment.entity_id));
+    if (companies.some(company => !company)) throw new Error(`The ${options.split} assignments do not match the major-brands fixture.`);
+  }
   if (options.limit) companies = companies.slice(0, options.limit);
   const outputDirectory = resolve(options.output ?? join(ROOT, 'runs', `${timestampId()}-${cohort}`));
   const assetsDirectory = join(outputDirectory, 'assets');
@@ -655,12 +672,13 @@ async function runCommand(options) {
     git_revision: gitRevision(),
     fixture: `fixtures/${fixtureName}`,
     fixture_generated_at: fixture.generatedAt ?? null,
-    cohort,
+    cohort: options.split ? `${cohort}-${options.split}` : cohort,
     cohort_count: companies.length,
     cohort_entity_ids: companies.map(company => company.entity_id),
     holdout_seed: HOLDOUT_SEED,
     options: {
       concurrency, timeout_ms: timeoutMs, besticon_enabled: Boolean(options.besticonUrl),
+      benchmark_split: options.split ?? null,
       browser: Boolean(options.browser), expanded_pages: options.expandedPages ?? 0,
       deep_wide: Boolean(options.deepWide), spa_bundles: Boolean(options.spaBundles),
       role_budget: Boolean(options.roleBudget), content_bounding_wide: Boolean(options.contentBoundingWide),
@@ -712,7 +730,7 @@ async function runCommand(options) {
   const labelRecords = options.labels ? await readJsonl(resolve(options.labels)) : null;
   const summary = summarizeResults(results, {
     run_id: config.run_id,
-    cohort,
+    cohort: config.cohort,
     wall_time_ms: Math.round(performance.now() - startedAt),
     repeat_comparison: comparison,
   }, labelRecords, config.efficiency_thresholds);

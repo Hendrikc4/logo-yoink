@@ -9,6 +9,32 @@ test('normalizes bare company domains', () => {
   assert.equal(result.domain, 'example.com');
 });
 
+test('homepage recovery prioritizes alternate HTTPS and bounds fallback time', () => {
+  const attempts = internals.homepageAttemptPlan(normalizeWebsite('example.com'), 10_000);
+  assert.deepEqual(attempts, [
+    { url: 'https://example.com/', stage: 'primary', timeoutMs: 10_000 },
+    { url: 'https://www.example.com/', stage: 'alternate_https_host', timeoutMs: 3_000 },
+    { url: 'http://example.com/', stage: 'http_compatibility', timeoutMs: 3_000 },
+  ]);
+  assert.equal(internals.homepageFailureKind({ status: 403 }), 'blocked_interstitial');
+  assert.equal(internals.homepageFailureKind({ error: new DOMException('aborted', 'AbortError') }), 'timeout');
+  assert.equal(internals.homepageFailureKind({ error: new Error('getaddrinfo ENOTFOUND example.com') }), 'dns');
+  assert.equal(internals.homepageFailureKind({ error: new Error('Too many redirects.') }), 'redirect');
+  assert.equal(internals.aggregateHomepageFailure([
+    { failureKind: 'timeout' }, { failureKind: 'timeout' },
+  ]), 'timeout');
+});
+
+test('blocked recovery requires explicit identity evidence before assigning roles', () => {
+  const weakNavPhoto = { source: 'dom-img', evidence: { dom_region: 'nav' } };
+  const homeLogo = { source: 'dom-img', evidence: { dom_region: 'header', home_linked: true } };
+  const declaredIcon = { source: 'manifest', evidence: {} };
+  internals.applyBlockedRecoverySafety([weakNavPhoto, homeLogo, declaredIcon], true);
+  assert.deepEqual(weakNavPhoto.evidence.eligible_roles, []);
+  assert.equal(homeLogo.evidence.eligible_roles, undefined);
+  assert.equal(declaredIcon.evidence.eligible_roles, undefined);
+});
+
 test('rejects local and unsupported URLs', () => {
   assert.throws(() => normalizeWebsite('http://127.0.0.1:3000'), /private-network/);
   assert.throws(() => normalizeWebsite('file:///etc/passwd'), /HTTP and HTTPS/);
