@@ -155,7 +155,22 @@
           </div>
           <p id="form-hint" class="form-hint">Enter any website URL and we’ll find the right logo.</p>
         </form>
-        <div id="status" class="status" aria-live="polite" aria-atomic="true"></div>
+        <div id="status" class="status" aria-live="polite" aria-atomic="true">
+          <span class="train-loader" aria-hidden="true">
+            <span class="train-loader__engine">
+              <img class="train-loader__body" src="/assets/ui/train-loader-engine-v2.webp" alt="">
+              <i class="train-loader__wheel train-loader__wheel--rear"></i>
+              <i class="train-loader__wheel train-loader__wheel--middle"></i>
+              <i class="train-loader__wheel train-loader__wheel--front"></i>
+              <i class="train-loader__rod"></i>
+              <i class="train-loader__smoke train-loader__smoke--1"></i>
+              <i class="train-loader__smoke train-loader__smoke--2"></i>
+              <i class="train-loader__smoke train-loader__smoke--3"></i>
+              <i class="train-loader__smoke train-loader__smoke--4"></i>
+            </span>
+          </span>
+          <span class="status-message"></span>
+        </div>
       </section>
 
       <section id="results" class="results" aria-labelledby="results-title" hidden>
@@ -177,8 +192,6 @@
           </div>
         </details>
       </section>
-
-      <div class="trail-divider" aria-hidden="true"></div>
 
       <section class="api-section" aria-labelledby="api-title">
         <div class="api-copy">
