@@ -84,10 +84,16 @@ test('Chromium renders Hoshii-style canonical cards and a SPA-discovered wordmar
     })));
     assert.equal(hoshiiDimensions.length, 2);
     assert.ok(hoshiiDimensions.every(item => item.complete && item.naturalWidth > 0), JSON.stringify(hoshiiDimensions));
+    await page.waitForFunction(() => [...document.querySelectorAll('.role-card.selected .preview')]
+      .every(preview => preview.dataset.previewBackground === 'white'));
     const iconVariant = page.locator('[data-asset-variant="asset-1"]');
     assert.equal(await iconVariant.locator('option').count(), 2);
     await iconVariant.selectOption('1');
     assert.equal(await page.locator('.role-card').first().locator('[data-asset-image]').getAttribute('src'), reverseIcon.dataUrl);
+    await page.waitForFunction(() => document.querySelector('.role-card.selected .preview')?.dataset.previewBackground === 'black');
+    await page.locator('.role-card').first().locator('[data-preview-background="transparent"]').click();
+    await iconVariant.selectOption('0');
+    assert.equal(await page.locator('.role-card').first().locator('.preview').getAttribute('data-preview-background'), 'transparent');
     assert.equal(await page.locator('#family-grid .family-card').count(), 1);
     assert.match(await page.locator('#complete-results summary').innerText(), /More assets \(1\)/);
 

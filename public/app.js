@@ -1,4 +1,5 @@
 import { adaptBrandResults, additionalAssetFamilies, brandRoleLabel, describeVariant } from './result-adapter.js';
+import { recognizeLogoBackground } from './logo-contrast.js';
 
 const form = document.querySelector('#extract-form');
 const input = document.querySelector('#website');
@@ -151,6 +152,7 @@ function render(payload) {
   completeResults.open = false;
   completeResults.hidden = families.length === 0;
   results.hidden = false;
+  for (const image of roleGrid.querySelectorAll('[data-asset-image]')) setAutomaticPreviewBackground(image);
 }
 
 function roleCard(asset, resultDomain, index) {
@@ -168,7 +170,7 @@ function roleCard(asset, resultDomain, index) {
   return `<article class="role-card selected">
     <div class="role-heading"><span class="role-number">${index}</span><h3>${escapeHtml(label)}</h3></div>
     ${previewControls(assetId, label)}
-    <div class="preview" data-preview-background="transparent">
+    <div class="preview" data-preview-background="white">
       <img data-asset-image src="${escapeHtml(item.dataUrl)}" alt="Recommended ${escapeHtml(label.toLowerCase())} for ${escapeHtml(resultDomain)}">
       <a class="download-overlay" data-asset-download href="${escapeHtml(item.dataUrl)}" download="${safeFilename(item, resultDomain, role)}">Download <span aria-hidden="true">↓</span></a>
     </div>
@@ -180,8 +182,8 @@ function previewControls(assetId, label) {
   return `<div class="preview-toolbar">
     <span>Preview background</span>
     <div class="preview-options" role="group" aria-label="Preview ${escapeHtml(label.toLowerCase())} background" data-preview-for="${assetId}">
-      ${previewButton('white', 'White', false)}
-      ${previewButton('transparent', 'Transparent', true)}
+      ${previewButton('white', 'White', true)}
+      ${previewButton('transparent', 'Transparent', false)}
       ${previewButton('black', 'Black', false)}
     </div>
   </div>`;
@@ -269,17 +271,17 @@ function escapeHtml(value) {
 roleGrid.addEventListener('pointerover', event => {
   if (event.pointerType && event.pointerType !== 'mouse') return;
   const control = event.target.closest('[data-preview-for] button');
-  if (control) setPreviewBackground(control);
+  if (control) setPreviewBackground(control, true);
 });
 
 roleGrid.addEventListener('focusin', event => {
   const control = event.target.closest('[data-preview-for] button');
-  if (control) setPreviewBackground(control);
+  if (control) setPreviewBackground(control, true);
 });
 
 roleGrid.addEventListener('click', event => {
   const control = event.target.closest('[data-preview-for] button');
-  if (control) setPreviewBackground(control);
+  if (control) setPreviewBackground(control, true);
 });
 
 roleGrid.addEventListener('change', event => {
@@ -295,13 +297,32 @@ roleGrid.addEventListener('change', event => {
   download.download = safeFilename(item, asset.resultDomain, asset.role);
   card.querySelector('[data-asset-format]').textContent = String(item.format || 'file').toUpperCase();
   card.querySelector('[data-asset-dimensions]').textContent = dimensionsFor(item);
+  setAutomaticPreviewBackground(card.querySelector('[data-asset-image]'));
 });
 
-function setPreviewBackground(control) {
+function setPreviewBackground(control, manual = false) {
   const controls = control.closest('[data-preview-for]');
   const card = control.closest('.role-card');
   const preview = card?.querySelector('.preview');
   if (!controls || !preview) return;
+  if (manual) card.dataset.previewOverride = 'true';
   preview.dataset.previewBackground = control.dataset.previewBackground;
   for (const button of controls.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button === control));
+}
+
+function setAutomaticPreviewBackground(image) {
+  const card = image?.closest('.role-card');
+  if (!card || card.dataset.previewOverride === 'true') return;
+  const requestId = String((Number(image.dataset.contrastRequest) || 0) + 1);
+  image.dataset.contrastRequest = requestId;
+
+  const apply = () => {
+    if (image.dataset.contrastRequest !== requestId || card.dataset.previewOverride === 'true') return;
+    const background = recognizeLogoBackground(image);
+    const control = background && card.querySelector(`[data-preview-for] [data-preview-background="${background}"]`);
+    if (control) setPreviewBackground(control);
+  };
+
+  if (image.complete && image.naturalWidth) apply();
+  else image.addEventListener('load', apply, { once: true });
 }
