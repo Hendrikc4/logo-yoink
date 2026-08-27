@@ -39,21 +39,35 @@ You get the candidates, their evidence, and downloadable files. No mystery black
 
 ## Quick draw
 
-### Prerequisites
+### Prerequisite
 
-- [Node.js 22+](https://nodejs.org/) and the bundled npm client
-- Internet access to inspect public websites
+- [Node.js 22+](https://nodejs.org/) with npm
 
-Logo Yoink does not need a database or a required third-party service. Chromium is used only for the default JavaScript-rendered-logo fallback; the static extractor works without it.
+That is it. Logo Yoink does not need a database, account, or API key. Chromium is installed automatically because bounded browser rendering is part of the default quality path; Jina remains off.
 
-### Install and run
+### Install the JavaScript API
+
+Until the package is published to npm, install it straight from GitHub:
+
+```bash
+npm install github:Hendrikc4/logo-yoink
+```
+
+```js
+import { yoink } from 'logo-yoink';
+
+const { icon, logo } = await yoink('stripe.com');
+console.log(icon?.resolvedUrl, logo?.resolvedUrl);
+```
+
+The install also downloads Chromium. No separate setup step or environment file is required.
+
+### Clone and run the API server
 
 ```bash
 git clone https://github.com/Hendrikc4/logo-yoink.git
 cd logo-yoink
-npm ci
-npx playwright install chromium
-cp .env.example .env.local
+npm run setup
 npm start
 ```
 
@@ -61,9 +75,9 @@ Open **http://127.0.0.1:4310**, paste a website, and hit **Yoink it**.
 
 For automatic restarts while editing the API or web app, use `npm run dev` instead of `npm start`. Both commands serve the UI and `/api/extract` from the same local address.
 
-On Linux, use `npx playwright install --with-deps chromium` if Chromium's system libraries are not already installed. To skip the browser download and use static discovery only, set `BROWSER_DISCOVERY=0` in `.env.local`.
+`npm run setup` installs the Node dependencies and Chromium. On a fresh Linux machine, use `npm run setup:linux` so Playwright also installs Chromium's system libraries. If you deliberately want static-only extraction, use `npm run setup:static`; it skips the browser download.
 
-The checked-in `.env.example` contains safe local defaults and empty placeholders. `.env.local` is gitignored; do not put API keys in tracked files. A fresh setup needs no secret, and the optional `JINA_API_KEY` and `BESTICON_URL` fallbacks can stay blank.
+The checked-in `.env.example` documents every server setting. Copy it to `.env.local` only when you want to change a default or add a key. `.env.local` is gitignored; do not put API keys in tracked files.
 
 ### Verify the setup
 
@@ -88,8 +102,8 @@ The smoke check starts an isolated local server on an available port, verifies t
 See the ranked results as JSON:
 
 ```bash
-npm run cli -- stripe.com
-npm run cli -- stripe.com --no-wikimedia-fallback
+npx logo-yoink stripe.com
+npx logo-yoink stripe.com --no-wikimedia-fallback
 ```
 
 The Wikidata/Wikimedia Commons missing-role fallback is enabled by default. It
@@ -103,18 +117,49 @@ Use `--no-wikimedia-fallback` in the CLI, `{ wikimediaFallback: false }` with
 Prefer a white/light logo for a dark surface and a transparent file:
 
 ```bash
-npm run cli -- stripe.com --theme dark --background transparent
+npx logo-yoink stripe.com --theme dark --background transparent
 ```
 
 Or download the top pick:
 
 ```bash
-npm run cli -- stripe.com --download ./downloads/stripe
+npx logo-yoink stripe.com --download ./downloads/stripe
 ```
 
 Add `--role logo` to download the preferred wordmark instead of the default icon-first pick.
 
+The CLI uses the bounded local browser by default. Add `--no-browser` for static-only extraction, `--jina` to opt into Jina, or `--all-fallbacks` to enable Jina plus the deeper first-party passes. Jina requires `JINA_API_KEY`.
+
 ## Use the API
+
+### From JavaScript
+
+```js
+import { yoink } from 'logo-yoink';
+
+const result = await yoink('stripe.com');
+result.icon; // best compact mark, or null
+result.logo; // best wordmark, or null
+```
+
+Browser rendering is enabled by default. To force the fastest static-only path:
+
+```js
+const result = await yoink('stripe.com', { scrapers: [] });
+```
+
+To try Jina Reader when a site blocks direct requests, opt in and supply a key. Jina may get through common bot protection, but no scraper can guarantee access to every site.
+
+```js
+const result = await yoink('stripe.com', {
+  scrapers: ['jina'],
+  jinaApiKey: process.env.JINA_API_KEY,
+});
+```
+
+You can enable both with `scrapers: ['browser', 'jina']`. Static discovery always runs first; scraper fallbacks run only when useful roles are still missing. The lower-level `extractLogos` export remains available for advanced budgets, test doubles, and discovery controls.
+
+### Over HTTP
 
 Once the local server is running:
 
@@ -124,17 +169,32 @@ curl -sS http://127.0.0.1:4310/api/extract \
   -d '{"website":"stripe.com","preferences":{"icon":{"color":"white"},"logo":{"theme":"dark","background":"transparent"}}}'
 ```
 
+The server uses its local browser by default. Send `"scrapers": []` for static-only extraction, `"scrapers": ["browser"]` for local browser rendering, `"scrapers": ["jina"]` for Jina, or both names together. Jina must be configured by the server owner with `JINA_API_KEY`; clients never send that secret.
+
 The demo and API use the same default-on Wikidata/Commons fallback. Add
-`"wikimediaFallback": false` to the request body when a lookup must remain
-first-party-only.
+`"wikimediaFallback": false` to disable that external identity source. Scraper
+selection is independent; use `"scrapers": []` when the whole request must stay
+on the built-in direct-fetch path.
 
 Both `preferences.icon` and `preferences.logo` accept the same optional fields. `theme` accepts `any`, `light`, or `dark` and describes the surface the asset must work on, so `dark` prefers light artwork. `color` accepts `any`, `color`, `white`, or `black`. `background` accepts `any`, `transparent`, or `opaque`. Preferences are best-effort: a matching eligible asset wins when available, otherwise ranking falls back to the best eligible asset.
 
 The response keeps canonical `assets.icon` and `assets.logo` selections and adds ordered `assetVariants.icon` and `assetVariants.logo` arrays. The selected asset is first. Additional entries must represent a distinct theme/color/background combination and clear `variantPolicy.minimumRoleScore` (currently 45, the medium-certainty boundary); delivery-size copies of the same artwork are not promoted as semantic variants. Every variant includes explicit metadata such as `{"theme":"dark","color":"white","background":"transparent"}` plus role-specific `certainty: { score, band }`.
 
-Grouped `assetFamilies`, every ranked `candidate`, normalized `preferences`, and discovery `diagnostics` remain available. The homepage uses the canonical variant arrays for its inline icon and wordmark selectors. “More assets” contains only other high-confidence families and excludes every family already represented by a selected-role variant.
+Grouped `assetFamilies`, every ranked `candidate`, normalized `preferences`, and discovery `diagnostics` remain available. `diagnostics.scrapers` reports which scraper choices were enabled and which actually ran. The homepage uses the canonical variant arrays for its inline icon and wordmark selectors. “More assets” contains only other high-confidence families and excludes every family already represented by a selected-role variant.
 
-For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available. The deprecated `selectedByRole.favicon` key independently reports the best favicon-sized legacy selection; it never changes canonical `assets.icon` or `assets.logo`. When no true icon qualifies, a valid favicon-role candidate may become the canonical icon fallback.
+The simplest response fields are top-level `icon` and `logo`. They are aliases of `assets.icon` and `assets.logo`. For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available. The deprecated `selectedByRole.favicon` key independently reports the best favicon-sized legacy selection; it never changes canonical `assets.icon` or `assets.logo`. When no true icon qualifies, a valid favicon-role candidate may become the canonical icon fallback.
+
+### Defaults at a glance
+
+| Capability | JavaScript / CLI default | HTTP server default | How to choose |
+| --- | --- | --- | --- |
+| Static first-party discovery | On | On | Always on |
+| First-party brand-page recovery | On in `yoink`; off in CLI | On | `deep: false` in JavaScript or omit `--deep-wide` in CLI |
+| Cached favicon recovery | On | On | `cachedFavicon: false` in JavaScript |
+| Exact-domain Wikimedia recovery | On | On | `wikimedia: false`, `--no-wikimedia-fallback`, or `"wikimediaFallback": false` |
+| Local Playwright browser | **On** | **On** | Use `scrapers: []`, `--no-browser`, or HTTP `"scrapers": []` to disable it |
+| Jina Reader | **Off** | **Off** | Add `"jina"` to `scrapers` and configure `JINA_API_KEY` |
+| Experimental BIMI | Off | Off | `bimi: true`, `--bimi`, or `PUBLIC_DEMO_BIMI=1` |
 
 ## How it works
 
@@ -179,14 +239,14 @@ First-party homepage discovery still runs first. The bounded recovery stages onl
 | Need | How |
 | --- | --- |
 | Skip browser rendering | `BROWSER_DISCOVERY=0 npm start` |
-| Recover from blocked or unusable homepages | Add `JINA_API_KEY` to `.env.local` |
+| Allow request-level Jina recovery for blocked or unusable homepages | Add `JINA_API_KEY` to `.env.local`, then request `"scrapers":["jina"]` |
 | Use a local [Besticon](https://github.com/mat/besticon) fallback | `BESTICON_URL=http://127.0.0.1:8080 npm start` |
 | Disable exact-domain Wikidata/Commons recovery | Add `--no-wikimedia-fallback` or set `PUBLIC_DEMO_WIKIMEDIA=0` |
 | Follow likely brand/press pages in the CLI | Add `--deep-wide` |
 | Inspect one same-origin SPA bundle too | Add `--deep-wide --spa-bundles` |
 | Try the measured BIMI icon fallback | Add `--bimi` (experimental, off by default) |
 
-Logo Yoink automatically loads a gitignored `.env.local` file. Normal successful extractions do not use Jina.
+Logo Yoink automatically loads a gitignored `.env.local` file. Setting `JINA_API_KEY` makes Jina available; it does not enable Jina by itself.
 
 The primary local settings are:
 
@@ -195,9 +255,9 @@ The primary local settings are:
 | `HOST` | `127.0.0.1` | Local server bind address |
 | `PORT` | `4310` | Local server port |
 | `BROWSER_DISCOVERY` | `1` | Enable the Chromium fallback |
-| `JINA_API_KEY` | unset | Optional Jina fallback for blocked or unusable homepages |
+| `JINA_API_KEY` | unset | Makes request-level Jina recovery available; it does not enable Jina |
 | `BESTICON_URL` | unset | Optional URL of a local Besticon service |
-| `PUBLIC_DEMO_ALLOW_JINA` | `1` | Set to `0` to prevent web/API requests from using Jina |
+| `PUBLIC_DEMO_ALLOW_JINA` | `1` | Set to `0` to prevent requests from opting into Jina, even when a key exists |
 | `PUBLIC_DEMO_BROWSER` | `1` | Set to `0` to prevent web/API requests from using Chromium |
 | `PUBLIC_DEMO_WIKIMEDIA` | `1` | Set to `0` to disable Wikidata/Commons missing-role recovery in the demo |
 | `PUBLIC_DEMO_BIMI` | `0` | Set to `1` to enable the experimental BIMI fallback for web/API requests |
@@ -262,7 +322,7 @@ See [`docs/`](docs/) for the benchmark methodology, experiment logs, and visual-
 
 That is why Logo Yoink returns multiple ranked candidates instead of pretending one guess is always perfect.
 
-The server binds to localhost by default and rejects non-public targets while revalidating redirects. The included public demo route also enforces small JSON-only requests, same-origin browser calls, per-client and global rate limits, a two-extraction concurrency ceiling, duplicate-request coalescing, bounded extractor work, generic errors, and restrictive browser security headers. Jina (when `JINA_API_KEY` is configured), local browser discovery, the one-entry first-party SPA-bundle probe, and exact-domain Wikidata/Commons recovery are enabled as bounded missing-logo fallbacks. Set `PUBLIC_DEMO_ALLOW_JINA=0`, `PUBLIC_DEMO_BROWSER=0`, or `PUBLIC_DEMO_WIKIMEDIA=0` to opt out of the corresponding fallback; the SPA probe remains capped at one same-origin bundle and 2.2 MB.
+The server binds to localhost by default and rejects non-public targets while revalidating redirects. The included public demo route also enforces small JSON-only requests, same-origin browser calls, per-client and global rate limits, a two-extraction concurrency ceiling, duplicate-request coalescing, bounded extractor work, generic errors, and restrictive browser security headers. Local browser discovery defaults on; Jina is request-level opt-in even when `JINA_API_KEY` is configured. The one-entry first-party SPA-bundle probe and exact-domain Wikidata/Commons recovery are bounded missing-logo fallbacks. Set `PUBLIC_DEMO_ALLOW_JINA=0`, `PUBLIC_DEMO_BROWSER=0`, or `PUBLIC_DEMO_WIKIMEDIA=0` to prevent the corresponding fallback; the SPA probe remains capped at one same-origin bundle and 2.2 MB.
 
 The in-process rate limiter is intentionally dependency-free, so limits apply per running instance. A multi-instance public deployment should add a distributed edge rate limit or authentication, and should pin the validated public IP at connection time or enforce equivalent outbound-network rules to close the remaining DNS-rebinding window.
 

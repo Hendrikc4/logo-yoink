@@ -27,7 +27,7 @@ test('shared demo extraction service validates, normalizes, and executes with ad
     body: '{"website":" example.com "}',
   }));
 
-  assert.deepEqual(calls, [{ website: 'https://example.com/', options: { browser: false, adapter: 'test', preferences: {
+  assert.deepEqual(calls, [{ website: 'https://example.com/', options: { browser: false, adapter: 'test', jinaApiKey: null, preferences: {
     icon: { theme: 'any', color: 'any', background: 'any' },
     logo: { theme: 'any', color: 'any', background: 'any' },
   } } }]);
@@ -50,6 +50,33 @@ test('shared demo extraction service forwards request-level Wikimedia opt-out', 
     body: '{"website":"example.com","wikimediaFallback":false}',
   }));
   assert.equal(calls[0].wikimediaFallback, false);
+});
+
+test('shared demo extraction service makes browser and Jina request-level choices', async () => {
+  const calls = [];
+  const service = createDemoExtractionService({
+    environment: { JINA_API_KEY: 'secret' },
+    extractionOptions: () => ({ browser: true, jinaApiKey: null }),
+    extract: async (_website, options) => { calls.push(options); return {}; },
+  });
+  await service.handle(request({
+    headers: { 'content-type': 'application/json' },
+    body: '{"website":"example.com","scrapers":["jina"]}',
+  }));
+  assert.equal(calls[0].browser, false);
+  assert.equal(calls[0].jinaApiKey, 'secret');
+
+  const unavailable = createDemoExtractionService({
+    environment: {},
+    extractionOptions: () => ({ browser: true }),
+    extract: async () => { assert.fail('extract should not run'); },
+  });
+  const result = await unavailable.handle(request({
+    headers: { 'content-type': 'application/json' },
+    body: '{"website":"example.com","scrapers":["jina"]}',
+  }));
+  assert.equal(result.status, 400);
+  assert.match(result.payload.error, /not configured/);
 });
 
 test('shared demo extraction service maps request and extraction failures consistently', async () => {

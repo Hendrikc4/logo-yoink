@@ -37,8 +37,18 @@ export function createDemoExtractionService({
         const body = await readDemoJson(request, limits.bodyBytes);
         const target = normalize(body.website);
         const options = { ...extractionOptions(), preferences: body.preferences };
+        const requestedScrapers = body.scrapers ?? (options.browser ? ['browser'] : []);
+        if (requestedScrapers.includes('browser') && !options.browser) {
+          throw new DemoHttpError(400, 'The browser scraper is disabled on this server.');
+        }
+        const configuredJinaKey = environment.PUBLIC_DEMO_ALLOW_JINA === '0' ? null : environment.JINA_API_KEY || null;
+        if (requestedScrapers.includes('jina') && !configuredJinaKey) {
+          throw new DemoHttpError(400, 'The Jina scraper is not configured on this server.');
+        }
+        options.browser = requestedScrapers.includes('browser');
+        options.jinaApiKey = requestedScrapers.includes('jina') ? configuredJinaKey : null;
         if (body.wikimediaFallback !== undefined) options.wikimediaFallback = body.wikimediaFallback;
-        const requestKey = `${target.url.href}\n${JSON.stringify(body.preferences)}\n${options.wikimediaFallback !== false}`;
+        const requestKey = `${target.url.href}\n${JSON.stringify(body.preferences)}\n${JSON.stringify(requestedScrapers)}\n${options.wikimediaFallback !== false}`;
         const result = await guard.run(requestKey, () => extract(target.url.href, options));
         return {
           status: 200,

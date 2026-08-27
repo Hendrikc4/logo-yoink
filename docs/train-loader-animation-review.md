@@ -1,0 +1,10 @@
+- The loop leaves the track empty for too long: the locomotive is fully absent for roughly the first 230 ms and nearly the final second, so a normal loading cycle can look as if the animation stalled.
+- The locomotive enters as a clipped vertical slice at the left edge instead of feeling like it rolls naturally out from the station; the reveal needs a shorter, softer fade tied to forward travel.
+- At the mobile breakpoint the locomotive occupies too much of the available width and visually overpowers the station, despite the loader being intended as a quiet background detail.
+- The locomotive artwork still carries brighter orange highlights and harder contrast than the station plate, making it read as a separate layer when it crosses the darker middle of the scene.
+- The wheels become soft dark discs at small sizes, and the connecting rod reads as a flat bar laid over the illustration; both need crisper, lower-contrast pixel treatment and more mechanically related movement.
+- The smoke puffs are too round, too evenly spaced, and too opaque, which makes them look like identical gray bubbles rather than exhaust that disperses into the night sky.
+- The headlamp flickers at a conspicuously fast rate and competes with the wheel motion; its change should be slower and subtler.
+- The locomotive moves on an almost perfectly flat path, so it glides across the scene instead of carrying a small amount of locomotive weight and track vibration.
+- The completion state currently parks the locomotive wherever the request resolves; the revised ending should let the current pass continue to the right-hand edge, disappear cleanly, and leave the empty track above the results.
+- The reduced-motion state is stable, but its train is parked too close to the station building and reads like an overlap rather than a deliberate stopped position.

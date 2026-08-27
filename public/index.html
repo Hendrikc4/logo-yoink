@@ -240,34 +240,78 @@
         <div class="how-heading">
           <div>
             <p class="pixel-kicker">How it works</p>
-            <h2 id="how-title">AI-labeled.<br>Human-readable.</h2>
+            <h2 id="how-title">Rules at runtime.<br>Proof behind them.</h2>
           </div>
-          <p class="how-lede">AI helped label real candidate images while Logo Yoink was being optimized. Your API request still runs on fast, deterministic rules—no model call, no invented artwork, and every score keeps its evidence.</p>
+          <p class="how-lede">Logo Yoink does more than scrape a page for an image named “logo.” It builds an evidence trail for each candidate, measures the artwork itself, then makes a separate selection for compact icons and wide wordmarks.</p>
         </div>
 
         <figure class="how-visual">
           <img src="/assets/how-it-works/logo-yoink-twilight-trail.webp" width="1824" height="862" loading="lazy" alt="Pixel-art cowboy on horseback lassoing icon and wordmark tiles from a browser portal in a twilight desert">
-          <figcaption>One URL in. The right logo out.</figcaption>
+          <figcaption>Broad discovery → conservative selection</figcaption>
         </figure>
 
-        <div class="how-process" aria-label="Logo Yoink extraction process">
-          <article>
-            <span>01</span>
-            <h3>Cast a wide net</h3>
-            <p>Read the page, metadata, manifests, favicons, image sources, and safe inline SVGs. If a role stays empty, use bounded browser and exact-domain Wikidata/Commons recovery.</p>
+        <div class="how-system">
+          <article class="how-runtime" aria-labelledby="runtime-title">
+            <header class="how-panel-heading">
+              <div>
+                <p class="how-panel-label">On every request</p>
+                <h3 id="runtime-title">A bounded evidence pipeline</h3>
+              </div>
+              <span class="runtime-badge"><i aria-hidden="true"></i>No AI call</span>
+            </header>
+
+            <ol class="runtime-flow">
+              <li>
+                <span class="flow-number">01</span>
+                <div>
+                  <h4>Start cheap. Escalate only when needed.</h4>
+                  <p>Structured data, manifests, favicons, DOM images, CSS and inline SVGs are read first. A rendered browser and exact-domain recovery only run when a useful role is still missing.</p>
+                  <p class="flow-evidence">HTML first <i>→</i> bounded fallbacks</p>
+                </div>
+              </li>
+              <li>
+                <span class="flow-number">02</span>
+                <div>
+                  <h4>Inspect the file, not just its filename.</h4>
+                  <p>Redirects are revalidated, downloads stay inside time and byte limits, and image bytes are decoded to measure dimensions, visible content, tiny-size clarity and duplicate hashes.</p>
+                  <p class="flow-evidence">URL safety <i>·</i> decoded pixels <i>·</i> content hash</p>
+                </div>
+              </li>
+              <li>
+                <span class="flow-number">03</span>
+                <div>
+                  <h4>Score the evidence once per role.</h4>
+                  <p>Source authority, header placement, home-linking, company-name agreement, aspect ratio and resolution add confidence. UI controls, partner marks and generic platform assets lose it.</p>
+                  <div class="role-examples" aria-label="Role-specific ranking examples">
+                    <span><b>Icon</b> square + clear at 32 px</span>
+                    <span><b>Wide</b> wordmark shape + brand evidence</span>
+                  </div>
+                </div>
+              </li>
+            </ol>
           </article>
-          <article>
-            <span>02</span>
-            <h3>Prove every file</h3>
-            <p>Download within strict budgets, validate the image bytes, measure dimensions, reject obvious impostors, and collapse duplicate URLs and content.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Rank by role</h3>
-            <p>Score each candidate for the two concepts you need: an icon for compact placements and a wordmark for wide layouts.</p>
-          </article>
+
+          <aside class="how-optimization" aria-labelledby="optimization-title">
+            <div>
+              <p class="how-panel-label">Between releases</p>
+              <h3 id="optimization-title">Optimized offline, against real sites.</h3>
+              <p class="optimization-intro">AI-assisted review helped label actual candidates from an 800-company benchmark corpus. Those labels evaluate rule changes; they never enter a live request.</p>
+            </div>
+
+            <ol class="optimization-loop">
+              <li><span>1</span><p><strong>Freeze the evidence</strong>Candidate files and labels stay fixed, so an experiment cannot win by changing its test set.</p></li>
+              <li><span>2</span><p><strong>Replay one change</strong>New scoring rules run over development and validation splits before the held-back evaluation is opened.</p></li>
+              <li><span>3</span><p><strong>Keep only measured gains</strong>Changes that trade a correct logo for an impostor are rejected, even when they increase coverage.</p></li>
+            </ol>
+
+            <div class="optimization-proof">
+              <p>One measured optimization</p>
+              <div><strong>129<span aria-hidden="true">→</span>216</strong><span>correct favicon picks across frozen splits</span></div>
+              <small>Answer count held at 336 after adding 32 px visual-suitability scoring.</small>
+            </div>
+          </aside>
         </div>
-        <p class="how-footnote"><strong>AI stays off the live path.</strong> It was used offline to label examples and compare algorithm changes, helping tune the rules to recover more useful logos without rewarding obvious false positives.</p>
+        <p class="how-footnote"><strong>The result stays inspectable.</strong> Each candidate keeps its source, measurements, predicted roles and scoring reasons—so you can see why it ranked, or change the rules in your own deployment. <a href="https://github.com/Hendrikc4/logo-yoink/blob/main/docs/architecture.md" target="_blank" rel="noreferrer">Read the architecture notes <span aria-hidden="true">↗</span></a></p>
       </section>
     </main>
 

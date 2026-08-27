@@ -74,7 +74,7 @@
 
       <main id="documentation" class="docs-main">
         <section id="overview" class="docs-hero doc-section" data-doc-title="Overview introduction API logo finder">
-          <div class="eyebrow"><span>Documentation</span><i>v0.1.0</i></div>
+          <div class="eyebrow"><span>Documentation</span><i>v0.2.0</i></div>
           <h1>One URL in.<br><em>The right logos out.</em></h1>
           <p class="hero-lede">Logo Yoink is a self-hosted API and CLI that discovers the real logo files a website exposes, validates them, and ranks the best icon and wordmark—without generating or inventing artwork.</p>
           <div class="hero-actions">
@@ -96,25 +96,23 @@
         </section>
 
         <section id="quickstart" class="doc-section" data-doc-title="Quickstart install setup prerequisites Node npm Playwright Chromium">
-          <div class="section-heading"><span>01</span><div><p>Quickstart</p><h2>Run locally in five commands.</h2></div></div>
-          <p class="section-lede">You need Node.js 22 or newer, npm, and internet access to inspect public websites. No database or API key is required.</p>
+          <div class="section-heading"><span>01</span><div><p>Quickstart</p><h2>One install. One function.</h2></div></div>
+          <p class="section-lede">You need Node.js 22 or newer. No database, account, environment file, or API key is required. Chromium installs automatically for the default browser-assisted path.</p>
           <div class="code-window">
-            <div class="code-top"><span><i></i><i></i><i></i></span><b>Terminal</b><button class="copy-button" type="button" data-copy-target="install-code">Copy</button></div>
-            <pre id="install-code"><code><span class="token-prompt">$</span> git clone https://github.com/Hendrikc4/logo-yoink.git
-<span class="token-prompt">$</span> cd logo-yoink
-<span class="token-prompt">$</span> npm ci
-<span class="token-prompt">$</span> npx playwright install chromium
-<span class="token-prompt">$</span> cp .env.example .env.local
-<span class="token-prompt">$</span> npm start</code></pre>
+            <div class="code-top"><span><i></i><i></i><i></i></span><b>Install from GitHub</b><button class="copy-button" type="button" data-copy-target="install-code">Copy</button></div>
+            <pre id="install-code"><code><span class="token-prompt">$</span> npm install github:Hendrikc4/logo-yoink</code></pre>
           </div>
-          <aside class="callout"><span>Ready</span><p>Open <a href="http://127.0.0.1:4310">127.0.0.1:4310</a>. On a fresh Linux machine, use <code>npx playwright install --with-deps chromium</code>.</p></aside>
+          <div class="code-window compact"><div class="code-top"><b>Use it</b><button class="copy-button" type="button" data-copy-target="library-code">Copy</button></div><pre id="library-code"><code><span class="token-keyword">import</span> { yoink } <span class="token-keyword">from</span> <span class="token-string">'logo-yoink'</span>;
+
+<span class="token-keyword">const</span> { icon, logo } = <span class="token-keyword">await</span> yoink(<span class="token-string">'stripe.com'</span>);</code></pre></div>
+          <aside class="callout"><span>Server</span><p>To run the UI and HTTP API, clone the repository, run <code>npm run setup</code>, then <code>npm start</code>. Use <code>npm run setup:linux</code> on a fresh Linux host.</p></aside>
           <h3>Verify your setup</h3>
           <p><code>npm run smoke</code> starts an isolated local server, verifies the homepage and API validation, then shuts it down. It does not contact a third-party site. For the full suite, run <code>npm run check</code>.</p>
         </section>
 
         <section id="first-request" class="doc-section" data-doc-title="First API request curl JavaScript fetch example">
           <div class="section-heading"><span>02</span><div><p>First request</p><h2>Extract from any public website.</h2></div></div>
-          <p class="section-lede">Send JSON to the endpoint on the instance you control. The hosted endpoint powers the public demo and is intentionally rate-limited.</p>
+          <p class="section-lede">In JavaScript, call <code>yoink('stripe.com')</code>. Over HTTP, send one JSON object to the instance you control. The hosted endpoint is intentionally rate-limited.</p>
           <div class="code-window">
             <div class="code-top"><span class="code-tabs"><button type="button" class="code-tab is-active" data-language="curl">cURL</button><button type="button" class="code-tab" data-language="javascript">JavaScript</button></span><button class="copy-button" type="button" data-copy-group="first-request">Copy</button></div>
             <pre data-code-panel="curl"><code><span class="token-prompt">$</span> curl -sS http://127.0.0.1:4310/api/extract \
@@ -141,9 +139,16 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
           <div class="property-table" role="table" aria-label="Request body fields">
             <div class="property-row" role="row"><div role="cell"><code>website</code><b>string · required</b></div><p role="cell">A hostname or public HTTP(S) URL, up to 2,048 characters. Bare domains such as <code>stripe.com</code> are accepted.</p></div>
             <div class="property-row" role="row"><div role="cell"><code>preferences</code><b>object · optional</b></div><p role="cell">Role-specific appearance preferences. Only <code>icon</code> and <code>logo</code> keys are accepted.</p></div>
-            <div class="property-row" role="row"><div role="cell"><code>wikimediaFallback</code><b>boolean · optional</b></div><p role="cell">Defaults to <code>true</code>. Set to <code>false</code> to keep this request first-party-only.</p></div>
+            <div class="property-row" role="row"><div role="cell"><code>scrapers</code><b>array · optional</b></div><p role="cell">Choose <code>"browser"</code>, <code>"jina"</code>, both, or <code>[]</code>. The HTTP default is <code>["browser"]</code>; Jina is always opt-in.</p></div>
+            <div class="property-row" role="row"><div role="cell"><code>wikimediaFallback</code><b>boolean · optional</b></div><p role="cell">Defaults to <code>true</code>. Set to <code>false</code> to disable the external Wikidata/Wikimedia identity source. Scraper selection is independent.</p></div>
           </div>
-          <aside class="callout callout--warning"><span>Important</span><p>The public route accepts only these three top-level fields and requires <code>Content-Type: application/json</code>. Unknown fields are rejected.</p></aside>
+          <aside class="callout callout--warning"><span>Important</span><p>The route accepts only <code>website</code>, <code>preferences</code>, <code>scrapers</code>, and <code>wikimediaFallback</code>, and requires <code>Content-Type: application/json</code>.</p></aside>
+          <h3>Scraper choices</h3>
+          <div class="property-table" role="table" aria-label="Scraper choices">
+            <div class="property-row"><div><code>[]</code><b>static only</b></div><p>Fastest and most private. Reads first-party HTML and declared assets without launching a browser.</p></div>
+            <div class="property-row"><div><code>["browser"]</code><b>default everywhere</b></div><p>Uses local Playwright only when a useful role is missing. Chromium installs during setup.</p></div>
+            <div class="property-row"><div><code>["jina"]</code><b>opt-in</b></div><p>Uses Jina Reader for blocked pages. The server needs <code>JINA_API_KEY</code>. Common bot protection may still deny access.</p></div>
+          </div>
         </section>
 
         <section id="preferences" class="doc-section" data-doc-title="Preferences theme color background any light dark transparent opaque white black">
@@ -174,11 +179,12 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
         <section id="response" class="doc-section" data-doc-title="Response schema assets assetVariants candidate families diagnostics selectedByRole dataUrl">
           <div class="section-heading"><span>04</span><div><p>Response</p><h2>Canonical picks, variants, and proof.</h2></div></div>
           <div class="response-map">
-            <article><code>assets</code><p>The canonical <code>icon</code> and <code>logo</code>. Start here for most integrations.</p></article>
+            <article><code>icon / logo</code><p>The simplest top-level fields. Each is the canonical asset or <code>null</code>.</p></article>
+            <article><code>assets</code><p>The same picks grouped as <code>assets.icon</code> and <code>assets.logo</code>.</p></article>
             <article><code>assetVariants</code><p>Ordered, semantically distinct treatments. The selected asset is first.</p></article>
             <article><code>assetFamilies</code><p>Related delivery-size copies grouped into artwork families.</p></article>
             <article><code>candidates</code><p>Every validated candidate with scores and evidence.</p></article>
-            <article><code>diagnostics</code><p>Discovery counts, fallbacks, network work, and duration.</p></article>
+            <article><code>diagnostics</code><p>Discovery counts, scraper enabled/used state, network work, and duration.</p></article>
             <article><code>selectedByRole</code><p>Compatibility aliases: <code>icon</code>, <code>wide</code>, and legacy <code>favicon</code>.</p></article>
           </div>
           <h3>Representative response</h3>
@@ -188,6 +194,8 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
   <span class="token-property">"input"</span>: <span class="token-string">"stripe.com"</span>,
   <span class="token-property">"domain"</span>: <span class="token-string">"stripe.com"</span>,
   <span class="token-property">"homepage"</span>: <span class="token-string">"https://stripe.com/"</span>,
+  <span class="token-property">"icon"</span>: <span class="token-keyword">null</span>,
+  <span class="token-property">"logo"</span>: { <span class="token-property">"resolvedUrl"</span>: <span class="token-string">"https://…/logo.svg"</span>, <span class="token-property">"format"</span>: <span class="token-string">"svg"</span> },
   <span class="token-property">"preferences"</span>: {
     <span class="token-property">"icon"</span>: { <span class="token-property">"theme"</span>: <span class="token-string">"any"</span>, <span class="token-property">"color"</span>: <span class="token-string">"any"</span>, <span class="token-property">"background"</span>: <span class="token-string">"any"</span> },
     <span class="token-property">"logo"</span>: { <span class="token-property">"theme"</span>: <span class="token-string">"dark"</span>, <span class="token-property">"color"</span>: <span class="token-string">"white"</span>, <span class="token-property">"background"</span>: <span class="token-string">"transparent"</span> }
@@ -238,15 +246,18 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
 
         <section id="cli" class="doc-section" data-doc-title="CLI command flags download theme background role deep wide spa bundles">
           <div class="section-heading"><span>06</span><div><p>CLI</p><h2>Use it without a server.</h2></div></div>
-          <div class="code-window compact"><div class="code-top"><b>Rank and print JSON</b><button class="copy-button" type="button" data-copy-target="cli-code">Copy</button></div><pre id="cli-code"><code><span class="token-prompt">$</span> npm run cli -- stripe.com
-<span class="token-prompt">$</span> npm run cli -- stripe.com --theme dark --background transparent
-<span class="token-prompt">$</span> npm run cli -- stripe.com --no-wikimedia-fallback
-<span class="token-prompt">$</span> npm run cli -- stripe.com --role logo --download ./downloads/stripe</code></pre></div>
+          <div class="code-window compact"><div class="code-top"><b>Rank and print JSON</b><button class="copy-button" type="button" data-copy-target="cli-code">Copy</button></div><pre id="cli-code"><code><span class="token-prompt">$</span> npx logo-yoink stripe.com
+<span class="token-prompt">$</span> npx logo-yoink stripe.com --no-browser
+<span class="token-prompt">$</span> npx logo-yoink stripe.com --jina
+<span class="token-prompt">$</span> npx logo-yoink stripe.com --role logo --download ./downloads/stripe</code></pre></div>
           <div class="property-table" role="table" aria-label="CLI options">
             <div class="property-row"><div><code>--theme</code><b>any | light | dark</b></div><p>Preference for the logo destination surface.</p></div>
             <div class="property-row"><div><code>--background</code><b>any | transparent | opaque</b></div><p>Preference for the logo file background.</p></div>
             <div class="property-row"><div><code>--role</code><b>icon | logo</b></div><p>Choose which canonical winner to download. Icon-first is the default.</p></div>
             <div class="property-row"><div><code>--download</code><b>directory</b></div><p>Write the selected validated asset to disk.</p></div>
+            <div class="property-row"><div><code>--no-browser</code><b>opt-out</b></div><p>Disable the default Playwright fallback and stay on the static path.</p></div>
+            <div class="property-row"><div><code>--jina</code><b>opt-in</b></div><p>Enable Jina recovery. Requires <code>JINA_API_KEY</code>.</p></div>
+            <div class="property-row"><div><code>--all-fallbacks</code><b>opt-in</b></div><p>Enable browser, Jina, and deep first-party recovery together.</p></div>
             <div class="property-row"><div><code>--deep-wide</code><b>flag</b></div><p>When needed, follow up to two strong first-party brand, press, or media links and inspect official ZIP kits.</p></div>
             <div class="property-row"><div><code>--spa-bundles</code><b>flag</b></div><p>With deep discovery, inspect one same-origin entry bundle (up to 2.2 MB) for strong logo asset literals.</p></div>
             <div class="property-row"><div><code>--no-wikimedia-fallback</code><b>flag</b></div><p>Disable the default exact-domain Wikidata/Commons missing-role fallback.</p></div>
@@ -255,14 +266,23 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
 
         <section id="configuration" class="doc-section" data-doc-title="Environment configuration env variables HOST PORT browser Jina Besticon rate limits">
           <div class="section-heading"><span>07</span><div><p>Configuration</p><h2>Safe defaults, optional horsepower.</h2></div></div>
+          <h3>Defaults at a glance</h3>
+          <div class="property-table" role="table" aria-label="Default behavior">
+            <div class="property-row"><div><code>Static discovery</code><b>always on</b></div><p>First-party HTML and declared asset discovery is the base path everywhere.</p></div>
+            <div class="property-row"><div><code>Browser</code><b>on</b></div><p>All interfaces render missing roles by default. Use an empty scraper list or <code>--no-browser</code> to opt out.</p></div>
+            <div class="property-row"><div><code>Jina</code><b>off</b></div><p>Always request-level opt-in, even when the server has a key.</p></div>
+            <div class="property-row"><div><code>Wikimedia</code><b>on</b></div><p>Exact-domain missing-role recovery; it can be disabled per request.</p></div>
+            <div class="property-row"><div><code>BIMI</code><b>off</b></div><p>Experimental and explicitly enabled.</p></div>
+          </div>
+          <h3>Server environment</h3>
           <div class="config-table" role="table" aria-label="Environment variables">
             <div class="config-head" role="row"><span>Variable</span><span>Default</span><span>Purpose</span></div>
             <div role="row"><code>HOST</code><b>127.0.0.1</b><p>Local server bind address.</p></div>
             <div role="row"><code>PORT</code><b>4310</b><p>Local server port.</p></div>
             <div role="row"><code>BROWSER_DISCOVERY</code><b>1</b><p>Set to <code>0</code> to disable local Chromium discovery.</p></div>
-            <div role="row"><code>JINA_API_KEY</code><b>unset</b><p>Optional recovery for blocked or unusable homepages.</p></div>
+            <div role="row"><code>JINA_API_KEY</code><b>unset</b><p>Makes request-level Jina recovery available; setting it does not enable Jina.</p></div>
             <div role="row"><code>BESTICON_URL</code><b>unset</b><p>Optional URL for a self-hosted Besticon service.</p></div>
-            <div role="row"><code>PUBLIC_DEMO_ALLOW_JINA</code><b>1</b><p>Set to <code>0</code> to keep web/API requests off Jina.</p></div>
+            <div role="row"><code>PUBLIC_DEMO_ALLOW_JINA</code><b>1</b><p>Set to <code>0</code> to prevent requests from opting into Jina.</p></div>
             <div role="row"><code>PUBLIC_DEMO_BROWSER</code><b>1</b><p>Set to <code>0</code> to disable Chromium for web/API requests.</p></div>
             <div role="row"><code>PUBLIC_DEMO_WIKIMEDIA</code><b>1</b><p>Set to <code>0</code> to disable exact-domain Wikidata/Commons recovery.</p></div>
             <div role="row"><code>DEMO_RATE_LIMIT</code><b>20 / 10 min</b><p>Per-client in-process request window.</p></div>

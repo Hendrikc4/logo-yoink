@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 import './load-env.mjs';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { extname, resolve } from 'node:path';
-import { extractLogos } from './extractor.mjs';
+import { yoink } from './index.mjs';
 
 const args = process.argv.slice(2);
 const valueOptions = new Set(['--download', '--theme', '--background', '--role']);
@@ -23,25 +24,27 @@ const deepWide = args.includes('--deep-wide');
 const spaBundles = args.includes('--spa-bundles');
 const wikimediaFallback = !args.includes('--no-wikimedia-fallback');
 const bimi = args.includes('--bimi');
+const allFallbacks = args.includes('--all-fallbacks');
+const browser = allFallbacks || !args.includes('--no-browser');
+const jina = allFallbacks || args.includes('--jina');
 
 if (!website || downloadIndex >= 0 && !downloadDirectory ||
     ['--theme', '--background', '--role'].some(name => args.includes(name) && (!option(name) || option(name).startsWith('--'))) ||
     !['any', 'light', 'dark'].includes(theme) ||
     !['any', 'transparent', 'opaque'].includes(background) ||
     requestedRole && !['icon', 'logo', 'wide', 'favicon'].includes(requestedRole)) {
-  console.error('Usage: npm run cli -- <website> [--theme any|light|dark] [--background any|transparent|opaque] [--role icon|logo] [--download <directory>] [--deep-wide] [--spa-bundles] [--no-wikimedia-fallback] [--bimi]');
+  console.error('Usage: logo-yoink <website> [--no-browser] [--jina] [--all-fallbacks] [--theme any|light|dark] [--background any|transparent|opaque] [--role icon|logo] [--download <directory>] [--no-wikimedia-fallback] [--bimi]');
   process.exit(1);
 }
 
 try {
-  const result = await extractLogos(website, {
+  const result = await yoink(website, {
     besticonUrl: process.env.BESTICON_URL || null,
+    scrapers: [...(browser ? ['browser'] : []), ...(jina ? ['jina'] : [])],
     jinaApiKey: process.env.JINA_API_KEY || null,
-    roleAwareBudget: true,
-    contentBoundingWide: true,
-    deepWide,
+    deep: deepWide || allFallbacks,
     spaBundles,
-    wikimediaFallback,
+    wikimedia: wikimediaFallback,
     bimi,
     preferences: { logo: { theme, background } },
   });
@@ -65,7 +68,7 @@ try {
   for (const variants of Object.values(printable.assetVariants ?? {})) {
     for (const item of variants) delete item.dataUrl;
   }
-  for (const item of [printable.selected, ...Object.values(printable.assets), ...Object.values(printable.selectedByRole)]) {
+  for (const item of [printable.icon, printable.logo, printable.selected, ...Object.values(printable.assets), ...Object.values(printable.selectedByRole)]) {
     if (item) delete item.dataUrl;
   }
   console.log(JSON.stringify(printable, null, 2));

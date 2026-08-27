@@ -1,7 +1,6 @@
 {
   "name": "logo-yoink",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
   "type": "module",
   "description": "Find and rank the best logo assets exposed by a company website.",
   "homepage": "https://logo-yoink.com",
@@ -9,7 +8,31 @@
     "type": "git",
     "url": "git+https://github.com/Hendrikc4/logo-yoink.git"
   },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs"
+    }
+  },
+  "types": "./src/index.d.ts",
+  "bin": {
+    "logo-yoink": "./src/cli.mjs"
+  },
+  "files": [
+    "api",
+    "public",
+    "src",
+    ".env.example",
+    "LICENSE",
+    "README.md",
+    "vercel.json"
+  ],
   "scripts": {
+    "postinstall": "node src/install-browser.mjs",
+    "setup": "npm install",
+    "setup:linux": "npm install && npx playwright install --with-deps chromium",
+    "setup:static": "node src/setup-static.mjs",
+    "browser:install": "playwright install chromium",
     "start": "node src/server.mjs",
     "dev": "node --watch src/server.mjs",
     "cli": "node src/cli.mjs",

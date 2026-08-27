@@ -62,7 +62,7 @@ const server = createServer(async (request, response) => {
 server.listen(port, host, () => {
   console.log(`Logo Yoink is running at http://${host}:${port}`);
   console.log(besticonUrl ? `Besticon fallback: ${besticonUrl}` : 'Besticon fallback: disabled');
-  console.log(jinaApiKey && process.env.PUBLIC_DEMO_ALLOW_JINA !== '0' ? 'Public demo Jina fallback: enabled' : 'Public demo Jina fallback: disabled');
+  console.log(jinaApiKey && process.env.PUBLIC_DEMO_ALLOW_JINA !== '0' ? 'Public demo Jina fallback: available by request' : 'Public demo Jina fallback: unavailable');
   console.log(`Public demo rendered fallback: ${browserDiscovery && process.env.PUBLIC_DEMO_BROWSER !== '0' ? 'enabled for missing roles' : 'disabled'}`);
   console.log(`Public demo Wikimedia fallback: ${process.env.PUBLIC_DEMO_WIKIMEDIA !== '0' ? 'enabled for missing roles' : 'disabled'}`);
 });

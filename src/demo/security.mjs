@@ -65,8 +65,8 @@ export function assertDemoRequestOrigin(request) {
 function validatePayload(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new DemoHttpError(400, 'Expected a JSON object.');
   const keys = Object.keys(value);
-  if (!keys.includes('website') || keys.some(key => !['website', 'preferences', 'wikimediaFallback'].includes(key))) {
-    throw new DemoHttpError(400, 'Only website, preferences, and wikimediaFallback fields are accepted.');
+  if (!keys.includes('website') || keys.some(key => !['website', 'preferences', 'scrapers', 'wikimediaFallback'].includes(key))) {
+    throw new DemoHttpError(400, 'Only website, preferences, scrapers, and wikimediaFallback fields are accepted.');
   }
   if (typeof value.website !== 'string') throw new DemoHttpError(400, 'Website must be a string.');
   const website = value.website.trim();
@@ -75,9 +75,15 @@ function validatePayload(value) {
     if (value.wikimediaFallback !== undefined && typeof value.wikimediaFallback !== 'boolean') {
       throw new DemoHttpError(400, 'wikimediaFallback must be a boolean.');
     }
+    if (value.scrapers !== undefined) {
+      if (!Array.isArray(value.scrapers)) throw new DemoHttpError(400, 'scrapers must be an array.');
+      const unsupported = value.scrapers.filter(item => !['browser', 'jina'].includes(item));
+      if (unsupported.length) throw new DemoHttpError(400, 'scrapers may contain only "browser" and "jina".');
+    }
     return {
       website,
       preferences: normalizeAssetPreferences(value.preferences),
+      ...(value.scrapers === undefined ? {} : { scrapers: [...new Set(value.scrapers)] }),
       ...(value.wikimediaFallback === undefined ? {} : { wikimediaFallback: value.wikimediaFallback }),
     };
   } catch (error) {
@@ -184,7 +190,7 @@ export const securityHeaders = {
 export function publicDemoExtractionOptions(environment = process.env) {
   return {
     besticonUrl: environment.BESTICON_URL || null,
-    jinaApiKey: environment.PUBLIC_DEMO_ALLOW_JINA === '0' ? null : environment.JINA_API_KEY || null,
+    jinaApiKey: null,
     roleAwareBudget: true,
     contentBoundingWide: true,
     browser: environment.PUBLIC_DEMO_BROWSER !== '0',

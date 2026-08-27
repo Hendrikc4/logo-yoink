@@ -17,6 +17,7 @@ const statusMessage = status.querySelector('.status-message');
 
 let activeRequest = null;
 let requestSequence = 0;
+let cancelTrainFinish = null;
 const renderedAssets = new Map();
 
 form.addEventListener('submit', async event => {
@@ -75,15 +76,49 @@ function setLoading(isLoading) {
 }
 
 function setStatus(message, state = '') {
-  const trainWasRunning = trainLoader.classList.contains('train-loader--running');
-  const shouldParkTrain = state === 'success' || (state === 'error' && trainWasRunning);
+  const trainWasMoving = trainLoader.classList.contains('train-loader--running') || trainLoader.classList.contains('train-loader--finishing');
 
   statusMessage.textContent = message;
-  trainLoader.classList.toggle('train-loader--running', state === 'loading' || shouldParkTrain);
-  trainLoader.classList.toggle('train-loader--complete', shouldParkTrain);
+  if (state === 'loading') startTrain();
+  else if ((state === 'success' || state === 'error') && trainWasMoving) finishTrain();
+  else resetTrain();
 
   if (state) status.dataset.state = state;
   else delete status.dataset.state;
+}
+
+function startTrain() {
+  cancelTrainFinish?.();
+  cancelTrainFinish = null;
+  trainLoader.classList.remove('train-loader--finishing');
+  trainLoader.classList.add('train-loader--running');
+}
+
+function finishTrain() {
+  cancelTrainFinish?.();
+  cancelTrainFinish = null;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    resetTrain();
+    return;
+  }
+
+  const engine = trainLoader.querySelector('.train-loader__engine');
+  const handleIteration = event => {
+    if (event.animationName !== 'train-crossing') return;
+    resetTrain();
+  };
+
+  trainLoader.classList.add('train-loader--finishing');
+  trainLoader.classList.remove('train-loader--running');
+  engine.addEventListener('animationiteration', handleIteration);
+  cancelTrainFinish = () => engine.removeEventListener('animationiteration', handleIteration);
+}
+
+function resetTrain() {
+  cancelTrainFinish?.();
+  cancelTrainFinish = null;
+  trainLoader.classList.remove('train-loader--running', 'train-loader--finishing');
 }
 
 function clearResults() {
