@@ -12,6 +12,7 @@ import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
 import { matchesAssetPreferences, matchesLogoPreferences, normalizeAssetPreferences } from './asset-model.mjs';
 import { discoverWikimediaLogoCandidates, safeCommonsUrl } from './wikimedia-fallback.mjs';
 import { bimiCandidate, isSafeBimiSvg, lookupBimiAssertion } from './discover-bimi.mjs';
+import { discoverSitemapBrandAssets, sameRegistrableDomain } from './discover-sitemap.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
 const HOMEPAGE_FALLBACK_TIMEOUT_MS = 3_000;
@@ -19,6 +20,22 @@ const BLOCKED_HTTP_STATUSES = new Set([401, 403, 407, 418, 429, 444]);
 const MAX_HTML_BYTES = 2 * 1024 * 1024;
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
 const MAX_CANDIDATES_TO_DOWNLOAD = 16;
+const SITEMAP_TOTAL_REQUESTS = 16;
+const SITEMAP_TOTAL_BYTES = 8 * 1024 * 1024;
+const SITEMAP_TOTAL_DURATION_MS = 20_000;
+const SITEMAP_TREATMENT_OPTIONS = Object.freeze({
+  seedMode: 'robots-only',
+  minPageScore: 25,
+  assetHostPolicy: 'official-page',
+  limits: Object.freeze({
+    maxSitemapDocuments: 3,
+    maxPages: 1,
+    maxCandidates: 4,
+    maxRequests: 12,
+    maxTotalBytes: 5 * 1024 * 1024,
+    maxDurationMs: 16_000,
+  }),
+});
 const ROLE_QUEUE_CAPS = { icon: 6, wide: 8, favicon: 4 };
 const FAVICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'bimi', 'ms-tile', 'html-icon', 'besticon', 'root-favicon', 'google-favicon', 'duckduckgo-favicon']);
 const STRUCTURED_LOGO_SOURCES = new Set(['schema', 'og-logo', 'microdata']);
@@ -415,6 +432,7 @@ function imageMetadata(bytes, contentType) {
 
 async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = MAX_IMAGE_BYTES, requestOptions = {}) {
   try {
+    const startedAt = performance.now();
     const { validateUrl, ...fetchOptions } = requestOptions;
     const candidateValidateUrl = item.source === 'bimi' ? async value => {
       if (new URL(value).protocol !== 'https:') throw new Error('BIMI logo redirects must remain HTTPS.');
@@ -423,7 +441,12 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     const response = await fetchTimed(item.url, { timeoutMs, accept: item.source === 'bimi' ? 'image/svg+xml' : 'image/*,*/*;q=0.6', diagnostics, ...fetchOptions, validateUrl: candidateValidateUrl });
     if (!response.ok) return null;
     if (item.source === 'wikimedia-commons' && !safeCommonsUrl(response.url, 'upload.wikimedia.org', '/wikipedia/commons/')) return null;
-    const read = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs });
+    const bodyTimeoutMs = Math.floor(timeoutMs - (performance.now() - startedAt));
+    if (bodyTimeoutMs <= 0) {
+      await response.body?.cancel().catch(() => {});
+      return null;
+    }
+    const read = await readLimited(response, maxImageBytes, { diagnostics, timeoutMs: bodyTimeoutMs });
     let bytes = read.bytes;
     if (item.source === 'bimi' && String(response.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase() !== 'image/svg+xml') return null;
     let metadata = imageMetadata(bytes, response.headers.get('content-type'));
@@ -646,7 +669,13 @@ export async function extractLogos(website, options = {}) {
       continue;
     }
     try {
-      const response = await fetchTimed(attempt.url, { timeoutMs: attempt.timeoutMs, accept: 'text/html,application/xhtml+xml', diagnostics: network });
+      const response = await fetchTimed(attempt.url, {
+        timeoutMs: attempt.timeoutMs,
+        accept: 'text/html,application/xhtml+xml',
+        diagnostics: network,
+        fetchImpl: options.fetchImpl ?? fetch,
+        validateUrl: options.validateUrl ?? assertPublicUrl,
+      });
       if (!response.ok) {
         const failureKind = homepageFailureKind({ status: response.status });
         reachability.push({ url: attempt.url, stage: attempt.stage, ok: false, status: response.status, failureKind });
@@ -737,18 +766,55 @@ export async function extractLogos(website, options = {}) {
     }
   }
 
+  const fetchResource = async (url, request = {}) => {
+    const requestsBefore = network.requests;
+    const bytesBefore = network.bytesDownloaded;
+    const requestStartedAt = performance.now();
+    const resourceTimeoutMs = request.timeoutMs ?? timeoutMs;
+    try {
+      const response = await fetchTimed(url, {
+        timeoutMs: resourceTimeoutMs,
+        maxRedirects: request.maxRedirects ?? 5,
+        accept: request.accept ?? '*/*',
+        diagnostics: network,
+        headers: request.headers,
+        fetchImpl: request.fetchImpl ?? fetch,
+        validateUrl: request.validateUrl ?? assertPublicUrl,
+      });
+      if (request.detectArchive && /(?:application|multipart)\/(?:zip|x-zip-compressed)/i.test(response.headers.get('content-type') ?? '')) {
+        await response.body?.cancel().catch(() => {});
+        return {
+          ok: response.ok, status: response.status, url: response.url, headers: response.headers, bytes: Buffer.alloc(0),
+          requestCount: network.requests - requestsBefore,
+          downloadedBytes: network.bytesDownloaded - bytesBefore,
+          durationMs: Math.round(performance.now() - requestStartedAt),
+        };
+      }
+      const bodyTimeoutMs = Math.floor(resourceTimeoutMs - (performance.now() - requestStartedAt));
+      if (bodyTimeoutMs <= 0) {
+        await response.body?.cancel().catch(() => {});
+        throw new DOMException('Resource budget expired before the body could be read.', 'AbortError');
+      }
+      const read = await readLimited(response, request.maxBytes ?? MAX_HTML_BYTES, { diagnostics: network, timeoutMs: bodyTimeoutMs });
+      return {
+        ok: response.ok, status: response.status, url: response.url, headers: response.headers, bytes: read.bytes,
+        requestCount: network.requests - requestsBefore,
+        downloadedBytes: network.bytesDownloaded - bytesBefore,
+        durationMs: Math.round(performance.now() - requestStartedAt),
+      };
+    } catch (error) {
+      error.resourceMetrics = {
+        requestCount: network.requests - requestsBefore,
+        downloadedBytes: network.bytesDownloaded - bytesBefore,
+        durationMs: Math.round(performance.now() - requestStartedAt),
+      };
+      throw error;
+    }
+  };
+
   const deepDiagnostics = { enabled: Boolean(options.deepWide), official: null, spaBundle: null };
   if (options.deepWide && (options.forceDeepWide || needsRenderedWideFallback(ranked, preferences))) {
     const deepCompanyName = options.companyName || normalized.domain.split('.')[0];
-    const fetchResource = async (url, request = {}) => {
-      const response = await fetchTimed(url, { timeoutMs, accept: request.accept ?? '*/*', diagnostics: network, headers: request.headers });
-      if (request.detectArchive && /(?:application|multipart)\/(?:zip|x-zip-compressed)/i.test(response.headers.get('content-type') ?? '')) {
-        await response.body?.cancel().catch(() => {});
-        return { ok: response.ok, status: response.status, url: response.url, headers: response.headers, bytes: Buffer.alloc(0) };
-      }
-      const read = await readLimited(response, request.maxBytes ?? MAX_HTML_BYTES, { diagnostics: network, timeoutMs });
-      return { ok: response.ok, status: response.status, url: response.url, headers: response.headers, bytes: read.bytes };
-    };
     const official = await discoverOfficialBrandAssets({ homepage, parsed, companyName: deepCompanyName, fetchResource, maxPages: options.deepWidePages ?? 2 });
     deepDiagnostics.official = official.diagnostics;
     const direct = official.candidates.filter(item => !item.rawBytes);
@@ -764,6 +830,118 @@ export async function extractLogos(website, options = {}) {
       validated = dedupeBytes([...validated, ...spaExtra]);
       await attachTinySuitability(validated);
       ranked = rankValidated();
+    }
+  }
+
+  let sitemapDiagnostics = { enabled: Boolean(options.sitemapWide), status: options.sitemapWide ? 'not_needed' : 'disabled' };
+  if (options.sitemapWide && !ranked.selectedByRole.wide) {
+    const fallbackStartedAt = performance.now();
+    const requestsBefore = network.requests;
+    const bytesBefore = network.bytesDownloaded;
+    try {
+      const discoveryCompanyName = options.companyName || normalized.domain.split('.')[0];
+      const rankingCompanyName = options.companyName;
+      const before = Object.fromEntries(['icon', 'wide', 'favicon'].map(role => [role, ranked.selectedByRole[role]]));
+      const resolver = options.sitemapResolver ?? discoverSitemapBrandAssets;
+      const validateSameDomain = async value => {
+        const validatedUrl = await (options.sitemapValidateUrl ?? assertPublicUrl)(value);
+        const checked = validatedUrl instanceof URL ? validatedUrl : new URL(value);
+        if (!sameRegistrableDomain(checked.href, homepage)) throw new Error('Sitemap redirect left the official registrable domain.');
+        return checked;
+      };
+      const requestedLimits = options.sitemapOptions?.limits ?? {};
+      const sitemapOptions = {
+        ...SITEMAP_TREATMENT_OPTIONS,
+        limits: Object.fromEntries(Object.entries(SITEMAP_TREATMENT_OPTIONS.limits).map(([key, ceiling]) => [
+          key,
+          Number.isInteger(requestedLimits[key]) && requestedLimits[key] >= 0 ? Math.min(ceiling, requestedLimits[key]) : ceiling,
+        ])),
+      };
+      const discovered = await resolver({
+        homepage,
+        companyName: discoveryCompanyName,
+        validateUrl: validateSameDomain,
+        fetchResource: (url, request = {}) => fetchResource(url, {
+          ...request,
+          fetchImpl: options.sitemapFetchImpl,
+          validateUrl: request.validateUrl ?? validateSameDomain,
+        }),
+      }, sitemapOptions);
+      const candidateLimit = Math.max(0, Math.min(4, sitemapOptions.limits.maxCandidates));
+      const nominated = (discovered.candidates ?? [])
+        .filter(item => item?.evidence?.sitemap_official_page === true && (
+          String(item.url).startsWith('data:') || sameRegistrableDomain(item.url, homepage) ||
+          item.evidence?.sitemap_asset_host_policy === 'official-page' && item.evidence?.sitemap_exact_identity === true
+        ))
+        .slice(0, candidateLimit)
+        .map(item => ({ ...item, evidence: { ...item.evidence, eligible_roles: ['wide'] } }));
+      const checked = [];
+      let candidateDownloads = 0;
+      for (const item of nominated) {
+        const elapsedMs = performance.now() - fallbackStartedAt;
+        const remainingRequests = SITEMAP_TOTAL_REQUESTS - (network.requests - requestsBefore);
+        const remainingBytes = SITEMAP_TOTAL_BYTES - (network.bytesDownloaded - bytesBefore);
+        const remainingMs = SITEMAP_TOTAL_DURATION_MS - elapsedMs;
+        if (remainingRequests <= 0 || remainingBytes <= 0 || remainingMs <= 0) break;
+        const isCrossDomainAsset = !String(item.url).startsWith('data:') && !sameRegistrableDomain(item.url, homepage);
+        if (!item.rawBytes) candidateDownloads += 1;
+        const validatedItem = item.rawBytes
+          ? item.rawBytes.length <= remainingBytes && await validateCandidateBytes(item, item.rawBytes)
+          : await validateCandidate(item, Math.max(1, Math.min(4_000, remainingMs)), network, Math.min(maxImageBytes, remainingBytes), {
+            maxRedirects: isCrossDomainAsset ? 0 : Math.min(3, remainingRequests - 1),
+            fetchImpl: options.sitemapFetchImpl,
+            validateUrl: async value => {
+              const validatedUrl = await (options.sitemapValidateUrl ?? assertPublicUrl)(value);
+              const checkedUrl = validatedUrl instanceof URL ? validatedUrl : new URL(value);
+              const reference = isCrossDomainAsset ? item.url : homepage;
+              if (!sameRegistrableDomain(checkedUrl.href, reference)) throw new Error('Sitemap asset redirect left its admitted registrable domain.');
+              return checkedUrl;
+            },
+          });
+        if (validatedItem) checked.push(validatedItem);
+      }
+      const uniqueChecked = dedupeBytes(checked);
+      const existingHashes = new Set(validated.map(item => item.observed?.byte_hash).filter(Boolean));
+      const additions = uniqueChecked.filter(item => !existingHashes.has(item.observed?.byte_hash));
+      await attachContentBoxes(additions, options.contentBoundingWide, rankingCompanyName, contentStats);
+      await attachTinySuitability(additions);
+      const proposedValidated = [...validated, ...additions];
+      const treatment = rankCandidates(applyBlockedRecoverySafety(proposedValidated, blockedRecovery), { companyName: rankingCompanyName, preferences });
+      const displacedRoles = ['icon', 'wide', 'favicon'].filter(role => before[role] &&
+        (treatment.selectedByRole[role]?.observed?.byte_hash ?? treatment.selectedByRole[role]?.url ?? null) !==
+        (before[role]?.observed?.byte_hash ?? before[role]?.url ?? null));
+      if (!displacedRoles.length) {
+        validated = proposedValidated;
+        ranked = treatment;
+      }
+      const admitted = !displacedRoles.length && ranked.selectedByRole.wide?.evidence?.sitemap_official_page === true;
+      sitemapDiagnostics = {
+        enabled: true,
+        ...discovered.diagnostics,
+        validated: uniqueChecked.length,
+        novelValidated: additions.length,
+        duplicateFirstParty: uniqueChecked.length - additions.length,
+        candidateDownloads,
+        admitted,
+        admittedUrl: admitted ? ranked.selectedByRole.wide.resolved_url : null,
+        displacedRoles,
+        requests: network.requests - requestsBefore,
+        downloadedBytes: network.bytesDownloaded - bytesBefore,
+        durationMs: Math.round(performance.now() - fallbackStartedAt),
+        totalLimits: { requests: SITEMAP_TOTAL_REQUESTS, bytes: SITEMAP_TOTAL_BYTES, durationMs: SITEMAP_TOTAL_DURATION_MS },
+      };
+    } catch (error) {
+      sitemapDiagnostics = {
+        enabled: true,
+        status: 'error',
+        error: error.message,
+        admitted: false,
+        displacedRoles: [],
+        requests: network.requests - requestsBefore,
+        downloadedBytes: network.bytesDownloaded - bytesBefore,
+        durationMs: Math.round(performance.now() - fallbackStartedAt),
+        totalLimits: { requests: SITEMAP_TOTAL_REQUESTS, bytes: SITEMAP_TOTAL_BYTES, durationMs: SITEMAP_TOTAL_DURATION_MS },
+      };
     }
   }
 
@@ -962,7 +1140,7 @@ export async function extractLogos(website, options = {}) {
 
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
-  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, wikimedia: wikimediaDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  return { input: website, domain: normalized.domain, homepage, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, wikimedia: wikimediaDiagnostics, sitemap: sitemapDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.

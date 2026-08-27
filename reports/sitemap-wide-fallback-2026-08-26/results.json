@@ -1,0 +1,72 @@
+{
+  "schema_version": 2,
+  "decision": "available_optional_default_off",
+  "evaluation_opened": false,
+  "chosen_treatment": "robots_corporate_exact_cdn_1",
+  "treatment": {
+    "seed_mode": "robots-only",
+    "minimum_page_score": 25,
+    "low_intent_exact_identity_required": true,
+    "asset_host_policy": "official-page-exact-label",
+    "maximum_sitemap_documents": 3,
+    "maximum_pages": 1,
+    "maximum_candidates": 4
+  },
+  "cohorts": [
+    {
+      "id": "major-brands-300-development-missing-wide",
+      "split": "development",
+      "audited_misses": 48,
+      "control_sha256": "d650b0a423bf730962eef5276e186fe33e531045a3f8c259c56da285cf959359",
+      "split_sha256": "6750e75ba64306dbf7784661c5c317bb2635b6a6149790b377dfe3d1b9abe720",
+      "capture_sha256": "39c0d5e35b7180765079c5f07440e5ea1c926663321af4f3a7ee4a2458322a87",
+      "capture_entries": 130,
+      "prevalence": { "robots_declared_domains": 33, "parsed_sitemap_domains": 24, "eligible_page_domains": 6, "candidate_domains": 3 },
+      "metrics": { "answered": 2, "reviewed": 2, "correct": 2, "wrong_brand": 0, "related_brand": 0, "not_logo": 0, "ambiguous": 0, "strict_precision": 1, "answer_rate": 0.041666666666666664, "correct_gains_per_100": 4.166666666666667, "icon_movements": 0, "populated_wide_displacements": 0, "favicon_movements": 0, "requests": 132, "bytes": 13148751, "mean_latency_ms": 752, "p50_latency_ms": 498, "p95_latency_ms": 2142, "max_requests_per_domain": 5, "max_bytes_per_domain": 2168308, "max_latency_ms_per_domain": 8304 },
+      "frozen_rerank_drift": { "icon": 2, "wide": 0, "favicon": 0, "attributed_to_treatment": false }
+    },
+    {
+      "id": "original-500-development-missing-wide",
+      "split": "development",
+      "audited_misses": 102,
+      "control_sha256": "c6ed742e7b1b5e572fed60e1fe4520f371fd4e6fb77b55901add9e13f0b469ea",
+      "split_sha256": "da6cb03ae1b94d53cb6fbb2d3743e3a9ea7b28a7b8f9ca1cb91fc264bcdc1e11",
+      "capture_sha256": "0d37b4148855e3367346bed159e516671814be38152abbbdc44da737d60435ce",
+      "capture_entries": 371,
+      "prevalence": { "robots_declared_domains": 57, "parsed_sitemap_domains": 49, "eligible_page_domains": 19, "candidate_domains": 1 },
+      "metrics": { "answered": 0, "reviewed": 0, "correct": 0, "wrong_brand": 0, "related_brand": 0, "not_logo": 0, "ambiguous": 0, "strict_precision": null, "answer_rate": 0, "correct_gains_per_100": 0, "icon_movements": 0, "populated_wide_displacements": 0, "favicon_movements": 0, "requests": 206, "bytes": 7115368, "mean_latency_ms": 491, "p50_latency_ms": 266, "p95_latency_ms": 1468, "max_requests_per_domain": 7, "max_bytes_per_domain": 1055144, "max_latency_ms_per_domain": 3137 },
+      "frozen_rerank_drift": { "icon": 1, "wide": 0, "favicon": 15, "attributed_to_treatment": false }
+    },
+    {
+      "id": "major-brands-300-validation-missing-wide",
+      "split": "validation",
+      "audited_misses": 16,
+      "control_sha256": "22451cb39032df010f444ed7c7a2fee4bcf3cd7681721812ec4888846b7bc3a4",
+      "split_sha256": "55568d6b5bdaf25713afe11d53778d2e9258d68d8e30c3338856f2f66186d25a",
+      "capture_sha256": "21d121695b0c4b98fa8436d070745ed865559f48add252fc6bee5c851e929881",
+      "capture_entries": 48,
+      "prevalence": { "robots_declared_domains": 12, "parsed_sitemap_domains": 9, "eligible_page_domains": 1, "candidate_domains": 1 },
+      "metrics": { "answered": 0, "reviewed": 0, "correct": 0, "wrong_brand": 0, "related_brand": 0, "not_logo": 0, "ambiguous": 0, "strict_precision": null, "answer_rate": 0, "correct_gains_per_100": 0, "icon_movements": 0, "populated_wide_displacements": 0, "favicon_movements": 0, "requests": 46, "bytes": 3070177, "mean_latency_ms": 1540, "p50_latency_ms": 685, "p95_latency_ms": 8428, "max_requests_per_domain": 5, "max_bytes_per_domain": 1059961, "max_latency_ms_per_domain": 8428 },
+      "frozen_rerank_drift": { "icon": 0, "wide": 0, "favicon": 0, "attributed_to_treatment": false }
+    },
+    {
+      "id": "original-500-validation-missing-wide",
+      "split": "validation",
+      "audited_misses": 35,
+      "control_sha256": "c6ed742e7b1b5e572fed60e1fe4520f371fd4e6fb77b55901add9e13f0b469ea",
+      "split_sha256": "45d00206d9f8fde51b950e74c3ebe8c0af5a24f1a30c07cc50330bb85868d0ed",
+      "capture_sha256": "66e53381f35723f86bf5648908a83806bea5a7efad28d7adfe4f0c5f98389d82",
+      "capture_entries": 81,
+      "prevalence": { "robots_declared_domains": 25, "parsed_sitemap_domains": 19, "eligible_page_domains": 5, "candidate_domains": 2 },
+      "metrics": { "answered": 0, "reviewed": 0, "correct": 0, "wrong_brand": 0, "related_brand": 0, "not_logo": 0, "ambiguous": 0, "strict_precision": null, "answer_rate": 0, "correct_gains_per_100": 0, "icon_movements": 0, "populated_wide_displacements": 0, "favicon_movements": 0, "requests": 82, "bytes": 5437996, "mean_latency_ms": 658, "p50_latency_ms": 460, "p95_latency_ms": 1499, "max_requests_per_domain": 9, "max_bytes_per_domain": 1403054, "max_latency_ms_per_domain": 2787 },
+      "frozen_rerank_drift": { "icon": 0, "wide": 0, "favicon": 3, "attributed_to_treatment": false }
+    }
+  ],
+  "development_combined": { "audited_misses": 150, "answered": 2, "correct": 2, "strict_precision": 1, "correct_gains_per_100": 1.3333333333333333, "wrong_brand": 0, "related_brand": 0, "not_logo": 0, "role_movements": 0 },
+  "validation_combined": { "audited_misses": 51, "answered": 0, "wrong_brand": 0, "related_brand": 0, "not_logo": 0, "role_movements": 0 },
+  "selected_proposals": [
+    { "entity": "Procter & Gamble", "source_page": "https://us.pg.com/newsroom/multimedia/logos/", "content_hash": "6093eeebfd29bfd21eeae10edee47c9dcda3a3c81d5a47cad14add8765f857e5", "review_fingerprint": "sha256:280315d93fce704f1346f4501f5941907f2e63d95bd7e5edc1ee04e02a52b9e1", "verdict": "correct", "independent_verdict": "correct" },
+    { "entity": "Anthropic", "source_page": "https://www.anthropic.com/company", "content_hash": "e204d48e3628c4aa168b790523ca5a4ed50efef804040dced1994d6aa20ccf56", "review_fingerprint": "sha256:f57a8edf94693086cc05cb8eddf74848b4578351dc3ab1b679900279b97ddc6e", "verdict": "correct", "second_reviewer_verdict": "correct", "second_reviewer_independence": "non_arms_length_anthropic_model" }
+  ],
+  "promotion_gates": { "major_development_yield_at_least_2_per_100": true, "combined_development_yield_at_least_2_per_100": false, "observed_strict_precision_at_least_0_98": true, "precision_statistically_established": false, "zero_new_wrong_brand_domains": true, "zero_populated_role_movement": true, "resource_ceilings_enforceable": true, "validation_nonzero_confirmation": false, "default_on_eligible": false }
+}

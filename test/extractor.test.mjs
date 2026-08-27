@@ -1,12 +1,190 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { internals, normalizeWebsite } from '../src/extractor.mjs';
+import { extractLogos, internals, normalizeWebsite } from '../src/extractor.mjs';
 import { buildAssetFamilies, genericAssetReason, rankCandidates } from '../src/rank.mjs';
 
 test('normalizes bare company domains', () => {
   const result = normalizeWebsite('www.Example.com/company');
   assert.equal(result.url.href, 'https://www.example.com/company');
   assert.equal(result.domain, 'example.com');
+});
+
+test('sitemap fallback forces resolver candidates to wide-only without moving a populated icon', async () => {
+  const homepageSvg = '<svg xmlns="http://www.w3.org/2000/svg" class="logo" aria-label="Acme" viewBox="0 0 80 80"><rect width="80" height="80" fill="#125"/></svg>';
+  const replacementIcon = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#e42"/></svg>');
+  const recoveredWide = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80"><rect width="400" height="80" fill="#125"/></svg>');
+  const result = await extractLogos('https://acme.test/', {
+    companyName: 'Acme',
+    fetchImpl: async () => {
+      const response = new Response(`<main>${homepageSvg}</main>`, { headers: { 'content-type': 'text/html' } });
+      Object.defineProperty(response, 'url', { value: 'https://acme.test/' });
+      return response;
+    },
+    validateUrl: async value => new URL(value),
+    maxCandidates: 1,
+    cachedFavicon: false,
+    bimi: false,
+    wikimediaFallback: false,
+    sitemapWide: true,
+    sitemapValidateUrl: async value => new URL(value),
+    sitemapResolver: async () => ({
+      candidates: [
+        { url: 'https://acme.test/new-icon.svg', source: 'schema', rawBytes: replacementIcon, evidence: { sitemap_official_page: true, positive_token: true, dom_region: 'header', home_linked: true, alt: 'Acme logo' } },
+        { url: 'https://acme.test/wordmark.svg', source: 'official-archive', rawBytes: recoveredWide, evidence: { sitemap_official_page: true, eligible_roles: ['wide'], deep_official: true, archive_score: 80 } },
+      ],
+      diagnostics: { status: 'candidates', requests: 0, bytesDownloaded: 0 },
+    }),
+  });
+  assert.ok(result.selectedByRole.icon);
+  assert.equal(result.selectedByRole.icon.observed.byte_hash, result.assets.icon.observed.byte_hash);
+  assert.equal(result.selectedByRole.wide?.url, 'https://acme.test/wordmark.svg');
+  assert.equal(result.diagnostics.sitemap.admitted, true);
+  assert.deepEqual(result.diagnostics.sitemap.displacedRoles, []);
+});
+
+test('sitemap fallback failure is isolated and retains the control extraction', async () => {
+  const result = await extractLogos('https://acme.test/', {
+    companyName: 'Acme',
+    fetchImpl: async () => {
+      const response = new Response('<main><svg class="logo" aria-label="Acme" viewBox="0 0 80 80"><rect width="80" height="80"/></svg></main>', { headers: { 'content-type': 'text/html' } });
+      Object.defineProperty(response, 'url', { value: 'https://acme.test/' });
+      return response;
+    },
+    validateUrl: async value => new URL(value),
+    cachedFavicon: false,
+    bimi: false,
+    wikimediaFallback: false,
+    sitemapWide: true,
+    sitemapResolver: async () => { throw new Error('resolver exploded'); },
+  });
+  assert.ok(result.selectedByRole.icon);
+  assert.equal(result.selectedByRole.wide, null);
+  assert.equal(result.diagnostics.sitemap.status, 'error');
+  assert.match(result.diagnostics.sitemap.error, /resolver exploded/);
+});
+
+test('sitemap treatment reranks the control with the same optional company-name input', async () => {
+  const asset = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80"><rect width="400" height="80"/></svg>';
+  const result = await extractLogos('https://acme.test/', {
+    fetchImpl: async value => {
+      const url = new URL(value);
+      const response = url.pathname === '/'
+        ? new Response('<main><img class="logo" alt="Brand logo" src="/assets/acme-logo.svg" width="400" height="80"></main>', { headers: { 'content-type': 'text/html' } })
+        : new Response(asset, { headers: { 'content-type': 'image/svg+xml' } });
+      Object.defineProperty(response, 'url', { value: url.href });
+      return response;
+    },
+    validateUrl: async value => new URL(value),
+    maxCandidates: 1,
+    cachedFavicon: false,
+    bimi: false,
+    wikimediaFallback: false,
+    sitemapWide: true,
+    sitemapResolver: async () => ({
+      candidates: [],
+      diagnostics: { status: 'no_candidates', requests: 0, bytesDownloaded: 0 },
+    }),
+  });
+  assert.equal(result.selectedByRole.wide, null);
+  assert.equal(result.diagnostics.sitemap.admitted, false);
+});
+
+test('sitemap fallback forbids redirects for exact-labeled cross-domain assets', async () => {
+  let assetRequests = 0;
+  const result = await extractLogos('https://acme.test/', {
+    companyName: 'Acme',
+    fetchImpl: async () => {
+      const response = new Response('<main></main>', { headers: { 'content-type': 'text/html' } });
+      Object.defineProperty(response, 'url', { value: 'https://acme.test/' });
+      return response;
+    },
+    validateUrl: async value => new URL(value),
+    cachedFavicon: false,
+    bimi: false,
+    wikimediaFallback: false,
+    sitemapWide: true,
+    sitemapValidateUrl: async value => new URL(value),
+    sitemapFetchImpl: async value => {
+      assetRequests += 1;
+      return new Response(null, { status: 302, headers: { location: new URL('/other-tenant/acme.svg', value).href } });
+    },
+    sitemapResolver: async () => ({
+      candidates: [{
+        url: 'https://shared-cdn.test/tenant/acme.svg',
+        source: 'dom-img',
+        evidence: {
+          sitemap_official_page: true,
+          sitemap_exact_identity: true,
+          sitemap_asset_host_policy: 'official-page',
+          positive_token: true,
+          dom_region: 'body',
+          alt: 'Acme logo',
+        },
+      }],
+      diagnostics: { status: 'candidates', requests: 0, bytesDownloaded: 0 },
+    }),
+  });
+  assert.equal(assetRequests, 1);
+  assert.equal(result.selectedByRole.wide, null);
+  assert.equal(result.diagnostics.sitemap.candidateDownloads, 1);
+  assert.equal(result.diagnostics.sitemap.admitted, false);
+});
+
+test('sitemap fallback uses the bounded corporate-page treatment and never runs for a populated wide role', async () => {
+  let receivedOptions;
+  const noWide = await extractLogos('https://acme.test/', {
+    companyName: 'Acme',
+    fetchImpl: async () => {
+      const response = new Response('<main></main>', { headers: { 'content-type': 'text/html' } });
+      Object.defineProperty(response, 'url', { value: 'https://acme.test/' });
+      return response;
+    },
+    validateUrl: async value => new URL(value),
+    cachedFavicon: false,
+    bimi: false,
+    wikimediaFallback: false,
+    sitemapWide: true,
+    sitemapOptions: {
+      seedMode: 'robots-and-conventional',
+      minPageScore: 0,
+      assetHostPolicy: 'same-registrable',
+      limits: { maxPages: 99, maxTotalBytes: 7 * 1024 * 1024 },
+    },
+    sitemapResolver: async (_input, treatmentOptions) => {
+      receivedOptions = treatmentOptions;
+      return { candidates: [], diagnostics: { status: 'no_candidates', requests: 0, bytesDownloaded: 0 } };
+    },
+  });
+  assert.equal(noWide.diagnostics.sitemap.status, 'no_candidates');
+  assert.equal(receivedOptions.seedMode, 'robots-only');
+  assert.equal(receivedOptions.minPageScore, 25);
+  assert.equal(receivedOptions.assetHostPolicy, 'official-page');
+  assert.equal(receivedOptions.limits.maxSitemapDocuments, 3);
+  assert.equal(receivedOptions.limits.maxPages, 1);
+  assert.equal(receivedOptions.limits.maxCandidates, 4);
+  assert.equal(receivedOptions.limits.maxRequests, 12);
+  assert.equal(receivedOptions.limits.maxTotalBytes, 5 * 1024 * 1024);
+  assert.equal(receivedOptions.limits.maxDurationMs, 16_000);
+
+  let resolverCalled = false;
+  const wideSvg = '<svg xmlns="http://www.w3.org/2000/svg" class="logo" aria-label="Acme" viewBox="0 0 400 80"><rect width="400" height="80"/></svg>';
+  const populated = await extractLogos('https://acme.test/', {
+    companyName: 'Acme',
+    fetchImpl: async () => {
+      const response = new Response(`<header><a href="/">${wideSvg}</a></header>`, { headers: { 'content-type': 'text/html' } });
+      Object.defineProperty(response, 'url', { value: 'https://acme.test/' });
+      return response;
+    },
+    validateUrl: async value => new URL(value),
+    cachedFavicon: false,
+    bimi: false,
+    wikimediaFallback: false,
+    sitemapWide: true,
+    sitemapResolver: async () => { resolverCalled = true; throw new Error('must not run'); },
+  });
+  assert.ok(populated.selectedByRole.wide);
+  assert.equal(resolverCalled, false);
+  assert.equal(populated.diagnostics.sitemap.status, 'not_needed');
 });
 
 test('homepage recovery prioritizes alternate HTTPS and bounds fallback time', () => {
@@ -538,18 +716,40 @@ test('ignores credentialed and literal private-network asset URLs', () => {
   assert.deepEqual(result.candidates.map(item => item.url), ['https://cdn.example.com/logo.png']);
 });
 
-test('retains an oversized response prefix and reports truncation and bytes', async () => {
+test('retains an oversized response prefix and reports all consumed wire bytes', async () => {
   const diagnostics = { bytesDownloaded: 0 };
   const response = new Response(Buffer.from('head-logo-tail'), { headers: { 'content-length': '14' } });
   const result = await internals.readLimited(response, 9, { truncate: true, diagnostics });
   assert.equal(result.bytes.toString(), 'head-logo');
   assert.equal(result.truncated, true);
-  assert.equal(diagnostics.bytesDownloaded, 9);
+  assert.equal(diagnostics.bytesDownloaded, 14);
 });
 
 test('keeps a same-origin placed header mark even when its alt names another word', () => {
   const item = { source: 'dom-img', url: 'https://acme.test/images/logo-dark.png', width: 256, height: 100, evidence: { alt: 'Sponsor Logo', positive_token: true, dom_region: 'header', home_linked: false }, source_page: 'https://acme.test/' };
   assert.equal(genericAssetReason(item, 'Acme'), null);
+});
+
+test('sitemap identity evidence does not admit a logo photographed inside body content', () => {
+  const item = {
+    source: 'dom-img',
+    url: 'https://acme.test/media/acme-logo-building.jpg',
+    source_page: 'https://acme.test/brand/',
+    width: 600,
+    height: 200,
+    highResolution: true,
+    evidence: {
+      alt: 'Four employees standing with the Acme logo on the building',
+      dom_region: 'body',
+      home_linked: false,
+      positive_token: true,
+      sitemap_official_page: true,
+      sitemap_exact_identity: true,
+      eligible_roles: ['wide'],
+    },
+  };
+  assert.equal(genericAssetReason(item, 'Acme'), 'logo embedded in body content image');
+  assert.equal(rankCandidates([item], { companyName: 'Acme' }).selectedByRole.wide, null);
 });
 
 test('demotes a padded wordmark canvas for the icon role in favor of a declared square asset', () => {

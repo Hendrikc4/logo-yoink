@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { assertPublicUrl, fetchTimed } from '../src/http-client.mjs';
+import { assertPublicUrl, fetchTimed, readLimited } from '../src/http-client.mjs';
 
 test('assertPublicUrl accepts public hosts and rejects private DNS results', async () => {
   const publicUrl = await assertPublicUrl('https://example.test/path', {
@@ -28,4 +28,31 @@ test('fetchTimed revalidates redirects and preserves request diagnostics', async
   assert.equal(await response.text(), 'ok');
   assert.deepEqual(visited, ['https://first.test', 'https://second.test/logo.svg']);
   assert.equal(diagnostics.requests, 2);
+});
+
+test('fetchTimed enforces a caller-supplied redirect ceiling', async () => {
+  const diagnostics = { requests: 0 };
+  await assert.rejects(fetchTimed('https://first.test', {
+    maxRedirects: 1,
+    diagnostics,
+    validateUrl: async () => {},
+    fetchImpl: async value => new Response(null, {
+      status: 302,
+      headers: { location: value === 'https://first.test' ? 'https://second.test/' : 'https://third.test/' },
+    }),
+  }), /Too many redirects/);
+  assert.equal(diagnostics.requests, 2);
+});
+
+test('readLimited accounts for bytes consumed before an oversized response aborts', async () => {
+  const diagnostics = { bytesDownloaded: 0 };
+  const response = new Response(new ReadableStream({
+    start(controller) {
+      controller.enqueue(new Uint8Array(7));
+      controller.enqueue(new Uint8Array(7));
+      controller.close();
+    },
+  }));
+  await assert.rejects(readLimited(response, 10, { diagnostics }), /exceeds/);
+  assert.equal(diagnostics.bytesDownloaded, 14);
 });

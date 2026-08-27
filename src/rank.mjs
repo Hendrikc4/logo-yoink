@@ -183,8 +183,9 @@ export function genericAssetReason(item, companyName = '') {
 export function hasWideEvidence(item, companyName = '') {
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
   const deepOfficial = item.evidence?.deep_official && (Number(item.evidence?.archive_score) >= 40 || companyAgreement(item, companyName || item.evidence?.company_name));
+  const sitemapExact = item.evidence?.sitemap_official_page === true && item.evidence?.sitemap_exact_identity === true;
   const spaLiteral = item.source === 'spa-bundle' && item.evidence?.spa_bundle_entry && item.evidence?.same_origin && item.evidence?.strong_logo_filename && item.evidence?.spa_identity_agreement;
-  return AUTHORITATIVE_SOURCES.includes(item.source) || (item.source === 'wikimedia-commons' && item.evidence?.wikidata_identity_verified === true) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || firstPartyPlacedLogoPath(item) || deepOfficial || spaLiteral;
+  return AUTHORITATIVE_SOURCES.includes(item.source) || (item.source === 'wikimedia-commons' && item.evidence?.wikidata_identity_verified === true) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || firstPartyPlacedLogoPath(item) || deepOfficial || sitemapExact || spaLiteral;
 }
 
 export function scoreCandidate(item, { companyName = '' } = {}) {
