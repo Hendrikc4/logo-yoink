@@ -128,7 +128,7 @@ input::placeholder { color: #74797e; }
 .preview-swatch { width: 9px; height: 9px; border: 1px solid #697075; border-radius: 50%; background: #fff; }
 .preview-options [data-preview-background='transparent'] .preview-swatch { background: repeating-conic-gradient(#c8c8c5 0 25%, #fff 0 50%) 50% / 4px 4px; }
 .preview-options [data-preview-background='black'] .preview-swatch { background: #050607; }
-.preview { position: relative; display: grid; aspect-ratio: 1.65; place-items: center; overflow: hidden; padding: 32px; border: 1px solid transparent; transition: background-color .18s ease, border-color .18s ease; }
+.preview { position: relative; display: grid; aspect-ratio: 1.65; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; overflow: hidden; padding: 32px; border: 1px solid transparent; transition: background-color .18s ease, border-color .18s ease; }
 .preview[data-preview-background='white'] { background: #fff; }
 .preview[data-preview-background='transparent'], .preview:not([data-preview-background]) { background: repeating-conic-gradient(#d9d9d5 0 25%, #f7f7f4 0 50%) 50% / 22px 22px; }
 .preview[data-preview-background='black'] { border-color: #202326; background: #050607; }

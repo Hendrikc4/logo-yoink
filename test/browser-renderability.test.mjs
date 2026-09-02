@@ -16,7 +16,7 @@ async function validatedSvg(markup, evidence = {}) {
 }
 
 test('Chromium renders Hoshii-style canonical cards and a SPA-discovered wordmark', async () => {
-  const hoshiiIcon = await validatedSvg('<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="currentColor"/></svg>', { inherited_color: '#7c3aed' });
+  const hoshiiIcon = await validatedSvg('<svg width="1024" height="1024" viewBox="0 0 1024 1024"><circle cx="512" cy="512" r="448" fill="currentColor"/></svg>', { inherited_color: '#7c3aed' });
   const hoshiiIconReverse = await validatedSvg('<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="currentColor"/></svg>', { inherited_color: '#ffffff' });
   const hoshiiLogo = await validatedSvg('<svg viewBox="0 0 180 36"><path fill="currentColor" d="M0 4h176v28H0z"/></svg>', { inherited_color: '#111827' });
   const hoshiiOther = await validatedSvg('<svg viewBox="0 0 48 48"><path fill="#7c3aed" d="M4 4h40v40H4z"/></svg>');
@@ -84,6 +84,20 @@ test('Chromium renders Hoshii-style canonical cards and a SPA-discovered wordmar
     })));
     assert.equal(hoshiiDimensions.length, 2);
     assert.ok(hoshiiDimensions.every(item => item.complete && item.naturalWidth > 0), JSON.stringify(hoshiiDimensions));
+    const squarePreviewPlacement = await page.locator('.role-card').first().locator('.preview').evaluate(preview => {
+      const image = preview.querySelector('[data-asset-image]');
+      const previewBox = preview.getBoundingClientRect();
+      const imageBox = image.getBoundingClientRect();
+      return {
+        contained: imageBox.left >= previewBox.left && imageBox.right <= previewBox.right
+          && imageBox.top >= previewBox.top && imageBox.bottom <= previewBox.bottom,
+        centerDeltaX: Math.abs((imageBox.left + imageBox.width / 2) - (previewBox.left + previewBox.width / 2)),
+        centerDeltaY: Math.abs((imageBox.top + imageBox.height / 2) - (previewBox.top + previewBox.height / 2)),
+      };
+    });
+    assert.equal(squarePreviewPlacement.contained, true);
+    assert.ok(squarePreviewPlacement.centerDeltaX < 1, JSON.stringify(squarePreviewPlacement));
+    assert.ok(squarePreviewPlacement.centerDeltaY < 1, JSON.stringify(squarePreviewPlacement));
     await page.waitForFunction(() => [...document.querySelectorAll('.role-card.selected .preview')]
       .every(preview => preview.dataset.previewBackground === 'white'));
     const iconVariant = page.locator('[data-asset-variant="asset-1"]');
