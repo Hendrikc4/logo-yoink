@@ -238,82 +238,48 @@
 
       <section id="special-features" class="specials-section" aria-labelledby="specials-title">
         <div class="specials-heading">
-          <div>
-            <p class="pixel-kicker">Why Logo Yoink?</p>
-            <h2 id="specials-title">Built for the mess<br>behind the logo.</h2>
-          </div>
-          <p class="specials-lede">Most sites expose dozens of logo-shaped files. Logo Yoink sorts out which ones belong to the company, which format fits your UI, and which version will actually show up on your background.</p>
+          <p class="pixel-kicker">Why Logo Yoink?</p>
+          <h2 id="specials-title">The right logo.<br>No guesswork.</h2>
+          <p class="specials-lede">Logo Yoink checks the whole website, skips the junk, and gives you a version that fits.</p>
         </div>
 
         <figure class="specials-visual">
-          <img src="/assets/features/logo-filtering-station.webp" width="1823" height="863" loading="lazy" alt="Pixel-art cowboy sorting a matching icon and wordmark from generic placeholder tiles at a nighttime desert rail station">
-          <figcaption>Filter the noise. Keep the mark.</figcaption>
+          <img src="/assets/features/logo-filtering-station.webp" width="1823" height="863" loading="lazy" alt="Pixel-art alien scanning website images, rejecting bad matches, and keeping a matching icon and wide logo">
+          <figcaption>Bad matches out. Right logo in.</figcaption>
         </figure>
 
         <div class="specials-grid">
-          <article class="special-card special-card--filter">
-            <div class="special-card-copy">
-              <span class="special-number">01</span>
-              <p class="special-label">Identity filter</p>
-              <h3>Leaves the website builder behind.</h3>
-              <p>Placeholder marks, “powered by” badges, partner logos, UI icons, and generic template art are pushed out of contention. That includes common defaults from Wix, Vercel, Lovable, Webflow, and more.</p>
-            </div>
-            <div class="filter-demo" aria-label="Examples of assets Logo Yoink rejects and keeps">
-              <div class="filter-stack filter-stack--reject">
-                <span>Discarded</span>
-                <b>VERCEL <i>×</i></b>
-                <b>lovable <i>×</i></b>
-                <b>WiX <i>×</i></b>
-              </div>
-              <div class="filter-stack filter-stack--keep"><span>Kept</span><b>YOUR<br>BRAND <i>✓</i></b></div>
-            </div>
+          <article class="special-card">
+            <span class="special-number">01</span>
+            <div><h3>Skips the wrong logos.</h3><p>Ignores Wix, Vercel, and Lovable placeholders, plus partner logos and badges.</p></div>
           </article>
 
-          <article class="special-card special-card--preferences">
+          <article class="special-card">
             <span class="special-number">02</span>
-            <p class="special-label">Your preferences</p>
-            <h3>Ask for the version you need.</h3>
-            <p>Choose a compact icon or wide wordmark, then prefer color, white, or black artwork for a light or dark surface—with a transparent or opaque background.</p>
-            <div class="preference-demo" aria-hidden="true">
-              <div><span>Format</span><b>Square icon</b><b class="is-active">Wide logo</b></div>
-              <div><span>Surface</span><b>Light</b><b class="is-active">Dark</b></div>
-              <div><span>Artwork</span><b>Color</b><b class="is-active">White</b></div>
-            </div>
+            <div><h3>Matches your design.</h3><p>Ask for square or wide, light or dark, and transparent when available.</p></div>
           </article>
 
-          <article class="special-card special-card--roles">
+          <article class="special-card">
             <span class="special-number">03</span>
-            <p class="special-label">Purpose-built picks</p>
-            <h3>One site. Two useful answers.</h3>
-            <p>Logo Yoink ranks the compact icon and horizontal wordmark separately, so a tiny favicon never wins the spot meant for your navbar.</p>
-            <div class="role-demo" aria-hidden="true"><span><i>LY</i><small>Icon</small></span><span><i>LOGO YOINK</i><small>Wordmark</small></span></div>
+            <div><h3>Gives you both useful sizes.</h3><p>Get a small icon and a wide logo, each picked for the job.</p></div>
           </article>
 
-          <article class="special-card special-card--pixels">
+          <article class="special-card">
             <span class="special-number">04</span>
-            <p class="special-label">File inspection</p>
-            <h3>Checks the pixels, not just the filename.</h3>
-            <p>Every candidate is decoded and measured. Visible bounds expose padded wordmarks, tiny-size tests favor crisp icons, and content hashes collapse duplicates.</p>
-            <p class="special-proof"><b>32 px</b> clarity · visible bounds · duplicate hash</p>
+            <div><h3>Checks image quality.</h3><p>Favors sharp, clean files and removes repeats.</p></div>
           </article>
 
-          <article class="special-card special-card--recovery">
+          <article class="special-card">
             <span class="special-number">05</span>
-            <p class="special-label">Deep recovery</p>
-            <h3>Finds the logo a simple scraper misses.</h3>
-            <p>It reads metadata, manifests, inline SVGs, CSS, and favicons, renders JavaScript when needed, and can fill a missing role from an exact-domain verified Wikimedia source.</p>
-            <div class="recovery-trail" aria-hidden="true"><span>HTML</span><i>→</i><span>JS</span><i>→</i><span>Brand pages</span><i>→</i><span>Verified fallback</span></div>
+            <div><h3>Searches deeper when needed.</h3><p>Looks beyond the front page when the best logo is hard to find.</p></div>
           </article>
 
-          <article class="special-card special-card--honest">
+          <article class="special-card">
             <span class="special-number">06</span>
-            <p class="special-label">Conservative by design</p>
-            <h3>Returns “no logo” before the wrong logo.</h3>
-            <p>Weak evidence can produce a <code>null</code> instead of a confident-looking mistake. Every result keeps its source, measurements, predicted roles, and scoring reasons.</p>
-            <a href="/docs#response">See what comes back <span aria-hidden="true">↗</span></a>
+            <div><h3>Doesn’t make risky guesses.</h3><p>Returns no logo instead of giving you the wrong brand.</p></div>
           </article>
         </div>
-        <p class="specials-footnote"><strong>No generated artwork. No runtime AI call.</strong> Logo Yoink returns real files the site exposes, using deterministic rules you can inspect and change in your own deployment. <a href="https://github.com/Hendrikc4/logo-yoink/blob/main/docs/architecture.md" target="_blank" rel="noreferrer">Read the architecture notes <span aria-hidden="true">↗</span></a></p>
+        <p class="specials-footnote"><strong>Logo Yoink never makes up a logo.</strong> It only returns files it finds online. <a href="/docs#pipeline">See how it works <span aria-hidden="true">↗</span></a></p>
       </section>
     </main>
 
