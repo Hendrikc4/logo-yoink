@@ -446,6 +446,17 @@ test('rejects the shared Wix default favicon but keeps custom Wix-hosted assets'
   assert.deepEqual(rankCandidates([customWix], { companyName: 'Acme' }).candidates[0].predicted_roles, ['icon', 'favicon']);
 });
 
+test('rejects foreign site-builder branding without rejecting the builder itself', () => {
+  const lovableBadge = {
+    source: 'dom-img',
+    source_page: 'https://acme.test/',
+    url: 'https://acme.test/lovable-logo.svg',
+    evidence: { alt: 'Powered by Lovable logo', company_name: 'Acme' },
+  };
+  assert.match(genericAssetReason(lovableBadge, 'Acme'), /foreign platform brand: lovable/);
+  assert.equal(genericAssetReason({ ...lovableBadge, source_page: 'https://lovable.dev/' }, 'Lovable'), null);
+});
+
 test('rejects social glyphs, inline controls, template marks, and content imagery', () => {
   const common = { source: 'dom-img', highResolution: true, scalable: false, bytes: 100, evidence: { dom_region: 'body', home_linked: false } };
   const cases = [

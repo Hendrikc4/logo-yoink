@@ -236,82 +236,84 @@
         </div>
       </section>
 
-      <section id="how-it-works" class="how-section" aria-labelledby="how-title">
-        <div class="how-heading">
+      <section id="special-features" class="specials-section" aria-labelledby="specials-title">
+        <div class="specials-heading">
           <div>
-            <p class="pixel-kicker">How it works</p>
-            <h2 id="how-title">Rules at runtime.<br>Proof behind them.</h2>
+            <p class="pixel-kicker">Why Logo Yoink?</p>
+            <h2 id="specials-title">Built for the mess<br>behind the logo.</h2>
           </div>
-          <p class="how-lede">Logo Yoink does more than scrape a page for an image named “logo.” It builds an evidence trail for each candidate, measures the artwork itself, then makes a separate selection for compact icons and wide wordmarks.</p>
+          <p class="specials-lede">Most sites expose dozens of logo-shaped files. Logo Yoink sorts out which ones belong to the company, which format fits your UI, and which version will actually show up on your background.</p>
         </div>
 
-        <figure class="how-visual">
-          <img src="/assets/how-it-works/logo-yoink-twilight-trail.webp" width="1824" height="862" loading="lazy" alt="Pixel-art cowboy on horseback lassoing icon and wordmark tiles from a browser portal in a twilight desert">
-          <figcaption>Broad discovery → conservative selection</figcaption>
+        <figure class="specials-visual">
+          <img src="/assets/features/logo-filtering-station.webp" width="1823" height="863" loading="lazy" alt="Pixel-art cowboy sorting a matching icon and wordmark from generic placeholder tiles at a nighttime desert rail station">
+          <figcaption>Filter the noise. Keep the mark.</figcaption>
         </figure>
 
-        <div class="how-system">
-          <article class="how-runtime" aria-labelledby="runtime-title">
-            <header class="how-panel-heading">
-              <div>
-                <p class="how-panel-label">On every request</p>
-                <h3 id="runtime-title">A bounded evidence pipeline</h3>
+        <div class="specials-grid">
+          <article class="special-card special-card--filter">
+            <div class="special-card-copy">
+              <span class="special-number">01</span>
+              <p class="special-label">Identity filter</p>
+              <h3>Leaves the website builder behind.</h3>
+              <p>Placeholder marks, “powered by” badges, partner logos, UI icons, and generic template art are pushed out of contention. That includes common defaults from Wix, Vercel, Lovable, Webflow, and more.</p>
+            </div>
+            <div class="filter-demo" aria-label="Examples of assets Logo Yoink rejects and keeps">
+              <div class="filter-stack filter-stack--reject">
+                <span>Discarded</span>
+                <b>VERCEL <i>×</i></b>
+                <b>lovable <i>×</i></b>
+                <b>WiX <i>×</i></b>
               </div>
-              <span class="runtime-badge"><i aria-hidden="true"></i>No AI call</span>
-            </header>
-
-            <ol class="runtime-flow">
-              <li>
-                <span class="flow-number">01</span>
-                <div>
-                  <h4>Start cheap. Escalate only when needed.</h4>
-                  <p>Structured data, manifests, favicons, DOM images, CSS and inline SVGs are read first. A rendered browser and exact-domain recovery only run when a useful role is still missing.</p>
-                  <p class="flow-evidence">HTML first <i>→</i> bounded fallbacks</p>
-                </div>
-              </li>
-              <li>
-                <span class="flow-number">02</span>
-                <div>
-                  <h4>Inspect the file, not just its filename.</h4>
-                  <p>Redirects are revalidated, downloads stay inside time and byte limits, and image bytes are decoded to measure dimensions, visible content, tiny-size clarity and duplicate hashes.</p>
-                  <p class="flow-evidence">URL safety <i>·</i> decoded pixels <i>·</i> content hash</p>
-                </div>
-              </li>
-              <li>
-                <span class="flow-number">03</span>
-                <div>
-                  <h4>Score the evidence once per role.</h4>
-                  <p>Source authority, header placement, home-linking, company-name agreement, aspect ratio and resolution add confidence. UI controls, partner marks and generic platform assets lose it.</p>
-                  <div class="role-examples" aria-label="Role-specific ranking examples">
-                    <span><b>Icon</b> square + clear at 32 px</span>
-                    <span><b>Wide</b> wordmark shape + brand evidence</span>
-                  </div>
-                </div>
-              </li>
-            </ol>
+              <div class="filter-stack filter-stack--keep"><span>Kept</span><b>YOUR<br>BRAND <i>✓</i></b></div>
+            </div>
           </article>
 
-          <aside class="how-optimization" aria-labelledby="optimization-title">
-            <div>
-              <p class="how-panel-label">Between releases</p>
-              <h3 id="optimization-title">Optimized offline, against real sites.</h3>
-              <p class="optimization-intro">AI-assisted review helped label actual candidates from an 800-company benchmark corpus. Those labels evaluate rule changes; they never enter a live request.</p>
+          <article class="special-card special-card--preferences">
+            <span class="special-number">02</span>
+            <p class="special-label">Your preferences</p>
+            <h3>Ask for the version you need.</h3>
+            <p>Choose a compact icon or wide wordmark, then prefer color, white, or black artwork for a light or dark surface—with a transparent or opaque background.</p>
+            <div class="preference-demo" aria-hidden="true">
+              <div><span>Format</span><b>Square icon</b><b class="is-active">Wide logo</b></div>
+              <div><span>Surface</span><b>Light</b><b class="is-active">Dark</b></div>
+              <div><span>Artwork</span><b>Color</b><b class="is-active">White</b></div>
             </div>
+          </article>
 
-            <ol class="optimization-loop">
-              <li><span>1</span><p><strong>Freeze the evidence</strong>Candidate files and labels stay fixed, so an experiment cannot win by changing its test set.</p></li>
-              <li><span>2</span><p><strong>Replay one change</strong>New scoring rules run over development and validation splits before the held-back evaluation is opened.</p></li>
-              <li><span>3</span><p><strong>Keep only measured gains</strong>Changes that trade a correct logo for an impostor are rejected, even when they increase coverage.</p></li>
-            </ol>
+          <article class="special-card special-card--roles">
+            <span class="special-number">03</span>
+            <p class="special-label">Purpose-built picks</p>
+            <h3>One site. Two useful answers.</h3>
+            <p>Logo Yoink ranks the compact icon and horizontal wordmark separately, so a tiny favicon never wins the spot meant for your navbar.</p>
+            <div class="role-demo" aria-hidden="true"><span><i>LY</i><small>Icon</small></span><span><i>LOGO YOINK</i><small>Wordmark</small></span></div>
+          </article>
 
-            <div class="optimization-proof">
-              <p>One measured optimization</p>
-              <div><strong>129<span aria-hidden="true">→</span>216</strong><span>correct favicon picks across frozen splits</span></div>
-              <small>Answer count held at 336 after adding 32 px visual-suitability scoring.</small>
-            </div>
-          </aside>
+          <article class="special-card special-card--pixels">
+            <span class="special-number">04</span>
+            <p class="special-label">File inspection</p>
+            <h3>Checks the pixels, not just the filename.</h3>
+            <p>Every candidate is decoded and measured. Visible bounds expose padded wordmarks, tiny-size tests favor crisp icons, and content hashes collapse duplicates.</p>
+            <p class="special-proof"><b>32 px</b> clarity · visible bounds · duplicate hash</p>
+          </article>
+
+          <article class="special-card special-card--recovery">
+            <span class="special-number">05</span>
+            <p class="special-label">Deep recovery</p>
+            <h3>Finds the logo a simple scraper misses.</h3>
+            <p>It reads metadata, manifests, inline SVGs, CSS, and favicons, renders JavaScript when needed, and can fill a missing role from an exact-domain verified Wikimedia source.</p>
+            <div class="recovery-trail" aria-hidden="true"><span>HTML</span><i>→</i><span>JS</span><i>→</i><span>Brand pages</span><i>→</i><span>Verified fallback</span></div>
+          </article>
+
+          <article class="special-card special-card--honest">
+            <span class="special-number">06</span>
+            <p class="special-label">Conservative by design</p>
+            <h3>Returns “no logo” before the wrong logo.</h3>
+            <p>Weak evidence can produce a <code>null</code> instead of a confident-looking mistake. Every result keeps its source, measurements, predicted roles, and scoring reasons.</p>
+            <a href="/docs#response">See what comes back <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
-        <p class="how-footnote"><strong>The result stays inspectable.</strong> Each candidate keeps its source, measurements, predicted roles and scoring reasons—so you can see why it ranked, or change the rules in your own deployment. <a href="https://github.com/Hendrikc4/logo-yoink/blob/main/docs/architecture.md" target="_blank" rel="noreferrer">Read the architecture notes <span aria-hidden="true">↗</span></a></p>
+        <p class="specials-footnote"><strong>No generated artwork. No runtime AI call.</strong> Logo Yoink returns real files the site exposes, using deterministic rules you can inspect and change in your own deployment. <a href="https://github.com/Hendrikc4/logo-yoink/blob/main/docs/architecture.md" target="_blank" rel="noreferrer">Read the architecture notes <span aria-hidden="true">↗</span></a></p>
       </section>
     </main>
 

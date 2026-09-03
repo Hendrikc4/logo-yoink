@@ -39,7 +39,7 @@ const AUTHORITATIVE_SOURCES = ['schema', 'og-logo', 'microdata'];
 const FAVICON_SOURCES = ['manifest', 'apple', 'mask-icon', 'bimi', 'ms-tile', 'html-icon', 'besticon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon'];
 const DECLARED_ICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon']);
 const DECLARED_ICON_MIN_SCORE = 49;
-const PLATFORM_NAMES = ['namecheap', 'matomo', 'piwik', 'wix', 'vercel', 'webflow', 'squarespace', 'shopify', 'godaddy', 'netlify', 'framer'];
+const PLATFORM_NAMES = ['namecheap', 'matomo', 'piwik', 'wix', 'vercel', 'lovable', 'webflow', 'squarespace', 'shopify', 'godaddy', 'netlify', 'framer'];
 const KNOWN_GENERIC_HASHES = new Map([
   ['33c1436f8c40ca2582d091c449fccc34ed9bf73f02526c5fdef44f4f06c6321b', 'Wix default favicon'],
   ['c965a500f698483526faf92ac286047cecd825608cd1d83276de392b30a13a83', 'WordPress default favicon'],
