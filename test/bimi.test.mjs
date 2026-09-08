@@ -4,7 +4,7 @@ import { bimiCandidate, bimiQueryDomains, internals as bimiInternals, isSafeBimi
 import { internals as extractorInternals } from '../src/extractor.mjs';
 import { rankCandidates } from '../src/rank.mjs';
 
-const SAFE_SVG = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#123456"/></svg>');
+const SAFE_SVG = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" fill="#123456"/></svg>');
 
 test('joins split TXT chunks and parses whitespace and tag casing', async () => {
   const cache = new Map();

@@ -6,6 +6,7 @@ import { normalizeStandaloneSvg } from './standalone-svg.mjs';
 import { discoverOfficialBrandAssets, discoverSpaBundleAssets } from './discover-deep.mjs';
 import { hasWideEvidence, rankCandidates, scoreCandidate, SOURCE_WEIGHT } from './rank.mjs';
 import { measureTinyImageSuitability } from './tiny-image-suitability.mjs';
+import { matchGenericFingerprint } from './generic-asset-fingerprint.mjs';
 import { mapConcurrent } from './concurrency.mjs';
 import { isPrivateIp } from './network-safety.mjs';
 import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
@@ -344,9 +345,11 @@ async function manifestCandidates(url, timeoutMs, diagnostics) {
     if (!response.ok) return [];
     const { bytes } = await readLimited(response, 512 * 1024, { diagnostics });
     const manifest = JSON.parse(bytes.toString('utf8'));
+    const manifestNames = [manifest.name, manifest.short_name]
+      .filter(value => typeof value === 'string' && value.trim()).map(value => value.trim().slice(0, 200));
     return (Array.isArray(manifest.icons) ? manifest.icons : []).flatMap((icon, index) => {
       const resolved = resolveHttpUrl(icon?.src, response.url);
-      return resolved ? [candidate(resolved, 'manifest', icon.sizes, icon.type, { purpose: icon.purpose ?? 'any', source_page: url, evidence: { element: 'manifest', discovery_order: index, manifest_purpose: icon.purpose ?? 'any' } })] : [];
+      return resolved ? [candidate(resolved, 'manifest', icon.sizes, icon.type, { purpose: icon.purpose ?? 'any', source_page: url, evidence: { element: 'manifest', discovery_order: index, manifest_purpose: icon.purpose ?? 'any', manifest_names: manifestNames } })] : [];
     });
   } catch { return []; }
 }
@@ -442,8 +445,10 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     if (!metadata || !bytes.length) return null;
     const width = metadata.width ?? item.declared?.width ?? item.discoveredWidth ?? null, height = metadata.height ?? item.declared?.height ?? item.discoveredHeight ?? null;
     const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4, scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
-    const background = await imageBackground(bytes, metadata.format);
-    return { ...item, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: response.url, retrieved_at: new Date().toISOString(), http_status: response.status, svg_safety_validated: svgSafetyValidated === true ? true : undefined, bimi_svg_safety_validated: item.source === 'bimi' ? true : undefined, bimi_svg_profile_conformance: item.source === 'bimi' ? 'not_performed' : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    const tinySuitability = await measureTinyImageSuitability(bytes);
+    const background = tinySuitability?.canvas_background ?? 'unknown';
+    const genericAsset = matchGenericFingerprint(tinySuitability?.pixel_fingerprint);
+    return { ...item, background, tinySuitability, tinySuitabilityChecked: true, observed: { ...metadata, width, height, ...(genericAsset ? { generic_asset: genericAsset } : {}), byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: response.url, retrieved_at: new Date().toISOString(), http_status: response.status, svg_safety_validated: svgSafetyValidated === true ? true : undefined, bimi_svg_safety_validated: item.source === 'bimi' ? true : undefined, bimi_svg_profile_conformance: item.source === 'bimi' ? 'not_performed' : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, status = 200, contentType = '' } = {}) {
@@ -464,8 +469,10 @@ async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, sta
     const width = metadata.width ?? item.declared?.width ?? null, height = metadata.height ?? item.declared?.height ?? null;
     const ratio = width && height ? width / height : null, squareish = ratio !== null && ratio >= 0.72 && ratio <= 1.4;
     const scalable = metadata.format === 'svg', highResolution = scalable || Boolean(width && height && Math.min(width, height) >= 128);
-    const background = await imageBackground(bytes, metadata.format);
-    return { ...cleanItem, background, observed: { ...metadata, width, height, byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: resolvedUrl, retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? item.provenance?.source_chain ?? [], svg_safety_validated: svgSafetyValidated === true ? true : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    const tinySuitability = await measureTinyImageSuitability(bytes);
+    const background = tinySuitability?.canvas_background ?? 'unknown';
+    const genericAsset = matchGenericFingerprint(tinySuitability?.pixel_fingerprint);
+    return { ...cleanItem, background, tinySuitability, tinySuitabilityChecked: true, observed: { ...metadata, width, height, ...(genericAsset ? { generic_asset: genericAsset } : {}), byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: resolvedUrl, retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? item.provenance?.source_chain ?? [], svg_safety_validated: svgSafetyValidated === true ? true : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 
@@ -480,18 +487,8 @@ async function isRenderableSvg(bytes) {
 }
 
 async function imageBackground(bytes, format) {
-  if (format === 'jpeg') return 'opaque';
-  try {
-    const { data, info } = await sharp(bytes, { limitInputPixels: 64 * 1024 * 1024 })
-      .ensureAlpha()
-      .resize(64, 64, { fit: 'inside', withoutEnlargement: true })
-      .raw()
-      .toBuffer({ resolveWithObject: true });
-    for (let offset = info.channels - 1; offset < data.length; offset += info.channels) {
-      if (data[offset] < 250) return 'transparent';
-    }
-    return 'opaque';
-  } catch { return 'unknown'; }
+  if (format === 'jpeg' || format === 'jpg') return 'opaque';
+  return (await measureTinyImageSuitability(bytes))?.canvas_background ?? 'unknown';
 }
 function dataUrlBytes(value) {
   const match = /^data:[^;,]+(;base64)?,([\s\S]*)$/.exec(String(value ?? ''));
@@ -550,9 +547,13 @@ async function attachTinySuitability(items) {
     if (item.tinySuitabilityChecked || !item.dataUrl) return;
     item.tinySuitabilityChecked = true;
     const ratio = item.width && item.height ? item.width / item.height : null;
-    if (!FAVICON_SOURCES.has(item.source) || (ratio != null && (ratio < 0.72 || ratio > 1.4))) return;
+    if (ratio != null && (ratio < 0.72 || ratio > 1.4)) return;
     const bytes = dataUrlBytes(item.dataUrl);
-    if (bytes) item.tinySuitability = await measureTinyImageSuitability(bytes) ?? { score: 0 };
+    if (bytes) {
+      item.tinySuitability = await measureTinyImageSuitability(bytes) ?? { score: 0 };
+      const generic = matchGenericFingerprint(item.tinySuitability.pixel_fingerprint);
+      if (generic) item.observed = { ...item.observed, generic_asset: generic };
+    }
   });
 }
 
@@ -962,7 +963,8 @@ export async function extractLogos(website, options = {}) {
 
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
-  return { input: website, domain: normalized.domain, homepage, icon: ranked.assets.icon, logo: ranked.assets.logo, preferences: ranked.preferences, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, wikimedia: wikimediaDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', scrapers: { browser: { enabled: Boolean(options.browser), used: browserDiagnostics?.status === 'ok' }, jina: { enabled: Boolean(jinaApiKey), used: jinaHomepageUsed || jinaScreenshot?.status === 'ok' } }, browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  const genericAssetMatches = ranked.candidates.flatMap(item => item.observed?.generic_asset ? [{ url: item.resolvedUrl ?? item.resolved_url ?? item.url, ...item.observed.generic_asset }] : []);
+  return { input: website, domain: normalized.domain, homepage, icon: ranked.assets.icon, logo: ranked.assets.logo, preferences: ranked.preferences, preferenceMatch: ranked.preferenceMatch, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { iconSelection: ranked.diagnostics?.iconSelection, genericAssetMatches, discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, wikimedia: wikimediaDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', scrapers: { browser: { enabled: Boolean(options.browser), used: browserDiagnostics?.status === 'ok' }, jina: { enabled: Boolean(jinaApiKey), used: jinaHomepageUsed || jinaScreenshot?.status === 'ok' } }, browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.

@@ -118,6 +118,7 @@ Prefer a white/light logo for a dark surface and a transparent file:
 
 ```bash
 npx logo-yoink stripe.com --theme dark --background transparent
+npx logo-yoink stripe.com --theme dark --background transparent --strict
 ```
 
 Or download the top pick:
@@ -176,7 +177,7 @@ The demo and API use the same default-on Wikidata/Commons fallback. Add
 selection is independent; use `"scrapers": []` when the whole request must stay
 on the built-in direct-fetch path.
 
-Both `preferences.icon` and `preferences.logo` accept the same optional fields. `theme` accepts `any`, `light`, or `dark` and describes the surface the asset must work on, so `dark` prefers light artwork. `color` accepts `any`, `color`, `white`, or `black`. `background` accepts `any`, `transparent`, or `opaque`. Preferences are best-effort: a matching eligible asset wins when available, otherwise ranking falls back to the best eligible asset.
+Both `preferences.icon` and `preferences.logo` accept the same optional fields. `theme` accepts `any`, `light`, or `dark` and describes the surface the asset must work on, so `dark` prefers light artwork. `color` accepts `any`, `color`, `white`, or `black`. `background` accepts `any`, `transparent`, or `opaque`. Preferences are best-effort by default: a matching eligible asset wins when available, otherwise ranking falls back to the best eligible asset. Set `strict: true` on either role (or use CLI `--strict` for the selected role) to require exact known color and background values, plus sufficient measured contrast on the requested surface. Opaque artwork uses its own foreground/background contrast. The role is `null` when no candidate qualifies. `preferenceMatch` reports `exact`, `fallback`, or `unmatched` for each canonical role.
 
 The response keeps canonical `assets.icon` and `assets.logo` selections and adds ordered `assetVariants.icon` and `assetVariants.logo` arrays. The selected asset is first. Additional entries must represent a distinct theme/color/background combination and clear `variantPolicy.minimumRoleScore` (currently 45, the medium-certainty boundary); delivery-size copies of the same artwork are not promoted as semantic variants. Every variant includes explicit metadata such as `{"theme":"dark","color":"white","background":"transparent"}` plus role-specific `certainty: { score, band }`.
 

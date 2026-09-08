@@ -7,6 +7,8 @@ export interface AssetPreference {
   theme?: Theme;
   color?: Color;
   background?: Background;
+  /** Require exact known variants and sufficient contrast on a requested surface. Default: false. */
+  strict?: boolean;
 }
 
 export interface YoinkOptions {
@@ -44,6 +46,7 @@ export interface YoinkResult {
   logo: LogoAsset | null;
   assets: { icon: LogoAsset | null; logo: LogoAsset | null };
   assetVariants: { icon: LogoAsset[]; logo: LogoAsset[] };
+  preferenceMatch: { icon: 'exact' | 'fallback' | 'unmatched'; logo: 'exact' | 'fallback' | 'unmatched' };
   candidates: LogoAsset[];
   diagnostics: Record<string, unknown>;
   [field: string]: unknown;

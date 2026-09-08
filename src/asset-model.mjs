@@ -2,6 +2,7 @@ const THEMES = new Set(['any', 'light', 'dark']);
 const COLORS = new Set(['any', 'color', 'white', 'black']);
 const BACKGROUNDS = new Set(['any', 'transparent', 'opaque']);
 const ROLES = new Set(['icon', 'logo']);
+const MIN_SURFACE_CONTRAST = 0.08;
 
 const DEFAULT_ROLE_PREFERENCES = Object.freeze({ theme: 'any', color: 'any', background: 'any' });
 
@@ -13,16 +14,18 @@ export const DEFAULT_ASSET_PREFERENCES = Object.freeze({
 function normalizeRolePreferences(value, label) {
   const preference = value ?? {};
   if (typeof preference !== 'object' || Array.isArray(preference)) throw new Error(`${label} preferences must be an object.`);
-  if (Object.keys(preference).some(key => !['theme', 'color', 'background'].includes(key))) {
-    throw new Error(`${label} preferences only support theme, color, and background.`);
+  if (Object.keys(preference).some(key => !['theme', 'color', 'background', 'strict'].includes(key))) {
+    throw new Error(`${label} preferences only support theme, color, background, and strict.`);
   }
   const theme = preference.theme ?? 'any';
   const color = preference.color ?? 'any';
   const background = preference.background ?? 'any';
+  const strict = preference.strict ?? false;
   if (!THEMES.has(theme)) throw new Error(`${label} theme must be any, light, or dark.`);
   if (!COLORS.has(color)) throw new Error(`${label} color must be any, color, white, or black.`);
   if (!BACKGROUNDS.has(background)) throw new Error(`${label} background must be any, transparent, or opaque.`);
-  return { theme, color, background };
+  if (typeof strict !== 'boolean') throw new Error(`${label} strict must be a boolean.`);
+  return { theme, color, background, ...(strict ? { strict: true } : {}) };
 }
 
 export function normalizeAssetPreferences(value) {
@@ -87,10 +90,29 @@ export function assetPreferenceScore(item, preferences, role = 'logo') {
   return score;
 }
 
+export function matchesRequiredPreferences(item, requested) {
+  if (!item) return false;
+  const variant = item.variant ?? describeAssetVariant(item);
+  if (['color', 'background'].some(key => requested[key] !== 'any' && variant[key] !== requested[key])) return false;
+  if (requested.theme === 'any') return true;
+  const quality = item.tinySuitability;
+  const measuredBackground = quality?.canvas_background;
+  const transparent = variant.background === 'transparent' || measuredBackground === 'transparent';
+  if (transparent) {
+    const contrast = quality?.surface_contrast?.[requested.theme];
+    return Number.isFinite(contrast) && contrast >= MIN_SURFACE_CONTRAST;
+  }
+  if (variant.background === 'opaque' || measuredBackground === 'opaque') {
+    return Number.isFinite(quality?.contrast) && quality.contrast >= MIN_SURFACE_CONTRAST;
+  }
+  return false;
+}
+
 export function matchesAssetPreferences(item, preferences, role = 'logo') {
   if (!item) return false;
   const requested = normalizeAssetPreferences(preferences)[role];
   if (!requested) return false;
+  if (requested.strict) return matchesRequiredPreferences(item, requested);
   const variant = item.variant ?? describeAssetVariant(item);
   return ['theme', 'color', 'background'].every(key =>
     requested[key] === 'any' || variant[key] === requested[key] || variant[key] === 'any');

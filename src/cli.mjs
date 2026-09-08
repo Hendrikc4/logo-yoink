@@ -19,7 +19,9 @@ const downloadIndex = args.indexOf('--download');
 const downloadDirectory = downloadIndex >= 0 ? args[downloadIndex + 1] : null;
 const theme = option('--theme') ?? 'any';
 const background = option('--background') ?? 'any';
+const strict = args.includes('--strict');
 const requestedRole = option('--role');
+const preferenceRole = requestedRole === 'icon' || requestedRole === 'favicon' ? 'icon' : 'logo';
 const deepWide = args.includes('--deep-wide');
 const spaBundles = args.includes('--spa-bundles');
 const wikimediaFallback = !args.includes('--no-wikimedia-fallback');
@@ -33,7 +35,7 @@ if (!website || downloadIndex >= 0 && !downloadDirectory ||
     !['any', 'light', 'dark'].includes(theme) ||
     !['any', 'transparent', 'opaque'].includes(background) ||
     requestedRole && !['icon', 'logo', 'wide', 'favicon'].includes(requestedRole)) {
-  console.error('Usage: logo-yoink <website> [--no-browser] [--jina] [--all-fallbacks] [--theme any|light|dark] [--background any|transparent|opaque] [--role icon|logo] [--download <directory>] [--no-wikimedia-fallback] [--bimi]');
+  console.error('Usage: logo-yoink <website> [--no-browser] [--jina] [--all-fallbacks] [--theme any|light|dark] [--background any|transparent|opaque] [--strict] [--role icon|logo] [--download <directory>] [--no-wikimedia-fallback] [--bimi]');
   process.exit(1);
 }
 
@@ -46,7 +48,7 @@ try {
     spaBundles,
     wikimedia: wikimediaFallback,
     bimi,
-    preferences: { logo: { theme, background } },
+    preferences: { [preferenceRole]: { theme, background, strict } },
   });
   const downloadSelection = requestedRole === 'logo' || requestedRole === 'wide'
     ? result.assets.logo

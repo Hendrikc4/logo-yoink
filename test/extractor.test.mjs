@@ -290,6 +290,57 @@ test('declared icons displace unlinked DOM squares but never a home-linked logo'
   assert.equal(rankCandidates([homeLinked, declared], { companyName: 'Acme' }).selectedByRole.icon.url, homeLinked.url);
 });
 
+test('an uncorroborated stale product favicon cannot displace a likely first-party header mark', () => {
+  const header = {
+    source: 'browser-img', source_page: 'https://acme.test/', url: 'https://acme.test/assets/brand-mark.svg',
+    width: 128, height: 128, scalable: true, highResolution: true, bytes: 200,
+    evidence: { positive_token: true, dom_region: 'header', home_linked: false },
+  };
+  const stale = {
+    source: 'apple', source_page: 'https://acme.test/', url: 'https://acme.test/legacy-product-icon.png',
+    width: 180, height: 180, highResolution: true, bytes: 100, evidence: {},
+  };
+  const result = rankCandidates([header, stale], { companyName: 'Acme' });
+  assert.equal(result.selectedByRole.icon.url, header.url);
+  assert.deepEqual(result.diagnostics.iconSelection, {
+    action: 'declared-icon-abstained', reason: 'declared-icon-lacks-corroboration',
+    selectedUrl: header.url, rejectedUrl: stale.url, corroboration: [],
+  });
+});
+
+test('a company-corroborated declared favicon can displace an unlinked header mark', () => {
+  const header = {
+    source: 'browser-img', source_page: 'https://acme.test/', url: 'https://acme.test/assets/brand-mark.svg',
+    width: 128, height: 128, scalable: true, highResolution: true, bytes: 200,
+    evidence: {},
+  };
+  header.evidence = { positive_token: true, dom_region: 'header', home_linked: false };
+  const favicon = {
+    source: 'html-icon', source_page: 'https://acme.test/', url: 'https://acme.test/acme-icon.png',
+    width: 64, height: 64, highResolution: true, bytes: 100, evidence: {},
+  };
+  const result = rankCandidates([header, favicon], { companyName: 'Acme' });
+  assert.equal(result.selectedByRole.icon.url, favicon.url);
+  assert.equal(result.diagnostics.iconSelection.action, 'declared-icon-displaced-page-mark');
+  assert.deepEqual(result.diagnostics.iconSelection.corroboration, ['company-name-agreement']);
+});
+
+test('an exact manifest app name corroborates a declared favicon without domain exceptions', () => {
+  const header = {
+    source: 'dom-img', source_page: 'https://acme.test/', url: 'https://acme.test/assets/brand-symbol.svg',
+    width: 128, height: 128, scalable: true, highResolution: true, bytes: 200,
+    evidence: { positive_token: true, dom_region: 'nav', home_linked: false },
+  };
+  const favicon = {
+    source: 'manifest', source_page: 'https://acme.test/site.webmanifest', url: 'https://cdn.test/product-icon.png',
+    width: 128, height: 128, highResolution: true, bytes: 100,
+    evidence: { manifest_names: ['Acme Inc.'] },
+  };
+  const result = rankCandidates([header, favicon], { companyName: 'Acme Inc.' });
+  assert.equal(result.selectedByRole.icon.url, favicon.url);
+  assert.ok(result.diagnostics.iconSelection.corroboration.includes('manifest-name-agreement'));
+});
+
 test('accepted inline SVGs become standalone and empty SVGs fail renderability', async () => {
   const markup = '<svg viewBox="0 0 120 24"><path fill="currentColor" d="M0 0h120v24H0z"/></svg>';
   const item = { url: `data:image/svg+xml;base64,${Buffer.from(markup).toString('base64')}`, source: 'inline-svg', evidence: { inherited_color: '#5b21b6' } };
@@ -347,6 +398,50 @@ test('logo preferences select matching theme and background variants with fallba
 
   const fallback = rankCandidates([darkOpaque], { companyName: 'Acme', preferences: { logo: { theme: 'dark', background: 'transparent' } } });
   assert.equal(fallback.assets.logo.url, darkOpaque.url);
+  assert.equal(fallback.preferenceMatch.logo, 'fallback');
+});
+
+test('strict role preferences abstain from incompatible or unknown variants', () => {
+  const common = {
+    source: 'official-archive', width: 500, height: 100, highResolution: true, scalable: true, bytes: 100,
+    background: 'transparent', evidence: { eligible_roles: ['wide'], archive_score: 90, deep_official: true, positive_token: true },
+    tinySuitability: { canvas_background: 'transparent', surface_contrast: { light: 0.9, dark: 0.9 } },
+  };
+  const black = { ...common, url: 'zip+https://acme.test/kit.zip#Acme_Black.svg', evidence: { ...common.evidence, theme: 'light' } };
+  const white = { ...common, url: 'zip+https://acme.test/kit.zip#Acme_White.svg', evidence: { ...common.evidence, theme: 'dark' } };
+  const color = { ...common, url: 'zip+https://acme.test/kit.zip#Acme_Color.svg', evidence: { ...common.evidence, theme: 'light' } };
+  const light = rankCandidates([white, black, color], { companyName: 'Acme', preferences: { logo: { theme: 'light', color: 'black', strict: true } } });
+  assert.equal(light.assets.logo.url, black.url);
+  assert.equal(light.preferenceMatch.logo, 'exact');
+  assert.deepEqual(light.assetVariants.logo.map(item => item.url), [black.url]);
+
+  const dark = rankCandidates([black, white], { companyName: 'Acme', preferences: { logo: { theme: 'dark', color: 'white', strict: true } } });
+  assert.equal(dark.assets.logo.url, white.url);
+  assert.equal(dark.preferenceMatch.logo, 'exact');
+
+  const missingColor = rankCandidates([black, white], { companyName: 'Acme', preferences: { logo: { color: 'color', strict: true } } });
+  assert.equal(missingColor.assets.logo, null);
+  assert.equal(missingColor.preferenceMatch.logo, 'unmatched');
+
+  const unknown = { ...common, url: 'zip+https://acme.test/kit.zip#Acme_Mark.svg' };
+  const unknownBackground = rankCandidates([{ ...unknown, background: undefined }], { companyName: 'Acme', preferences: { logo: { background: 'transparent', strict: true } } });
+  assert.equal(unknownBackground.assets.logo, null);
+  assert.equal(unknownBackground.preferenceMatch.logo, 'unmatched');
+});
+
+test('strict transparent surface preference requires measured usability', () => {
+  const common = {
+    source: 'browser-img', width: 128, height: 128, highResolution: true, bytes: 100,
+    background: 'transparent', evidence: { eligible_roles: ['icon'], positive_token: true, home_linked: true, dom_region: 'header', theme: 'dark' },
+  };
+  const invisible = { ...common, url: 'https://acme.test/acme-white.svg', tinySuitability: { canvas_background: 'transparent', surface_contrast: { light: 0.01, dark: 0.95 } } };
+  const noMeasurement = { ...common, url: 'https://acme.test/acme-white-unknown.svg' };
+  const opaqueBlank = { ...common, url: 'https://acme.test/opaque-white.svg', background: 'opaque', evidence: { ...common.evidence, theme: 'light' },
+    tinySuitability: { canvas_background: 'opaque', contrast: 0.01, surface_contrast: { light: 0, dark: 0 } } };
+  assert.equal(rankCandidates([invisible], { companyName: 'Acme', preferences: { icon: { theme: 'dark', strict: true } } }).assets.icon.url, invisible.url);
+  assert.equal(rankCandidates([invisible], { companyName: 'Acme', preferences: { icon: { theme: 'light', strict: true } } }).assets.icon, null);
+  assert.equal(rankCandidates([noMeasurement], { companyName: 'Acme', preferences: { icon: { theme: 'dark', strict: true } } }).assets.icon, null);
+  assert.equal(rankCandidates([opaqueBlank], { companyName: 'Acme', preferences: { icon: { theme: 'light', strict: true } } }).assets.icon, null);
 });
 
 test('role variants require medium role certainty and icon preferences can select white artwork', () => {
@@ -479,6 +574,43 @@ test('rejects social glyphs, inline controls, template marks, and content imager
   assert.equal(genericAssetReason(actualBodyLogo, 'Acme'), null);
 });
 
+test('rejects square portrait photography despite incidental logo semantics', () => {
+  const portrait = {
+    source: 'dom-img', source_page: 'https://example.test/',
+    url: 'https://cdn.example.test/69793d508cb99e2ed6b8dbb9_Ronel_Veksler_WB_site_small_BG.JPG',
+    width: 800, height: 800, highResolution: true, scalable: false, bytes: 100,
+    evidence: { semantic_text: 'team-grid logo-reveal', positive_token: true, home_linked: false },
+  };
+  const ranked = rankCandidates([portrait], { companyName: 'Promise' });
+  assert.match(genericAssetReason(portrait, 'Promise'), /portrait or team-member/);
+  assert.deepEqual(ranked.candidates[0].predicted_roles, []);
+  assert.equal(ranked.selectedByRole.icon, null);
+});
+
+test('keeps legitimate raster marks when portrait-like words or names describe the brand', () => {
+  const common = {
+    source: 'dom-img', source_page: 'https://example.test/', width: 512, height: 512,
+    highResolution: true, scalable: false, bytes: 100,
+    evidence: { positive_token: true, dom_region: 'body', home_linked: false },
+  };
+  const explicitLogo = { ...common, url: 'https://cdn.example.test/acme-logo.jpg', evidence: { ...common.evidence, alt: 'Acme logo' } };
+  const companyNamed = { ...common, url: 'https://cdn.example.test/Founder_Institute_logo.jpg' };
+  assert.equal(genericAssetReason(explicitLogo, 'Acme'), null);
+  assert.equal(genericAssetReason(companyNamed, 'Founder Institute'), null);
+});
+
+test('portrait context overrides incidental company and logo words', () => {
+  const mislabeled = {
+    source: 'browser-img', source_page: 'https://acme.test/', url: 'https://acme.test/images/acme-founder.jpg',
+    width: 600, height: 600, highResolution: true, scalable: false,
+    evidence: { alt: 'Acme founder portrait', semantic_text: 'company-logo team-member', positive_token: true, dom_region: 'body' },
+  };
+  assert.match(genericAssetReason(mislabeled, 'Acme'), /portrait or team-member/);
+  assert.equal(rankCandidates([mislabeled], { companyName: 'Acme' }).selectedByRole.icon, null);
+  assert.equal(rankCandidates([{ ...mislabeled, url: 'https://acme.test/image/123', format: 'jpeg' }],
+    { companyName: 'Acme' }).selectedByRole.icon, null);
+});
+
 test('rejects observed application defaults and repurposed-site assets by exact signature', () => {
   const candidate = hash => ({ source: 'manifest', url: 'https://example.test/logo512.png', width: 512, height: 512, observed: { byte_hash: hash }, evidence: {} });
   assert.match(genericAssetReason(candidate('9ea4f4da7050c0cc408926f6a39c253624e9babb1d43c7977cd821445a60b461'), 'Edificex'), /Create React App/);
@@ -601,4 +733,24 @@ test('prefers a rendered browser twin over a serialized static inline SVG of the
     { source: 'browser-inline-svg', url: 'https://acme.test/', width: 64, height: 64, scalable: true, bytes: 900, highResolution: true, evidence: { dom_region: 'header', home_linked: true } },
   ], { companyName: 'Acme' });
   assert.equal(result.selectedByRole.icon.source, 'browser-inline-svg');
+});
+
+
+test('a foreign backer logo in navigation is not protected as a first-party page mark', () => {
+  const foreignBacker = {
+    source: 'dom-img', source_page: 'https://acme.test/', url: 'https://acme.test/Nvidia_logo.svg.png',
+    width: 1280, height: 943, highResolution: true, bytes: 200,
+    evidence: {
+      dom_region: 'nav', home_linked: false, alt: 'Nvidia', positive_token: true,
+      semantic_text: 'mega-backed-logo Nvidia mega-backed-logo mega-backed-logos mega-menu primary-nav site-header',
+      class_tokens: ['mega-backed-logo'],
+    },
+  };
+  const companyIcon = {
+    source: 'html-icon', source_page: 'https://acme.test/', url: 'https://acme.test/icon.jpg',
+    width: 256, height: 256, highResolution: true, bytes: 100, evidence: {},
+  };
+  const result = rankCandidates([foreignBacker, companyIcon], { companyName: 'Acme' });
+  assert.equal(result.selectedByRole.icon.url, companyIcon.url);
+  assert.match(result.candidates.find(candidate => candidate.url === foreignBacker.url).score_reasons.join(' '), /investor, sponsor, or backer logo/);
 });
