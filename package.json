@@ -1,6 +1,6 @@
 {
   "name": "logo-yoink",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "description": "Find and rank the best logo assets exposed by a company website.",
   "homepage": "https://logo-yoink.com",

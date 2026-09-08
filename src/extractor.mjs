@@ -13,6 +13,8 @@ import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
 import { matchesAssetPreferences, matchesLogoPreferences, normalizeAssetPreferences } from './asset-model.mjs';
 import { discoverWikimediaLogoCandidates, safeCommonsUrl } from './wikimedia-fallback.mjs';
 import { bimiCandidate, isSafeBimiSvg, lookupBimiAssertion } from './discover-bimi.mjs';
+import { discoverLinkedInLogo } from './discover-linkedin.mjs';
+import { processSelectedAssets } from './post-process.mjs';
 
 const DEFAULT_TIMEOUT_MS = 10_000;
 const HOMEPAGE_FALLBACK_TIMEOUT_MS = 3_000;
@@ -634,6 +636,7 @@ export function wikimediaFallbackEnabled(options = {}) {
 export async function extractLogos(website, options = {}) {
   const preferences = normalizeAssetPreferences(options.preferences);
   const wikimediaFallback = wikimediaFallbackEnabled(options);
+  const linkedinFallback = options.linkedinFallback === true || (options.linkedinFallback !== false && Boolean(options.linkedinCompanyUrl));
   const startedAt = performance.now(), timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS, normalized = normalizeWebsite(website), network = { requests: 0, bytesDownloaded: 0 };
   const maxImageBytes = Number.isFinite(options.maxImageBytes) ? Math.max(128 * 1024, Math.min(MAX_IMAGE_BYTES, options.maxImageBytes)) : MAX_IMAGE_BYTES;
   const attempts = homepageAttemptPlan(normalized, timeoutMs);
@@ -916,6 +919,40 @@ export async function extractLogos(website, options = {}) {
 
   if (options.bimi) await attemptJinaScreenshot();
 
+  let linkedinDiagnostics = { enabled: linkedinFallback, status: linkedinFallback ? 'not_needed' : 'disabled' };
+  const iconQuality = Number(ranked.selectedByRole.icon?.role_scores?.icon) || 0;
+  if (linkedinFallback && iconQuality < (options.linkedinQualityThreshold ?? 45)) {
+    const resolver = options.linkedinResolver ?? discoverLinkedInLogo;
+    const discovered = await resolver({
+      domain: normalized.domain,
+      homepage,
+      homepageHtml: html,
+      companyUrl: options.linkedinCompanyUrl,
+    }, {
+      timeoutMs: Math.min(timeoutMs, options.linkedinTimeoutMs ?? 5_000),
+      diagnostics: network,
+      fetchImpl: options.linkedinFetch,
+      validateUrl: options.linkedinValidateUrl,
+    });
+    linkedinDiagnostics = { enabled: true, validated: 0, admitted: false, ...discovered.diagnostics };
+    const additions = (await mapConcurrent((discovered.candidates ?? []).slice(0, 1), 1,
+      item => validateCandidate(item, Math.min(timeoutMs, options.linkedinTimeoutMs ?? 5_000), network, maxImageBytes, {
+        fetchImpl: options.linkedinFetch,
+        validateUrl: options.linkedinValidateUrl,
+      }))).filter(Boolean);
+    if (additions.length) {
+      validated = dedupeBytes([...validated, ...additions]);
+      await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
+      await attachTinySuitability(validated);
+      ranked = rankValidated();
+      linkedinDiagnostics = {
+        ...linkedinDiagnostics,
+        validated: additions.length,
+        admitted: ranked.selectedByRole.icon?.source === 'linkedin',
+      };
+    }
+  }
+
   let wikimediaDiagnostics = { enabled: wikimediaFallback, status: 'disabled' };
   if (wikimediaFallback) {
     const missingRoles = missingWikimediaRoles(ranked, preferences);
@@ -963,8 +1000,10 @@ export async function extractLogos(website, options = {}) {
 
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
+  const processingRequested = options.removeBackground === true || options.backgroundRemoval === true || options.upscale != null || options.upscaleFactor != null;
+  const processedAssets = processingRequested ? await processSelectedAssets(ranked.assets, options) : null;
   const genericAssetMatches = ranked.candidates.flatMap(item => item.observed?.generic_asset ? [{ url: item.resolvedUrl ?? item.resolved_url ?? item.url, ...item.observed.generic_asset }] : []);
-  return { input: website, domain: normalized.domain, homepage, icon: ranked.assets.icon, logo: ranked.assets.logo, preferences: ranked.preferences, preferenceMatch: ranked.preferenceMatch, assets: ranked.assets, assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { iconSelection: ranked.diagnostics?.iconSelection, genericAssetMatches, discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, wikimedia: wikimediaDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', scrapers: { browser: { enabled: Boolean(options.browser), used: browserDiagnostics?.status === 'ok' }, jina: { enabled: Boolean(jinaApiKey), used: jinaHomepageUsed || jinaScreenshot?.status === 'ok' } }, browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  return { input: website, domain: normalized.domain, homepage, icon: ranked.assets.icon, logo: ranked.assets.logo, preferences: ranked.preferences, preferenceMatch: ranked.preferenceMatch, assets: ranked.assets, ...(processedAssets ? { processedAssets } : {}), assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { iconSelection: ranked.diagnostics?.iconSelection, genericAssetMatches, discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, linkedin: linkedinDiagnostics, wikimedia: wikimediaDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', scrapers: { browser: { enabled: Boolean(options.browser), used: browserDiagnostics?.status === 'ok' }, jina: { enabled: Boolean(jinaApiKey), used: jinaHomepageUsed || jinaScreenshot?.status === 'ok' } }, browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.

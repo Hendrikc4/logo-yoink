@@ -25,6 +25,16 @@ export interface YoinkOptions {
   /** Experimental BIMI icon fallback. Default: false. */
   bimi?: boolean;
   cachedFavicon?: boolean;
+  /** Try a verified LinkedIn company-page logo only when first-party icon quality is low. Default: false. */
+  linkedinFallback?: boolean;
+  /** Optional canonical https://www.linkedin.com/company/... URL. */
+  linkedinCompanyUrl?: string;
+  /** Remove a uniform raster background when the confidence checks pass. Default: false. */
+  removeBackground?: boolean;
+  /** Upscale small raster selections by a factor or toward target dimensions. Vectors remain unchanged. */
+  upscale?: number | { width?: number; height?: number; factor?: number };
+  /** Alias for a numeric upscale factor. */
+  upscaleFactor?: number;
   preferences?: { icon?: AssetPreference; logo?: AssetPreference };
   timeoutMs?: number;
   companyName?: string;
@@ -45,6 +55,10 @@ export interface YoinkResult {
   icon: LogoAsset | null;
   logo: LogoAsset | null;
   assets: { icon: LogoAsset | null; logo: LogoAsset | null };
+  processedAssets?: {
+    icon: { original: LogoAsset | null; enhanced: LogoAsset | null; transformations: Record<string, unknown>[] };
+    logo: { original: LogoAsset | null; enhanced: LogoAsset | null; transformations: Record<string, unknown>[] };
+  };
   assetVariants: { icon: LogoAsset[]; logo: LogoAsset[] };
   preferenceMatch: { icon: 'exact' | 'fallback' | 'unmatched'; logo: 'exact' | 'fallback' | 'unmatched' };
   candidates: LogoAsset[];

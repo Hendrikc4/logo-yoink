@@ -114,6 +114,13 @@ does not waive trademark restrictions.
 Use `--no-wikimedia-fallback` in the CLI, `{ wikimediaFallback: false }` with
 `extractLogos`, or `"wikimediaFallback": false` in an API request to opt out.
 
+When the website has no trustworthy icon, an optional LinkedIn company-page
+fallback can be enabled with `--linkedin-fallback`. Logo Yoink follows only a
+canonical company link exposed by the first-party homepage (or an explicit
+`--linkedin-company-url https://www.linkedin.com/company/...`), verifies the
+identity evidence, and reports the source as `linkedin`. Access failures and
+identity mismatches simply abstain.
+
 Prefer a white/light logo for a dark surface and a transparent file:
 
 ```bash
@@ -126,6 +133,20 @@ Or download the top pick:
 ```bash
 npx logo-yoink stripe.com --download ./downloads/stripe
 ```
+
+Raster selections can also be enhanced during download:
+
+```bash
+npx logo-yoink stripe.com --remove-background --width 1024 --download ./downloads/stripe
+npx logo-yoink stripe.com --upscale 2
+```
+
+Background removal is confidence-gated and only removes a uniform edge-matching
+background. Upscaling uses bounded Lanczos resampling only when the raster is
+smaller than the requested dimensions. SVGs are never rasterized. The JSON keeps
+the canonical originals in `assets` and returns originals, enhanced PNGs, and
+transformation metadata together in `processedAssets`; upscaled results are
+explicitly flagged as resampled because interpolation cannot restore missing detail.
 
 Add `--role logo` to download the preferred wordmark instead of the default icon-first pick.
 
@@ -158,6 +179,20 @@ const result = await yoink('stripe.com', {
 });
 ```
 
+Optional fallback and post-processing settings are available from JavaScript too:
+
+```js
+const result = await yoink('example.com', {
+  linkedinFallback: true,
+  removeBackground: true,
+  upscale: { width: 1024, height: 1024 }, // or upscale: 2
+});
+
+result.assets.icon;                    // unchanged original
+result.processedAssets.icon.original;  // same original
+result.processedAssets.icon.enhanced;  // enhanced PNG, or null when safely skipped
+```
+
 You can enable both with `scrapers: ['browser', 'jina']`. Static discovery always runs first; scraper fallbacks run only when useful roles are still missing. The lower-level `extractLogos` export remains available for advanced budgets, test doubles, and discovery controls.
 
 ### Over HTTP
@@ -169,6 +204,9 @@ curl -sS http://127.0.0.1:4310/api/extract \
   -H 'content-type: application/json' \
   -d '{"website":"stripe.com","preferences":{"icon":{"color":"white"},"logo":{"theme":"dark","background":"transparent"}}}'
 ```
+
+HTTP requests may likewise include `"linkedinFallback": true`,
+`"removeBackground": true`, and `"upscale": {"width": 1024, "height": 1024}`.
 
 The server uses its local browser by default. Send `"scrapers": []` for static-only extraction, `"scrapers": ["browser"]` for local browser rendering, `"scrapers": ["jina"]` for Jina, or both names together. Jina must be configured by the server owner with `JINA_API_KEY`; clients never send that secret.
 

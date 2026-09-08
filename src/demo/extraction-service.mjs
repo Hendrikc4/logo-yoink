@@ -48,7 +48,11 @@ export function createDemoExtractionService({
         options.browser = requestedScrapers.includes('browser');
         options.jinaApiKey = requestedScrapers.includes('jina') ? configuredJinaKey : null;
         if (body.wikimediaFallback !== undefined) options.wikimediaFallback = body.wikimediaFallback;
-        const requestKey = `${target.url.href}\n${JSON.stringify(body.preferences)}\n${JSON.stringify(requestedScrapers)}\n${options.wikimediaFallback !== false}`;
+        if (body.linkedinFallback !== undefined) options.linkedinFallback = body.linkedinFallback;
+        if (body.linkedinCompanyUrl !== undefined) options.linkedinCompanyUrl = body.linkedinCompanyUrl;
+        if (body.removeBackground !== undefined) options.removeBackground = body.removeBackground;
+        if (body.upscale !== undefined) options.upscale = body.upscale;
+        const requestKey = `${target.url.href}\n${JSON.stringify(body.preferences)}\n${JSON.stringify(requestedScrapers)}\n${options.wikimediaFallback !== false}\n${JSON.stringify({ linkedinFallback: options.linkedinFallback, linkedinCompanyUrl: options.linkedinCompanyUrl, removeBackground: options.removeBackground, upscale: options.upscale })}`;
         const result = await guard.run(requestKey, () => extract(target.url.href, options));
         return {
           status: 200,

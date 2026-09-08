@@ -34,6 +34,8 @@ test('demo request validation accepts a website and bounded logo preferences', a
   assert.deepEqual(await readDemoJson(optedOut), { website: 'example.com', preferences: defaults, wikimediaFallback: false });
   const scrapers = request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","scrapers":["browser","jina","browser"]}' });
   assert.deepEqual(await readDemoJson(scrapers), { website: 'example.com', preferences: defaults, scrapers: ['browser', 'jina'] });
+  const enhanced = request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","linkedinFallback":true,"removeBackground":true,"upscale":{"width":1024,"height":1024}}' });
+  assert.deepEqual(await readDemoJson(enhanced), { website: 'example.com', preferences: defaults, linkedinFallback: true, removeBackground: true, upscale: { width: 1024, height: 1024 } });
 
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'text/plain' }, body: '{}' })),
@@ -58,6 +60,10 @@ test('demo request validation accepts a website and bounded logo preferences', a
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"icon":{"color":"sepia"}}}' })),
     error => error instanceof DemoHttpError && error.status === 400 && /color/.test(error.message),
+  );
+  await assert.rejects(
+    readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","upscale":100}' })),
+    error => error instanceof DemoHttpError && error.status === 400 && /upscale/.test(error.message),
   );
 });
 

@@ -52,6 +52,22 @@ test('shared demo extraction service forwards request-level Wikimedia opt-out', 
   assert.equal(calls[0].wikimediaFallback, false);
 });
 
+test('shared demo extraction service forwards optional fallback and image processing', async () => {
+  const calls = [];
+  const service = createDemoExtractionService({
+    environment: {},
+    extractionOptions: () => ({}),
+    extract: async (_website, options) => { calls.push(options); return {}; },
+  });
+  await service.handle(request({
+    headers: { 'content-type': 'application/json' },
+    body: '{"website":"example.com","linkedinFallback":true,"removeBackground":true,"upscale":2}',
+  }));
+  assert.equal(calls[0].linkedinFallback, true);
+  assert.equal(calls[0].removeBackground, true);
+  assert.equal(calls[0].upscale, 2);
+});
+
 test('shared demo extraction service makes browser and Jina request-level choices', async () => {
   const calls = [];
   const service = createDemoExtractionService({

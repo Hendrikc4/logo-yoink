@@ -567,6 +567,8 @@ test('rejects social glyphs, inline controls, template marks, and content imager
     { ...common, url: 'https://example.test/ventionWorksWithLogos/Marca.svg', width: 160, height: 40, scalable: true, evidence: { alt: 'Enterprises logo 9', dom_region: 'body' } },
     { ...common, source: 'schema', url: 'https://example.test/images/og-default.png', width: 1200, height: 630, evidence: { dom_region: 'head' } },
     { ...common, url: 'https://example.test/logo-789bet.png', width: 500, height: 200, evidence: { alt: '789BET', dom_region: 'header', home_linked: true, positive_token: true } },
+    { ...common, source: 'inline-svg', url: 'data:image/svg+xml;base64,PHN2Zy8+', width: 640, height: 640, scalable: true, evidence: { semantic_text: 'navbar-nav-social-icon navbar-nav-social-link footer', dom_region: 'body', home_linked: true, positive_token: false } },
+    { ...common, url: 'https://cdn.example.test/g2-badge.svg', width: 180, height: 180, scalable: true, evidence: { semantic_text: 'G2 review rating badge', dom_region: 'header', home_linked: true } },
   ];
   for (const item of cases) assert.deepEqual(rankCandidates([item], { companyName: 'Acme' }).candidates[0].predicted_roles, []);
 

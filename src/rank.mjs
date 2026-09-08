@@ -5,7 +5,7 @@ const SOURCE_WEIGHT = {
   schema: 30, 'og-logo': 27, microdata: 26, 'inline-svg': 24, 'browser-inline-svg': 24, 'browser-img': 12,
   'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, bimi: 18, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
-  'wikimedia-commons': 24,
+  'wikimedia-commons': 24, linkedin: 20,
 };
 const RANKING_VERSION = 11;
 export const ROLE_VARIANT_MIN_SCORE = 45;
@@ -188,8 +188,12 @@ export function genericAssetReason(item, companyName = '') {
   if (!companyWords.has('789bet') && !companyWords.has('meriamhoki') && !companyWords.has('90phut') && /(?:789bet|dewancash|meriamhoki|90phut)/i.test(`${semantic} ${url}`)) return 'foreign gambling brand';
   if (/(?:^|[-_\s])(?:logo[-_\s]*)?soc[-_\s]*2(?:$|[-_\s])/i.test(`${semantic} ${url}`)) return 'SOC 2 compliance badge';
   if (item.evidence?.dom_region === 'footer' && /(?:badge|award|certif(?:ied|ication)|compliant|trustmark|trustpilot)/i.test(semantic)) return 'footer trust badge';
+  if (/(?:^|[^a-z0-9])(?:g2|capterra|trustpilot|getapp|software advice)(?:[-_\s]*(?:badge|logo|icon|review|rating))?(?:[^a-z0-9]|$)/i.test(`${semantic} ${url}`) &&
+    ![...companyWords].some(word => ['g2', 'capterra', 'trustpilot', 'getapp'].includes(word))) return 'third-party review platform';
   if (/(?:^|[-_\s])fa[-_\s]*(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i.test(semantic)) return 'Font Awesome UI control';
   if (/(?:^|[^a-z0-9])(?:instagram|twitter|facebook|linkedin|youtube|tiktok|pinterest)(?:[-_\s]*(?:logo|icon|glyph))?(?:[^a-z0-9]|$)/i.test(`${semantic} ${url}`)) return 'social-media glyph';
+  if (/(?:^|[-_\s])social(?:[-_\s]*(?:icon|logo|link|item|list|nav|media))?(?:$|[-_\s])/i.test(semantic) &&
+    !item.evidence?.positive_token) return 'social-media glyph';
   const candidateRatio = item.width && item.height ? item.width / item.height : null;
   if (['dom-img', 'dom-picture', 'browser-img'].includes(item.source) && item.evidence?.dom_region === 'body' && !item.evidence?.home_linked &&
     describesEmbeddedLogo(item.evidence?.alt)) return 'logo embedded in body content image';
@@ -309,7 +313,8 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   const square = ratio != null && ratio >= 0.72 && ratio <= 1.4;
   const faviconSource = FAVICON_SOURCES.includes(item.source);
   const authoritativeSource = AUTHORITATIVE_SOURCES.includes(item.source);
-  const externallyVerifiedIdentity = item.source === 'wikimedia-commons' && item.evidence?.wikidata_identity_verified === true;
+  const externallyVerifiedIdentity = (item.source === 'wikimedia-commons' && item.evidence?.wikidata_identity_verified === true) ||
+    (item.source === 'linkedin' && item.evidence?.linkedin_identity_verified === true);
   const contentRatio = item.contentBox?.width > 0 && item.contentBox?.height > 0 ? item.contentBox.width / item.contentBox.height : null;
   const wideRatio = contentRatio ?? ratio;
   const strongWideEvidence = Boolean(item.evidence?.home_linked || (['header', 'nav'].includes(item.evidence?.dom_region)) || authoritativeSource);

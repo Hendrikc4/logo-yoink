@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { normalizeAssetPreferences } from '../asset-model.mjs';
+import { normalizePostProcessing } from '../post-process.mjs';
 
 const DEFAULTS = {
   bodyBytes: 2 * 1024,
@@ -65,8 +66,8 @@ export function assertDemoRequestOrigin(request) {
 function validatePayload(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new DemoHttpError(400, 'Expected a JSON object.');
   const keys = Object.keys(value);
-  if (!keys.includes('website') || keys.some(key => !['website', 'preferences', 'scrapers', 'wikimediaFallback'].includes(key))) {
-    throw new DemoHttpError(400, 'Only website, preferences, scrapers, and wikimediaFallback fields are accepted.');
+  if (!keys.includes('website') || keys.some(key => !['website', 'preferences', 'scrapers', 'wikimediaFallback', 'linkedinFallback', 'linkedinCompanyUrl', 'removeBackground', 'upscale'].includes(key))) {
+    throw new DemoHttpError(400, 'The request contains an unsupported field.');
   }
   if (typeof value.website !== 'string') throw new DemoHttpError(400, 'Website must be a string.');
   const website = value.website.trim();
@@ -75,6 +76,10 @@ function validatePayload(value) {
     if (value.wikimediaFallback !== undefined && typeof value.wikimediaFallback !== 'boolean') {
       throw new DemoHttpError(400, 'wikimediaFallback must be a boolean.');
     }
+    if (value.linkedinFallback !== undefined && typeof value.linkedinFallback !== 'boolean') throw new DemoHttpError(400, 'linkedinFallback must be a boolean.');
+    if (value.linkedinCompanyUrl !== undefined && typeof value.linkedinCompanyUrl !== 'string') throw new DemoHttpError(400, 'linkedinCompanyUrl must be a string.');
+    if (value.removeBackground !== undefined && typeof value.removeBackground !== 'boolean') throw new DemoHttpError(400, 'removeBackground must be a boolean.');
+    normalizePostProcessing({ removeBackground: value.removeBackground, upscale: value.upscale });
     if (value.scrapers !== undefined) {
       if (!Array.isArray(value.scrapers)) throw new DemoHttpError(400, 'scrapers must be an array.');
       const unsupported = value.scrapers.filter(item => !['browser', 'jina'].includes(item));
@@ -85,6 +90,10 @@ function validatePayload(value) {
       preferences: normalizeAssetPreferences(value.preferences),
       ...(value.scrapers === undefined ? {} : { scrapers: [...new Set(value.scrapers)] }),
       ...(value.wikimediaFallback === undefined ? {} : { wikimediaFallback: value.wikimediaFallback }),
+      ...(value.linkedinFallback === undefined ? {} : { linkedinFallback: value.linkedinFallback }),
+      ...(value.linkedinCompanyUrl === undefined ? {} : { linkedinCompanyUrl: value.linkedinCompanyUrl }),
+      ...(value.removeBackground === undefined ? {} : { removeBackground: value.removeBackground }),
+      ...(value.upscale === undefined ? {} : { upscale: value.upscale }),
     };
   } catch (error) {
     throw new DemoHttpError(400, error.message);
