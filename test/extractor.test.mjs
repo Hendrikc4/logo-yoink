@@ -10,7 +10,7 @@ test('normalizes bare company domains', () => {
 });
 
 test('sitemap fallback forces resolver candidates to wide-only without moving a populated icon', async () => {
-  const homepageSvg = '<svg xmlns="http://www.w3.org/2000/svg" class="logo" aria-label="Acme" viewBox="0 0 80 80"><rect width="80" height="80" fill="#125"/></svg>';
+  const homepageSvg = '<svg xmlns="http://www.w3.org/2000/svg" class="logo" aria-label="Acme" viewBox="0 0 80 80"><circle cx="40" cy="40" r="28" fill="#125"/></svg>';
   const replacementIcon = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#e42"/></svg>');
   const recoveredWide = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80"><rect width="400" height="80" fill="#125"/></svg>');
   const result = await extractLogos('https://acme.test/', {
@@ -46,7 +46,7 @@ test('sitemap fallback failure is isolated and retains the control extraction', 
   const result = await extractLogos('https://acme.test/', {
     companyName: 'Acme',
     fetchImpl: async () => {
-      const response = new Response('<main><svg class="logo" aria-label="Acme" viewBox="0 0 80 80"><rect width="80" height="80"/></svg></main>', { headers: { 'content-type': 'text/html' } });
+      const response = new Response('<main><svg class="logo" aria-label="Acme" viewBox="0 0 80 80"><circle cx="40" cy="40" r="28"/></svg></main>', { headers: { 'content-type': 'text/html' } });
       Object.defineProperty(response, 'url', { value: 'https://acme.test/' });
       return response;
     },
