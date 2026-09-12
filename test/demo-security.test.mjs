@@ -32,6 +32,8 @@ test('demo request validation accepts a website and bounded logo preferences', a
   } });
   const optedOut = request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","wikimediaFallback":false}' });
   assert.deepEqual(await readDemoJson(optedOut), { website: 'example.com', preferences: defaults, wikimediaFallback: false });
+  const scrapers = request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","scrapers":["browser","jina","browser"]}' });
+  assert.deepEqual(await readDemoJson(scrapers), { website: 'example.com', preferences: defaults, scrapers: ['browser', 'jina'] });
 
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'text/plain' }, body: '{}' })),
@@ -44,6 +46,10 @@ test('demo request validation accepts a website and bounded logo preferences', a
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","wikimediaFallback":"no"}' })),
     error => error instanceof DemoHttpError && error.status === 400 && /boolean/.test(error.message),
+  );
+  await assert.rejects(
+    readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","scrapers":["unknown"]}' })),
+    error => error instanceof DemoHttpError && error.status === 400 && /scrapers/.test(error.message),
   );
   await assert.rejects(
     readDemoJson(request({ headers: { 'content-type': 'application/json' }, body: '{"website":"example.com","preferences":{"logo":{"theme":"sepia"}}}' })),
@@ -99,7 +105,7 @@ test('public demo enables fallbacks while keeping their work tightly bounded', (
     maxConcurrent: 2,
   });
   const options = publicDemoExtractionOptions({ JINA_API_KEY: 'secret', BROWSER_DISCOVERY: '1' });
-  assert.equal(options.jinaApiKey, 'secret');
+  assert.equal(options.jinaApiKey, null);
   assert.equal(options.browser, true);
   assert.equal(options.wikimediaFallback, true);
   assert.equal(options.deepWide, true);
