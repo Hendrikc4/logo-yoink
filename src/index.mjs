@@ -9,6 +9,7 @@ export const DEFAULT_OPTIONS = Object.freeze({
   wikimedia: true,
   bimi: false,
   cachedFavicon: true,
+  sitemap: false,
 });
 
 const SUPPORTED_SCRAPERS = new Set(['browser', 'jina']);
@@ -43,6 +44,7 @@ export async function yoink(website, options = {}) {
     wikimediaFallback: options.wikimedia ?? DEFAULT_OPTIONS.wikimedia,
     bimi: options.bimi ?? DEFAULT_OPTIONS.bimi,
     cachedFavicon: options.cachedFavicon ?? DEFAULT_OPTIONS.cachedFavicon,
+    sitemapWide: options.sitemap ?? DEFAULT_OPTIONS.sitemap,
     roleAwareBudget: options.roleAwareBudget ?? true,
     contentBoundingWide: options.contentBoundingWide ?? true,
   });

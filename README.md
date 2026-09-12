@@ -289,6 +289,7 @@ The simplest response fields are top-level `icon` and `logo`. They are aliases o
 | Local Playwright browser | **On** | **On** | Use `scrapers: []`, `--no-browser`, or HTTP `"scrapers": []` to disable it |
 | Jina Reader | **Off** | **Off** | Add `"jina"` to `scrapers` and configure `JINA_API_KEY` |
 | Experimental BIMI | Off | Off | `bimi: true`, `--bimi`, or `PUBLIC_DEMO_BIMI=1` |
+| Experimental robots/sitemap recovery | Off | Off | `sitemap: true` in JavaScript |
 
 ## How it works
 
@@ -360,6 +361,8 @@ The primary local settings are:
 
 `--deep-wide` only runs when the homepage has no accepted wide logo. It follows at most two strong first-party brand, press, or media links and can inspect official ZIP kits. `--spa-bundles` scans at most one same-origin entry bundle, up to 2.2 MB, for a company-logo asset literal.
 
+`sitemap: true` enables a missing-wide-only recovery pass in the JavaScript API. It reads robots-declared sitemaps on the exact registrable domain, fetches at most one likely official page, and admits only wide-role candidates within separate request, byte, redirect, and wall-clock limits.
+
 `--bimi` queries `default._bimi.<domain>` after the first-party recovery stages admitted by the pipeline's existing static/deep/browser gates and before the built-in Google or DuckDuckGo favicon fallbacks. Optional Besticon keeps its existing budgeted discovery position because the frozen BIMI runs did not enable or compare it. BIMI does not trigger a new browser crawl or Jina screenshot solely for a missing icon. It accepts one unambiguous `v=BIMI1` assertion with a nonempty HTTPS `l=` URL, then applies the normal public-address, redirect, timeout, byte, MIME, and conservative SVG-safety checks. Full BIMI SVG profile conformance is not claimed, so canonical icon admission additionally requires measured icon-shaped artwork. BIMI is restricted to icon/favicon-like roles and never supplies `assets.logo`. An `a=` evidence-document pointer is recorded but not certificate-validated, and no trademark or license permission is inferred. The option remains experimental because the frozen development/validation experiment found safe selections but no incremental correct selections over the existing cached-icon fallback.
 
 </details>
@@ -387,6 +390,7 @@ The main trail map:
 src/discover-static.mjs   find candidates in HTML and metadata
 src/discover-browser.mjs  render the bounded browser fallback
 src/discover-deep.mjs     inspect official brand paths and kits
+src/discover-sitemap.mjs  inspect bounded robots-declared official pages
 src/rank.mjs              score icons and wordmarks, then apply logo preferences
 src/extractor.mjs         validate, deduplicate, and orchestrate
 src/http-client.mjs       enforce safe, bounded network reads

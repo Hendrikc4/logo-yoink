@@ -24,6 +24,8 @@ export interface YoinkOptions {
   wikimedia?: boolean;
   /** Experimental BIMI icon fallback. Default: false. */
   bimi?: boolean;
+  /** Bounded robots/sitemap recovery for a missing wide logo. Default: false. */
+  sitemap?: boolean;
   cachedFavicon?: boolean;
   /** Try a verified LinkedIn company-page logo only when first-party icon quality is low. Default: false. */
   linkedinFallback?: boolean;
@@ -72,6 +74,7 @@ export const DEFAULT_OPTIONS: Readonly<{
   wikimedia: true;
   bimi: false;
   cachedFavicon: true;
+  sitemap: false;
 }>;
 
 export function yoink(website: string, options?: YoinkOptions): Promise<YoinkResult>;

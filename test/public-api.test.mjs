@@ -12,6 +12,7 @@ test('public package entry point exposes the simple and low-level APIs', () => {
     wikimedia: true,
     bimi: false,
     cachedFavicon: true,
+    sitemap: false,
   });
 });
 
