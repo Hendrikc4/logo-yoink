@@ -5,7 +5,7 @@
 <h1 align="center">Logo Yoink</h1>
 
 <p align="center">
-  <strong>Drop in a website. Ride away with its best logos.</strong>
+  <strong>Find company icons and wordmarks from a URL.</strong>
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@
   <img src="public/assets/how-it-works/logo-yoink-twilight-trail.webp" alt="Pixel-art cowboy on horseback lassoing icon and wordmark tiles from a browser portal in a twilight desert">
 </p>
 
-Logo hunting should not feel like archaeology. Give Logo Yoink one URL and it finds the real image files a site exposes, checks that they work, removes duplicates, and ranks the best choices for:
+Free, open source, and self-hostable. No account or API key required. Give Logo Yoink one URL and it finds the real image files a site exposes, checks that they work, removes duplicates, and ranks the best choices for:
 
 - **Icon** — apps, avatars, square UI, and favicons
 - **Wordmark** — headers, cards, and wider layouts
@@ -47,7 +47,7 @@ That is it. Logo Yoink does not need a database, account, or API key. Chromium i
 
 ### Install the JavaScript API
 
-Until the package is published to npm, install it straight from GitHub:
+Install straight from GitHub (the commands below do not require an npm publication):
 
 ```bash
 npm install github:Hendrikc4/logo-yoink
@@ -95,15 +95,15 @@ npm run cli -- logo-yoink.com
 
 The smoke check starts an isolated local server on an available port, verifies the homepage and API request validation, and shuts it down. `npm run check` runs syntax checks, the complete test suite, fixture validation, and this smoke check.
 
-> There is also a cowboy runner up top. Jump the cacti, collect logos, and grab a lasso to auto-yoink the next three. Space, Arrow Up, W, and taps all work. 🤠
+> There is also an optional cowboy runner below the finder. Jump the cacti, collect logos, and grab a lasso to auto-yoink the next three. Space, Arrow Up, W, and taps all work. 🤠
 
 ## Use the CLI
 
-See the ranked results as JSON:
+After cloning and running setup as shown above, see the ranked results as JSON:
 
 ```bash
-npx logo-yoink stripe.com
-npx logo-yoink stripe.com --no-wikimedia-fallback
+npm run cli -- stripe.com
+npm run cli -- stripe.com --no-wikimedia-fallback
 ```
 
 The Wikidata/Wikimedia Commons missing-role fallback is enabled by default. It
@@ -124,14 +124,14 @@ identity mismatches simply abstain.
 Prefer a white/light logo for a dark surface and a transparent file:
 
 ```bash
-npx logo-yoink stripe.com --theme dark --background transparent
-npx logo-yoink stripe.com --theme dark --background transparent --strict
+npm run cli -- stripe.com --theme dark --background transparent
+npm run cli -- stripe.com --theme dark --background transparent --strict
 ```
 
 Or download the top pick:
 
 ```bash
-npx logo-yoink stripe.com --download ./downloads/stripe
+npm run cli -- stripe.com --download ./downloads/stripe
 ```
 
 Raster selections can also be enhanced during download. Model background removal
@@ -175,8 +175,8 @@ The cache defaults to `~/.cache/logo-yoink/background-removal`. Set
 Enable it per extraction:
 
 ```bash
-npx logo-yoink stripe.com --remove-background --width 1024 --download ./downloads/stripe
-npx logo-yoink stripe.com --upscale 2
+npm run cli -- stripe.com --remove-background --width 1024 --download ./downloads/stripe
+npm run cli -- stripe.com --upscale 2
 ```
 
 Background removal first reuses an already-discovered transparent variant when
