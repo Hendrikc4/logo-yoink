@@ -11,10 +11,10 @@
 .game-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(0,55,112,.25), transparent 24%, transparent 68%, rgba(45,12,2,.16)); }
 .game-topbar { position: absolute; z-index: 4; top: 28px; left: clamp(20px, 4vw, 68px); right: clamp(20px, 4vw, 68px); display: flex; align-items: start; justify-content: space-between; gap: 32px; pointer-events: none; }
 .game-brand { position: absolute; top: clamp(190px, 27svh, 300px); left: 50%; width: min(1100px, calc(100vw - 40px)); color: white; text-align: center; text-shadow: 0 2px 0 rgba(33,19,13,.22); backface-visibility: hidden; transform: translate3d(-50%,0,0); transition: top 1.45s cubic-bezier(.65,0,.35,1), left 1.45s cubic-bezier(.65,0,.35,1), width 1.45s cubic-bezier(.65,0,.35,1), transform 1.45s cubic-bezier(.65,0,.35,1); will-change: top, left, width, transform; }
-.game-brand h1 { margin: 0; color: var(--yellow); font: 400 clamp(48px, 6vw, 86px)/1 'Press Start 2P', ui-monospace, monospace; letter-spacing: -.09em; white-space: nowrap; text-shadow: 0 7px 0 var(--ink), 5px 0 0 var(--ink), -5px 0 0 var(--ink); transition: font-size 1.45s cubic-bezier(.65,0,.35,1), text-shadow 1.45s cubic-bezier(.65,0,.35,1); }
+.game-brand h2 { margin: 0; color: var(--yellow); font: 400 clamp(48px, 6vw, 86px)/1 'Press Start 2P', ui-monospace, monospace; letter-spacing: -.09em; white-space: nowrap; text-shadow: 0 7px 0 var(--ink), 5px 0 0 var(--ink), -5px 0 0 var(--ink); transition: font-size 1.45s cubic-bezier(.65,0,.35,1), text-shadow 1.45s cubic-bezier(.65,0,.35,1); }
 .game-brand p { margin: 18px 0 0; color: var(--cream); font: 700 clamp(11px, 1.2vw, 16px)/1.5 ui-monospace, monospace; letter-spacing: .01em; transition: margin 1.45s cubic-bezier(.65,0,.35,1), font-size 1.45s cubic-bezier(.65,0,.35,1); }
 .game-shell.has-started .game-brand { top: 0; left: 0; width: min(470px, 38vw); text-align: left; transform: translate3d(0,0,0); }
-.game-shell.has-started .game-brand h1 { font-size: clamp(22px, 3vw, 42px); text-shadow: 0 4px 0 var(--ink), 3px 0 0 var(--ink), -3px 0 0 var(--ink); }
+.game-shell.has-started .game-brand h2 { font-size: clamp(22px, 3vw, 42px); text-shadow: 0 4px 0 var(--ink), 3px 0 0 var(--ink), -3px 0 0 var(--ink); }
 .game-shell.has-started .game-brand p { margin-top: 11px; font-size: clamp(9px, .9vw, 12px); }
 .game-top-actions { display: flex; align-items: stretch; gap: 12px; margin-left: auto; pointer-events: auto; }
 .game-hud { display: flex; gap: 7px; align-items: stretch; font-family: 'Press Start 2P', ui-monospace, monospace; }
@@ -77,10 +77,10 @@
   .game-shell { min-height: max(720px, 100svh); }
   .game-topbar { top: 18px; gap: 18px; }
   .game-brand { top: clamp(190px, 25svh, 250px); width: calc(100vw - 32px); }
-  .game-brand h1 { font-size: clamp(38px, 10vw, 68px); }
+  .game-brand h2 { font-size: clamp(38px, 10vw, 68px); }
   .game-brand p { margin-top: 14px; font-size: clamp(9px, 2.3vw, 12px); }
   .game-shell.has-started .game-brand { top: 0; left: 0; width: min(250px, 48vw); }
-  .game-shell.has-started .game-brand h1 { font-size: clamp(18px, 4.5vw, 26px); }
+  .game-shell.has-started .game-brand h2 { font-size: clamp(18px, 4.5vw, 26px); }
   .game-shell.has-started .game-brand p { max-width: 250px; margin-top: 8px; font-size: 8px; }
   .game-top-actions { flex-direction: column-reverse; align-items: flex-end; gap: 8px; }
   .game-hud { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4px; }
@@ -116,10 +116,10 @@
 @media (max-width: 480px) {
   .game-topbar { left: 14px; right: 14px; }
   .game-brand { top: 25svh; width: calc(100vw - 28px); }
-  .game-brand h1 { font-size: clamp(32px, 9vw, 38px); line-height: 1.2; }
+  .game-brand h2 { font-size: clamp(32px, 9vw, 38px); line-height: 1.2; }
   .game-brand p { font-size: 9px; line-height: 1.45; }
   .game-shell.has-started .game-brand { top: 0; left: 0; width: 145px; }
-  .game-shell.has-started .game-brand h1 { font-size: 17px; }
+  .game-shell.has-started .game-brand h2 { font-size: 17px; }
   .game-shell.has-started .game-brand p { font-size: 7px; }
   .game-github-link { width: 137px; justify-content: center; padding: 0 8px; font-size: 8px; }
   .hud-best { display: none; }
@@ -133,6 +133,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .game-brand, .game-brand h1, .game-brand p, .game-start-button, .game-start-prompt, .game-github-link, .game-find-link, .game-icon-button, .game-shell { transition: none; animation: none !important; }
+  .game-brand, .game-brand h2, .game-brand p, .game-start-button, .game-start-prompt, .game-github-link, .game-find-link, .game-icon-button, .game-shell { transition: none; animation: none !important; }
   .game-yoink.is-active { animation-duration: .01ms; }
 }

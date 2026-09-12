@@ -75,77 +75,12 @@
         <path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.04 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.3-5.28-1.29-5.28-5.73 0-1.27.45-2.3 1.2-3.11-.13-.3-.52-1.47.11-3.07 0 0 .97-.31 3.18 1.19a11.1 11.1 0 0 1 5.8 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.6.24 2.78.12 3.07.74.81 1.19 1.84 1.19 3.1 0 4.46-2.72 5.44-5.3 5.73.42.36.79 1.06.79 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .7Z"/>
       </symbol>
     </svg>
-    <section id="game" class="game-shell" aria-labelledby="game-title">
-      <canvas id="game-canvas" class="game-canvas" tabindex="0" aria-label="Logo Yoink cowboy runner. Press Space, Arrow Up, or W to jump."></canvas>
-      <div class="game-shade" aria-hidden="true"></div>
-
-      <div class="game-topbar">
-        <div class="game-brand">
-          <h1 id="game-title">Logo-Yoink</h1>
-          <p>An open-source API to find logos.</p>
-        </div>
-        <div class="game-top-actions">
-          <div class="game-hud" aria-label="Game status">
-            <div class="hud-item"><span class="hud-label">Score</span><strong id="game-score">00000</strong></div>
-            <div class="hud-item hud-best"><span class="hud-label">Best</span><strong id="game-best">00000</strong></div>
-            <div class="hud-item hud-lasso"><span class="hud-label">Lasso</span><strong id="game-lasso">×0</strong></div>
-          </div>
-          <a class="game-github-link" href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer" aria-label="View Logo Yoink on GitHub">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="game-actions" aria-label="Game controls">
-        <button id="game-sound" class="game-icon-button" type="button" aria-pressed="true">Sound on</button>
-        <button id="game-pause" class="game-icon-button" type="button">Pause</button>
-      </div>
-
-      <div id="game-start-panel" class="game-panel game-start-panel">
-        <button id="game-start" class="game-start-prompt" type="button">Tap to start yoinking</button>
-      </div>
-
-      <div id="game-over-panel" class="game-panel game-over-panel" hidden>
-        <p class="game-eyebrow">Trail’s end</p>
-        <h2>Nice<br><em>yoinkin’.</em></h2>
-        <p>You rode <strong id="game-final-distance">0</strong>m and scored <strong id="game-final-score">0</strong>.</p>
-        <button id="game-restart" class="game-start-button" type="button">Ride again <span>↻</span></button>
-      </div>
-
-      <div id="game-yoink" class="game-yoink" aria-hidden="true">YOINK!</div>
-      <div class="game-crash-caption" aria-hidden="true">HAY! THAT HURT.</div>
-      <div id="game-live" class="visually-hidden" aria-live="polite"></div>
-      <p class="game-trademarks">Marks belong to their respective owners. No endorsement implied.</p>
-      <a class="game-find-link" href="#finder"><span>Scroll down to learn more</span><i aria-hidden="true"></i></a>
-    </section>
-
-    <main id="main-content" class="lower-page">
-      <section id="finder" class="about-section" aria-labelledby="about-title">
-        <div class="about-copy">
-          <p class="pixel-kicker">What is Logo Yoink?</p>
-          <h2 id="about-title">The open-source<br>API for finding the<br>right logo.</h2>
-          <p class="about-intro">Inspect a website. Get the best logo for every use.</p>
-        </div>
-
-        <div class="about-details">
-          <div class="feature-row">
-            <span class="feature-icon" aria-hidden="true"><img src="/assets/ui/feature-lasso-browser.png" alt=""></span>
-            <div><h3>One URL in. Ranked logo candidates out.</h3><p>We scan structured data, manifests, icons, and assets across the target site, then validate and rank the real logo files.</p></div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-icon" aria-hidden="true"><img src="/assets/ui/feature-sheriff-badge.png" alt=""></span>
-            <div><h3>Open-source and built for developers.</h3><p>Transparent, community-driven, and easy to integrate into your workflow.</p></div>
-          </div>
-          <a class="github-cta" href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>
-            <span>View on GitHub</span><b aria-hidden="true">↗</b>
-          </a>
-        </div>
-      </section>
-
-      <section class="try-section" aria-labelledby="try-title">
-        <p id="try-title" class="pixel-kicker">Try it out</p>
+    <main id="main-content">
+    <div class="launch-section">
+      <section id="finder" class="try-section" aria-labelledby="try-title">
+        <p class="pixel-kicker">Logo Yoink · Open source</p>
+        <h1 id="try-title">Company icons &amp; wordmarks.<br>One URL. One yoink.</h1>
+        <p class="launch-intro">Find and download the logo files a website exposes.</p>
         <form id="extract-form" novalidate>
           <label class="visually-hidden" for="website">Website URL</label>
           <div class="input-row">
@@ -153,7 +88,7 @@
             <input id="website" name="website" type="text" inputmode="url" autocomplete="url" maxlength="2048" placeholder="https://example.com" required aria-describedby="form-hint status">
             <button type="submit"><span class="button-label">Yoink it</span><img class="button-mark" src="/assets/brand/logo-yoink-mark.png" alt="" aria-hidden="true"></button>
           </div>
-          <p id="form-hint" class="form-hint">Enter any website URL and we’ll find the right logo.</p>
+          <p id="form-hint" class="form-hint">Free to try. No account or API key. <a href="#api-title">Self-host it</a> for your own projects.</p>
         </form>
         <div id="status" class="status" aria-live="polite" aria-atomic="true">
           <span class="train-loader" aria-hidden="true">
@@ -180,6 +115,7 @@
         </div>
         <div id="role-grid" class="role-grid"></div>
 
+        <p id="star-cta" class="star-cta" hidden>Found your logo? <a href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer" data-github-placement="result">☆ Star Logo Yoink on GitHub</a> <span>if it saved you a little digging.</span></p>
         <details id="complete-results" class="complete-results">
           <summary>
             <span class="summary-icon" aria-hidden="true">▣</span>
@@ -191,6 +127,76 @@
             <div id="family-grid" class="family-grid"></div>
           </div>
         </details>
+      </section>
+
+    </div>
+    <section id="game" class="game-shell" aria-labelledby="game-title">
+      <canvas id="game-canvas" class="game-canvas" tabindex="0" aria-label="Logo Yoink cowboy runner. Press Space, Arrow Up, or W to jump."></canvas>
+      <div class="game-shade" aria-hidden="true"></div>
+
+      <div class="game-topbar">
+        <div class="game-brand">
+          <h2 id="game-title">Logo-Yoink</h2>
+          <p>A little detour while you’re here.</p>
+        </div>
+        <div class="game-top-actions">
+          <div class="game-hud" aria-label="Game status">
+            <div class="hud-item"><span class="hud-label">Score</span><strong id="game-score">00000</strong></div>
+            <div class="hud-item hud-best"><span class="hud-label">Best</span><strong id="game-best">00000</strong></div>
+            <div class="hud-item hud-lasso"><span class="hud-label">Lasso</span><strong id="game-lasso">×0</strong></div>
+          </div>
+          <a class="game-github-link" href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer" aria-label="View Logo Yoink on GitHub">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="game-actions" aria-label="Game controls">
+        <button id="game-sound" class="game-icon-button" type="button" aria-pressed="true">Sound on</button>
+        <button id="game-pause" class="game-icon-button" type="button">Pause</button>
+      </div>
+
+      <div id="game-start-panel" class="game-panel game-start-panel">
+        <button id="game-start" class="game-start-prompt" type="button">Play the cowboy game</button>
+      </div>
+
+      <div id="game-over-panel" class="game-panel game-over-panel" hidden>
+        <p class="game-eyebrow">Trail’s end</p>
+        <h2>Nice<br><em>yoinkin’.</em></h2>
+        <p>You rode <strong id="game-final-distance">0</strong>m and scored <strong id="game-final-score">0</strong>.</p>
+        <button id="game-restart" class="game-start-button" type="button">Ride again <span>↻</span></button>
+      </div>
+
+      <div id="game-yoink" class="game-yoink" aria-hidden="true">YOINK!</div>
+      <div class="game-crash-caption" aria-hidden="true">HAY! THAT HURT.</div>
+      <div id="game-live" class="visually-hidden" aria-live="polite"></div>
+      <p class="game-trademarks">Marks belong to their respective owners. No endorsement implied.</p>
+      <a class="game-find-link" href="#finder"><span>Back to the logo finder</span><i aria-hidden="true"></i></a>
+    </section>
+
+    <div class="lower-page">
+      <section class="about-section" aria-labelledby="about-title">
+        <div class="about-copy">
+          <p class="pixel-kicker">What is Logo Yoink?</p>
+          <h2 id="about-title">Real files.<br>Ready for your<br>next project.</h2>
+          <p class="about-intro">Find icons for avatars and apps, and wordmarks for headers and cards.</p>
+        </div>
+
+        <div class="about-details">
+          <div class="feature-row">
+            <span class="feature-icon" aria-hidden="true"><img src="/assets/ui/feature-lasso-browser.png" alt=""></span>
+            <div><h3>One URL in. Ranked logo candidates out.</h3><p>We scan structured data, manifests, icons, and assets across the target site, then validate and rank the real logo files.</p></div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-icon" aria-hidden="true"><img src="/assets/ui/feature-sheriff-badge.png" alt=""></span>
+            <div><h3>Open-source and built for developers.</h3><p>MIT licensed and self-hostable. Run the API or CLI without an account or API key.</p></div>
+          </div>
+          <a class="github-cta" href="https://github.com/Hendrikc4/logo-yoink" target="_blank" rel="noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>
+            <span>View on GitHub</span><b aria-hidden="true">↗</b>
+          </a>
+        </div>
       </section>
 
       <section class="api-section" aria-labelledby="api-title">
@@ -239,8 +245,8 @@
       <section id="special-features" class="specials-section" aria-labelledby="specials-title">
         <div class="specials-heading">
           <p class="pixel-kicker">Why Logo Yoink?</p>
-          <h2 id="specials-title">The right logo.<br>No guesswork.</h2>
-          <p class="specials-lede">Logo Yoink checks the whole website, skips the junk, and gives you a version that fits.</p>
+          <h2 id="specials-title">Less digging.<br>Better candidates.</h2>
+          <p class="specials-lede">Logo Yoink checks website assets, filters common placeholders, and ranks candidates for each use.</p>
         </div>
 
         <figure class="specials-visual">
@@ -251,17 +257,17 @@
         <div class="specials-grid">
           <article class="special-card">
             <span class="special-number">01</span>
-            <div><h3>Skips the wrong logos.</h3><p>Ignores Wix, Vercel, and Lovable placeholders, plus partner logos and badges.</p></div>
+            <div><h3>Skips the wrong logos.</h3><p>Filters known Wix, Vercel, and Lovable placeholders, and looks for first-party brand evidence.</p></div>
           </article>
 
           <article class="special-card">
             <span class="special-number">02</span>
-            <div><h3>Matches your design.</h3><p>Ask for square or wide, light or dark, and transparent when available.</p></div>
+            <div><h3>Matches your design.</h3><p>Use the self-hosted API or CLI to request light, dark, or transparent assets when available.</p></div>
           </article>
 
           <article class="special-card">
             <span class="special-number">03</span>
-            <div><h3>Gives you both useful sizes.</h3><p>Get a small icon and a wide logo, each picked for the job.</p></div>
+            <div><h3>Looks for both useful shapes.</h3><p>See recommended icons and wordmarks when reliable candidates are available.</p></div>
           </article>
 
           <article class="special-card">
@@ -276,11 +282,12 @@
 
           <article class="special-card">
             <span class="special-number">06</span>
-            <div><h3>Doesn’t make risky guesses.</h3><p>Returns no logo instead of giving you the wrong brand.</p></div>
+            <div><h3>Can leave a role empty.</h3><p>Leaves a role empty when candidates fail its checks. Review the results before use.</p></div>
           </article>
         </div>
         <p class="specials-footnote"><strong>Logo Yoink never makes up a logo.</strong> It only returns files it finds online. <a href="/docs#pipeline">See how it works <span aria-hidden="true">↗</span></a></p>
       </section>
+    </div>
     </main>
 
     <div class="night-desert" role="img" aria-label="Pixel-art desert at night with a campfire"></div>

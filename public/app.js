@@ -5,6 +5,8 @@ const form = document.querySelector('#extract-form');
 const input = document.querySelector('#website');
 const status = document.querySelector('#status');
 const results = document.querySelector('#results');
+const starCta = document.querySelector('#star-cta');
+const track = (name, data) => window.yoinkTrack?.(name, data);
 const domain = document.querySelector('#result-domain');
 const diagnostics = document.querySelector('#diagnostics');
 const roleGrid = document.querySelector('#role-grid');
@@ -37,6 +39,7 @@ form.addEventListener('submit', async event => {
   activeRequest = controller;
   const sequence = ++requestSequence;
 
+  track('extraction_started');
   clearResults();
   setLoading(true);
   setStatus(`Inspecting ${displayWebsite(website)} and validating its logo files…`, 'loading');
@@ -53,14 +56,17 @@ form.addEventListener('submit', async event => {
     if (sequence !== requestSequence) return;
 
     if (!Array.isArray(payload.candidates) || payload.candidates.length === 0) {
+      track('extraction_finished', { outcome: 'empty' });
       setStatus(`No usable logo files were found for ${payload.domain || displayWebsite(website)}. Try the site’s canonical homepage URL.`, 'error');
       return;
     }
 
     render(payload);
+    track('extraction_finished', { outcome: 'success' });
     setStatus(`Found logo candidates for ${payload.domain}. Recommended assets are ready below.`, 'success');
   } catch (error) {
     if (error.name === 'AbortError' || sequence !== requestSequence) return;
+    track('extraction_finished', { outcome: 'error' });
     setStatus(normalizeError(error), 'error');
   } finally {
     if (sequence === requestSequence) {
@@ -124,6 +130,7 @@ function resetTrain() {
 
 function clearResults() {
   results.hidden = true;
+  starCta.hidden = true;
   roleGrid.replaceChildren();
   familyGrid.replaceChildren();
   diagnostics.replaceChildren();
@@ -152,6 +159,7 @@ function render(payload) {
   completeResults.open = false;
   completeResults.hidden = families.length === 0;
   results.hidden = false;
+  starCta.hidden = !roleGrid.querySelector('[data-asset-download]');
   for (const image of roleGrid.querySelectorAll('[data-asset-image]')) setAutomaticPreviewBackground(image);
 }
 

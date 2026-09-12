@@ -327,3 +327,16 @@ pre { margin: 0; overflow: auto; padding: 24px 28px; color: #ebeee8; font: 12px/
   .train-loader__wheel, .train-loader__rod, .train-loader__engine::after { animation: none !important; }
   .train-loader__smoke { display: none; }
 }
+
+/* Put the useful first action ahead of the optional cowboy game. */
+.launch-section { width: min(var(--content), calc(100% - 48px)); margin: 0 auto; padding: 30px 0 20px; }
+.launch-section h1 { margin: 22px 0 16px; font-size: clamp(32px, 5vw, 62px); line-height: 1.08; letter-spacing: -.045em; text-wrap: balance; }
+.launch-intro { color: #c3c4c4; font-size: 18px; margin: 0; }
+.form-hint a, .star-cta a { color: var(--acid); text-underline-offset: 4px; }
+.star-cta { margin: 24px 0; color: var(--muted); font-size: 14px; }
+.star-cta a { white-space: nowrap; }
+@media (max-width: 600px) {
+  .launch-section { width: calc(100% - 32px); padding-top: 6px; }
+  .launch-intro { font-size: 16px; }
+  .star-cta span { display: block; }
+}

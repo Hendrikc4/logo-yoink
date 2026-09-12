@@ -535,7 +535,7 @@ shell.addEventListener('pointerdown', event => {
 });
 window.addEventListener('keydown', event => {
   if (!state) return;
-  if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+  if (!shell.contains(document.activeElement) || document.activeElement?.closest('a, button, input, textarea, select')) return;
   if (['Space', 'ArrowUp', 'KeyW'].includes(event.code)) {
     event.preventDefault();
     if (state.status === 'idle' || state.status === 'gameover') begin();
