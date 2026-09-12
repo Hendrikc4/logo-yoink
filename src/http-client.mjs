@@ -26,6 +26,7 @@ export async function assertPublicUrl(value, { lookup = dnsLookup } = {}) {
 
 export async function fetchTimed(url, {
   timeoutMs = DEFAULT_TIMEOUT_MS,
+  maxRedirects = 5,
   accept = '*/*',
   diagnostics,
   allowPrivate = false,
@@ -33,12 +34,13 @@ export async function fetchTimed(url, {
   fetchImpl = fetch,
   validateUrl = assertPublicUrl,
 } = {}) {
+  if (!Number.isInteger(maxRedirects) || maxRedirects < 0 || maxRedirects > 5) throw new Error('Invalid redirect limit.');
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     let current = String(url);
     if (current.startsWith('data:')) return await fetchImpl(current, { signal: controller.signal });
-    for (let redirects = 0; redirects <= 5; redirects += 1) {
+    for (let redirects = 0; redirects <= maxRedirects; redirects += 1) {
       if (!allowPrivate) await validateUrl(current);
       if (diagnostics) diagnostics.requests += 1;
       const response = await fetchImpl(current, {
@@ -101,6 +103,7 @@ export async function readLimited(response, maxBytes, {
     }
     const { done, value } = read;
     if (done) break;
+    if (diagnostics) diagnostics.bytesDownloaded += value.length;
     if (total + value.length > maxBytes) {
       if (!truncate) {
         await reader.cancel();
@@ -116,6 +119,5 @@ export async function readLimited(response, maxBytes, {
     chunks.push(Buffer.from(value));
   }
   const bytes = Buffer.concat(chunks);
-  if (diagnostics) diagnostics.bytesDownloaded += bytes.length;
   return { bytes, truncated: truncated || declared > maxBytes };
 }

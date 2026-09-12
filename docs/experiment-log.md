@@ -24,6 +24,7 @@ A negative shipping decision does not always mean the underlying signal was usel
 
 | Date | Experiment | Development outcome | Holdout outcome | Cost or risk | Status |
 |---|---|---|---|---|---|
+| 2026-08-26 | [Bounded sitemap/robots missing-wide fallback](sitemap-wide-fallback-experiment-2026-08-26.md) | Major-brand dev: 2/2 reviewed-correct P&G + Anthropic wides on 48 misses (4.167/100); broader original-500 dev: 0/102 admissions; 0 wrong/related/not-logo and 0 populated-role movement | Two frozen validation cohorts: 0/51 answers and 0 role movement; evaluation unopened; effectiveness not confirmed | Chosen robots-only one-page profile: 132 requests, 13,148,751 bytes, 498/2,142 ms p50/p95 on major-brand dev; low-intent pages require exact candidate identity; GLM/Opus reviewed | **Available, optional — real but cohort-concentrated dev gain; default-off** |
 | 2026-08-25 | [BIMI icon fallback](bimi-fallback-experiment-2026-08-25.md) | 46/180 assertions and 44 safe SVGs; gated fallback admitted 3/3 reviewed-correct icons but replaced already-correct cached favicons | Frozen validation admitted 1/1 reviewed-correct icon, again with zero incremental correct-role coverage; evaluation unopened | Combined gated stage: 22 DNS, 7 HTTP, 9,089 bytes, 58/203 ms p50/p95; independent review closed wide-canvas, Jina side-effect, transient-cache, provenance, and accounting defects | **Available, optional — provenance gain, zero correctness yield** |
 | 2026-08-25 | [Ranking v10 integration](ranking-v10-integration-2026-08-25.md) | Composed corporate-identity safety and bounded ultrawide eligibility: 64.51→67.24, 3→0 wrong-brand domains, Cloudflare wide recovered | Validation 68.99→69.52 with Financial Times wide recovered; evaluation unopened; original-500 v8→v10 changes 4 unlabeled canonical slots | Offline replay only; current runtime remains unqualified until the original-500 exhaustive review is complete | **Kept — runtime v10; qualification pending** |
 | 2026-08-25 | [Frozen 300 present-asset recovery](frozen-300-present-asset-recovery-2026-08-25.md) | Strongly backed `12:1`–`14:1` wordmarks recover Cloudflare wide: selected-correct 162→163 and eligibility misses 12→11 | Validation recovers Financial Times wide: 60→61 correct; frozen original 500 has 0 icon/wide/favicon flips | Offline-only; 0 requests/bytes/AI calls, 0 reviewed regressions, 0 new wrong-brand results; evaluation unopened | **Kept — ranking v9 bounded wide eligibility** |
@@ -371,6 +372,7 @@ For each completed experiment, append one row to the summary table and add detai
 
 ## Detailed reports
 
+- [Bounded sitemap/robots missing-wide fallback](sitemap-wide-fallback-experiment-2026-08-26.md)
 - [First-round coverage experiments](logo-coverage-experiment-results-2026-08-22.md)
 - [Round-two coverage experiments](logo-coverage-experiment-results-round2-2026-08-22.md)
 - [Coverage improvement plan](logo-coverage-improvement-plan.md)
