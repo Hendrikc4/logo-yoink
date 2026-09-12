@@ -1,0 +1,60 @@
+{
+  "networkBlocked": true,
+  "workers": 1,
+  "exits": 1,
+  "baselineMiB": 85.84375,
+  "residentMiB": 2692.53125,
+  "idleMiB": 2144.125,
+  "osPeakMiB": 2702.140625,
+  "rows": [
+    {
+      "id": "s0-0-thin",
+      "applied": true,
+      "reason": null,
+      "ms": 4312.676375,
+      "rssMiB": 2610.78125
+    },
+    {
+      "id": "s1-0-dots",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 3161.079708,
+      "rssMiB": 2647.65625
+    },
+    {
+      "id": "s2-0-white-detail",
+      "applied": true,
+      "reason": null,
+      "ms": 1590.2580000000007,
+      "rssMiB": 2661.21875
+    },
+    {
+      "id": "s3-0-gradient",
+      "applied": true,
+      "reason": null,
+      "ms": 1594.3070000000007,
+      "rssMiB": 2680.109375
+    },
+    {
+      "id": "s7-0-disconnected",
+      "applied": true,
+      "reason": null,
+      "ms": 1594.557417,
+      "rssMiB": 2687.25
+    },
+    {
+      "id": "fresh-apple",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1579.7525000000005,
+      "rssMiB": 2687.34375
+    },
+    {
+      "id": "fresh-google",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1586.938,
+      "rssMiB": 2692.53125
+    }
+  ]
+}

@@ -23,6 +23,7 @@
   "functions": {
     "api/extract.mjs": {
       "includeFiles": "node_modules/@sparticuz/chromium/bin/**",
+      "excludeFiles": "src/background-removal*.mjs",
       "maxDuration": 60
     }
   }

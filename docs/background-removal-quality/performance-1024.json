@@ -1,0 +1,97 @@
+{
+  "name": "birefnet",
+  "size": 1024,
+  "initMs": 1338.356125,
+  "peakMiB": 8454.46875,
+  "osPeakMiB": 8778.453125,
+  "rows": [
+    {
+      "id": "s0-0-thin",
+      "split": "tuning",
+      "applied": true,
+      "reason": null,
+      "ms": 9096.879707999999,
+      "rssMiB": 7519.4375,
+      "metrics": {
+        "foregroundLoss": 0.00013435003631082052,
+        "remainingBackground": 0,
+        "edgeError": 0.0044113697050133386,
+        "blackCompositeError": 0.0000642550179113037
+      }
+    },
+    {
+      "id": "s1-0-dots",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 7866.924917000002,
+      "rssMiB": 8249.0625,
+      "metrics": {
+        "foregroundLoss": 0.0006247597078046902,
+        "remainingBackground": 0.0000835485155480856,
+        "edgeError": 0.005992850178745516,
+        "blackCompositeError": 0.00022066536612224525
+      }
+    },
+    {
+      "id": "s2-0-white-detail",
+      "split": "tuning",
+      "applied": true,
+      "reason": null,
+      "ms": 7703.524916999999,
+      "rssMiB": 8438.9375,
+      "metrics": {
+        "foregroundLoss": 0.000007615982304430653,
+        "remainingBackground": 0,
+        "edgeError": 0.004798761609907112,
+        "blackCompositeError": 0.00005827846661540452
+      }
+    },
+    {
+      "id": "s3-0-gradient",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 7707.2435829999995,
+      "rssMiB": 8320.65625,
+      "metrics": {
+        "foregroundLoss": 0.00007247732161226952,
+        "remainingBackground": 0.00003702050079994047,
+        "edgeError": 0.007442233398935764,
+        "blackCompositeError": 0.00015603888614269235
+      }
+    },
+    {
+      "id": "s7-0-disconnected",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 7683.22825,
+      "rssMiB": 8321.171875,
+      "metrics": {
+        "foregroundLoss": 0.000049091801669121164,
+        "remainingBackground": 0,
+        "edgeError": 0.00481283422459892,
+        "blackCompositeError": 0.00004165863612230376
+      }
+    },
+    {
+      "id": "fresh-apple",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 7607.961291,
+      "rssMiB": 8321.421875,
+      "metrics": null
+    },
+    {
+      "id": "fresh-google",
+      "split": "fresh",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 7285.716625000001,
+      "rssMiB": 8322.6875,
+      "metrics": null
+    }
+  ]
+}

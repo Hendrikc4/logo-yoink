@@ -1,0 +1,1293 @@
+{
+  "model": {
+    "id": "birefnet-lite-512",
+    "revision": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+    "url": "https://huggingface.co/studioludens/birefnet-lite-512/resolve/4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7/onnx/model.onnx",
+    "sha256": "1cb0fb360dadd15af77c639085d77a9df67db0c64315560c3de005f676345ac2",
+    "license": "MIT",
+    "size": 512,
+    "architecture": "birefnet",
+    "padding": true,
+    "tiles": true,
+    "preset": "padded-overlap-soft-edge-matting"
+  },
+  "workerRun": true,
+  "rows": [
+    {
+      "number": 1,
+      "id": "s0-0-thin",
+      "file": "s0-0-thin.png",
+      "truth": "s0-0-thin-truth.png",
+      "split": "tuning",
+      "kind": "thin",
+      "bg": "#ffffff",
+      "root": "test/fixtures/background-removal",
+      "applied": true,
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 3322,
+      "rawMetrics": {
+        "foregroundLoss": 0.007897603485838761,
+        "remainingBackground": 0.00574194533795508,
+        "edgeError": 0.22561817635998818,
+        "blackCompositeError": 0.013341442668570328
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0001325344952795932,
+        "remainingBackground": 0,
+        "edgeError": 0.004414529711965353,
+        "blackCompositeError": 0.000064277353642982
+      },
+      "ms": 4594.601667
+    },
+    {
+      "number": 2,
+      "id": "s0-1-thin",
+      "file": "s0-1-thin.png",
+      "truth": "s0-1-thin-truth.png",
+      "split": "tuning",
+      "kind": "thin",
+      "bg": "#e7ebf3",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "background-retained",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 6746,
+      "edgeCandidates": 10288,
+      "rawMetrics": {
+        "foregroundLoss": 0.007568990559186619,
+        "remainingBackground": 0.1609529855263955,
+        "edgeError": 0.24472989840577725,
+        "blackCompositeError": 0.14505712882103214
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0001361655773420478,
+        "remainingBackground": 0.15133270512728894,
+        "edgeError": 0.00420912926008436,
+        "blackCompositeError": 0.12910153372024744
+      },
+      "ms": 3284.4249580000005
+    },
+    {
+      "number": 3,
+      "id": "s0-2-thin",
+      "file": "s0-2-thin.jpg",
+      "truth": "s0-2-thin-truth.png",
+      "split": "tuning",
+      "kind": "thin",
+      "bg": "#fff0cc",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "background-retained",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 24386,
+      "edgeCandidates": 25532,
+      "rawMetrics": {
+        "foregroundLoss": 0.07323347857661566,
+        "remainingBackground": 0.5737093232779605,
+        "edgeError": 0.37573746662242735,
+        "blackCompositeError": 0.4942495445583695
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.07579157588961506,
+        "remainingBackground": 0.5645225963887688,
+        "edgeError": 0.2904899590779092,
+        "blackCompositeError": 0.4840036325465045
+      },
+      "ms": 3289.557916999999
+    },
+    {
+      "number": 4,
+      "id": "s1-0-dots",
+      "file": "s1-0-dots.png",
+      "truth": "s1-0-dots-truth.png",
+      "split": "heldout",
+      "kind": "dots",
+      "bg": "#ffffff",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 183,
+      "edgeCandidates": 2461,
+      "rawMetrics": {
+        "foregroundLoss": 0.053031526336024606,
+        "remainingBackground": 0.004497939380910429,
+        "edgeError": 0.26791896869245,
+        "blackCompositeError": 0.015831158196514962
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0402614379084967,
+        "remainingBackground": 0.0007341846161613443,
+        "edgeError": 0.037391398548369655,
+        "blackCompositeError": 0.003257645255148694
+      },
+      "ms": 3315.818459
+    },
+    {
+      "number": 5,
+      "id": "s1-1-dots",
+      "file": "s1-1-dots.png",
+      "truth": "s1-1-dots-truth.png",
+      "split": "heldout",
+      "kind": "dots",
+      "bg": "#e7ebf3",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 205,
+      "edgeCandidates": 2468,
+      "rawMetrics": {
+        "foregroundLoss": 0.047379853902345344,
+        "remainingBackground": 0.005062909752131292,
+        "edgeError": 0.26960892644350554,
+        "blackCompositeError": 0.015019399186447811
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.036514801999231065,
+        "remainingBackground": 0.0010729388312490976,
+        "edgeError": 0.03575343949734592,
+        "blackCompositeError": 0.0032421739027249197
+      },
+      "ms": 3239.212124999998
+    },
+    {
+      "number": 6,
+      "id": "s1-2-dots",
+      "file": "s1-2-dots.jpg",
+      "truth": "s1-2-dots-truth.png",
+      "split": "heldout",
+      "kind": "dots",
+      "bg": "#fff0cc",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "background-retained",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 3459,
+      "edgeCandidates": 3595,
+      "rawMetrics": {
+        "foregroundLoss": 0.04753940792003108,
+        "remainingBackground": 0.05107843544411305,
+        "edgeError": 0.22990791896869311,
+        "blackCompositeError": 0.055276162159851636
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.047545174932718544,
+        "remainingBackground": 0.0510971646435049,
+        "edgeError": 0.2081464630050923,
+        "blackCompositeError": 0.05440187487243612
+      },
+      "ms": 3223.886083999998
+    },
+    {
+      "number": 7,
+      "id": "s2-0-white-detail",
+      "file": "s2-0-white-detail.png",
+      "truth": "s2-0-white-detail-truth.png",
+      "split": "tuning",
+      "kind": "white-detail",
+      "bg": "#ffffff",
+      "root": "test/fixtures/background-removal",
+      "applied": true,
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 1254,
+      "rawMetrics": {
+        "foregroundLoss": 0.001169549978228222,
+        "remainingBackground": 0.0028646293352175716,
+        "edgeError": 0.162246302029584,
+        "blackCompositeError": 0.004831811282519543
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.000007615982304430653,
+        "remainingBackground": 0,
+        "edgeError": 0.004798761609907112,
+        "blackCompositeError": 0.00005827846661540452
+      },
+      "ms": 1634.6880829999973
+    },
+    {
+      "number": 8,
+      "id": "s2-1-white-detail",
+      "file": "s2-1-white-detail.png",
+      "truth": "s2-1-white-detail-truth.png",
+      "split": "tuning",
+      "kind": "white-detail",
+      "bg": "#e7ebf3",
+      "root": "test/fixtures/background-removal",
+      "applied": true,
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 1246,
+      "rawMetrics": {
+        "foregroundLoss": 0.00126094176588139,
+        "remainingBackground": 0.002640876170287931,
+        "edgeError": 0.15931372549019623,
+        "blackCompositeError": 0.004311944524541856
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.000006953722973610597,
+        "remainingBackground": 0,
+        "edgeError": 0.004222566219470237,
+        "blackCompositeError": 0.000054738361848007344
+      },
+      "ms": 1646.4262080000008
+    },
+    {
+      "number": 9,
+      "id": "s2-2-white-detail",
+      "file": "s2-2-white-detail.jpg",
+      "truth": "s2-2-white-detail-truth.png",
+      "split": "tuning",
+      "kind": "white-detail",
+      "bg": "#fff0cc",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 650,
+      "edgeCandidates": 1155,
+      "rawMetrics": {
+        "foregroundLoss": 0.0019225388373706276,
+        "remainingBackground": 0.001914856032503087,
+        "edgeError": 0.15936532507739984,
+        "blackCompositeError": 0.008741764986222136
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.001984791214467713,
+        "remainingBackground": 0.0019431195901784088,
+        "edgeError": 0.12101823185414554,
+        "blackCompositeError": 0.007859982939253241
+      },
+      "ms": 1644.2433749999982
+    },
+    {
+      "number": 10,
+      "id": "s3-0-gradient",
+      "file": "s3-0-gradient.png",
+      "truth": "s3-0-gradient-truth.png",
+      "split": "heldout",
+      "kind": "gradient",
+      "bg": "#ffffff",
+      "root": "test/fixtures/background-removal",
+      "applied": true,
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 12,
+      "edgeCandidates": 1422,
+      "rawMetrics": {
+        "foregroundLoss": 0.003419682658436977,
+        "remainingBackground": 0.0022424377720727823,
+        "edgeError": 0.21903199941686743,
+        "blackCompositeError": 0.006454440599769327
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.00007247732161226952,
+        "remainingBackground": 0.000057484094206942744,
+        "edgeError": 0.008120125373569485,
+        "blackCompositeError": 0.0001777180359587935
+      },
+      "ms": 1623.2315839999974
+    },
+    {
+      "number": 11,
+      "id": "s3-1-gradient",
+      "file": "s3-1-gradient.png",
+      "truth": "s3-1-gradient-truth.png",
+      "split": "heldout",
+      "kind": "gradient",
+      "bg": "#e7ebf3",
+      "root": "test/fixtures/background-removal",
+      "applied": true,
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 1,
+      "edgeCandidates": 1402,
+      "rawMetrics": {
+        "foregroundLoss": 0.004124972723588633,
+        "remainingBackground": 0.0016605275886445656,
+        "edgeError": 0.19978861433049072,
+        "blackCompositeError": 0.00518718769241443
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0000748152997287944,
+        "remainingBackground": 0.000011534025374855823,
+        "edgeError": 0.0054012683140170405,
+        "blackCompositeError": 0.00009071062893681736
+      },
+      "ms": 1637.63825
+    },
+    {
+      "number": 12,
+      "id": "s3-2-gradient",
+      "file": "s3-2-gradient.jpg",
+      "truth": "s3-2-gradient-truth.png",
+      "split": "heldout",
+      "kind": "gradient",
+      "bg": "#fff0cc",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 860,
+      "edgeCandidates": 1079,
+      "rawMetrics": {
+        "foregroundLoss": 0.006337479347859957,
+        "remainingBackground": 0.002366335528518816,
+        "edgeError": 0.21341205627232354,
+        "blackCompositeError": 0.009276032642158602
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.006324230805199648,
+        "remainingBackground": 0.002434981582765943,
+        "edgeError": 0.17862089073547668,
+        "blackCompositeError": 0.008563361305994341
+      },
+      "ms": 1623.8480000000018
+    },
+    {
+      "number": 13,
+      "id": "s4-0-tiny",
+      "file": "s4-0-tiny.png",
+      "truth": "s4-0-tiny-truth.png",
+      "split": "tuning",
+      "kind": "tiny",
+      "bg": "#ffffff",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 198,
+      "rawMetrics": {
+        "foregroundLoss": 0.09134948096885814,
+        "remainingBackground": 0.006303558460421204,
+        "edgeError": 0.1489769820971865,
+        "blackCompositeError": 0.03135386630142251
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0751057285659361,
+        "remainingBackground": 0,
+        "edgeError": 0.00387894288150043,
+        "blackCompositeError": 0.019268470460079425
+      },
+      "ms": 1613.1217079999988
+    },
+    {
+      "number": 14,
+      "id": "s4-1-tiny",
+      "file": "s4-1-tiny.png",
+      "truth": "s4-1-tiny-truth.png",
+      "split": "tuning",
+      "kind": "tiny",
+      "bg": "#e7ebf3",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 200,
+      "rawMetrics": {
+        "foregroundLoss": 0.0414359861591695,
+        "remainingBackground": 0.006470588235294118,
+        "edgeError": 0.1366581415174764,
+        "blackCompositeError": 0.01852520665128794
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.027941176470588216,
+        "remainingBackground": 0,
+        "edgeError": 0.003495311167945441,
+        "blackCompositeError": 0.007015916354286805
+      },
+      "ms": 1672.1215420000008
+    },
+    {
+      "number": 15,
+      "id": "s4-2-tiny",
+      "file": "s4-2-tiny.jpg",
+      "truth": "s4-2-tiny-truth.png",
+      "split": "tuning",
+      "kind": "tiny",
+      "bg": "#fff0cc",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 67,
+      "edgeCandidates": 174,
+      "rawMetrics": {
+        "foregroundLoss": 0.014282968089196456,
+        "remainingBackground": 0.00317356572258533,
+        "edgeError": 0.1773231031543051,
+        "blackCompositeError": 0.021140531886774543
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.01277393310265282,
+        "remainingBackground": 0.00317356572258533,
+        "edgeError": 0.08601875532821816,
+        "blackCompositeError": 0.017977555707740785
+      },
+      "ms": 1601.9362919999985
+    },
+    {
+      "number": 16,
+      "id": "s5-0-wide",
+      "file": "s5-0-wide.png",
+      "truth": "s5-0-wide-truth.png",
+      "split": "heldout",
+      "kind": "wide",
+      "bg": "#ffffff",
+      "root": "test/fixtures/background-removal",
+      "applied": true,
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 6188,
+      "rawMetrics": {
+        "foregroundLoss": 0.028811773233679727,
+        "remainingBackground": 0.009936085786733228,
+        "edgeError": 0.2654947642139295,
+        "blackCompositeError": 0.020223836802694538
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0008113590263691663,
+        "remainingBackground": 3.0969939802179507e-7,
+        "edgeError": 0.0039233256026424785,
+        "blackCompositeError": 0.00008143269072334799
+      },
+      "ms": 3370.9964580000014
+    },
+    {
+      "number": 17,
+      "id": "s5-1-wide",
+      "file": "s5-1-wide.png",
+      "truth": "s5-1-wide-truth.png",
+      "split": "heldout",
+      "kind": "wide",
+      "bg": "#e7ebf3",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "background-retained",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 14553,
+      "edgeCandidates": 22319,
+      "rawMetrics": {
+        "foregroundLoss": 0.008844544341501722,
+        "remainingBackground": 0.32685372510307326,
+        "edgeError": 0.40764108510787933,
+        "blackCompositeError": 0.28914270060956054
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0006274022501203019,
+        "remainingBackground": 0.2782945628399426,
+        "edgeError": 0.0428139714667215,
+        "blackCompositeError": 0.23481882700789308
+      },
+      "ms": 3302.875875000005
+    },
+    {
+      "number": 18,
+      "id": "s5-2-wide",
+      "file": "s5-2-wide.jpg",
+      "truth": "s5-2-wide-truth.png",
+      "split": "heldout",
+      "kind": "wide",
+      "bg": "#fff0cc",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 50661,
+      "edgeCandidates": 53203,
+      "rawMetrics": {
+        "foregroundLoss": 0,
+        "remainingBackground": 0.9976174825310195,
+        "edgeError": 0.498062056363766,
+        "blackCompositeError": 0.8427690540270151
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.006081537927379695,
+        "remainingBackground": 0.9834471091496861,
+        "edgeError": 0.3942318504462699,
+        "blackCompositeError": 0.827267789952751
+      },
+      "ms": 3377.806417
+    },
+    {
+      "number": 19,
+      "id": "s6-0-outline",
+      "file": "s6-0-outline.png",
+      "truth": "s6-0-outline-truth.png",
+      "split": "tuning",
+      "kind": "outline",
+      "bg": "#ffffff",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 2293,
+      "edgeCandidates": 2386,
+      "rawMetrics": {
+        "foregroundLoss": 0.07477124183006569,
+        "remainingBackground": 0.004707521924388453,
+        "edgeError": 0.21445794094900203,
+        "blackCompositeError": 0.014685582788670697
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.07108679130566982,
+        "remainingBackground": 0.004358397305897859,
+        "edgeError": 0.2096022322308666,
+        "blackCompositeError": 0.014103997020376454
+      },
+      "ms": 1641.638082999998
+    },
+    {
+      "number": 20,
+      "id": "s6-1-outline",
+      "file": "s6-1-outline.png",
+      "truth": "s6-1-outline-truth.png",
+      "split": "tuning",
+      "kind": "outline",
+      "bg": "#e7ebf3",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 2232,
+      "edgeCandidates": 2323,
+      "rawMetrics": {
+        "foregroundLoss": 0.0789420884632925,
+        "remainingBackground": 0.004139917904315409,
+        "edgeError": 0.20885916624964054,
+        "blackCompositeError": 0.012913728053312779
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.07554339565283497,
+        "remainingBackground": 0.0038148663586614756,
+        "edgeError": 0.2040641159789521,
+        "blackCompositeError": 0.012399846052800178
+      },
+      "ms": 1647.9257500000022
+    },
+    {
+      "number": 21,
+      "id": "s6-2-outline",
+      "file": "s6-2-outline.jpg",
+      "truth": "s6-2-outline-truth.png",
+      "split": "tuning",
+      "kind": "outline",
+      "bg": "#fff0cc",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 2498,
+      "edgeCandidates": 2498,
+      "rawMetrics": {
+        "foregroundLoss": 0.04507675938592478,
+        "remainingBackground": 0.005894779851748938,
+        "edgeError": 0.22730540011828435,
+        "blackCompositeError": 0.017634935281302094
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.04507675938592478,
+        "remainingBackground": 0.005894779851748938,
+        "edgeError": 0.22730540011828435,
+        "blackCompositeError": 0.017634935281302094
+      },
+      "ms": 1628.120707999995
+    },
+    {
+      "number": 22,
+      "id": "s7-0-disconnected",
+      "file": "s7-0-disconnected.png",
+      "truth": "s7-0-disconnected-truth.png",
+      "split": "heldout",
+      "kind": "disconnected",
+      "bg": "#ffffff",
+      "root": "test/fixtures/background-removal",
+      "applied": true,
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 1006,
+      "rawMetrics": {
+        "foregroundLoss": 0.002798232695139909,
+        "remainingBackground": 0.001840355519370381,
+        "edgeError": 0.2071196392995701,
+        "blackCompositeError": 0.004323620119467864
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.000049091801669121164,
+        "remainingBackground": 0,
+        "edgeError": 0.00481283422459892,
+        "blackCompositeError": 0.00004165863612230376
+      },
+      "ms": 1638.6527920000008
+    },
+    {
+      "number": 23,
+      "id": "s7-1-disconnected",
+      "file": "s7-1-disconnected.png",
+      "truth": "s7-1-disconnected-truth.png",
+      "split": "heldout",
+      "kind": "disconnected",
+      "bg": "#e7ebf3",
+      "root": "test/fixtures/background-removal",
+      "applied": true,
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 988,
+      "rawMetrics": {
+        "foregroundLoss": 0.0035779260157671276,
+        "remainingBackground": 0.0015358911730782303,
+        "edgeError": 0.201782531194296,
+        "blackCompositeError": 0.0035962570173642887
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0000462040486297611,
+        "remainingBackground": 0,
+        "edgeError": 0.0044458425081262375,
+        "blackCompositeError": 0.00003960448112697238
+      },
+      "ms": 1619.9315829999978
+    },
+    {
+      "number": 24,
+      "id": "s7-2-disconnected",
+      "file": "s7-2-disconnected.jpg",
+      "truth": "s7-2-disconnected-truth.png",
+      "split": "heldout",
+      "kind": "disconnected",
+      "bg": "#fff0cc",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 530,
+      "edgeCandidates": 804,
+      "rawMetrics": {
+        "foregroundLoss": 0.007206387709723054,
+        "remainingBackground": 0.0016775222199606529,
+        "edgeError": 0.21361014994233007,
+        "blackCompositeError": 0.005373193793262887
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.007500938519737778,
+        "remainingBackground": 0.001894491937490111,
+        "edgeError": 0.16202160008388414,
+        "blackCompositeError": 0.004682593774289184
+      },
+      "ms": 1638.5398750000022
+    },
+    {
+      "number": 25,
+      "id": "real-0",
+      "file": "real-0.png",
+      "truth": "real-0-truth.png",
+      "split": "tuning",
+      "kind": "cached",
+      "source": "runs/precision-async-original100-v2/assets/06efb165138dc9a7902d37589ecf36ebfa8816771160c957d21f368081b83a11.png",
+      "sourceCompany": "Bhr",
+      "sourceWebsite": "bhr.fyi",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "uncertain-background",
+      "mattingReason": "uncertain-background",
+      "unresolvedPixels": 0,
+      "rawMetrics": {
+        "foregroundLoss": 0.02103249029080232,
+        "remainingBackground": 0.015308478780609314,
+        "edgeError": 0.08239733629300854,
+        "blackCompositeError": 0.04296695810677227
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.02103249029080232,
+        "remainingBackground": 0.015308478780609314,
+        "edgeError": 0.08239733629300854,
+        "blackCompositeError": 0.04296695810677227
+      },
+      "ms": 3281.6569170000002
+    },
+    {
+      "number": 26,
+      "id": "real-1",
+      "file": "real-1.png",
+      "truth": "real-1-truth.png",
+      "split": "heldout",
+      "kind": "cached",
+      "source": "runs/precision-async-original100-v2/assets/13712ecc2f14ea42a602497d544712eba1d0df96f34b2d07486a004a39fcbdd1.png",
+      "sourceCompany": "Scoped Solutions",
+      "sourceWebsite": "scoped.no",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 3936,
+      "edgeCandidates": 4095,
+      "rawMetrics": {
+        "foregroundLoss": 0.03948569022472874,
+        "remainingBackground": 0.0037731469817115066,
+        "edgeError": 0.09089092602843209,
+        "blackCompositeError": 0.016821781627922097
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.03913320918360736,
+        "remainingBackground": 0.0035737244823948193,
+        "edgeError": 0.09084142263744976,
+        "blackCompositeError": 0.017048484615828575
+      },
+      "ms": 3318.3278750000027
+    },
+    {
+      "number": 27,
+      "id": "real-2",
+      "file": "real-2.png",
+      "truth": "real-2-truth.png",
+      "split": "tuning",
+      "kind": "cached",
+      "source": "runs/precision-async-original100-v2/assets/21a78b28739db6509f7eb1e9e0b844da7d0b9523d51ed40b7f0f25b076137b18.png",
+      "sourceCompany": "7RD",
+      "sourceWebsite": "7rd.ai",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 259,
+      "edgeCandidates": 1018,
+      "rawMetrics": {
+        "foregroundLoss": 0.30082081969063945,
+        "remainingBackground": 0.004053176826286067,
+        "edgeError": 0.28288410465050623,
+        "blackCompositeError": 0.23736167116724305
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.3017643295321953,
+        "remainingBackground": 0.0021626428349117415,
+        "edgeError": 0.2540053869770769,
+        "blackCompositeError": 0.23527872194726623
+      },
+      "ms": 1704.124834000002
+    },
+    {
+      "number": 28,
+      "id": "real-3",
+      "file": "real-3.png",
+      "truth": "real-3-truth.png",
+      "split": "heldout",
+      "kind": "cached",
+      "source": "runs/precision-async-original100-v2/assets/46296d4f389b30086ea894d9be00f84aec0b98308ed386886b64b9dec446fc42.png",
+      "sourceCompany": "Utiq",
+      "sourceWebsite": "utiq.com",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "uncertain-background",
+      "mattingReason": "uncertain-background",
+      "unresolvedPixels": 0,
+      "rawMetrics": {
+        "foregroundLoss": 0.004699950412686742,
+        "remainingBackground": 0.002341128329190141,
+        "edgeError": 0.13566497585217946,
+        "blackCompositeError": 0.014150443181872733
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.004699950412686742,
+        "remainingBackground": 0.002341128329190141,
+        "edgeError": 0.13566497585217946,
+        "blackCompositeError": 0.014150443181872733
+      },
+      "ms": 3285.151583000006
+    },
+    {
+      "number": 29,
+      "id": "real-4",
+      "file": "real-4.png",
+      "truth": "real-4-truth.png",
+      "split": "tuning",
+      "kind": "cached",
+      "source": "runs/precision-async-original100-v2/assets/658a2e8e25cecfda89b983fce5bc71c10000866b3696d44813fc5616b6e083b6.png",
+      "sourceCompany": "Scoped Solutions",
+      "sourceWebsite": "scoped.no",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 906,
+      "edgeCandidates": 3108,
+      "rawMetrics": {
+        "foregroundLoss": 0.510892828554931,
+        "remainingBackground": 0.009551512912857585,
+        "edgeError": 0.16324147305981132,
+        "blackCompositeError": 0.14217634016232325
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.5090385405138377,
+        "remainingBackground": 0.00285088394332091,
+        "edgeError": 0.11774489207447576,
+        "blackCompositeError": 0.12977992526512402
+      },
+      "ms": 1646.1949999999924
+    },
+    {
+      "number": 30,
+      "id": "real-5",
+      "file": "real-5.png",
+      "truth": "real-5-truth.png",
+      "split": "heldout",
+      "kind": "cached",
+      "source": "runs/precision-async-original100-v2/assets/6ad322c32bd968036888bb0b5f719d83793aeadc1cc84064720f2eb04120ac3b.png",
+      "sourceCompany": "Utiq",
+      "sourceWebsite": "utiq.com",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 0,
+      "rawMetrics": {
+        "foregroundLoss": 1,
+        "remainingBackground": 0,
+        "edgeError": 0.5148689723694853,
+        "blackCompositeError": 0.4605170692753651
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 1,
+        "remainingBackground": 0,
+        "edgeError": 0.5148689723694853,
+        "blackCompositeError": 0.4605170692753651
+      },
+      "ms": 1635.1397920000018
+    },
+    {
+      "number": 31,
+      "id": "real-6",
+      "file": "real-6.png",
+      "truth": "real-6-truth.png",
+      "split": "tuning",
+      "kind": "cached",
+      "source": "runs/precision-async-original100-v2/assets/70b7b2eb0cece61966a127c1aab68eb0e9334f533a22024954650db5847a6110.png",
+      "sourceCompany": "7RD",
+      "sourceWebsite": "7rd.ai",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 1686,
+      "edgeCandidates": 11372,
+      "rawMetrics": {
+        "foregroundLoss": 0.013829982518716684,
+        "remainingBackground": 0.030636232498308127,
+        "edgeError": 0.17119280492419975,
+        "blackCompositeError": 0.052434047807098066
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0126023389335568,
+        "remainingBackground": 0.008081171414337446,
+        "edgeError": 0.04813317131796657,
+        "blackCompositeError": 0.013403241488316028
+      },
+      "ms": 3311.6976250000007
+    },
+    {
+      "number": 32,
+      "id": "real-7",
+      "file": "real-7.png",
+      "truth": null,
+      "split": "heldout",
+      "kind": "cached",
+      "source": "runs/precision-async-original100-v2/assets/746a790e2698dafc0c0a436157291a039c4f900fe3ee325469f48c2585750330.png",
+      "sourceCompany": "TradeBridge",
+      "sourceWebsite": "tradebridge.co.in",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 5347,
+      "edgeCandidates": 9995,
+      "rawMetrics": null,
+      "refinedMetrics": null,
+      "ms": 3409.0634160000045
+    },
+    {
+      "number": 33,
+      "id": "dark-white",
+      "file": "dark-white.png",
+      "truth": "dark-white-truth.png",
+      "split": "heldout",
+      "kind": "dark-white",
+      "bg": "#10151e",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "background-retained",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 6409,
+      "edgeCandidates": 9841,
+      "rawMetrics": {
+        "foregroundLoss": 0.022280695680273285,
+        "remainingBackground": 0.2531341005748903,
+        "edgeError": 0.2794602251547018,
+        "blackCompositeError": 0.024399213294028596
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.004060058396519289,
+        "remainingBackground": 0.22456811226817705,
+        "edgeError": 0.0147841646164169,
+        "blackCompositeError": 0.01822220701439388
+      },
+      "ms": 3276.910124999995
+    },
+    {
+      "number": 34,
+      "id": "low-contrast",
+      "file": "low-contrast.png",
+      "truth": "low-contrast-truth.png",
+      "split": "heldout",
+      "kind": "low-contrast",
+      "bg": "#f3f3f3",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 2549,
+      "edgeCandidates": 2549,
+      "rawMetrics": {
+        "foregroundLoss": 0.01708015546009756,
+        "remainingBackground": 0.00491834823005014,
+        "edgeError": 0.2208358543417372,
+        "blackCompositeError": 0.011119187491989984
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.01708015546009756,
+        "remainingBackground": 0.00491834823005014,
+        "edgeError": 0.2208358543417372,
+        "blackCompositeError": 0.011119187491989984
+      },
+      "ms": 3247.943959000011
+    },
+    {
+      "number": 35,
+      "id": "shadow",
+      "file": "shadow.png",
+      "truth": "shadow-truth.png",
+      "split": "heldout",
+      "kind": "shadow",
+      "bg": "#fff",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 13,
+      "edgeCandidates": 437,
+      "rawMetrics": {
+        "foregroundLoss": 0.005964052287581681,
+        "remainingBackground": 0.000015971300801022162,
+        "edgeError": 0.10819745442036259,
+        "blackCompositeError": 0.004130933572557525
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.00035378734827264254,
+        "remainingBackground": 0,
+        "edgeError": 0.10073443412452507,
+        "blackCompositeError": 0.003112850442137472
+      },
+      "ms": 3356.2391659999994
+    },
+    {
+      "number": 36,
+      "id": "full-bleed",
+      "file": "full-bleed.png",
+      "truth": "full-bleed-truth.png",
+      "split": "heldout",
+      "kind": "full-bleed",
+      "bg": "#fff",
+      "root": "test/fixtures/background-removal",
+      "applied": false,
+      "reason": "background-retained",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 20394,
+      "edgeCandidates": 24999,
+      "rawMetrics": {
+        "foregroundLoss": 0.15486549019607784,
+        "remainingBackground": null,
+        "edgeError": null,
+        "blackCompositeError": 0.05540794668716998
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.23016013071895408,
+        "remainingBackground": null,
+        "edgeError": null,
+        "blackCompositeError": 0.0798411216198864
+      },
+      "ms": 3289.7179590000014
+    },
+    {
+      "number": 37,
+      "name": "apple",
+      "source": "public/assets/game/logos/apple.svg",
+      "sourceSha256": "2a1509dccd25e6d2bc7a11a8e52941077e1a48555e192ce638699b9f083c2a7c",
+      "file": "apple.png",
+      "truth": "apple-truth.png",
+      "size": 96,
+      "background": "#ffffff",
+      "format": "png",
+      "width": 120,
+      "height": 120,
+      "applied": true,
+      "transformations": [
+        {
+          "type": "background-removal",
+          "applied": false,
+          "message": "The model mask could not safely preserve the logo details; original preserved.",
+          "reason": "foreground-loss"
+        }
+      ],
+      "ms": 1657.7485000000015,
+      "foregroundLoss": 0,
+      "remainingBackground": 1,
+      "canonicalPreserved": true,
+      "id": "fresh-apple",
+      "root": "test/fixtures/background-removal-independent",
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 960,
+      "rawMetrics": {
+        "foregroundLoss": 0.00680429411336492,
+        "remainingBackground": 0.0016879687071779113,
+        "edgeError": 0.1482075658546252,
+        "blackCompositeError": 0.005484252851467401
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.00005566760445169543,
+        "remainingBackground": 0,
+        "edgeError": 0,
+        "blackCompositeError": 0
+      }
+    },
+    {
+      "number": 38,
+      "name": "figma",
+      "source": "public/assets/game/logos/figma.svg",
+      "sourceSha256": "2f86fca501dfed321a62f28743f29d9dd738dac91668eac5260ab746d1ef8840",
+      "file": "figma.png",
+      "truth": "figma-truth.png",
+      "size": 160,
+      "background": "#edf1f6",
+      "format": "png",
+      "width": 200,
+      "height": 200,
+      "applied": true,
+      "transformations": [
+        {
+          "type": "background-removal",
+          "applied": false,
+          "message": "The model mask could not safely preserve the logo details; original preserved.",
+          "reason": "foreground-loss"
+        }
+      ],
+      "ms": 1845.6875419999997,
+      "foregroundLoss": 0,
+      "remainingBackground": 1,
+      "canonicalPreserved": true,
+      "id": "fresh-figma",
+      "root": "test/fixtures/background-removal-independent",
+      "reason": null,
+      "mattingReason": null,
+      "unresolvedPixels": 0,
+      "edgeCandidates": 3478,
+      "rawMetrics": {
+        "foregroundLoss": 0.01265150290885586,
+        "remainingBackground": 0.0032245622430868105,
+        "edgeError": 0.16030700785197718,
+        "blackCompositeError": 0.0077152346533384845
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.00014611613876319737,
+        "remainingBackground": 0,
+        "edgeError": 0.0017471752036652339,
+        "blackCompositeError": 0
+      }
+    },
+    {
+      "number": 39,
+      "name": "github",
+      "source": "public/assets/game/logos/github.svg",
+      "sourceSha256": "3bf8cceead820aec50d4ee825a3fd02c5a1cd6665cc9cf4cbf3d9c8861a204bb",
+      "file": "github.jpg",
+      "truth": "github-truth.png",
+      "size": 80,
+      "background": "#fff0cc",
+      "format": "jpeg",
+      "width": 100,
+      "height": 100,
+      "applied": false,
+      "transformations": [
+        {
+          "type": "background-removal",
+          "applied": false,
+          "message": "The model mask could not safely preserve the logo details; original preserved.",
+          "reason": "foreground-loss"
+        }
+      ],
+      "ms": 1684.699958000012,
+      "foregroundLoss": 0,
+      "remainingBackground": 1,
+      "canonicalPreserved": true,
+      "id": "fresh-github",
+      "root": "test/fixtures/background-removal-independent",
+      "reason": "edge-uncertain",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 321,
+      "edgeCandidates": 1334,
+      "rawMetrics": {
+        "foregroundLoss": 0.010645382199447394,
+        "remainingBackground": 0.0035031632790415864,
+        "edgeError": 0.12641591952766298,
+        "blackCompositeError": 0.012554475970780288
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0009004966900449446,
+        "remainingBackground": 0.0035171849059990054,
+        "edgeError": 0.06310226692907639,
+        "blackCompositeError": 0.0071515950275535724
+      }
+    },
+    {
+      "number": 40,
+      "name": "google",
+      "source": "public/assets/game/logos/google.svg",
+      "sourceSha256": "3baad412f5850097cc1a658d7042d23dff041c408c91f838072eaa23bbe8a27a",
+      "file": "google.png",
+      "truth": "google-truth.png",
+      "size": 240,
+      "background": "#ffffff",
+      "format": "png",
+      "width": 300,
+      "height": 300,
+      "applied": false,
+      "transformations": [
+        {
+          "type": "background-removal",
+          "applied": false,
+          "message": "The model mask could not safely preserve the logo details; original preserved.",
+          "reason": "background-retained"
+        }
+      ],
+      "ms": 1701.601582999996,
+      "foregroundLoss": 0,
+      "remainingBackground": 1,
+      "canonicalPreserved": true,
+      "id": "fresh-google",
+      "root": "test/fixtures/background-removal-independent",
+      "reason": "background-retained",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 5790,
+      "edgeCandidates": 10818,
+      "rawMetrics": {
+        "foregroundLoss": 0.0008807874790554908,
+        "remainingBackground": 0.10715608281724207,
+        "edgeError": 0.2753674821207079,
+        "blackCompositeError": 0.07632913728338098
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.000016377142188688042,
+        "remainingBackground": 0.08855307392737094,
+        "edgeError": 0.005594700868234223,
+        "blackCompositeError": 0.059191733151066774
+      }
+    },
+    {
+      "number": 41,
+      "name": "instagram",
+      "source": "public/assets/game/logos/instagram.svg",
+      "sourceSha256": "f53af2d1fc5292ba1433b5c1faf50005ce6a997fa302d1816989929f379a59dc",
+      "file": "instagram.jpg",
+      "truth": "instagram-truth.png",
+      "size": 32,
+      "background": "#edf1f6",
+      "format": "jpeg",
+      "width": 40,
+      "height": 40,
+      "applied": false,
+      "transformations": [
+        {
+          "type": "background-removal",
+          "applied": false,
+          "message": "The model mask could not safely preserve the logo details; original preserved.",
+          "reason": "foreground-loss"
+        }
+      ],
+      "ms": 1617.5101250000007,
+      "foregroundLoss": 0,
+      "remainingBackground": 1,
+      "canonicalPreserved": true,
+      "id": "fresh-instagram",
+      "root": "test/fixtures/background-removal-independent",
+      "reason": "foreground-loss",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 371,
+      "edgeCandidates": 595,
+      "rawMetrics": {
+        "foregroundLoss": 0.07709150326797375,
+        "remainingBackground": 0.008361222984854496,
+        "edgeError": 0.16544047013618166,
+        "blackCompositeError": 0.02696731064975018
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.05178104575163392,
+        "remainingBackground": 0.007071681131468976,
+        "edgeError": 0.09888681697462834,
+        "blackCompositeError": 0.020147196591054753
+      }
+    },
+    {
+      "number": 42,
+      "name": "notion",
+      "source": "public/assets/game/logos/notion.svg",
+      "sourceSha256": "b17d2a2b592a06252efef522d5205f0c7a958f748d40df1011ed081417e42f85",
+      "file": "notion.png",
+      "truth": "notion-truth.png",
+      "size": 128,
+      "background": "#ffffff",
+      "format": "png",
+      "width": 160,
+      "height": 160,
+      "applied": false,
+      "transformations": [
+        {
+          "type": "background-removal",
+          "applied": false,
+          "message": "The model mask could not safely preserve the logo details; original preserved.",
+          "reason": "foreground-loss"
+        }
+      ],
+      "ms": 1671.3142919999955,
+      "foregroundLoss": 0,
+      "remainingBackground": 1,
+      "canonicalPreserved": true,
+      "id": "fresh-notion",
+      "root": "test/fixtures/background-removal-independent",
+      "reason": "edge-uncertain",
+      "mattingReason": "edge-uncertain",
+      "unresolvedPixels": 2890,
+      "edgeCandidates": 8007,
+      "rawMetrics": {
+        "foregroundLoss": 0.014173891809357143,
+        "remainingBackground": 0.24327560849421384,
+        "edgeError": 0.3671447757185079,
+        "blackCompositeError": 0.18344379805840594
+      },
+      "refinedMetrics": {
+        "foregroundLoss": 0.0037079673801914234,
+        "remainingBackground": 0.15552129657080827,
+        "edgeError": 0.00017727639000805808,
+        "blackCompositeError": 0.1024685271289895
+      }
+    }
+  ]
+}

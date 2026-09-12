@@ -1,0 +1,425 @@
+{
+  "name": "birefnet-512",
+  "size": 512,
+  "tiled": true,
+  "tileCount": 2,
+  "trim": false,
+  "initMs": 720.17025,
+  "peakMiB": 2714.15625,
+  "osPeakMiB": 2788.390625,
+  "rows": [
+    {
+      "id": "s0-0-thin",
+      "split": "tuning",
+      "applied": true,
+      "reason": null,
+      "ms": 3375.8770000000004,
+      "rssMiB": 2588.296875,
+      "metrics": {
+        "foregroundLoss": 0.0001325344952795932,
+        "remainingBackground": 0,
+        "edgeError": 0.004414529711965353,
+        "blackCompositeError": 0.000064277353642982
+      }
+    },
+    {
+      "id": "s0-1-thin",
+      "split": "tuning",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 3158.8147500000005,
+      "rssMiB": 2588.015625,
+      "metrics": null
+    },
+    {
+      "id": "s0-2-thin",
+      "split": "tuning",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 3152.444375,
+      "rssMiB": 2591.34375,
+      "metrics": null
+    },
+    {
+      "id": "s1-0-dots",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 3145.656916,
+      "rssMiB": 2621.53125,
+      "metrics": null
+    },
+    {
+      "id": "s1-1-dots",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 3119.877458000001,
+      "rssMiB": 2631.921875,
+      "metrics": null
+    },
+    {
+      "id": "s1-2-dots",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 3127.9846660000003,
+      "rssMiB": 2624.0625,
+      "metrics": null
+    },
+    {
+      "id": "s2-0-white-detail",
+      "split": "tuning",
+      "applied": true,
+      "reason": null,
+      "ms": 1625.512584,
+      "rssMiB": 2235.015625,
+      "metrics": {
+        "foregroundLoss": 0.000007615982304430653,
+        "remainingBackground": 0,
+        "edgeError": 0.004798761609907112,
+        "blackCompositeError": 0.00005827846661540452
+      }
+    },
+    {
+      "id": "s2-1-white-detail",
+      "split": "tuning",
+      "applied": true,
+      "reason": null,
+      "ms": 1607.4825409999976,
+      "rssMiB": 2499.078125,
+      "metrics": {
+        "foregroundLoss": 0.000006953722973610597,
+        "remainingBackground": 0,
+        "edgeError": 0.004222566219470237,
+        "blackCompositeError": 0.000054738361848007344
+      }
+    },
+    {
+      "id": "s2-2-white-detail",
+      "split": "tuning",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "ms": 1681.1424590000024,
+      "rssMiB": 2512.296875,
+      "metrics": null
+    },
+    {
+      "id": "s3-0-gradient",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 1601.7128749999974,
+      "rssMiB": 2510.390625,
+      "metrics": {
+        "foregroundLoss": 0.00007247732161226952,
+        "remainingBackground": 0.000057484094206942744,
+        "edgeError": 0.008120125373569485,
+        "blackCompositeError": 0.0001777180359587935
+      }
+    },
+    {
+      "id": "s3-1-gradient",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 1612.295083000001,
+      "rssMiB": 2510.53125,
+      "metrics": {
+        "foregroundLoss": 0.0000748152997287944,
+        "remainingBackground": 0.000011534025374855823,
+        "edgeError": 0.0054012683140170405,
+        "blackCompositeError": 0.00009071062893681736
+      }
+    },
+    {
+      "id": "s3-2-gradient",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1562.8240420000002,
+      "rssMiB": 2518.390625,
+      "metrics": null
+    },
+    {
+      "id": "s4-0-tiny",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1581.2042910000018,
+      "rssMiB": 2000.3125,
+      "metrics": null
+    },
+    {
+      "id": "s4-1-tiny",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1594.650791,
+      "rssMiB": 2476.921875,
+      "metrics": null
+    },
+    {
+      "id": "s4-2-tiny",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1578.4645420000015,
+      "rssMiB": 2474.765625,
+      "metrics": null
+    },
+    {
+      "id": "s5-0-wide",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 3084.8557500000024,
+      "rssMiB": 2506.59375,
+      "metrics": null
+    },
+    {
+      "id": "s5-1-wide",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 3084.7214999999997,
+      "rssMiB": 2520.875,
+      "metrics": null
+    },
+    {
+      "id": "s5-2-wide",
+      "split": "heldout",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "ms": 3211.2269579999993,
+      "rssMiB": 2677.375,
+      "metrics": null
+    },
+    {
+      "id": "s6-0-outline",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1553.757375000001,
+      "rssMiB": 2688.375,
+      "metrics": null
+    },
+    {
+      "id": "s6-1-outline",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1546.8896250000034,
+      "rssMiB": 2698.578125,
+      "metrics": null
+    },
+    {
+      "id": "s6-2-outline",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1545.3039589999971,
+      "rssMiB": 2684.28125,
+      "metrics": null
+    },
+    {
+      "id": "s7-0-disconnected",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 1576.351125000001,
+      "rssMiB": 2690.390625,
+      "metrics": {
+        "foregroundLoss": 0.000049091801669121164,
+        "remainingBackground": 0,
+        "edgeError": 0.00481283422459892,
+        "blackCompositeError": 0.00004165863612230376
+      }
+    },
+    {
+      "id": "s7-1-disconnected",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 1586.8265000000029,
+      "rssMiB": 2497.171875,
+      "metrics": {
+        "foregroundLoss": 0.0000462040486297611,
+        "remainingBackground": 0,
+        "edgeError": 0.0044458425081262375,
+        "blackCompositeError": 0.00003960448112697238
+      }
+    },
+    {
+      "id": "s7-2-disconnected",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1560.5429169999989,
+      "rssMiB": 2618.890625,
+      "metrics": null
+    },
+    {
+      "id": "real-0",
+      "split": "tuning",
+      "applied": false,
+      "reason": "uncertain-background",
+      "ms": 3105.4817909999983,
+      "rssMiB": 2641.921875,
+      "metrics": null
+    },
+    {
+      "id": "real-1",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 3117.249917000001,
+      "rssMiB": 2635.03125,
+      "metrics": null
+    },
+    {
+      "id": "real-2",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1558.6052920000002,
+      "rssMiB": 2645.125,
+      "metrics": null
+    },
+    {
+      "id": "real-3",
+      "split": "heldout",
+      "applied": false,
+      "reason": "uncertain-background",
+      "ms": 3168.717083000003,
+      "rssMiB": 2617.21875,
+      "metrics": null
+    },
+    {
+      "id": "real-4",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1580.8133329999982,
+      "rssMiB": 2607.296875,
+      "metrics": null
+    },
+    {
+      "id": "real-5",
+      "split": "heldout",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "ms": 1565.681625000012,
+      "rssMiB": 2617.5,
+      "metrics": null
+    },
+    {
+      "id": "real-6",
+      "split": "tuning",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 3128.597041000001,
+      "rssMiB": 2618.484375,
+      "metrics": null
+    },
+    {
+      "id": "real-7",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 3192.111957999994,
+      "rssMiB": 2610.8125,
+      "metrics": null
+    },
+    {
+      "id": "dark-white",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 3095.448958000008,
+      "rssMiB": 2630.8125,
+      "metrics": null
+    },
+    {
+      "id": "low-contrast",
+      "split": "heldout",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "ms": 3091.239458000011,
+      "rssMiB": 2610.890625,
+      "metrics": null
+    },
+    {
+      "id": "shadow",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 3163.5202080000017,
+      "rssMiB": 2619.03125,
+      "metrics": null
+    },
+    {
+      "id": "full-bleed",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 3146.2190839999967,
+      "rssMiB": 2612.140625,
+      "metrics": null
+    },
+    {
+      "id": "fresh-apple",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1576.8280000000086,
+      "rssMiB": 2622.125,
+      "metrics": null
+    },
+    {
+      "id": "fresh-figma",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1564.03304200001,
+      "rssMiB": 2602.296875,
+      "metrics": null
+    },
+    {
+      "id": "fresh-github",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1554.3048750000016,
+      "rssMiB": 2612.359375,
+      "metrics": null
+    },
+    {
+      "id": "fresh-google",
+      "split": "fresh",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1617.1254590000026,
+      "rssMiB": 2600.40625,
+      "metrics": null
+    },
+    {
+      "id": "fresh-instagram",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1571.9950840000092,
+      "rssMiB": 2669.65625,
+      "metrics": null
+    },
+    {
+      "id": "fresh-notion",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1578.4462910000002,
+      "rssMiB": 2679.625,
+      "metrics": null
+    }
+  ]
+}

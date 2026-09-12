@@ -1,0 +1,290 @@
+[
+  {
+    "id": "s0-0-thin",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "ms": 7154.414,
+    "rssMB": 8396.625
+  },
+  {
+    "id": "s0-1-thin",
+    "split": "tuning",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 6973.912875,
+    "rssMB": 8414.484375
+  },
+  {
+    "id": "s0-2-thin",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 7025.205416999999,
+    "rssMB": 7448.515625
+  },
+  {
+    "id": "s1-0-dots",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "ms": 6987.135709000002,
+    "rssMB": 8388.5625
+  },
+  {
+    "id": "s1-1-dots",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 7007.916583000002,
+    "rssMB": 8390.6875
+  },
+  {
+    "id": "s1-2-dots",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 7165.135291999999,
+    "rssMB": 8134.390625
+  },
+  {
+    "id": "s2-0-white-detail",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "ms": 8357.243166,
+    "rssMB": 8547.84375
+  },
+  {
+    "id": "s2-1-white-detail",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "ms": 7140.2488749999975,
+    "rssMB": 8454.71875
+  },
+  {
+    "id": "s2-2-white-detail",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "ms": 7082.749833000002,
+    "rssMB": 8436.9375
+  },
+  {
+    "id": "s3-0-gradient",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "ms": 7086.918999999994,
+    "rssMB": 7775.765625
+  },
+  {
+    "id": "s3-1-gradient",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "ms": 7163.442708000002,
+    "rssMB": 6593.09375
+  },
+  {
+    "id": "s3-2-gradient",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "ms": 7048.109249999994,
+    "rssMB": 8356.46875
+  },
+  {
+    "id": "s4-0-tiny",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 6983.206916999989,
+    "rssMB": 8280.703125
+  },
+  {
+    "id": "s4-1-tiny",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 7020.448415999999,
+    "rssMB": 8373.1875
+  },
+  {
+    "id": "s4-2-tiny",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 7031.110625000001,
+    "rssMB": 8381.3125
+  },
+  {
+    "id": "s5-0-wide",
+    "split": "heldout",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 7020.426332999996,
+    "rssMB": 8406.796875
+  },
+  {
+    "id": "s5-1-wide",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 7057.2495419999905,
+    "rssMB": 8406.9375
+  },
+  {
+    "id": "s5-2-wide",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 7047.153332999995,
+    "rssMB": 8409.15625
+  },
+  {
+    "id": "s6-0-outline",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "ms": 7006.761582999985,
+    "rssMB": 8409.3125
+  },
+  {
+    "id": "s6-1-outline",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "ms": 7023.512541000004,
+    "rssMB": 8159.34375
+  },
+  {
+    "id": "s6-2-outline",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 7028.228625000018,
+    "rssMB": 8340.671875
+  },
+  {
+    "id": "s7-0-disconnected",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "ms": 6954.223457999993,
+    "rssMB": 8320.375
+  },
+  {
+    "id": "s7-1-disconnected",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "ms": 6945.510041000001,
+    "rssMB": 8342.5
+  },
+  {
+    "id": "s7-2-disconnected",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "ms": 6997.4130409999925,
+    "rssMB": 7374.421875
+  },
+  {
+    "id": "real-0",
+    "split": "tuning",
+    "applied": false,
+    "reason": "uncertain-background",
+    "ms": 6933.39833299999,
+    "rssMB": 8355.125
+  },
+  {
+    "id": "real-1",
+    "split": "heldout",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 6970.60704100001,
+    "rssMB": 8010.015625
+  },
+  {
+    "id": "real-2",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 7051.612458999996,
+    "rssMB": 7404.828125
+  },
+  {
+    "id": "real-3",
+    "split": "heldout",
+    "applied": false,
+    "reason": "uncertain-background",
+    "ms": 7048.306833999988,
+    "rssMB": 8429.703125
+  },
+  {
+    "id": "real-4",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 7022.595666999987,
+    "rssMB": 8409.875
+  },
+  {
+    "id": "real-5",
+    "split": "heldout",
+    "applied": false,
+    "reason": "unsafe-mask",
+    "ms": 7011.393415999977,
+    "rssMB": 7860
+  },
+  {
+    "id": "real-6",
+    "split": "tuning",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 6977.497249999986,
+    "rssMB": 8294.15625
+  },
+  {
+    "id": "real-7",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "ms": 6994.080457999982,
+    "rssMB": 8314.84375
+  },
+  {
+    "id": "dark-white",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 7319.912290999986,
+    "rssMB": 8231.359375
+  },
+  {
+    "id": "low-contrast",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 6994.7244580000115,
+    "rssMB": 8386.484375
+  },
+  {
+    "id": "shadow",
+    "split": "heldout",
+    "applied": false,
+    "reason": "foreground-loss",
+    "ms": 7011.098875000025,
+    "rssMB": 8376.296875
+  },
+  {
+    "id": "full-bleed",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "ms": 6866.827790999989,
+    "rssMB": 8085.75
+  }
+]

@@ -1,0 +1,315 @@
+[
+  {
+    "id": "s0-0-thin",
+    "reason": null,
+    "edgeCandidates": 3359,
+    "unresolved": 0,
+    "before": 0.012807140721212236,
+    "after": 0.00006425501791130429,
+    "foregroundLoss": 0.00013435003631082052
+  },
+  {
+    "id": "s0-1-thin",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 10408,
+    "unresolved": 6148,
+    "before": 0.16966910113936956,
+    "after": 0.13168549410178726,
+    "foregroundLoss": 0.0001470588235294116
+  },
+  {
+    "id": "s0-2-thin",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 3047,
+    "unresolved": 2252,
+    "before": 0.0132419955694696,
+    "after": 0.011202429468519466,
+    "foregroundLoss": 0.01332607116920839
+  },
+  {
+    "id": "s1-0-dots",
+    "reason": null,
+    "edgeCandidates": 2462,
+    "unresolved": 9,
+    "before": 0.014846921934108987,
+    "after": 0.0002206653661222423,
+    "foregroundLoss": 0.0006247597078046902
+  },
+  {
+    "id": "s1-1-dots",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 4095,
+    "unresolved": 1542,
+    "before": 0.06585293785391218,
+    "after": 0.048170128108371756,
+    "foregroundLoss": 0.00004036908881199524
+  },
+  {
+    "id": "s1-2-dots",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 3363,
+    "unresolved": 3214,
+    "before": 0.05546381458223603,
+    "after": 0.05409710719049211,
+    "foregroundLoss": 0.007522106881968451
+  },
+  {
+    "id": "s2-0-white-detail",
+    "reason": null,
+    "edgeCandidates": 1247,
+    "unresolved": 0,
+    "before": 0.0043935279299628155,
+    "after": 0.00005827846661540423,
+    "foregroundLoss": 0.000007615982304430653
+  },
+  {
+    "id": "s2-1-white-detail",
+    "reason": null,
+    "edgeCandidates": 1251,
+    "unresolved": 0,
+    "before": 0.003931623854607168,
+    "after": 0.00005473836184800706,
+    "foregroundLoss": 0.000006953722973610597
+  },
+  {
+    "id": "s2-2-white-detail",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 1157,
+    "unresolved": 652,
+    "before": 0.008355839901319996,
+    "after": 0.007572725233884394,
+    "foregroundLoss": 0.0014804807340482388
+  },
+  {
+    "id": "s3-0-gradient",
+    "reason": null,
+    "edgeCandidates": 1405,
+    "unresolved": 8,
+    "before": 0.005561105955970285,
+    "after": 0.00015603888614269243,
+    "foregroundLoss": 0.00007247732161226952
+  },
+  {
+    "id": "s3-1-gradient",
+    "reason": null,
+    "edgeCandidates": 1396,
+    "unresolved": 2,
+    "before": 0.004430617489513841,
+    "after": 0.0000896543550340672,
+    "foregroundLoss": 0.00007637395180647762
+  },
+  {
+    "id": "s3-2-gradient",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 1070,
+    "unresolved": 847,
+    "before": 0.009260766487537547,
+    "after": 0.00853344915537593,
+    "foregroundLoss": 0.002327846878019884
+  },
+  {
+    "id": "s4-0-tiny",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 179,
+    "unresolved": 79,
+    "before": 0.06528018069973086,
+    "after": 0.05937435922081251,
+    "foregroundLoss": 0.6247885428681275
+  },
+  {
+    "id": "s4-1-tiny",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 194,
+    "unresolved": 25,
+    "before": 0.05257562696238631,
+    "after": 0.04329100686434716,
+    "foregroundLoss": 0.41036139946174516
+  },
+  {
+    "id": "s4-2-tiny",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 178,
+    "unresolved": 71,
+    "before": 0.02281121844162502,
+    "after": 0.01860059332147895,
+    "foregroundLoss": 0.010592079969242591
+  },
+  {
+    "id": "s5-0-wide",
+    "reason": null,
+    "edgeCandidates": 5929,
+    "unresolved": 0,
+    "before": 0.016860110122480326,
+    "after": 0.0000768168836161904,
+    "foregroundLoss": 0.0003216197942364268
+  },
+  {
+    "id": "s5-1-wide",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 21908,
+    "unresolved": 13933,
+    "before": 0.28923901429852933,
+    "after": 0.22926692316143063,
+    "foregroundLoss": 0.00029969117190212506
+  },
+  {
+    "id": "s5-2-wide",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 50846,
+    "unresolved": 48061,
+    "before": 0.7620168711667847,
+    "after": 0.7475268151443838,
+    "foregroundLoss": 0.01056715945154077
+  },
+  {
+    "id": "s6-0-outline",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 2426,
+    "unresolved": 2332,
+    "before": 0.013339062059464397,
+    "after": 0.012831490612584972,
+    "foregroundLoss": 0.02249582003343966
+  },
+  {
+    "id": "s6-1-outline",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 2385,
+    "unresolved": 2292,
+    "before": 0.011695400166602529,
+    "after": 0.011236187844418726,
+    "foregroundLoss": 0.02367533059735515
+  },
+  {
+    "id": "s6-2-outline",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 2511,
+    "unresolved": 2511,
+    "before": 0.017612154780212934,
+    "after": 0.017612154780212934,
+    "foregroundLoss": 0.017327861377108927
+  },
+  {
+    "id": "s7-0-disconnected",
+    "reason": null,
+    "edgeCandidates": 1058,
+    "unresolved": 0,
+    "before": 0.004979559310355159,
+    "after": 0.00004165863612230385,
+    "foregroundLoss": 0.000049091801669121164
+  },
+  {
+    "id": "s7-1-disconnected",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 1082,
+    "unresolved": 40,
+    "before": 0.004303108361585817,
+    "after": 0.0001802643338975519,
+    "foregroundLoss": 0.0000462040486297611
+  },
+  {
+    "id": "s7-2-disconnected",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 792,
+    "unresolved": 515,
+    "before": 0.004947858049934168,
+    "after": 0.004252759261755801,
+    "foregroundLoss": 0.003375783303011922
+  },
+  {
+    "id": "real-0",
+    "reason": "uncertain-background",
+    "unresolved": 0,
+    "before": 0.04780217201259702,
+    "after": 0.04780217201259702,
+    "foregroundLoss": 0.012124656625935364
+  },
+  {
+    "id": "real-1",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 4287,
+    "unresolved": 4122,
+    "before": 0.017627662066340925,
+    "after": 0.017943011873169473,
+    "foregroundLoss": 0.025315257827727266
+  },
+  {
+    "id": "real-2",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 815,
+    "unresolved": 238,
+    "before": 0.31099062535798444,
+    "after": 0.3074714029739869,
+    "foregroundLoss": 0.4122110571675855
+  },
+  {
+    "id": "real-3",
+    "reason": "uncertain-background",
+    "unresolved": 0,
+    "before": 0.061979970191901615,
+    "after": 0.061979970191901615,
+    "foregroundLoss": 0.0001779582076271771
+  },
+  {
+    "id": "real-4",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 1903,
+    "unresolved": 320,
+    "before": 0.18770284953781838,
+    "after": 0.17848314606277724,
+    "foregroundLoss": 0.7149483179853486
+  },
+  {
+    "id": "real-5",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 320,
+    "unresolved": 320,
+    "before": 0.45789182371452647,
+    "after": 0.45789182371452647,
+    "foregroundLoss": 0.9938208626131327
+  },
+  {
+    "id": "real-6",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 11214,
+    "unresolved": 1479,
+    "before": 0.05128459548950868,
+    "after": 0.012017336285884887,
+    "foregroundLoss": 0.0010658216909117059
+  },
+  {
+    "id": "dark-white",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 15023,
+    "unresolved": 11475,
+    "before": 0.038752974496988536,
+    "after": 0.033682885727711796,
+    "foregroundLoss": 0.010638322427264016
+  },
+  {
+    "id": "low-contrast",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 3493,
+    "unresolved": 3493,
+    "before": 0.036749304626426345,
+    "after": 0.036749304626426345,
+    "foregroundLoss": 0.007755471786330011
+  },
+  {
+    "id": "shadow",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 469,
+    "unresolved": 12,
+    "before": 0.003616848049895483,
+    "after": 0.0024967656884104903,
+    "foregroundLoss": 0.00034868113912231517
+  },
+  {
+    "id": "full-bleed",
+    "reason": "edge-uncertain",
+    "edgeCandidates": 16045,
+    "unresolved": 12565,
+    "before": 0.16440217147251093,
+    "after": 0.17023439890640363,
+    "foregroundLoss": 0.491398431372549
+  }
+]

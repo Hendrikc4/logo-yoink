@@ -1,0 +1,463 @@
+{
+  "reviewer": "independent-fresh18",
+  "phase": "Initial production pass before final interior safety fix",
+  "scope": "Frozen unseen18 inputs. No inference or pipeline edits by reviewer. Minor speckles/halos accepted as practical artifacts; lost white details or filled counters classified major.",
+  "counts": {
+    "cases": 18,
+    "clean": 5,
+    "usableWithMinorArtifacts": 10,
+    "majorStructuralFailures": 3
+  },
+  "rows": [
+    {
+      "number": 1,
+      "id": "v2-v2-tiktok-white",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.00006725891881288013,
+        "remainingBackground": 0,
+        "blackCompositeError": 0
+      },
+      "returnedSha256": "7aec818f0f4cd7b6e0ec4bf5dd896abe4096a98252dc33d78958e5face63f2b3",
+      "severity": "pass",
+      "verdict": "pass",
+      "notes": "Silhouette, narrow joint and opening preserved. No visible halo on white, black or checkerboard.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/1-4x.png"
+    },
+    {
+      "number": 2,
+      "id": "v2-v2-tiktok-yellow-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.000609066875916635,
+        "remainingBackground": 0.007670333937078262,
+        "blackCompositeError": 0.008947942193551939
+      },
+      "returnedSha256": "dbba0fce7478bf2e0ff30aae084fcfc4218713660a516f01175eee2e8d0c3916",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "Silhouette intact. Sparse yellow JPEG speckles near edges are visible on black and at4x; no lost logo structure.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/2-4x.png"
+    },
+    {
+      "number": 3,
+      "id": "v2-v2-youtube-gray",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.000014957975824816304,
+        "remainingBackground": 0,
+        "blackCompositeError": 0
+      },
+      "returnedSha256": "af1858a210b2dc252cdfbf8ec9c364de3e799c97049efbcaae860c82286a6ab5",
+      "severity": "pass",
+      "verdict": "pass",
+      "notes": "YouTube rounded silhouette and transparent triangle match reference.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/3-4x.png"
+    },
+    {
+      "number": 4,
+      "id": "v2-v2-youtube-white-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.0001949694779924331,
+        "remainingBackground": 0.02890129858618091,
+        "blackCompositeError": 0.021469059284677378
+      },
+      "returnedSha256": "e7c6584454c239275e4ddf1ee878e491ea07a2e4d5d4873746fcd1d7f25d1815",
+      "severity": "major",
+      "verdict": "reject-structural",
+      "notes": "Opaque white playtriangle remains, but knownalpha reference triangle is transparent. Structural counter-fill error, visible on black/checkerboard.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/4-4x.png"
+    },
+    {
+      "number": 5,
+      "id": "v2-v2-pinterest-white",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.00010862412089785372,
+        "remainingBackground": 0,
+        "blackCompositeError": 0
+      },
+      "returnedSha256": "34a117db0169449c4c571ce5843f791d245dc9267f769cc7e04bc87306951abf",
+      "severity": "pass",
+      "verdict": "pass",
+      "notes": "Pinterest curves and transparent interior shape preserved cleanly.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/5-4x.png"
+    },
+    {
+      "number": 6,
+      "id": "v2-v2-pinterest-yellow-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.0005970362265407564,
+        "remainingBackground": 0.01651688346421112,
+        "blackCompositeError": 0.01622033070414226
+      },
+      "returnedSha256": "4af32bb2d59c28b695675cd7fe237dc3b88f875ede81d40025d5a93f8c2c79bb",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "Pinterest geometry preserved; scattered yellow speckles around inner/outer contours on black at4x.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/6-4x.png"
+    },
+    {
+      "number": 7,
+      "id": "v2-v2-spotify-gray",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.000054340442874609366,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00023342670401493932
+      },
+      "returnedSha256": "a1e415a508017a48c21294d941655752a969657fe24527cdff3eac3459cfbac6",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "Tiny Spotify circle and all three openings preserved. Two small gray residue pixels visible on black at4x.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/7-4x.png"
+    },
+    {
+      "number": 8,
+      "id": "v2-v2-spotify-white-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.0022777702304940433,
+        "remainingBackground": 0.0039939668174962285,
+        "blackCompositeError": 0.004852401745011733
+      },
+      "returnedSha256": "937eba0afc1c5767b52d4e6b5a9ca306f86995c4447478ace081e4b361bdb750",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "Spotify openings and circle recognizable. Sparse white JPEG speckles around circumference and slightly irregular interior edges.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/8-4x.png"
+    },
+    {
+      "number": 9,
+      "id": "v2-v2-x-white",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.00036700274221150065,
+        "remainingBackground": 0,
+        "blackCompositeError": 0
+      },
+      "returnedSha256": "874e98e31f1d9780265a945c9871e6bf8410f313ebd1d43bb3c5c910bad06879",
+      "severity": "pass",
+      "verdict": "pass",
+      "notes": "Both diagonal strokes and narrow transparent channel preserved without visible new damage.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/9-4x.png"
+    },
+    {
+      "number": 10,
+      "id": "v2-v2-x-yellow-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.0012783241582647758,
+        "remainingBackground": 0.016313953646974515,
+        "blackCompositeError": 0.01895119829033858
+      },
+      "returnedSha256": "6c07d59d6d99a1191d3859c3a4ae87c1a215b46c1f43ac1c59f8d97e0b40eb84",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "X geometry preserved. Yellow JPEG speckles in/around diagonal channel visible on black, mild at native size.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/10-4x.png"
+    },
+    {
+      "number": 11,
+      "id": "v2-v2-curiominds-gray",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.00011075496967781719,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00014796319909738014
+      },
+      "returnedSha256": "b78ef4eb886a7e209f5f76dca06a9394e2b076667aafa900ab59c34db53d78e2",
+      "severity": "pass",
+      "verdict": "pass",
+      "notes": "Curiominds letters, detached dots and white brain interior preserved. Clean transparent counters.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/11-4x.png"
+    },
+    {
+      "number": 12,
+      "id": "v2-v2-curiominds-white-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.004724542157615148,
+        "remainingBackground": 0.004366718556562032,
+        "blackCompositeError": 0.014320483607679508
+      },
+      "returnedSha256": "d9f80c79057a167d50704970cd07ce12e8401b1d8f5b0b6e7ece868bb042890f",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "All lettering, dots and brain detail preserved. Pale speckles surround strokes and appear in d counter on black; visible mainly at4x.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/12-4x.png"
+    },
+    {
+      "number": 13,
+      "id": "v2-v2-keyes-white",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.00009906092024485368,
+        "remainingBackground": 0.00020334502567230948,
+        "blackCompositeError": 0.0010128702025472647
+      },
+      "returnedSha256": "2d9387d548d09f7ef20f5be99480810e8f2e1f4dab07629c3b70f8d808d0f99b",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "Script wordmark geometry preserved. Registered symbol acquires pale halo; symbol remains legible and main lettering clean.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/13-4x.png"
+    },
+    {
+      "number": 14,
+      "id": "v2-v2-keyes-yellow-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-cpu",
+      "metrics": {
+        "foregroundLoss": 0.012518990378208451,
+        "remainingBackground": 0.004642546358180332,
+        "blackCompositeError": 0.01242629666245416
+      },
+      "returnedSha256": "932775398d87b2b8edaff49ae1e8484c71e1d8206cff2d7cee86f009320b0abb",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "Script lettering and registered mark preserved, with fine yellow/gray outline contamination on black and slight JPEG texture.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/14-4x.png"
+    },
+    {
+      "number": 15,
+      "id": "v2-v2-avvitell-gray",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.0005139391183457315,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.004279880846242946
+      },
+      "returnedSha256": "9bca67a7adc5feea326a776189c9f1467930fc03d65391d462682a169ac44849",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "White emblem and main lettering preserved. ELEKTRO thin subline has conspicuous pale edge outline on black; small lettering remains fully legible, no erasure.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/15-4x.png"
+    },
+    {
+      "number": 16,
+      "id": "v2-v2-avvitell-white-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.22180143950320722,
+        "remainingBackground": 0.0021803350379751363,
+        "blackCompositeError": 0.03977265373947809
+      },
+      "returnedSha256": "ff7385643b4d3b4777bba78fc2493cc64a40280bda48f1816e658ae7617976a8",
+      "severity": "major",
+      "verdict": "reject-structural",
+      "notes": "White emblem interior erased into transparency, unlike opaque white reference. Also subline halo and JPEG speckles. Structural foreground loss.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/16-4x.png"
+    },
+    {
+      "number": 17,
+      "id": "v2-v2-curiominds-white-dark",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.00018081658163636102,
+        "remainingBackground": 0.0066887438932424015,
+        "blackCompositeError": 0.0010826765264636512
+      },
+      "returnedSha256": "3cd85aa37529d4d4aa6293e668d1c60c7e8f355816dd45d297dea7745744f558",
+      "severity": "major",
+      "verdict": "reject-structural",
+      "notes": "White lettering/dots preserved but d counter retains a solid dark-background disk. Large visible residue on white/checkerboard.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/17-4x.png"
+    },
+    {
+      "number": 18,
+      "id": "v2-v2-curiominds-white-dark-jpeg",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "metrics": {
+        "foregroundLoss": 0.0024296864780011273,
+        "remainingBackground": 0.011356849372753462,
+        "blackCompositeError": 0.006545387672719942
+      },
+      "returnedSha256": "f695d1bb0210013612e994b45107a25b2dbc96a844de2b1054a8500bd426bed3",
+      "severity": "minor",
+      "verdict": "usable-with-minor-artifacts",
+      "notes": "White wordmark, dots and brain remain intact; d counter transparent. Dark JPEG speckles visible around lettering on white and at4x.",
+      "views": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-v2/fresh-visual/18-4x.png"
+    }
+  ]
+}

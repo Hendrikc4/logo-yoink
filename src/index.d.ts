@@ -29,7 +29,7 @@ export interface YoinkOptions {
   linkedinFallback?: boolean;
   /** Optional canonical https://www.linkedin.com/company/... URL. */
   linkedinCompanyUrl?: string;
-  /** Remove a uniform raster background when the confidence checks pass. Default: false. */
+  /** Optional local background removal. Reuses a verified transparent family variant when available; otherwise requires `logo-yoink setup-background-removal`. Default: false. Originals are preserved; model processing may make one bounded retry. */
   removeBackground?: boolean;
   /** Upscale small raster selections by a factor or toward target dimensions. Vectors remain unchanged. */
   upscale?: number | { width?: number; height?: number; factor?: number };

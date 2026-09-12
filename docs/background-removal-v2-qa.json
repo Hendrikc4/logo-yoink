@@ -1,0 +1,263 @@
+{
+  "review": "Independent visual review of frozen first 28/42 candidate; not a final approval",
+  "date": "2026-09-11",
+  "baseline": "docs/background-removal-quality/all-42-worker-results.json",
+  "scope": "All 18 newly accepted outputs relative to previous 10/42 worker run",
+  "method": "Actual returned files snapshotted and compared with known-alpha reference (source RGB for real-7), on black/checkerboard at native size and 4x nearest-neighbor. Large panels displayed scaled by image viewer; original panels retained.",
+  "summary": {
+    "pass": 6,
+    "minor-artifacts": 5,
+    "structural-failure": 5,
+    "visible-artifact-failure": 2
+  },
+  "rows": [
+    {
+      "number": 2,
+      "id": "s0-1-thin",
+      "verdict": "pass",
+      "note": "Thin minimum lettering and both detached dots are preserved; background cleared cleanly.",
+      "returnedSha256": "1735dd1398af25c7d8e4afa1a454dad310cfa121178b19784f855b2091ccf1cb",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0001325344952795932,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s0-1-thin-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s0-1-thin-4x.png"
+    },
+    {
+      "number": 4,
+      "id": "s1-0-dots",
+      "verdict": "pass",
+      "note": "All detached j/i dots, punctuation, descenders, and o counter are preserved.",
+      "returnedSha256": "39bc5b76c1809d63e065b05e42fa934732d691ec795c6c131c354501cdab33d4",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0000595924644367551,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s1-0-dots-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s1-0-dots-4x.png"
+    },
+    {
+      "number": 5,
+      "id": "s1-1-dots",
+      "verdict": "pass",
+      "note": "All detached j/i dots, punctuation, descenders, and o counter are preserved on pale-gray source.",
+      "returnedSha256": "7986dcb6d6c1819f264d699700e398cd86e450f77ce1747bc7c1f0759b6297d7",
+      "metrics": {
+        "foregroundAlphaLoss": 0.00004036908881199524,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s1-1-dots-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s1-1-dots-4x.png"
+    },
+    {
+      "number": 9,
+      "id": "s2-2-white-detail",
+      "verdict": "minor-artifacts",
+      "note": "White T remains opaque and complete. JPEG edge specks and a pale fringe remain around the circle, most apparent on black at 4x.",
+      "returnedSha256": "e6564a962d77d6d4b42a22be7db164d0346a3f1968ffc0ca6566313d999c43a6",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0006245105489633145,
+        "remainingBackgroundAlpha": 0.009504210092445392,
+        "whiteDetailAlphaLoss": 0
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s2-2-white-detail-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s2-2-white-detail-4x.png"
+    },
+    {
+      "number": 13,
+      "id": "s4-0-tiny",
+      "verdict": "structural-failure",
+      "note": "Most of the intentional opaque white checkmark is made transparent. The mark looks black on black composite and checkerboard shows through it.",
+      "returnedSha256": "1b2ca212d7779b7cdc131c75e04121fbe3eeab7ffe11fddf26c67e17721f2556",
+      "metrics": {
+        "foregroundAlphaLoss": 0.07547097270280662,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": 0.6842105263157895
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s4-0-tiny-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s4-0-tiny-4x.png"
+    },
+    {
+      "number": 14,
+      "id": "s4-1-tiny",
+      "verdict": "pass",
+      "note": "The full white checkmark and green disc remain intact.",
+      "returnedSha256": "e5964a22eb2ab84d22c9b8ad4168af7b04d263b49a6c6a9eefed2c1c009de2a4",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0002402921953094955,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": 0
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s4-1-tiny-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s4-1-tiny-4x.png"
+    },
+    {
+      "number": 15,
+      "id": "s4-2-tiny",
+      "verdict": "minor-artifacts",
+      "note": "White checkmark remains recognizable and complete; JPEG texture, color unevenness, and soft edge noise remain on the tiny green disc.",
+      "returnedSha256": "06a8129a1f4e122b47de3499ac24358f131cc84d49b2e73d09b00d2e867ec73b",
+      "metrics": {
+        "foregroundAlphaLoss": 0.010966935793925412,
+        "remainingBackgroundAlpha": 0.00317356572258533,
+        "whiteDetailAlphaLoss": 0
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s4-2-tiny-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s4-2-tiny-4x.png"
+    },
+    {
+      "number": 17,
+      "id": "s5-1-wide",
+      "verdict": "structural-failure",
+      "note": "Pale-gray source background is retained inside O and several R/A counters while other counters are cleared. Visible inconsistent opaque letter interiors.",
+      "returnedSha256": "8d7f8dbaa1bcc0ecb21338a40f05d045379de7c5c9424cfcaf2ab126015dc94f",
+      "metrics": {
+        "foregroundAlphaLoss": 0.00018030200585981507,
+        "remainingBackgroundAlpha": 0.01506416584402764,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s5-1-wide-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s5-1-wide-4x.png"
+    },
+    {
+      "number": 24,
+      "id": "s7-2-disconnected",
+      "verdict": "visible-artifact-failure",
+      "note": "All four dots survive, but obvious bright near-white halos surround blue/purple/green dots and bright specks surround orange. Visible at native size on black.",
+      "returnedSha256": "7a9541249d34206acdf1c5d01fadf9ee18a9b564631f7df1c918b1914c772623",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0026148603771405455,
+        "remainingBackgroundAlpha": 0.0125914523825678,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/s7-2-disconnected-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/s7-2-disconnected-4x.png"
+    },
+    {
+      "number": 29,
+      "id": "real-4",
+      "verdict": "minor-artifacts",
+      "note": "Blue panel, white dandelion, stem, and Koteng text remain intact. Text-edge pale specks are visible on black; structure is legible on checkerboard.",
+      "returnedSha256": "c0bde8f372d2579dd396659b1ac39ebeb776533dd54bc3d892776f23ad9cf5d7",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0009137797824134979,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": 0.004501394237153101
+      },
+      "nativePanel": "runs/background-removal-v2-qa/real-4-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/real-4-4x.png"
+    },
+    {
+      "number": 31,
+      "id": "real-6",
+      "verdict": "minor-artifacts",
+      "note": "Both logos and small taglines remain readable. Thin flame cutouts and the left tagline retain conspicuous pale fringing on black.",
+      "returnedSha256": "0a0d5f722e793fe13b3ac1b990e7d932b6766335ff06acc24923a64853cafc23",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0012203008814068578,
+        "remainingBackgroundAlpha": 0.000971748198710656,
+        "whiteDetailAlphaLoss": 0
+      },
+      "nativePanel": "runs/background-removal-v2-qa/real-6-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/real-6-4x.png"
+    },
+    {
+      "number": 32,
+      "id": "real-7",
+      "verdict": "structural-failure",
+      "note": "The right half of the intentional white symbol inside the green tile becomes transparent. TradeBridge and tagline remain present but have pale speckled edges. No alpha truth exists; comparison uses source RGB.",
+      "returnedSha256": "4937eb76fe1f79924c3af9e1c521fd7e59f41b6439ef24a0ca2c304dd179ae96",
+      "metrics": null,
+      "nativePanel": "runs/background-removal-v2-qa/real-7-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/real-7-4x.png"
+    },
+    {
+      "number": 33,
+      "id": "dark-white",
+      "verdict": "pass",
+      "note": "White white.io lettering, dot, and counters survive while the dark background is removed.",
+      "returnedSha256": "435ff816bd52c772c78d0c2a5aebf505a3d6c7c0e95174b0c7031e17a98c6155",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0002423570958695427,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": 0.0002423570958695427
+      },
+      "nativePanel": "runs/background-removal-v2-qa/dark-white-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/dark-white-4x.png"
+    },
+    {
+      "number": 35,
+      "id": "shadow",
+      "verdict": "visible-artifact-failure",
+      "note": "The original soft dark shadow becomes an obvious pale-white drop shadow. This is a large compositing color error, not just isolated JPEG specks.",
+      "returnedSha256": "7886e68c7a59afb32c789b8e6381bfd67cf0e81e2e045a412cf1931de6c201a5",
+      "metrics": {
+        "foregroundAlphaLoss": 0,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/shadow-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/shadow-4x.png"
+    },
+    {
+      "number": 36,
+      "id": "full-bleed",
+      "verdict": "structural-failure",
+      "note": "Opaque blue brand panel from the supplied alpha reference is removed, yet blue is inconsistently retained inside the upper B counter. Even if panel removal were intended, the remaining blue counter is a defect.",
+      "returnedSha256": "e674f2e5f4a5776dded6e2aa3a75b26a67cc8d047fa18d267c16090783329eb5",
+      "metrics": {
+        "foregroundAlphaLoss": 0.90241346405229,
+        "remainingBackgroundAlpha": null,
+        "whiteDetailAlphaLoss": 0.0010886428778037792
+      },
+      "nativePanel": "runs/background-removal-v2-qa/full-bleed-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/full-bleed-4x.png"
+    },
+    {
+      "number": 39,
+      "id": "fresh-github",
+      "verdict": "minor-artifacts",
+      "note": "Octocat/circle silhouette remains intact, with sparse bright JPEG edge specks on black.",
+      "returnedSha256": "7df65bada9f521288a7d5d231a65d6f17acb6efa39278d02472cb7d0d8b888b6",
+      "metrics": {
+        "foregroundAlphaLoss": 0.0008516935477522989,
+        "remainingBackgroundAlpha": 0.02145421097500786,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/fresh-github-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/fresh-github-4x.png"
+    },
+    {
+      "number": 40,
+      "id": "fresh-google",
+      "verdict": "pass",
+      "note": "All four color segments are intact, and the G interior/background is cleared without the previous white blob.",
+      "returnedSha256": "6ef33384294e15130d78ad2519a5becdc198c6d4e0590b5c166f53d78c555e74",
+      "metrics": {
+        "foregroundAlphaLoss": 0.000012248450880615423,
+        "remainingBackgroundAlpha": 0,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/fresh-google-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/fresh-google-4x.png"
+    },
+    {
+      "number": 42,
+      "id": "fresh-notion",
+      "verdict": "structural-failure",
+      "note": "The front face around N is made opaque white while alpha reference has transparent negative space; top face is transparent. Letter remains intact but background removal is inconsistent.",
+      "returnedSha256": "b50430689eddcae1092c78b927c07c3988aa8aa4743d9ab5c9b3222b79274204",
+      "metrics": {
+        "foregroundAlphaLoss": 0.000023614208239748624,
+        "remainingBackgroundAlpha": 0.2891194782093092,
+        "whiteDetailAlphaLoss": null
+      },
+      "nativePanel": "runs/background-removal-v2-qa/fresh-notion-1x.png",
+      "fourTimesPanel": "runs/background-removal-v2-qa/fresh-notion-4x.png"
+    }
+  ]
+}

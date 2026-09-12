@@ -1,0 +1,751 @@
+{
+  "date": "2026-09-11",
+  "source": "runs/background-removal-v2/results.json",
+  "scope": "Original 42 cases from final real-worker 60-case run; all21accepted visually rechecked; all21retained pixel-verified",
+  "method": "Actual returned files copied and hashed, compared with known-alpha references on black/checkerboard/white at native size and 4x nearest-neighbor. All panels viewed; large panels automatically scaled by image viewer. Original generated panels retained.",
+  "summary": {
+    "pass": 16,
+    "original-retained": 21,
+    "minor-artifacts-acceptable": 4,
+    "ambiguous-brand-background": 1
+  },
+  "majorVisibleArtifactFailures": 0,
+  "caveat": "full-bleed is a semantic brand-background ambiguity and does not match its known-alpha reference; do not count it as a reference-quality pass.",
+  "rows": [
+    {
+      "number": 1,
+      "id": "s0-0-thin",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Thin letters and detached dots remain complete; no visible halo or missing strokes.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "f0faca7ee151a75575f761ac7b4f504e9fda73be6acc22084d8ed9991e589889",
+      "metrics": {
+        "foregroundLoss": 0.0001325344952795932,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00006849416890939381
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s0-0-thin-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s0-0-thin-4x.png"
+      }
+    },
+    {
+      "number": 2,
+      "id": "s0-1-thin",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Thin letters and detached dots remain complete; pale-gray background clears cleanly.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "1735dd1398af25c7d8e4afa1a454dad310cfa121178b19784f855b2091ccf1cb",
+      "metrics": {
+        "foregroundLoss": 0.0001325344952795932,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00006975925010527074
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s0-1-thin-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s0-1-thin-4x.png"
+      }
+    },
+    {
+      "number": 3,
+      "id": "s0-2-thin",
+      "applied": false,
+      "reason": "background-retained",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "2c44fe26a05afdb41066e584fea9b64d0997b9c36bcead6a3a3e899557ef537e",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 4,
+      "id": "s1-0-dots",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "All j/i dots, descenders, punctuation, and o counter are preserved.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "39bc5b76c1809d63e065b05e42fa934732d691ec795c6c131c354501cdab33d4",
+      "metrics": {
+        "foregroundLoss": 0.0000595924644367551,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00018311114908321207
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s1-0-dots-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s1-0-dots-4x.png"
+      }
+    },
+    {
+      "number": 5,
+      "id": "s1-1-dots",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "All j/i dots, descenders, punctuation, and o counter are preserved on pale-gray source.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "7986dcb6d6c1819f264d699700e398cd86e450f77ce1747bc7c1f0759b6297d7",
+      "metrics": {
+        "foregroundLoss": 0.00004036908881199524,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00017267622614284205
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s1-1-dots-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s1-1-dots-4x.png"
+      }
+    },
+    {
+      "number": 6,
+      "id": "s1-2-dots",
+      "applied": false,
+      "reason": "background-retained",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "78c086fb7d2a70cc0b8cba8f9dd5d8540994875a18c29ad722633f4bd5ebd1b3",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 7,
+      "id": "s2-0-white-detail",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Opaque white T is preserved; circle edge remains clean.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "21606b531d0de68d2a305e6d486ae3ede642da4ea4d6fae7b895de1d94e59f3e",
+      "metrics": {
+        "foregroundLoss": 0.000007615982304430653,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00009221593457644478
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s2-0-white-detail-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s2-0-white-detail-4x.png"
+      }
+    },
+    {
+      "number": 8,
+      "id": "s2-1-white-detail",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Opaque white T is preserved; circle edge remains clean.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "8b7e0e9dcd9df6c1b2bafe44617c01dcee9b26511cd839a1108626abba632fe3",
+      "metrics": {
+        "foregroundLoss": 0.000006953722973610597,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.0000956208749839804
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s2-1-white-detail-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s2-1-white-detail-4x.png"
+      }
+    },
+    {
+      "number": 9,
+      "id": "s2-2-white-detail",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-cpu",
+      "attempts": 1,
+      "verdict": "minor-artifacts-acceptable",
+      "note": "White T remains complete and opaque. Mild JPEG texture and soft red edge remain; prior bright edge specks are substantially reduced.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "921cb2b846bf314440e0d877b897113b36b3c4264d19c640fb43960b99b20eba",
+      "metrics": {
+        "foregroundLoss": 0.0018443922363338612,
+        "remainingBackground": 0.0016030736618971874,
+        "blackCompositeError": 0.007203995458476789
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s2-2-white-detail-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s2-2-white-detail-4x.png"
+      }
+    },
+    {
+      "number": 10,
+      "id": "s3-0-gradient",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Gradient colors and all three points remain intact; no visible edge halo.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "7176ab9f7303cbc728436664ad6568f262d54700e9205e2e498276007a58df77",
+      "metrics": {
+        "foregroundLoss": 0.00007247732161226952,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00018085409602437455
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s3-0-gradient-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s3-0-gradient-4x.png"
+      }
+    },
+    {
+      "number": 11,
+      "id": "s3-1-gradient",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Gradient colors and all three points remain intact on pale-gray source.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "57933faa2526c75684f024c62294bd109b57c9d1a23d8bf97b218cc4e2a708a5",
+      "metrics": {
+        "foregroundLoss": 0.00007637395180647762,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00014608243022011012
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s3-1-gradient-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s3-1-gradient-4x.png"
+      }
+    },
+    {
+      "number": 12,
+      "id": "s3-2-gradient",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "19b2cc9e159a34481a5d1c3d8df2172ceeec92b0af055779ac012b18760d5d14",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 13,
+      "id": "s4-0-tiny",
+      "applied": false,
+      "reason": "interior-detail-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "f43cbf05423c343650fc22947c725c92204bf781d757c5c2f422306dec606dfa",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 14,
+      "id": "s4-1-tiny",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Green disc and complete white checkmark remain intact.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "e5964a22eb2ab84d22c9b8ad4168af7b04d263b49a6c6a9eefed2c1c009de2a4",
+      "metrics": {
+        "foregroundLoss": 0.0002402921953094955,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.0001492214532871972
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s4-1-tiny-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s4-1-tiny-4x.png"
+      }
+    },
+    {
+      "number": 15,
+      "id": "s4-2-tiny",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-cpu",
+      "attempts": 1,
+      "verdict": "minor-artifacts-acceptable",
+      "note": "White checkmark is intact. JPEG texture and soft uneven green edge are visible at 4x; acceptable under minor-artifact tolerance.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "06a8129a1f4e122b47de3499ac24358f131cc84d49b2e73d09b00d2e867ec73b",
+      "metrics": {
+        "foregroundLoss": 0.010966935793925412,
+        "remainingBackground": 0.00317356572258533,
+        "blackCompositeError": 0.017501561899269675
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s4-2-tiny-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s4-2-tiny-4x.png"
+      }
+    },
+    {
+      "number": 16,
+      "id": "s5-0-wide",
+      "applied": false,
+      "reason": "interior-detail-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "9007f6b0830c41df83e4064b6c7880df4a1649f511634bd6826d6c4a7ed45312",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 17,
+      "id": "s5-1-wide",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 2,
+      "verdict": "pass",
+      "note": "Retry restores clean NORTH STAR LABS letters; all O/R/A/B counters clear consistently, unlike first candidate.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "97fb7a701e6722b5a6998ff425eb6a4cca4468e65e5fb92e14f17fd728a934f4",
+      "metrics": {
+        "foregroundLoss": 0.00020344888499046707,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00007342505629702838
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s5-1-wide-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s5-1-wide-4x.png"
+      }
+    },
+    {
+      "number": 18,
+      "id": "s5-2-wide",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "dd0c64989b6699a62e11212566c75e3206ce4705b99d9d05317adb7cbdf903f6",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 19,
+      "id": "s6-0-outline",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "19055de247d1c093dfae0803ad96b1f622fa8c30e78b945e96e5b564dd672b67",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 20,
+      "id": "s6-1-outline",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "f5324fa42639bd50575ed84623fc4a59bd337510d592d6c9368c77ed4aa76180",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 21,
+      "id": "s6-2-outline",
+      "applied": false,
+      "reason": "foreground-loss",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "f3a765b64783f41508c20a9f76dd310859cf997327c841a401502ba23823c806",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 22,
+      "id": "s7-0-disconnected",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "All four colored dots remain intact, including the smallest green dot.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "6685ab4b4427eea724b48628ffa5d34303edc65ca95c2de2f86cc52b38f14b0e",
+      "metrics": {
+        "foregroundLoss": 0.000049091801669121164,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.000057131040176022684
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s7-0-disconnected-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s7-0-disconnected-4x.png"
+      }
+    },
+    {
+      "number": 23,
+      "id": "s7-1-disconnected",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "All four colored dots remain intact on pale-gray source.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "f680b368be803b87892caba9670e6df4b69a1953b99e4683f1fc26ff02c41fa1",
+      "metrics": {
+        "foregroundLoss": 0.0000462040486297611,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00005663106597362642
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/s7-1-disconnected-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/s7-1-disconnected-4x.png"
+      }
+    },
+    {
+      "number": 24,
+      "id": "s7-2-disconnected",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "8c16c3c1f12393d894352bc5b0ad3a87740ae5b829bdd6093acb26ede4d45d74",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 25,
+      "id": "real-0",
+      "applied": false,
+      "reason": "uncertain-background",
+      "method": null,
+      "attempts": 1,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "ecd06bdb5b692e1f11a92dfec789673f17e9999347a60af53413de3c27a900f1",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 26,
+      "id": "real-1",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "f7cc554cd8ee18a990539ba0f25df9f1e54ddd917042fb2f0d85aee3f6df5f79",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 27,
+      "id": "real-2",
+      "applied": false,
+      "reason": "foreground-loss",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "07c2b4a36d3cad501dbd3472c003138b708bd47fa0f5d1209ace5ff1c5ce8844",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 28,
+      "id": "real-3",
+      "applied": false,
+      "reason": "uncertain-background",
+      "method": null,
+      "attempts": 1,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "5d3438fdaef1a0c36caa9d8885ae1469ea713a740540e0e1c090f23d8f2216d5",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 29,
+      "id": "real-4",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "minor-artifacts-acceptable",
+      "note": "Blue panel, white dandelion, stem, and full Koteng text remain intact. Pale text-edge specks appear on black; lettering is complete on white/checkerboard.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "c0bde8f372d2579dd396659b1ac39ebeb776533dd54bc3d892776f23ad9cf5d7",
+      "metrics": {
+        "foregroundLoss": 0.0009137797824134979,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.004557469431943572
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/real-4-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/real-4-4x.png"
+      }
+    },
+    {
+      "number": 30,
+      "id": "real-5",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "238e4c10664717159e7a96aedd763fba34642edea6b9d5fdc6c9e87b1e36acf8",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 31,
+      "id": "real-6",
+      "applied": false,
+      "reason": "foreground-loss",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "e88d347dcedd87dddbbb6f0e2724fd9ba3431aca417eac738c5eebf1320d98cf",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 32,
+      "id": "real-7",
+      "applied": false,
+      "reason": "interior-detail-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "9e46cd35fd5f53ead1283c0d9767fa3c04d0d98c66941a5e4c86fe39e6e7af4b",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 33,
+      "id": "dark-white",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "White wordmark, dot, and counters remain complete; dark canvas removed.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "435ff816bd52c772c78d0c2a5aebf505a3d6c7c0e95174b0c7031e17a98c6155",
+      "metrics": {
+        "foregroundLoss": 0.0002423570958695427,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.0001514596949891063
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/dark-white-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/dark-white-4x.png"
+      }
+    },
+    {
+      "number": 34,
+      "id": "low-contrast",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "b6d35a5a62abe0a7dd144718e9724296955790e370942633c9b94c4e4c3a526d",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 35,
+      "id": "shadow",
+      "applied": false,
+      "reason": "foreground-loss",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "9fd9d0ae40f3ed39e5a2821d2ec64ab0274fece9aebfb1a95ef1bfc308fc024b",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 36,
+      "id": "full-bleed",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 2,
+      "verdict": "ambiguous-brand-background",
+      "note": "Retry removes blue canvas and all blue letter-counter residue, leaving complete white BADGE lettering. This converts a blue badge into a white wordmark; known alpha reference marks blue canvas opaque, so this is a semantic/background-intent mismatch requiring user review, not a reference-preserving pass.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "691afe21f679e0ad7b08eabd750b8483aa0ac727b9d0e021e3702e5a0c9680d5",
+      "metrics": {
+        "foregroundLoss": 0.9088159477124207,
+        "remainingBackground": null,
+        "blackCompositeError": 0.3148595206974013
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/full-bleed-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/full-bleed-4x.png"
+      }
+    },
+    {
+      "number": 37,
+      "id": "fresh-apple",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Apple silhouette and detached leaf remain complete; edges clean.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "20bbe5c816a9bc4dc371ce81541be66e923045ba86dcb85481df919758f0591b",
+      "metrics": {
+        "foregroundLoss": 0.000044534083561356366,
+        "remainingBackground": 0,
+        "blackCompositeError": 0
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/fresh-apple-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/fresh-apple-4x.png"
+      }
+    },
+    {
+      "number": 38,
+      "id": "fresh-figma",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "Black outline and all negative-space interiors remain complete; edges clean.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "326a004ed72675ef8ee59e73615c37c67e29f90d601b884286a8843820390eb0",
+      "metrics": {
+        "foregroundLoss": 0.00011177547942253813,
+        "remainingBackground": 0,
+        "blackCompositeError": 0
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/fresh-figma-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/fresh-figma-4x.png"
+      }
+    },
+    {
+      "number": 39,
+      "id": "fresh-github",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-cpu",
+      "attempts": 1,
+      "verdict": "minor-artifacts-acceptable",
+      "note": "Silhouette and negative space preserved. Faint JPEG color specks/edge contamination remain on black, much less conspicuous than first candidate.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "02fe962071e5b47e9baff9a561a9fc5237e5ec49db82f3516c632e894a8c9db5",
+      "metrics": {
+        "foregroundLoss": 0.0008548421375776308,
+        "remainingBackground": 0.003306299636559422,
+        "blackCompositeError": 0.005766733307702241
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/fresh-github-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/fresh-github-4x.png"
+      }
+    },
+    {
+      "number": 40,
+      "id": "fresh-google",
+      "applied": true,
+      "reason": null,
+      "method": "local-onnx-flat-matting",
+      "attempts": 1,
+      "verdict": "pass",
+      "note": "All color segments preserved, interior clears cleanly, no white blob.",
+      "originalPixelsVerified": false,
+      "returnedSha256": "6ef33384294e15130d78ad2519a5becdc198c6d4e0590b5c166f53d78c555e74",
+      "metrics": {
+        "foregroundLoss": 0.000012248450880615423,
+        "remainingBackground": 0,
+        "blackCompositeError": 0.00009206105913679916
+      },
+      "panels": {
+        "native": "runs/background-removal-v2-final-qa/fresh-google-1x.png",
+        "fourTimes": "runs/background-removal-v2-final-qa/fresh-google-4x.png"
+      }
+    },
+    {
+      "number": 41,
+      "id": "fresh-instagram",
+      "applied": false,
+      "reason": "foreground-loss",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "4ee969cd866d4e191900e60af36e523a767e1890d69f01512c37804c6d6b629c",
+      "metrics": null,
+      "panels": null
+    },
+    {
+      "number": 42,
+      "id": "fresh-notion",
+      "applied": false,
+      "reason": "interior-detail-uncertain",
+      "method": null,
+      "attempts": 2,
+      "verdict": "original-retained",
+      "note": "Returned pixels match original input; no processed result was released.",
+      "originalPixelsVerified": true,
+      "returnedSha256": "5f3d611f7cdbe719990eac76a889db9f04409761bad82307a178b2e2ea198726",
+      "metrics": null,
+      "panels": null
+    }
+  ]
+}

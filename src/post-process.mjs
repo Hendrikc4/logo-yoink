@@ -1,4 +1,5 @@
 import sharp from 'sharp';
+import { createHash } from 'node:crypto';
 
 const RASTER_FORMATS = new Set(['png', 'jpg', 'jpeg', 'webp', 'avif', 'gif']);
 
@@ -33,45 +34,6 @@ export function normalizePostProcessing(options = {}) {
   };
 }
 
-function colorDistance(a, b) {
-  return Math.sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2);
-}
-
-async function removeUniformBackground(bytes) {
-  const { data, info } = await sharp(bytes, { animated: false, limitInputPixels: 64 * 1024 * 1024 }).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  const pixel = (x, y) => {
-    const offset = (y * info.width + x) * info.channels;
-    return [...data.subarray(offset, offset + 4)];
-  };
-  let transparentPixels = 0;
-  for (let offset = 3; offset < data.length; offset += info.channels) if (data[offset] < 250) transparentPixels += 1;
-  if (transparentPixels > 0) return { applied: false, reason: 'already-transparent', confidence: 1, bytes };
-
-  const corners = [pixel(0, 0), pixel(info.width - 1, 0), pixel(0, info.height - 1), pixel(info.width - 1, info.height - 1)];
-  const background = [0, 1, 2].map(channel => Math.round(corners.reduce((sum, value) => sum + value[channel], 0) / corners.length));
-  const cornerSpread = Math.max(...corners.map(value => colorDistance(value, background)));
-  if (cornerSpread > 28) return { applied: false, reason: 'low-confidence-background', confidence: 0, bytes };
-
-  let borderSamples = 0;
-  let matchingBorder = 0;
-  const visit = (x, y) => { borderSamples += 1; if (colorDistance(pixel(x, y), background) <= 34) matchingBorder += 1; };
-  for (let x = 0; x < info.width; x += 1) { visit(x, 0); if (info.height > 1) visit(x, info.height - 1); }
-  for (let y = 1; y < info.height - 1; y += 1) { visit(0, y); if (info.width > 1) visit(info.width - 1, y); }
-  const confidence = matchingBorder / Math.max(1, borderSamples);
-  if (confidence < 0.72) return { applied: false, reason: 'low-confidence-background', confidence, bytes };
-
-  let removed = 0;
-  for (let offset = 0; offset < data.length; offset += info.channels) {
-    const distance = colorDistance(data.subarray(offset, offset + 3), background);
-    const alpha = Math.round(255 * Math.max(0, Math.min(1, (distance - 14) / 30)));
-    data[offset + 3] = alpha;
-    if (alpha < 128) removed += 1;
-  }
-  const removedRatio = removed / (info.width * info.height);
-  if (removedRatio < 0.01 || removedRatio > 0.94) return { applied: false, reason: 'unsafe-removed-area', confidence, bytes };
-  return { applied: true, reason: null, confidence, bytes: await sharp(data, { raw: info }).png().toBuffer() };
-}
-
 function targetDimensions(width, height, request) {
   if (!request) return null;
   let scale = request.factor ?? Infinity;
@@ -83,7 +45,50 @@ function targetDimensions(width, height, request) {
   return { width: Math.max(1, Math.round(width * scale)), height: Math.max(1, Math.round(height * scale)) };
 }
 
-export async function processAsset(asset, options = {}) {
+// Only the extractor supplies this request-local ranking context. Public options
+// cannot nominate a replacement asset or initiate another download.
+async function transparentFamilySource(asset, role, ranked, originalBytes) {
+  if (!ranked || !role || !asset.family_id) return null;
+  const family = ranked.assetFamilies?.find(item => item.id === asset.family_id);
+  const members = family?.candidateIndexes?.map(index => ranked.candidates?.[index]).filter(Boolean) ?? [];
+  if (!members.includes(asset)) return null;
+  const variant = asset.variant;
+  if (!variant || ['theme', 'color'].some(key => !variant[key] || variant[key] === 'unknown')) return null;
+  const width = Number(asset.width), height = Number(asset.height);
+  if (!Number.isInteger(width) || !Number.isInteger(height) || width < 1 || height < 1 || width * height > 32 * 1024 * 1024) return null;
+  let checkedOriginal = false;
+  for (const candidate of members) {
+    if (candidate === asset || candidate.family_id !== asset.family_id ||
+        !candidate.predicted_roles?.includes(role === 'logo' ? 'wide' : role) ||
+        candidate.variant?.background !== 'transparent' ||
+        ['theme', 'color'].some(key => candidate.variant?.[key] !== variant[key]) ||
+        !candidate.width || !candidate.height || Math.abs(candidate.width / candidate.height / (width / height) - 1) > 0.01) continue;
+    const source = dataUrlBytes(candidate.dataUrl);
+    if (!source) continue;
+    try {
+      if (!checkedOriginal) {
+        const originalPixels = await sharp(originalBytes, { animated: false, limitInputPixels: 32 * 1024 * 1024 }).ensureAlpha().raw().toBuffer();
+        for (let i = 3; i < originalPixels.length; i += 4) if (originalPixels[i] < 255) return { alreadyTransparent: true };
+        checkedOriginal = true;
+      }
+      // Rasterize even SVG alternatives to the selected canvas. The caller still
+      // returns the canonical input separately and may upscale the derived PNG.
+      const bytes = await sharp(source, { animated: false, limitInputPixels: 32 * 1024 * 1024 })
+        .resize(width, height, { fit: 'contain', background: '#00000000' }).ensureAlpha().png().toBuffer();
+      const pixels = await sharp(bytes).raw().toBuffer();
+      let transparent = 0, visible = 0;
+      for (let i = 3; i < pixels.length; i += 4) {
+        if (pixels[i] < 16) transparent++;
+        if (pixels[i] > 230) visible++;
+      }
+      if (!transparent || !visible) continue;
+      return { bytes, source: candidate };
+    } catch { /* An unusable sibling never prevents the canonical result. */ }
+  }
+  return null;
+}
+
+export async function processAsset(asset, options = {}, context = {}) {
   const normalized = normalizePostProcessing(options);
   const original = asset ?? null;
   const base = { original, enhanced: null, transformations: [] };
@@ -100,11 +105,36 @@ export async function processAsset(asset, options = {}) {
   let bytes = originalBytes;
   const transformations = [];
   if (normalized.removeBackground) {
-    const removal = await removeUniformBackground(bytes);
-    transformations.push({ type: 'background-removal', applied: removal.applied, confidence: Math.round(removal.confidence * 100) / 100, ...(removal.reason ? { reason: removal.reason } : {}) });
-    bytes = removal.bytes;
+    const alternate = process.env.VERCEL ? null : await transparentFamilySource(asset, context.role, context.ranked, originalBytes);
+    if (alternate?.alreadyTransparent) {
+      transformations.push({ type: 'background-removal', applied: false, reason: 'already-transparent' });
+    } else if (alternate) {
+      bytes = alternate.bytes;
+      transformations.push({ type: 'background-removal', applied: true, method: 'alternate-source',
+        sourceUrl: alternate.source.resolvedUrl ?? alternate.source.resolved_url ?? alternate.source.url,
+        sourceFamily: asset.family_id, sourceFormat: alternate.source.format,
+        message: 'Used a validated transparent variant from the same asset family, role and theme without model inference.' });
+    } else {
+      const { removeLocalBackground } = await import('./background-removal.mjs');
+      const key = createHash('sha256').update(bytes).digest('hex');
+      let pending = context.removals?.get(key);
+      if (!pending) {
+        pending = removeLocalBackground(bytes);
+        context.removals?.set(key, pending);
+      }
+      const removal = await pending;
+      transformations.push({ type: 'background-removal', applied: removal.applied,
+        ...(removal.method ? { method: removal.method, model: removal.model, revision: removal.revision, preset: removal.preset } : {}),
+        ...(removal.attempts ? { attempts: removal.attempts } : {}),
+        ...(removal.message ? { message: removal.message } : {}), ...(removal.reason ? { reason: removal.reason } : {}) });
+      bytes = removal.bytes;
+    }
   }
-  const currentMetadata = await sharp(bytes, { animated: false, limitInputPixels: 64 * 1024 * 1024 }).metadata();
+
+  if (!normalized.upscale && !transformations.some(item => item.applied)) return { ...base, transformations };
+  let currentMetadata;
+  try { currentMetadata = await sharp(bytes, { animated: false, limitInputPixels: 64 * 1024 * 1024 }).metadata(); }
+  catch (error) { return { ...base, transformations: [...transformations, { type: 'upscale', applied: false, reason: 'invalid-image-data', message: error.message }] }; }
   const dimensions = targetDimensions(currentMetadata.width, currentMetadata.height, normalized.upscale);
   if (normalized.upscale) {
     if (dimensions) {
@@ -116,6 +146,7 @@ export async function processAsset(asset, options = {}) {
   const metadata = await sharp(bytes).metadata();
   const enhanced = {
     ...asset,
+    ...(transformations.some(item => item.type === 'background-removal' && item.applied) ? { background: 'transparent', ...(asset.variant ? { variant: { ...asset.variant, background: 'transparent' } } : {}) } : {}),
     resolvedUrl: `${asset.resolvedUrl ?? asset.resolved_url ?? asset.url}#logo-yoink-enhanced`,
     resolved_url: `${asset.resolvedUrl ?? asset.resolved_url ?? asset.url}#logo-yoink-enhanced`,
     format: 'png',
@@ -130,7 +161,13 @@ export async function processAsset(asset, options = {}) {
   return { original, enhanced, transformations };
 }
 
-export async function processSelectedAssets(assets, options = {}) {
-  const [icon, logo] = await Promise.all([processAsset(assets?.icon, options), processAsset(assets?.logo, options)]);
+export async function processSelectedAssets(assets, options = {}, ranked = null) {
+  const removals = new Map();
+  if (assets?.icon && assets.icon === assets.logo && !ranked) {
+    const processed = await processAsset(assets.icon, options, { removals });
+    return { icon: processed, logo: processed };
+  }
+  const [icon, logo] = await Promise.all(['icon', 'logo'].map(role =>
+    processAsset(assets?.[role], options, { removals, ranked, role })));
   return { icon, logo };
 }

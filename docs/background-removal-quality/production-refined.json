@@ -1,0 +1,290 @@
+[
+  {
+    "id": "s0-0-thin",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "preset": "padded-soft-edge-matting",
+    "originalPreserved": null
+  },
+  {
+    "id": "s0-1-thin",
+    "split": "tuning",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s0-2-thin",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s1-0-dots",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "preset": "padded-soft-edge-matting",
+    "originalPreserved": null
+  },
+  {
+    "id": "s1-1-dots",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s1-2-dots",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s2-0-white-detail",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "preset": "padded-soft-edge-matting",
+    "originalPreserved": null
+  },
+  {
+    "id": "s2-1-white-detail",
+    "split": "tuning",
+    "applied": true,
+    "reason": null,
+    "preset": "padded-soft-edge-matting",
+    "originalPreserved": null
+  },
+  {
+    "id": "s2-2-white-detail",
+    "split": "tuning",
+    "applied": false,
+    "reason": "edge-uncertain",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s3-0-gradient",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "preset": "padded-soft-edge-matting",
+    "originalPreserved": null
+  },
+  {
+    "id": "s3-1-gradient",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "preset": "padded-soft-edge-matting",
+    "originalPreserved": null
+  },
+  {
+    "id": "s3-2-gradient",
+    "split": "heldout",
+    "applied": false,
+    "reason": "edge-uncertain",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s4-0-tiny",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s4-1-tiny",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s4-2-tiny",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s5-0-wide",
+    "split": "heldout",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s5-1-wide",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s5-2-wide",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s6-0-outline",
+    "split": "tuning",
+    "applied": false,
+    "reason": "edge-uncertain",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s6-1-outline",
+    "split": "tuning",
+    "applied": false,
+    "reason": "edge-uncertain",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s6-2-outline",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s7-0-disconnected",
+    "split": "heldout",
+    "applied": true,
+    "reason": null,
+    "preset": "padded-soft-edge-matting",
+    "originalPreserved": null
+  },
+  {
+    "id": "s7-1-disconnected",
+    "split": "heldout",
+    "applied": false,
+    "reason": "edge-uncertain",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "s7-2-disconnected",
+    "split": "heldout",
+    "applied": false,
+    "reason": "edge-uncertain",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "real-0",
+    "split": "tuning",
+    "applied": false,
+    "reason": "uncertain-background",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "real-1",
+    "split": "heldout",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "real-2",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "real-3",
+    "split": "heldout",
+    "applied": false,
+    "reason": "uncertain-background",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "real-4",
+    "split": "tuning",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "real-5",
+    "split": "heldout",
+    "applied": false,
+    "reason": "unsafe-mask",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "real-6",
+    "split": "tuning",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "real-7",
+    "split": "heldout",
+    "applied": false,
+    "reason": "edge-uncertain",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "dark-white",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "low-contrast",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "shadow",
+    "split": "heldout",
+    "applied": false,
+    "reason": "foreground-loss",
+    "preset": null,
+    "originalPreserved": true
+  },
+  {
+    "id": "full-bleed",
+    "split": "heldout",
+    "applied": false,
+    "reason": "background-retained",
+    "preset": null,
+    "originalPreserved": true
+  }
+]

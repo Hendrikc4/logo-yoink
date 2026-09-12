@@ -1,0 +1,216 @@
+{
+  "scope": "Cases 1–21 of all42 audit. Reviewed original/reference/raw/diagnostic-refined/returned boards on white, black and checkerboard, plus true 4x nearest-neighbor detail crops. Diagnostic failure is not counted as success merely because original is returned.",
+  "reviewer": "Independent visual QA agent",
+  "rows": [
+    {
+      "number": 1,
+      "id": "s0-0-thin",
+      "applied": true,
+      "reason": null,
+      "verdict": "pass",
+      "note": "Raw has pale outlines around thin stems and detached i dots on black. Refinement removes halo, preserving legibility and all dots; returned output looks consistent with reference at native and 4x.",
+      "visual": "runs/background-removal-all-42/visual/01-s0-0-thin-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-1.png"
+    },
+    {
+      "number": 2,
+      "id": "s0-1-thin",
+      "applied": false,
+      "reason": "background-retained",
+      "verdict": "fail-background",
+      "note": "Large pale background strips survive above/right and below lettering. Refinement fixes some letter halos but cannot remove these regions. Original retained correctly.",
+      "visual": "runs/background-removal-all-42/visual/02-s0-1-thin-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-2.png"
+    },
+    {
+      "number": 3,
+      "id": "s0-2-thin",
+      "applied": false,
+      "reason": "background-retained",
+      "verdict": "fail-background-and-foreground",
+      "note": "Most yellow background survives; i stems and dots are partially transparent; refinement adds small holes/speckles around strokes. Unsafe raw and refined outputs. Original retained.",
+      "visual": "runs/background-removal-all-42/visual/03-s0-2-thin-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-3.png"
+    },
+    {
+      "number": 4,
+      "id": "s1-0-dots",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-foreground",
+      "note": "Second and third detached dot interiors punched out; one i stem has a transparent notch near top. Edge refinement removes surrounding halo but cannot restore missing foreground. Original retained.",
+      "visual": "runs/background-removal-all-42/visual/04-s1-0-dots-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-4.png"
+    },
+    {
+      "number": 5,
+      "id": "s1-1-dots",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-foreground",
+      "note": "Same dot holes and upper stem notch as white variant, plus faint horizontal residue at dot/stem boundary after refinement. Original retained.",
+      "visual": "runs/background-removal-all-42/visual/05-s1-1-dots-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-5.png"
+    },
+    {
+      "number": 6,
+      "id": "s1-2-dots",
+      "applied": false,
+      "reason": "background-retained",
+      "verdict": "fail-foreground-and-background",
+      "note": "Dot holes and stem notch remain, with a yellow background island above dots and JPEG-colored fringes. Refinement largely cannot resolve them. Original retained.",
+      "visual": "runs/background-removal-all-42/visual/06-s1-2-dots-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-6.png"
+    },
+    {
+      "number": 7,
+      "id": "s2-0-white-detail",
+      "applied": true,
+      "reason": null,
+      "verdict": "pass",
+      "note": "White T interior preserved, solid red disk intact. Raw has thin pale outer halo on black; refinement removes it without visible holes. Returned accepted.",
+      "visual": "runs/background-removal-all-42/visual/07-s2-0-white-detail-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-7.png"
+    },
+    {
+      "number": 8,
+      "id": "s2-1-white-detail",
+      "applied": true,
+      "reason": null,
+      "verdict": "pass",
+      "note": "Gray-backed red disk and white T preserve their interiors. Raw pale rim removed by refinement; no conspicuous artifact in returned output at native/4x.",
+      "visual": "runs/background-removal-all-42/visual/08-s2-1-white-detail-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-8.png"
+    },
+    {
+      "number": 9,
+      "id": "s2-2-white-detail",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "verdict": "fail-edge",
+      "note": "JPEG disk remains mottled from source and has a thin uneven warm/pale fringe around outer rim on black. White T remains present. Edge-uncertain refusal is reasonable.",
+      "visual": "runs/background-removal-all-42/visual/09-s2-2-white-detail-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-9.png"
+    },
+    {
+      "number": 10,
+      "id": "s3-0-gradient",
+      "applied": true,
+      "reason": null,
+      "verdict": "pass",
+      "note": "Gradient and polygon geometry preserved. Bright raw inner-edge halo removed by refinement; returned native shape clean. Very small tip differences at 4x, no conspicuous new artifact.",
+      "visual": "runs/background-removal-all-42/visual/10-s3-0-gradient-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-10.png"
+    },
+    {
+      "number": 11,
+      "id": "s3-1-gradient",
+      "applied": true,
+      "reason": null,
+      "verdict": "pass",
+      "note": "Gradient continuous; raw bright lower edge is removed by refinement. Returned silhouette coherent at native and 4x; no visible interior holes.",
+      "visual": "runs/background-removal-all-42/visual/11-s3-1-gradient-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-11.png"
+    },
+    {
+      "number": 12,
+      "id": "s3-2-gradient",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-edge",
+      "note": "JPEG texture already in original remains; light lower diagonal fringe persists after diagnostic refinement. Tiny edge speckles visible on black. Original retention justified.",
+      "visual": "runs/background-removal-all-42/visual/12-s3-2-gradient-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-12.png"
+    },
+    {
+      "number": 13,
+      "id": "s4-0-tiny",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-foreground",
+      "note": "White interior checkmark becomes visibly gray/partly transparent against black; raw rim also pale. Refinement fixes outer rim but not lost white interior. Original retained.",
+      "visual": "runs/background-removal-all-42/visual/13-s4-0-tiny-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-13.png"
+    },
+    {
+      "number": 14,
+      "id": "s4-1-tiny",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-foreground",
+      "note": "Checkmark dims on black compared with alpha reference, though less severely than white-background variant. Refinement cannot restore opacity. Original retained.",
+      "visual": "runs/background-removal-all-42/visual/14-s4-1-tiny-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-14.png"
+    },
+    {
+      "number": 15,
+      "id": "s4-2-tiny",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-edge",
+      "note": "Tiny JPEG checkmark has mottled green body and uneven perimeter; some compression is inherited from input, and pale edge contamination remains in raw/refined. Conservative refusal acceptable.",
+      "visual": "runs/background-removal-all-42/visual/15-s4-2-tiny-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-15.png"
+    },
+    {
+      "number": 16,
+      "id": "s5-0-wide",
+      "applied": true,
+      "reason": null,
+      "verdict": "pass",
+      "note": "Final replay now accepts the refined wide wordmark. Raw white halos outline letters, but refined output preserves the inspected lettering and removes those halos on white, black and checkerboard at native and 4x. No conspicuous new artifact in the inspected result.",
+      "visual": "runs/background-removal-all-42/visual/16-s5-0-wide-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-16.png"
+    },
+    {
+      "number": 17,
+      "id": "s5-1-wide",
+      "applied": false,
+      "reason": "background-retained",
+      "verdict": "fail-background",
+      "note": "Large gray patch survives around NORTH STAR with irregular cutouts and opaque counters. Refinement creates sharp borders beside retained patch. Original retained correctly.",
+      "visual": "runs/background-removal-all-42/visual/17-s5-1-wide-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-17.png"
+    },
+    {
+      "number": 18,
+      "id": "s5-2-wide",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "verdict": "fail-background",
+      "note": "Almost entire yellow rectangle remains (near-opaque mask). Diagnostic refinement introduces pixel holes near letters without meaningful removal. Unsafe-mask refusal correct.",
+      "visual": "runs/background-removal-all-42/visual/18-s5-2-wide-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-18.png"
+    },
+    {
+      "number": 19,
+      "id": "s6-0-outline",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-edge-and-foreground",
+      "note": "Pale halo persists around thin circle/triangle on black. Triangle lower-right joint is broken/nicked after refinement. Original retained correctly.",
+      "visual": "runs/background-removal-all-42/visual/19-s6-0-outline-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-19.png"
+    },
+    {
+      "number": 20,
+      "id": "s6-1-outline",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-edge-and-foreground",
+      "note": "Same persistent pale outline and lower-right triangle break after refinement; blue stroke appears lighter than reference. Original retained correctly.",
+      "visual": "runs/background-removal-all-42/visual/20-s6-1-outline-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-20.png"
+    },
+    {
+      "number": 21,
+      "id": "s6-2-outline",
+      "applied": false,
+      "reason": "foreground-loss",
+      "verdict": "fail-edge",
+      "note": "JPEG outline retains gray/yellow contamination on black and loses clean blue color; lower-right triangle joint imperfect. Refinement does not remove fringe. Original retained.",
+      "visual": "runs/background-removal-all-42/visual/21-s6-2-outline-1x.png",
+      "detail": "runs/background-removal-all-42/visual/detail-21.png"
+    }
+  ]
+}

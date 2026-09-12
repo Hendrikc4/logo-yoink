@@ -29,12 +29,16 @@ export function createDemoExtractionService({
   extract = extractLogos,
   normalize = normalizeWebsite,
   extractionOptions = () => publicDemoExtractionOptions(environment),
+  allowBackgroundRemoval = false,
 } = {}) {
   return {
     async handle(request) {
       try {
         const rate = guard.check(request);
         const body = await readDemoJson(request, limits.bodyBytes);
+        if (body.removeBackground === true && !allowBackgroundRemoval) {
+          throw new DemoHttpError(400, 'Model background removal is available only in local installs.');
+        }
         const target = normalize(body.website);
         const options = { ...extractionOptions(), preferences: body.preferences };
         const requestedScrapers = body.scrapers ?? (options.browser ? ['browser'] : []);

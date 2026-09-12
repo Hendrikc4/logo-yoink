@@ -1,0 +1,417 @@
+{
+  "name": "birefnet-512",
+  "size": 512,
+  "initMs": 784.495166,
+  "peakMiB": 2711.3125,
+  "osPeakMiB": 2724.96875,
+  "rows": [
+    {
+      "id": "s0-0-thin",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1900.005042,
+      "rssMiB": 2452.375,
+      "metrics": null
+    },
+    {
+      "id": "s0-1-thin",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1591.8395839999998,
+      "rssMiB": 2579.8125,
+      "metrics": null
+    },
+    {
+      "id": "s0-2-thin",
+      "split": "tuning",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1570.8161249999994,
+      "rssMiB": 2592.09375,
+      "metrics": null
+    },
+    {
+      "id": "s1-0-dots",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1621.851667,
+      "rssMiB": 2608.5,
+      "metrics": null
+    },
+    {
+      "id": "s1-1-dots",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1575.5983749999996,
+      "rssMiB": 2628.25,
+      "metrics": null
+    },
+    {
+      "id": "s1-2-dots",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1593.928041000001,
+      "rssMiB": 2634.125,
+      "metrics": null
+    },
+    {
+      "id": "s2-0-white-detail",
+      "split": "tuning",
+      "applied": true,
+      "reason": null,
+      "ms": 1663.6309999999994,
+      "rssMiB": 2662.96875,
+      "metrics": {
+        "foregroundLoss": 0.000007615982304430653,
+        "remainingBackground": 0,
+        "edgeError": 0.004798761609907112,
+        "blackCompositeError": 0.00005827846661540452
+      }
+    },
+    {
+      "id": "s2-1-white-detail",
+      "split": "tuning",
+      "applied": true,
+      "reason": null,
+      "ms": 1725.7842499999988,
+      "rssMiB": 2663.8125,
+      "metrics": {
+        "foregroundLoss": 0.000006953722973610597,
+        "remainingBackground": 0,
+        "edgeError": 0.004222566219470237,
+        "blackCompositeError": 0.000054738361848007344
+      }
+    },
+    {
+      "id": "s2-2-white-detail",
+      "split": "tuning",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "ms": 2061.1481249999997,
+      "rssMiB": 2667.375,
+      "metrics": null
+    },
+    {
+      "id": "s3-0-gradient",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 1692.321665999998,
+      "rssMiB": 2670.46875,
+      "metrics": {
+        "foregroundLoss": 0.00007247732161226952,
+        "remainingBackground": 0.000057484094206942744,
+        "edgeError": 0.008120125373569485,
+        "blackCompositeError": 0.0001777180359587935
+      }
+    },
+    {
+      "id": "s3-1-gradient",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 1662.2848750000012,
+      "rssMiB": 2670.734375,
+      "metrics": {
+        "foregroundLoss": 0.0000748152997287944,
+        "remainingBackground": 0.000011534025374855823,
+        "edgeError": 0.0054012683140170405,
+        "blackCompositeError": 0.00009071062893681736
+      }
+    },
+    {
+      "id": "s3-2-gradient",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1669.5367080000033,
+      "rssMiB": 2680.890625,
+      "metrics": null
+    },
+    {
+      "id": "s4-0-tiny",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1691.4179169999989,
+      "rssMiB": 2661.046875,
+      "metrics": null
+    },
+    {
+      "id": "s4-1-tiny",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1610.3683749999982,
+      "rssMiB": 2675.234375,
+      "metrics": null
+    },
+    {
+      "id": "s4-2-tiny",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1601.3921670000018,
+      "rssMiB": 2691.203125,
+      "metrics": null
+    },
+    {
+      "id": "s5-0-wide",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1576.4669589999976,
+      "rssMiB": 2701.265625,
+      "metrics": null
+    },
+    {
+      "id": "s5-1-wide",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1605.3509159999994,
+      "rssMiB": 2711.328125,
+      "metrics": null
+    },
+    {
+      "id": "s5-2-wide",
+      "split": "heldout",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "ms": 1555.7473329999993,
+      "rssMiB": 2697.09375,
+      "metrics": null
+    },
+    {
+      "id": "s6-0-outline",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1607.8336670000026,
+      "rssMiB": 2581.40625,
+      "metrics": null
+    },
+    {
+      "id": "s6-1-outline",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1558.482417000003,
+      "rssMiB": 2617.15625,
+      "metrics": null
+    },
+    {
+      "id": "s6-2-outline",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1552.8142499999958,
+      "rssMiB": 2627.265625,
+      "metrics": null
+    },
+    {
+      "id": "s7-0-disconnected",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 1563.736499999999,
+      "rssMiB": 2607.515625,
+      "metrics": {
+        "foregroundLoss": 0.000049091801669121164,
+        "remainingBackground": 0,
+        "edgeError": 0.00481283422459892,
+        "blackCompositeError": 0.00004165863612230376
+      }
+    },
+    {
+      "id": "s7-1-disconnected",
+      "split": "heldout",
+      "applied": true,
+      "reason": null,
+      "ms": 1571.1339999999982,
+      "rssMiB": 2607.53125,
+      "metrics": {
+        "foregroundLoss": 0.0000462040486297611,
+        "remainingBackground": 0,
+        "edgeError": 0.0044458425081262375,
+        "blackCompositeError": 0.00003960448112697238
+      }
+    },
+    {
+      "id": "s7-2-disconnected",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1547.4088749999937,
+      "rssMiB": 2617.59375,
+      "metrics": null
+    },
+    {
+      "id": "real-0",
+      "split": "tuning",
+      "applied": false,
+      "reason": "uncertain-background",
+      "ms": 1577.9667499999996,
+      "rssMiB": 2281.921875,
+      "metrics": null
+    },
+    {
+      "id": "real-1",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1608.794375000005,
+      "rssMiB": 2553.046875,
+      "metrics": null
+    },
+    {
+      "id": "real-2",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1554.4448340000017,
+      "rssMiB": 2569.625,
+      "metrics": null
+    },
+    {
+      "id": "real-3",
+      "split": "heldout",
+      "applied": false,
+      "reason": "uncertain-background",
+      "ms": 1543.6621670000022,
+      "rssMiB": 2552.703125,
+      "metrics": null
+    },
+    {
+      "id": "real-4",
+      "split": "tuning",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1542.9108750000014,
+      "rssMiB": 2562.6875,
+      "metrics": null
+    },
+    {
+      "id": "real-5",
+      "split": "heldout",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "ms": 1544.3545830000003,
+      "rssMiB": 2552.859375,
+      "metrics": null
+    },
+    {
+      "id": "real-6",
+      "split": "tuning",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1548.8165000000008,
+      "rssMiB": 2563.03125,
+      "metrics": null
+    },
+    {
+      "id": "real-7",
+      "split": "heldout",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1588.3224580000024,
+      "rssMiB": 2549.328125,
+      "metrics": null
+    },
+    {
+      "id": "dark-white",
+      "split": "heldout",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "ms": 1541.3219160000008,
+      "rssMiB": 2559.578125,
+      "metrics": null
+    },
+    {
+      "id": "low-contrast",
+      "split": "heldout",
+      "applied": false,
+      "reason": "edge-uncertain",
+      "ms": 1547.1848329999993,
+      "rssMiB": 2552.796875,
+      "metrics": null
+    },
+    {
+      "id": "shadow",
+      "split": "heldout",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1547.8825410000063,
+      "rssMiB": 2562.765625,
+      "metrics": null
+    },
+    {
+      "id": "full-bleed",
+      "split": "heldout",
+      "applied": false,
+      "reason": "unsafe-mask",
+      "ms": 1545.0215000000026,
+      "rssMiB": 2572.8125,
+      "metrics": null
+    },
+    {
+      "id": "fresh-apple",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1546.1501659999994,
+      "rssMiB": 2555.96875,
+      "metrics": null
+    },
+    {
+      "id": "fresh-figma",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1602.4539580000055,
+      "rssMiB": 2480,
+      "metrics": null
+    },
+    {
+      "id": "fresh-github",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1609.872792000002,
+      "rssMiB": 2629.203125,
+      "metrics": null
+    },
+    {
+      "id": "fresh-google",
+      "split": "fresh",
+      "applied": false,
+      "reason": "background-retained",
+      "ms": 1560.607415999999,
+      "rssMiB": 2616.15625,
+      "metrics": null
+    },
+    {
+      "id": "fresh-instagram",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1557.3219589999935,
+      "rssMiB": 2626.59375,
+      "metrics": null
+    },
+    {
+      "id": "fresh-notion",
+      "split": "fresh",
+      "applied": false,
+      "reason": "foreground-loss",
+      "ms": 1553.5205000000133,
+      "rssMiB": 2636.65625,
+      "metrics": null
+    }
+  ]
+}

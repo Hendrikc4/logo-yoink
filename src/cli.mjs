@@ -5,6 +5,21 @@ import { extname, resolve } from 'node:path';
 import { yoink } from './index.mjs';
 
 const args = process.argv.slice(2);
+if (args[0] === 'setup-background-removal') {
+  if (args.length !== 1) {
+    console.error('Usage: logo-yoink setup-background-removal');
+    process.exit(1);
+  }
+  try {
+    const { setupBackgroundRemoval } = await import('./background-removal-setup.mjs');
+    const result = await setupBackgroundRemoval({ onProgress: message => console.error(message) });
+    console.log(JSON.stringify(result, null, 2));
+    process.exit(0);
+  } catch (error) {
+    console.error(`Background removal setup failed: ${error.message}`);
+    process.exit(1);
+  }
+}
 const valueOptions = new Set(['--download', '--theme', '--background', '--role', '--upscale', '--width', '--height', '--linkedin-company-url']);
 let website = null;
 for (let index = 0; index < args.length; index++) {
@@ -46,6 +61,8 @@ if (!website || downloadIndex >= 0 && !downloadDirectory ||
     upscaleFactor != null && (!Number.isFinite(upscaleFactor) || upscaleFactor <= 1 || upscaleFactor > 8) ||
     [upscaleWidth, upscaleHeight].some(value => value != null && (!Number.isInteger(value) || value < 1 || value > 8192))) {
   console.error('Usage: logo-yoink <website> [--no-browser] [--jina] [--all-fallbacks] [--theme any|light|dark] [--background any|transparent|opaque] [--strict] [--role icon|logo] [--download <directory>] [--remove-background] [--upscale 2] [--width 1024] [--height 1024] [--linkedin-fallback] [--linkedin-company-url <url>] [--no-wikimedia-fallback] [--bimi]');
+  console.error('Setup local background removal: logo-yoink setup-background-removal');
+  console.error('--remove-background is off by default; reuses a matching transparent source or runs the local CPU model with at most one retry. Originals are preserved.');
   process.exit(1);
 }
 
@@ -70,8 +87,9 @@ try {
       ? result.assets.icon
       : result.selected;
   if (downloadDirectory && downloadSelection) {
-    const processedRole = result.processedAssets?.logo?.original === downloadSelection ? 'logo' : 'icon';
-    const downloadable = result.processedAssets?.[processedRole]?.enhanced ?? downloadSelection;
+    const processedSelection = Object.values(result.processedAssets ?? {})
+      .find(processed => processed.original === downloadSelection);
+    const downloadable = processedSelection?.enhanced ?? downloadSelection;
     const targetDirectory = resolve(downloadDirectory);
     await mkdir(targetDirectory, { recursive: true });
     const pathExtension = extname(new URL(downloadable.resolvedUrl).pathname);

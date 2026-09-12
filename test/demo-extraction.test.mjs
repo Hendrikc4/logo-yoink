@@ -55,6 +55,7 @@ test('shared demo extraction service forwards request-level Wikimedia opt-out', 
 test('shared demo extraction service forwards optional fallback and image processing', async () => {
   const calls = [];
   const service = createDemoExtractionService({
+    allowBackgroundRemoval: true,
     environment: {},
     extractionOptions: () => ({}),
     extract: async (_website, options) => { calls.push(options); return {}; },

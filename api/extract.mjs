@@ -3,6 +3,7 @@ import { publicDemoExtractionOptions, securityHeaders } from '../src/demo/securi
 import { serverlessBrowserLaunchOptions } from '../src/demo/serverless-browser.mjs';
 
 const demoService = createDemoExtractionService({
+  allowBackgroundRemoval: false,
   extractionOptions: () => ({
     ...publicDemoExtractionOptions(),
     browserLaunchOptions: serverlessBrowserLaunchOptions,

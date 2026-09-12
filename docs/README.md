@@ -4,6 +4,10 @@ Start with the root [README](../README.md) for installation, CLI/API usage, and 
 
 ## Current reference material
 
+- [Background-removal quality](background-removal-quality.md) — local model comparison, settings, and visual QA limitations.
+- [Background-removal performance](background-removal-performance.md) — current 512 preset, resource savings, and quality tradeoffs.
+- [All-42 background-removal audit](background-removal-all-42-qa.md) — every prediction reviewed, fixed bugs, and remaining artifacts.
+- [Current background-removal pipeline](background-removal-pipeline-v2.md) — improved transparency coverage, bounded retry, source reuse, and 60-image visual QA.
 - [Current optimization plan](current-system-logo-optimization-plan.md) — goals, metrics, and constraints for the current extraction system.
 - [Current optimization results](current-system-logo-optimization-results.md) — current frozen-baseline results.
 - [500-company visual benchmark plan](500-company-visual-logo-benchmark-plan.md) — benchmark design and evaluation protocol.

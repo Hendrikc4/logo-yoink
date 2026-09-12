@@ -15,6 +15,7 @@ const jinaApiKey = process.env.JINA_API_KEY || null;
 const browserDiscovery = process.env.BROWSER_DISCOVERY !== '0';
 const limits = demoLimits();
 const demoService = createDemoExtractionService({
+  allowBackgroundRemoval: true,
   limits,
   extractionOptions: () => {
     const options = publicDemoExtractionOptions(process.env);

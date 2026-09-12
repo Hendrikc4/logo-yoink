@@ -1,0 +1,306 @@
+[
+  {
+    "id": "s0-0-thin",
+    "file": "s0-0-thin.png",
+    "truth": "s0-0-thin-truth.png",
+    "split": "tuning",
+    "kind": "thin",
+    "bg": "#ffffff"
+  },
+  {
+    "id": "s0-1-thin",
+    "file": "s0-1-thin.png",
+    "truth": "s0-1-thin-truth.png",
+    "split": "tuning",
+    "kind": "thin",
+    "bg": "#e7ebf3"
+  },
+  {
+    "id": "s0-2-thin",
+    "file": "s0-2-thin.jpg",
+    "truth": "s0-2-thin-truth.png",
+    "split": "tuning",
+    "kind": "thin",
+    "bg": "#fff0cc"
+  },
+  {
+    "id": "s1-0-dots",
+    "file": "s1-0-dots.png",
+    "truth": "s1-0-dots-truth.png",
+    "split": "heldout",
+    "kind": "dots",
+    "bg": "#ffffff"
+  },
+  {
+    "id": "s1-1-dots",
+    "file": "s1-1-dots.png",
+    "truth": "s1-1-dots-truth.png",
+    "split": "heldout",
+    "kind": "dots",
+    "bg": "#e7ebf3"
+  },
+  {
+    "id": "s1-2-dots",
+    "file": "s1-2-dots.jpg",
+    "truth": "s1-2-dots-truth.png",
+    "split": "heldout",
+    "kind": "dots",
+    "bg": "#fff0cc"
+  },
+  {
+    "id": "s2-0-white-detail",
+    "file": "s2-0-white-detail.png",
+    "truth": "s2-0-white-detail-truth.png",
+    "split": "tuning",
+    "kind": "white-detail",
+    "bg": "#ffffff"
+  },
+  {
+    "id": "s2-1-white-detail",
+    "file": "s2-1-white-detail.png",
+    "truth": "s2-1-white-detail-truth.png",
+    "split": "tuning",
+    "kind": "white-detail",
+    "bg": "#e7ebf3"
+  },
+  {
+    "id": "s2-2-white-detail",
+    "file": "s2-2-white-detail.jpg",
+    "truth": "s2-2-white-detail-truth.png",
+    "split": "tuning",
+    "kind": "white-detail",
+    "bg": "#fff0cc"
+  },
+  {
+    "id": "s3-0-gradient",
+    "file": "s3-0-gradient.png",
+    "truth": "s3-0-gradient-truth.png",
+    "split": "heldout",
+    "kind": "gradient",
+    "bg": "#ffffff"
+  },
+  {
+    "id": "s3-1-gradient",
+    "file": "s3-1-gradient.png",
+    "truth": "s3-1-gradient-truth.png",
+    "split": "heldout",
+    "kind": "gradient",
+    "bg": "#e7ebf3"
+  },
+  {
+    "id": "s3-2-gradient",
+    "file": "s3-2-gradient.jpg",
+    "truth": "s3-2-gradient-truth.png",
+    "split": "heldout",
+    "kind": "gradient",
+    "bg": "#fff0cc"
+  },
+  {
+    "id": "s4-0-tiny",
+    "file": "s4-0-tiny.png",
+    "truth": "s4-0-tiny-truth.png",
+    "split": "tuning",
+    "kind": "tiny",
+    "bg": "#ffffff"
+  },
+  {
+    "id": "s4-1-tiny",
+    "file": "s4-1-tiny.png",
+    "truth": "s4-1-tiny-truth.png",
+    "split": "tuning",
+    "kind": "tiny",
+    "bg": "#e7ebf3"
+  },
+  {
+    "id": "s4-2-tiny",
+    "file": "s4-2-tiny.jpg",
+    "truth": "s4-2-tiny-truth.png",
+    "split": "tuning",
+    "kind": "tiny",
+    "bg": "#fff0cc"
+  },
+  {
+    "id": "s5-0-wide",
+    "file": "s5-0-wide.png",
+    "truth": "s5-0-wide-truth.png",
+    "split": "heldout",
+    "kind": "wide",
+    "bg": "#ffffff"
+  },
+  {
+    "id": "s5-1-wide",
+    "file": "s5-1-wide.png",
+    "truth": "s5-1-wide-truth.png",
+    "split": "heldout",
+    "kind": "wide",
+    "bg": "#e7ebf3"
+  },
+  {
+    "id": "s5-2-wide",
+    "file": "s5-2-wide.jpg",
+    "truth": "s5-2-wide-truth.png",
+    "split": "heldout",
+    "kind": "wide",
+    "bg": "#fff0cc"
+  },
+  {
+    "id": "s6-0-outline",
+    "file": "s6-0-outline.png",
+    "truth": "s6-0-outline-truth.png",
+    "split": "tuning",
+    "kind": "outline",
+    "bg": "#ffffff"
+  },
+  {
+    "id": "s6-1-outline",
+    "file": "s6-1-outline.png",
+    "truth": "s6-1-outline-truth.png",
+    "split": "tuning",
+    "kind": "outline",
+    "bg": "#e7ebf3"
+  },
+  {
+    "id": "s6-2-outline",
+    "file": "s6-2-outline.jpg",
+    "truth": "s6-2-outline-truth.png",
+    "split": "tuning",
+    "kind": "outline",
+    "bg": "#fff0cc"
+  },
+  {
+    "id": "s7-0-disconnected",
+    "file": "s7-0-disconnected.png",
+    "truth": "s7-0-disconnected-truth.png",
+    "split": "heldout",
+    "kind": "disconnected",
+    "bg": "#ffffff"
+  },
+  {
+    "id": "s7-1-disconnected",
+    "file": "s7-1-disconnected.png",
+    "truth": "s7-1-disconnected-truth.png",
+    "split": "heldout",
+    "kind": "disconnected",
+    "bg": "#e7ebf3"
+  },
+  {
+    "id": "s7-2-disconnected",
+    "file": "s7-2-disconnected.jpg",
+    "truth": "s7-2-disconnected-truth.png",
+    "split": "heldout",
+    "kind": "disconnected",
+    "bg": "#fff0cc"
+  },
+  {
+    "id": "real-0",
+    "file": "real-0.png",
+    "truth": "real-0-truth.png",
+    "split": "tuning",
+    "kind": "cached",
+    "source": "runs/precision-async-original100-v2/assets/06efb165138dc9a7902d37589ecf36ebfa8816771160c957d21f368081b83a11.png",
+    "sourceCompany": "Bhr",
+    "sourceWebsite": "bhr.fyi"
+  },
+  {
+    "id": "real-1",
+    "file": "real-1.png",
+    "truth": "real-1-truth.png",
+    "split": "heldout",
+    "kind": "cached",
+    "source": "runs/precision-async-original100-v2/assets/13712ecc2f14ea42a602497d544712eba1d0df96f34b2d07486a004a39fcbdd1.png",
+    "sourceCompany": "Scoped Solutions",
+    "sourceWebsite": "scoped.no"
+  },
+  {
+    "id": "real-2",
+    "file": "real-2.png",
+    "truth": "real-2-truth.png",
+    "split": "tuning",
+    "kind": "cached",
+    "source": "runs/precision-async-original100-v2/assets/21a78b28739db6509f7eb1e9e0b844da7d0b9523d51ed40b7f0f25b076137b18.png",
+    "sourceCompany": "7RD",
+    "sourceWebsite": "7rd.ai"
+  },
+  {
+    "id": "real-3",
+    "file": "real-3.png",
+    "truth": "real-3-truth.png",
+    "split": "heldout",
+    "kind": "cached",
+    "source": "runs/precision-async-original100-v2/assets/46296d4f389b30086ea894d9be00f84aec0b98308ed386886b64b9dec446fc42.png",
+    "sourceCompany": "Utiq",
+    "sourceWebsite": "utiq.com"
+  },
+  {
+    "id": "real-4",
+    "file": "real-4.png",
+    "truth": "real-4-truth.png",
+    "split": "tuning",
+    "kind": "cached",
+    "source": "runs/precision-async-original100-v2/assets/658a2e8e25cecfda89b983fce5bc71c10000866b3696d44813fc5616b6e083b6.png",
+    "sourceCompany": "Scoped Solutions",
+    "sourceWebsite": "scoped.no"
+  },
+  {
+    "id": "real-5",
+    "file": "real-5.png",
+    "truth": "real-5-truth.png",
+    "split": "heldout",
+    "kind": "cached",
+    "source": "runs/precision-async-original100-v2/assets/6ad322c32bd968036888bb0b5f719d83793aeadc1cc84064720f2eb04120ac3b.png",
+    "sourceCompany": "Utiq",
+    "sourceWebsite": "utiq.com"
+  },
+  {
+    "id": "real-6",
+    "file": "real-6.png",
+    "truth": "real-6-truth.png",
+    "split": "tuning",
+    "kind": "cached",
+    "source": "runs/precision-async-original100-v2/assets/70b7b2eb0cece61966a127c1aab68eb0e9334f533a22024954650db5847a6110.png",
+    "sourceCompany": "7RD",
+    "sourceWebsite": "7rd.ai"
+  },
+  {
+    "id": "real-7",
+    "file": "real-7.png",
+    "truth": null,
+    "split": "heldout",
+    "kind": "cached",
+    "source": "runs/precision-async-original100-v2/assets/746a790e2698dafc0c0a436157291a039c4f900fe3ee325469f48c2585750330.png",
+    "sourceCompany": "TradeBridge",
+    "sourceWebsite": "tradebridge.co.in"
+  },
+  {
+    "id": "dark-white",
+    "file": "dark-white.png",
+    "truth": "dark-white-truth.png",
+    "split": "heldout",
+    "kind": "dark-white",
+    "bg": "#10151e"
+  },
+  {
+    "id": "low-contrast",
+    "file": "low-contrast.png",
+    "truth": "low-contrast-truth.png",
+    "split": "heldout",
+    "kind": "low-contrast",
+    "bg": "#f3f3f3"
+  },
+  {
+    "id": "shadow",
+    "file": "shadow.png",
+    "truth": "shadow-truth.png",
+    "split": "heldout",
+    "kind": "shadow",
+    "bg": "#fff"
+  },
+  {
+    "id": "full-bleed",
+    "file": "full-bleed.png",
+    "truth": "full-bleed-truth.png",
+    "split": "heldout",
+    "kind": "full-bleed",
+    "bg": "#fff"
+  }
+]

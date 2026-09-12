@@ -1,0 +1,363 @@
+{
+  "reviewer": "independent-last21",
+  "scope": "Cases22\u201342; original, available alpha reference, raw prediction, diagnostic refinement and actual returned image. Final production replay reviewed after moving safety validation to the refined output. Full4x raster boards retained.",
+  "cases": [
+    {
+      "number": 22,
+      "id": "s7-0-disconnected",
+      "appliedAtReview": true,
+      "pipelineReason": null,
+      "verdict": "pass",
+      "notes": "All four colored circles including tiny detached green dot remain intact. Raw light rims on black are removed by refinement; returned output matches reference visually.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/22-s7-0-disconnected-4x.png"
+    },
+    {
+      "number": 23,
+      "id": "s7-1-disconnected",
+      "appliedAtReview": true,
+      "pipelineReason": null,
+      "verdict": "pass",
+      "notes": "Gray background removed; four detached circles and smallest green dot preserved. Refined and returned edges clean on black, white and checkerboard.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/23-s7-1-disconnected-4x.png"
+    },
+    {
+      "number": 24,
+      "id": "s7-2-disconnected",
+      "appliedAtReview": false,
+      "pipelineReason": "foreground-loss",
+      "verdict": "reject-edge-artifacts",
+      "notes": "JPEG-colored rims and mottled edges remain, especially purple and blue circles; refinement roughens orange perimeter. All circles present, but not a clean removal.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/24-s7-2-disconnected-4x.png"
+    },
+    {
+      "number": 25,
+      "id": "real-0",
+      "appliedAtReview": false,
+      "pipelineReason": "uncertain-background",
+      "verdict": "reject-edge-artifacts",
+      "notes": "COMPASS shape preserved but raw/refined retain conspicuous light outlines on black. Tight crop touches image border and prevents background-confidence/matting; possible future padding support, not threshold relaxation.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/25-real-0-4x.png"
+    },
+    {
+      "number": 26,
+      "id": "real-1",
+      "appliedAtReview": false,
+      "pipelineReason": "foreground-loss",
+      "verdict": "reject-edge-artifacts",
+      "notes": "TRONDHEIM KOMMUNE lettering and crest broadly preserved, but residual light outlines and degraded soft crest perimeter persist. Source is low resolution and reference itself has edge contamination.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/26-real-1-4x.png"
+    },
+    {
+      "number": 27,
+      "id": "real-2",
+      "appliedAtReview": false,
+      "pipelineReason": "foreground-loss",
+      "verdict": "reject-foreground-loss",
+      "notes": "Model entirely removes the small sponsor logos above DRONE CHALLENGE. Circular badge survives, but missing top strip is major content loss.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/27-real-2-4x.png"
+    },
+    {
+      "number": 28,
+      "id": "real-3",
+      "appliedAtReview": false,
+      "pipelineReason": "uncertain-background",
+      "verdict": "reject-edge-artifacts",
+      "notes": "Utiq lettering and gradient intact; raw/refined have gray halo along inner q and outer shapes on black. Tight crop gives mixed border and blocks matting; result not clean yet.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/28-real-3-4x.png"
+    },
+    {
+      "number": 29,
+      "id": "real-4",
+      "appliedAtReview": false,
+      "pipelineReason": "foreground-loss",
+      "verdict": "reject-foreground-loss",
+      "notes": "Koteng blue rectangular brand panel is partially erased, becoming a diffuse blue fog around dandelion. Text stays legible on checkerboard; its disappearance on black after matting is expected black-on-black, not text loss.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/29-real-4-4x.png"
+    },
+    {
+      "number": 30,
+      "id": "real-5",
+      "appliedAtReview": false,
+      "pipelineReason": "unsafe-mask",
+      "verdict": "intrinsically-ambiguous",
+      "notes": "White iab.spain logo was flattened onto white, yielding blank input. No RGB information remains to reconstruct logo alpha; model produces empty output. Correct to retain input or seek original transparent source.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/30-real-5-4x.png"
+    },
+    {
+      "number": 31,
+      "id": "real-6",
+      "appliedAtReview": false,
+      "pipelineReason": "foreground-loss",
+      "verdict": "reject-background-retained",
+      "notes": "Raw retains white negative spaces inside flame/N-mark versus known alpha reference. Refinement clears some but leaves a bright rim in N and tagline; not a clean reference match. No need to hallucinate a new brand design.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/31-real-6-4x.png"
+    },
+    {
+      "number": 32,
+      "id": "real-7",
+      "appliedAtReview": false,
+      "pipelineReason": "foreground-loss",
+      "verdict": "reject-brand-detail-loss",
+      "notes": "TradeBridge retains lettering but removes much of white b-shaped interior of green icon, leaving patchy white/transparent split. No alpha truth is available; visible white icon detail must be preserved conservatively.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/32-real-7-4x.png"
+    },
+    {
+      "number": 33,
+      "id": "dark-white",
+      "appliedAtReview": false,
+      "pipelineReason": "background-retained",
+      "verdict": "reject-background-retained",
+      "notes": "White.io text survives but a large irregular dark background blob hangs from top edge. Refinement produces more angular boundaries around text; severe artifact visible on white/checkerboard.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/33-dark-white-4x.png"
+    },
+    {
+      "number": 34,
+      "id": "low-contrast",
+      "appliedAtReview": false,
+      "pipelineReason": "edge-uncertain",
+      "verdict": "reject-edge-artifacts",
+      "notes": "soft.io lettering retained but blurred light edges visible on black, uneven i/dot stroke. Low foreground/background contrast provides no confident local core; refinement leaves mask mostly unchanged.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/34-low-contrast-4x.png"
+    },
+    {
+      "number": 35,
+      "id": "shadow",
+      "appliedAtReview": false,
+      "pipelineReason": "foreground-loss",
+      "verdict": "reject-shadow-loss",
+      "notes": "Blue rounded rectangle survives but intentional drop shadow is removed almost entirely. Thin rim remains on black. If removing shadow were desired this might be usable, but it differs from preservation reference.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/35-shadow-4x.png"
+    },
+    {
+      "number": 36,
+      "id": "full-bleed",
+      "appliedAtReview": false,
+      "pipelineReason": "background-retained",
+      "verdict": "reject-background-retained",
+      "notes": "Full-bleed blue badge loses one irregular rectangle of panel below BAD while retaining most blue. Refinement creates outlines around white letters. Model has chosen inconsistent foreground; reject.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/36-full-bleed-4x.png"
+    },
+    {
+      "number": 37,
+      "id": "fresh-apple",
+      "appliedAtReview": true,
+      "pipelineReason": null,
+      "verdict": "pass-after-bug-fix",
+      "notes": "Apple diagnostic refined result visually matches reference including detached leaf and bite, with raw halo removed on black. No visible loss or holes at native/4x.  Final returned PNG is byte-identical to reviewed diagnostic refinement; clean output confirmed again at4x after production fix.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/37-fresh-apple-4x.png"
+    },
+    {
+      "number": 38,
+      "id": "fresh-figma",
+      "appliedAtReview": true,
+      "pipelineReason": null,
+      "verdict": "pass-after-bug-fix",
+      "notes": "Figma diagnostic refined outline and internal openings match alpha reference; raw gray rim removed. No visible stroke loss at native/4x.  Final returned PNG is byte-identical to reviewed diagnostic refinement; clean output confirmed again at4x after production fix.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/38-fresh-figma-4x.png"
+    },
+    {
+      "number": 39,
+      "id": "fresh-github",
+      "appliedAtReview": false,
+      "pipelineReason": "edge-uncertain",
+      "verdict": "reject-edge-artifacts",
+      "notes": "GitHub JPEG outline and tail survive, but yellow/brown speckled edge contamination remains on black, including cat ears and circle. Refinement reduces continuous halo but leaves dotted residue.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/39-fresh-github-4x.png"
+    },
+    {
+      "number": 40,
+      "id": "fresh-google",
+      "appliedAtReview": false,
+      "pipelineReason": "background-retained",
+      "verdict": "reject-background-retained",
+      "notes": "Google G retains a large white wedge between red and blue plus an interior white smear. Refinement removes only nearby fringe, leaving obvious white blob and introducing a dark gap around wedge.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/40-fresh-google-4x.png"
+    },
+    {
+      "number": 41,
+      "id": "fresh-instagram",
+      "appliedAtReview": false,
+      "pipelineReason": "foreground-loss",
+      "verdict": "reject-edge-artifacts",
+      "notes": "Tiny Instagram glyph preserves camera, dot and center circle, but uneven dark/gray rims persist; refined outline varies at corners and on black. JPEG source contamination remains unresolved.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/41-fresh-instagram-4x.png"
+    },
+    {
+      "number": 42,
+      "id": "fresh-notion",
+      "appliedAtReview": false,
+      "pipelineReason": "edge-uncertain",
+      "verdict": "reject-background-retained",
+      "notes": "Notion outline is retained, but interior panel remains uneven white patch with fuzzy cutout above N. Refinement makes patch boundary jagged. Reference interior is transparent; output inconsistent on checkerboard.",
+      "reviewedViews": [
+        "native-white",
+        "native-black",
+        "native-checkerboard",
+        "4x-white",
+        "4x-black",
+        "4x-checkerboard"
+      ],
+      "visualBoard": "runs/background-removal-all-42/visual/42-fresh-notion-4x.png"
+    }
+  ]
+}

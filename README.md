@@ -134,19 +134,74 @@ Or download the top pick:
 npx logo-yoink stripe.com --download ./downloads/stripe
 ```
 
-Raster selections can also be enhanced during download:
+Raster selections can also be enhanced during download. Model background removal
+is optional, disabled by default, and available only in local installs. Set it up
+explicitly once:
+
+```bash
+npx logo-yoink setup-background-removal
+```
+
+Setup installs the pinned CPU inference runtime and downloads verified model
+weights into a user-local cache. Normal package installation does neither.
+The selected model is BiRefNet Lite 512 FP32 (about 183 MiB of weights), using
+aspect-preserving padding, two overlapping views for wide/tall logos, a soft mask,
+and local edge matting to reduce halos. Uniform canvases also use model-guided
+background connectivity to retain thin strokes and detached dots. Model operations run sequentially.
+No GPU or Python installation is required.
+On an Apple M1 Pro, testing measured about 2.7 GiB peak inference-process memory
+and 2.3 seconds per image on average for the earlier single-attempt preset. Allow roughly 3 GB of memory headroom;
+performance and peak memory vary by platform. Compared with the previous 1024
+preset, the matched benchmark used 68% less peak memory and ran 3.8× faster.
+Inference runs in a separate local process, reused during a batch and shut down
+after five idle seconds so the OS can reclaim its native memory.
+Existing users of the 1024 model must rerun `logo-yoink setup-background-removal`
+to install the new pinned weights. Inference never silently downloads an upgrade.
+The current preset tolerates minor edge speckles while checking for lost details,
+filled counters and substantial halos. It produced transparent outputs for 21 of
+42 regression inputs and 14 of 18 additional inputs. One badge output removes a
+potentially intentional colored panel, so that result needs a brand-intent review.
+A difficult image can receive one padded retry using the same model. The full
+60-image run averaged 3.7 seconds per input including retries; this is a quality
+tradeoff, not a speed improvement over a single attempt.
+See the [resource and quality comparison](docs/background-removal-performance.md).
+The [current pipeline review](docs/background-removal-pipeline-v2.md) records
+coverage, remaining failures, visual QA and the historical baseline.
+Subsequent background removal runs entirely on your machine without network
+access; fetching the original website and logos still requires a connection.
+The cache defaults to `~/.cache/logo-yoink/background-removal`. Set
+`LOGO_YOINK_MODEL_CACHE` for both setup and extraction to use another directory.
+
+Enable it per extraction:
 
 ```bash
 npx logo-yoink stripe.com --remove-background --width 1024 --download ./downloads/stripe
 npx logo-yoink stripe.com --upscale 2
 ```
 
-Background removal is confidence-gated and only removes a uniform edge-matching
-background. Upscaling uses bounded Lanczos resampling only when the raster is
-smaller than the requested dimensions. SVGs are never rasterized. The JSON keeps
+Background removal first reuses an already-discovered transparent variant when
+its asset family, role, theme, color and proportions match. That path needs no
+model setup or inference. Otherwise it uses the local segmentation model.
+Repeated image bytes within one extraction share the model result.
+Missing setup or failed/unsafe processing preserves the original and
+reports the reason in `processedAssets`. SVGs and already-transparent images
+are left unchanged. Removal runs before optional upscaling.
+
+For JavaScript use `{ removeBackground: true }`; the local HTTP API accepts
+`"removeBackground": true`. The hosted API does not offer model background
+removal, and the website has no background-removal control.
+
+Upscaling uses bounded Lanczos resampling only when the raster is
+smaller than the requested dimensions. Selected SVGs remain unchanged; a matching
+transparent SVG alternative may supply a derived PNG for an opaque raster selection. The JSON keeps
 the canonical originals in `assets` and returns originals, enhanced PNGs, and
 transformation metadata together in `processedAssets`; upscaled results are
 explicitly flagged as resampled because interpolation cannot restore missing detail.
+
+Background removal can still struggle with small lettering, low contrast, or
+artwork whose background is part of the brand. Keep the original and review
+enhanced results before use. See the [model quality report](docs/background-removal-quality.md)
+for measured comparisons and limitations.
 
 Add `--role logo` to download the preferred wordmark instead of the default icon-first pick.
 
@@ -241,7 +296,9 @@ The simplest response fields are top-level `icon` and `logo`. They are aliases o
   <img src="public/assets/how-it-works/ai-ranking-trail.webp" alt="Pixel-art cowboy lassoing icon and wordmark tiles from a browser window">
 </p>
 
-Logo Yoink is a deterministic discovery and ranking pipeline. AI helped build the benchmark used to improve it; AI is **not** called when you extract a logo.
+Logo Yoink uses deterministic discovery and ranking. AI helped build the benchmark
+used to improve it. Extraction does not call an AI service; local installs can
+explicitly enable a local model for optional background removal after selection.
 
 1. **Discover broadly.** The static pass reads the page, structured data, manifests, favicon declarations, image sources, and safe inline SVGs. A bounded browser pass can recover assets rendered by JavaScript.
 2. **Validate and deduplicate.** Candidates are downloaded under strict budgets, checked as real image bytes, measured, and collapsed by URL, content hash, and asset family.
