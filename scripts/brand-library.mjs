@@ -363,18 +363,203 @@ async function verify() {
 
 async function coverage() {
   const runRoot = resolve(ROOT, 'runs');
-  const checked = new Set();
-  if (await exists(runRoot)) {
-    for (const runId of await readdir(runRoot)) {
-      const path = resolve(runRoot, runId, 'report.json');
-      if (!await exists(path)) continue;
-      for (const record of (await readJson(path)).records ?? []) checked.add(record.brand.id);
+  const manifest = await readJson(resolve(ROOT, 'manifest.json'));
+  const manifestById = new Map(manifest.brands.map(brand => [brand.id, brand]));
+  const researchById = new Map();
+  const researchFiles = [];
+  const deepSearchRoot = resolve(ROOT, 'deep-search');
+  if (await exists(deepSearchRoot)) {
+    for (const file of (await readdir(deepSearchRoot)).filter(name => name.endsWith('.json')).sort()) {
+      const relativePath = `deep-search/${file}`;
+      const research = await readJson(resolve(deepSearchRoot, file));
+      researchFiles.push(relativePath);
+      const add = (brandId, evidence) => {
+        if (!brandId) return;
+        const values = researchById.get(brandId) ?? [];
+        values.push({ sourceFile: relativePath, ...evidence });
+        researchById.set(brandId, values);
+      };
+      for (const tested of research.tested ?? []) {
+        add(tested.brandId, {
+          rawStatus: tested.outcome ?? 'unknown',
+          status: tested.outcome === 'no-approved-candidate' ? 'no-art-found' : tested.outcome ?? 'unknown',
+          candidates: [], reason: tested.reason ?? null,
+        });
+      }
+      for (const result of research.results ?? []) {
+        add(result.brandId, {
+          rawStatus: result.status ?? 'unknown',
+          status: result.status === 'not-found' ? 'no-art-found' : result.status ?? 'unknown',
+          candidates: result.candidates ?? [], reason: result.reason ?? null,
+        });
+      }
     }
   }
-  const manifest = await readJson(resolve(ROOT, 'manifest.json'));
-  const missing = brands.filter(brand => !checked.has(brand.id) && !manifest.brands.find(item => item.id === brand.id && item.seededFrom)).map(brand => brand.id);
-  const approved = manifest.brands.filter(brand => Object.keys(brand.assets ?? {}).length || Object.values(brand.variants ?? {}).flat().length);
-  console.log(JSON.stringify({ identities: brands.length, checked: brands.length - missing.length, missingCount: missing.length, ...(has('--list') ? { missing } : {}), approvedIdentities: approved.length, approvedAssets: approved.reduce((count, brand) => count + Object.keys(brand.assets ?? {}).length + Object.values(brand.variants ?? {}).flat().length, 0) }, null, 2));
+
+  const rejectedCandidates = new Map();
+  const decisionFiles = [];
+  for (const file of (await readdir(ROOT)).filter(name => name.startsWith('review-') && name.endsWith('.json')).sort()) {
+    const decisions = await readJson(resolve(ROOT, file));
+    decisionFiles.push(file);
+    for (const decision of decisions.decisions ?? []) {
+      if (decision.action !== 'reject' || !decision.brandId || !decision.role) continue;
+      const key = `${decision.brandId}:${decision.role}`;
+      const values = rejectedCandidates.get(key) ?? [];
+      values.push({ sourceFile: file, reason: decision.reason ?? null, reviewedAt: decision.reviewedAt ?? decisions.reviewedAt ?? null });
+      rejectedCandidates.set(key, values);
+    }
+  }
+
+  const rightsPath = resolve(ROOT, 'rights-notes.json');
+  const rightsById = new Map();
+  if (await exists(rightsPath)) {
+    for (const record of (await readJson(rightsPath)).records ?? []) {
+      const values = rightsById.get(record.brandId) ?? [];
+      values.push({ ...record, sourceFile: 'rights-notes.json' });
+      rightsById.set(record.brandId, values);
+    }
+  }
+
+  const runEvidenceById = new Map();
+  const runReports = [];
+  const isTransientFailure = message => /(?:408|425|429|5\d\d|abort|fetch|network|rate.?limit|temporar|tim(?:e|ed)[ -]?out|unavailable|connection)/i.test(String(message ?? ''));
+  const addRunEvidence = (brandId, evidence) => {
+    if (!brandId) return;
+    const values = runEvidenceById.get(brandId) ?? [];
+    values.push(evidence);
+    runEvidenceById.set(brandId, values);
+  };
+  if (await exists(runRoot)) {
+    for (const runId of (await readdir(runRoot)).sort()) {
+      const reportPath = resolve(runRoot, runId, 'report.json');
+      if (!await exists(reportPath)) continue;
+      const report = await readJson(reportPath);
+      runReports.push(`runs/${runId}/report.json`);
+      for (const record of report.records ?? []) {
+        const brandId = record.brand?.id;
+        if (record.error && isTransientFailure(record.error)) addRunEvidence(brandId, { runId, role: null, error: record.error, sourceFile: `runs/${runId}/report.json` });
+        for (const role of ['icon', 'logo']) {
+          const value = record.roles?.[role];
+          if (value?.status === 'blocked' && isTransientFailure(record.error ?? value.error)) {
+            addRunEvidence(brandId, { runId, role, error: record.error ?? value.error ?? 'blocked', sourceFile: `runs/${runId}/report.json` });
+          }
+        }
+        for (const diagnostic of record.diagnostics ?? []) {
+          if (isTransientFailure(diagnostic.error)) addRunEvidence(brandId, { runId, role: diagnostic.role ?? null, error: diagnostic.error, sourceFile: `runs/${runId}/report.json` });
+        }
+      }
+    }
+  }
+
+  const layoutFor = (asset, role) => {
+    const representation = String(asset?.representation ?? '').toLowerCase();
+    if (/(?:icon|symbol|square|compact|app[- ]icon|brand[- ]mark)/.test(representation)) return 'compact';
+    if (/(?:wordmark|lockup)/.test(representation)) return 'horizontal';
+    const width = Number(asset?.width), height = Number(asset?.height);
+    if (width > 0 && height > 0 && width / height >= 2) return 'horizontal';
+    if (role === 'icon' && width > 0 && height > 0 && width / height <= 1.5) return 'compact';
+    return 'unknown';
+  };
+  const candidateSource = (candidate, reason) => ({
+    role: candidate.role ?? null, sourceUrl: candidate.url ?? null, discoveryPage: candidate.discoveryPage ?? null,
+    sourceKind: candidate.sourceKind ?? null, theme: candidate.theme ?? null,
+    representation: candidate.representation ?? null, layout: layoutFor(candidate, candidate.role), rightsNote: candidate.rightsNote ?? null,
+    identityCheck: reason ?? null,
+  });
+  const approvedSource = (asset, role) => ({
+    role, sourceUrl: asset.sourceUrl ?? null, discoveryPage: asset.discoveryPage ?? null,
+    sourceKind: asset.sourceKind ?? null, representation: asset.representation ?? null, layout: layoutFor(asset, role),
+  });
+
+  const queueRows = brands.map(brand => {
+    const current = manifestById.get(brand.id) ?? {};
+    const assets = current.assets ?? {};
+    const variants = Object.values(current.variants ?? {}).flat();
+    const approvedAny = Boolean(Object.keys(assets).length || variants.length);
+    const research = researchById.get(brand.id) ?? [];
+    const candidates = research.flatMap(evidence => (evidence.candidates ?? []).map(candidate => ({ ...candidate, sourceFile: evidence.sourceFile, researchReason: evidence.reason })));
+    const pendingCandidateReview = candidates.filter(candidate => {
+      const role = candidate.role;
+      return ['icon', 'logo'].includes(role) && !assets[role] && !(rejectedCandidates.get(`${brand.id}:${role}`)?.length);
+    });
+    const restrictions = [
+      ...(rightsById.get(brand.id) ?? []).map(record => ({ kind: 'rights-note', ...record })),
+      ...research.filter(evidence => evidence.rawStatus === 'permission-gated').map(evidence => ({
+        kind: 'research-permission-gated', sourceFile: evidence.sourceFile, reason: evidence.reason,
+      })),
+    ];
+    const transientAcquisitionFailures = [
+      ...(runEvidenceById.get(brand.id) ?? []),
+      ...research.filter(evidence => /(?:rate.?limited|temporar|timeout|unavailable)/i.test(evidence.rawStatus)).map(evidence => ({
+        sourceFile: evidence.sourceFile, error: evidence.reason ?? evidence.rawStatus,
+      })),
+    ];
+    const noArtEvidence = research.filter(evidence => evidence.status === 'no-art-found');
+    const hasResearchCandidate = candidates.length > 0;
+    const genuinelyNoArt = !approvedAny && !hasResearchCandidate && !restrictions.length && !transientAcquisitionFailures.length && noArtEvidence.length > 0;
+    const runEvidence = runEvidenceById.get(brand.id) ?? [];
+    const attemptEvidence = [
+      ...(runEvidence.length ? ['run-report'] : []),
+      ...(research.length ? ['committed-research'] : []),
+      ...(current.lastCheckedAt ? ['manifest-lastCheckedAt'] : []),
+    ];
+    const explicitNeverAttempted = current.attempted === false || current.attemptHistory === 'never_attempted' || brand.attempted === false || brand.attemptHistory === 'never_attempted';
+    const unknownAttemptHistory = !attemptEvidence.length && !explicitNeverAttempted;
+    return {
+      id: brand.id, name: brand.name, domain: brand.domain, officialHomepage: current.officialHomepage ?? brand.officialHomepage,
+      identityType: current.identityType ?? brand.identityType, parentBrandId: current.parentBrandId ?? brand.parentBrandId ?? null,
+      approved_any: approvedAny, icon_present: Boolean(assets.icon), company_name_logo_present: Boolean(assets.logo),
+      approved: Object.fromEntries(['icon', 'logo'].filter(role => assets[role]).map(role => [role, approvedSource(assets[role], role)])),
+      approved_variant_count: variants.length,
+      research: research.map(evidence => ({
+        sourceFile: evidence.sourceFile, status: evidence.status, rawStatus: evidence.rawStatus,
+        reason: evidence.reason, candidates: evidence.candidates.map(candidate => candidateSource(candidate, evidence.reason)),
+      })),
+      queue: {
+        pending_candidate_review: pendingCandidateReview.map(candidate => ({ ...candidateSource(candidate, candidate.researchReason), sourceFile: candidate.sourceFile })),
+        genuinely_no_art: genuinelyNoArt,
+        transient_acquisition_failure: transientAcquisitionFailures,
+        unresolved_identity_or_source: current.verificationStatus === 'unresolved',
+        recorded_restriction: restrictions,
+        unknown_attempt_history: unknownAttemptHistory,
+        never_attempted: explicitNeverAttempted,
+      },
+      attempt_history: { state: explicitNeverAttempted ? 'never_attempted' : unknownAttemptHistory ? 'unknown' : 'attempted', evidence: attemptEvidence },
+      restrictions,
+      notes: current.notes ?? [],
+      approved_source_urls: Object.entries(assets).map(([role, asset]) => ({ role, ...approvedSource(asset, role) })),
+    };
+  });
+
+  const count = predicate => queueRows.filter(predicate).length;
+  const summary = {
+    identities: queueRows.length,
+    approved_any: count(row => row.approved_any), icon_present: count(row => row.icon_present), company_name_logo_present: count(row => row.company_name_logo_present),
+    both: count(row => row.icon_present && row.company_name_logo_present), icon_only: count(row => row.icon_present && !row.company_name_logo_present), logo_only: count(row => row.company_name_logo_present && !row.icon_present), empty: count(row => !row.approved_any),
+    approved_assets: queueRows.reduce((total, row) => total + Object.keys(row.approved).length + row.approved_variant_count, 0),
+    approved_layout: ['horizontal', 'compact', 'unknown'].reduce((result, layout) => {
+      result[layout] = queueRows.reduce((total, row) => total + Object.values(row.approved).filter(asset => asset.layout === layout).length, 0);
+      return result;
+    }, {}),
+    queue: {
+      pending_candidate_review: count(row => row.queue.pending_candidate_review.length > 0), genuinely_no_art: count(row => row.queue.genuinely_no_art), transient_acquisition_failure: count(row => row.queue.transient_acquisition_failure.length > 0),
+      unresolved_identity_or_source: count(row => row.queue.unresolved_identity_or_source), recorded_restriction: count(row => row.queue.recorded_restriction.length > 0),
+      unknown_attempt_history: count(row => row.queue.unknown_attempt_history), never_attempted: count(row => row.queue.never_attempted),
+    },
+    attempt_history: { attempted: count(row => row.attempt_history.state === 'attempted'), unknown: count(row => row.attempt_history.state === 'unknown'), never_attempted: count(row => row.attempt_history.state === 'never_attempted') },
+  };
+  const report = {
+    schemaVersion: 1, libraryId: sourceRegistry.libraryId, generatedAt: new Date().toISOString(),
+    inputs: { sources: 'sources.json', manifest: 'manifest.json', rights: await exists(rightsPath) ? 'rights-notes.json' : null, research: researchFiles, reviewDecisions: decisionFiles, localRunReports: runReports },
+    summary, brands: queueRows,
+  };
+  const output = option('--output');
+  if (output) {
+    await writeJson(resolve(output), report);
+    console.log(JSON.stringify({ ...summary, output: resolve(output) }, null, 2));
+  } else {
+    console.log(JSON.stringify(report, null, 2));
+  }
 }
 
 async function withdraw() {
