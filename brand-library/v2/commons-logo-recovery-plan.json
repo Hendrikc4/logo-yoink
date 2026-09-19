@@ -1,0 +1,809 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-19T10:20:14.220Z",
+  "method": "Hand-selected direct Wikimedia Commons file-title/imageinfo recovery candidates.",
+  "stagingPlan": {
+    "records": [
+      {
+        "brandId": "apple",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Apple_logo_with_text.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Apple_logo_with_text.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Apple_logo_with_text.png",
+        "commonsTitle": "File:Apple logo with text.png",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "nike",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Nike_wordmark.svg/1920px-Nike_wordmark.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Nike_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Nike_wordmark.svg",
+        "commonsTitle": "File:Nike wordmark.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "airbnb",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1920px-Airbnb_Logo_B%C3%A9lo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Airbnb_Logo_B%C3%A9lo.svg",
+        "commonsTitle": "File:Airbnb Logo Bélo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "xiaomi",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Xiaomi_logo_horizontal_%282021-%29.svg/1920px-Xiaomi_logo_horizontal_%282021-%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Xiaomi_logo_horizontal_%282021-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Xiaomi_logo_horizontal_(2021-).svg",
+        "commonsTitle": "File:Xiaomi logo horizontal (2021-).svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "tiktok",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Tiktok_logo_text.svg/1920px-Tiktok_logo_text.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Tiktok_logo_text.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Tiktok_logo_text.svg",
+        "commonsTitle": "File:Tiktok logo text.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "alibaba",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Alibaba_en_logo.svg/1920px-Alibaba_en_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Alibaba_en_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Alibaba_en_logo.svg",
+        "commonsTitle": "File:Alibaba en logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "target",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Target_Logo_%282%29.svg/1920px-Target_Logo_%282%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Target_Logo_%282%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Target_Logo_(2).svg",
+        "commonsTitle": "File:Target Logo (2).svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "louis-vuitton",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Louis_Vuitton_logo_and_wordmark.svg/1920px-Louis_Vuitton_logo_and_wordmark.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Louis_Vuitton_logo_and_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Louis_Vuitton_logo_and_wordmark.svg",
+        "commonsTitle": "File:Louis Vuitton logo and wordmark.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "mercedes-benz",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Mercedes_Benz_wordmark.svg/1920px-Mercedes_Benz_wordmark.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Mercedes_Benz_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Mercedes_Benz_wordmark.svg",
+        "commonsTitle": "File:Mercedes Benz wordmark.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "volkswagen",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Volkswagen_Group_Logo_2023_zweizeilig.svg/1920px-Volkswagen_Group_Logo_2023_zweizeilig.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Volkswagen_Group_Logo_2023_zweizeilig.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Volkswagen_Group_Logo_2023_zweizeilig.svg",
+        "commonsTitle": "File:Volkswagen Group Logo 2023 zweizeilig.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "shell",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Shell_wordmark_2019.svg/1920px-Shell_wordmark_2019.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Shell_wordmark_2019.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Shell_wordmark_2019.svg",
+        "commonsTitle": "File:Shell wordmark 2019.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "bp",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Bp-logo.svg/1920px-Bp-logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Bp-logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Bp-logo.svg",
+        "commonsTitle": "File:Bp-logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "ups",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/UPS_Logo_Shield_2017.svg/1920px-UPS_Logo_Shield_2017.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/UPS_Logo_Shield_2017.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:UPS_Logo_Shield_2017.svg",
+        "commonsTitle": "File:UPS Logo Shield 2017.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "servicenow",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/ServiceNow_logo.svg/1920px-ServiceNow_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:ServiceNow_logo.svg",
+        "commonsTitle": "File:ServiceNow logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "zendesk",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Zendesk_logo.svg/1920px-Zendesk_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Zendesk_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Zendesk_logo.svg",
+        "commonsTitle": "File:Zendesk logo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "crowdstrike",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/CrowdStrike_logo.svg/1920px-CrowdStrike_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/CrowdStrike_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:CrowdStrike_logo.svg",
+        "commonsTitle": "File:CrowdStrike logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "lidl",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Lidl_logo.svg/1920px-Lidl_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Lidl_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Lidl_logo.svg",
+        "commonsTitle": "File:Lidl logo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "tesco",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Tesco_2026_logo.svg/1920px-Tesco_2026_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Tesco_2026_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Tesco_2026_logo.svg",
+        "commonsTitle": "File:Tesco 2026 logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "marks-spencer",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Marks_%26_Spencer_corporate_logo.svg/1920px-Marks_%26_Spencer_corporate_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Marks_%26_Spencer_corporate_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Marks_%26_Spencer_corporate_logo.svg",
+        "commonsTitle": "File:Marks & Spencer corporate logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "uniqlo",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Uniqlo_logo_Japanese.svg/1920px-Uniqlo_logo_Japanese.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Uniqlo_logo_Japanese.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Uniqlo_logo_Japanese.svg",
+        "commonsTitle": "File:Uniqlo logo Japanese.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "qantas",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Qantas_wordmark_2016.svg/1920px-Qantas_wordmark_2016.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Qantas_wordmark_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Qantas_wordmark_2016.svg",
+        "commonsTitle": "File:Qantas wordmark 2016.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "audi",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/AUDI_Logo_%282024%29.svg/1920px-AUDI_Logo_%282024%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/AUDI_Logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:AUDI_Logo_(2024).svg",
+        "commonsTitle": "File:AUDI Logo (2024).svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "wells-fargo",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Wells_Fargo_Logo_%282020%29.svg/1920px-Wells_Fargo_Logo_%282020%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Wells_Fargo_Logo_%282020%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Wells_Fargo_Logo_(2020).svg",
+        "commonsTitle": "File:Wells Fargo Logo (2020).svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "ubs",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/UBS_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/UBS_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:UBS_Logo.png",
+        "commonsTitle": "File:UBS Logo.png",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "axa",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/AXA_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/AXA_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:AXA_logo.png",
+        "commonsTitle": "File:AXA logo.png",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "merck",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Merck_Logo.svg/1920px-Merck_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Merck_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Merck_Logo.svg",
+        "commonsTitle": "File:Merck Logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "medtronic",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Medtronic_logo.svg/1920px-Medtronic_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Medtronic_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Medtronic_logo.svg",
+        "commonsTitle": "File:Medtronic logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "the-guardian",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/The_Guardian_2.svg/1920px-The_Guardian_2.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/The_Guardian_2.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:The_Guardian_2.svg",
+        "commonsTitle": "File:The Guardian 2.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "valve",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Valve_logo.svg/1920px-Valve_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Valve_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Valve_logo.svg",
+        "commonsTitle": "File:Valve logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "ge-vernova",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/GE_Vernova_logo.svg/1920px-GE_Vernova_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/GE_Vernova_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:GE_Vernova_logo.svg",
+        "commonsTitle": "File:GE Vernova logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "elevance-health",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Elevance_Health_Logo_2022.svg/1920px-Elevance_Health_Logo_2022.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Elevance_Health_Logo_2022.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Elevance_Health_Logo_2022.svg",
+        "commonsTitle": "File:Elevance Health Logo 2022.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "global-payments",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Global_Payments_Inc._logo.svg/1920px-Global_Payments_Inc._logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/Global_Payments_Inc._logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Global_Payments_Inc._logo.svg",
+        "commonsTitle": "File:Global Payments Inc. logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "duke-energy",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Duke_Energy_logo.svg/1920px-Duke_Energy_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Duke_Energy_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Duke_Energy_logo.svg",
+        "commonsTitle": "File:Duke Energy logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "capital-one",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Capital_One_logo.svg/1920px-Capital_One_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Capital_One_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Capital_One_logo.svg",
+        "commonsTitle": "File:Capital One logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "coinbase",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Coinbase.svg/1920px-Coinbase.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Coinbase.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Coinbase.svg",
+        "commonsTitle": "File:Coinbase.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "eog-resources",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/EOG_Resources_logo.svg/1920px-EOG_Resources_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/EOG_Resources_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:EOG_Resources_logo.svg",
+        "commonsTitle": "File:EOG Resources logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "humana",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Humana_logo.svg/1920px-Humana_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Humana_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Humana_logo.svg",
+        "commonsTitle": "File:Humana logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "standard-chartered",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Standard_Chartered_%282021%29.svg/1920px-Standard_Chartered_%282021%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Standard_Chartered_%282021%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Standard_Chartered_(2021).svg",
+        "commonsTitle": "File:Standard Chartered (2021).svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "nucor",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Nucor_logo.svg/1920px-Nucor_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Nucor_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Nucor_logo.svg",
+        "commonsTitle": "File:Nucor logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "sse",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/SSE_plc_2021_logo.svg/1920px-SSE_plc_2021_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/SSE_plc_2021_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:SSE_plc_2021_logo.svg",
+        "commonsTitle": "File:SSE plc 2021 logo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "fanuc",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Fanuc_logo.svg/1920px-Fanuc_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Fanuc_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Fanuc_logo.svg",
+        "commonsTitle": "File:Fanuc logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "skt",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/SK_Telecom_Logo.svg/1920px-SK_Telecom_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/SK_Telecom_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:SK_Telecom_Logo.svg",
+        "commonsTitle": "File:SK Telecom Logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "bnp-paribas",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Logo_BNP_Paribas_2016.svg/1920px-Logo_BNP_Paribas_2016.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Logo_BNP_Paribas_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Logo_BNP_Paribas_2016.svg",
+        "commonsTitle": "File:Logo BNP Paribas 2016.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "bridgestone",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Bridgestone_logo_full_color.svg/1920px-Bridgestone_logo_full_color.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Bridgestone_logo_full_color.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Bridgestone_logo_full_color.svg",
+        "commonsTitle": "File:Bridgestone logo full color.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "fast-retailing",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Fast_Retailing_logo.svg/1920px-Fast_Retailing_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Fast_Retailing_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Fast_Retailing_logo.svg",
+        "commonsTitle": "File:Fast Retailing logo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "sega-sammy",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Sega_Sammy_Holdings_logo.svg/1920px-Sega_Sammy_Holdings_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Sega_Sammy_Holdings_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Sega_Sammy_Holdings_logo.svg",
+        "commonsTitle": "File:Sega Sammy Holdings logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "dove",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Dove_wordmark.svg/1920px-Dove_wordmark.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Dove_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Dove_wordmark.svg",
+        "commonsTitle": "File:Dove wordmark.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "7-eleven",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/7-eleven_logo.svg/1920px-7-eleven_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/7-eleven_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:7-eleven_logo.svg",
+        "commonsTitle": "File:7-eleven logo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "zomato",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Zomato_Logo.svg/1920px-Zomato_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Zomato_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Zomato_Logo.svg",
+        "commonsTitle": "File:Zomato Logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "bigbasket",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/BigBasket_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/BigBasket_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:BigBasket_Logo.png",
+        "commonsTitle": "File:BigBasket Logo.png",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "disney-plus",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Disney%2BLogo_2024_Black.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Disney%2BLogo_2024_Black.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Disney%2BLogo_2024_Black.png",
+        "commonsTitle": "File:Disney+Logo 2024 Black.png",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "youtube-music",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/YouTube_Music_full_logo.svg/1920px-YouTube_Music_full_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/YouTube_Music_full_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:YouTube_Music_full_logo.svg",
+        "commonsTitle": "File:YouTube Music full logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "soundcloud",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Soundcloud_logo.svg/1920px-Soundcloud_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Soundcloud_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Soundcloud_logo.svg",
+        "commonsTitle": "File:Soundcloud logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "bilibili",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Bilibili_2023.svg/1920px-Bilibili_2023.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Bilibili_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Bilibili_2023.svg",
+        "commonsTitle": "File:Bilibili 2023.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "messenger",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Facebook_Messenger_wordmark_2025.svg/1920px-Facebook_Messenger_wordmark_2025.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Facebook_Messenger_wordmark_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Facebook_Messenger_wordmark_2025.svg",
+        "commonsTitle": "File:Facebook Messenger wordmark 2025.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "nbc",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/NBC_logo_2022.svg/1920px-NBC_logo_2022.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/NBC_logo_2022.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:NBC_logo_2022.svg",
+        "commonsTitle": "File:NBC logo 2022.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "ana-holdings",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/ANA_Holdings_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/ANA_Holdings_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:ANA_Holdings_Logo.png",
+        "commonsTitle": "File:ANA Holdings Logo.png",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "acura",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Acura_logo.svg/1920px-Acura_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Acura_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Acura_logo.svg",
+        "commonsTitle": "File:Acura logo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "ducati",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Logo_Ducati.svg/1920px-Logo_Ducati.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Logo_Ducati.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Logo_Ducati.svg",
+        "commonsTitle": "File:Logo Ducati.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "gatorade",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Gatorade_2025.svg/1920px-Gatorade_2025.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Gatorade_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Gatorade_2025.svg",
+        "commonsTitle": "File:Gatorade 2025.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "celine",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Celine_logo.svg/1920px-Celine_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Celine_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Celine_logo.svg",
+        "commonsTitle": "File:Celine logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "traveloka",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Traveloka_Primary_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Traveloka_Primary_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Traveloka_Primary_Logo.png",
+        "commonsTitle": "File:Traveloka Primary Logo.png",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "flipkart",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Flipkart_Logo_as_of_2025.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Flipkart_Logo_as_of_2025.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Flipkart_Logo_as_of_2025.png",
+        "commonsTitle": "File:Flipkart Logo as of 2025.png",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "kitkat",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo_of_the_KitKat.svg/1920px-Logo_of_the_KitKat.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_of_the_KitKat.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Logo_of_the_KitKat.svg",
+        "commonsTitle": "File:Logo of the KitKat.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "ross-stores",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Ross_Stores_logo.svg/1920px-Ross_Stores_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ross_Stores_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Ross_Stores_logo.svg",
+        "commonsTitle": "File:Ross Stores logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "e-leclerc",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/E.Leclerc_logo.svg/1920px-E.Leclerc_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/E.Leclerc_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:E.Leclerc_logo.svg",
+        "commonsTitle": "File:E.Leclerc logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "adeo",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Logo_Adeo.svg/1920px-Logo_Adeo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Adeo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Logo_Adeo.svg",
+        "commonsTitle": "File:Logo Adeo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "delivery-hero",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Delivery_Hero_logo.svg/1920px-Delivery_Hero_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Delivery_Hero_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Delivery_Hero_logo.svg",
+        "commonsTitle": "File:Delivery Hero logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "paytm",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_Logo_%28standalone%29.svg/1920px-Paytm_Logo_%28standalone%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Paytm_Logo_(standalone).svg",
+        "commonsTitle": "File:Paytm Logo (standalone).svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "godaddy",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/GoDaddy_logo_2020.svg/1920px-GoDaddy_logo_2020.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/GoDaddy_logo_2020.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:GoDaddy_logo_2020.svg",
+        "commonsTitle": "File:GoDaddy logo 2020.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "namecheap",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Namecheap_Logo.svg/1920px-Namecheap_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Namecheap_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Namecheap_Logo.svg",
+        "commonsTitle": "File:Namecheap Logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "smartsheet",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Smartsheet_Horizontal_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Smartsheet_Horizontal_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Smartsheet_Horizontal_Logo.png",
+        "commonsTitle": "File:Smartsheet Horizontal Logo.png",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "arm",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Arm_logo_2025.svg/1920px-Arm_logo_2025.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Arm_logo_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Arm_logo_2025.svg",
+        "commonsTitle": "File:Arm logo 2025.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "coupang",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Coupang_logo.svg/1920px-Coupang_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Coupang_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Coupang_logo.svg",
+        "commonsTitle": "File:Coupang logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "applied-materials",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Applied_Materials_Inc._Logo.svg/1920px-Applied_Materials_Inc._Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Applied_Materials_Inc._Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Applied_Materials_Inc._Logo.svg",
+        "commonsTitle": "File:Applied Materials Inc. Logo.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "affirm",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Affirm_2023_logo.svg/1920px-Affirm_2023_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Affirm_2023_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Affirm_2023_logo.svg",
+        "commonsTitle": "File:Affirm 2023 logo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "tokyo-electron",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Tokyo_Electron_logo.svg/1920px-Tokyo_Electron_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/Tokyo_Electron_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Tokyo_Electron_logo.svg",
+        "commonsTitle": "File:Tokyo Electron logo.svg",
+        "representation": "compact_wordmark"
+      },
+      {
+        "brandId": "coda",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Coda_Logo_Wordmark.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Coda_Logo_Wordmark.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Coda_Logo_Wordmark.png",
+        "commonsTitle": "File:Coda Logo Wordmark.png",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "sinch",
+        "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Sinch_logotype_black.svg/1920px-Sinch_logotype_black.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Sinch_logotype_black.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Sinch_logotype_black.svg",
+        "commonsTitle": "File:Sinch logotype black.svg",
+        "representation": "wordmark_or_lockup"
+      },
+      {
+        "brandId": "the-pokemon-company",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Logo_of_The_Pok%C3%A9mon_Company.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Logo_of_The_Pok%C3%A9mon_Company.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "external": true,
+        "source": "wikimedia-commons-file-search",
+        "discoveryPage": "https://commons.wikimedia.org/wiki/File:Logo_of_The_Pok%C3%A9mon_Company.jpg",
+        "commonsTitle": "File:Logo of The Pokémon Company.jpg",
+        "representation": "compact_wordmark"
+      }
+    ]
+  }
+}

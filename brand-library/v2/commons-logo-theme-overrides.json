@@ -1,0 +1,32 @@
+{
+  "records": [
+    { "brandId": "apple", "theme": "light" },
+    { "brandId": "nike", "theme": "light" },
+    { "brandId": "tiktok", "theme": "light" },
+    { "brandId": "target", "theme": "light" },
+    { "brandId": "louis-vuitton", "theme": "light" },
+    { "brandId": "mercedes-benz", "theme": "light" },
+    { "brandId": "volkswagen", "theme": "light" },
+    { "brandId": "servicenow", "theme": "light" },
+    { "brandId": "zendesk", "theme": "light" },
+    { "brandId": "qantas", "theme": "light" },
+    { "brandId": "audi", "theme": "light" },
+    { "brandId": "merck", "theme": "light" },
+    { "brandId": "the-guardian", "theme": "dark" },
+    { "brandId": "capital-one", "theme": "light" },
+    { "brandId": "eog-resources", "theme": "light" },
+    { "brandId": "bnp-paribas", "theme": "light" },
+    { "brandId": "bridgestone", "theme": "light" },
+    { "brandId": "sega-sammy", "theme": "light" },
+    { "brandId": "dove", "theme": "light" },
+    { "brandId": "disney-plus", "theme": "light" },
+    { "brandId": "youtube-music", "theme": "light" },
+    { "brandId": "nbc", "theme": "light" },
+    { "brandId": "acura", "theme": "light" },
+    { "brandId": "gatorade", "theme": "light" },
+    { "brandId": "celine", "theme": "light" },
+    { "brandId": "godaddy", "theme": "light" },
+    { "brandId": "affirm", "theme": "light" },
+    { "brandId": "sinch", "theme": "light" }
+  ]
+}

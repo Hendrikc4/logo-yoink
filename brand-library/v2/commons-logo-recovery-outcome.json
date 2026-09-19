@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "runId": "icon-only-2026-09-19",
+  "method": "Direct Wikimedia Commons file-title search plus imageinfo, independent of Wikidata P154 and homepage crawling.",
+  "searchedResidualBrands": 247,
+  "brandsWithPlausibleFiles": 91,
+  "selectedForVisualReview": 80,
+  "stagedForVisualReview": 72,
+  "approvedAfterLightDarkReview": 68,
+  "rejectedAfterLightDarkReview": 4,
+  "downloadFailures": 8,
+  "downloadFailureReason": "Wikimedia upload host returned HTTP 429 after bounded paced retries.",
+  "downloadFailureBrandIds": [
+    "ubs",
+    "axa",
+    "bigbasket",
+    "ana-holdings",
+    "traveloka",
+    "smartsheet",
+    "coda",
+    "the-pokemon-company"
+  ],
+  "selectionFile": "commons-logo-recovery-selection.json",
+  "reviewDecisionFile": "commons-logo-review-decisions.json",
+  "approvalHistoryFile": "approval-history/icon-only-commons-2026-09-19.json",
+  "residualGapReport": "icon-only-logo-gap-report.json"
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "runId": "icon-only-2026-09-19",
+  "sourceReport": "runs/icon-only-2026-09-19/report.json",
+  "reviewer": "Codex direct Commons light/dark visual review",
+  "reviewedAt": "2026-09-19T10:25:01.000Z",
+  "decisions": [
+    {
+      "brandId": "bp",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Wrong identity: the rendered wordmark is Ballotpedia, not bp."
+    },
+    {
+      "brandId": "ducati",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Obsolete Ducati rectangular lockup rather than current company artwork."
+    },
+    {
+      "brandId": "flipkart",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Symbol-only Flipkart artwork; the company name is not rendered."
+    },
+    {
+      "brandId": "ross-stores",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Ross Dress for Less retail branding does not render the Ross Stores company name."
+    }
+  ]
+}

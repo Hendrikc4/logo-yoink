@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "libraryId": "major-brands-1000-v1",
-  "generatedAt": "2026-09-19T10:02:18.200Z",
-  "approvedFromRun": "missing-logo-library-2026-09-19",
+  "generatedAt": "2026-09-19T10:25:59.823Z",
+  "approvedFromRun": "icon-only-2026-09-19",
   "brands": [
     {
       "id": "apple",
@@ -38,11 +38,37 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:31:33.658Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/apple/logo/162ffbe2f0f261ead4e23db52d8ffa8c5b1af974b42351a49b16f20aee8c5727.png",
+          "format": "png",
+          "width": 470,
+          "height": 181,
+          "bytes": 6958,
+          "contentHash": "162ffbe2f0f261ead4e23db52d8ffa8c5b1af974b42351a49b16f20aee8c5727",
+          "visualHash": "b290d14bf22f13d4ec0ff3e3a2690177eb41f30294733e267a92f8feac66cd29",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Apple_logo_with_text.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Apple_logo_with_text.png",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Apple_logo_with_text.png"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.272Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:02:43.967Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.272Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -728,11 +754,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:51:47.899Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/nike/logo/fa04593bdc5c8eaf972135e61edae16baa6c54856fcdb7bfd4f5f5fd23714d72.png",
+          "format": "png",
+          "width": 1920,
+          "height": 800,
+          "bytes": 35686,
+          "contentHash": "fa04593bdc5c8eaf972135e61edae16baa6c54856fcdb7bfd4f5f5fd23714d72",
+          "visualHash": "715ce5f931e2678757b013f305c8d8662e29ed8ab32f394dbc9104ecd1114109",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Nike_wordmark.svg/1920px-Nike_wordmark.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Nike_wordmark.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Nike_wordmark.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Nike_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.288Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:02:43.967Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.288Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -1130,11 +1186,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:51:47.824Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/airbnb/logo/7cc880252c1b0c7455749c8b05935041cd697724fe1adb4bc91691561fc9183f.png",
+          "format": "png",
+          "width": 1920,
+          "height": 600,
+          "bytes": 59123,
+          "contentHash": "7cc880252c1b0c7455749c8b05935041cd697724fe1adb4bc91691561fc9183f",
+          "visualHash": "fd35e126653f0e5653b2b12449efba9c23acfd2b7e49e5f8215652369266c10e",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1920px-Airbnb_Logo_B%C3%A9lo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Airbnb_Logo_B%C3%A9lo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Airbnb_Logo_B%C3%A9lo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.310Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:02:43.967Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.310Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -2216,11 +2302,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:32:58.418Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/xiaomi/logo/172b104d1c63b85a83782b742f9b797096f76584a5f9d6420680bc8285102f8d.png",
+          "format": "png",
+          "width": 1920,
+          "height": 512,
+          "bytes": 39885,
+          "contentHash": "172b104d1c63b85a83782b742f9b797096f76584a5f9d6420680bc8285102f8d",
+          "visualHash": "3a07c216ed174a335e30f57d08045403fdc9ad681d08d30b080e30f497d6bc1a",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Xiaomi_logo_horizontal_%282021-%29.svg/1920px-Xiaomi_logo_horizontal_%282021-%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Xiaomi_logo_horizontal_(2021-).svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Xiaomi_logo_horizontal_(2021-).svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Xiaomi_logo_horizontal_%282021-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.328Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:02:43.967Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.328Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -2271,11 +2387,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:50:53.233Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/tiktok/logo/36e2b9b3b62027c99671cd61f35a7af3d76f39b5278dc880cc6f7cd3c3a57140.png",
+          "format": "png",
+          "width": 1920,
+          "height": 436,
+          "bytes": 36617,
+          "contentHash": "36e2b9b3b62027c99671cd61f35a7af3d76f39b5278dc880cc6f7cd3c3a57140",
+          "visualHash": "20e957b71fbc39fca382daa60096fc96c7ef8eb2de69e623674cf69a166baa44",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Tiktok_logo_text.svg/1920px-Tiktok_logo_text.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Tiktok_logo_text.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Tiktok_logo_text.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Tiktok_logo_text.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.343Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:02:43.967Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.343Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -2378,11 +2524,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:33:08.603Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/alibaba/logo/b8b52635be4837a25526be4a26b581ee40d207e0a4db28ea623d5736ee67086b.png",
+          "format": "png",
+          "width": 1920,
+          "height": 304,
+          "bytes": 31012,
+          "contentHash": "b8b52635be4837a25526be4a26b581ee40d207e0a4db28ea623d5736ee67086b",
+          "visualHash": "7a66ffba207a20fed26bf803db3c6f6d428ca512b888b99e4957649413b7cc60",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Alibaba_en_logo.svg/1920px-Alibaba_en_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Alibaba_en_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Alibaba_en_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Alibaba_en_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.356Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:03:03.929Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.356Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -2536,11 +2712,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:33:17.548Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/target/logo/c9cad12fb1edf9b4e11434ce529940af3748b07b30d7df2cd457e1fd66df65e0.png",
+          "format": "png",
+          "width": 1920,
+          "height": 600,
+          "bytes": 60374,
+          "contentHash": "c9cad12fb1edf9b4e11434ce529940af3748b07b30d7df2cd457e1fd66df65e0",
+          "visualHash": "0aee5868089062292ab1265866ebf1018dce696aea269ba37d8bc75358a4a916",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Target_Logo_%282%29.svg/1920px-Target_Logo_%282%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Target_Logo_(2).svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Target_Logo_(2).svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Target_Logo_%282%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.370Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:03:07.779Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.370Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -3035,11 +3241,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:33:52.132Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/louis-vuitton/logo/634f94f98d450c13d35d1517631a6025e8df484ae45191bf4e52b8b05fe469fb.png",
+          "format": "png",
+          "width": 1920,
+          "height": 2342,
+          "bytes": 78239,
+          "contentHash": "634f94f98d450c13d35d1517631a6025e8df484ae45191bf4e52b8b05fe469fb",
+          "visualHash": "8a95e325d43532fc9cae7a669d86d732ecb5950d32179273411cb90ab479210e",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Louis_Vuitton_logo_and_wordmark.svg/1920px-Louis_Vuitton_logo_and_wordmark.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Louis_Vuitton_logo_and_wordmark.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Louis_Vuitton_logo_and_wordmark.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Louis_Vuitton_logo_and_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.397Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:03:07.887Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.397Z",
+      "verificationStatus": "approved_complete",
       "notes": [],
       "seededFrom": "major-brands-100-v1"
     },
@@ -3402,11 +3638,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:34:00.370Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/mercedes-benz/logo/24c3d95c3a378d2399edff8eb5c28051df470cdb47bd3ac4fd7dc064c51083d5.png",
+          "format": "png",
+          "width": 1920,
+          "height": 221,
+          "bytes": 34071,
+          "contentHash": "24c3d95c3a378d2399edff8eb5c28051df470cdb47bd3ac4fd7dc064c51083d5",
+          "visualHash": "412b43c371c74f280d081596baa18633a19cfbf77e093c7371c7a14b1ce1a568",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Mercedes_Benz_wordmark.svg/1920px-Mercedes_Benz_wordmark.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Mercedes_Benz_wordmark.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Mercedes_Benz_wordmark.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Mercedes_Benz_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.420Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:03:17.570Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.420Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -3452,11 +3718,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:34:03.361Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/volkswagen/logo/1bf07dd566b78945544c50a7d39f5a4569d500cece0ff62535c20d063c0bbbe9.png",
+          "format": "png",
+          "width": 1920,
+          "height": 465,
+          "bytes": 21923,
+          "contentHash": "1bf07dd566b78945544c50a7d39f5a4569d500cece0ff62535c20d063c0bbbe9",
+          "visualHash": "3105837557a07d5c4e55213a45843fb59d756a204eda0abfe9db332b8cfd8c17",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Volkswagen_Group_Logo_2023_zweizeilig.svg/1920px-Volkswagen_Group_Logo_2023_zweizeilig.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Volkswagen_Group_Logo_2023_zweizeilig.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Volkswagen_Group_Logo_2023_zweizeilig.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Volkswagen_Group_Logo_2023_zweizeilig.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.431Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:03:21.789Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.431Z",
+      "verificationStatus": "approved_complete",
       "notes": [],
       "seededFrom": "major-brands-100-v1",
       "externalParentBrandId": "volkswagen-group"
@@ -4066,11 +4362,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:34:37.769Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/shell/logo/ac8c73b7fa296ba0d2eca2adc3407c6515723516b38dd1e3a61a58db81e2cf4f.png",
+          "format": "png",
+          "width": 1920,
+          "height": 763,
+          "bytes": 45362,
+          "contentHash": "ac8c73b7fa296ba0d2eca2adc3407c6515723516b38dd1e3a61a58db81e2cf4f",
+          "visualHash": "7e57c5924ca610c7693e6f48f73c4f03b385a7e1a83c17c4b1788869cf94d72e",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Shell_wordmark_2019.svg/1920px-Shell_wordmark_2019.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Shell_wordmark_2019.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Shell_wordmark_2019.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Shell_wordmark_2019.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.447Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:03:40.336Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.447Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -4124,6 +4450,12 @@
           "kind": "persistent_role_gap",
           "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged.",
           "reviewedAt": "2026-09-19T09:39:14.675Z"
+        },
+        {
+          "role": "logo",
+          "kind": "persistent_role_gap",
+          "reason": "Wrong identity: the rendered wordmark is Ballotpedia, not bp.",
+          "reviewedAt": "2026-09-19T10:25:01.000Z"
         }
       ],
       "seededFrom": "major-brands-100-v1"
@@ -4423,11 +4755,41 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:50:53.383Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/ups/logo/dc78a05fe892fe49760f3aaae050ea50fa9464660d390f15d6b39b2e5f3a3368.png",
+          "format": "png",
+          "width": 1920,
+          "height": 2277,
+          "bytes": 341078,
+          "contentHash": "dc78a05fe892fe49760f3aaae050ea50fa9464660d390f15d6b39b2e5f3a3368",
+          "visualHash": "e6680d92a50629b9f3c3690f8bfac88ec8474017b9c807d2caa929a1d69572f9",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/UPS_Logo_Shield_2017.svg/1920px-UPS_Logo_Shield_2017.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:UPS_Logo_Shield_2017.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:UPS_Logo_Shield_2017.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/UPS_Logo_Shield_2017.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.493Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-19T09:03:54.549Z",
-      "verificationStatus": "approved_with_role_gap",
+      "lastCheckedAt": "2026-09-19T10:22:25.493Z",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -7457,10 +7819,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:09.474Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/servicenow/logo/1d9270f83bbada46dbd90e10e4b2cb0d534a05210a8a976c5978740455f8d739.png",
+          "format": "png",
+          "width": 1920,
+          "height": 285,
+          "bytes": 51418,
+          "contentHash": "1d9270f83bbada46dbd90e10e4b2cb0d534a05210a8a976c5978740455f8d739",
+          "visualHash": "1ac9c42643fde6bf0e6006020f85bdeb5ad735043e75c94dfa5600de34551641",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/ServiceNow_logo.svg/1920px-ServiceNow_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:ServiceNow_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:ServiceNow_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.527Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -7469,7 +7861,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:04:27.702Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.527Z"
     },
     {
       "id": "workday",
@@ -7943,10 +8335,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:09.510Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/zendesk/logo/0a6db97a0ba994b1931daafce5dbdbe7d652080358e056c03928fde6fb30618e.png",
+          "format": "png",
+          "width": 1920,
+          "height": 1370,
+          "bytes": 79920,
+          "contentHash": "0a6db97a0ba994b1931daafce5dbdbe7d652080358e056c03928fde6fb30618e",
+          "visualHash": "eb7d9b9eaf51af283651308e6f1f854638e3f1a1672e4e4aad8fc2e6428e00eb",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Zendesk_logo.svg/1920px-Zendesk_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Zendesk_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Zendesk_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Zendesk_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.546Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -7967,7 +8389,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:04:32.466Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.546Z"
     },
     {
       "id": "okta",
@@ -8139,10 +8561,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:09.518Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/crowdstrike/logo/36612bbb1f80a5a3199480f49d119e98e08bd5eade8650c383bd6d35b0ecf229.png",
+          "format": "png",
+          "width": 1920,
+          "height": 356,
+          "bytes": 21018,
+          "contentHash": "36612bbb1f80a5a3199480f49d119e98e08bd5eade8650c383bd6d35b0ecf229",
+          "visualHash": "ff07791f85ac651044267c54158b80b0043ed58478e186374b01bd42544dca78",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/CrowdStrike_logo.svg/1920px-CrowdStrike_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:CrowdStrike_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:CrowdStrike_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/CrowdStrike_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.567Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -8151,7 +8603,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:04:33.335Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.567Z"
     },
     {
       "id": "fortinet",
@@ -8859,10 +9311,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:09.544Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/lidl/logo/06c2e5b6eaa8efb178818e941d949972a7b7f22b6a3f767ea1bd9832c219052c.png",
+          "format": "png",
+          "width": 1920,
+          "height": 1920,
+          "bytes": 118980,
+          "contentHash": "06c2e5b6eaa8efb178818e941d949972a7b7f22b6a3f767ea1bd9832c219052c",
+          "visualHash": "0290219a20f34b3a145049e8c5ee3601270cf42a8616819369372df8c73fc978",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Lidl_logo.svg/1920px-Lidl_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Lidl_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Lidl_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Lidl_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.591Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -8871,7 +9353,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:04:37.147Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.591Z"
     },
     {
       "id": "tesco",
@@ -8905,10 +9387,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:09.547Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/tesco/logo/e9eaba688cefe172c9f5c99dc92da480fc5fe8cbe332d93107b03641cf8f587d.png",
+          "format": "png",
+          "width": 1920,
+          "height": 546,
+          "bytes": 58701,
+          "contentHash": "e9eaba688cefe172c9f5c99dc92da480fc5fe8cbe332d93107b03641cf8f587d",
+          "visualHash": "2a62e0b4b6b011b8323411ae40720aaf684696d772e6919cb19dc550db5c00e5",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Tesco_2026_logo.svg/1920px-Tesco_2026_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Tesco_2026_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Tesco_2026_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Tesco_2026_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.620Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -8917,7 +9429,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:04:37.696Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.620Z"
     },
     {
       "id": "marks-spencer",
@@ -8951,10 +9463,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:09.551Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/marks-spencer/logo/a4c9685e7ea1784c02821c566e57fd24b074e4a4a124a76a5459d8dc17210212.png",
+          "format": "png",
+          "width": 1920,
+          "height": 726,
+          "bytes": 54482,
+          "contentHash": "a4c9685e7ea1784c02821c566e57fd24b074e4a4a124a76a5459d8dc17210212",
+          "visualHash": "211fab0a2883b0171a19ac947ba00af565cf022f9ed146dec69b1a3cc904da75",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Marks_%26_Spencer_corporate_logo.svg/1920px-Marks_%26_Spencer_corporate_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Marks_%26_Spencer_corporate_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Marks_%26_Spencer_corporate_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Marks_%26_Spencer_corporate_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.637Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -8963,7 +9505,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:04:45.237Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.637Z"
     },
     {
       "id": "uniqlo",
@@ -9002,12 +9544,42 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T09:58:26.232Z",
           "lastConfirmedCurrentAt": "2026-09-18T09:58:56.076Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/uniqlo/logo/c75ed7c7a1a4c73490add0408676792d3e68b0db7ffa39e8f4abbd95c094cdbf.png",
+          "format": "png",
+          "width": 1920,
+          "height": 853,
+          "bytes": 31987,
+          "contentHash": "c75ed7c7a1a4c73490add0408676792d3e68b0db7ffa39e8f4abbd95c094cdbf",
+          "visualHash": "cc1801e432c9120dae106ed21c60bdfa7e034637a420cb6aa770e642683d7daf",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Uniqlo_logo_Japanese.svg/1920px-Uniqlo_logo_Japanese.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Uniqlo_logo_Japanese.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Uniqlo_logo_Japanese.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Uniqlo_logo_Japanese.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.656Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-19T09:04:45.924Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.656Z"
     },
     {
       "id": "puma",
@@ -11094,10 +11666,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:35.623Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/qantas/logo/3ba9587f2f00957bdfe8d53cc67960efd8863ef8f1b2b384c52e10b7c2544fb2.png",
+          "format": "png",
+          "width": 1920,
+          "height": 239,
+          "bytes": 25177,
+          "contentHash": "3ba9587f2f00957bdfe8d53cc67960efd8863ef8f1b2b384c52e10b7c2544fb2",
+          "visualHash": "b4200e082a89331c4149c37b4873159f860138adc3f7dd34a2b752e2984b34a2",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Qantas_wordmark_2016.svg/1920px-Qantas_wordmark_2016.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Qantas_wordmark_2016.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Qantas_wordmark_2016.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Qantas_wordmark_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.671Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -11112,7 +11714,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:06:04.296Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.671Z"
     },
     {
       "id": "audi",
@@ -11151,10 +11753,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/audi/logo/336e79431fb282bbc783339dda2f23cca3a8b9bd5fa140fc6d2bbad40d4c6769.png",
+          "format": "png",
+          "width": 1920,
+          "height": 251,
+          "bytes": 10283,
+          "contentHash": "336e79431fb282bbc783339dda2f23cca3a8b9bd5fa140fc6d2bbad40d4c6769",
+          "visualHash": "b1c88edbc927e17c36809230ac3444dee30d48a4d883dcfd008b51cde5e03eea",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/AUDI_Logo_%282024%29.svg/1920px-AUDI_Logo_%282024%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:AUDI_Logo_(2024).svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:AUDI_Logo_(2024).svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/AUDI_Logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.681Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -11181,7 +11813,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:06:07.035Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.681Z"
     },
     {
       "id": "volvo",
@@ -12101,10 +12733,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:48.666Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/wells-fargo/logo/945a459588e16340a4af23c1b87624b708e3ba30861eeab9443547f0226d23bf.png",
+          "format": "png",
+          "width": 1920,
+          "height": 1920,
+          "bytes": 35610,
+          "contentHash": "945a459588e16340a4af23c1b87624b708e3ba30861eeab9443547f0226d23bf",
+          "visualHash": "276dfd19f8133f08989caa42bb889a385631122ef321456c5d74f4a5af8649c9",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Wells_Fargo_Logo_%282020%29.svg/1920px-Wells_Fargo_Logo_%282020%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Wells_Fargo_Logo_(2020).svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Wells_Fargo_Logo_(2020).svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Wells_Fargo_Logo_%282020%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.692Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -12125,7 +12787,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:06:19.065Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.692Z"
     },
     {
       "id": "citigroup",
@@ -13332,10 +13994,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:48.723Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/merck/logo/b75dd262b1db097d98d77feae41e12dcb5542d9d7f601b3edc60c47721359eef.png",
+          "format": "png",
+          "width": 1920,
+          "height": 574,
+          "bytes": 47833,
+          "contentHash": "b75dd262b1db097d98d77feae41e12dcb5542d9d7f601b3edc60c47721359eef",
+          "visualHash": "e24cb1b1c68b409870e77512922c0fd37670d4bf795eca8d350b4c96833dcd57",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Merck_Logo.svg/1920px-Merck_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Merck_Logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Merck_Logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Merck_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.709Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -13350,7 +14042,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:06:41.345Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.709Z"
     },
     {
       "id": "astrazeneca",
@@ -13536,10 +14228,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:48.738Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/medtronic/logo/670eece60bc11db507da8797d09a72796fc7d2f73e0e49ea61730ac2909ee6d1.png",
+          "format": "png",
+          "width": 1920,
+          "height": 328,
+          "bytes": 24046,
+          "contentHash": "670eece60bc11db507da8797d09a72796fc7d2f73e0e49ea61730ac2909ee6d1",
+          "visualHash": "0d51934611253a90c347437e0201d6a526a152cbb1ff319def4f8d819212287f",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Medtronic_logo.svg/1920px-Medtronic_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Medtronic_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Medtronic_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Medtronic_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.722Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -13548,7 +14270,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:06:50.988Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.722Z"
     },
     {
       "id": "philips",
@@ -13931,10 +14653,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:48.753Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/the-guardian/logo/6f6956aae868c67d3391457e366707ca380a1e02b25273c0296e6062d4bc4c37.png",
+          "format": "png",
+          "width": 1920,
+          "height": 444,
+          "bytes": 36439,
+          "contentHash": "6f6956aae868c67d3391457e366707ca380a1e02b25273c0296e6062d4bc4c37",
+          "visualHash": "136e135eae756802044cb80ee8a3e64908a847ae1ec918da0f287366b07a0285",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/The_Guardian_2.svg/1920px-The_Guardian_2.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:The_Guardian_2.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:The_Guardian_2.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/The_Guardian_2.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.735Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -13950,7 +14702,7 @@
         }
       ],
       "externalParentBrandId": "guardian-media-group",
-      "lastCheckedAt": "2026-09-19T09:07:04.674Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.735Z"
     },
     {
       "id": "bbc",
@@ -14636,10 +15388,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:48.779Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/valve/logo/047d37965443f7cd4b10401f737600fd7f620746b58d5e337e72dc28413e28e7.png",
+          "format": "png",
+          "width": 1920,
+          "height": 535,
+          "bytes": 14521,
+          "contentHash": "047d37965443f7cd4b10401f737600fd7f620746b58d5e337e72dc28413e28e7",
+          "visualHash": "7c82f27f8d52fec7253e4ff6c28928ef4817923739fe69f634ea0769cbc9597d",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Valve_logo.svg/1920px-Valve_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Valve_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Valve_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Valve_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.749Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -14648,7 +15430,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:07:23.222Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.749Z"
     },
     {
       "id": "vimeo",
@@ -21532,10 +22314,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:38:14.931Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/ge-vernova/logo/df6c7a7f997a9cceb343606be3c8fea6d026503ce342aa8684db757def3c41fa.png",
+          "format": "png",
+          "width": 1920,
+          "height": 424,
+          "bytes": 67854,
+          "contentHash": "df6c7a7f997a9cceb343606be3c8fea6d026503ce342aa8684db757def3c41fa",
+          "visualHash": "776fa23629a6aaaf3a624a397c6c92e67de2480e75c768ec8a9e0546bd4307c1",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/GE_Vernova_logo.svg/1920px-GE_Vernova_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:GE_Vernova_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:GE_Vernova_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/GE_Vernova_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.763Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -21552,7 +22364,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:15.129Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.763Z"
     },
     {
       "id": "elevance-health",
@@ -21586,10 +22398,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:38:17.086Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/elevance-health/logo/ae3c5ea5959f08c72a7966feceb2455e23168bb4c4773ce0aaaf341688dbf284.png",
+          "format": "png",
+          "width": 1920,
+          "height": 839,
+          "bytes": 66046,
+          "contentHash": "ae3c5ea5959f08c72a7966feceb2455e23168bb4c4773ce0aaaf341688dbf284",
+          "visualHash": "552752b8e2ea316e50417286c2af7b0047f046183f2c97ad2ead099bba5fd588",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Elevance_Health_Logo_2022.svg/1920px-Elevance_Health_Logo_2022.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Elevance_Health_Logo_2022.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Elevance_Health_Logo_2022.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Elevance_Health_Logo_2022.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.779Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -21612,7 +22454,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:19.022Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.779Z"
     },
     {
       "id": "charter-communications",
@@ -22062,10 +22904,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:39:12.479Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/global-payments/logo/3c076ecb04463d511b0008915c8e9f1220bbee78e357d5f500a121fc25af85a6.png",
+          "format": "png",
+          "width": 1920,
+          "height": 280,
+          "bytes": 51066,
+          "contentHash": "3c076ecb04463d511b0008915c8e9f1220bbee78e357d5f500a121fc25af85a6",
+          "visualHash": "931a89c5d4f80f9d272429472f9fc67a71f3c9837b090de69da82fd0a107bc97",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Global_Payments_Inc._logo.svg/1920px-Global_Payments_Inc._logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Global_Payments_Inc._logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Global_Payments_Inc._logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Global_Payments_Inc._logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.796Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -22074,7 +22946,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:21.242Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.796Z"
     },
     {
       "id": "conocophillips",
@@ -22564,10 +23436,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:39:05.156Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/duke-energy/logo/ccc6640392b6e4a8ee27f8f9ffb293fb095ed9db78f4c15eabbe4cc1a04e8652.png",
+          "format": "png",
+          "width": 1920,
+          "height": 640,
+          "bytes": 71610,
+          "contentHash": "ccc6640392b6e4a8ee27f8f9ffb293fb095ed9db78f4c15eabbe4cc1a04e8652",
+          "visualHash": "6f7372d3c468a29556c9f76650c67bedec982f06e7007c66a659b449ac783727",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Duke_Energy_logo.svg/1920px-Duke_Energy_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Duke_Energy_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Duke_Energy_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Duke_Energy_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.810Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -22576,7 +23478,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:28.689Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.810Z"
     },
     {
       "id": "rio-tinto",
@@ -22686,10 +23588,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:39:06.051Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/capital-one/logo/da000d5d07d67480c8925ebd9815a33aa73465f973251ef22b0edfe34c6e1ad5.png",
+          "format": "png",
+          "width": 1920,
+          "height": 689,
+          "bytes": 83522,
+          "contentHash": "da000d5d07d67480c8925ebd9815a33aa73465f973251ef22b0edfe34c6e1ad5",
+          "visualHash": "aa31c69edd6cbf05ba747f96091add656a2e5043b1ca684a25b26ad8fad5ef50",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Capital_One_logo.svg/1920px-Capital_One_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Capital_One_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Capital_One_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Capital_One_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.831Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -22700,7 +23632,7 @@
           "reviewedAt": "2026-09-18T08:21:44Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:31.869Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.831Z"
     },
     {
       "id": "travelers",
@@ -22807,10 +23739,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:39:40.500Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/coinbase/logo/1067dc608f1232d7a72c64bafbf51b70ec0e58b804aca8000b7166fa2911f986.png",
+          "format": "png",
+          "width": 1920,
+          "height": 343,
+          "bytes": 22860,
+          "contentHash": "1067dc608f1232d7a72c64bafbf51b70ec0e58b804aca8000b7166fa2911f986",
+          "visualHash": "042098603c83111bae066807988a694d8394c47d967f943641d39946d5a4d6ec",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Coinbase.svg/1920px-Coinbase.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Coinbase.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Coinbase.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Coinbase.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.847Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -22819,7 +23781,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:34.903Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.847Z"
     },
     {
       "id": "eog-resources",
@@ -22853,10 +23815,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:39:12.480Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/eog-resources/logo/c500283899fb0e657e4d4fe594892ef700e3ec82aa6eac575a23e34edf651092.png",
+          "format": "png",
+          "width": 1920,
+          "height": 495,
+          "bytes": 60704,
+          "contentHash": "c500283899fb0e657e4d4fe594892ef700e3ec82aa6eac575a23e34edf651092",
+          "visualHash": "c0d9142137659a05afcf526a5e64bf8fed4d311b58e07ee1955094c960e72134",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/EOG_Resources_logo.svg/1920px-EOG_Resources_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:EOG_Resources_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:EOG_Resources_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/EOG_Resources_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.860Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -22865,7 +23857,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:36.692Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.860Z"
     },
     {
       "id": "northrop-grumman",
@@ -23026,10 +24018,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:39:19.787Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/humana/logo/25e207e8d2db1dc20c2102c6bdd87c1d376c9ddf2c3d8e65d7e08716e53f5684.png",
+          "format": "png",
+          "width": 1920,
+          "height": 409,
+          "bytes": 14081,
+          "contentHash": "25e207e8d2db1dc20c2102c6bdd87c1d376c9ddf2c3d8e65d7e08716e53f5684",
+          "visualHash": "45f3c6233aa021155093729c9295aa981dce08ad94e6bb96102ad68177289130",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Humana_logo.svg/1920px-Humana_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Humana_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Humana_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Humana_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.873Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -23038,7 +24060,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:37.189Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.873Z"
     },
     {
       "id": "telefonica",
@@ -30601,10 +31623,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:46:13.259Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/standard-chartered/logo/9dc2d591494fcae2f2f0a317e20a6b3c5840b040d4ce2972f04a3d35f36f13c8.png",
+          "format": "png",
+          "width": 1920,
+          "height": 755,
+          "bytes": 97405,
+          "contentHash": "9dc2d591494fcae2f2f0a317e20a6b3c5840b040d4ce2972f04a3d35f36f13c8",
+          "visualHash": "6716b4562f5729c7666b632543942aa751f6d5f6cdae42c4a9ab547bce393213",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Standard_Chartered_%282021%29.svg/1920px-Standard_Chartered_%282021%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Standard_Chartered_(2021).svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Standard_Chartered_(2021).svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Standard_Chartered_%282021%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.888Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -30613,7 +31665,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:11:55.157Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.888Z"
     },
     {
       "id": "eni",
@@ -31005,10 +32057,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:46:33.749Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/nucor/logo/2f473aecff52252a5904c59926075f14d7b8de1966edaff142b9159ebdd906a5.png",
+          "format": "png",
+          "width": 1920,
+          "height": 278,
+          "bytes": 26428,
+          "contentHash": "2f473aecff52252a5904c59926075f14d7b8de1966edaff142b9159ebdd906a5",
+          "visualHash": "7cffd90d6cb85fd61a0af9398873f69665c18eca05a5998e1a8d62ad46d8632b",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Nucor_logo.svg/1920px-Nucor_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Nucor_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Nucor_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Nucor_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.905Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -31029,7 +32111,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:11:57.736Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.905Z"
     },
     {
       "id": "deutsche-bank",
@@ -31415,10 +32497,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:46:48.411Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/sse/logo/6a51d6e697637247989e5ca18e0e64915b7f9ca4608a7ddd690749436bca8dbb.png",
+          "format": "png",
+          "width": 1920,
+          "height": 932,
+          "bytes": 32641,
+          "contentHash": "6a51d6e697637247989e5ca18e0e64915b7f9ca4608a7ddd690749436bca8dbb",
+          "visualHash": "787f42cdaffe6a018965b2e2b8ad205bd524e48bd4ffa7c651cb41d35127fbe6",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/SSE_plc_2021_logo.svg/1920px-SSE_plc_2021_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:SSE_plc_2021_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:SSE_plc_2021_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/SSE_plc_2021_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.921Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -31427,7 +32539,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:11:59.542Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.921Z"
     },
     {
       "id": "dow",
@@ -31685,10 +32797,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:47:12.531Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/fanuc/logo/94e76b0b765df5a14478232aba3cbac54ac3c24e48d271154a6fc6de86ee5360.png",
+          "format": "png",
+          "width": 1920,
+          "height": 324,
+          "bytes": 30953,
+          "contentHash": "94e76b0b765df5a14478232aba3cbac54ac3c24e48d271154a6fc6de86ee5360",
+          "visualHash": "f348b3089d45853bef620b3a8dfb78acb576bf2558d3aced79da0e09b795a0f5",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Fanuc_logo.svg/1920px-Fanuc_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Fanuc_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Fanuc_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Fanuc_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.937Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -31697,7 +32839,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:12:05.598Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.937Z"
     },
     {
       "id": "abbott",
@@ -31799,10 +32941,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:47:23.325Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/skt/logo/5716b85b7837d4173de3fb7bd327f66418c185f81bd128356c4d03bca309ee40.png",
+          "format": "png",
+          "width": 1920,
+          "height": 757,
+          "bytes": 72162,
+          "contentHash": "5716b85b7837d4173de3fb7bd327f66418c185f81bd128356c4d03bca309ee40",
+          "visualHash": "1978e189dd0cd5e84ce1435840af8fd73259c7c4d230b10fd25c67b5d675ae25",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/SK_Telecom_Logo.svg/1920px-SK_Telecom_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:SK_Telecom_Logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:SK_Telecom_Logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/SK_Telecom_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.952Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -31811,7 +32983,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:12:08.005Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.952Z"
     },
     {
       "id": "fortis",
@@ -31963,10 +33135,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:47:31.464Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/bnp-paribas/logo/02e9285d8a9d6d972ff8b41d1d5a3ef6b892314dfa68273ff85d0809eea3f39e.png",
+          "format": "png",
+          "width": 1920,
+          "height": 673,
+          "bytes": 67457,
+          "contentHash": "02e9285d8a9d6d972ff8b41d1d5a3ef6b892314dfa68273ff85d0809eea3f39e",
+          "visualHash": "1e0051883f7bb92a231e60d21fa85118da0eec0cb32dd194c8f12c5c7779089e",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Logo_BNP_Paribas_2016.svg/1920px-Logo_BNP_Paribas_2016.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Logo_BNP_Paribas_2016.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Logo_BNP_Paribas_2016.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Logo_BNP_Paribas_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.973Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -31975,7 +33177,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:12:11.956Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.973Z"
     },
     {
       "id": "galp",
@@ -36463,10 +37665,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:51:30.851Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:57:30.356Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/bridgestone/logo/67af20c90a5fdf7508ce86c662afa6b46e20255d8f5d23e6c49aec9e6bec3b2d.png",
+          "format": "png",
+          "width": 1920,
+          "height": 243,
+          "bytes": 38581,
+          "contentHash": "67af20c90a5fdf7508ce86c662afa6b46e20255d8f5d23e6c49aec9e6bec3b2d",
+          "visualHash": "d47adb6295f99a2d5f723c27a7a72eb03ceb9d949836c6f811230200acd81dc7",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Bridgestone_logo_full_color.svg/1920px-Bridgestone_logo_full_color.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Bridgestone_logo_full_color.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Bridgestone_logo_full_color.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Bridgestone_logo_full_color.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:25.989Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -36481,7 +37713,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:13:55.064Z"
+      "lastCheckedAt": "2026-09-19T10:22:25.989Z"
     },
     {
       "id": "coca-cola-company",
@@ -36604,10 +37836,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:51:32.758Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:57:30.356Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/fast-retailing/logo/d39df8d763da52ec5d575cebb88c72c753c06661ffbb8eb4803fc78c083755e4.png",
+          "format": "png",
+          "width": 1920,
+          "height": 957,
+          "bytes": 16045,
+          "contentHash": "d39df8d763da52ec5d575cebb88c72c753c06661ffbb8eb4803fc78c083755e4",
+          "visualHash": "615ab66dbb39501313ff77d54379592a204256a3b84b18edec4b089d2f698574",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Fast_Retailing_logo.svg/1920px-Fast_Retailing_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Fast_Retailing_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Fast_Retailing_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Fast_Retailing_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.003Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -36616,7 +37878,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:13:55.437Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.003Z"
     },
     {
       "id": "essilorluxottica",
@@ -37019,10 +38281,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:51:46.453Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:57:30.356Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/sega-sammy/logo/f94c279bbaaa5337243720ba376d7a5945f77b17aeeae09f2fe13e761a112453.png",
+          "format": "png",
+          "width": 1920,
+          "height": 340,
+          "bytes": 32260,
+          "contentHash": "f94c279bbaaa5337243720ba376d7a5945f77b17aeeae09f2fe13e761a112453",
+          "visualHash": "556d971e67916791279ed050b90bcbb1021db2bf0b388e0edcc083784e151b8e",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Sega_Sammy_Holdings_logo.svg/1920px-Sega_Sammy_Holdings_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Sega_Sammy_Holdings_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Sega_Sammy_Holdings_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Sega_Sammy_Holdings_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.019Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -37031,7 +38323,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:14:00.136Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.019Z"
     },
     {
       "id": "recruit-holdings",
@@ -37608,10 +38900,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:52:16.996Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:57:30.356Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/dove/logo/65a6288266b9f19b5a55e224e8dbfede999c1f1aa5965d316bc8ef6444ebd08b.png",
+          "format": "png",
+          "width": 1920,
+          "height": 729,
+          "bytes": 87216,
+          "contentHash": "65a6288266b9f19b5a55e224e8dbfede999c1f1aa5965d316bc8ef6444ebd08b",
+          "visualHash": "46cea49569c33d17ce6966b651245f08012c61ca2ea46cbb55d06d423512b456",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Dove_wordmark.svg/1920px-Dove_wordmark.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Dove_wordmark.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Dove_wordmark.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Dove_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.035Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -37620,7 +38942,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:14:09.947Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.035Z"
     },
     {
       "id": "tide",
@@ -38104,10 +39426,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:52:42.823Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:57:30.356Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/7-eleven/logo/014d764dca8a4bbef9664370527cdff20aeaa4a6642099e005feb43d12b7d8a2.png",
+          "format": "png",
+          "width": 1920,
+          "height": 1866,
+          "bytes": 66103,
+          "contentHash": "014d764dca8a4bbef9664370527cdff20aeaa4a6642099e005feb43d12b7d8a2",
+          "visualHash": "804351eae6e8fe47449f9e54041407fec96677676a816cbe584a424e6af8dd4f",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/7-eleven_logo.svg/1920px-7-eleven_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:7-eleven_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:7-eleven_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/7-eleven_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.063Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -38116,7 +39468,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:14:17.017Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.063Z"
     },
     {
       "id": "b-and-q",
@@ -38444,12 +39796,42 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/zomato/logo/4be0ba3f0c0e223381eb1d5139afb4100218efc4f9ed5aa1c36e47c983dbf61e.png",
+          "format": "png",
+          "width": 1920,
+          "height": 411,
+          "bytes": 60629,
+          "contentHash": "4be0ba3f0c0e223381eb1d5139afb4100218efc4f9ed5aa1c36e47c983dbf61e",
+          "visualHash": "7583988fe5c6757cc6ab525c89b5218ff4da512892cb4b93575a7b0160496af3",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Zomato_Logo.svg/1920px-Zomato_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Zomato_Logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Zomato_Logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Zomato_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.090Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-19T09:14:26.697Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.090Z"
     },
     {
       "id": "blinkit",
@@ -42732,12 +44114,42 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:57:13.018Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/disney-plus/logo/06588fa1c91382fdf75b4cbd1508661eff93548925b16770be18a250a3ca7943.png",
+          "format": "png",
+          "width": 1920,
+          "height": 1082,
+          "bytes": 65482,
+          "contentHash": "06588fa1c91382fdf75b4cbd1508661eff93548925b16770be18a250a3ca7943",
+          "visualHash": "50c896ded749a6baf3af1b21c57334c2060095984cf8e6a70c09bcce5c1f1f28",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Disney%2BLogo_2024_Black.png/1920px-Disney%2BLogo_2024_Black.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Disney%2BLogo_2024_Black.png",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Disney%2BLogo_2024_Black.png"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Disney%2BLogo_2024_Black.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:23:29.075Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-19T09:16:26.440Z"
+      "lastCheckedAt": "2026-09-19T10:23:29.075Z"
     },
     {
       "id": "youtube-music",
@@ -42776,12 +44188,42 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/youtube-music/logo/30410aef59354af38b442ab599861f55c920ef3c1362e578031b3afaef18ad62.png",
+          "format": "png",
+          "width": 1920,
+          "height": 279,
+          "bytes": 39078,
+          "contentHash": "30410aef59354af38b442ab599861f55c920ef3c1362e578031b3afaef18ad62",
+          "visualHash": "ef5135dd25aed72831128445200bcc1c890bfd66ec9c6386d7ac934168fa4912",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/YouTube_Music_full_logo.svg/1920px-YouTube_Music_full_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:YouTube_Music_full_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:YouTube_Music_full_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/YouTube_Music_full_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.103Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-19T09:16:27.654Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.103Z"
     },
     {
       "id": "soundcloud",
@@ -42815,10 +44257,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:57:17.543Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/soundcloud/logo/b86d06c260f069ab34acf3a0f68140738d6abd2df1131fee1cccec6c29d87300.png",
+          "format": "png",
+          "width": 1920,
+          "height": 218,
+          "bytes": 50971,
+          "contentHash": "b86d06c260f069ab34acf3a0f68140738d6abd2df1131fee1cccec6c29d87300",
+          "visualHash": "1fbe0eb744ec5f90ee9ae89bbdd460e856c9ca182dc252b7f8b5cfd8970d7daf",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Soundcloud_logo.svg/1920px-Soundcloud_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Soundcloud_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Soundcloud_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Soundcloud_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.114Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -42839,7 +44311,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:16:34.538Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.114Z"
     },
     {
       "id": "bilibili",
@@ -42878,10 +44350,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:52:57.908Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:53:34.636Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/bilibili/logo/6ed5e5eb70155905432948d6c3e1049997adfb5ddd03b62de052bb9fb9bb141c.png",
+          "format": "png",
+          "width": 1920,
+          "height": 484,
+          "bytes": 36652,
+          "contentHash": "6ed5e5eb70155905432948d6c3e1049997adfb5ddd03b62de052bb9fb9bb141c",
+          "visualHash": "35da99045dc0fdfabc41e7fede0480443b80b3c18a7a29ab67ff43798ad6f6d4",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Bilibili_2023.svg/1920px-Bilibili_2023.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Bilibili_2023.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Bilibili_2023.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Bilibili_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.126Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -42896,7 +44398,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:16:34.903Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.126Z"
     },
     {
       "id": "facebook",
@@ -43050,10 +44552,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:57:23.798Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/messenger/logo/55f1b7eb6d5ecaa2fca0d1e5ec90b2486f235c5d403e3f5add050f5ef0271a3f.png",
+          "format": "png",
+          "width": 1920,
+          "height": 287,
+          "bytes": 21118,
+          "contentHash": "55f1b7eb6d5ecaa2fca0d1e5ec90b2486f235c5d403e3f5add050f5ef0271a3f",
+          "visualHash": "485683df1cf18dcbbee0246f95afed19fb7deda3489ce4273c13e67bd90fbdef",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Facebook_Messenger_wordmark_2025.svg/1920px-Facebook_Messenger_wordmark_2025.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Facebook_Messenger_wordmark_2025.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Facebook_Messenger_wordmark_2025.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Facebook_Messenger_wordmark_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.137Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -43062,7 +44594,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:16:38.655Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.137Z"
     },
     {
       "id": "marvel",
@@ -43155,10 +44687,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:57:31.283Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/nbc/logo/6ef05a31ca7ba50eb3dbfeca5c2dc021b0d2d845087e3f21cdcd00ad0d0ecaac.png",
+          "format": "png",
+          "width": 1920,
+          "height": 471,
+          "bytes": 51781,
+          "contentHash": "6ef05a31ca7ba50eb3dbfeca5c2dc021b0d2d845087e3f21cdcd00ad0d0ecaac",
+          "visualHash": "ff24329c63d56eff96cde10e25b37bc6f421a9e8c6e08409568407fe271d65d6",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/NBC_logo_2022.svg/1920px-NBC_logo_2022.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:NBC_logo_2022.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:NBC_logo_2022.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/NBC_logo_2022.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.148Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -43167,7 +44729,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:16:39.295Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.148Z"
     },
     {
       "id": "tiktok-shop",
@@ -43532,10 +45094,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:57:50.756Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/acura/logo/c826d2d37248d34dee0e5e1026e475c4997de2d18e1c3c81c7a83f9bfd41b139.png",
+          "format": "png",
+          "width": 1920,
+          "height": 1037,
+          "bytes": 42606,
+          "contentHash": "c826d2d37248d34dee0e5e1026e475c4997de2d18e1c3c81c7a83f9bfd41b139",
+          "visualHash": "b28fe13c1af9b47a5544eb75baea1a07106c006239a3d56eefa6ed1adae68122",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Acura_logo.svg/1920px-Acura_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Acura_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Acura_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Acura_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.164Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -43544,7 +45136,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:16:46.294Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.164Z"
     },
     {
       "id": "ducati",
@@ -43588,6 +45180,12 @@
           "kind": "persistent_role_gap",
           "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged.",
           "reviewedAt": "2026-09-19T09:39:14.675Z"
+        },
+        {
+          "role": "logo",
+          "kind": "persistent_role_gap",
+          "reason": "Obsolete Ducati rectangular lockup rather than current company artwork.",
+          "reviewedAt": "2026-09-19T10:25:01.000Z"
         }
       ],
       "lastCheckedAt": "2026-09-19T09:16:53.519Z"
@@ -48796,10 +50394,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:03:12.209Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:09:24.289Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/gatorade/logo/d3c9efadbc97bcc0e495b07c49bfbd19c9ce5d135ad648d78d3fa88d494d88b0.png",
+          "format": "png",
+          "width": 1920,
+          "height": 392,
+          "bytes": 28854,
+          "contentHash": "d3c9efadbc97bcc0e495b07c49bfbd19c9ce5d135ad648d78d3fa88d494d88b0",
+          "visualHash": "8b1d46f094e3677a51653aa2211d23c45b2673b23dc8cdc68c0850317d455428",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Gatorade_2025.svg/1920px-Gatorade_2025.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Gatorade_2025.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Gatorade_2025.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Gatorade_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.202Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -48809,7 +50437,7 @@
         }
       ],
       "externalParentBrandId": "pepsico",
-      "lastCheckedAt": "2026-09-19T09:18:39.885Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.202Z"
     },
     {
       "id": "calvin-klein",
@@ -48914,10 +50542,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:03:22.598Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:09:24.289Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/celine/logo/49740cb988c646de50ceff5d6ff6bd548bfdf70dd9c229214fc9b03ae8d8a36f.png",
+          "format": "png",
+          "width": 1920,
+          "height": 396,
+          "bytes": 14369,
+          "contentHash": "49740cb988c646de50ceff5d6ff6bd548bfdf70dd9c229214fc9b03ae8d8a36f",
+          "visualHash": "36e26f2ae3957b2ab209abc4efe097a4961f909f97cc4f6995b849474b206f21",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Celine_logo.svg/1920px-Celine_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Celine_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Celine_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Celine_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.215Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -48932,7 +50590,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:18:40.512Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.215Z"
     },
     {
       "id": "jollibee-foods",
@@ -49315,6 +50973,12 @@
           "kind": "persistent_role_gap",
           "reason": "The white Flipkart lettering is invisible on light; no light-compatible wordmark is staged.",
           "reviewedAt": "2026-09-18T08:08:00Z"
+        },
+        {
+          "role": "logo",
+          "kind": "persistent_role_gap",
+          "reason": "Symbol-only Flipkart artwork; the company name is not rendered.",
+          "reviewedAt": "2026-09-19T10:25:01.000Z"
         }
       ],
       "lastCheckedAt": "2026-09-19T09:18:49.723Z"
@@ -49351,10 +51015,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:03:44.857Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:09:24.289Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/kitkat/logo/eeb842ee270118702affd837df2a487a5372abd79e1537821470e4e9808f21ad.png",
+          "format": "png",
+          "width": 1920,
+          "height": 1260,
+          "bytes": 142839,
+          "contentHash": "eeb842ee270118702affd837df2a487a5372abd79e1537821470e4e9808f21ad",
+          "visualHash": "30ecd98e24917d10b40d21d788ce1ce1ccd4dcb45abed37bd28a6ef6a33ed440",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo_of_the_KitKat.svg/1920px-Logo_of_the_KitKat.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Logo_of_the_KitKat.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Logo_of_the_KitKat.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_of_the_KitKat.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.242Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -49363,7 +51057,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:18:50.176Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.242Z"
     },
     {
       "id": "gillette",
@@ -49552,6 +51246,12 @@
           "kind": "persistent_role_gap",
           "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged.",
           "reviewedAt": "2026-09-19T09:39:14.675Z"
+        },
+        {
+          "role": "logo",
+          "kind": "persistent_role_gap",
+          "reason": "Ross Dress for Less retail branding does not render the Ross Stores company name.",
+          "reviewedAt": "2026-09-19T10:25:01.000Z"
         }
       ],
       "lastCheckedAt": "2026-09-19T09:18:53.735Z"
@@ -49590,10 +51290,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:03:59.232Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:09:24.289Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/e-leclerc/logo/e2c036337cdb3d743f42071e33e147478c644ac6470afb1ab02e09d2c6005172.png",
+          "format": "png",
+          "width": 1920,
+          "height": 476,
+          "bytes": 46020,
+          "contentHash": "e2c036337cdb3d743f42071e33e147478c644ac6470afb1ab02e09d2c6005172",
+          "visualHash": "04bf69222ae7821434ec5a69ed2f91929e16ad027033402c2fdadce258887061",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/E.Leclerc_logo.svg/1920px-E.Leclerc_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:E.Leclerc_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:E.Leclerc_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/E.Leclerc_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.284Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -49602,7 +51332,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:18:57.473Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.284Z"
     },
     {
       "id": "indomaret",
@@ -49728,10 +51458,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:04:08.468Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:09:24.289Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/adeo/logo/0e6899b2c728705c9b4788085fa72dc044b31232e9c84d57f6ad2056d4fee5a2.png",
+          "format": "png",
+          "width": 1920,
+          "height": 991,
+          "bytes": 217131,
+          "contentHash": "0e6899b2c728705c9b4788085fa72dc044b31232e9c84d57f6ad2056d4fee5a2",
+          "visualHash": "1bab34b292f7c5389e1602374458d312581e962dd88b054ec5955cc1702e8378",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Logo_Adeo.svg/1920px-Logo_Adeo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Logo_Adeo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Logo_Adeo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Adeo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.305Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -49740,7 +51500,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:04.186Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.305Z"
     },
     {
       "id": "delivery-hero",
@@ -49774,10 +51534,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:04:09.987Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:09:24.289Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/delivery-hero/logo/67171057e47f0ac34d8194f193dd9d39e693714efc04317b228ed5fc402937ac.png",
+          "format": "png",
+          "width": 1920,
+          "height": 321,
+          "bytes": 24548,
+          "contentHash": "67171057e47f0ac34d8194f193dd9d39e693714efc04317b228ed5fc402937ac",
+          "visualHash": "9d52df4c7daa69dfd82dfa90444a44f799287002e0ac109fb2fe1e7438f64f09",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Delivery_Hero_logo.svg/1920px-Delivery_Hero_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Delivery_Hero_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Delivery_Hero_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Delivery_Hero_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.325Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -49786,7 +51576,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:08.671Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.325Z"
     },
     {
       "id": "99",
@@ -57016,10 +58806,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:09:54.163Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/paytm/logo/987570bf7e5000d3c00bedeadd0d2be7110f7bba1e53ad1c093dc107d71dd4c7.png",
+          "format": "png",
+          "width": 1920,
+          "height": 603,
+          "bytes": 33250,
+          "contentHash": "987570bf7e5000d3c00bedeadd0d2be7110f7bba1e53ad1c093dc107d71dd4c7",
+          "visualHash": "536d2dcd39640901ba253b484505dee5c45e6baab060785729c24e9e33fe6c94",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_Logo_%28standalone%29.svg/1920px-Paytm_Logo_%28standalone%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Paytm_Logo_(standalone).svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Paytm_Logo_(standalone).svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.338Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -57034,7 +58854,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:21:36.605Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.338Z"
     },
     {
       "id": "weebly",
@@ -57569,10 +59389,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:10:06.488Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/godaddy/logo/7da9848af8fbd7b2a1a4ef02f6e994983fead538a40be59bb0c921e06d6a02d2.png",
+          "format": "png",
+          "width": 1920,
+          "height": 394,
+          "bytes": 32282,
+          "contentHash": "7da9848af8fbd7b2a1a4ef02f6e994983fead538a40be59bb0c921e06d6a02d2",
+          "visualHash": "5208824505bef250e2a2003b0b73bad0baae669d3c406443cb08113eb1298441",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/GoDaddy_logo_2020.svg/1920px-GoDaddy_logo_2020.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:GoDaddy_logo_2020.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:GoDaddy_logo_2020.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/GoDaddy_logo_2020.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.352Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -57581,7 +59431,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:21:50.406Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.352Z"
     },
     {
       "id": "box",
@@ -58068,10 +59918,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:10:28.099Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/namecheap/logo/1c49de28f0bce1989619f4968957900497dd78599b3d40331e32edbc94d7bf81.png",
+          "format": "png",
+          "width": 1920,
+          "height": 350,
+          "bytes": 87507,
+          "contentHash": "1c49de28f0bce1989619f4968957900497dd78599b3d40331e32edbc94d7bf81",
+          "visualHash": "49b9c273563d4e9f91853e24d1db184cf5eeccce9186592016dad8612e219dc0",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Namecheap_Logo.svg/1920px-Namecheap_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Namecheap_Logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Namecheap_Logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Namecheap_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.363Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -58080,7 +59960,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:22:10.861Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.363Z"
     },
     {
       "id": "smartsheet",
@@ -58419,10 +60299,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:52:57.908Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:53:34.636Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/arm/logo/c66a1638d3f10758da42cb74e2989812b7fe5570436d13ad9a85cf7d553c0575.png",
+          "format": "png",
+          "width": 1920,
+          "height": 585,
+          "bytes": 37466,
+          "contentHash": "c66a1638d3f10758da42cb74e2989812b7fe5570436d13ad9a85cf7d553c0575",
+          "visualHash": "d586792b541532a1b3a170457967058428ccbb4bf573895f76724dd9311fd88e",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Arm_logo_2025.svg/1920px-Arm_logo_2025.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Arm_logo_2025.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Arm_logo_2025.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Arm_logo_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.376Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -58449,7 +60359,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:22:24.547Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.376Z"
     },
     {
       "id": "pine-labs",
@@ -58556,12 +60466,42 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:10:42.436Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/coupang/logo/974b7def216bb4d83b4f458f213a38f098dd6b1a6e1508bcd772671d634a7764.png",
+          "format": "png",
+          "width": 1920,
+          "height": 436,
+          "bytes": 52808,
+          "contentHash": "974b7def216bb4d83b4f458f213a38f098dd6b1a6e1508bcd772671d634a7764",
+          "visualHash": "34fc70c93fa21ce6c763362da4038ee37f0b8d27d43173d638ba867caf21066b",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Coupang_logo.svg/1920px-Coupang_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Coupang_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Coupang_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Coupang_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.391Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-19T09:22:26.098Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.391Z"
     },
     {
       "id": "monday-com",
@@ -59448,12 +61388,42 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:11:16.922Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/applied-materials/logo/0602dd93f22095bf67d12f2c44f71fa634a29c1be0cb3b307a9a2178040ce02e.png",
+          "format": "png",
+          "width": 1920,
+          "height": 485,
+          "bytes": 27771,
+          "contentHash": "0602dd93f22095bf67d12f2c44f71fa634a29c1be0cb3b307a9a2178040ce02e",
+          "visualHash": "8dd1b31d2068a22c9512f26429481f92d5fea1ce54359ea9f43a8d06ab774c46",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Applied_Materials_Inc._Logo.svg/1920px-Applied_Materials_Inc._Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Applied_Materials_Inc._Logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Applied_Materials_Inc._Logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Applied_Materials_Inc._Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.404Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-19T09:22:44.584Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.404Z"
     },
     {
       "id": "klarna",
@@ -59978,10 +61948,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:11:29.383Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/affirm/logo/e1b5a603891f42c96eb737577fc720c024e50371afd4c797247c9ec164b0bbb9.png",
+          "format": "png",
+          "width": 1920,
+          "height": 794,
+          "bytes": 54451,
+          "contentHash": "e1b5a603891f42c96eb737577fc720c024e50371afd4c797247c9ec164b0bbb9",
+          "visualHash": "21b64801db84664cb6f5043d717f8a2da35fb56923cd644fda620c0a47827c03",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Affirm_2023_logo.svg/1920px-Affirm_2023_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Affirm_2023_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Affirm_2023_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Affirm_2023_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.420Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -59990,7 +61990,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:22:50.968Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.420Z"
     },
     {
       "id": "zillow",
@@ -60901,10 +62901,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:11:57.233Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/tokyo-electron/logo/d9fb21f0a19598e85d0b9cab65912afb385ac8837a38c184df70191096b01a33.png",
+          "format": "png",
+          "width": 1920,
+          "height": 1142,
+          "bytes": 42523,
+          "contentHash": "d9fb21f0a19598e85d0b9cab65912afb385ac8837a38c184df70191096b01a33",
+          "visualHash": "d5c82a6df92ac25657e556b8c7f7edca86d2fa827de4414f7c4564b8888148e3",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Tokyo_Electron_logo.svg/1920px-Tokyo_Electron_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Tokyo_Electron_logo.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Tokyo_Electron_logo.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Tokyo_Electron_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.442Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -60913,7 +62943,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:23:09.511Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.442Z"
     },
     {
       "id": "sezzle",
@@ -67183,10 +69213,40 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:15:21.560Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:18:13.606Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/sinch/logo/0fe61453b8957bcdea2fa478e62e5e7da550c80195f3dec3a919df3d3354e7d2.png",
+          "format": "png",
+          "width": 1920,
+          "height": 395,
+          "bytes": 27420,
+          "contentHash": "0fe61453b8957bcdea2fa478e62e5e7da550c80195f3dec3a919df3d3354e7d2",
+          "visualHash": "76691a22d162fb6f933103fdc988166559958a16f384018215237cb84414f318",
+          "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Sinch_logotype_black.svg/1920px-Sinch_logotype_black.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "discoveryPage": "https://commons.wikimedia.org/wiki/File:Sinch_logotype_black.svg",
+          "sourceKind": "wikimedia-commons-file-search",
+          "provenanceChain": [
+            {
+              "kind": "wikimedia-commons-file-search",
+              "url": "https://commons.wikimedia.org/wiki/File:Sinch_logotype_black.svg"
+            },
+            {
+              "kind": "commons-original-file",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Sinch_logotype_black.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T10:22:26.459Z",
+          "lastConfirmedCurrentAt": "2026-09-19T10:25:01.000Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -67201,7 +69261,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:25:47.264Z"
+      "lastCheckedAt": "2026-09-19T10:22:26.459Z"
     },
     {
       "id": "john-lewis-partnership",

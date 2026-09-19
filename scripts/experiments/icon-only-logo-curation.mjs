@@ -20,9 +20,11 @@ const normalizeOnly = args.includes('--normalize-only');
 const decisionsConfigPath = option('--write-decisions');
 const restorationsPath = option('--write-restorations');
 const gapReportPath = option('--write-gap-report');
+const selectedReviewPath = option('--approve-selected');
+const selectedHistoryPath = option('--selected-history');
 const syncApproved = args.includes('--sync-approved');
-if (!runId || (!planPath && !normalizeOnly && !decisionsConfigPath && !restorationsPath && !gapReportPath && !syncApproved)) {
-  throw new Error('Usage: node scripts/experiments/icon-only-logo-curation.mjs --root ROOT --run RUN_ID (--plan PLAN.json | --normalize-only | --write-decisions CONFIG.json | --write-restorations FILE.json | --write-gap-report FILE.json | --sync-approved)');
+if (!runId || (!planPath && !normalizeOnly && !decisionsConfigPath && !restorationsPath && !gapReportPath && !selectedReviewPath && !syncApproved)) {
+  throw new Error('Usage: node scripts/experiments/icon-only-logo-curation.mjs --root ROOT --run RUN_ID (--plan PLAN.json | --normalize-only | --write-decisions CONFIG.json | --write-restorations FILE.json | --write-gap-report FILE.json | --approve-selected DECISIONS.json | --sync-approved)');
 }
 
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -30,7 +32,8 @@ const readJson = async path => JSON.parse(await readFile(path, 'utf8'));
 const writeJson = async (path, value) => writeFile(path, JSON.stringify(value, null, 2) + '\n');
 const reportPath = resolve(root, 'runs', runId, 'report.json');
 const report = await readJson(reportPath);
-const plan = planPath ? await readJson(resolve(planPath)) : { records: [] };
+const planDocument = planPath ? await readJson(resolve(planPath)) : { records: [] };
+const plan = planDocument.stagingPlan ?? planDocument;
 const byId = new Map(report.records.map(record => [record.brand.id, record]));
 const themeOverrides = new Map(plan.records.filter(entry => entry.theme).map(entry => [entry.brandId, entry.theme]));
 
@@ -109,26 +112,58 @@ function representation(candidate, width, height) {
   return 'wordmark_or_lockup';
 }
 
+const prefetched = new Map();
+const externalEntries = normalizeOnly || selectedReviewPath ? [] : plan.records.filter(entry => entry.external);
+for (let start = 0; start < externalEntries.length; start += 2) {
+  const batch = externalEntries.slice(start, start + 2);
+  await Promise.all(batch.map(async entry => {
+    try {
+      prefetched.set(entry.sourceUrl, await download({ url: entry.sourceUrl }, byId.get(entry.brandId)?.brand.name));
+    } catch (error) {
+      prefetched.set(entry.sourceUrl, error);
+    }
+  }));
+  await new Promise(done => setTimeout(done, 750));
+}
+
 const outcomes = [];
-for (const entry of normalizeOnly ? [] : plan.records) {
+for (const entry of normalizeOnly || selectedReviewPath ? [] : plan.records) {
   const record = byId.get(entry.brandId);
   if (!record) throw new Error(`Unknown run brand: ${entry.brandId}`);
-  const evidencePath = resolve(root, 'runs', runId, 'evidence', `${entry.brandId}.json`);
-  const evidence = await readJson(evidencePath);
-  const matches = (evidence.candidates ?? []).filter(candidate => {
-    if (entry.sourceUrl && candidate.url !== entry.sourceUrl) return false;
-    if (entry.urlIncludes && !String(candidate.url).includes(entry.urlIncludes)) return false;
-    if (entry.source && candidate.source !== entry.source) return false;
-    if (entry.width && candidate.width !== entry.width) return false;
-    if (entry.height && candidate.height !== entry.height) return false;
-    return true;
-  });
-  if (!matches.length || (matches.length !== 1 && !Number.isInteger(entry.matchIndex))) {
-    throw new Error(`${entry.brandId}: expected one candidate, found ${matches.length}`);
+  let captured;
+  if (entry.external) {
+    captured = {
+      url: entry.sourceUrl,
+      source: entry.source ?? 'external-targeted-search',
+      source_page: entry.discoveryPage,
+      evidence: { eligible_roles: ['wide'], positive_token: true, semantic_text: entry.commonsTitle ?? entry.sourceUrl },
+      provenance_chain: [
+        { kind: entry.source ?? 'external-targeted-search', url: entry.discoveryPage ?? entry.sourceUrl },
+        ...(entry.originalSourceUrl && entry.originalSourceUrl !== entry.sourceUrl
+          ? [{ kind: 'commons-original-file', url: entry.originalSourceUrl }]
+          : []),
+      ],
+    };
+  } else {
+    const evidencePath = resolve(root, 'runs', runId, 'evidence', `${entry.brandId}.json`);
+    const evidence = await readJson(evidencePath);
+    const matches = (evidence.candidates ?? []).filter(candidate => {
+      if (entry.sourceUrl && candidate.url !== entry.sourceUrl) return false;
+      if (entry.urlIncludes && !String(candidate.url).includes(entry.urlIncludes)) return false;
+      if (entry.source && candidate.source !== entry.source) return false;
+      if (entry.width && candidate.width !== entry.width) return false;
+      if (entry.height && candidate.height !== entry.height) return false;
+      return true;
+    });
+    if (!matches.length || (matches.length !== 1 && !Number.isInteger(entry.matchIndex))) {
+      throw new Error(`${entry.brandId}: expected one candidate, found ${matches.length}`);
+    }
+    captured = matches[entry.matchIndex ?? 0];
   }
-  const captured = matches[entry.matchIndex ?? 0];
   try {
-    const downloaded = await download(captured, record.brand.name);
+    const prefetch = prefetched.get(captured.url);
+    if (prefetch instanceof Error) throw prefetch;
+    const downloaded = prefetch ?? await download(captured, record.brand.name);
     const validated = await extractor.validateCandidateBytes(captured, downloaded.bytes, {
       resolvedUrl: downloaded.resolvedUrl,
       status: 200,
@@ -173,13 +208,14 @@ for (const entry of normalizeOnly ? [] : plan.records) {
   } catch (error) {
     outcomes.push({ brandId: entry.brandId, status: 'failed', error: error.message, sourceUrl: captured.url });
   }
-  await new Promise(done => setTimeout(done, 700));
+  if (!entry.external) await new Promise(done => setTimeout(done, 700));
 }
 
 for (const record of report.records) {
   const staged = record.roles.logo?.candidate;
   if (!staged) continue;
   staged.representation ??= representation({}, staged.width, staged.height);
+  if (themeOverrides.has(record.brand.id)) staged.theme = themeOverrides.get(record.brand.id);
   try {
     const evidence = await readJson(resolve(root, 'runs', runId, 'evidence', `${record.brand.id}.json`));
     const observed = evidence.assets?.logo?.url === staged.sourceUrl
@@ -330,5 +366,55 @@ if (gapReportPath) {
     gaps,
   });
   console.log(JSON.stringify({ gapReport: resolve(root, gapReportPath), remainingGaps: gaps.length, categories }, null, 2));
+}
+if (selectedReviewPath) {
+  if (!planPath) throw new Error('--approve-selected requires --plan.');
+  const review = await readJson(resolve(root, selectedReviewPath));
+  const rejected = new Map(review.decisions.filter(item => item.action === 'reject' && item.role === 'logo')
+    .map(item => [item.brandId, item.reason]));
+  const manifestPath = resolve(root, 'manifest.json');
+  const manifest = await readJson(manifestPath);
+  const approved = new Map(manifest.brands.map(brand => [brand.id, brand]));
+  const reviewedBrands = [];
+  let approvedCount = 0;
+  for (const entry of plan.records) {
+    const record = byId.get(entry.brandId);
+    const candidate = record?.roles.logo?.candidate;
+    if (!candidate) continue;
+    const brand = approved.get(entry.brandId);
+    if (!brand) throw new Error(`Approved manifest is missing ${entry.brandId}.`);
+    if (rejected.has(entry.brandId)) {
+      record.roles.logo = { ...record.roles.logo, candidate: null, status: 'rejected_after_visual_review', change: 'missing_unapproved', reviewReason: rejected.get(entry.brandId) };
+      brand.notes = [...(brand.notes ?? []), { role: 'logo', kind: 'persistent_role_gap', reason: rejected.get(entry.brandId), reviewedAt: review.reviewedAt }];
+    } else {
+      brand.assets.logo = { ...candidate, verificationStatus: 'approved_ai_visual_review', lastConfirmedCurrentAt: review.reviewedAt };
+      brand.lastCheckedAt = candidate.lastCheckedAt;
+      brand.verificationStatus = 'approved_complete';
+      approvedCount++;
+    }
+    reviewedBrands.push(structuredClone(brand));
+  }
+  report.review = { reviewer: review.reviewer, reviewedAt: review.reviewedAt, decisions: review.decisions.length };
+  report.curatedAt = new Date().toISOString();
+  report.summary = {
+    ...report.summary,
+    candidateWordmarks: report.records.filter(record => record.roles.logo?.candidate).length,
+  };
+  manifest.generatedAt = new Date().toISOString();
+  manifest.approvedFromRun = runId;
+  await writeJson(reportPath, report);
+  await writeJson(manifestPath, manifest);
+  const historyPath = resolve(root, selectedHistoryPath ?? `approval-history/${runId}-selected-${manifest.generatedAt.replace(/[:.]/g, '-')}.json`);
+  await writeJson(historyPath, {
+    schemaVersion: manifest.schemaVersion,
+    libraryId: manifest.libraryId,
+    generatedAt: manifest.generatedAt,
+    approvedFromRun: runId,
+    reviewer: review.reviewer,
+    reviewedAt: review.reviewedAt,
+    decisions: review.decisions,
+    brands: reviewedBrands,
+  });
+  console.log(JSON.stringify({ approvedSelectedLogos: approvedCount, rejectedSelectedLogos: rejected.size, history: historyPath }, null, 2));
 }
 console.log(JSON.stringify({ staged: outcomes.filter(row => row.status === 'staged').length, failed: outcomes.filter(row => row.status === 'failed').length }, null, 2));
