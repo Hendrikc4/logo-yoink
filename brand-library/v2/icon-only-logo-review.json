@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "runId": "icon-only-2026-09-19",
+  "output": "review-decisions-icon-only-2026-09-19.json",
+  "iconReason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged.",
+  "logoRejects": [
+    { "brandId": "canon", "reason": "Official history image is Canon's obsolete 1934 Kwanon mark, not the current Canon company-name logo." },
+    { "brandId": "zendesk", "reason": "Candidate is an Audacy partner logo, not Zendesk." },
+    { "brandId": "audi", "reason": "Candidate is the standalone four-rings symbol and contains no Audi company name." },
+    { "brandId": "wells-fargo", "reason": "Candidate is a Google Play download badge, not a Wells Fargo logo." },
+    { "brandId": "safaricom", "reason": "Candidate is a promotional banner with people and campaign copy, not a clean Safaricom logo." },
+    { "brandId": "naver", "reason": "Candidate is a green search banner with only a tiny N control, not a usable Naver company-name logo." },
+    { "brandId": "autodesk", "reason": "Candidate is the Autodesk Brand Hub navigation lockup, not the primary Autodesk company logo." },
+    { "brandId": "yelp", "reason": "Candidate is the Yelp for Business sub-brand lockup, not the primary Yelp identity." },
+    { "brandId": "elevance-health", "reason": "Candidate is the Carelon subsidiary logo, not Elevance Health." },
+    { "brandId": "phillips-66", "reason": "Candidate is a refinery photograph, not logo artwork." },
+    { "brandId": "rheinmetall", "reason": "Candidate is a standalone symbol and contains no Rheinmetall company name." },
+    { "brandId": "nucor", "reason": "Candidate is a sustainability animation frame/graphic, not the Nucor company-name logo." },
+    { "brandId": "kt-corporation", "reason": "Candidate is a Korean tutorial/slogan graphic, not the KT company-name logo." },
+    { "brandId": "linde", "reason": "Candidate is the standalone scripted-L mobile symbol and contains no Linde company name." },
+    { "brandId": "telstra", "reason": "Candidate is the unrelated Sprout footer logo, not Telstra." },
+    { "brandId": "kansai-electric-power", "reason": "Candidate is the Power With Heart slogan artwork and omits the company name." },
+    { "brandId": "soundcloud", "reason": "Candidate is the standalone waveform/cloud symbol and contains no SoundCloud name." },
+    { "brandId": "tommy-hilfiger", "reason": "Candidate is the standalone flag symbol and contains no Tommy Hilfiger name." },
+    { "brandId": "xai", "reason": "Candidate is the SpaceX wordmark from a mixed archive, not xAI." },
+    { "brandId": "webflow", "reason": "Candidate is the standalone Webflow W mark and contains no company name." },
+    { "brandId": "arm", "reason": "Candidate is a conference/video hero photograph, not Arm logo artwork." },
+    { "brandId": "red-hat", "reason": "Candidate is a Telefónica partner/customer logo, not Red Hat." },
+    { "brandId": "duo-security", "reason": "Candidate is a product/navigation photograph, not Duo Security logo artwork." },
+    { "brandId": "the-pokemon-company", "reason": "Candidate is the Pokémon product-franchise logo, not The Pokémon Company name." },
+    { "brandId": "deutsche-telekom", "reason": "Candidate is the standalone T-and-dots symbol and contains no Deutsche Telekom company name." }
+  ]
+}

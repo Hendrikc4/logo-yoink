@@ -1,0 +1,228 @@
+{
+  "reviewer": "Codex corrected visual review",
+  "reviewedAt": "2026-09-19T09:40:39.241Z",
+  "decisions": [
+    {
+      "brandId": "pfizer",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / compact_wordmark."
+    },
+    {
+      "brandId": "kia",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / compact_wordmark."
+    },
+    {
+      "brandId": "wipro",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / compact_wordmark."
+    },
+    {
+      "brandId": "red-bull",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "emerson",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / compact_wordmark."
+    },
+    {
+      "brandId": "illinois-tool-works",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "cencora",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "bny",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "southern-copper",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "abbvie",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as light / wordmark_or_lockup."
+    },
+    {
+      "brandId": "technipfmc",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "essilorluxottica",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    },
+    {
+      "brandId": "lvmh",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    },
+    {
+      "brandId": "booking-holdings",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "cerave",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "nbcuniversal",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    },
+    {
+      "brandId": "honor",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as light / compact_wordmark."
+    },
+    {
+      "brandId": "head-and-shoulders",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / compact_wordmark."
+    },
+    {
+      "brandId": "stability-ai",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    },
+    {
+      "brandId": "tenable",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "proofpoint",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    },
+    {
+      "brandId": "framer",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    },
+    {
+      "brandId": "netlify",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / compact_wordmark."
+    },
+    {
+      "brandId": "razorpay",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "rea-group",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "zapier",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "together-ai",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "dbt-labs",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "keeper-security",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    },
+    {
+      "brandId": "smic",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "kraken",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "sambanova",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "lambda",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "launchdarkly",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "cloudbees",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    },
+    {
+      "brandId": "sierra",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as any / wordmark_or_lockup."
+    },
+    {
+      "brandId": "didi",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected transparent light/dark review confirms the company-name artwork is clean and identity-correct; prior bars were review-sheet padding. Relabel as dark / wordmark_or_lockup."
+    }
+  ]
+}

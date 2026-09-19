@@ -1,0 +1,3003 @@
+{
+  "schemaVersion": 1,
+  "runId": "icon-only-2026-09-19",
+  "sourceReport": "runs/icon-only-2026-09-19/report.json",
+  "reviewer": "Codex practical visual review",
+  "reviewedAt": "2026-09-19T09:39:14.675Z",
+  "decisions": [
+    {
+      "brandId": "apple",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nike",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "airbnb",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "xiaomi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tiktok",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "alibaba",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "jd-com",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "target",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bmw",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "mercedes-benz",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "porsche",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "shell",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ge",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ups",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nubank",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "itau",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "gitlab",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "x",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "snapchat",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "hp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lenovo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "panasonic",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "canon",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "canon",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Official history image is Canon's obsolete 1934 Kwanon mark, not the current Canon company-name logo."
+    },
+    {
+      "brandId": "nikon",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "block",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "servicenow",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "docusign",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zendesk",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zendesk",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is an Audacy partner logo, not Zendesk."
+    },
+    {
+      "brandId": "okta",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "crowdstrike",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "home-depot",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lidl",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tesco",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "marks-spencer",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "puma",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "under-armour",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "colgate-palmolive",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "danone",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nando-s",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "domino-s",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "burger-king",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "chipotle",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "booking-com",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "expedia",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "delta-air-lines",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "qantas",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "audi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "audi",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the standalone four-rings symbol and contains no Audi company name."
+    },
+    {
+      "brandId": "volvo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "honeywell",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "john-deere",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "wells-fargo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "wells-fargo",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a Google Play download badge, not a Wells Fargo logo."
+    },
+    {
+      "brandId": "morgan-stanley",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ubs",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "allianz",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "axa",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "prudential",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cvs-health",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "pfizer",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "roche",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "merck",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "medtronic",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "philips",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "thermo-fisher-scientific",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "the-guardian",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "financial-times",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "warner-bros-discovery",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nintendo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "valve",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vimeo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "epic-games",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "kakao",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "line",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "pinterest",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "hugging-face",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "mistral-ai",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cohere",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ryanair",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zalando",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "naver",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "naver",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a green search banner with only a tiny N control, not a usable Naver company-name logo."
+    },
+    {
+      "brandId": "mitsubishi-motors",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "kia",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "byd",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tata",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "wipro",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "reliance-industries",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "gojek",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "mercado-libre",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "mtn",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "safaricom",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "safaricom",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a promotional banner with people and campaign copy, not a clean Safaricom logo."
+    },
+    {
+      "brandId": "vodafone",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "orange",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "deutsche-telekom",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "deutsche-telekom",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the standalone T-and-dots symbol and contains no Deutsche Telekom company name."
+    },
+    {
+      "brandId": "at-t",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sega",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lego",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "mattel",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "hasbro",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "peloton",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zwift",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "coursera",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zoominfo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "gartner",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "accenture",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "wendy-s",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "autodesk",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "autodesk",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the Autodesk Brand Hub navigation lockup, not the primary Autodesk company logo."
+    },
+    {
+      "brandId": "freshbooks",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "match-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "indeed",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ziprecruiter",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "yelp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "yelp",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the Yelp for Business sub-brand lockup, not the primary Yelp identity."
+    },
+    {
+      "brandId": "tripadvisor",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "etsy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "wegmans",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "publix",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "arc-teryx",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "rei",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "icelandair",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "red-bull",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bandai-namco",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ge-vernova",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "elevance-health",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "elevance-health",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the Carelon subsidiary logo, not Elevance Health."
+    },
+    {
+      "brandId": "charles-schwab",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "allstate",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "global-payments",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "conocophillips",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "emerson",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "duke-energy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "travelers",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "coinbase",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "eog-resources",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "humana",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "telefonica",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vale",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "robinhood",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "general-dynamics",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bt-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "glencore",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "marathon-petroleum",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "anglo-american",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "truist",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "phillips-66",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "phillips-66",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a refinery photograph, not logo artwork."
+    },
+    {
+      "brandId": "transdigm",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "illinois-tool-works",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cencora",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bny",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "swisscom",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "southern-copper",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "state-street",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "aon",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "slb",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "rolls-royce-holdings",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "s-p-global",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "abbvie",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ping-an-insurance",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "thales",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "telenor",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "technipfmc",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "daimler-truck",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tim",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "teck-resources",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "intercontinental-exchange",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "noble-corporation",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "rheinmetall",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "rheinmetall",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a standalone symbol and contains no Rheinmetall company name."
+    },
+    {
+      "brandId": "gilead-sciences",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "fortescue",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "transocean",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lloyds-banking-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vertex-pharmaceuticals",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bombardier",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "china-mobile",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "rwe",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "posco-holdings",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "standard-chartered",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nucor",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nucor",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a sustainability animation frame/graphic, not the Nucor company-name logo."
+    },
+    {
+      "brandId": "sse",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "commerzbank",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "fanuc",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "skt",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bnp-paribas",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "galp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "keyence",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "kt-corporation",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "kt-corporation",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a Korean tutorial/slogan graphic, not the KT company-name logo."
+    },
+    {
+      "brandId": "hydro-one",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "basf",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "omv",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "smc-corporation",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "boston-scientific",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "australian-gas-light",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "credit-agricole",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "becton-dickinson",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bharti-airtel",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "linde",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "linde",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the standalone scripted-L mobile symbol and contains no Linde company name."
+    },
+    {
+      "brandId": "santander",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "mol-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "intuitive-surgical",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "telstra",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "telstra",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the unrelated Sprout footer logo, not Telstra."
+    },
+    {
+      "brandId": "kansai-electric-power",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "kansai-electric-power",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the Power With Heart slogan artwork and omits the company name."
+    },
+    {
+      "brandId": "air-liquide",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "p-t-t",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "trane-technologies",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "edwards-lifesciences",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zimmer-biomet",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "telkom-indonesia",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "edp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lyondellbasell",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "hca-healthcare",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "celanese",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ing-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vodacom",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ecolab",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "thyssenkrupp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "quest-diagnostics",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "millicom",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nordea",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "santos",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "continental",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "danske-bank",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "origin-energy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bridgestone",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "fast-retailing",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "essilorluxottica",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lvmh",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "booking-holdings",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sega-sammy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "amer-sports",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lufthansa-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "dove",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cerave",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tk-maxx",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "7-eleven",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "extra",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nykaa",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sm-prime",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "amazon-music",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "audible",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "instagram",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "pixar",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cnn",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cbs",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "xfinity",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "alipay",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "xiaohongshu",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "accor",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "carnival-cruise-line",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "toyota-lexus",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "harley-davidson",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "dji",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "blackberry",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "capcut",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "levi-strauss",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tim-hortons",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ly-corporation",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bandai-namco-holdings",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "shopee",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "salomon",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "pinduoduo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lays",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "axe",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "titan-company",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tj-maxx",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "alpargatas",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "eternal",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "jio-mart",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "soundcloud",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "soundcloud",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the standalone waveform/cloud symbol and contains no SoundCloud name."
+    },
+    {
+      "brandId": "bilibili",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "messenger",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nbc",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ana-holdings",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "carnival-corporation",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "acura",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ducati",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "leica",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "asus",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "oppo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vf-corporation",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sea-limited",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "malaysia-airlines",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vaseline",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "deezer",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "threads",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nbcuniversal",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vizio",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "oura",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "insta360",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vivo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "netmarble",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ross-dress-for-less",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "morrisons",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "careem",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tidal",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "discovery-channel",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "triumph-motorcycles",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sharp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "whoop",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "logitech",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "gatorade",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "celine",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vietnam-airlines",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "kitkat",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ross-stores",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "e-leclerc",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "adeo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "delivery-hero",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "99",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "apple-music",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "douyin",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "telegram",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "national-geographic",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "norwegian-cruise-line",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "mazda",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "royal-enfield",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "msi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nokia",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "honor",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tommy-hilfiger",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tommy-hilfiger",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the standalone flag symbol and contains no Tommy Hilfiger name."
+    },
+    {
+      "brandId": "tiket-com",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "krafton",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "vietjet",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "maggi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "head-and-shoulders",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "the-ordinary",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "perplexity",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "square",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "udemy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "elastic",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "fastly",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "xai",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "xai",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the SpaceX wordmark from a mixed archive, not xAI."
+    },
+    {
+      "brandId": "sentinelone",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "substack",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "confluent",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "deepseek",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "check-point",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "adyen",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "uipath",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "stability-ai",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "broadcom",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "wordpress-com",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "dynatrace",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "midjourney",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tenable",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "automattic",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "new-relic",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "runway",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "texas-instruments",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "checkout-com",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "splunk",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "render",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "elevenlabs",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "proofpoint",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "squarespace",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "mimecast",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "rapyd",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "webflow",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "webflow",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the standalone Webflow W mark and contains no company name."
+    },
+    {
+      "brandId": "fly-io",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "payoneer",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "framer",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "strategy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "netlify",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "paytm",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "weebly",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "heroku",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "jasper",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "godaddy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "box",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "synthesia",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "eset",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "razorpay",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "namecheap",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "smartsheet",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "docker",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "heygen",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "arm",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "arm",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a conference/video hero photograph, not Arm logo artwork."
+    },
+    {
+      "brandId": "pine-labs",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "wiz",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "asana",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "red-hat",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "red-hat",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a Telefónica partner/customer logo, not Red Hat."
+    },
+    {
+      "brandId": "scale-ai",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "orca-security",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "airtable",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "suse",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "affirm",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "miro",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "clickup",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "datarobot",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "1password",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tokyo-electron",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sezzle",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "rightmove",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "coda",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "unreal-engine",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "weights-and-biases",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zip",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "rea-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zapier",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "together-ai",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "dashlane",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sofi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "seek",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "freshworks",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "dbt-labs",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "fireworks-ai",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "keeper-security",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "smic",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "kraken",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "fiverr",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "intercom",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "fivetran",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "groq",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "duo-security",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "duo-security",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is a product/navigation photograph, not Duo Security logo artwork."
+    },
+    {
+      "brandId": "binance",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "upwork",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "pipedrive",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cerebras",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "beyondtrust",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "amkor",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "okx",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "astronomer",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sambanova",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "tailscale",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "onsemi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bybit",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "odoo",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "coreweave",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "microchip-technology",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "bitstamp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "celonis",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sentry",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "lambda",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "western-digital",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "gemini",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "appian",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "launchdarkly",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "crusoe",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "darktrace",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "fireblocks",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "pegasystems",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "circleci",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "anyscale",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "abnormal-ai",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "chainalysis",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "nice",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "harness",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "baseten",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "corsair",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "circle",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "genesys",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cloudbees",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "harvey",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "raspberry-pi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ripple",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "five9",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "jfrog",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sierra",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "arduino",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sonar",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "typeface",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ericsson",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "brex",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "postman",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "cursor",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "zte",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "ramp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "sinch",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "john-lewis-partnership",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "seven-and-i",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "the-pokemon-company",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "the-pokemon-company",
+      "role": "logo",
+      "action": "reject",
+      "reason": "Candidate is the Pokémon product-franchise logo, not The Pokémon Company name."
+    },
+    {
+      "brandId": "reliance-retail",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "didi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "norwegian-cruise-line-holdings",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "trip-com",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "anysphere",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "kong",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    },
+    {
+      "brandId": "trip-com-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "This assignment only reviews missing company-name logos. Preserve the already-approved icon unchanged."
+    }
+  ]
+}
