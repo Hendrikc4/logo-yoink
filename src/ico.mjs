@@ -8,7 +8,7 @@ export function decodeIcoFrame(bytes) {
     const width = bytes[offset] || 256;
     const height = bytes[offset + 1] || 256;
     return { width, height, bits: bytes.readUInt16LE(offset + 6), size: bytes.readUInt32LE(offset + 8), offset: bytes.readUInt32LE(offset + 12) };
-  }).sort((a, b) => (b.width * b.height * b.bits) - (a.width * a.height * a.bits));
+  }).sort((a, b) => b.width * b.height - a.width * a.height || b.bits - a.bits);
   const entry = entries[0];
   const frame = bytes.subarray(entry.offset, entry.offset + entry.size);
   if (frame.length !== entry.size) throw new Error('Truncated ICO frame.');
@@ -20,10 +20,10 @@ export function decodeIcoFrame(bytes) {
   const height = Math.abs(storedHeight) / 2;
   const bits = frame.readUInt16LE(14);
   const compression = frame.readUInt32LE(16);
-  if (headerSize < 40 || width < 1 || !Number.isInteger(height) || height < 1 || ![4, 32].includes(bits) || compression !== 0) {
+  if (headerSize < 40 || width < 1 || !Number.isInteger(height) || height < 1 || ![4, 8, 24, 32].includes(bits) || compression !== 0) {
     throw new Error('ICO frame is not an embedded PNG or supported uncompressed DIB.');
   }
-  const paletteEntries = bits === 4 ? frame.readUInt32LE(32) || 16 : 0;
+  const paletteEntries = bits <= 8 ? frame.readUInt32LE(32) || 2 ** bits : 0;
   const xorStart = headerSize + paletteEntries * 4;
   const xorStride = Math.ceil(width * bits / 32) * 4;
   const xorBytes = xorStride * height;
@@ -33,14 +33,20 @@ export function decodeIcoFrame(bytes) {
   for (let y = 0; y < height; y++) {
     const sourceY = storedHeight > 0 ? height - y - 1 : y;
     for (let x = 0; x < width; x++) {
-      const source = xorStart + sourceY * xorStride + (bits === 32 ? x * 4 : Math.floor(x / 2));
+      const source = xorStart + sourceY * xorStride +
+        (bits === 32 ? x * 4 : bits === 24 ? x * 3 : bits === 8 ? x : Math.floor(x / 2));
       const target = (y * width + x) * 4;
-      if (bits === 4) {
-        const paletteIndex = x % 2 ? frame[source] & 0x0f : frame[source] >> 4;
+      if (bits <= 8) {
+        const paletteIndex = bits === 8 ? frame[source] : x % 2 ? frame[source] & 0x0f : frame[source] >> 4;
         const palette = headerSize + paletteIndex * 4;
         rgba[target] = frame[palette + 2];
         rgba[target + 1] = frame[palette + 1];
         rgba[target + 2] = frame[palette];
+        rgba[target + 3] = 255;
+      } else if (bits === 24) {
+        rgba[target] = frame[source + 2];
+        rgba[target + 1] = frame[source + 1];
+        rgba[target + 2] = frame[source];
         rgba[target + 3] = 255;
       } else {
         rgba[target] = frame[source + 2];
@@ -51,7 +57,7 @@ export function decodeIcoFrame(bytes) {
       }
     }
   }
-  if (bits === 4 || !hasAlpha) {
+  if (bits !== 32 || !hasAlpha) {
     const maskStart = xorStart + xorBytes;
     const maskStride = Math.ceil(width / 32) * 4;
     for (let y = 0; y < height; y++) {
