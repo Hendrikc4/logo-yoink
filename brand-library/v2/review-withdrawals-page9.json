@@ -1,0 +1,22 @@
+{
+  "reviewer": "codex-ai-secondary-visual-qa",
+  "reviewedAt": "2026-09-18T08:19:34Z",
+  "decisions": [
+    {"brandId":"tenable","role":"logo","action":"withdraw","reason":"Approved white Tenable wordmark is invisible on light; wide asset also carries thick black top and bottom bars."},
+    {"brandId":"mediatek","role":"logo","action":"withdraw","reason":"MediaTek lettering is legible, but the approved wide asset has large black horizontal bars above and below it."},
+    {"brandId":"nexi","role":"logo","action":"withdraw","reason":"Approved Nexi wordmark has large black vertical blocks on both sides."},
+    {"brandId":"rapid7","role":"logo","action":"withdraw","reason":"White RAPID7 lettering disappears on light, while the asset retains thick black bars."},
+    {"brandId":"proofpoint","role":"logo","action":"withdraw","reason":"White Proofpoint wordmark disappears on light, leaving only black top and bottom bars."},
+    {"brandId":"squarespace","role":"icon","action":"withdraw","reason":"White Squarespace icon disappears on light; only black top and bottom bars are visible."},
+    {"brandId":"character-ai","role":"icon","action":"withdraw","reason":"Square icon becomes a nearly featureless black block on dark."},
+    {"brandId":"framer","role":"logo","action":"withdraw","reason":"White Framer name disappears on light, while the wide asset has conspicuous black horizontal bars."},
+    {"brandId":"netlify","role":"logo","action":"withdraw","reason":"Wide Netlify asset contains large solid black blocks on both sides of the wordmark."},
+    {"brandId":"weebly","role":"icon","action":"withdraw","reason":"Approved square Weebly icon has large black bars above and below the W."},
+    {"brandId":"renesas","role":"logo","action":"withdraw","reason":"Blue Renesas wordmark is not legible on dark; the dark sheet shows only a narrow white strip with a fragment of the mark."},
+    {"brandId":"razorpay","role":"logo","action":"withdraw","reason":"Dark blue Razorpay wordmark is barely visible on dark, with large black bars framing it."},
+    {"brandId":"canonical","role":"logo","action":"withdraw","reason":"Canonical lockup is tiny within a wide black field; name is barely legible on either theme."},
+    {"brandId":"c3-ai","role":"icon","action":"withdraw","reason":"Black C3 AI symbol disappears on dark."},
+    {"brandId":"aqua-security","role":"icon","action":"withdraw","reason":"Dark Aqua Security icon disappears almost completely on dark."},
+    {"brandId":"zillow","role":"logo","action":"withdraw","reason":"Black Zillow lettering disappears on dark, leaving only the blue house symbol."}
+  ]
+}

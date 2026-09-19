@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "runId": "deep-search-2026-09-18T08-42-09-528Z",
+  "reviewer": "codex-light-background-visual-review",
+  "reviewedAt": "2026-09-18T08:44:00Z",
+  "decisions": [
+    { "brandId": "asos", "role": "icon", "action": "reject", "reason": "The square asset is a generic lowercase-a mark and does not establish the ASOS identity." },
+    { "brandId": "proximus", "role": "logo", "action": "reject", "reason": "The pale wordmark is nearly invisible on a white background." },
+    { "brandId": "marsh-mclennan", "role": "logo", "action": "reject", "reason": "The pale Marsh lettering lacks sufficient contrast on a white background." },
+    { "brandId": "moodys", "role": "logo", "action": "reject", "reason": "White lettering disappears on the white review surface." },
+    { "brandId": "intesa-sanpaolo", "role": "logo", "action": "reject", "reason": "White lettering disappears on the white review surface." },
+    { "brandId": "wechat", "role": "logo", "action": "reject", "reason": "White WeChat lockup disappears on the white review surface." },
+    { "brandId": "royal-caribbean", "role": "logo", "action": "reject", "reason": "The asset is an inverse crown-and-anchor symbol, not a visible wordmark on white." },
+    { "brandId": "sophos", "role": "logo", "action": "reject", "reason": "White Sophos lockup disappears on the white review surface." },
+    { "brandId": "sofitel", "role": "logo", "action": "reject", "reason": "The wordmark is too small within the asset viewport to be readable at the reviewed size." }
+  ]
+}

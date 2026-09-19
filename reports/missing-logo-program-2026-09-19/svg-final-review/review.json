@@ -1,0 +1,413 @@
+{
+  "reviewedAt": "2026-09-19T08:27:14.127Z",
+  "scope": "11 newly selected SVG-normalized marks; 3M role-evidence treatment excluded because rejected. Evaluation only; no tuning, no library approvals.",
+  "theme": "light",
+  "darkTheme": "All eleven reviewed outputs have inadequate dark-background contrast; no dark-theme approval.",
+  "inputComparison": "reports/missing-logo-program-2026-09-19/comparison.json",
+  "contactSheets": [
+    "reports/missing-logo-program-2026-09-19/new-candidates-light.png",
+    "reports/missing-logo-program-2026-09-19/new-candidates-dark.png"
+  ],
+  "summary": {
+    "reviewed": 11,
+    "pass": 7,
+    "hold": 4,
+    "developmentPass": 6,
+    "holdoutPass": 1,
+    "libraryAdditions": 0
+  },
+  "rows": [
+    {
+      "id": "barrick-mining",
+      "name": "Barrick Mining",
+      "split": "development",
+      "domain": "barrick.com",
+      "rawHash": "0eef575f6013822784a42eb9fb2693a2377b7b95a8d4bc2d227e138db829c49b",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/barrick-mining.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Single-line BARRICK wordmark and gold underline match the company Q2 2026 fact sheet; sharp and legible on white.",
+      "currentness": "corroborated_current_official_document",
+      "sources": [
+        "https://www.barrick.com/home/",
+        "https://s25.q4cdn.com/322814910/files/doc_downloads/fact_sheet/Barrick_Fact_Sheet.pdf"
+      ],
+      "captures": [
+        "barrick-factsheet.pdf",
+        "barrick-factsheet-page1.png"
+      ]
+    },
+    {
+      "id": "cardinal-health",
+      "name": "Cardinal Health",
+      "split": "holdout",
+      "domain": "cardinalhealth.com",
+      "rawHash": "6052df824a11bedaeb79d1ea5d322a07efc22e215fd2e047f950ca87212d9b84",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/cardinal-health.svg",
+      "decision": "hold",
+      "role": "wide",
+      "reason": "Identity is recognizable, but symbol above the wordmark is a stacked lockup, not the canonical horizontal wide treatment. Keep review-only.",
+      "currentness": "identity_corroborated_role_mismatch",
+      "sources": [
+        "https://www.cardinalhealth.com/en.html",
+        "https://cardinalhealth.scene7.com/is/image/corpmarketdms7prod/logo-main",
+        "https://newsroom.cardinalhealth.com/imagegallery?cat=2748"
+      ],
+      "captures": [
+        "cardinal-health-official.html",
+        "cardinal-health-official-logo.png"
+      ]
+    },
+    {
+      "id": "castorama",
+      "name": "Castorama",
+      "split": "development",
+      "domain": "castorama.fr",
+      "rawHash": "b58af4e5ac62e8febac6757db16f4c7e06c61c1f299ba915bc64f391ca926df3",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/castorama.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Blue lowercase wordmark and yellow terminal dash match France branding in the parent company November 2025 presentation, page 19. Main homepage returned 503.",
+      "currentness": "corroborated_recent_official_document",
+      "sources": [
+        "https://www.kingfisher.com/our-banners-and-brands/retail-banners",
+        "https://www.kingfisher.com/~/media/Files/K/Kingfisher-Plc/Universal/investors/result-reports-presentation/2025/retail-investor-nov-25.pdf"
+      ],
+      "captures": [
+        "kingfisher-page19.png",
+        "kingfisher-retail-nov2025.pdf",
+        "kingfisher-banners.html"
+      ]
+    },
+    {
+      "id": "intesa-sanpaolo",
+      "name": "Intesa Sanpaolo",
+      "split": "holdout",
+      "domain": "intesasanpaolo.com",
+      "rawHash": "ab203de71bb8314a27cf3cd66786b3dce0b747d1653884516d854a3b3631f445",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/intesa-sanpaolo.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Single-line Trajan lettering and central aqueduct match the current official header geometry. Official brand explanation corroborates green letters and the multicolored central pictogram.",
+      "currentness": "corroborated_current_official_header_and_brand_page",
+      "sources": [
+        "https://www.intesasanpaolo.com/",
+        "https://www.intesasanpaolo.com/content/dam/vetrina/design/loghi/header-e-footer/logo-intesasanpaolo.png",
+        "https://group.intesasanpaolo.com/it/chi-siamo/marchio"
+      ],
+      "captures": [
+        "intesa-sanpaolo-official.html",
+        "intesa-sanpaolo-official-logo-dark.png"
+      ]
+    },
+    {
+      "id": "lufthansa",
+      "name": "Lufthansa",
+      "split": "development",
+      "domain": "lufthansa.com",
+      "rawHash": "3fde724dce168651d9288d25814ac9cd54d1db6f1a7dc079f088197b924420fd",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/lufthansa.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Correct airline thin-ring crane and dark-blue wordmark, distinct from Lufthansa Group. Official 2018 design description and December 2025 statement that airlines retain their brands corroborate this treatment. Current homepage returned 403 and the cited corporate-design download was inaccessible; no exact fresh official file comparison was possible.",
+      "currentness": "corroborated_brand_continuity_not_fresh_asset_match",
+      "sources": [
+        "https://newsroom.lufthansagroup.com/en/heritage-meets-the-future-lufthansa-presents-a-new-brand-design/",
+        "https://newsroom.lufthansagroup.com/en/lufthansa-group-launches-new-brand-identityapac/",
+        "https://corporatedesign.lufthansa.com/d/Sy9Wlqgm4YPF/downloads"
+      ],
+      "captures": [
+        "lufthansa-locale.html"
+      ]
+    },
+    {
+      "id": "msc-group",
+      "name": "MSC Group",
+      "split": "development",
+      "domain": "msc.com",
+      "rawHash": "dd837bdfea68be3ea570b3ea34bee6d78b3c09ef26ccc92bb77f26e66447b18f",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/msc-group.svg",
+      "decision": "pass",
+      "role": "icon",
+      "reason": "Compact MSC letterform/wave brand symbol matches current official homepage Organization logo geometry (official white variant, candidate black). This is a designed compact symbol, not a cropped long wordmark.",
+      "currentness": "corroborated_current_official_schema_asset",
+      "sources": [
+        "https://www.msc.com/",
+        "https://assets.msc.com/api/public/content/688a28b6c2e243a3a2437f112d0de60d",
+        "https://www.msc.com/en/newsroom/media-kit"
+      ],
+      "captures": [
+        "msc-group-official.html",
+        "msc-group-official-logo-dark.png"
+      ]
+    },
+    {
+      "id": "nippon-steel",
+      "name": "Nippon Steel",
+      "split": "development",
+      "domain": "nipponsteel.com",
+      "rawHash": "1c36b979d8fbe6a820080e16abba9c033c1148b1771e5b4963f6af31a0ade313",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/nippon-steel.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Blue faceted mark and NIPPON STEEL lettering match the current official homepage image. Clear single-line horizontal company lockup.",
+      "currentness": "corroborated_current_official_header",
+      "sources": [
+        "https://www.nipponsteel.com/",
+        "https://www.nipponsteel.com/app-files/img/cmn_logo01.png",
+        "https://www.nipponsteel.com/en/factbook/02-01.html"
+      ],
+      "captures": [
+        "nippon-steel-official.html",
+        "nippon-steel-official-logo.png"
+      ]
+    },
+    {
+      "id": "ola",
+      "name": "Ola",
+      "split": "holdout",
+      "domain": "olacabs.com",
+      "rawHash": "630b5ccdbf9aa0134f5a6442ef265e509efdbf6fd70a94b295d22b47540938b3",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/ola.svg",
+      "decision": "hold",
+      "role": "wide",
+      "reason": "Current official header uses an open-chevron A; normalized Commons asset has a solid triangular A. The mismatch prevents claiming a verified current mark despite current P154. Keep review-only pending variant explanation or replacement.",
+      "currentness": "conflicts_with_current_official_header",
+      "sources": [
+        "https://www.olacabs.com/",
+        "https://assets.olacabs.com/ola-prod-website/OLA-black.svg"
+      ],
+      "captures": [],
+      "externalCapture": "runs/missing-logo-program-2026-09-19/official-evidence/ola.png"
+    },
+    {
+      "id": "royal-caribbean",
+      "name": "Royal Caribbean",
+      "split": "holdout",
+      "domain": "royalcaribbean.com",
+      "rawHash": "32675d44a532054a2fc09f49c3548f2e955085a7236de5f246c165941dbf73cd",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/royal-caribbean.svg",
+      "decision": "hold",
+      "role": "wide",
+      "reason": "Recognizable crown-and-anchor and two-line ROYAL/CARIBBEAN lettering. This is a stacked main-wordmark treatment; do not count it as canonical single-line wide output.",
+      "currentness": "identity_corroborated_role_mismatch",
+      "sources": [
+        "https://www.royalcaribbean.com/",
+        "https://assets.dm.rccl.com/is/content/RoyalCaribbeanCruises/royal-caribbean-logo-crown-anchor-transparent-1?fmt=png-alpha"
+      ],
+      "captures": [
+        "royal-caribbean-official.html",
+        "royal-caribbean-official-logo.png"
+      ]
+    },
+    {
+      "id": "saks-fifth-avenue",
+      "name": "Saks Fifth Avenue",
+      "split": "development",
+      "domain": "saksfifthavenue.com",
+      "rawHash": "49d2dffed5e0b5b42e38f8b5eafefa32aaa07499cf6d1513e7cf42cf1bb13943",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/saks-fifth-avenue.svg",
+      "decision": "hold",
+      "role": "icon",
+      "reason": "Recognizable elaborate three-line script, but exact current compact variant and readability at icon size are not independently established. Homepage returned 403; P154 and brand familiarity alone are insufficient for a reviewed icon gain.",
+      "currentness": "exact_current_variant_unverified",
+      "sources": [
+        "https://www.saksfifthavenue.com/"
+      ],
+      "captures": [
+        "saks-fifth-avenue-official.html"
+      ]
+    },
+    {
+      "id": "traton",
+      "name": "TRATON",
+      "split": "development",
+      "domain": "traton.com",
+      "rawHash": "b2369cc5cd98cc47d8df9831223977218e4e490385621c2c12c5512737142946",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/traton.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Single-line TRATON brand name with subordinate GROUP descriptor matches the official GROUP media download still supplied today. Current primary header omits descriptor; record this explicitly as the official GROUP lockup variant.",
+      "currentness": "corroborated_currently_served_official_media_variant",
+      "sources": [
+        "https://traton.com/en.html",
+        "https://traton.com/en/newsroom/media-center/mediacenterresults.html?filter=logo&from=0&size=12&sort=relevance&type=photos",
+        "https://traton.com/download?id=jcr:75a7fb96-7153-4016-8d88-bf83a44628a6"
+      ],
+      "captures": [
+        "traton-media.html",
+        "traton-group-official.png",
+        "traton-current-official.png"
+      ]
+    }
+  ],
+  "evidenceDir": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence",
+  "evidenceHashes": [
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/barrick-factsheet-page1.png",
+      "bytes": 272468,
+      "sha256": "f242ff4a5295da8465dffb39cd73e979ba6fdb2a6434aea3ef2844c26db16ce9"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/barrick-factsheet.pdf",
+      "bytes": 378838,
+      "sha256": "ffffd47621c29fda5d7e82453fc89d603b6dbee02fdae1445b56b8d04408be1b"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/cardinal-health-official-logo.bin",
+      "bytes": 8952,
+      "sha256": "bfbdd0510e55f74dddb927707c4011c4a969693618df3c34ddf71710986b4aa5"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/cardinal-health-official-logo.png",
+      "bytes": 41657,
+      "sha256": "c2a6fd1b4029b15d60bf52c0a0053038d3309e62a4cf0ccab5fb5411cc8b0269"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/cardinal-health-official.html",
+      "bytes": 914796,
+      "sha256": "553477d68c4a4a33869327fc4fcc742646759db9a13b3e6a735c2d745271c780"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/castorama-official.html",
+      "bytes": 15877,
+      "sha256": "4724df44830b8496a9e333915eb316d8c53dd0a6db58278961bf1689e8dc76b7"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/intesa-sanpaolo-official-logo-dark.png",
+      "bytes": 36704,
+      "sha256": "aeab292a9fd179ded80dce992dc8ee36e07d8b35d7c523d0f00eeabc75f188b3"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/intesa-sanpaolo-official-logo.bin",
+      "bytes": 5229,
+      "sha256": "559bde803d8dedb905509859f3c1d14c9837788f2d5cf6ee26f1518f528d0cf8"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/intesa-sanpaolo-official-logo.png",
+      "bytes": 629,
+      "sha256": "f9a66811a51c616433607f8c2925982babd62ef150095a7770e2d0b8a066ca63"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/intesa-sanpaolo-official.html",
+      "bytes": 296634,
+      "sha256": "81d24d2e40646876b37ea7066e8ee296cb7c2ffdbf1b5bfd3edeab528cc68a7a"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/kingfisher-banners.html",
+      "bytes": 126365,
+      "sha256": "7d8fa245722cb5be720c6ddb63486eed920979d17b5d7e1c121ec11a14e8f20a"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/kingfisher-official.html",
+      "bytes": 145868,
+      "sha256": "f54a9ef763c3cc8f56772fbb97afb7d26ab4b5f863251c1f9eb1c7ff13ab34cf"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/kingfisher-page19.png",
+      "bytes": 159544,
+      "sha256": "e049697583f6cf18b0dbf7a0b8da764432cde3f896c1f041171e5ed34122fc00"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/kingfisher-retail-nov2025.pdf",
+      "bytes": 3220100,
+      "sha256": "eab9ec0bb2d6fe2de02f77f65d257d054f53d634b956cdb0f93579ccd09c57ef"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/lufthansa-locale.html",
+      "bytes": 11127,
+      "sha256": "39645bb47df95c801cb9f366bab4cdf3dd96a15954883ff9dad5700886c0419c"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/msc-group-official-logo-dark.png",
+      "bytes": 7840,
+      "sha256": "324052375990bccf08e13203b1ee66d79cbf3bb963c7d59ead049516b66e6bff"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/msc-group-official-logo.bin",
+      "bytes": 6090,
+      "sha256": "cb68277eda3fdf26d52cf537d3a413b1a6071044508d6e2abb269070c5c496a0"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/msc-group-official-logo.png",
+      "bytes": 629,
+      "sha256": "942c9cbd5e4ee4108ecbd4382e934e33f8e0c16d40091fc5090e508b6e5a2e4b"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/msc-group-official.html",
+      "bytes": 163781,
+      "sha256": "d7cfc8d1a77910899c074411b22fc01681c5aed0a5847d871dee97fbd04731ce"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/nippon-steel-official-logo.bin",
+      "bytes": 6561,
+      "sha256": "2aed2ac29c10355cfa0d6904ef65b8ee8461862eb67399da270daa980a4b87b2"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/nippon-steel-official-logo.png",
+      "bytes": 31832,
+      "sha256": "2e542a02baf4aa0b6db1eb703e3462bbb3b0401e194ad9efdb46c69631dbbe8f"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/nippon-steel-official.html",
+      "bytes": 86233,
+      "sha256": "0ee798b8bce90648debbf995be39c02a47bf91c502ddd3c7520ec3cd0b0120ed"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/royal-caribbean-official-logo.bin",
+      "bytes": 765,
+      "sha256": "f4593f6613830f27cb19ecf7125572f5375ded552442995d62c033233ff38902"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/royal-caribbean-official-logo.png",
+      "bytes": 629,
+      "sha256": "1abcc5707e3479a8c6d699ae1878a768a6579460d8e4b1c55422c41a93cf47cd"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/royal-caribbean-official.html",
+      "bytes": 787915,
+      "sha256": "b776419a9a9b93314861d2f2b5758adc160db0e02de9d7713d0a279326acdb44"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/saks-fifth-avenue-official.html",
+      "bytes": 779,
+      "sha256": "99a59d3bf2831283ed4962d4a7a63009da5fdfbc354e5817b4c3d146b5c08a32"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/traton-current-official.bin",
+      "bytes": 368727,
+      "sha256": "76567d16187bfc5264a2c67f471a5f8be2a63be01939096e3f56dbc370e5e118"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/traton-current-official.png",
+      "bytes": 199445,
+      "sha256": "899efe260df82e761bd82d0b72931ad660faeef8600197ee17ce557fa5134e02"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/traton-group-official.bin",
+      "bytes": 24597,
+      "sha256": "34f2794dc44df788c24b563aa2ba826a0fd963da153e7638660efc5adc46f40d"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/traton-group-official.png",
+      "bytes": 9308,
+      "sha256": "5e29f23bca028c153d01e5f18e71fcaf31365fc42da9a806b4d18ef9d9944b65"
+    },
+    {
+      "path": "runs/missing-logo-program-2026-09-19/svg/final-review-evidence/traton-media.html",
+      "bytes": 117826,
+      "sha256": "15374f20252007a25c98f7fc64394c38d4b766834329e95ac6fd2685ac78498c"
+    }
+  ]
+}

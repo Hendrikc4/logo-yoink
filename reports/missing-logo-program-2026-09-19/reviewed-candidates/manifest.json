@@ -1,0 +1,186 @@
+{
+  "status": "reviewed research candidates; not approved-library additions or rights clearance",
+  "rows": [
+    {
+      "id": "barrick-mining",
+      "name": "Barrick Mining",
+      "split": "development",
+      "domain": "barrick.com",
+      "rawHash": "0eef575f6013822784a42eb9fb2693a2377b7b95a8d4bc2d227e138db829c49b",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/barrick-mining.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Single-line BARRICK wordmark and gold underline match the company Q2 2026 fact sheet; sharp and legible on white.",
+      "currentness": "corroborated_current_official_document",
+      "sources": [
+        "https://www.barrick.com/home/",
+        "https://s25.q4cdn.com/322814910/files/doc_downloads/fact_sheet/Barrick_Fact_Sheet.pdf"
+      ],
+      "captures": [
+        "barrick-factsheet.pdf",
+        "barrick-factsheet-page1.png"
+      ],
+      "file": "reports/missing-logo-program-2026-09-19/reviewed-candidates/barrick-mining.svg",
+      "normalizedHash": "5b385fa8bb63c3a3624986c283249925aeda6cfbdd89c50750c5ab22005a4f60",
+      "transformation": "remove-canonical-svg11-doctype",
+      "libraryApproved": false
+    },
+    {
+      "id": "castorama",
+      "name": "Castorama",
+      "split": "development",
+      "domain": "castorama.fr",
+      "rawHash": "b58af4e5ac62e8febac6757db16f4c7e06c61c1f299ba915bc64f391ca926df3",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/castorama.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Blue lowercase wordmark and yellow terminal dash match France branding in the parent company November 2025 presentation, page 19. Main homepage returned 503.",
+      "currentness": "corroborated_recent_official_document",
+      "sources": [
+        "https://www.kingfisher.com/our-banners-and-brands/retail-banners",
+        "https://www.kingfisher.com/~/media/Files/K/Kingfisher-Plc/Universal/investors/result-reports-presentation/2025/retail-investor-nov-25.pdf"
+      ],
+      "captures": [
+        "kingfisher-page19.png",
+        "kingfisher-retail-nov2025.pdf",
+        "kingfisher-banners.html"
+      ],
+      "file": "reports/missing-logo-program-2026-09-19/reviewed-candidates/castorama.svg",
+      "normalizedHash": "bcd9468fa37b11ed61f5aba96670e8acd77240af499ba061a5c907375c17783d",
+      "transformation": "remove-canonical-svg11-doctype",
+      "libraryApproved": false
+    },
+    {
+      "id": "intesa-sanpaolo",
+      "name": "Intesa Sanpaolo",
+      "split": "holdout",
+      "domain": "intesasanpaolo.com",
+      "rawHash": "ab203de71bb8314a27cf3cd66786b3dce0b747d1653884516d854a3b3631f445",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/intesa-sanpaolo.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Single-line Trajan lettering and central aqueduct match the current official header geometry. Official brand explanation corroborates green letters and the multicolored central pictogram.",
+      "currentness": "corroborated_current_official_header_and_brand_page",
+      "sources": [
+        "https://www.intesasanpaolo.com/",
+        "https://www.intesasanpaolo.com/content/dam/vetrina/design/loghi/header-e-footer/logo-intesasanpaolo.png",
+        "https://group.intesasanpaolo.com/it/chi-siamo/marchio"
+      ],
+      "captures": [
+        "intesa-sanpaolo-official.html",
+        "intesa-sanpaolo-official-logo-dark.png"
+      ],
+      "file": "reports/missing-logo-program-2026-09-19/reviewed-candidates/intesa-sanpaolo.svg",
+      "normalizedHash": "ea18101e1c758785b9896018f6e93f9204195d3fd390466e85bef8760ef7302b",
+      "transformation": "remove-canonical-svg11-doctype",
+      "libraryApproved": false
+    },
+    {
+      "id": "lufthansa",
+      "name": "Lufthansa",
+      "split": "development",
+      "domain": "lufthansa.com",
+      "rawHash": "3fde724dce168651d9288d25814ac9cd54d1db6f1a7dc079f088197b924420fd",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/lufthansa.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Correct airline thin-ring crane and dark-blue wordmark, distinct from Lufthansa Group. Official 2018 design description and December 2025 statement that airlines retain their brands corroborate this treatment. Current homepage returned 403 and the cited corporate-design download was inaccessible; no exact fresh official file comparison was possible.",
+      "currentness": "corroborated_brand_continuity_not_fresh_asset_match",
+      "sources": [
+        "https://newsroom.lufthansagroup.com/en/heritage-meets-the-future-lufthansa-presents-a-new-brand-design/",
+        "https://newsroom.lufthansagroup.com/en/lufthansa-group-launches-new-brand-identityapac/",
+        "https://corporatedesign.lufthansa.com/d/Sy9Wlqgm4YPF/downloads"
+      ],
+      "captures": [
+        "lufthansa-locale.html"
+      ],
+      "file": "reports/missing-logo-program-2026-09-19/reviewed-candidates/lufthansa.svg",
+      "normalizedHash": "08d5ac5e7c619ef7931ca95af2831ce82fca11882dbb56267da1f9e01c464eda",
+      "transformation": "remove-canonical-svg11-doctype",
+      "libraryApproved": false
+    },
+    {
+      "id": "msc-group",
+      "name": "MSC Group",
+      "split": "development",
+      "domain": "msc.com",
+      "rawHash": "dd837bdfea68be3ea570b3ea34bee6d78b3c09ef26ccc92bb77f26e66447b18f",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/msc-group.svg",
+      "decision": "pass",
+      "role": "icon",
+      "reason": "Compact MSC letterform/wave brand symbol matches current official homepage Organization logo geometry (official white variant, candidate black). This is a designed compact symbol, not a cropped long wordmark.",
+      "currentness": "corroborated_current_official_schema_asset",
+      "sources": [
+        "https://www.msc.com/",
+        "https://assets.msc.com/api/public/content/688a28b6c2e243a3a2437f112d0de60d",
+        "https://www.msc.com/en/newsroom/media-kit"
+      ],
+      "captures": [
+        "msc-group-official.html",
+        "msc-group-official-logo-dark.png"
+      ],
+      "file": "reports/missing-logo-program-2026-09-19/reviewed-candidates/msc-group.svg",
+      "normalizedHash": "895105353d72b0cd2dc017fd4fae2c2e442a4c3c84f0d939da6ec0a173adb60a",
+      "transformation": "remove-canonical-svg11-doctype",
+      "libraryApproved": false
+    },
+    {
+      "id": "nippon-steel",
+      "name": "Nippon Steel",
+      "split": "development",
+      "domain": "nipponsteel.com",
+      "rawHash": "1c36b979d8fbe6a820080e16abba9c033c1148b1771e5b4963f6af31a0ade313",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/nippon-steel.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Blue faceted mark and NIPPON STEEL lettering match the current official homepage image. Clear single-line horizontal company lockup.",
+      "currentness": "corroborated_current_official_header",
+      "sources": [
+        "https://www.nipponsteel.com/",
+        "https://www.nipponsteel.com/app-files/img/cmn_logo01.png",
+        "https://www.nipponsteel.com/en/factbook/02-01.html"
+      ],
+      "captures": [
+        "nippon-steel-official.html",
+        "nippon-steel-official-logo.png"
+      ],
+      "file": "reports/missing-logo-program-2026-09-19/reviewed-candidates/nippon-steel.svg",
+      "normalizedHash": "6affdac3a631f86ffd0992472fd9e7f0f468f0f77454fb15d5b3f49fa95375b6",
+      "transformation": "remove-canonical-svg11-doctype",
+      "libraryApproved": false
+    },
+    {
+      "id": "traton",
+      "name": "TRATON",
+      "split": "development",
+      "domain": "traton.com",
+      "rawHash": "b2369cc5cd98cc47d8df9831223977218e4e490385621c2c12c5512737142946",
+      "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/traton.svg",
+      "decision": "pass",
+      "role": "wide",
+      "reason": "Single-line TRATON brand name with subordinate GROUP descriptor matches the official GROUP media download still supplied today. Current primary header omits descriptor; record this explicitly as the official GROUP lockup variant.",
+      "currentness": "corroborated_currently_served_official_media_variant",
+      "sources": [
+        "https://traton.com/en.html",
+        "https://traton.com/en/newsroom/media-center/mediacenterresults.html?filter=logo&from=0&size=12&sort=relevance&type=photos",
+        "https://traton.com/download?id=jcr:75a7fb96-7153-4016-8d88-bf83a44628a6"
+      ],
+      "captures": [
+        "traton-media.html",
+        "traton-group-official.png",
+        "traton-current-official.png"
+      ],
+      "file": "reports/missing-logo-program-2026-09-19/reviewed-candidates/traton.svg",
+      "normalizedHash": "42db13a644127446b2f21243ccbf3112c81f697444a73b18aeb514c543a79bbe",
+      "transformation": "remove-canonical-svg11-doctype",
+      "libraryApproved": false
+    }
+  ]
+}

@@ -1,0 +1,981 @@
+{
+  "assignment": "missing identities at zero-based positions i % 3 === 0",
+  "checkedAt": "2026-09-18",
+  "reviewStatus": "candidate-only; not visually approved",
+  "results": [
+    {
+      "brandId": "dell",
+      "status": "permission-gated",
+      "candidates": [],
+      "reason": "Official Dell trademark page says logo use needs prior written permission; excluded from candidate list."
+    },
+    {
+      "brandId": "block",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://block.xyz/apple-touch-icon-reskin.png",
+          "role": "icon",
+          "discoveryPage": "https://block.xyz/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-apple-touch-icon",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Official site's apple-touch icon returned HTTP 200 as PNG; matches its current inline square Block mark, but requires visual approval."
+    },
+    {
+      "brandId": "fortinet",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.fortinet.com/content/dam/fortinet/images/general/fortinet-logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://fortinet.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "carrefour",
+      "status": "permission-gated",
+      "candidates": [],
+      "reason": "Carrefour's official media-library terms prohibit reproduction of its logos without express authorization (https://image.carrefour.com/front/V2login)."
+    },
+    {
+      "brandId": "aldi",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Aldi Nord and Aldi Süd are separate identities; generic Aldi record cannot be safely matched to one logo."
+    },
+    {
+      "brandId": "lululemon",
+      "status": "permission-gated",
+      "candidates": [],
+      "reason": "Corporate site exposes logo-black-full.svg, but lululemon's official terms require express written consent for use of its logo (https://shop.lululemon.com/help/legal/terms-of-use)."
+    },
+    {
+      "brandId": "the-north-face",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "sephora",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "diageo",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.diageo.com/~/media/Images/D/Diageo-V2/Universal/logo/Logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://diageo.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "lyft",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "singapore-airlines",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "abb",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "caterpillar",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.cat.com/content/dam/catDotCom/global-selector-/Cat-logo.png",
+          "role": "logo",
+          "discoveryPage": "https://cat.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Official CAT-logo image in site header returned HTTP 200; visually review against the Caterpillar corporate identity."
+    },
+    {
+      "brandId": "berkshire-hathaway",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "the-new-york-times",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "paramount",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.paramount.com/sites/g/files/dxjhpe356/files/ParamountDotCom/HomePage/Images/Skydance%20Merger%202025/Footer/paramount-skydance-footer-logo.png",
+          "role": "logo",
+          "discoveryPage": "https://www.paramount.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "current-corporate-footer-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Official footer PNG returned HTTP 200 and visually reads 'Paramount, a Skydance Corporation'; current corporate identity needs final reviewer acceptance."
+    },
+    {
+      "brandId": "lufthansa",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "rappi",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "verizon",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "mckinsey-company",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "snap",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://images.ctfassets.net/dwtpq5hdcqjg/1rirJZxDQQvaSMSbpkacPj/7066e07c0f34b08c1dda335afd25558d/snap_inc_logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://snap.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "bumble",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "asos",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://content.asos-media.com/-/media/images/asos/logo/icon_svg.svg",
+          "role": "icon",
+          "discoveryPage": "https://asos.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "qatar-airways",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "fiserv",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.fiserv.com/content/dam/fiserv-ent/final-files/digital-graphics/fiserv-com-graphics/fiserv-logo-orange-ff6600.svg",
+          "role": "logo",
+          "discoveryPage": "https://fiserv.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "charter-communications",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "lockheed-martin",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://lockheedmartin.com/content/dam/lockheed-martin/general/lm-logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://lockheedmartin.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "northrop-grumman",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "chubb",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.chubb.com/content/dam/chubb-sites/chubb/us-en/home_page/chubb-logo-black.png",
+          "role": "logo",
+          "discoveryPage": "https://chubb.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "american-electric-power",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.aep.com/logos/aep-logo-red-gray.svg",
+          "role": "logo",
+          "discoveryPage": "https://aep.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "mckesson",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.mckesson.com/siteassets/images/z-mckesson-logosicons/mck_logo_blue.svg",
+          "role": "logo",
+          "discoveryPage": "https://mckesson.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "proximus",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.proximus.com/dam/jcr:a3a6b9dc-30fb-4a81-8c23-6b0567ff623d/logo-proximus.2024-09-03-11-39-47.png",
+          "role": "logo",
+          "discoveryPage": "https://proximus.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "marsh-mclennan",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.marsh.com/content/dam/marsh/Imagery/marsh-2/logos/marsh-logo-skyblue-v1.svg",
+          "role": "logo",
+          "discoveryPage": "https://marsh.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "cummins",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "eli-lilly",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "newmont",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "traton",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "moodys",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.moodys.com/web/en/us/v3/images/header/v3-header-logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://moodys.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "cme-group",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "komatsu",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.komatsu.com/content/dam/komatsu/icons/website-app/blue-logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://komatsu.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "saab",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "kddi",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "aramco",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.aramco.com/-/jssmedia/project/aramcocom/aramco-logo.webp",
+          "role": "logo",
+          "discoveryPage": "https://aramco.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "softbank-corp",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.softbank.jp/site/set/data/top/img/shared/2026/logo-sb-black.svg",
+          "role": "logo",
+          "discoveryPage": "https://softbank.jp/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "natwest-group",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "textron",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "danaher",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.danaher.com/themes/custom/danaher/logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://danaher.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "abbott",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.abbott.com/content/dam/corp/abbottglobal/test-hub/Abbott-Logo.png",
+          "role": "logo",
+          "discoveryPage": "https://abbott.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "societe-generale",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.societegenerale.com/sites/default/files/image/logo/soc103-1.svg",
+          "role": "logo",
+          "discoveryPage": "https://societegenerale.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "orlen",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "intesa-sanpaolo",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.intesasanpaolo.com/content/dam/vetrina/design/loghi/header-e-footer/logo-intesasanpaolo.png",
+          "role": "logo",
+          "discoveryPage": "https://intesasanpaolo.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "legrand",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.legrand.com/themes/custom/legrand/images/logo.png",
+          "role": "logo",
+          "discoveryPage": "https://legrand.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "saint-gobain",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "woodside-energy",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "rbc",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "pdd-holdings",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "tide",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://tide.com/images/brand_main_logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://tide.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "waitrose",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "zomato",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://b.zmtcdn.com/images/square_zomato_logo_new.svg",
+          "role": "icon",
+          "discoveryPage": "https://zomato.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "tanishq",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "youtube",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.gstatic.com/marketing-cms/assets/images/c3/e9/4400fe56451499f639265e32e9b2/youtube-logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://www.youtube.com/about/",
+          "sourceKind": "first-party-site-cdn",
+          "theme": "light",
+          "representation": "official-site-header-artwork",
+          "rightsNote": "First-party Google-hosted site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Exact YouTube color play-button and dark wordmark SVG on its official About page returned HTTP 200; visually checked on white."
+    },
+    {
+      "brandId": "malaysia-aviation-group",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "hisense",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "oneplus",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "monopoly",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "barbie",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://images.mattel.net/image/upload/w_180,c_scale/f_auto/q_auto:low/shop-contentstack/blta28d8972064872fe/65ea2a70aac51db9df8fa174/Shopper_HP_Nav_Logos_Barbie.jpg",
+          "role": "logo",
+          "discoveryPage": "https://barbie.com/",
+          "sourceKind": "first-party-parent-site",
+          "theme": "light",
+          "representation": "official-mattel-navigation-artwork",
+          "rightsNote": "First-party Mattel asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Mattel's official navigation asset returned HTTP 200 and visually displays the Barbie wordmark on white; raster resolution is only 180 × 93."
+    },
+    {
+      "brandId": "myntra",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://constant.myntassets.com/www/data/portal/mlogo.png",
+          "role": "icon",
+          "discoveryPage": "https://myntra.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "facebook",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "bsh-home-appliances",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "fendi",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "lancome",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "castorama",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "wechat",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://sgnewres.wechat.com/t/wx_fed/base/wechat/wechat-main-page/wechat-portal/res/_nuxt/logo.CNA5TJpi.svg",
+          "role": "logo",
+          "discoveryPage": "https://wechat.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "royal-caribbean",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://assets.dm.rccl.com/is/content/RoyalCaribbeanCruises/royal-caribbean-logo-crown-anchor-transparent-1?fmt=png-alpha",
+          "role": "logo",
+          "discoveryPage": "https://royalcaribbean.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Official homepage logo image returned HTTP 200 as SVG despite the PNG-format query; inspect artwork before approval."
+    },
+    {
+      "brandId": "ralph-lauren",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "nerf",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "mac-cosmetics",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.maccosmetics.com/cdn/shop/files/MAC_logo_1_8458b9aa-0ac8-4631-b3e1-9d96cad96df5.png?format=webp&v=1786964565&width=600",
+          "role": "logo",
+          "discoveryPage": "https://maccosmetics.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "harman",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "sofitel",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://sofitel.accor.com/content/dam/brands/sof/global-marketing/brand-identity/logos/2601_mkt_0022.svg",
+          "role": "logo",
+          "discoveryPage": "https://sofitel.accor.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "electrolux",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.electrolux.com.au/contentassets/187af942684545628d9d3bbce68f35b9/electrolux_logo_sg.svg",
+          "role": "logo",
+          "discoveryPage": "https://electrolux.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "nexon",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "nescafe",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "tata-cliq",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "digitalocean",
+      "status": "permission-gated",
+      "candidates": [],
+      "reason": "Official press page provides brand assets, but current trademark guidelines limit logo use to authorized cases or express permission (https://www.digitalocean.com/legal/trademark-usage-guidelines)."
+    },
+    {
+      "brandId": "sk-hynix",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "medium",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "linode",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Current official site emphasizes Akamai Cloud, not a standalone current Linode logo; parent art is not an exact match."
+    },
+    {
+      "brandId": "analog-devices",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "teradata",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "sophos",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://images.contentstack.io/v3/assets/blt38f1f401b66100ad/blt0899b1ab2bd40d8d/68d381f4faf818d3f61fb755/sophos-logo_1_(1).svg",
+          "role": "logo",
+          "discoveryPage": "https://sophos.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "trend-micro",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "hashicorp",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "monday-com",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://cdn.prod.website-files.com/656da6fea306219773d04208/658290685ff5e03443593ec3_monday.com.avif",
+          "role": "logo",
+          "discoveryPage": "https://monday.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Image labeled monday.com logo on official homepage returned HTTP 200 as AVIF; inspect before approval."
+    },
+    {
+      "brandId": "mollie",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "labelbox",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://labelbox.com/static/images/logo-v4.svg",
+          "role": "logo",
+          "discoveryPage": "https://labelbox.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Direct first-party asset returned HTTP 200 with image content type; inspect artwork visually before approval."
+    },
+    {
+      "brandId": "jetbrains",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.jetbrains.com/company/brand/img/jetbrains_logo.png",
+          "role": "logo",
+          "discoveryPage": "https://www.jetbrains.com/company/brand/",
+          "sourceKind": "first-party-brand-page",
+          "theme": "light",
+          "representation": "official-company-brand-artwork",
+          "rightsNote": "JetBrains permits specified referential uses under its brand guidelines, including attribution and link-back requirements; reviewer must ensure intended use complies."
+        }
+      ],
+      "reason": "Official JetBrains documentation points to this brand-page PNG; returned HTTP 200 and visually shows current icon plus JETBRAINS wordmark on white."
+    },
+    {
+      "brandId": "afterpay",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "umc",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvesting evidence inspected; no direct current, exact-identity, white-background-safe asset confidently verified in this pass."
+    },
+    {
+      "brandId": "hpe",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.hpe.com/content/dam/hpe/web-ui/images/gn-icons/logo-lm-animated.svg",
+          "role": "logo",
+          "discoveryPage": "https://www.hpe.com/",
+          "sourceKind": "first-party-site",
+          "theme": "light",
+          "representation": "official-site-header-artwork",
+          "rightsNote": "First-party site asset; trademark rights remain with owner. Candidate for human visual and usage review, not automatic approval."
+        }
+      ],
+      "reason": "Exact HPE header SVG referenced by its official site's navigation returned HTTP 200; inspect animated styling and white-background contrast."
+    }
+  ]
+}

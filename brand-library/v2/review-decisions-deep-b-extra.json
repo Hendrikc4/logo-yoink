@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "runId": "deep-search-2026-09-18T08-45-12-933Z",
+  "reviewer": "codex-light-background-visual-review",
+  "reviewedAt": "2026-09-18T08:47:00Z",
+  "decisions": [
+    { "brandId": "yum-brands", "role": "logo", "action": "reject", "reason": "The asset combines Yum! Brands with several subsidiary marks instead of a clean corporate wordmark." }
+  ]
+}

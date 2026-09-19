@@ -1,0 +1,246 @@
+{
+  "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
+  "reviewedAt": "2026-09-18T08:28:29Z",
+  "decisions": [
+    {
+      "brandId": "qualcomm",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show a clean Qualcomm wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "intuit",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show a clean Intuit wordmark; the apparent black blocks were sheet padding."
+    },
+    {
+      "brandId": "workday",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete Workday wordmark without side bars, legible on both themes."
+    },
+    {
+      "brandId": "datadog",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the Datadog lockup without black bars, legible on both themes."
+    },
+    {
+      "brandId": "hubspot",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean HubSpot wordmark; the apparent rules were sheet padding."
+    },
+    {
+      "brandId": "heineken",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean Heineken wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "subway",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean Subway wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "exxonmobil",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean ExxonMobil wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "totalenergies",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean TotalEnergies wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "barclays",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean bright-blue Barclays lockup without bars on both themes."
+    },
+    {
+      "brandId": "walgreens",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean red Walgreens wordmark without bars on both themes."
+    },
+    {
+      "brandId": "johnson-johnson",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean red Johnson & Johnson wordmark without bars on both themes."
+    },
+    {
+      "brandId": "astrazeneca",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete AstraZeneca lockup without bars, legible on both themes."
+    },
+    {
+      "brandId": "moderna",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean Moderna wordmark without bars; the cyan baseline is part of the rendered mark."
+    },
+    {
+      "brandId": "illumina",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean Illumina wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "monster",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean Monster wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "hugging-face",
+      "role": "icon",
+      "action": "restore",
+      "reason": "Corrected sheets show the Hugging Face emoji icon without the apparent black rules."
+    },
+    {
+      "brandId": "rakuten",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean purple Rakuten wordmark without side bars."
+    },
+    {
+      "brandId": "bytedance",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete ByteDance wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "infosys",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean Infosys wordmark without side blocks, legible on both themes."
+    },
+    {
+      "brandId": "wipro",
+      "role": "icon",
+      "action": "restore",
+      "reason": "Corrected sheets show the Wipro square icon without the apparent black bars."
+    },
+    {
+      "brandId": "reliance-industries",
+      "role": "icon",
+      "action": "restore",
+      "reason": "Corrected sheets show the Reliance symbol without the apparent black underline."
+    },
+    {
+      "brandId": "grab",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean green Grab wordmark without side blocks."
+    },
+    {
+      "brandId": "t-mobile",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean magenta T-Mobile wordmark without bars."
+    },
+    {
+      "brandId": "duolingo",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean green Duolingo lockup without bars."
+    },
+    {
+      "brandId": "kpmg",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete KPMG logo without side blocks; its white field keeps it legible on dark."
+    },
+    {
+      "brandId": "coffee-meets-bagel",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete Coffee Meets Bagel lockup without bars."
+    },
+    {
+      "brandId": "glassdoor",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the green Glassdoor wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "edx",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete edX mark; the apparent side blocks were sheet padding."
+    },
+    {
+      "brandId": "temu",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean orange Temu wordmark without bars."
+    },
+    {
+      "brandId": "playmobil",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete Playmobil lockup without side blocks."
+    },
+    {
+      "brandId": "progressive",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean blue Progressive wordmark without bars, legible on both themes."
+    },
+    {
+      "brandId": "fidelity-national-information-services",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean green FIS mark without side blocks, legible on both themes."
+    },
+    {
+      "brandId": "bhp",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean orange BHP wordmark without side blocks."
+    },
+    {
+      "brandId": "rio-tinto",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean red Rio Tinto wordmark without bars."
+    },
+    {
+      "brandId": "southern-company",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete Southern Company lockup without bars; gray text remains readable on dark."
+    },
+    {
+      "brandId": "centene",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete Centene logo without bars, including its intact white-backed dark-theme display."
+    },
+    {
+      "brandId": "kpn",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean bright-green KPN lockup without side blocks."
+    },
+    {
+      "brandId": "telia",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the clean purple Telia lockup without side blocks."
+    },
+    {
+      "brandId": "bristol-myers-squibb",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected sheets show the complete BMS lockup without bars, with its white-backed dark-theme display intact."
+    }
+  ]
+}

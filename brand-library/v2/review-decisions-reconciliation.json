@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-18T08-16-24-608Z",
+  "reviewer": "codex-ai-visual-review",
+  "reviewedAt": "2026-09-18T08:25:00Z",
+  "scope": "nine-ID reconciliation run; staged light and dark sheets, pages 2–6",
+  "decisions": [
+    {"brandId":"citigroup","role":"icon","action":"reject","reason":"The 48px favicon is a tiny Citi text wordmark, not a distinct icon or symbol."},
+    {"brandId":"snap","role":"icon","action":"reject","reason":"The square Snap Inc. favicon is a miniature text lockup, not a standalone icon or symbol."},
+    {"brandId":"snap","role":"logo","action":"reject","reason":"The black Snap Inc. wordmark is visible on light but disappears on the dark review background."},
+    {"brandId":"marsh-mclennan","role":"icon","action":"reject","reason":"The staged Marsh favicon has no discernible mark on either review background."},
+    {"brandId":"marsh-mclennan","role":"logo","action":"reject","reason":"The very pale blue MARSH wordmark is readable on dark but has insufficient contrast on the light review background."},
+    {"brandId":"malaysia-aviation-group","role":"icon","action":"reject","reason":"The staged favicon has no discernible mark on either review background."},
+    {"brandId":"malaysia-aviation-group","role":"logo","action":"reject","reason":"The wide asset says Malaysia Airlines, a subsidiary airline identity, rather than Malaysia Aviation Group."}
+  ]
+}

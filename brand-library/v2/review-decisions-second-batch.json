@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "codex-ai-visual-review",
+  "reviewedAt": "2026-09-18T07:50:24Z",
+  "sourceReport": "runs/2026-09-18T07-38-05-968Z/report.json",
+  "decisions": [
+    {
+      "brandId": "fiserv",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "nextera-energy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "lockheed-martin",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "cigna",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "america-movil",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "northrop-grumman",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "chubb",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "centene",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "american-electric-power",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "aig",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "l3harris",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "mckesson",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "exelon",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "metlife",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "proximus",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "dominion-energy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "marsh-mclennan",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "valero",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "ge-aerospace",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "constellation-energy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "eli-lilly",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "p-g-e-corporation",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "newmont",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "arthur-j-gallagher",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "halliburton",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "barrick-mining",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "moodys",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "baker-hughes",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "us-bancorp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet."
+    },
+    {
+      "brandId": "blackstone",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square candidate is a right-arrow navigation/UI glyph, not a Blackstone brand symbol."
+    },
+    {
+      "brandId": "chevron",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square candidate includes Chevron name lettering above the chevron; it is a compact lockup, not a standalone icon."
+    },
+    {
+      "brandId": "charles-schwab",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square candidate consists of SCHWAB name lettering, not a distinct standalone symbol."
+    },
+    {
+      "brandId": "fidelity-national-information-services",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square candidate consists of FIS name lettering, not a distinct standalone symbol."
+    },
+    {
+      "brandId": "rockwell-automation",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The round slash symbol resembles a prohibited/no-entry UI glyph, not a Rockwell Automation brand mark."
+    },
+    {
+      "brandId": "occidental-petroleum",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square candidate is the OXY name lettering inside a circle, not a distinct standalone symbol."
+    },
+    {
+      "brandId": "freeport-mcmoran",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The round up-chevron candidate is a navigation/up-arrow UI glyph, not a Freeport-McMoRan symbol."
+    },
+    {
+      "brandId": "phillips-66",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide candidate is a photograph of a worker, not a Phillips 66 wordmark."
+    },
+    {
+      "brandId": "slb",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide artwork is an SLB 100 centennial lockup, not an evergreen SLB company-name wordmark."
+    },
+    {
+      "brandId": "ping-an-insurance",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide artwork is Chinese promotional website copy mentioning pingan.com, not a clean Ping An wordmark."
+    },
+    {
+      "brandId": "sempra",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide artwork says Sempra Energy, the former identity, not the current Sempra wordmark."
+    },
+    {
+      "brandId": "aia-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is the AIA name lettering beneath its graphic, not a standalone symbol."
+    },
+    {
+      "brandId": "telefonica",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "northrop-grumman",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "anglo-american",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "metlife",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "proximus",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "freeport-mcmoran",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "marsh-mclennan",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "ge-aerospace",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "constellation-energy",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "paccar",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "tele2",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "newmont",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "moodys",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "baker-hughes",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "blackstone",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "rtx",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "rtx",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "bhp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "conocophillips",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "lockheed-martin",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "travelers",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "chubb",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "glencore",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "robinhood",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "mckesson",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "transdigm",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "traton",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "traton",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "truist",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "telenor",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "agnico-eagle-mines",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "volvo-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    }
+  ]
+}

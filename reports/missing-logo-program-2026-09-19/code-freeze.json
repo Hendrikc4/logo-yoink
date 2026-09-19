@@ -1,0 +1,20 @@
+{
+  "frozenAt": "2026-09-19T08:18:13.251669+00:00",
+  "purpose": "Freeze implementation before opening paired holdout metrics; no holdout-driven tuning",
+  "files": {
+    "src/wikimedia-fallback.mjs": "887d970c147501c09911e0e8e8cb87a9c24c2bef1ff58cc14178e50633363678",
+    "src/extractor.mjs": "e26b3bc49e8f042d8fde33b76e03f94f9c47ffdc8d8fe1f1adbc9bd857afe1d2",
+    "src/standalone-svg.mjs": "a6cdd027c35f3c234d35cf91f0dabeae0fc1b971d07335fbae60950dfc240209",
+    "src/rank.mjs": "ba1f716bc7c4da825ad2dcb823e0c5707ab1eb3c705f414e7e0111e4aa81a9c3",
+    "src/asset-model.mjs": "145af91a017efb9a0caac1d4be3447ab3a8507b90de020fb58d44f4a46a8a1c3"
+  },
+  "keptBundleAt": "2026-09-19T08:22:22.788446+00:00",
+  "keepDropDecision": "Rejected entire canonical Commons filename role experiment after TEPCO holdout regression. No holdout-specific replacement or tuning.",
+  "retainedFiles": {
+    "src/wikimedia-fallback.mjs": "887d970c147501c09911e0e8e8cb87a9c24c2bef1ff58cc14178e50633363678",
+    "src/extractor.mjs": "e26b3bc49e8f042d8fde33b76e03f94f9c47ffdc8d8fe1f1adbc9bd857afe1d2",
+    "src/standalone-svg.mjs": "a6cdd027c35f3c234d35cf91f0dabeae0fc1b971d07335fbae60950dfc240209",
+    "src/rank.mjs": "f2960043cd697a3423206aed789e2dcb589ac0852c64655534ce2dcfe9b32536",
+    "src/asset-model.mjs": "145af91a017efb9a0caac1d4be3447ab3a8507b90de020fb58d44f4a46a8a1c3"
+  }
+}

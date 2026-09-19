@@ -1,0 +1,1212 @@
+{
+  "schemaVersion": 1,
+  "cohort": "part-c",
+  "checkedAt": "2026-09-18",
+  "assignment": "zero-approved identities at positions i%3==2 in source order",
+  "results": [
+    {
+      "brandId": "gopro",
+      "status": "permission-gated",
+      "candidates": [],
+      "reason": "GoPro trademark policy explicitly requires prior written permission to use or copy its logos: https://gopro.com/en/gb/legal/trademarks"
+    },
+    {
+      "brandId": "palo-alto-networks",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.paloaltonetworks.com/etc/clientlibs/clean/imgs/pan-logo-dark.svg",
+          "role": "logo",
+          "discoveryPage": "https://paloaltonetworks.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "costco",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://gdx-assets.costco.com/adobe/assets/urn%3Aaaid%3Aaem%3A35463bd8-ee60-4b61-b7bc-1e9998dfaa4a/as/Costco-Logo-Registered.avif",
+          "role": "logo",
+          "discoveryPage": "https://costco.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Official Costco CDN asset named Costco-Logo-Registered returned image bytes; visual review still required."
+    },
+    {
+      "brandId": "best-buy",
+      "status": "permission-gated",
+      "candidates": [],
+      "reason": "Best Buy media FAQ directs requests for the logo to press@bestbuy.com: https://corporate.bestbuy.com/media-faq/"
+    },
+    {
+      "brandId": "under-armour",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/13/37/1c/13371c52-7abe-9f71-3bff-77117cbed051/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/under-armour/id1092704571?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher Under Armour, Inc. and app Under Armour; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "levi-s",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e0/e5/87/e0e58762-8764-1c98-16b5-fc7cc46ca76f/AppIcon-0-0-1x_U007emarketing-0-0-0-8-0-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/levis-shop-denim-more/id1481624020?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher LEVI STRAUSS & CO. and app Levi's - Shop Denim & More; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "este-e-lauder",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://media.elcompanies.com/images/e/estee-lauder-companies/global/logo/elc-black-logo.png",
+          "role": "logo",
+          "discoveryPage": "https://elcompanies.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "mondelez-international",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "marriott",
+      "status": "permission-gated",
+      "candidates": [],
+      "reason": "Marriott online-marketing terms require written permission before copying Marriott marks or channel content into third-party digital environments: https://www.marriott.com/about/marriottwholesalers/terms.mi"
+    },
+    {
+      "brandId": "emirates",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "bosch",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://assets.bosch.com/media/global/bosch_logo_res_260x85.webp",
+          "role": "logo",
+          "discoveryPage": "https://bosch.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Bosch first-party artwork returned image/webp bytes; final visual approval still needed."
+    },
+    {
+      "brandId": "3m",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage names a header SVG, but direct artwork fetch timed out repeatedly; no fetchable candidate verified."
+    },
+    {
+      "brandId": "blackrock",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.blackrock.com/apac-retail-c-assets/cache-1542607942000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg",
+          "role": "logo",
+          "discoveryPage": "https://blackrock.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "novartis",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.novartis.com/themes/custom/cosmos/logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://novartis.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "reuters",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "epic-games",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c1/f7/2b/c1f72ba6-c578-e57f-f474-a29149ba3399/AppIcon-Companion-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/epic-games/id6480077263?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher Epic Games Inc. and app Epic Games; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "baidu",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.baidu.com/img/flexible/logo/pc/result@2.png",
+          "role": "logo",
+          "discoveryPage": "https://baidu.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "orange",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://brand.orange.com/themes/custom/slimline/components/orange-navbar-brand/orange-logo.svg",
+          "role": "icon",
+          "discoveryPage": "https://brand.orange.com/",
+          "sourceKind": "official-brand-site",
+          "theme": "light",
+          "representation": "brand-mark",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "fisher-price",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://images.mattel.net/image/upload/w_360,f_auto,c_scale/shop-contentstack/blt965085aa025c85f2/67f8f1e7ecec61bf2a68073d/Fisher_Price_Logo330x127_2025.png",
+          "role": "logo",
+          "discoveryPage": "https://fisher-price.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "pwc",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://www.pwc.com/content/pwc/script/network/apple-touch-icon.png",
+            "role": "icon",
+            "discoveryPage": "https://www.pwc.com/gx/en.html",
+            "sourceKind": "official-site-icon",
+            "theme": "light",
+            "representation": "brand-mark",
+            "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+          }
+      ],
+      "reason": "Official PwC touch icon carries the PwC wordmark. Verified as image bytes and visually inspected on white contact sheet."
+    },
+    {
+      "brandId": "palantir",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "shein",
+      "status": "permission-gated",
+      "candidates": [],
+      "reason": "SHEIN's trademark notice says SHEIN marks may not be used without Roadget's prior express written consent: https://m.shein.com/ma/copyright-noticeam-a-379.html"
+    },
+    {
+      "brandId": "kroger",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e2/44/b4/e244b4a2-9b79-b314-f5e5-96477d2666c7/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/kroger/id403901186?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher The Kroger Co. and app Kroger; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "blackstone",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "rtx",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://prd-sc102-cdn.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx_logo.svg?rev=57e660dbd2ee4ef6895a84799210c5bf&rid=a5829bdc17c74537842441a8a1b055f2",
+          "role": "logo",
+          "discoveryPage": "https://rtx.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "charles-schwab",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/21/99/a0/2199a0e9-1975-271c-f630-17eace346a3d/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/schwab-mobile/id407358186?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher The Charles Schwab Corporation and app Schwab Mobile; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "america-movil",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://s22.q4cdn.com/604986553/files/design/americamovil-logo.png",
+          "role": "logo",
+          "discoveryPage": "https://americamovil.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "us-bancorp",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.usbank.com/etc.clientlibs/ecm-global/clientlibs/clientlib-resources/resources/images/svg/logo-personal.svg",
+          "role": "logo",
+          "discoveryPage": "https://www.usbank.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "eaton",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "l3harris",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official footer SVG has white lettering; no white-background-safe sibling verified."
+    },
+    {
+      "brandId": "metlife",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.metlife.com/content/dam/metlifecom/us/homepage/metlife-global/metlife-logos/MetLife_primary_RGB_darkblue.png",
+          "role": "logo",
+          "discoveryPage": "https://metlife.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "freeport-mcmoran",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://fcx.com/themes/fcx/logo.png",
+          "role": "logo",
+          "discoveryPage": "https://fcx.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "ge-aerospace",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official header SVG is a white-only variant; no white-background-safe sibling verified."
+    },
+    {
+      "brandId": "constellation-energy",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.constellationenergy.com/content/dam/constellationenergy/images/home/constellation-logo.png",
+          "role": "logo",
+          "discoveryPage": "https://constellationenergy.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "p-g-e-corporation",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "halliburton",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://cdn.brandfolder.io/3I2CY2XL/as/vkc5w586w5gtr898396p3w/halliburton-logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://halliburton.com/",
+          "sourceKind": "official-brand-cdn",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "barrick-mining",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official investor-site SVG is a knockout/white variant; no white-background-safe sibling verified."
+    },
+    {
+      "brandId": "volvo-group",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official logo path returned an HTML error page rather than SVG artwork on independent fetch."
+    },
+    {
+      "brandId": "intercontinental-exchange",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://www.ice.com/publicdocs/images/favicon_ice.ico",
+            "role": "icon",
+            "discoveryPage": "https://www.ice.com/index",
+            "sourceKind": "official-site-icon",
+            "theme": "light",
+            "representation": "brand-mark",
+            "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+          }
+      ],
+      "reason": "Official ICE browser icon includes the ICE identity. Verified as image bytes and visually inspected on white contact sheet."
+    },
+    {
+      "brandId": "nasdaq",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://www.nasdaq.com/sites/acquia.prod/files/favicon.ico",
+            "role": "icon",
+            "discoveryPage": "https://www.nasdaq.com/",
+            "sourceKind": "official-site-icon",
+            "theme": "light",
+            "representation": "brand-mark",
+            "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+          }
+      ],
+      "reason": "Official Nasdaq browser icon is the current stylized N mark. Verified as image bytes and visually inspected on white contact sheet."
+    },
+    {
+      "brandId": "regeneron",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.regeneron.com/images/logo/logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://regeneron.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "arcelormittal",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "mitsubishi-electric",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.mitsubishielectric.com/global/common/img/logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://mitsubishielectric.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "nippon-steel",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "mitsubishi-heavy-industries",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.mhi.com/themes/custom/mhi/logo_en.svg",
+          "role": "logo",
+          "discoveryPage": "https://mhi.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "kubota",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "repsol",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.repsol.com/content/dam/global/logotipos/repsol/logo-repsol.svg",
+          "role": "logo",
+          "discoveryPage": "https://repsol.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "basf",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://www.basf.com/assets/favicons.v1/apple-touch-icon-180x180.png",
+            "role": "icon",
+            "discoveryPage": "https://www.basf.com/au/en",
+            "sourceKind": "official-site-icon",
+            "theme": "light",
+            "representation": "brand-mark",
+            "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+          }
+      ],
+      "reason": "Official BASF touch icon is the square-dot brand mark. Verified as image bytes and visually inspected on white contact sheet."
+    },
+    {
+      "brandId": "sabic",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.sabic.com/en/Images/SABIC-Logo_tcm1010-14323.svg",
+          "role": "logo",
+          "discoveryPage": "https://sabic.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "singtel",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://cdn1.singteldigital.com/content/dam/singtel/online-draft/singtel_logo_coloured.png",
+          "role": "logo",
+          "discoveryPage": "https://singtel.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Singtel first-party colored-logo asset returned image/png bytes; final visual approval still needed."
+    },
+    {
+      "brandId": "petrochina",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "cnooc",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "abn-amro",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://images.ctfassets.net/1u811bvgvthc/1WdfhFEy0bKMxR8dlZqGNr/b75d47b937b7b48d814d371477904782/Logo-abn.svg",
+          "role": "logo",
+          "discoveryPage": "https://abnamro.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "novo-nordisk",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "coca-cola-company",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.coca-colacompany.com/content/dam/corporate/us/en/header-footer/Header%20Icon.svg",
+          "role": "icon",
+          "discoveryPage": "https://coca-colacompany.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "brand-mark",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "doritos",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "associated-british-foods",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "namshi",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "bigbasket",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/b2/93/50b29359-582b-8bc3-0754-bdf0336e3490/AppIcon-0-0-1x_U007emarketing-0-9-0-sRGB-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/bigbasket-groceries-and-more/id660683603?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher BigBasket.com and app bigbasket: Groceries and more; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "prime-video",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png",
+          "role": "logo",
+          "discoveryPage": "https://primevideo.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "ant-group",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "mitsubishi-fuso",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "acer",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "transformers",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "tim-hortons",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8e/22/5e/8e225edb-4de5-e867-441e-d5ec2566ce9e/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/tim-hortons/id1143883086?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher Tim Hortons and app Tim Hortons; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "kingfisher",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official logo path returned a Cloudflare HTML challenge rather than fetchable artwork."
+    },
+    {
+      "brandId": "bilibili",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6d/92/b4/6d92b451-1685-3b03-88b0-e11dedf8126f/appicon-inter-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/bilibili-every-video-you-love/id1517062289?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher BILIBILI SINGAPORE PTE. LTD. and app bilibili‑Every video you love; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "ibis",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://ibis.accor.com/content/dam/brands/ibh/global-marketing/brand-identity/logos/Display=full-color.svg",
+          "role": "logo",
+          "discoveryPage": "https://ibis.accor.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "sprite",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.coca-cola.com/content/dam/onexp/us/en/brands/sprite/en_sprite_logo_green-text-only_477x180.png",
+          "role": "logo",
+          "discoveryPage": "https://www.coca-cola.com/us/en/brands/sprite",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "jumia",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/69/0b/17/690b1790-f9ed-942e-9bc5-006d3ba58ae3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/jumia-online-shopping/id925015459?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher Africa Internet Group and app Jumia Online Shopping; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "lawson",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "hulu",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/04/56/7a/04567ab3-2c25-7fd2-8bf7-8ba83cce3a76/HuluAppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/hulu-stream-tv-shows-movies/id376510438?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher Hulu, LLC and app Hulu: Stream TV shows & movies; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "air-france-klm",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "fanta",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.coca-cola.com/content/dam/onexp/us/en/brands/fanta/multivariant/en_fanta_logo_colored_319x180_v1.png",
+          "role": "logo",
+          "discoveryPage": "https://www.coca-cola.com/us/en/brands/fanta",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "jollibee",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.jollibee.com.ph/themes/custom/jollibee_theme/logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://jollibee.com.ph/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "noon",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/48/4e/f0/484ef07f-6961-d4a3-46f7-9df4c3bb86c1/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/noon-shopping-food-grocery/id1269038866?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher noon E Commerce and app noon Shopping, Food, Grocery; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "leroy-merlin",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/82/d1/4f/82d14f56-6e8d-0aae-f873-311d395f31b1/leroymerlin_prodAppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/leroy-merlin/id370400343?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher GROUPE ADEO and app LEROY MERLIN; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "warner-bros",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.warnerbros.com/assets/images/home/wb/logo.png",
+          "role": "logo",
+          "discoveryPage": "https://warnerbros.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "nissan",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.nissan-global.com/library/assets/img/hd_logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://nissan-global.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "jollibee-foods",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.jollibeegroup.com/wp-content/themes/main/assets/img/jfc_2025_transparent_logo.png",
+          "role": "logo",
+          "discoveryPage": "https://jollibeegroup.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "cartoon-network",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "chowking",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official header SVG is white-only; need a dark/colored sibling."
+    },
+    {
+      "brandId": "mongodb",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress",
+          "role": "logo",
+          "discoveryPage": "https://mongodb.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "square",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f8/46/18/f84618f5-7271-54e3-67aa-0f4a13bd4f3e/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/square-point-of-sale-pos/id335393788?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher Block, Inc. and app Square Point of Sale (POS); 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "micron",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official SVG path returned HTML rather than artwork; only white variant visible on page."
+    },
+    {
+      "brandId": "vultr",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "wix",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://www.wix.com/favicon.ico",
+            "role": "icon",
+            "discoveryPage": "https://www.wix.com/",
+            "sourceKind": "official-site-icon",
+            "theme": "light",
+            "representation": "brand-mark",
+            "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+          }
+      ],
+      "reason": "Official Wix browser icon carries the black Wix wordmark. Verified as image bytes and visually inspected on white contact sheet."
+    },
+    {
+      "brandId": "squarespace",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://media-www.sqspcdn.com/logos/apple-touch-icon-1024.png",
+          "role": "icon",
+          "discoveryPage": "https://squarespace.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "brand-mark",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Squarespace first-party 1024 px touch icon returned image/png bytes; final visual approval still needed."
+    },
+    {
+      "brandId": "character-ai",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://character.ai/icon.svg",
+          "role": "icon",
+          "discoveryPage": "https://character.ai/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "brand-mark",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "writer",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://writer.com/wp-content/uploads/2024/12/logo.svg",
+          "role": "logo",
+          "discoveryPage": "https://writer.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Writer first-party black SVG returned image bytes; final visual approval still needed."
+    },
+    {
+      "brandId": "qualtrics",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official homepage and prior harvest evidence checked; no direct, identity-matched, white-background-safe image URL confirmed."
+    },
+    {
+      "brandId": "arm",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://www.arm.com/shared/common/img/favicon/android-chrome-256x256.png?v=1.0.9749.18501",
+            "role": "icon",
+            "discoveryPage": "https://www.arm.com/",
+            "sourceKind": "official-site-icon",
+            "theme": "light",
+            "representation": "brand-mark",
+            "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+          }
+      ],
+      "reason": "Official Arm Android icon is the circular arm mark. Verified as image bytes and visually inspected on white contact sheet."
+    },
+    {
+      "brandId": "asml",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://www.asml.com/favicon.ico",
+            "role": "icon",
+            "discoveryPage": "https://www.asml.com/en",
+            "sourceKind": "official-site-icon",
+            "theme": "light",
+            "representation": "brand-mark",
+            "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+          }
+      ],
+      "reason": "Official ASML browser icon carries the ASML wordmark on its blue field. Verified as image bytes and visually inspected on white contact sheet."
+    },
+    {
+      "brandId": "airtable",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d3/b4/5f/d3b45fbe-c4f0-603c-a978-0c07bcb93d7f/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/airtable/id914172636?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher Formagrid and app Airtable; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "zillow",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.zillowstatic.com/s3/pfs/static/z-logo-default-visual-refresh.svg",
+          "role": "icon",
+          "discoveryPage": "https://zillow.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "brand-mark",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "aqua-security",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.aquasec.com/wp-content/themes/aqua4/apple-touch-icon-180x180.png",
+          "role": "icon",
+          "discoveryPage": "https://aquasec.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "brand-mark",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "rightmove",
+      "status": "candidate",
+      "candidates": [
+          {
+            "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/88/05/d4/8805d4cc-9ede-0a53-7792-9d0443ae6bf4/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+            "role": "icon",
+            "discoveryPage": "https://apps.apple.com/us/app/rightmove-property-search/id323822803?uo=4",
+            "sourceKind": "official-app-store",
+            "theme": "light",
+            "representation": "publisher-supplied-app-icon",
+            "rightsNote": "Publisher-supplied App Store artwork; trademark rights remain with owner. Listing does not grant reuse rights."
+          }
+      ],
+      "reason": "Official App Store listing identifies publisher RIGHTMOVE GROUP LIMITED and app Rightmove property search; 512 px icon returned image bytes and was visually screened on white."
+    },
+    {
+      "brandId": "seagate",
+      "status": "candidate",
+      "candidates": [
+        {
+          "url": "https://www.seagate.com/content/dam/seagate/migrated-assets/ww/redesign/assets/seagate-logo-text.svg",
+          "role": "logo",
+          "discoveryPage": "https://seagate.com/",
+          "sourceKind": "official-homepage",
+          "theme": "light",
+          "representation": "wordmark-or-lockup",
+          "rightsNote": "First-party artwork; trademark rights remain with owner. Candidate discovery is not a reuse license."
+        }
+      ],
+      "reason": "Direct first-party artwork returned image bytes; exact identity and white-background appearance require final visual approval."
+    },
+    {
+      "brandId": "pvh",
+      "status": "not-found",
+      "candidates": [],
+      "reason": "Official logo path returned an access-denied HTML page despite an SVG content type."
+    }
+  ]
+}

@@ -1,0 +1,3409 @@
+{
+  "before": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/baseline-final/report.json",
+  "after": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/report.json",
+  "summaries": {
+    "development": {
+      "before": {
+        "total": 140,
+        "discovered": 76,
+        "validated": 66,
+        "eligible": 52,
+        "icon": 6,
+        "wide": 46
+      },
+      "after": {
+        "total": 140,
+        "discovered": 76,
+        "validated": 74,
+        "eligible": 59,
+        "icon": 8,
+        "wide": 51
+      },
+      "stages": {
+        "role_or_theme_ineligible": 15,
+        "eligible_pending_visual_review": 59,
+        "no_domain_match": 14,
+        "ambiguous_entities": 24,
+        "ambiguous_logo_claims": 3,
+        "no_current_logo_claim": 19,
+        "unsafe_malformed_or_unrenderable": 2,
+        "no_search_candidates": 3,
+        "search_candidates_truncated": 1
+      }
+    },
+    "holdout": {
+      "before": {
+        "total": 42,
+        "discovered": 29,
+        "validated": 25,
+        "eligible": 23,
+        "icon": 5,
+        "wide": 18
+      },
+      "after": {
+        "total": 42,
+        "discovered": 29,
+        "validated": 29,
+        "eligible": 27,
+        "icon": 5,
+        "wide": 22
+      },
+      "stages": {
+        "eligible_pending_visual_review": 27,
+        "no_domain_match": 5,
+        "no_current_logo_claim": 5,
+        "role_or_theme_ineligible": 2,
+        "ambiguous_entities": 2,
+        "no_search_candidates": 1
+      }
+    },
+    "all": {
+      "before": {
+        "total": 182,
+        "discovered": 105,
+        "validated": 91,
+        "eligible": 75,
+        "icon": 11,
+        "wide": 64
+      },
+      "after": {
+        "total": 182,
+        "discovered": 105,
+        "validated": 103,
+        "eligible": 86,
+        "icon": 13,
+        "wide": 73
+      },
+      "stages": {
+        "role_or_theme_ineligible": 17,
+        "eligible_pending_visual_review": 86,
+        "no_domain_match": 19,
+        "ambiguous_entities": 26,
+        "ambiguous_logo_claims": 3,
+        "no_current_logo_claim": 24,
+        "unsafe_malformed_or_unrenderable": 2,
+        "no_search_candidates": 4,
+        "search_candidates_truncated": 1
+      }
+    }
+  },
+  "visualReviewSummary": {
+    "reviewed": 11,
+    "pass": 7,
+    "hold": 4,
+    "developmentPass": 6,
+    "holdoutPass": 1,
+    "libraryAdditions": 0
+  },
+  "additions": [
+    {
+      "id": "barrick-mining",
+      "name": "Barrick Mining",
+      "split": "development",
+      "domain": "barrick.com",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q808908",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q808908$e72e7627-4b86-36ab-f0c8-041e5c9f0c2d"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q808908$cd64bae9-4187-a978-3b3c-91bca33dd263",
+                "url": "https://www.barrick.com/",
+                "registrable_domain": "barrick.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Barrick Gold logo.svg",
+            "commons_canonical_filename": "Barrick Gold logo.svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Barrick_Gold_logo.svg",
+            "semantic_text": "Barrick Gold logo.svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q808908",
+            "wikidata_statement_ids": [
+              "Q808908$e72e7627-4b86-36ab-f0c8-041e5c9f0c2d"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q808908$cd64bae9-4187-a978-3b3c-91bca33dd263",
+                "url": "https://www.barrick.com/",
+                "registrable_domain": "barrick.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Barrick Gold logo.svg",
+            "commons_canonical_filename": "Barrick Gold logo.svg",
+            "commons_redirect": null,
+            "commons_page_id": 77521564,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Barrick_Gold_logo.svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2020-08-15T09:35:42Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "<a href=\"https://en.wikipedia.org/wiki/en:Barrick_Mining\" class=\"extiw\" title=\"w:en:Barrick Mining\"><span title=\"company\">Barrick Mining Corporation</span></a>",
+              "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.barrick.com/home/default.aspx\">https://www.barrick.com/home/default.aspx</a>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "0eef575f6013822784a42eb9fb2693a2377b7b95a8d4bc2d227e138db829c49b",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Barrick_Gold_logo.svg",
+              "sizes": "362x56",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 362,
+                "height": 56
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q808908",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q808908$e72e7627-4b86-36ab-f0c8-041e5c9f0c2d"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q808908$cd64bae9-4187-a978-3b3c-91bca33dd263",
+                    "url": "https://www.barrick.com/",
+                    "registrable_domain": "barrick.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Barrick Gold logo.svg",
+                "commons_canonical_filename": "Barrick Gold logo.svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Barrick_Gold_logo.svg",
+                "semantic_text": "Barrick Gold logo.svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q808908",
+                "wikidata_statement_ids": [
+                  "Q808908$e72e7627-4b86-36ab-f0c8-041e5c9f0c2d"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q808908$cd64bae9-4187-a978-3b3c-91bca33dd263",
+                    "url": "https://www.barrick.com/",
+                    "registrable_domain": "barrick.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Barrick Gold logo.svg",
+                "commons_canonical_filename": "Barrick Gold logo.svg",
+                "commons_redirect": null,
+                "commons_page_id": 77521564,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Barrick_Gold_logo.svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2020-08-15T09:35:42Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "<a href=\"https://en.wikipedia.org/wiki/en:Barrick_Mining\" class=\"extiw\" title=\"w:en:Barrick Mining\"><span title=\"company\">Barrick Mining Corporation</span></a>",
+                  "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.barrick.com/home/default.aspx\">https://www.barrick.com/home/default.aspx</a>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "0eef575f6013822784a42eb9fb2693a2377b7b95a8d4bc2d227e138db829c49b",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:25.828Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "9bd5ddfdf5b7000f",
+                  "raster": "CAwLCgoLCQsJCgwKCwoNCgkLCwoKCg4KCAsKCgoKDgoKCAoKDAoNCgcMCgoMCgkKDg4ODg4ODg4ODQwLCgoJCg==",
+                  "color": [
+                    168,
+                    192,
+                    200
+                  ]
+                },
+                "score": 72.2,
+                "foreground_occupancy": 0.5947265625,
+                "box_occupancy": 1,
+                "contrast": 0.6546315077755246,
+                "surface_contrast": {
+                  "light": 0.4421183128799564,
+                  "dark": 0.21251319489556772
+                },
+                "edge_density": 0.25756048387096775,
+                "edge_contact": {
+                  "left": 0.78125,
+                  "right": 0.34375,
+                  "top": 0.4375,
+                  "bottom": 0.53125
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": true,
+                  "vertical": true
+                },
+                "foreground_box": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 31,
+                  "bottom": 31,
+                  "width": 32,
+                  "height": 32,
+                  "aspect_ratio": 1
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 361.99759,
+                "height": 56.018448,
+                "byte_hash": "5b385fa8bb63c3a3624986c283249925aeda6cfbdd89c50750c5ab22005a4f60"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 361.99759,
+              "height": 56.018448,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 2767,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "unknown",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 6.46211387362963,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/barrick-mining.svg"
+        }
+      ],
+      "reviewStatus": "pass",
+      "review": {
+        "id": "barrick-mining",
+        "name": "Barrick Mining",
+        "split": "development",
+        "domain": "barrick.com",
+        "rawHash": "0eef575f6013822784a42eb9fb2693a2377b7b95a8d4bc2d227e138db829c49b",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/barrick-mining.svg",
+        "decision": "pass",
+        "role": "wide",
+        "reason": "Single-line BARRICK wordmark and gold underline match the company Q2 2026 fact sheet; sharp and legible on white.",
+        "currentness": "corroborated_current_official_document",
+        "sources": [
+          "https://www.barrick.com/home/",
+          "https://s25.q4cdn.com/322814910/files/doc_downloads/fact_sheet/Barrick_Fact_Sheet.pdf"
+        ],
+        "captures": [
+          "barrick-factsheet.pdf",
+          "barrick-factsheet-page1.png"
+        ]
+      }
+    },
+    {
+      "id": "cardinal-health",
+      "name": "Cardinal Health",
+      "split": "holdout",
+      "domain": "cardinalhealth.com",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q902397",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q902397$74257175-3408-4C83-B131-E79F24A9B792"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q902397$0d94e0b5-4ab9-1a04-e88c-98a772b0fc72",
+                "url": "https://www.cardinalhealth.com/",
+                "registrable_domain": "cardinalhealth.com",
+                "rank": "preferred",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Cardinal Health Logo.svg",
+            "commons_canonical_filename": "Cardinal Health Logo.svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Cardinal_Health_Logo.svg",
+            "semantic_text": "Cardinal Health Logo.svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q902397",
+            "wikidata_statement_ids": [
+              "Q902397$74257175-3408-4C83-B131-E79F24A9B792"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q902397$0d94e0b5-4ab9-1a04-e88c-98a772b0fc72",
+                "url": "https://www.cardinalhealth.com/",
+                "registrable_domain": "cardinalhealth.com",
+                "rank": "preferred",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Cardinal Health Logo.svg",
+            "commons_canonical_filename": "Cardinal Health Logo.svg",
+            "commons_redirect": null,
+            "commons_page_id": 119807007,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Cardinal_Health_Logo.svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2022-06-27T11:19:27Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "Cardinal Health",
+              "credit": "www.cardinalhealth.com",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "6052df824a11bedaeb79d1ea5d322a07efc22e215fd2e047f950ca87212d9b84",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Cardinal_Health_Logo.svg",
+              "sizes": "153x56",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 153,
+                "height": 56
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q902397",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q902397$74257175-3408-4C83-B131-E79F24A9B792"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q902397$0d94e0b5-4ab9-1a04-e88c-98a772b0fc72",
+                    "url": "https://www.cardinalhealth.com/",
+                    "registrable_domain": "cardinalhealth.com",
+                    "rank": "preferred",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Cardinal Health Logo.svg",
+                "commons_canonical_filename": "Cardinal Health Logo.svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Cardinal_Health_Logo.svg",
+                "semantic_text": "Cardinal Health Logo.svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q902397",
+                "wikidata_statement_ids": [
+                  "Q902397$74257175-3408-4C83-B131-E79F24A9B792"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q902397$0d94e0b5-4ab9-1a04-e88c-98a772b0fc72",
+                    "url": "https://www.cardinalhealth.com/",
+                    "registrable_domain": "cardinalhealth.com",
+                    "rank": "preferred",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Cardinal Health Logo.svg",
+                "commons_canonical_filename": "Cardinal Health Logo.svg",
+                "commons_redirect": null,
+                "commons_page_id": 119807007,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Cardinal_Health_Logo.svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2022-06-27T11:19:27Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "Cardinal Health",
+                  "credit": "www.cardinalhealth.com",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "6052df824a11bedaeb79d1ea5d322a07efc22e215fd2e047f950ca87212d9b84",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:25.799Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "00407020003f3f3a",
+                  "raster": "Dw8PDw8PDw8PDQ4PDw8PDw8OCw4PDw8PDw4MDw8PDw8PDg8PDw8PDw8ODAwNDA0NDw4JCAgJCwwPDw0NDQ4ODg==",
+                  "color": [
+                    240,
+                    232,
+                    232
+                  ]
+                },
+                "score": 93,
+                "foreground_occupancy": 0.205078125,
+                "box_occupancy": 0.7109375,
+                "contrast": 0.40218487394958,
+                "surface_contrast": {
+                  "light": 0.3408643317893606,
+                  "dark": 0.06132054216021922
+                },
+                "edge_density": 0.09778225806451613,
+                "edge_contact": {
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "bottom": 0
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": false,
+                  "vertical": false
+                },
+                "foreground_box": {
+                  "left": 2,
+                  "top": 3,
+                  "right": 29,
+                  "bottom": 28,
+                  "width": 28,
+                  "height": 26,
+                  "aspect_ratio": 1.0769230769230769
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 152.5,
+                "height": 55.667,
+                "byte_hash": "4a05367935111e0906fbe33217578494d09f73186ffddfb7fdee494538cafaac"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 152.5,
+              "height": 55.667,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 103386,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 2.9502356733930197,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/cardinal-health.svg"
+        }
+      ],
+      "reviewStatus": "hold",
+      "review": {
+        "id": "cardinal-health",
+        "name": "Cardinal Health",
+        "split": "holdout",
+        "domain": "cardinalhealth.com",
+        "rawHash": "6052df824a11bedaeb79d1ea5d322a07efc22e215fd2e047f950ca87212d9b84",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/cardinal-health.svg",
+        "decision": "hold",
+        "role": "wide",
+        "reason": "Identity is recognizable, but symbol above the wordmark is a stacked lockup, not the canonical horizontal wide treatment. Keep review-only.",
+        "currentness": "identity_corroborated_role_mismatch",
+        "sources": [
+          "https://www.cardinalhealth.com/en.html",
+          "https://cardinalhealth.scene7.com/is/image/corpmarketdms7prod/logo-main",
+          "https://newsroom.cardinalhealth.com/imagegallery?cat=2748"
+        ],
+        "captures": [
+          "cardinal-health-official.html",
+          "cardinal-health-official-logo.png"
+        ]
+      }
+    },
+    {
+      "id": "castorama",
+      "name": "Castorama",
+      "split": "development",
+      "domain": "castorama.fr",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q966971",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q966971$622034cd-44f1-6606-3107-453bc634fe7e"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q966971$ed30465c-4c48-1876-25b9-9113b6d6a571",
+                "url": "https://www.castorama.fr/",
+                "registrable_domain": "castorama.fr",
+                "rank": "preferred",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Castorama - logo (France, 2014-).svg",
+            "commons_canonical_filename": "Castorama - logo (France, 2014-).svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Castorama_-_logo_(France,_2014-).svg",
+            "semantic_text": "Castorama - logo (France, 2014-).svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q966971",
+            "wikidata_statement_ids": [
+              "Q966971$622034cd-44f1-6606-3107-453bc634fe7e"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q966971$ed30465c-4c48-1876-25b9-9113b6d6a571",
+                "url": "https://www.castorama.fr/",
+                "registrable_domain": "castorama.fr",
+                "rank": "preferred",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Castorama - logo (France, 2014-).svg",
+            "commons_canonical_filename": "Castorama - logo (France, 2014-).svg",
+            "commons_redirect": null,
+            "commons_page_id": 94891746,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Castorama_-_logo_(France,_2014-).svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2018-05-30T13:58:19Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+              "credit": "Own work using: <a rel=\"nofollow\" class=\"external free\" href=\"http://www.kingfisher.com/index.asp?pageid=117\">http://www.kingfisher.com/index.asp?pageid=117</a>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "b58af4e5ac62e8febac6757db16f4c7e06c61c1f299ba915bc64f391ca926df3",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Castorama_-_logo_(France,_2014-).svg",
+              "sizes": "779x135",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 779,
+                "height": 135
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q966971",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q966971$622034cd-44f1-6606-3107-453bc634fe7e"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q966971$ed30465c-4c48-1876-25b9-9113b6d6a571",
+                    "url": "https://www.castorama.fr/",
+                    "registrable_domain": "castorama.fr",
+                    "rank": "preferred",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Castorama - logo (France, 2014-).svg",
+                "commons_canonical_filename": "Castorama - logo (France, 2014-).svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Castorama_-_logo_(France,_2014-).svg",
+                "semantic_text": "Castorama - logo (France, 2014-).svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q966971",
+                "wikidata_statement_ids": [
+                  "Q966971$622034cd-44f1-6606-3107-453bc634fe7e"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q966971$ed30465c-4c48-1876-25b9-9113b6d6a571",
+                    "url": "https://www.castorama.fr/",
+                    "registrable_domain": "castorama.fr",
+                    "rank": "preferred",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Castorama - logo (France, 2014-).svg",
+                "commons_canonical_filename": "Castorama - logo (France, 2014-).svg",
+                "commons_redirect": null,
+                "commons_page_id": 94891746,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Castorama_-_logo_(France,_2014-).svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2018-05-30T13:58:19Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+                  "credit": "Own work using: <a rel=\"nofollow\" class=\"external free\" href=\"http://www.kingfisher.com/index.asp?pageid=117\">http://www.kingfisher.com/index.asp?pageid=117</a>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "b58af4e5ac62e8febac6757db16f4c7e06c61c1f299ba915bc64f391ca926df3",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:26.244Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "0000fefefefe0000",
+                  "raster": "Dw8PDw8PDw8PDw0PDw8PDwsICAgICAoPDAkLCQkJCw4MCgkKCgoLDgsICQkJCgoPDw8PDw8PDw8PDw8PDw8PDw==",
+                  "color": [
+                    192,
+                    216,
+                    232
+                  ]
+                },
+                "score": 100,
+                "foreground_occupancy": 0.419921875,
+                "box_occupancy": 0.5859375,
+                "contrast": 0.6465025079799365,
+                "surface_contrast": {
+                  "light": 0.38161228388604296,
+                  "dark": 0.2648902240938938
+                },
+                "edge_density": 0.07762096774193548,
+                "edge_contact": {
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "bottom": 0
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": false,
+                  "vertical": false
+                },
+                "foreground_box": {
+                  "left": 1,
+                  "top": 4,
+                  "right": 30,
+                  "bottom": 23,
+                  "width": 30,
+                  "height": 20,
+                  "aspect_ratio": 1.5
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 778.933,
+                "height": 134.75,
+                "byte_hash": "bcd9468fa37b11ed61f5aba96670e8acd77240af499ba061a5c907375c17783d"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 778.933,
+              "height": 134.75,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 4099,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "unknown",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 8.67086827458256,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/castorama.svg"
+        }
+      ],
+      "reviewStatus": "pass",
+      "review": {
+        "id": "castorama",
+        "name": "Castorama",
+        "split": "development",
+        "domain": "castorama.fr",
+        "rawHash": "b58af4e5ac62e8febac6757db16f4c7e06c61c1f299ba915bc64f391ca926df3",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/castorama.svg",
+        "decision": "pass",
+        "role": "wide",
+        "reason": "Blue lowercase wordmark and yellow terminal dash match France branding in the parent company November 2025 presentation, page 19. Main homepage returned 503.",
+        "currentness": "corroborated_recent_official_document",
+        "sources": [
+          "https://www.kingfisher.com/our-banners-and-brands/retail-banners",
+          "https://www.kingfisher.com/~/media/Files/K/Kingfisher-Plc/Universal/investors/result-reports-presentation/2025/retail-investor-nov-25.pdf"
+        ],
+        "captures": [
+          "kingfisher-page19.png",
+          "kingfisher-retail-nov2025.pdf",
+          "kingfisher-banners.html"
+        ]
+      }
+    },
+    {
+      "id": "intesa-sanpaolo",
+      "name": "Intesa Sanpaolo",
+      "split": "holdout",
+      "domain": "intesasanpaolo.com",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q1343118",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q1343118$4c8edc41-474f-743f-5bb2-cbab780eb938"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q1343118$139004ac-4548-49b0-8e53-032c54d2a808",
+                "url": "https://www.intesasanpaolo.com/",
+                "registrable_domain": "intesasanpaolo.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Intesa Sanpaolo - logo (Italy, 2007-).svg",
+            "commons_canonical_filename": "Intesa Sanpaolo - logo (Italy, 2007-).svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Intesa_Sanpaolo_-_logo_(Italy,_2007-).svg",
+            "semantic_text": "Intesa Sanpaolo - logo (Italy, 2007-).svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q1343118",
+            "wikidata_statement_ids": [
+              "Q1343118$4c8edc41-474f-743f-5bb2-cbab780eb938"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q1343118$139004ac-4548-49b0-8e53-032c54d2a808",
+                "url": "https://www.intesasanpaolo.com/",
+                "registrable_domain": "intesasanpaolo.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Intesa Sanpaolo - logo (Italy, 2007-).svg",
+            "commons_canonical_filename": "Intesa Sanpaolo - logo (Italy, 2007-).svg",
+            "commons_redirect": null,
+            "commons_page_id": 148806998,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Intesa_Sanpaolo_-_logo_(Italy,_2007-).svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2024-05-28T11:10:30Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "Intesa SanPaolo",
+              "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://group.intesasanpaolo.com/en/about-us/our-brand\">Brand page of the official site</a>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "ab203de71bb8314a27cf3cd66786b3dce0b747d1653884516d854a3b3631f445",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Intesa_Sanpaolo_-_logo_(Italy,_2007-).svg",
+              "sizes": "442x51",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 442,
+                "height": 51
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q1343118",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q1343118$4c8edc41-474f-743f-5bb2-cbab780eb938"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q1343118$139004ac-4548-49b0-8e53-032c54d2a808",
+                    "url": "https://www.intesasanpaolo.com/",
+                    "registrable_domain": "intesasanpaolo.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Intesa Sanpaolo - logo (Italy, 2007-).svg",
+                "commons_canonical_filename": "Intesa Sanpaolo - logo (Italy, 2007-).svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Intesa_Sanpaolo_-_logo_(Italy,_2007-).svg",
+                "semantic_text": "Intesa Sanpaolo - logo (Italy, 2007-).svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q1343118",
+                "wikidata_statement_ids": [
+                  "Q1343118$4c8edc41-474f-743f-5bb2-cbab780eb938"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q1343118$139004ac-4548-49b0-8e53-032c54d2a808",
+                    "url": "https://www.intesasanpaolo.com/",
+                    "registrable_domain": "intesasanpaolo.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Intesa Sanpaolo - logo (Italy, 2007-).svg",
+                "commons_canonical_filename": "Intesa Sanpaolo - logo (Italy, 2007-).svg",
+                "commons_redirect": null,
+                "commons_page_id": 148806998,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Intesa_Sanpaolo_-_logo_(Italy,_2007-).svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2024-05-28T11:10:30Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "Intesa SanPaolo",
+                  "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://group.intesasanpaolo.com/en/about-us/our-brand\">Brand page of the official site</a>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "ab203de71bb8314a27cf3cd66786b3dce0b747d1653884516d854a3b3631f445",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:25.938Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "10c7cfefefafef10",
+                  "raster": "Dw8PDA8PDw8MCg0PDQwMDAsMDQ4MCwsLCwsMDQsKCwsLDAsNCgoLCwsNDA4MCwsLDAsMDwwLDAsPDw8MDw8PDw==",
+                  "color": [
+                    200,
+                    216,
+                    200
+                  ]
+                },
+                "score": 70.2,
+                "foreground_occupancy": 0.5419921875,
+                "box_occupancy": 1,
+                "contrast": 0.4286804451510338,
+                "surface_contrast": {
+                  "light": 0.32535044848770345,
+                  "dark": 0.10332999666333006
+                },
+                "edge_density": 0.17590725806451613,
+                "edge_contact": {
+                  "left": 0.6875,
+                  "right": 0.6875,
+                  "top": 0.09375,
+                  "bottom": 0.125
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": true,
+                  "vertical": true
+                },
+                "foreground_box": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 31,
+                  "bottom": 31,
+                  "width": 32,
+                  "height": 32,
+                  "aspect_ratio": 1
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 441.875,
+                "height": 51.125,
+                "byte_hash": "ea18101e1c758785b9896018f6e93f9204195d3fd390466e85bef8760ef7302b"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 441.875,
+              "height": 51.125,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 38090,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 8.643031784841076,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/intesa-sanpaolo.svg"
+        }
+      ],
+      "reviewStatus": "pass",
+      "review": {
+        "id": "intesa-sanpaolo",
+        "name": "Intesa Sanpaolo",
+        "split": "holdout",
+        "domain": "intesasanpaolo.com",
+        "rawHash": "ab203de71bb8314a27cf3cd66786b3dce0b747d1653884516d854a3b3631f445",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/intesa-sanpaolo.svg",
+        "decision": "pass",
+        "role": "wide",
+        "reason": "Single-line Trajan lettering and central aqueduct match the current official header geometry. Official brand explanation corroborates green letters and the multicolored central pictogram.",
+        "currentness": "corroborated_current_official_header_and_brand_page",
+        "sources": [
+          "https://www.intesasanpaolo.com/",
+          "https://www.intesasanpaolo.com/content/dam/vetrina/design/loghi/header-e-footer/logo-intesasanpaolo.png",
+          "https://group.intesasanpaolo.com/it/chi-siamo/marchio"
+        ],
+        "captures": [
+          "intesa-sanpaolo-official.html",
+          "intesa-sanpaolo-official-logo-dark.png"
+        ]
+      }
+    },
+    {
+      "id": "lufthansa",
+      "name": "Lufthansa",
+      "split": "development",
+      "domain": "lufthansa.com",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q9325",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q9325$7D67D4C8-F02D-494B-8372-6AE49B5AD509"
+            ],
+            "wikidata_claim_rank": "preferred",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q9325$14e93424-4e41-ee62-e3a9-b255a7d8fc27",
+                "url": "https://lufthansa.com/",
+                "registrable_domain": "lufthansa.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "apex",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Lufthansa Logo 2018.svg",
+            "commons_canonical_filename": "Lufthansa Logo 2018.svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Lufthansa_Logo_2018.svg",
+            "semantic_text": "Lufthansa Logo 2018.svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q9325",
+            "wikidata_statement_ids": [
+              "Q9325$7D67D4C8-F02D-494B-8372-6AE49B5AD509"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q9325$14e93424-4e41-ee62-e3a9-b255a7d8fc27",
+                "url": "https://lufthansa.com/",
+                "registrable_domain": "lufthansa.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "apex",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Lufthansa Logo 2018.svg",
+            "commons_canonical_filename": "Lufthansa Logo 2018.svg",
+            "commons_redirect": null,
+            "commons_page_id": 66283355,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Lufthansa_Logo_2018.svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2021-01-26T00:29:35Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "Lufthansa Group",
+              "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://corporatedesign.lufthansa.com/d/Sy9Wlqgm4YPF/downloads\">Lufthansa Styleguide y0.9 - Downloads</a>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "3fde724dce168651d9288d25814ac9cd54d1db6f1a7dc079f088197b924420fd",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Lufthansa_Logo_2018.svg",
+              "sizes": "512x90",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 512,
+                "height": 90
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q9325",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q9325$7D67D4C8-F02D-494B-8372-6AE49B5AD509"
+                ],
+                "wikidata_claim_rank": "preferred",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q9325$14e93424-4e41-ee62-e3a9-b255a7d8fc27",
+                    "url": "https://lufthansa.com/",
+                    "registrable_domain": "lufthansa.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "apex",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Lufthansa Logo 2018.svg",
+                "commons_canonical_filename": "Lufthansa Logo 2018.svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Lufthansa_Logo_2018.svg",
+                "semantic_text": "Lufthansa Logo 2018.svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q9325",
+                "wikidata_statement_ids": [
+                  "Q9325$7D67D4C8-F02D-494B-8372-6AE49B5AD509"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q9325$14e93424-4e41-ee62-e3a9-b255a7d8fc27",
+                    "url": "https://lufthansa.com/",
+                    "registrable_domain": "lufthansa.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "apex",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Lufthansa Logo 2018.svg",
+                "commons_canonical_filename": "Lufthansa Logo 2018.svg",
+                "commons_redirect": null,
+                "commons_page_id": 66283355,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Lufthansa_Logo_2018.svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2021-01-26T00:29:35Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "Lufthansa Group",
+                  "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://corporatedesign.lufthansa.com/d/Sy9Wlqgm4YPF/downloads\">Lufthansa Styleguide y0.9 - Downloads</a>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "3fde724dce168651d9288d25814ac9cd54d1db6f1a7dc079f088197b924420fd",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:25.596Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "000018bfbf3f3f00",
+                  "raster": "DQ8PDw8PDw8ODg0NDA8PDw4ODAsIDg4OCg0LBgQGBQYLDgsICQYHBw0OCQcJBggGDg4KCQsJCgkNDw8PDw8PDw==",
+                  "color": [
+                    192,
+                    200,
+                    208
+                  ]
+                },
+                "score": 75.3,
+                "foreground_occupancy": 0.416015625,
+                "box_occupancy": 1,
+                "contrast": 0.5833379361134123,
+                "surface_contrast": {
+                  "light": 0.5085594622027524,
+                  "dark": 0.07477847391066023
+                },
+                "edge_density": 0.12953629032258066,
+                "edge_contact": {
+                  "left": 0.28125,
+                  "right": 0.5,
+                  "top": 0.03125,
+                  "bottom": 0.03125
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": true,
+                  "vertical": true
+                },
+                "foreground_box": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 31,
+                  "bottom": 31,
+                  "width": 32,
+                  "height": 32,
+                  "aspect_ratio": 1
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 3326,
+                "height": 586,
+                "byte_hash": "08d5ac5e7c619ef7931ca95af2831ce82fca11882dbb56267da1f9e01c464eda"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 3326,
+              "height": 586,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 6196,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 5.675767918088737,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/lufthansa.svg"
+        }
+      ],
+      "reviewStatus": "pass",
+      "review": {
+        "id": "lufthansa",
+        "name": "Lufthansa",
+        "split": "development",
+        "domain": "lufthansa.com",
+        "rawHash": "3fde724dce168651d9288d25814ac9cd54d1db6f1a7dc079f088197b924420fd",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/lufthansa.svg",
+        "decision": "pass",
+        "role": "wide",
+        "reason": "Correct airline thin-ring crane and dark-blue wordmark, distinct from Lufthansa Group. Official 2018 design description and December 2025 statement that airlines retain their brands corroborate this treatment. Current homepage returned 403 and the cited corporate-design download was inaccessible; no exact fresh official file comparison was possible.",
+        "currentness": "corroborated_brand_continuity_not_fresh_asset_match",
+        "sources": [
+          "https://newsroom.lufthansagroup.com/en/heritage-meets-the-future-lufthansa-presents-a-new-brand-design/",
+          "https://newsroom.lufthansagroup.com/en/lufthansa-group-launches-new-brand-identityapac/",
+          "https://corporatedesign.lufthansa.com/d/Sy9Wlqgm4YPF/downloads"
+        ],
+        "captures": [
+          "lufthansa-locale.html"
+        ]
+      }
+    },
+    {
+      "id": "msc-group",
+      "name": "MSC Group",
+      "split": "development",
+      "domain": "msc.com",
+      "addedRoles": [
+        "icon"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "icon",
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q869570",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q869570$61FE4309-F187-414C-BB8F-DA7824CFD9FA"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q869570$B0821DCC-0BEA-4010-BB6C-DC00B4C57181",
+                "url": "http://www.msc.com/",
+                "registrable_domain": "msc.com",
+                "rank": "preferred",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Mediterranean Shipping Company logo.svg",
+            "commons_canonical_filename": "Mediterranean Shipping Company logo.svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Mediterranean_Shipping_Company_logo.svg",
+            "semantic_text": "Mediterranean Shipping Company logo.svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q869570",
+            "wikidata_statement_ids": [
+              "Q869570$61FE4309-F187-414C-BB8F-DA7824CFD9FA"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q869570$B0821DCC-0BEA-4010-BB6C-DC00B4C57181",
+                "url": "http://www.msc.com/",
+                "registrable_domain": "msc.com",
+                "rank": "preferred",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Mediterranean Shipping Company logo.svg",
+            "commons_canonical_filename": "Mediterranean Shipping Company logo.svg",
+            "commons_redirect": null,
+            "commons_page_id": 82844965,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Mediterranean_Shipping_Company_logo.svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2019-10-05T02:43:13Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "Mediterranean Shipping Company",
+              "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.msc.com/getattachment/37d2fe6c-6762-4a69-a3e7-dcab567124f8/636567108367178465\">https://www.msc.com/getattachment/37d2fe6c-6762-4a69-a3e7-dcab567124f8/636567108367178465</a> (PDF)",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "icon"
+          ],
+          "blockers": {},
+          "rawHash": "dd837bdfea68be3ea570b3ea34bee6d78b3c09ef26ccc92bb77f26e66447b18f",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Mediterranean_Shipping_Company_logo.svg",
+              "sizes": "869x768",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 869,
+                "height": 768
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "icon",
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q869570",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q869570$61FE4309-F187-414C-BB8F-DA7824CFD9FA"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q869570$B0821DCC-0BEA-4010-BB6C-DC00B4C57181",
+                    "url": "http://www.msc.com/",
+                    "registrable_domain": "msc.com",
+                    "rank": "preferred",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Mediterranean Shipping Company logo.svg",
+                "commons_canonical_filename": "Mediterranean Shipping Company logo.svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Mediterranean_Shipping_Company_logo.svg",
+                "semantic_text": "Mediterranean Shipping Company logo.svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q869570",
+                "wikidata_statement_ids": [
+                  "Q869570$61FE4309-F187-414C-BB8F-DA7824CFD9FA"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q869570$B0821DCC-0BEA-4010-BB6C-DC00B4C57181",
+                    "url": "http://www.msc.com/",
+                    "registrable_domain": "msc.com",
+                    "rank": "preferred",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Mediterranean Shipping Company logo.svg",
+                "commons_canonical_filename": "Mediterranean Shipping Company logo.svg",
+                "commons_redirect": null,
+                "commons_page_id": 82844965,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Mediterranean_Shipping_Company_logo.svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2019-10-05T02:43:13Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "Mediterranean Shipping Company",
+                  "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.msc.com/getattachment/37d2fe6c-6762-4a69-a3e7-dcab567124f8/636567108367178465\">https://www.msc.com/getattachment/37d2fe6c-6762-4a69-a3e7-dcab567124f8/636567108367178465</a> (PDF)",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "dd837bdfea68be3ea570b3ea34bee6d78b3c09ef26ccc92bb77f26e66447b18f",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:26.088Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "747e7e7e7e7e3824",
+                  "raster": "DwcGBAgECw8PAwICAgMDDw8DBgUFBgMPDwMGBQUGAw8LBgMFBQMGCw8GAwcCBgYPDwoEAgEJCA8PCwQJCgQLDw==",
+                  "color": [
+                    128,
+                    128,
+                    128
+                  ]
+                },
+                "score": 100,
+                "foreground_occupancy": 0.5859375,
+                "box_occupancy": 0.87890625,
+                "contrast": 0.8393725490196091,
+                "surface_contrast": {
+                  "light": 0.8393725490196091,
+                  "dark": 0
+                },
+                "edge_density": 0.13205645161290322,
+                "edge_contact": {
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "bottom": 0
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": false,
+                  "vertical": false
+                },
+                "foreground_box": {
+                  "left": 1,
+                  "top": 1,
+                  "right": 30,
+                  "bottom": 30,
+                  "width": 30,
+                  "height": 30,
+                  "aspect_ratio": 1
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 869,
+                "height": 768,
+                "byte_hash": "895105353d72b0cd2dc017fd4fae2c2e442a4c3c84f0d939da6ec0a173adb60a"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 869,
+              "height": 768,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 3233,
+              "squareish": true,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 1.1315104166666667,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 82,
+                "wide": 36,
+                "favicon": 40
+              },
+              "predicted_roles": [
+                "icon"
+              ],
+              "score": 82,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "square shape +28",
+                "non-wide shape -18",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/msc-group.svg"
+        }
+      ],
+      "reviewStatus": "pass",
+      "review": {
+        "id": "msc-group",
+        "name": "MSC Group",
+        "split": "development",
+        "domain": "msc.com",
+        "rawHash": "dd837bdfea68be3ea570b3ea34bee6d78b3c09ef26ccc92bb77f26e66447b18f",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/msc-group.svg",
+        "decision": "pass",
+        "role": "icon",
+        "reason": "Compact MSC letterform/wave brand symbol matches current official homepage Organization logo geometry (official white variant, candidate black). This is a designed compact symbol, not a cropped long wordmark.",
+        "currentness": "corroborated_current_official_schema_asset",
+        "sources": [
+          "https://www.msc.com/",
+          "https://assets.msc.com/api/public/content/688a28b6c2e243a3a2437f112d0de60d",
+          "https://www.msc.com/en/newsroom/media-kit"
+        ],
+        "captures": [
+          "msc-group-official.html",
+          "msc-group-official-logo-dark.png"
+        ]
+      }
+    },
+    {
+      "id": "nippon-steel",
+      "name": "Nippon Steel",
+      "split": "development",
+      "domain": "nipponsteel.com",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q1151693",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q1151693$B495E38F-A879-4A87-9EDA-FA7A44E74601"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q1151693$169a009f-4015-5c54-d6c5-0a1866560747",
+                "url": "https://www.nipponsteel.com/",
+                "registrable_domain": "nipponsteel.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Nippon Steel - Logo.svg",
+            "commons_canonical_filename": "Nippon Steel - Logo.svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Nippon_Steel_-_Logo.svg",
+            "semantic_text": "Nippon Steel - Logo.svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q1151693",
+            "wikidata_statement_ids": [
+              "Q1151693$B495E38F-A879-4A87-9EDA-FA7A44E74601"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q1151693$169a009f-4015-5c54-d6c5-0a1866560747",
+                "url": "https://www.nipponsteel.com/",
+                "registrable_domain": "nipponsteel.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Nippon Steel - Logo.svg",
+            "commons_canonical_filename": "Nippon Steel - Logo.svg",
+            "commons_redirect": null,
+            "commons_page_id": 77707268,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Nippon_Steel_-_Logo.svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2019-04-01T08:08:31Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "Nippon Steel",
+              "credit": "<span class=\"url\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.nipponsteel.com/product/catalog_download/pdf/P001en.pdf\">nipponsteel.com/product/catalog download/pdf/P001en.pdf</a></span>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "1c36b979d8fbe6a820080e16abba9c033c1148b1771e5b4963f6af31a0ade313",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Nippon_Steel_-_Logo.svg",
+              "sizes": "283x35",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 283,
+                "height": 35
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q1151693",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q1151693$B495E38F-A879-4A87-9EDA-FA7A44E74601"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q1151693$169a009f-4015-5c54-d6c5-0a1866560747",
+                    "url": "https://www.nipponsteel.com/",
+                    "registrable_domain": "nipponsteel.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Nippon Steel - Logo.svg",
+                "commons_canonical_filename": "Nippon Steel - Logo.svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Nippon_Steel_-_Logo.svg",
+                "semantic_text": "Nippon Steel - Logo.svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q1151693",
+                "wikidata_statement_ids": [
+                  "Q1151693$B495E38F-A879-4A87-9EDA-FA7A44E74601"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q1151693$169a009f-4015-5c54-d6c5-0a1866560747",
+                    "url": "https://www.nipponsteel.com/",
+                    "registrable_domain": "nipponsteel.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Nippon Steel - Logo.svg",
+                "commons_canonical_filename": "Nippon Steel - Logo.svg",
+                "commons_redirect": null,
+                "commons_page_id": 77707268,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Nippon_Steel_-_Logo.svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2019-04-01T08:08:31Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "Nippon Steel",
+                  "credit": "<span class=\"url\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.nipponsteel.com/product/catalog_download/pdf/P001en.pdf\">nipponsteel.com/product/catalog download/pdf/P001en.pdf</a></span>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "1c36b979d8fbe6a820080e16abba9c033c1148b1771e5b4963f6af31a0ade313",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:25.901Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "00367fffffff8580",
+                  "raster": "DA8PDw8PDw8LCwkJDAgJCgoIBgYIBwcKCQgGCAcJBwkIBwUICAgHCgcICQoJCAgIBwwMCwwKCggGDw8PDw8PDw==",
+                  "color": [
+                    160,
+                    176,
+                    176
+                  ]
+                },
+                "score": 75.3,
+                "foreground_occupancy": 0.5888671875,
+                "box_occupancy": 1,
+                "contrast": 0.660111208662568,
+                "surface_contrast": {
+                  "light": 0.5456149471787538,
+                  "dark": 0.1144962614838152
+                },
+                "edge_density": 0.1305443548387097,
+                "edge_contact": {
+                  "left": 1,
+                  "right": 0.15625,
+                  "top": 0.125,
+                  "bottom": 0.125
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": true,
+                  "vertical": true
+                },
+                "foreground_box": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 31,
+                  "bottom": 31,
+                  "width": 32,
+                  "height": 32,
+                  "aspect_ratio": 1
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 283.465,
+                "height": 35.209,
+                "byte_hash": "6affdac3a631f86ffd0992472fd9e7f0f468f0f77454fb15d5b3f49fa95375b6"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 283.465,
+              "height": 35.209,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 3604,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 8.05092447953648,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/nippon-steel.svg"
+        }
+      ],
+      "reviewStatus": "pass",
+      "review": {
+        "id": "nippon-steel",
+        "name": "Nippon Steel",
+        "split": "development",
+        "domain": "nipponsteel.com",
+        "rawHash": "1c36b979d8fbe6a820080e16abba9c033c1148b1771e5b4963f6af31a0ade313",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/nippon-steel.svg",
+        "decision": "pass",
+        "role": "wide",
+        "reason": "Blue faceted mark and NIPPON STEEL lettering match the current official homepage image. Clear single-line horizontal company lockup.",
+        "currentness": "corroborated_current_official_header",
+        "sources": [
+          "https://www.nipponsteel.com/",
+          "https://www.nipponsteel.com/app-files/img/cmn_logo01.png",
+          "https://www.nipponsteel.com/en/factbook/02-01.html"
+        ],
+        "captures": [
+          "nippon-steel-official.html",
+          "nippon-steel-official-logo.png"
+        ]
+      }
+    },
+    {
+      "id": "ola",
+      "name": "Ola",
+      "split": "holdout",
+      "domain": "olacabs.com",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q19059388",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q19059388$dfe072df-468b-f6ab-40f7-bba39c950638"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q19059388$F1EC0440-514A-408A-81E4-A4DDD5AE9517",
+                "url": "https://www.olacabs.com/",
+                "registrable_domain": "olacabs.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Ola Cabs logo.svg",
+            "commons_canonical_filename": "Ola Cabs logo.svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Ola_Cabs_logo.svg",
+            "semantic_text": "Ola Cabs logo.svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q19059388",
+            "wikidata_statement_ids": [
+              "Q19059388$dfe072df-468b-f6ab-40f7-bba39c950638"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q19059388$F1EC0440-514A-408A-81E4-A4DDD5AE9517",
+                "url": "https://www.olacabs.com/",
+                "registrable_domain": "olacabs.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Ola Cabs logo.svg",
+            "commons_canonical_filename": "Ola Cabs logo.svg",
+            "commons_redirect": null,
+            "commons_page_id": 128928794,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Ola_Cabs_logo.svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2023-02-21T14:20:01Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+              "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.olacabs.com/webstatic/img/OLA.svg\">https://www.olacabs.com/webstatic/img/OLA.svg</a>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "630b5ccdbf9aa0134f5a6442ef265e509efdbf6fd70a94b295d22b47540938b3",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Ola_Cabs_logo.svg",
+              "sizes": "1024x402",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 1024,
+                "height": 402
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q19059388",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q19059388$dfe072df-468b-f6ab-40f7-bba39c950638"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q19059388$F1EC0440-514A-408A-81E4-A4DDD5AE9517",
+                    "url": "https://www.olacabs.com/",
+                    "registrable_domain": "olacabs.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Ola Cabs logo.svg",
+                "commons_canonical_filename": "Ola Cabs logo.svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Ola_Cabs_logo.svg",
+                "semantic_text": "Ola Cabs logo.svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q19059388",
+                "wikidata_statement_ids": [
+                  "Q19059388$dfe072df-468b-f6ab-40f7-bba39c950638"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q19059388$F1EC0440-514A-408A-81E4-A4DDD5AE9517",
+                    "url": "https://www.olacabs.com/",
+                    "registrable_domain": "olacabs.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Ola Cabs logo.svg",
+                "commons_canonical_filename": "Ola Cabs logo.svg",
+                "commons_redirect": null,
+                "commons_page_id": 128928794,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Ola_Cabs_logo.svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2023-02-21T14:20:01Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+                  "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.olacabs.com/webstatic/img/OLA.svg\">https://www.olacabs.com/webstatic/img/OLA.svg</a>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "630b5ccdbf9aa0134f5a6442ef265e509efdbf6fd70a94b295d22b47540938b3",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:26.258Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "40f2b2b2b6b5fd40",
+                  "raster": "DgUNCg8PDg8HAAUGDw8JDwQNAwYPDwMPBQ8FBg8MAA4FDwUGDwkECwQNAwYNBgkIBwAFBgMEDgUOBQ0KCgoPCQ==",
+                  "color": [
+                    152,
+                    152,
+                    152
+                  ]
+                },
+                "score": 94.6,
+                "foreground_occupancy": 0.47265625,
+                "box_occupancy": 0.9375,
+                "contrast": 0.8284313725490196,
+                "surface_contrast": {
+                  "light": 0.8284313725490196,
+                  "dark": 0
+                },
+                "edge_density": 0.1461693548387097,
+                "edge_contact": {
+                  "left": 0.3125,
+                  "right": 0.0625,
+                  "top": 0,
+                  "bottom": 0
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": true,
+                  "vertical": false
+                },
+                "foreground_box": {
+                  "left": 0,
+                  "top": 1,
+                  "right": 31,
+                  "bottom": 30,
+                  "width": 32,
+                  "height": 30,
+                  "aspect_ratio": 1.0666666666666667
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 1024,
+                "height": 402,
+                "byte_hash": "119138002e7b8f35ec01bb8d807e6c7833361455460c14db977a41f29e6c3eae"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 1024,
+              "height": 402,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 1873,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 2.7170812603648424,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/ola.svg"
+        }
+      ],
+      "reviewStatus": "hold",
+      "review": {
+        "id": "ola",
+        "name": "Ola",
+        "split": "holdout",
+        "domain": "olacabs.com",
+        "rawHash": "630b5ccdbf9aa0134f5a6442ef265e509efdbf6fd70a94b295d22b47540938b3",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/ola.svg",
+        "decision": "hold",
+        "role": "wide",
+        "reason": "Current official header uses an open-chevron A; normalized Commons asset has a solid triangular A. The mismatch prevents claiming a verified current mark despite current P154. Keep review-only pending variant explanation or replacement.",
+        "currentness": "conflicts_with_current_official_header",
+        "sources": [
+          "https://www.olacabs.com/",
+          "https://assets.olacabs.com/ola-prod-website/OLA-black.svg"
+        ],
+        "captures": [],
+        "externalCapture": "runs/missing-logo-program-2026-09-19/official-evidence/ola.png"
+      }
+    },
+    {
+      "id": "royal-caribbean",
+      "name": "Royal Caribbean",
+      "split": "holdout",
+      "domain": "royalcaribbean.com",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q929872",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q929872$7a308486-4588-297f-2482-3db56c79e872"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q929872$B0735AE5-534B-4238-90F9-9F72BBD0663B",
+                "url": "https://www.royalcaribbean.com/",
+                "registrable_domain": "royalcaribbean.com",
+                "rank": "preferred",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Royal Caribbean logo (2024).svg",
+            "commons_canonical_filename": "Royal Caribbean logo (2024).svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Royal_Caribbean_logo_(2024).svg",
+            "semantic_text": "Royal Caribbean logo (2024).svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q929872",
+            "wikidata_statement_ids": [
+              "Q929872$7a308486-4588-297f-2482-3db56c79e872"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q929872$B0735AE5-534B-4238-90F9-9F72BBD0663B",
+                "url": "https://www.royalcaribbean.com/",
+                "registrable_domain": "royalcaribbean.com",
+                "rank": "preferred",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Royal Caribbean logo (2024).svg",
+            "commons_canonical_filename": "Royal Caribbean logo (2024).svg",
+            "commons_redirect": null,
+            "commons_page_id": 155373584,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Royal_Caribbean_logo_(2024).svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2024-11-19T20:54:10Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Royal_Caribbean_International\" class=\"extiw\" title=\"w:en:Royal Caribbean International\"><span title=\"cruise line brand founded in Norway and based in Miami, Florida\">Royal Caribbean International</span></a>\n</bdi>",
+              "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.royalcaribbean.com/\">https://www.royalcaribbean.com/</a>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "32675d44a532054a2fc09f49c3548f2e955085a7236de5f246c165941dbf73cd",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Royal_Caribbean_logo_(2024).svg",
+              "sizes": "512x140",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 512,
+                "height": 140
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q929872",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q929872$7a308486-4588-297f-2482-3db56c79e872"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q929872$B0735AE5-534B-4238-90F9-9F72BBD0663B",
+                    "url": "https://www.royalcaribbean.com/",
+                    "registrable_domain": "royalcaribbean.com",
+                    "rank": "preferred",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Royal Caribbean logo (2024).svg",
+                "commons_canonical_filename": "Royal Caribbean logo (2024).svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Royal_Caribbean_logo_(2024).svg",
+                "semantic_text": "Royal Caribbean logo (2024).svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q929872",
+                "wikidata_statement_ids": [
+                  "Q929872$7a308486-4588-297f-2482-3db56c79e872"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q929872$B0735AE5-534B-4238-90F9-9F72BBD0663B",
+                    "url": "https://www.royalcaribbean.com/",
+                    "registrable_domain": "royalcaribbean.com",
+                    "rank": "preferred",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Royal Caribbean logo (2024).svg",
+                "commons_canonical_filename": "Royal Caribbean logo (2024).svg",
+                "commons_redirect": null,
+                "commons_page_id": 155373584,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Royal_Caribbean_logo_(2024).svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2024-11-19T20:54:10Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Royal_Caribbean_International\" class=\"extiw\" title=\"w:en:Royal Caribbean International\"><span title=\"cruise line brand founded in Norway and based in Miami, Florida\">Royal Caribbean International</span></a>\n</bdi>",
+                  "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.royalcaribbean.com/\">https://www.royalcaribbean.com/</a>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "32675d44a532054a2fc09f49c3548f2e955085a7236de5f246c165941dbf73cd",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:26.280Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "00f8f8c000dfffc0",
+                  "raster": "CwwPDw8PDw8HBwsICg0PDwgICQgIDQ8PBQYNDAwMDw8LCw0MDAsMDQkJDAgIBwgHBgYLCAkICAkKCw8PDw8PDw==",
+                  "color": [
+                    184,
+                    192,
+                    216
+                  ]
+                },
+                "score": 85,
+                "foreground_occupancy": 0.4560546875,
+                "box_occupancy": 0.96875,
+                "contrast": 0.603182600663392,
+                "surface_contrast": {
+                  "light": 0.4962194467015783,
+                  "dark": 0.10696315396181304
+                },
+                "edge_density": 0.15776209677419356,
+                "edge_contact": {
+                  "left": 0.65625,
+                  "right": 0.3125,
+                  "top": 0,
+                  "bottom": 0.0625
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": true,
+                  "vertical": false
+                },
+                "foreground_box": {
+                  "left": 0,
+                  "top": 1,
+                  "right": 31,
+                  "bottom": 31,
+                  "width": 32,
+                  "height": 31,
+                  "aspect_ratio": 1.032258064516129
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 259,
+                "height": 71,
+                "byte_hash": "57944c1bbc32e2b0082e6633a87ebf80b09241ebc469fd9f7d6d570e0954c0d5"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 259,
+              "height": 71,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 4255,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 3.765561108587006,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/royal-caribbean.svg"
+        }
+      ],
+      "reviewStatus": "hold",
+      "review": {
+        "id": "royal-caribbean",
+        "name": "Royal Caribbean",
+        "split": "holdout",
+        "domain": "royalcaribbean.com",
+        "rawHash": "32675d44a532054a2fc09f49c3548f2e955085a7236de5f246c165941dbf73cd",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/royal-caribbean.svg",
+        "decision": "hold",
+        "role": "wide",
+        "reason": "Recognizable crown-and-anchor and two-line ROYAL/CARIBBEAN lettering. This is a stacked main-wordmark treatment; do not count it as canonical single-line wide output.",
+        "currentness": "identity_corroborated_role_mismatch",
+        "sources": [
+          "https://www.royalcaribbean.com/",
+          "https://assets.dm.rccl.com/is/content/RoyalCaribbeanCruises/royal-caribbean-logo-crown-anchor-transparent-1?fmt=png-alpha"
+        ],
+        "captures": [
+          "royal-caribbean-official.html",
+          "royal-caribbean-official-logo.png"
+        ]
+      }
+    },
+    {
+      "id": "saks-fifth-avenue",
+      "name": "Saks Fifth Avenue",
+      "split": "development",
+      "domain": "saksfifthavenue.com",
+      "addedRoles": [
+        "icon"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "icon",
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q2723882",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q2723882$f62e8bcb-420b-f7e6-69f2-28db17d58f97"
+            ],
+            "wikidata_claim_rank": "normal",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q2723882$7B1EF2C1-089B-4630-89FC-020F9B376D70",
+                "url": "http://www.saksfifthavenue.com/",
+                "registrable_domain": "saksfifthavenue.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "SaksFifthAvenueA.svg",
+            "commons_canonical_filename": "SaksFifthAvenueA.svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:SaksFifthAvenueA.svg",
+            "semantic_text": "SaksFifthAvenueA.svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q2723882",
+            "wikidata_statement_ids": [
+              "Q2723882$f62e8bcb-420b-f7e6-69f2-28db17d58f97"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q2723882$7B1EF2C1-089B-4630-89FC-020F9B376D70",
+                "url": "http://www.saksfifthavenue.com/",
+                "registrable_domain": "saksfifthavenue.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "www",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "SaksFifthAvenueA.svg",
+            "commons_canonical_filename": "SaksFifthAvenueA.svg",
+            "commons_redirect": null,
+            "commons_page_id": 12034397,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:SaksFifthAvenueA.svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2010-11-12T18:16:22Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "<p><a href=\"https://en.wikipedia.org/wiki/Saks_Fifth_Avenue\" class=\"extiw\" title=\"en:Saks Fifth Avenue\">en:Saks Fifth Avenue</a>.\n</p>\nOriginal uploader was <a href=\"https://en.wikipedia.org/wiki/User:Vargklo\" class=\"extiw\" title=\"en:User:Vargklo\">Vargklo</a> at <a class=\"external text\" data-mw-original-href=\"http://en.wikipedia.org\" href=\"https://en.wikipedia.org\">en.wikipedia</a>",
+              "credit": "<a href=\"https://en.wikipedia.org/wiki/Saks_Fifth_Avenue\" class=\"extiw\" title=\"en:Saks Fifth Avenue\">en:Saks Fifth Avenue</a>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "icon"
+          ],
+          "blockers": {},
+          "rawHash": "49d2dffed5e0b5b42e38f8b5eafefa32aaa07499cf6d1513e7cf42cf1bb13943",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:SaksFifthAvenueA.svg",
+              "sizes": "153x115",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 153,
+                "height": 115
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "icon",
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q2723882",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q2723882$f62e8bcb-420b-f7e6-69f2-28db17d58f97"
+                ],
+                "wikidata_claim_rank": "normal",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q2723882$7B1EF2C1-089B-4630-89FC-020F9B376D70",
+                    "url": "http://www.saksfifthavenue.com/",
+                    "registrable_domain": "saksfifthavenue.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "SaksFifthAvenueA.svg",
+                "commons_canonical_filename": "SaksFifthAvenueA.svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:SaksFifthAvenueA.svg",
+                "semantic_text": "SaksFifthAvenueA.svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q2723882",
+                "wikidata_statement_ids": [
+                  "Q2723882$f62e8bcb-420b-f7e6-69f2-28db17d58f97"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q2723882$7B1EF2C1-089B-4630-89FC-020F9B376D70",
+                    "url": "http://www.saksfifthavenue.com/",
+                    "registrable_domain": "saksfifthavenue.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "www",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "SaksFifthAvenueA.svg",
+                "commons_canonical_filename": "SaksFifthAvenueA.svg",
+                "commons_redirect": null,
+                "commons_page_id": 12034397,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:SaksFifthAvenueA.svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2010-11-12T18:16:22Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "<p><a href=\"https://en.wikipedia.org/wiki/Saks_Fifth_Avenue\" class=\"extiw\" title=\"en:Saks Fifth Avenue\">en:Saks Fifth Avenue</a>.\n</p>\nOriginal uploader was <a href=\"https://en.wikipedia.org/wiki/User:Vargklo\" class=\"extiw\" title=\"en:User:Vargklo\">Vargklo</a> at <a class=\"external text\" data-mw-original-href=\"http://en.wikipedia.org\" href=\"https://en.wikipedia.org\">en.wikipedia</a>",
+                  "credit": "<a href=\"https://en.wikipedia.org/wiki/Saks_Fifth_Avenue\" class=\"extiw\" title=\"en:Saks Fifth Avenue\">en:Saks Fifth Avenue</a>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "49d2dffed5e0b5b42e38f8b5eafefa32aaa07499cf6d1513e7cf42cf1bb13943",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:26.395Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "00383c7f1f3e3e10",
+                  "raster": "Dw4ODA8PDw8ODAoLCg4PDw4OBgkGCg8PDQsJCwoHCQsPDQ8LCggICg4NCgsLCgwMDQwJCAkJBw4NDQwLDQwMDw==",
+                  "color": [
+                    200,
+                    200,
+                    200
+                  ]
+                },
+                "score": 97.3,
+                "foreground_occupancy": 0.408203125,
+                "box_occupancy": 0.87890625,
+                "contrast": 0.49287925696594403,
+                "surface_contrast": {
+                  "light": 0.4928792569659441,
+                  "dark": 0
+                },
+                "edge_density": 0.24092741935483872,
+                "edge_contact": {
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "bottom": 0
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": false,
+                  "vertical": false
+                },
+                "foreground_box": {
+                  "left": 1,
+                  "top": 1,
+                  "right": 30,
+                  "bottom": 30,
+                  "width": 30,
+                  "height": 30,
+                  "aspect_ratio": 1
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 153,
+                "height": 115,
+                "byte_hash": "74838b401b209198be7cab90e0d7c8685aba6ee7eea580198ee94ed9c8f27179"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 153,
+              "height": 115,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 12477,
+              "squareish": true,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 1.3304347826086957,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 82,
+                "wide": 36,
+                "favicon": 40
+              },
+              "predicted_roles": [
+                "icon"
+              ],
+              "score": 82,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "square shape +28",
+                "non-wide shape -18",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/saks-fifth-avenue.svg"
+        }
+      ],
+      "reviewStatus": "hold",
+      "review": {
+        "id": "saks-fifth-avenue",
+        "name": "Saks Fifth Avenue",
+        "split": "development",
+        "domain": "saksfifthavenue.com",
+        "rawHash": "49d2dffed5e0b5b42e38f8b5eafefa32aaa07499cf6d1513e7cf42cf1bb13943",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/saks-fifth-avenue.svg",
+        "decision": "hold",
+        "role": "icon",
+        "reason": "Recognizable elaborate three-line script, but exact current compact variant and readability at icon size are not independently established. Homepage returned 403; P154 and brand familiarity alone are insufficient for a reviewed icon gain.",
+        "currentness": "exact_current_variant_unverified",
+        "sources": [
+          "https://www.saksfifthavenue.com/"
+        ],
+        "captures": [
+          "saks-fifth-avenue-official.html"
+        ]
+      }
+    },
+    {
+      "id": "traton",
+      "name": "TRATON",
+      "split": "development",
+      "domain": "traton.com",
+      "addedRoles": [
+        "wide"
+      ],
+      "priorRoles": [],
+      "assets": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "evidence": {
+            "element": "wikidata-logo-claim",
+            "positive_token": true,
+            "eligible_roles": [
+              "wide"
+            ],
+            "identity_basis": "wikidata_p856_exact_registrable_domain",
+            "wikidata_identity_verified": true,
+            "wikidata_entity_id": "Q28228137",
+            "wikidata_property_id": "P154",
+            "wikidata_statement_ids": [
+              "Q28228137$5b6118eb-47d9-aa4c-201d-83275b6ed1b0"
+            ],
+            "wikidata_claim_rank": "preferred",
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q28228137$e8717f12-4231-0d27-94d5-ee9a623eded6",
+                "url": "https://traton.com/",
+                "registrable_domain": "traton.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "apex",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Traton Group logo.svg",
+            "commons_canonical_filename": "Traton Group logo.svg",
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Traton_Group_logo.svg",
+            "semantic_text": "Traton Group logo.svg"
+          },
+          "provenance": {
+            "provider": "wikidata-wikimedia-commons",
+            "wikidata_entity_id": "Q28228137",
+            "wikidata_statement_ids": [
+              "Q28228137$5b6118eb-47d9-aa4c-201d-83275b6ed1b0"
+            ],
+            "official_website_evidence": [
+              {
+                "property_id": "P856",
+                "statement_id": "Q28228137$e8717f12-4231-0d27-94d5-ee9a623eded6",
+                "url": "https://traton.com/",
+                "registrable_domain": "traton.com",
+                "rank": "normal",
+                "match": "exact_registrable_domain",
+                "host_scope": "apex",
+                "path_scope": "root"
+              }
+            ],
+            "commons_filename": "Traton Group logo.svg",
+            "commons_canonical_filename": "Traton Group logo.svg",
+            "commons_redirect": null,
+            "commons_page_id": 86664627,
+            "commons_description_url": "https://commons.wikimedia.org/wiki/File:Traton_Group_logo.svg",
+            "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "commons_timestamp": "2020-02-05T15:14:18Z",
+            "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+            "license": {
+              "license_short_name": "Public domain",
+              "license_url": null,
+              "usage_terms": "Public domain",
+              "attribution_required": "false",
+              "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+              "credit": "<ul><li>Vektordaten: SVG aus <a rel=\"nofollow\" class=\"external free\" href=\"https://traton.com/de.html\">https://traton.com/de.html</a> entnommen</li>\n<li>Farbinfo: Screenshot von <a rel=\"nofollow\" class=\"external free\" href=\"https://traton.com/de.html\">https://traton.com/de.html</a></li></ul>",
+              "copyrighted": "False",
+              "restrictions": "trademarked",
+              "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+            }
+          },
+          "downloadStatus": 200,
+          "valid": true,
+          "selectedRoles": [
+            "wide"
+          ],
+          "blockers": {},
+          "rawHash": "b2369cc5cd98cc47d8df9831223977218e4e490385621c2c12c5512737142946",
+          "ranking": [
+            {
+              "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "source": "wikimedia-commons",
+              "source_page": "https://commons.wikimedia.org/wiki/File:Traton_Group_logo.svg",
+              "sizes": "1024x300",
+              "type": "image/svg+xml",
+              "declared": {
+                "width": 1024,
+                "height": 300
+              },
+              "evidence": {
+                "element": "wikidata-logo-claim",
+                "positive_token": true,
+                "eligible_roles": [
+                  "wide"
+                ],
+                "identity_basis": "wikidata_p856_exact_registrable_domain",
+                "wikidata_identity_verified": true,
+                "wikidata_entity_id": "Q28228137",
+                "wikidata_property_id": "P154",
+                "wikidata_statement_ids": [
+                  "Q28228137$5b6118eb-47d9-aa4c-201d-83275b6ed1b0"
+                ],
+                "wikidata_claim_rank": "preferred",
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q28228137$e8717f12-4231-0d27-94d5-ee9a623eded6",
+                    "url": "https://traton.com/",
+                    "registrable_domain": "traton.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "apex",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Traton Group logo.svg",
+                "commons_canonical_filename": "Traton Group logo.svg",
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Traton_Group_logo.svg",
+                "semantic_text": "Traton Group logo.svg"
+              },
+              "provenance": {
+                "provider": "wikidata-wikimedia-commons",
+                "wikidata_entity_id": "Q28228137",
+                "wikidata_statement_ids": [
+                  "Q28228137$5b6118eb-47d9-aa4c-201d-83275b6ed1b0"
+                ],
+                "official_website_evidence": [
+                  {
+                    "property_id": "P856",
+                    "statement_id": "Q28228137$e8717f12-4231-0d27-94d5-ee9a623eded6",
+                    "url": "https://traton.com/",
+                    "registrable_domain": "traton.com",
+                    "rank": "normal",
+                    "match": "exact_registrable_domain",
+                    "host_scope": "apex",
+                    "path_scope": "root"
+                  }
+                ],
+                "commons_filename": "Traton Group logo.svg",
+                "commons_canonical_filename": "Traton Group logo.svg",
+                "commons_redirect": null,
+                "commons_page_id": 86664627,
+                "commons_description_url": "https://commons.wikimedia.org/wiki/File:Traton_Group_logo.svg",
+                "retrieved_asset_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "commons_timestamp": "2020-02-05T15:14:18Z",
+                "commons_api_retrieved_at": "2026-09-19T00:00:00.000Z",
+                "license": {
+                  "license_short_name": "Public domain",
+                  "license_url": null,
+                  "usage_terms": "Public domain",
+                  "attribution_required": "false",
+                  "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+                  "credit": "<ul><li>Vektordaten: SVG aus <a rel=\"nofollow\" class=\"external free\" href=\"https://traton.com/de.html\">https://traton.com/de.html</a> entnommen</li>\n<li>Farbinfo: Screenshot von <a rel=\"nofollow\" class=\"external free\" href=\"https://traton.com/de.html\">https://traton.com/de.html</a></li></ul>",
+                  "copyrighted": "False",
+                  "restrictions": "trademarked",
+                  "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+                },
+                "original_byte_hash": "b2369cc5cd98cc47d8df9831223977218e4e490385621c2c12c5512737142946",
+                "svg_normalization": "remove-canonical-svg11-doctype",
+                "retrieved_at": "2026-09-19T08:22:25.818Z",
+                "http_status": 200,
+                "source_chain": [],
+                "svg_safety_validated": true
+              },
+              "background": "transparent",
+              "tinySuitability": {
+                "pixel_fingerprint": {
+                  "version": 1,
+                  "hash": "efffffff00000000",
+                  "raster": "BwkMDQgKCwwMDAsLDAsLCAwKCgoMDAsGDAsJCgsLCQkODg0ODQ4NDg8PDw8PDw8PDw8PDw8PDw8PDw4ODg4ODw==",
+                  "color": [
+                    208,
+                    208,
+                    216
+                  ]
+                },
+                "score": 94.6,
+                "foreground_occupancy": 0.296875,
+                "box_occupancy": 0.9375,
+                "contrast": 0.6151186790505673,
+                "surface_contrast": {
+                  "light": 0.5423947435871496,
+                  "dark": 0.0727239354634182
+                },
+                "edge_density": 0.18094758064516128,
+                "edge_contact": {
+                  "left": 0.09375,
+                  "right": 0.5,
+                  "top": 0,
+                  "bottom": 0
+                },
+                "opposing_edge_contacts": {
+                  "horizontal": true,
+                  "vertical": false
+                },
+                "foreground_box": {
+                  "left": 0,
+                  "top": 1,
+                  "right": 31,
+                  "bottom": 30,
+                  "width": 32,
+                  "height": 30,
+                  "aspect_ratio": 1.0666666666666667
+                },
+                "canvas_background": "transparent"
+              },
+              "tinySuitabilityChecked": true,
+              "observed": {
+                "format": "svg",
+                "mimeType": "image/svg+xml",
+                "width": 1024,
+                "height": 300,
+                "byte_hash": "42db13a644127446b2f21243ccbf3112c81f697444a73b18aeb514c543a79bbe"
+              },
+              "format": "svg",
+              "mimeType": "image/svg+xml",
+              "width": 1024,
+              "height": 300,
+              "resolvedUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+              "bytes": 2380,
+              "squareish": false,
+              "scalable": true,
+              "highResolution": true,
+              "variant": {
+                "theme": "light",
+                "color": "unknown",
+                "background": "transparent"
+              },
+              "stacked_logo": false,
+              "wordmark_caution": null,
+              "padded_wordmark": false,
+              "bimi_icon_shape_ok": true,
+              "clipping": {
+                "risk": 0,
+                "likely_clipped": false,
+                "axis": null,
+                "measured_content_aspect_ratio": 3.640888888888889,
+                "wordmark_evidence": false,
+                "clipping_prone_source": false
+              },
+              "role_scores": {
+                "icon": 42,
+                "wide": 84,
+                "favicon": 32
+              },
+              "predicted_roles": [
+                "wide"
+              ],
+              "score": 84,
+              "score_reasons": [
+                "source:wikimedia-commons +24",
+                "logo semantic +15",
+                "adequate resolution +8",
+                "vector +7",
+                "non-square icon -12",
+                "wide shape +30",
+                "non-favicon source -22"
+              ],
+              "confidence_band": "high",
+              "icon_quality_rejections": [],
+              "family_id": "family-1"
+            }
+          ],
+          "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/traton.svg"
+        }
+      ],
+      "reviewStatus": "pass",
+      "review": {
+        "id": "traton",
+        "name": "TRATON",
+        "split": "development",
+        "domain": "traton.com",
+        "rawHash": "b2369cc5cd98cc47d8df9831223977218e4e490385621c2c12c5512737142946",
+        "commonsUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "validatedFile": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final/validated/traton.svg",
+        "decision": "pass",
+        "role": "wide",
+        "reason": "Single-line TRATON brand name with subordinate GROUP descriptor matches the official GROUP media download still supplied today. Current primary header omits descriptor; record this explicitly as the official GROUP lockup variant.",
+        "currentness": "corroborated_currently_served_official_media_variant",
+        "sources": [
+          "https://traton.com/en.html",
+          "https://traton.com/en/newsroom/media-center/mediacenterresults.html?filter=logo&from=0&size=12&sort=relevance&type=photos",
+          "https://traton.com/download?id=jcr:75a7fb96-7153-4016-8d88-bf83a44628a6"
+        ],
+        "captures": [
+          "traton-media.html",
+          "traton-group-official.png",
+          "traton-current-official.png"
+        ]
+      }
+    }
+  ],
+  "regressions": [],
+  "changedDiscoveries": []
+}

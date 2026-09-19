@@ -817,7 +817,7 @@ test('uses explicit organization labels in product contexts without penalizing l
   assert.match(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Partner Labs logo' } }, 'Acme'), /foreign organization/);
   assert.equal(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Acme Deutschland logo' } }, 'Acme'), null);
   assert.equal(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Acme logo' } }, 'Acme'), null);
-  assert.equal(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Partner Labs logo', home_linked: true } }, 'Acme'), null);
+  assert.match(genericAssetReason({ ...common, evidence: { ...common.evidence, alt: 'Partner Labs logo', home_linked: true } }, 'Acme'), /foreign organization/);
 });
 
 test('exact company labels outrank related product labels in the same navigation context', () => {

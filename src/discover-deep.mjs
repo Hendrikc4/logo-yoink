@@ -1,4 +1,5 @@
 import { inflateRawSync } from 'node:zlib';
+import { getDomain } from 'tldts';
 import { parseHomepage, resolveHttpUrl } from './discover-static.mjs';
 
 const PAGE_LIMIT = 2;
@@ -261,9 +262,19 @@ export async function discoverOfficialBrandAssets({ homepage, parsed, companyNam
     const url = new URL(link.url);
     return url.href !== homepage && !(url.origin === new URL(homepage).origin && url.pathname === new URL(homepage).pathname && url.hash);
   }).sort((a, b) => pagePriority(b) - pagePriority(a)).map(link => ({ link, depth: 1, chain: [{ kind: 'homepage', url: homepage }] }));
-  const visited = new Set(), direct = [], archives = [], pages = [], candidates = [];
-  while (queue.length && pages.length < Math.min(PAGE_LIMIT, maxPages) && !candidates.length) {
+  // Sites often omit their brand page from the homepage navigation. Probe only
+  // two conventional first-party paths, behind explicit press/brand links.
+  const registrable = getDomain(originHost);
+  const probeUrls = [registrable ? `https://brand.${registrable}/` : null, new URL('/brand', homepage).href].filter(Boolean);
+  const probes = probeUrls.map(url => ({ link: { url, source_page: homepage, evidence: { semantic_text: 'Conventional brand-page probe', probe: true } }, depth: 1, chain: [{ kind: 'homepage', url: homepage }] }));
+  const weakIndex = queue.findIndex(item => pagePriority(item.link) < 3);
+  queue.splice(weakIndex < 0 ? queue.length : weakIndex, 0, ...probes);
+  const visited = new Set(), direct = [], archives = [], pages = [], candidates = [], attempts = [];
+  while (queue.length && attempts.length < Math.min(PAGE_LIMIT, maxPages)) {
     const current = queue.shift();
+    const canonicalLink = new URL(current.link.url);
+    canonicalLink.hash = '';
+    current.link = { ...current.link, url: canonicalLink.href };
     if (visited.has(current.link.url)) continue;
     visited.add(current.link.url);
     if (isDirectAsset(current.link)) { if (assetLinkEligible(current.link)) direct.push({ link: current.link, chain: current.chain }); continue; }
@@ -272,9 +283,12 @@ export async function discoverOfficialBrandAssets({ homepage, parsed, companyNam
     const explicitExternalGallery = current.depth <= 2 && (/(?:brand|press|media|logo)[^]{0,80}(?:download|kit|asset|gallery)|download[^]{0,80}(?:brand|press|media|logo)/i.test(current.link.evidence?.semantic_text ?? '') ||
       /^logos?$/i.test(current.link.evidence?.heading ?? '') && companyAgreement(current.link.evidence?.semantic_text, companyName));
     if (!officialPage && !explicitExternalGallery) continue;
+    const attempt = { url: current.link.url, probe: Boolean(current.link.evidence?.probe) };
+    attempts.push(attempt);
     try {
       const chain = provenance(current.chain, current.link, officialPage ? 'official-page' : 'explicit-asset-gallery');
-      const response = await fetchResource(current.link.url, { maxBytes: 2 * 1024 * 1024, accept: 'text/html,application/xhtml+xml,application/zip;q=0.9', detectArchive: true });
+      const response = await fetchResource(current.link.url, { ...(attempt.probe ? { timeoutMs: 3_000 } : {}), maxBytes: 2 * 1024 * 1024, accept: 'text/html,application/xhtml+xml,application/zip;q=0.9', detectArchive: true });
+      attempt.status = response.status;
       if (!response.ok) continue;
       if (/(?:application|multipart)\/(?:zip|x-zip-compressed)/i.test(response.headers.get('content-type') ?? '')) {
         const archiveChain = [...chain, { kind: 'archive-redirect', url: response.url }];
@@ -285,15 +299,31 @@ export async function discoverOfficialBrandAssets({ homepage, parsed, companyNam
         continue;
       }
       if (!/html/i.test(response.headers.get('content-type') ?? '')) continue;
+      visited.add(new URL(response.url).href.replace(/#.*$/, ''));
       const page = parseHomepage(response.bytes.toString('utf8'), response.url, { companyName, collectDeepLinks: true });
       pages.push(response.url);
+      // Keep the actual logos displayed on an official page, not only its
+      // download anchors. Do not admit client galleries or unrelated photos.
+      if (relatedHost(new URL(response.url).hostname, originHost)) {
+        const displayed = page.candidates.filter(item => {
+          const proof = item.evidence ?? {};
+          return !proof.negative_context && !proof.banner &&
+            !['html-icon', 'apple', 'mask-icon', 'social-banner'].includes(item.source) &&
+            (proof.home_linked || proof.positive_token &&
+              (['header', 'nav', 'footer'].includes(proof.dom_region) || companyAgreement(`${item.url} ${proof.alt} ${proof.local_semantic}`, companyName)));
+        }).sort((a, b) => Number(b.evidence?.home_linked) - Number(a.evidence?.home_linked));
+        candidates.push(...displayed.slice(0, 8).map(item => ({ ...item,
+          evidence: { ...item.evidence, eligible_roles: ['wide'], deep_official: true },
+          provenance_chain: [...chain, { kind: 'displayed-asset', url: item.url.startsWith('data:') ? '[inline SVG]' : item.url }],
+        })));
+      }
       const pageLinks = [...page.highIntentLinks].sort((a, b) => Number(isDirectAsset(b)) - Number(isDirectAsset(a)) || pagePriority(b) - pagePriority(a));
       for (const link of pageLinks.slice(0, LINK_LIMIT_PER_PAGE)) {
         if (isDirectAsset(link)) { if (assetLinkEligible(link)) direct.push({ link, chain }); }
         else if (current.depth < 2) queue.push({ link, depth: current.depth + 1, chain });
       }
       queue.sort((a, b) => pagePriority(b.link) - pagePriority(a.link) || b.depth - a.depth);
-    } catch { /* Deep discovery is opt-in and non-fatal. */ }
+    } catch (error) { attempt.error = error.message; }
   }
   for (const item of direct.slice(0, 8)) {
     const chain = provenance(item.chain, item.link, ZIP_PATH.test(item.link.url) ? 'archive' : 'direct-asset');
@@ -306,7 +336,7 @@ export async function discoverOfficialBrandAssets({ homepage, parsed, companyNam
       candidates.push({ url: item.link.url, source: 'official-direct', source_page: item.link.source_page, evidence: { eligible_roles: ['wide'], positive_token: true, semantic_text: item.link.evidence?.semantic_text, deep_official: true }, provenance_chain: chain });
     }
   }
-  return { candidates, diagnostics: { pages, direct_links: direct.length, archives } };
+  return { candidates, diagnostics: { pages, attempts, displayed_candidates: candidates.filter(item => item.evidence?.deep_official && !item.evidence?.archive_member).length, direct_links: direct.length, archives } };
 }
 
 export const limits = { ARCHIVE_FULL_LIMIT, ARCHIVE_ENTRY_LIMIT, ARCHIVE_MEMBER_COMPRESSED_LIMIT, ARCHIVE_MEMBER_UNCOMPRESSED_LIMIT, ARCHIVE_RATIO_LIMIT, ARCHIVE_RANGE_TOTAL_LIMIT };

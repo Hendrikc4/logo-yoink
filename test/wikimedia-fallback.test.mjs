@@ -46,7 +46,7 @@ function commonsPage(filename, overrides = {}) {
   };
 }
 
-function mockApi({ searches, entities, commons, status = 200, malformed = false }) {
+function mockApi({ searches, entities, commons, websiteSearch = [], websiteTotal, status = 200, malformed = false }) {
   const calls = [];
   const fetchImpl = async url => {
     calls.push(String(url));
@@ -54,7 +54,8 @@ function mockApi({ searches, entities, commons, status = 200, malformed = false 
     const action = parsed.searchParams.get('action');
     let payload;
     if (action === 'wbsearchentities') payload = { search: searches[parsed.searchParams.get('search')] ?? [] };
-    else if (action === 'wbgetentities') payload = { entities };
+    else if (action === 'wbgetentities') payload = { entities: Object.fromEntries(parsed.searchParams.get('ids').split('|').map(id => [id, entities[id] ?? { id, missing: '' }])) };
+    else if (parsed.searchParams.get('list') === 'search') payload = { query: { search: websiteSearch.map(id => ({ title: id })), searchinfo: { totalhits: websiteTotal ?? websiteSearch.length } } };
     else payload = { query: { pages: commons } };
     return new Response(malformed ? '{' : JSON.stringify(payload), { status, headers: { 'content-type': 'application/json' } });
   };
@@ -212,8 +213,8 @@ test('cache avoids repeat API requests', async () => {
   const args = { domain: 'none.example', missingRoles: ['icon'] };
   await discoverWikimediaLogoCandidates(args, { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache, now: () => NOW });
   const result = await discoverWikimediaLogoCandidates(args, { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache, now: () => NOW });
-  assert.equal(api.calls.length, 2);
-  assert.equal(result.diagnostics.cacheHits, 2);
+  assert.equal(api.calls.length, 3);
+  assert.equal(result.diagnostics.cacheHits, 3);
 });
 
 test('rejects product paths, requires license evidence, and skips wide files for icon-only requests', async () => {
@@ -233,16 +234,16 @@ test('rejects product paths, requires license evidence, and skips wide files for
 
 test('retries maxlag responses without caching the transient error', async () => {
   let calls = 0;
-  const fetchImpl = async () => {
+  const fetchImpl = async url => {
     calls += 1;
-    return new Response(JSON.stringify(calls === 1 ? { error: { code: 'maxlag' } } : { search: [] }), { headers: { 'content-type': 'application/json' } });
+    return new Response(JSON.stringify(calls === 1 ? { error: { code: 'maxlag' } } : new URL(url).searchParams.get('list') === 'search' ? { query: { search: [] } } : { search: [] }), { headers: { 'content-type': 'application/json' } });
   };
   const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
     fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW, delay: async () => {},
   });
   assert.equal(result.diagnostics.status, 'no_search_candidates');
   assert.equal(result.diagnostics.retries, 1);
-  assert.equal(calls, 3);
+  assert.equal(calls, 4);
 });
 
 test('enforces one overall deadline across headers and body reads', async () => {
@@ -267,7 +268,7 @@ test('does not retry before a Retry-After delay that exceeds the resolver deadli
     delay: async () => { delays += 1; },
   });
   assert.equal(result.diagnostics.status, 'rate_limited');
-  assert.equal(calls, 1);
+  assert.equal(calls, 2);
   assert.equal(delays, 0);
 });
 
@@ -301,4 +302,219 @@ test('Wikimedia fallback is enabled by default and supports explicit opt-out', (
   assert.equal(extractorInternals.wikimediaFallbackEnabled(), true);
   assert.equal(extractorInternals.wikimediaFallbackEnabled({ wikimediaFallback: true }), true);
   assert.equal(extractorInternals.wikimediaFallbackEnabled({ wikimediaFallback: false }), false);
+});
+
+test('recovers joined-domain names from indexed website statements and verifies every hit', async () => {
+  const api = mockApi({ searches: {}, websiteSearch: ['Q1', 'Q2', 'Q3'], entities: {
+    Q1: entity('Q1', 'https://www.examplebrand.com/', 'Example.svg'),
+    Q2: entity('Q2', 'https://www.examplebrand.com/product', 'Product.svg'),
+    Q3: entity('Q3', 'https://examplebrand.com.evil.example/', 'Lookalike.svg'),
+  }, commons: [commonsPage('Example.svg')] });
+  const result = await discoverWikimediaLogoCandidates({ domain: 'examplebrand.com', missingRoles: ['wide'] }, {
+    fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW,
+  });
+  assert.equal(result.diagnostics.status, 'ok');
+  assert.deepEqual(result.diagnostics.domainMatchedEntityIds, ['Q1']);
+  assert.equal(result.candidates[0].evidence.wikidata_identity_verified, true);
+  assert.equal(result.candidates[0].provenance.wikidata_entity_id, 'Q1');
+  assert.equal(api.calls.length, 5);
+});
+
+test('website discovery retains identity rivals even without a P154 claim', async () => {
+  const api = mockApi({ searches: {}, websiteSearch: ['Q1', 'Q2'], entities: {
+    Q1: entity('Q1', 'https://example.com/', 'Example.svg'),
+    Q2: entity('Q2', 'https://www.example.com/', null),
+  }, commons: [] });
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+    fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW,
+  });
+  assert.equal(result.diagnostics.status, 'ambiguous_entities');
+  assert.equal(result.candidates.length, 0);
+});
+
+test('website discovery fails closed on truncation and incomplete entity payloads', async () => {
+  const api = mockApi({ searches: {}, websiteSearch: ['Q1'], websiteTotal: 21,
+    entities: { Q1: entity('Q1', 'https://example.com/', 'Example.svg') }, commons: [] });
+  const args = { domain: 'example.com', missingRoles: ['wide'] };
+  const result = await discoverWikimediaLogoCandidates(args, { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map() });
+  assert.equal(result.diagnostics.status, 'search_candidates_truncated');
+  assert.equal(api.calls.length, 3);
+  const partial = await discoverWikimediaLogoCandidates(args, { validateUrl: noDnsValidation, cache: new Map(),
+    fetchImpl: async url => new Response(JSON.stringify(new URL(url).searchParams.get('action') === 'wbsearchentities'
+      ? { search: [{ id: 'Q1' }, { id: 'Q2' }] } : { entities: { Q1: entity('Q1', 'https://example.com/', 'Example.svg') } })),
+  });
+  assert.equal(partial.diagnostics.status, 'error');
+  assert.match(partial.diagnostics.error, /incomplete/);
+  assert.equal(partial.candidates.length, 0);
+});
+
+test('default homepage documents qualify but product paths and short product hosts do not', async () => {
+  for (const [website, accepted] of [
+    ['https://example.com/default.mi', true], ['https://example.com/index.html', true],
+    ['https://example.com/en-us/', true], ['https://fr.example.com/', true],
+    ['https://app.example.com/', false], ['https://api.example.com/', false],
+    ['https://tv.example.com/', false], ['https://example.com/app', false],
+    ['https://example.com/api', false], ['https://example.com/product/index.html', false],
+    ['https://example.com/index.html?product=music', false],
+  ]) {
+    const api = mockApi({ searches: { example: [{ id: 'Q1' }] }, entities: { Q1: entity('Q1', website, 'Example.svg') }, commons: [commonsPage('Example.svg')] });
+    const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW });
+    assert.equal(result.diagnostics.status, accepted ? 'ok' : 'no_verified_current_logo', website);
+  }
+});
+
+test('website discovery does not weaken current preferred logo selection', async () => {
+  const e = entity('Q1', 'https://example.com/', 'Old.svg');
+  e.claims.P154.push(statement('P154', 'Current.svg', { rank: 'preferred' }));
+  const api = mockApi({ searches: {}, websiteSearch: ['Q1'], entities: { Q1: e }, commons: [commonsPage('Current.svg')] });
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW });
+  assert.equal(result.candidates[0].evidence.commons_filename, 'Current.svg');
+});
+
+test('malformed website hits, null entity rivals, and continuing searches cannot establish uniqueness', async () => {
+  for (const failure of ['bad-hit', 'null-entity', 'continuation']) {
+    const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+      validateUrl: noDnsValidation, cache: new Map(), now: () => NOW,
+      fetchImpl: async url => {
+        const p = new URL(url).searchParams;
+        let payload;
+        if (p.get('action') === 'wbsearchentities') payload = { search: [] };
+        else if (p.get('list') === 'search') payload = { query: { search: [{ title: 'Q1' }, failure === 'bad-hit' ? {} : { title: 'Q2' }] },
+          ...(failure === 'continuation' ? { continue: { sroffset: 2 } } : {}) };
+        else payload = { entities: { Q1: entity('Q1', 'https://example.com/', 'Example.svg'), Q2: null } };
+        return new Response(JSON.stringify(payload));
+      },
+    });
+    assert.equal(result.candidates.length, 0);
+    assert.equal(result.diagnostics.status, failure === 'continuation' ? 'search_candidates_truncated' : 'error');
+  }
+});
+
+test('independent name searches overlap and finish before identity verification', async () => {
+  let active = 0, peak = 0;
+  const api = mockApi({ searches: { example: [{ id: 'Q1' }] }, entities: { Q1: entity('Q1', 'https://example.com/', 'Example.svg') }, commons: [commonsPage('Example.svg')] });
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+    validateUrl: noDnsValidation, cache: new Map(), now: () => NOW,
+    fetchImpl: async url => {
+      if (new URL(url).searchParams.get('action') === 'wbsearchentities') {
+        active++;
+        peak = Math.max(peak, active);
+        await new Promise(resolve => setImmediate(resolve));
+        active--;
+      } else assert.equal(active, 0);
+      return api.fetchImpl(url);
+    },
+  });
+  assert.equal(peak, 2);
+  assert.equal(result.diagnostics.status, 'ok');
+});
+
+test('explicit API entity redirects are valid records and do not hide a domain rival', async () => {
+  const redirected = { ...entity('Q3', 'https://example.com/', 'Example.svg'), redirects: { from: 'Q1', to: 'Q3' } };
+  const api = mockApi({ searches: { example: [{ id: 'Q1' }, { id: 'Q2' }] }, entities: {
+    Q1: redirected, Q2: entity('Q2', 'https://example.com/', null),
+  }, commons: [] });
+  const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache: new Map(), now: () => NOW });
+  assert.equal(result.diagnostics.status, 'ambiguous_entities');
+  assert.equal(result.candidates.length, 0);
+});
+
+test('cache retains only logo/website claim evidence and preserves cold/warm decisions', async () => {
+  const verified = entity('Q1', 'https://example.com/', 'Current.svg', { logoRank: 'preferred' });
+  verified.claims.P154.push(statement('P154', 'Historic.svg', { qualifiers: { P582: timeQualifier('P582', '+2020-01-01T00:00:00Z') } }));
+  verified.claims.P154[0].references = [{ bulky: 'x'.repeat(100_000) }];
+  verified.claims.P999 = [statement('P999', 'x'.repeat(100_000))];
+  const api = mockApi({ searches: { example: [{ id: 'Q1' }] }, entities: { Q1: verified }, commons: [commonsPage('Current.svg')] });
+  const cache = new Map();
+  const input = { domain: 'example.com', missingRoles: ['wide'] };
+  const options = { fetchImpl: api.fetchImpl, validateUrl: noDnsValidation, cache, now: () => NOW };
+  const cold = await discoverWikimediaLogoCandidates(input, options);
+  const requestCount = api.calls.length;
+  const warm = await discoverWikimediaLogoCandidates(input, options);
+  assert.equal(cold.diagnostics.status, 'ok');
+  assert.deepEqual(warm.candidates, cold.candidates);
+  assert.equal(api.calls.length, requestCount);
+  const saved = [...cache.entries()].find(([url]) => new URL(url).searchParams.get('action') === 'wbgetentities')[1];
+  assert.deepEqual(Object.keys(saved.value.entities.Q1.claims).sort(), ['P154', 'P856']);
+  assert.equal(saved.value.entities.Q1.claims.P154[0].references, undefined);
+  assert.equal(saved.value.entities.Q1.claims.P154[1].qualifiers.P582[0].datavalue.value.time, '+2020-01-01T00:00:00Z');
+  assert.ok(saved.bytes < 10_000);
+});
+
+test('shares rate-limit cooldown across lookups, fails within each deadline, and recovers after expiry', async () => {
+  const cooldowns = new Map();
+  let requests = 0;
+  const options = {
+    validateUrl: noDnsValidation, cache: new Map(), cooldowns, now: () => NOW, timeoutMs: 250,
+    fetchImpl: async () => { requests++; return new Response('', { status: 429, headers: { 'retry-after': '60' } }); },
+  };
+  const first = await discoverWikimediaLogoCandidates({ domain: 'one.example', missingRoles: ['wide'] }, options);
+  assert.equal(first.diagnostics.status, 'rate_limited');
+  const priorRequests = requests;
+  const started = performance.now();
+  const second = await discoverWikimediaLogoCandidates({ domain: 'two.example', missingRoles: ['wide'] }, options);
+  assert.equal(second.diagnostics.status, 'rate_limited');
+  assert.equal(requests, priorRequests);
+  assert.ok(performance.now() - started < 100);
+  cooldowns.set('https://www.wikidata.org', performance.now() - 1);
+  const api = mockApi({ searches: {}, entities: {}, commons: [] });
+  const recovered = await discoverWikimediaLogoCandidates({ domain: 'two.example', missingRoles: ['wide'] }, { ...options, fetchImpl: api.fetchImpl });
+  assert.equal(recovered.diagnostics.status, 'no_search_candidates');
+  assert.equal(api.calls.length, 3);
+});
+
+test('missing Retry-After uses a finite default cooldown and cached responses remain available', async () => {
+  const cooldowns = new Map(), cache = new Map();
+  const api = mockApi({ searches: {}, entities: {}, commons: [] });
+  const options = { validateUrl: noDnsValidation, cooldowns, cache, now: () => NOW, timeoutMs: 250 };
+  await discoverWikimediaLogoCandidates({ domain: 'cached.example', missingRoles: ['wide'] }, { ...options, fetchImpl: api.fetchImpl });
+  const delays = [];
+  await discoverWikimediaLogoCandidates({ domain: 'limited.example', missingRoles: ['wide'] }, {
+    ...options, timeoutMs: 1000, fetchImpl: async () => new Response('', { status: 503 }), delay: async ms => { delays.push(ms); },
+  });
+  assert.ok(delays.length > 0);
+  assert.ok(delays.every(ms => ms > 100 && ms <= 250));
+  const cached = await discoverWikimediaLogoCandidates({ domain: 'cached.example', missingRoles: ['wide'] }, {
+    ...options, fetchImpl: async () => assert.fail('Cache hits must remain usable during cooldown'),
+  });
+  assert.equal(cached.diagnostics.status, 'no_search_candidates');
+  assert.equal(cached.diagnostics.cacheHits, 3);
+});
+
+test('a shorter coalesced caller deadline does not cancel the original request', async () => {
+  const api = mockApi({ searches: {}, entities: {}, commons: [] });
+  const pending = new Map(), cache = new Map(), cooldowns = new Map();
+  const options = {
+    validateUrl: noDnsValidation, pending, cache, cooldowns, now: () => NOW,
+    fetchImpl: async url => {
+      if (new URL(url).searchParams.get('action') === 'wbsearchentities') await new Promise(resolve => setTimeout(resolve, 450));
+      return api.fetchImpl(url);
+    },
+  };
+  const input = { domain: 'example.com', missingRoles: ['wide'] };
+  const owner = discoverWikimediaLogoCandidates(input, { ...options, timeoutMs: 1000 });
+  await new Promise(resolve => setImmediate(resolve));
+  const started = performance.now();
+  const follower = await discoverWikimediaLogoCandidates(input, { ...options, timeoutMs: 250 });
+  assert.equal(follower.diagnostics.status, 'timeout');
+  assert.equal(follower.diagnostics.coalescedRequests, 2);
+  assert.ok(performance.now() - started < 400);
+  assert.equal((await owner).diagnostics.status, 'no_search_candidates');
+  assert.equal(api.calls.length, 3);
+  assert.equal(pending.size, 0);
+});
+
+test('malformed name-search payloads cannot silently discard an identity rival', async () => {
+  for (const payload of [{}, { search: null }, { search: {} }, { search: [{ id: 'Q1' }, null] }, { search: [{ id: 'Q1' }, { id: 'not-an-item' }] }]) {
+    const api = mockApi({ searches: {}, entities: { Q1: entity('Q1', 'https://example.com/', 'Example.svg') }, commons: [commonsPage('Example.svg')] });
+    const result = await discoverWikimediaLogoCandidates({ domain: 'example.com', missingRoles: ['wide'] }, {
+      validateUrl: noDnsValidation, now: () => NOW,
+      fetchImpl: async url => new URL(url).searchParams.get('action') === 'wbsearchentities'
+        ? new Response(JSON.stringify(payload)) : api.fetchImpl(url),
+    });
+    assert.equal(result.diagnostics.status, 'error');
+    assert.equal(result.candidates.length, 0);
+    assert.match(result.diagnostics.error, /name search.*malformed/);
+    assert.equal(api.calls.length, 0);
+  }
 });

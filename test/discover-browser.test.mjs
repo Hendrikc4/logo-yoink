@@ -217,3 +217,13 @@ test('strong home-link structure admits a CSS background without logo filename t
   const validated = { ...disposition.candidate, width: 183, height: 32, highResolution: true, scalable: true, bytes: 100 };
   assert.equal(rankCandidates([validated], { companyName: 'Acme' }).selectedByRole.wide?.url, 'https://acme.test/assets/identity.svg');
 });
+
+test('rendered component labels, SVG titles, and CSS sprite viewports retain precise evidence', async () => {
+  const items = await inspectFixture(`<header><span data-uia="header+logo"><img data-hawkins-id="BrandAcmeLogotype" src="/opaque.svg" width="240" height="50"></span><a href="/" id="logo" style="display:block;width:80px;height:20px;background:url('/sprite.png') -10px -30px no-repeat"></a></header><main><svg width="240" height="50"><title>Acme wordmark</title><path d="M0 0h240v50H0z"/></svg></main>`);
+  const component = items.find(item => item.source === 'browser-img');
+  assert.match(component.evidence.componentLabel, /Brand Acme Logotype/);
+  assert.equal(extractorInternals.fromBrowserCandidate(component, 'https://acme.test/').evidence.positive_token, true);
+  assert.ok(items.some(item => item.source === 'browser-inline-svg' && item.evidence.title === 'Acme wordmark'));
+  const background = items.find(item => item.source === 'browser-css-background');
+  assert.deepEqual(background.evidence.cssBackground, { width: 80, height: 20, positionX: '-10px', positionY: '-30px', size: 'auto' });
+});

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "method": "Google Images, first 20 identities without approved art in manifest order, 2026-09-18",
+  "tested": [
+    { "brandId": "dell", "outcome": "no-approved-candidate", "reason": "Results were generic download sites and ambiguous Dell versus Dell Technologies lockups." },
+    { "brandId": "gopro", "outcome": "no-approved-candidate", "reason": "The traceable Commons files exposed older black-background/tagline variants, not a clean current white-safe lockup." },
+    { "brandId": "snowflake", "outcome": "approved" },
+    { "brandId": "costco", "outcome": "permission-gated", "reason": "Existing Costco trademark terms require express written approval for logo use." },
+    { "brandId": "carrefour", "outcome": "permission-gated", "reason": "Existing research marked the mark as permission-gated." },
+    { "brandId": "lowe-s", "outcome": "approved" },
+    { "brandId": "best-buy", "outcome": "no-approved-candidate", "reason": "Search results did not yield a sufficiently traceable current asset in this trial." },
+    { "brandId": "aldi", "outcome": "no-approved-candidate", "reason": "The strongest Commons result is specifically Aldi Süd, not unambiguously the roster's global Aldi identity." },
+    { "brandId": "uniqlo", "outcome": "approved" },
+    { "brandId": "lululemon", "outcome": "permission-gated", "reason": "Existing research marked the mark as permission-gated." },
+    { "brandId": "patagonia", "outcome": "approved" },
+    { "brandId": "the-north-face", "outcome": "no-approved-candidate", "reason": "The traceable official candidate was white-only; search results did not resolve a white-safe direct asset." },
+    { "brandId": "ray-ban", "outcome": "approved" },
+    { "brandId": "sephora", "outcome": "approved" },
+    { "brandId": "kraft-heinz", "outcome": "no-approved-candidate", "reason": "Results conflated the corporate mark and product or subsidiary marks." },
+    { "brandId": "mondelez-international", "outcome": "approved" },
+    { "brandId": "yum-brands", "outcome": "no-approved-candidate", "reason": "The strongest corporate asset combined subsidiary marks with the Yum! lockup." },
+    { "brandId": "marriott", "outcome": "fetch-rate-limited", "reason": "The promising Commons file download returned HTTP 429; no asset was approved." },
+    { "brandId": "lyft", "outcome": "no-approved-candidate", "reason": "Search results mixed old and newer branding without a traceable, current direct asset." },
+    { "brandId": "united-airlines", "outcome": "no-approved-candidate", "reason": "Search results did not yield a sufficiently traceable current asset in this trial." }
+  ],
+  "results": [
+    {
+      "brandId": "snowflake",
+      "status": "candidate",
+      "candidates": [{ "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Snowflake_Logo.svg", "role": "logo", "discoveryPage": "https://commons.wikimedia.org/wiki/File:Snowflake_Logo.svg", "sourceKind": "google-images-wikimedia-commons", "theme": "light", "representation": "wordmark" }]
+    },
+    {
+      "brandId": "lowe-s",
+      "status": "candidate",
+      "candidates": [{ "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lowes_Companies_Logo.svg", "role": "logo", "discoveryPage": "https://commons.wikimedia.org/wiki/File:Lowes_Companies_Logo.svg", "sourceKind": "google-images-wikimedia-commons", "theme": "light", "representation": "wordmark" }]
+    },
+    {
+      "brandId": "uniqlo",
+      "status": "candidate",
+      "candidates": [{ "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/UNIQLO_logo.svg", "role": "icon", "discoveryPage": "https://commons.wikimedia.org/wiki/File:UNIQLO_logo.svg", "sourceKind": "google-images-wikimedia-commons", "theme": "any", "representation": "square-brand-mark" }]
+    },
+    {
+      "brandId": "sephora",
+      "status": "candidate",
+      "candidates": [{ "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sephora_logo.svg", "role": "logo", "discoveryPage": "https://commons.wikimedia.org/wiki/File:Sephora_logo.svg", "sourceKind": "google-images-wikimedia-commons", "theme": "light", "representation": "wordmark" }]
+    },
+    {
+      "brandId": "mondelez-international",
+      "status": "candidate",
+      "candidates": [{ "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mondelez_international_2012_logo.svg", "role": "logo", "discoveryPage": "https://commons.wikimedia.org/wiki/File:Mondelez_international_2012_logo.svg", "sourceKind": "google-images-wikimedia-commons", "theme": "light", "representation": "wordmark" }]
+    },
+    {
+      "brandId": "marriott",
+      "status": "candidate",
+      "candidates": [{ "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Marriott_International.svg", "role": "logo", "discoveryPage": "https://commons.wikimedia.org/wiki/File:Marriott_International.svg", "sourceKind": "google-images-wikimedia-commons", "theme": "light", "representation": "wordmark" }]
+    },
+    {
+      "brandId": "patagonia",
+      "status": "candidate",
+      "candidates": [{ "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Patagonia_(Unternehmen)_logo.svg", "role": "logo", "discoveryPage": "https://commons.wikimedia.org/wiki/File:Patagonia_(Unternehmen)_logo.svg", "sourceKind": "google-images-wikimedia-commons", "theme": "light", "representation": "wordmark" }]
+    },
+    {
+      "brandId": "ray-ban",
+      "status": "candidate",
+      "candidates": [{ "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ray-Ban_logo.svg", "role": "logo", "discoveryPage": "https://commons.wikimedia.org/wiki/File:Ray-Ban_logo.svg", "sourceKind": "google-images-wikimedia-commons", "theme": "light", "representation": "wordmark" }]
+    }
+  ]
+}

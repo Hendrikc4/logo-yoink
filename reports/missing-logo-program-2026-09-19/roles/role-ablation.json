@@ -1,0 +1,376 @@
+{
+  "input": "/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/roles/audit.json",
+  "thresholdsChanged": false,
+  "validated": 21,
+  "baseline": 17,
+  "treatment": 18,
+  "changes": [
+    {
+      "id": "3m",
+      "name": "3M",
+      "baseline": [],
+      "treatment": [
+        "logo"
+      ],
+      "changed": true,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/3M_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "f1dc290891967c9e7e53d434406998daee2c31375575d0761534041d825adc05",
+      "filename": "3M wordmark.svg",
+      "width": 300,
+      "height": 157.69046,
+      "caution": "ambiguous-compact-mark"
+    }
+  ],
+  "results": [
+    {
+      "id": "dell",
+      "name": "Dell",
+      "baseline": [
+        "icon"
+      ],
+      "treatment": [
+        "icon"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "06ce277329214d46aebd83c51f5a3d8c16114001de01bdc66ef68905f89e4f35",
+      "filename": "Dell logo 2016.svg",
+      "width": 72,
+      "height": 72,
+      "caution": null
+    },
+    {
+      "id": "snowflake",
+      "name": "Snowflake",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "cbb4e4b2edf3058dc5bd52e5f921cebe93c8660a8c23c671b6a86c5a50e13caf",
+      "filename": "Snowflake Logo.svg",
+      "width": 184,
+      "height": 44,
+      "caution": null
+    },
+    {
+      "id": "costco",
+      "name": "Costco",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Costco_Wholesale_logo_2010-10-26.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "9c769076aaad8c2cf16a888dee9326df7e67c4cf350fab0574209366e1fb61ac",
+      "filename": "Costco Wholesale logo 2010-10-26.svg",
+      "width": 201,
+      "height": 72,
+      "caution": null
+    },
+    {
+      "id": "lowe-s",
+      "name": "Lowe's",
+      "baseline": [],
+      "treatment": [],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Lowes_Companies_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "4dda90a5e4ff558f436c2b0007c5335e4bfaf34d0790aa6f9ed3aa954e00c3e0",
+      "filename": "Lowes Companies Logo.svg",
+      "width": 91.239998,
+      "height": 42.970001,
+      "caution": "ambiguous-compact-mark"
+    },
+    {
+      "id": "best-buy",
+      "name": "Best Buy",
+      "baseline": [],
+      "treatment": [],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Best_Buy_logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "df518f5f1cacbeb2439de84afe4d9f651666c58ccfa40303eb024f1c5a961f01",
+      "filename": "Best Buy logo 2018.svg",
+      "width": 1000,
+      "height": 584.48486,
+      "caution": null
+    },
+    {
+      "id": "uniqlo",
+      "name": "Uniqlo",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Uniqlo_logo_Japanese.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "b16c1cc747a19025082111923859cd0d7a9e60cac3277034115b6f0e273b1cf7",
+      "filename": "Uniqlo logo Japanese.svg",
+      "width": 1000.19,
+      "height": 444.34,
+      "caution": null
+    },
+    {
+      "id": "sephora",
+      "name": "Sephora",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Sephora_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "26315778f8a273a9f1d05c98a18b2f7f89327dab9eb71111d39d8af30127d8ef",
+      "filename": "Sephora logo.svg",
+      "width": 1000,
+      "height": 129.6,
+      "caution": null
+    },
+    {
+      "id": "yum-brands",
+      "name": "Yum! Brands",
+      "baseline": [
+        "icon"
+      ],
+      "treatment": [
+        "icon"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Yum%21_Brands_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "95854fa767aa67eaf6c76725b3dc709120988a070c6a0644833c9519c1ccb287",
+      "filename": "Yum! Brands logo.svg",
+      "width": 120,
+      "height": 100,
+      "caution": null
+    },
+    {
+      "id": "marriott",
+      "name": "Marriott",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Marriott_International.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "c256941fd5fd830755c717589f6533660eb7473af093690297be5ebcb8b8140f",
+      "filename": "Marriott International.svg",
+      "width": 560.825,
+      "height": 178.309,
+      "caution": null
+    },
+    {
+      "id": "lyft",
+      "name": "Lyft",
+      "baseline": [],
+      "treatment": [],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Lyft_logo_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "55695332137c2d7a1fa0d927eebbdeb50f128c86d3170232edfef4aa69c6e5b7",
+      "filename": "Lyft logo 2025.svg",
+      "width": 26,
+      "height": 17.56,
+      "caution": null
+    },
+    {
+      "id": "emirates",
+      "name": "Emirates",
+      "baseline": [
+        "icon"
+      ],
+      "treatment": [
+        "icon"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Emirates_banner_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "d067d6cf2b9d071b4ee66edcb29a526beeca9c5cc07ba02a5d20c534489ec728",
+      "filename": "Emirates banner logo.svg",
+      "width": 250.31364,
+      "height": 264.93823,
+      "caution": null
+    },
+    {
+      "id": "singapore-airlines",
+      "name": "Singapore Airlines",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Singapore_Airlines_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "445a696fd9c74b07468c189eb38e660577a89edffebc30bea582f16f4b4465dc",
+      "filename": "Singapore Airlines wordmark.svg",
+      "width": 300,
+      "height": 91.856277,
+      "caution": null
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Schneider_Electric_2007.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "e773b1740e22fd269a7dde94ace37063143c74422b8f729b88099d617beb1409",
+      "filename": "Schneider Electric 2007.svg",
+      "width": 188.74001,
+      "height": 57,
+      "caution": null
+    },
+    {
+      "id": "3m",
+      "name": "3M",
+      "baseline": [],
+      "treatment": [
+        "logo"
+      ],
+      "changed": true,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/3M_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "f1dc290891967c9e7e53d434406998daee2c31375575d0761534041d825adc05",
+      "filename": "3M wordmark.svg",
+      "width": 300,
+      "height": 157.69046,
+      "caution": "ambiguous-compact-mark"
+    },
+    {
+      "id": "electronic-arts",
+      "name": "Electronic Arts",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Electronic_Arts_2020.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "b61aaa182008050320e2a5365190a5bfc7dc1f290b094780a56c2bc7aaceba15",
+      "filename": "Electronic Arts 2020.svg",
+      "width": 1000,
+      "height": 146.89427,
+      "caution": null
+    },
+    {
+      "id": "mckinsey-company",
+      "name": "McKinsey & Company",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/McKinsey_Script_Mark_2019.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "adc56256915d475838fe590d579e88818e5a603cc3761ba5e1a131ae7ddffbb3",
+      "filename": "McKinsey Script Mark 2019.svg",
+      "width": 38.883,
+      "height": 12,
+      "caution": null
+    },
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Palantir_Technologies_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "6cb92a53619513e852029a0f405f65b27cd1443b2c37e1d94186d19ffe876e44",
+      "filename": "Palantir Technologies logo.svg",
+      "width": 83,
+      "height": 20,
+      "caution": null
+    },
+    {
+      "id": "bumble",
+      "name": "Bumble",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Bumble_Logo_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "0163b8a5883a6c0f68eb08e2d83cf5522867b7bd1a40d861b100e610b82dc135",
+      "filename": "Bumble Logo 2025.svg",
+      "width": 1873.9131,
+      "height": 414.13046,
+      "caution": null
+    },
+    {
+      "id": "shein",
+      "name": "Shein",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Shein_Logo_2017.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "c393a471e10990364e2bf05fd160140946394db9df09bbae6a075c11ff4c18b1",
+      "filename": "Shein Logo 2017.svg",
+      "width": 530,
+      "height": 110,
+      "caution": null
+    },
+    {
+      "id": "nike",
+      "name": "Nike",
+      "baseline": [
+        "logo"
+      ],
+      "treatment": [
+        "logo"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "54bb728904e14583753fcde786a9901b53ca9c8401ac207fb516841f9863c55a",
+      "filename": "Logo NIKE.svg",
+      "width": 1000,
+      "height": 356.39,
+      "caution": null
+    },
+    {
+      "id": "pepsi",
+      "name": "Pepsi",
+      "baseline": [
+        "icon"
+      ],
+      "treatment": [
+        "icon"
+      ],
+      "changed": false,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Pepsi_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "hash": "9431dae56a362881149c18f5d9a36eed8e6875a77342057362f0b2a70ea440ff",
+      "filename": "Pepsi 2023.svg",
+      "width": 799.61,
+      "height": 799.59,
+      "caution": null
+    }
+  ],
+  "decision": "rejected_after_heldout_regression",
+  "heldoutDecisionEvidence": {
+    "id": "tepco",
+    "filename": "TEPCO_symbol.svg",
+    "review": "Actual artwork is a correct TEPCO wordmark; filename falsely removes wide eligibility."
+  },
+  "productionRankingVersion": 12
+}
