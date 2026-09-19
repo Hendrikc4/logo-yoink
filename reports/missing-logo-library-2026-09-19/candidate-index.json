@@ -1,0 +1,2857 @@
+{
+  "sourceReport": "frozen missing-logo-program treatment-final report",
+  "sourceReportHash": "cce8e7469bcba54f4767889fd6b9e8b30f5307c218ea45ed1524996080ef4eab",
+  "generatedAt": "2026-09-19T09:19:35.485Z",
+  "rows": [
+    {
+      "number": 1,
+      "id": "3m",
+      "name": "3M",
+      "domain": "3m.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/3M_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:3M_wordmark.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Stephen Dunne of Siegel &amp; Gale",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://solutions.3m.com/wps/portal/3M/en_WW/Corp/Identity/Resources/Downloads/3MLogo\">https://solutions.3m.com/wps/portal/3M/en_WW/Corp/Identity/Resources/Downloads/3MLogo</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/3m.svg",
+      "contentHash": "f1dc290891967c9e7e53d434406998daee2c31375575d0761534041d825adc05",
+      "extension": "svg",
+      "filename": "3m.svg"
+    },
+    {
+      "number": 2,
+      "id": "8x8",
+      "name": "8x8",
+      "domain": "8x8.com",
+      "split": "development",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/8x8_square_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:8x8_square_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "™/®8x8, Inc.",
+        "credit": "Vectorised by <a href=\"//commons.wikimedia.org/wiki/User:Vulphere\" class=\"mw-redirect\" title=\"User:Vulphere\">Vulphere</a> from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.8x8.com\">https://www.8x8.com</a> (SVG code)",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/8x8.svg",
+      "contentHash": "237fecffe62d67c2d80211f4fc25060d4978f06154afd4e6c7e0d3e3ed1870f8",
+      "extension": "svg",
+      "filename": "8x8.svg"
+    },
+    {
+      "number": 3,
+      "id": "aia-group",
+      "name": "AIA Group",
+      "domain": "aia.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/AIA_wordmark_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:AIA_wordmark_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "AIA Group",
+        "credit": "www.aia.com",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/aia-group.svg",
+      "contentHash": "e60b1bc8be7084c6f9451e306624f588a439f74ad3896c9c4da627463daafbc3",
+      "extension": "svg",
+      "filename": "aia-group.svg"
+    },
+    {
+      "number": 4,
+      "id": "aig",
+      "name": "AIG",
+      "domain": "aig.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/AIG_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:AIG_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "American International Group<br>SVG version by <a href=\"//commons.wikimedia.org/wiki/User:Jbarta\" title=\"User:Jbarta\">JBarta</a>",
+        "credit": "Own work using: <a rel=\"nofollow\" class=\"external free\" href=\"http://www.aig.com\">http://www.aig.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/aig.svg",
+      "contentHash": "f7429f4390654b5c4534b28f3a6de11782572663c56b62a67b230aa36c4d3ba6",
+      "extension": "svg",
+      "filename": "aig.svg"
+    },
+    {
+      "number": 5,
+      "id": "air-france-klm",
+      "name": "Air France-KLM",
+      "domain": "airfranceklm.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Air_France_KLM_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Air_France_KLM_Group_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Air France KLM Group",
+        "credit": "Own work using: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.airfranceklm.com/en/system/files/rapport-annuel-2018_1.pdf\">2018 Annual Report</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/air-france-klm.svg",
+      "contentHash": "d0e2880c66235ee10f5b83ba27838e73fea5b9a5802704672f418356912fad46",
+      "extension": "svg",
+      "filename": "air-france-klm.svg"
+    },
+    {
+      "number": 6,
+      "id": "analog-devices",
+      "name": "Analog Devices",
+      "domain": "analog.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Analog_Devices_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Analog_Devices_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Connormah\" title=\"User:Connormah\">Connormah</a>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.analog.com/static/imported-files/corporate/ADI_Corporate_Logo_Guidelines.pdf\">http://www.analog.com/static/imported-files/corporate/ADI_Corporate_Logo_Guidelines.pdf</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/analog-devices.svg",
+      "contentHash": "8c52bbff79a2ef34812120dfd9ddbdd209703faf2043687344db722a1fafb0fa",
+      "extension": "svg",
+      "filename": "analog-devices.svg"
+    },
+    {
+      "number": 7,
+      "id": "arcelormittal",
+      "name": "ArcelorMittal",
+      "domain": "arcelormittal.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Arcelor_Mittal.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Arcelor_Mittal.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "ArcelorMittal",
+        "credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/arcelormittal.svg",
+      "contentHash": "6b6f1efac540902e787914546f5ec365c6e9423e837a8a9ea7b84d09d95e6a1d",
+      "extension": "svg",
+      "filename": "arcelormittal.svg"
+    },
+    {
+      "number": 8,
+      "id": "asml",
+      "name": "ASML",
+      "domain": "asml.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/ASML_Holding_N.V._logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:ASML_Holding_N.V._logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://www.wikidata.org/wiki/Q297879\" class=\"extiw\" title=\"d:Q297879\"><span title=\"Dutch company and supplier of photolithography systems\">ASML Holding</span></a>",
+        "credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/asml.svg",
+      "contentHash": "b0ebc06e55a0daab4c6463c37a40a92c51769a911b1236e3238a6fa7a267f63d",
+      "extension": "svg",
+      "filename": "asml.svg"
+    },
+    {
+      "number": 9,
+      "id": "asos",
+      "name": "ASOS",
+      "domain": "asos.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Asos.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Asos.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "ASOS Plc",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.asosplc.com\">http://www.asosplc.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/asos.svg",
+      "contentHash": "fd073acea6305fa992ff53ce88888dafab2d1504b0d68a3331d9211f92ce459e",
+      "extension": "svg",
+      "filename": "asos.svg"
+    },
+    {
+      "number": 10,
+      "id": "associated-british-foods",
+      "name": "Associated British Foods",
+      "domain": "abf.co.uk",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Associated_British_Foods_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Associated_British_Foods_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<a href=\"https://de.wikipedia.org/wiki/SVG\" class=\"extiw\" title=\"de:SVG\">SVG</a> erstellt mit <a href=\"https://de.wikipedia.org/wiki/Inkscape\" class=\"extiw\" title=\"de:Inkscape\">Inkscape</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/associated-british-foods.svg",
+      "contentHash": "6b66e68bbb068c1c7b95a5af609204fae52cf3896b0f689ed7315c12bef8efef",
+      "extension": "svg",
+      "filename": "associated-british-foods.svg"
+    },
+    {
+      "number": 11,
+      "id": "b-and-q",
+      "name": "B&Q",
+      "domain": "diy.com",
+      "split": "holdout",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/B%26Q_company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:B%26Q_company_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "B&amp;Q",
+        "credit": "diy.com / B&amp;Q",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/b-and-q.svg",
+      "contentHash": "35996606e0c6c4e78d2231e0e06bd855d0dc2b8c80a7420f7f618a2bfaf9b20d",
+      "extension": "svg",
+      "filename": "b-and-q.svg"
+    },
+    {
+      "number": 12,
+      "id": "barrick-mining",
+      "name": "Barrick Mining",
+      "domain": "barrick.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Barrick_Gold_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/en:Barrick_Mining\" class=\"extiw\" title=\"w:en:Barrick Mining\"><span title=\"company\">Barrick Mining Corporation</span></a>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.barrick.com/home/default.aspx\">https://www.barrick.com/home/default.aspx</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/barrick-mining.svg",
+      "contentHash": "5b385fa8bb63c3a3624986c283249925aeda6cfbdd89c50750c5ab22005a4f60",
+      "extension": "svg",
+      "filename": "barrick-mining.svg"
+    },
+    {
+      "number": 13,
+      "id": "berkshire-hathaway",
+      "name": "Berkshire Hathaway",
+      "domain": "berkshirehathaway.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Berkshire-Hathaway-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Berkshire-Hathaway-Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/en:Berkshire_Hathaway\" class=\"extiw\" title=\"w:en:Berkshire Hathaway\"><span title=\"American multinational conglomerate holding company\">Berkshire Hathaway</span></a>",
+        "credit": "<a href=\"https://en.wikipedia.org/wiki/File:Berkshire_Hathaway.svg\" class=\"extiw\" title=\"w:File:Berkshire Hathaway.svg\">File:Berkshire_Hathaway.svg</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/berkshire-hathaway.svg",
+      "contentHash": "bab6f6c1e94a34fb88f0ccd301c050dddf0a5dacade4a7e397f6d1642ba8bc7d",
+      "extension": "svg",
+      "filename": "berkshire-hathaway.svg"
+    },
+    {
+      "number": 14,
+      "id": "best-buy",
+      "name": "Best Buy",
+      "domain": "bestbuy.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Best_Buy_logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Best_Buy_logo_2018.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Best Buy",
+        "credit": "The logo may be obtained from Best Buy",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/best-buy.svg",
+      "contentHash": "df518f5f1cacbeb2439de84afe4d9f651666c58ccfa40303eb024f1c5a961f01",
+      "extension": "svg",
+      "filename": "best-buy.svg"
+    },
+    {
+      "number": 15,
+      "id": "blackstone",
+      "name": "Blackstone",
+      "domain": "blackstone.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/The_Blackstone_Group_logo_%282%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Blackstone_Group_logo_(2).svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "The Blackstone Group",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"http://blackstone.com\">Blackstone.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/blackstone.svg",
+      "contentHash": "154ee89611edf1e980bed66b89df080484c9f5da6f0383dcf041997b63923c0a",
+      "extension": "svg",
+      "filename": "blackstone.svg"
+    },
+    {
+      "number": 16,
+      "id": "bolt",
+      "name": "Bolt",
+      "domain": "bolt.eu",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Bolt_Technology_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bolt_Technology_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Bolt Technology OÜ",
+        "credit": "bolt.eu",
+        "copyrighted": "False",
+        "restrictions": "",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/bolt.svg",
+      "contentHash": "6be47939e5bc7c646fc0b2522d1a786c4bc32d28714c93bd6276a40a4badb738",
+      "extension": "svg",
+      "filename": "bolt.svg"
+    },
+    {
+      "number": 17,
+      "id": "bumble",
+      "name": "Bumble",
+      "domain": "bumble.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Bumble_Logo_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bumble_Logo_2025.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Bumble Holding Limited",
+        "credit": "www.bumble.com",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/bumble.svg",
+      "contentHash": "0163b8a5883a6c0f68eb08e2d83cf5522867b7bd1a40d861b100e610b82dc135",
+      "extension": "svg",
+      "filename": "bumble.svg"
+    },
+    {
+      "number": 18,
+      "id": "calvin-klein",
+      "name": "Calvin Klein",
+      "domain": "calvinklein.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Calvin_klein_logo_web23.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Calvin_klein_logo_web23.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Calvin Klein, Inc. (<a href=\"https://www.wikidata.org/wiki/Q1068628\" class=\"extiw\" title=\"d:Q1068628\"><span title=\"American fashion house\">Calvin Klein <small>(Q1068628)</small></span></a>)",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.calvinklein.com/\">https://www.calvinklein.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/calvin-klein.svg",
+      "contentHash": "a1ed18062f8ebb8974375b074432c1a8e22dd420234804353e637a1a2f7676ca",
+      "extension": "svg",
+      "filename": "calvin-klein.svg"
+    },
+    {
+      "number": 19,
+      "id": "canonical",
+      "name": "Canonical",
+      "domain": "canonical.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Canonical_logo_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Canonical_logo_2023.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Canonical Ltd.",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://drive.google.com/drive/folders/12XAkMrJX0bwCWMu7rkmQmU-tko7dg8Ji\">https://drive.google.com/drive/folders/12XAkMrJX0bwCWMu7rkmQmU-tko7dg8Ji</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/canonical.svg",
+      "contentHash": "64a9d96af5916450b60e48d99b9c07ae0735d244a9a1879f5944b3541d998211",
+      "extension": "svg",
+      "filename": "canonical.svg"
+    },
+    {
+      "number": 20,
+      "id": "cardinal-health",
+      "name": "Cardinal Health",
+      "domain": "cardinalhealth.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cardinal_Health_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Cardinal Health",
+        "credit": "www.cardinalhealth.com",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/cardinal-health.svg",
+      "contentHash": "4a05367935111e0906fbe33217578494d09f73186ffddfb7fdee494538cafaac",
+      "extension": "svg",
+      "filename": "cardinal-health.svg"
+    },
+    {
+      "number": 21,
+      "id": "cartoon-network",
+      "name": "Cartoon Network",
+      "domain": "cartoonnetwork.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Cartoon_Network_2010_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cartoon_Network_2010_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/Cartoon_Network\" class=\"extiw\" title=\"w:Cartoon Network\">Cartoon Network</a> (<a href=\"https://en.wikipedia.org/wiki/Warner_Bros._Discovery\" class=\"extiw\" title=\"w:Warner Bros. Discovery\">Warner Bros. Discovery</a>)",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.cartoonnetwork.com\">https://www.cartoonnetwork.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/cartoon-network.svg",
+      "contentHash": "2b0a719d5d695bf27588d085dd41941a0eb5d7875ee145f5edd500ccc4ef7604",
+      "extension": "svg",
+      "filename": "cartoon-network.svg"
+    },
+    {
+      "number": 22,
+      "id": "castorama",
+      "name": "Castorama",
+      "domain": "castorama.fr",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Castorama_-_logo_(France,_2014-).svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "Own work using: <a rel=\"nofollow\" class=\"external free\" href=\"http://www.kingfisher.com/index.asp?pageid=117\">http://www.kingfisher.com/index.asp?pageid=117</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/castorama.svg",
+      "contentHash": "bcd9468fa37b11ed61f5aba96670e8acd77240af499ba061a5c907375c17783d",
+      "extension": "svg",
+      "filename": "castorama.svg"
+    },
+    {
+      "number": 23,
+      "id": "character-ai",
+      "name": "Character.AI",
+      "domain": "character.ai",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Character.ai_2023_vector_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Character.ai_2023_vector_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/Character.ai\" class=\"extiw\" title=\"w:Character.ai\">Character.ai</a>",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://character.ai/\">Official website</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/character-ai.svg",
+      "contentHash": "67aa5371275d321118e0c015e21885544783b168dedf2fd04e7ffecbee3b2791",
+      "extension": "svg",
+      "filename": "character-ai.svg"
+    },
+    {
+      "number": 24,
+      "id": "chevron",
+      "name": "Chevron",
+      "domain": "chevron.com",
+      "split": "holdout",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Chevron_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Chevron_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/Chevron_Corporation\" class=\"extiw\" title=\"w:Chevron Corporation\">Chevron Corporation</a>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.chevron.com\">https://www.chevron.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/chevron.svg",
+      "contentHash": "9493eafb2e48bf909a88c744006d8c37e4973d1bad8abcde2db306f92d7adffc",
+      "extension": "svg",
+      "filename": "chevron.svg"
+    },
+    {
+      "number": 25,
+      "id": "clinique",
+      "name": "Clinique",
+      "domain": "clinique.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Clinique_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Clinique_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Clinique Laboratories",
+        "credit": "www.clinique.com",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/clinique.svg",
+      "contentHash": "b270bb3eb8556c03a50d5020917bdf3d9a3335ca0cefd9738632ce1773e8758c",
+      "extension": "svg",
+      "filename": "clinique.svg"
+    },
+    {
+      "number": 26,
+      "id": "cnooc",
+      "name": "CNOOC",
+      "domain": "cnooc.com.cn",
+      "split": "development",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/CNOOC_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:CNOOC_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "China National Offshore Oil Corporation",
+        "credit": "www.cnooc.com.cn",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/cnooc.svg",
+      "contentHash": "38b8a9afaa6d480a46ec4217daed0a77e619b0c9e6ab060d3d78ed4b645c028f",
+      "extension": "svg",
+      "filename": "cnooc.svg"
+    },
+    {
+      "number": 27,
+      "id": "coca-cola-company",
+      "name": "The Coca-Cola Company",
+      "domain": "coca-colacompany.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/The_Coca-Cola_Company_%282020%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:The_Coca-Cola_Company_(2020).svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "The Coca-Cola Company",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.coca-colacompany.com/content/dam/journey/us/en/logos/TCCC_PrimaryWordmark_Horizontal_Black.svg\">Source</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/coca-cola-company.svg",
+      "contentHash": "d2885ab26f57ed7da6129a38a70e8e293853d95f0b575c8a0d145d2c859e9b5b",
+      "extension": "svg",
+      "filename": "coca-cola-company.svg"
+    },
+    {
+      "number": 28,
+      "id": "costco",
+      "name": "Costco",
+      "domain": "costco.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/Costco_Wholesale_logo_2010-10-26.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Costco_Wholesale_logo_2010-10-26.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Costco Wholesale",
+        "credit": "Costco Wholesale",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/costco.svg",
+      "contentHash": "9c769076aaad8c2cf16a888dee9326df7e67c4cf350fab0574209366e1fb61ac",
+      "extension": "svg",
+      "filename": "costco.svg"
+    },
+    {
+      "number": 29,
+      "id": "cummins",
+      "name": "Cummins",
+      "domain": "cummins.com",
+      "split": "holdout",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Cummins_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cummins_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Paul_Rand\" class=\"extiw\" title=\"w:en:Paul Rand\"><span title=\"American graphic designer (1914–1996)\">Paul Rand</span></a></bdi>",
+        "credit": "Cummins web",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/cummins.svg",
+      "contentHash": "ca09429f77496d0d39d872930d80344d19e0fea07be44d3bcb8a8e22178b8699",
+      "extension": "svg",
+      "filename": "cummins.svg"
+    },
+    {
+      "number": 30,
+      "id": "cyberark",
+      "name": "CyberArk",
+      "domain": "cyberark.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Cyberark-logo-dark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cyberark-logo-dark.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "CyberArk",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.cyberark.com/wp-content/uploads/2021/01/cyberark-logo-dark.svg\">https://www.cyberark.com/wp-content/uploads/2021/01/cyberark-logo-dark.svg</a>",
+        "copyrighted": "False",
+        "restrictions": "",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/cyberark.svg",
+      "contentHash": "67e2f25233ffe02ea0a70301e7440e6371d8943ca3f759b1d128b590e7e9419b",
+      "extension": "svg",
+      "filename": "cyberark.svg"
+    },
+    {
+      "number": 31,
+      "id": "dell",
+      "name": "Dell",
+      "domain": "dell.com",
+      "split": "development",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Dell_logo_2016.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Brand Union Studio (NY)<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span class=\"cite-bracket\">[</span>1<span class=\"cite-bracket\">]</span></a></sup>",
+        "credit": "Extracted from <a rel=\"nofollow\" class=\"external text\" href=\"http://afcs.dell.com/content_home/css/app/dell-ui-theme/fonts/icon-brand.svg\"><code>icon-brand.svg</code></a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/dell.svg",
+      "contentHash": "06ce277329214d46aebd83c51f5a3d8c16114001de01bdc66ef68905f89e4f35",
+      "extension": "svg",
+      "filename": "dell.svg"
+    },
+    {
+      "number": 32,
+      "id": "digitalocean",
+      "name": "DigitalOcean",
+      "domain": "digitalocean.com",
+      "split": "holdout",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/DigitalOcean_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:DigitalOcean_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "DigitalOcean",
+        "credit": "DigitalOcean",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/digitalocean.svg",
+      "contentHash": "48641c14f32943c23a4d4bcdd15956fc93f25749e3307f3f0ad3a72eb6f1437f",
+      "extension": "svg",
+      "filename": "digitalocean.svg"
+    },
+    {
+      "number": 33,
+      "id": "dominion-energy",
+      "name": "Dominion Energy",
+      "domain": "dominionenergy.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Dominion_Energy_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Dominion_Energy_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Dominion Energy",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.dominionenergy.com/library/domcom/pdfs/investors/annual-reports/dom-annual-2016/dom-annual-print.pdf?la=en\">https://www.dominionenergy.com/library/domcom/pdfs/investors/annual-reports/dom-annual-2016/dom-annual-print.pdf?la=en</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/dominion-energy.svg",
+      "contentHash": "638060d96a1bf69a41b4c538bdcc4e1e801d4e0db4a69f61c15f213d73fdcd9f",
+      "extension": "svg",
+      "filename": "dominion-energy.svg"
+    },
+    {
+      "number": 34,
+      "id": "electronic-arts",
+      "name": "Electronic Arts",
+      "domain": "ea.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Electronic_Arts_2020.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Electronic_Arts_2020.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Electronic Arts - Skylight Collective",
+        "credit": "<p>Taken from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ea.com/\">Electronic Arts</a>' websites.\n</p><p><b>EA logo</b>: <a rel=\"nofollow\" class=\"external free\" href=\"https://media.contentapi.ea.com/content/dam/eacom/en-us/common/october-ea-ring.png\">https://media.contentapi.ea.com/content/dam/eacom/en-us/common/october-ea-ring.png</a>\n</p>\n<b>Wordmark</b>: <a rel=\"nofollow\" class=\"external free\" href=\"https://vignette.wikia.nocookie.net/logopedia/images/3/39/Electronic_Arts_2020_wordmark.svg/revision/latest?cb=20200620183630\">https://vignette.wikia.nocookie.net/logopedia/images/3/39/Electronic_Arts_2020_wordmark.svg/revision/latest?cb=20200620183630</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/electronic-arts.svg",
+      "contentHash": "b61aaa182008050320e2a5365190a5bfc7dc1f290b094780a56c2bc7aaceba15",
+      "extension": "svg",
+      "filename": "electronic-arts.svg"
+    },
+    {
+      "number": 35,
+      "id": "eli-lilly",
+      "name": "Eli Lilly",
+      "domain": "lilly.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Eli_Lilly_and_Company.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Eli_Lilly_and_Company.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Eli Lilly and Company, converted to PNG by <a href=\"https://en.wikipedia.org/wiki/User:Huwmanbeing\" class=\"extiw\" title=\"en:User:Huwmanbeing\">Huwmanbeing</a>",
+        "credit": "The Eli Lilly and Company website at <a rel=\"nofollow\" class=\"external text\" href=\"http://www.lilly.com/\">www.lilly.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/eli-lilly.svg",
+      "contentHash": "0cfc34726a793965a11f7e2807c68d8863525d3441ac551ea9ce6a492f9b1d6b",
+      "extension": "svg",
+      "filename": "eli-lilly.svg"
+    },
+    {
+      "number": 36,
+      "id": "emirates",
+      "name": "Emirates",
+      "domain": "emirates.com",
+      "split": "development",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Emirates_banner_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Emirates_banner_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Fly Emirates Group",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.emirates.com/\">https://www.emirates.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/emirates.svg",
+      "contentHash": "d067d6cf2b9d071b4ee66edcb29a526beeca9c5cc07ba02a5d20c534489ec728",
+      "extension": "svg",
+      "filename": "emirates.svg"
+    },
+    {
+      "number": 37,
+      "id": "fendi",
+      "name": "Fendi",
+      "domain": "fendi.com",
+      "split": "holdout",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Fendi_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fendi_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Fendi",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.fendi.com\">http://www.fendi.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/fendi.svg",
+      "contentHash": "268347be925d55817371d1563c155d47566c343fbfd6058dd57087cfc6e44fd5",
+      "extension": "svg",
+      "filename": "fendi.svg"
+    },
+    {
+      "number": 38,
+      "id": "fitbit",
+      "name": "Fitbit",
+      "domain": "fitbit.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Fitbit_logo16.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fitbit_logo16.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://assets.fitbit.com/production/109d9919a44b792ebe64e520c3b57dc2.svg\">Here</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/fitbit.svg",
+      "contentHash": "14ad0f296f69ed5c58e96e009975133f98e65f636ea67cee2173efa358213208",
+      "extension": "svg",
+      "filename": "fitbit.svg"
+    },
+    {
+      "number": 39,
+      "id": "freeport-mcmoran",
+      "name": "Freeport-McMoRan",
+      "domain": "fcx.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Freeport_McMoRan.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Freeport_McMoRan.png",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Freeport-McMoRan",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.fcx.com/index.htm\">http://www.fcx.com/index.htm</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/freeport-mcmoran.png",
+      "contentHash": "2376802d27e34779336fc569435900357860b63563751a00a6b07ddba3f392b5",
+      "extension": "png",
+      "filename": "freeport-mcmoran.png"
+    },
+    {
+      "number": 40,
+      "id": "ge-aerospace",
+      "name": "GE Aerospace",
+      "domain": "geaerospace.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/GE_Aerospace_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:GE_Aerospace_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "GE Aerospace/Interbrand (design firm)",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.geaerospace.com/themes/custom/ge_sub_theme/logo.svg\">https://www.geaerospace.com/themes/custom/ge_sub_theme/logo.svg</a> ; Color: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.geaerospace.com/\">https://www.geaerospace.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/ge-aerospace.svg",
+      "contentHash": "1aa247a0aae4fddc26cf6767a427b9ff9535ee8a82f9702dcd45c9b05b4e3a11",
+      "extension": "svg",
+      "filename": "ge-aerospace.svg"
+    },
+    {
+      "number": 41,
+      "id": "harman",
+      "name": "Harman",
+      "domain": "harman.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Harman_International_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Harman_International_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Harman International Industries",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.harman.com/\">http://www.harman.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/harman.svg",
+      "contentHash": "fcf4f0018cee880bae989a132733923876e8060ce1c62754b2f764030d7c53c4",
+      "extension": "svg",
+      "filename": "harman.svg"
+    },
+    {
+      "number": 42,
+      "id": "hashicorp",
+      "name": "HashiCorp",
+      "domain": "hashicorp.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/HashiCorp_horizontal_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:HashiCorp_horizontal_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:HashiCorp\" class=\"extiw\" title=\"w:en:HashiCorp\"><span title=\"American software company\">HashiCorp</span></a>\n</bdi>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://brand.hashicorp.com/brand_logos\">https://brand.hashicorp.com/brand_logos</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/hashicorp.svg",
+      "contentHash": "5be053ac8875f85be1ab9242a80c5f989055df0db96f82883fc35f563c0f2392",
+      "extension": "svg",
+      "filename": "hashicorp.svg"
+    },
+    {
+      "number": 43,
+      "id": "hitachi",
+      "name": "Hitachi",
+      "domain": "hitachi.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Hitachi_2025_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Hitachi_2025_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Hitachi, Ltd.",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.hitachi.co.jp/\">https://www.hitachi.co.jp/</a>",
+        "copyrighted": "False",
+        "restrictions": "",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/hitachi.svg",
+      "contentHash": "6b68732647c9b06cb4153cc91049efc8356d7edf84287a71966ac053592dd14a",
+      "extension": "svg",
+      "filename": "hitachi.svg"
+    },
+    {
+      "number": 44,
+      "id": "hpe",
+      "name": "HPE",
+      "domain": "hpe.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Hewlett_Packard_Enterprise_logo_2025_expanded.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Hewlett_Packard_Enterprise_logo_2025_expanded.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Hewlett Packard Enterprise Company",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.hpe.com/content/dam/hpe/shared-publishing/SVG-Icons/Footer_Logo_Light.svg\">http://www.hpe.com/content/dam/hpe/shared-publishing/SVG-Icons/Footer_Logo_Light.svg</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/hpe.svg",
+      "contentHash": "f8a2f54ff3aef844a37e1895c9d296fc471efe4ae42bb0a4bdeb03b488376fc5",
+      "extension": "svg",
+      "filename": "hpe.svg"
+    },
+    {
+      "number": 45,
+      "id": "iberdrola",
+      "name": "Iberdrola",
+      "domain": "iberdrola.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Logo_Iberdrola_%282023%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Logo_Iberdrola_(2023).svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"//commons.wikimedia.org/wiki/Iberdrola\" class=\"mw-redirect\" title=\"Iberdrola\">Iberdrola</a>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.iberdrola.com/\">https://www.iberdrola.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/iberdrola.svg",
+      "contentHash": "c201465b75dfab4be6fdd13695b3af8ad615faf5b66cf6709cd5013d42293803",
+      "extension": "svg",
+      "filename": "iberdrola.svg"
+    },
+    {
+      "number": 46,
+      "id": "intesa-sanpaolo",
+      "name": "Intesa Sanpaolo",
+      "domain": "intesasanpaolo.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Intesa_Sanpaolo_-_logo_(Italy,_2007-).svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Intesa SanPaolo",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://group.intesasanpaolo.com/en/about-us/our-brand\">Brand page of the official site</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/intesa-sanpaolo.svg",
+      "contentHash": "ea18101e1c758785b9896018f6e93f9204195d3fd390466e85bef8760ef7302b",
+      "extension": "svg",
+      "filename": "intesa-sanpaolo.svg"
+    },
+    {
+      "number": 47,
+      "id": "kddi",
+      "name": "KDDI",
+      "domain": "kddi.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/KDDI_logos.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:KDDI_logos.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"//commons.wikimedia.org/wiki/User:%E9%89%84%E4%B9%8B%E4%BB%8B\" title=\"User:鉄之介\">鉄之介</a>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.kddi.com/\">http://www.kddi.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/kddi.svg",
+      "contentHash": "d2b1abb73221883e0edcc0b3c51845272a45c6ecaaaab804b073b6954048a644",
+      "extension": "svg",
+      "filename": "kddi.svg"
+    },
+    {
+      "number": 48,
+      "id": "kingfisher",
+      "name": "Kingfisher",
+      "domain": "kingfisher.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Kingfisher_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Kingfisher_logo.png",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Kingfisher plc",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.kingfisher.com/en/index.html\">https://www.kingfisher.com/en/index.html</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/kingfisher.png",
+      "contentHash": "d4189ab753a0f5e0bd8b995a1c9082e69f57c1b60c37c76b0ca2c3d4815e6176",
+      "extension": "png",
+      "filename": "kingfisher.png"
+    },
+    {
+      "number": 49,
+      "id": "kroger",
+      "name": "Kroger",
+      "domain": "kroger.com",
+      "split": "development",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Kroger_logo_%281961-2019%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Kroger_logo_(1961-2019).svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/en:Kroger\" class=\"extiw\" title=\"w:en:Kroger\"><span title=\"American multinational retailing company\">Kroger</span></a>",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.kroger.com\">Kroger.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/kroger.svg",
+      "contentHash": "c6c6b5e4108c137e4e5648431bcc8e5739a8e32beb5e997220a5840fe56360ee",
+      "extension": "svg",
+      "filename": "kroger.svg"
+    },
+    {
+      "number": 50,
+      "id": "kubota",
+      "name": "Kubota",
+      "domain": "kubota.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Kubota-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Kubota-Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://de.wikipedia.org/wiki/Kubota_(Unternehmen)\" class=\"extiw\" title=\"de:Kubota (Unternehmen)\">Kubota</a>",
+        "credit": "<a href=\"https://en.wikipedia.org/wiki/en:File:Kubota_Logo.svg\" class=\"extiw\" title=\"w:en:File:Kubota Logo.svg\">englischsprachige Wikipedia</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/kubota.svg",
+      "contentHash": "11d8c0cec235a94857fbe4eef65721b09e978fce910a4912c7bff44eb542aed4",
+      "extension": "svg",
+      "filename": "kubota.svg"
+    },
+    {
+      "number": 51,
+      "id": "l3harris",
+      "name": "L3Harris",
+      "domain": "l3harris.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/L3Harris_Technologies_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:L3Harris_Technologies_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "L3Harris Technologies",
+        "credit": "L3Harris_logo.zip\\1_Logo_versions\\2_Logo_tm\\SVG\\L3Harris_logo_tm_rgb.svg from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.l3harris.com/media-resources\">https://www.l3harris.com/media-resources</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/l3harris.svg",
+      "contentHash": "58da3e7421b81e478ba579d82274c5c5ef58d8ec9241c8779731a214165d2af4",
+      "extension": "svg",
+      "filename": "l3harris.svg"
+    },
+    {
+      "number": 52,
+      "id": "lawson",
+      "name": "Lawson",
+      "domain": "lawson.jp",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Lawson_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Lawson_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://de.fifa.com/mm/document/tournament/competition/01/64/54/28/fcwc2012_matchschedule.pdf\">http://de.fifa.com/mm/document/tournament/competition/01/64/54/28/fcwc2012_matchschedule.pdf</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/lawson.svg",
+      "contentHash": "053ee3b152dea6c3ead82e3b4f681275c9f695618183c3b93b310fab481a9cdb",
+      "extension": "svg",
+      "filename": "lawson.svg"
+    },
+    {
+      "number": 53,
+      "id": "linode",
+      "name": "Linode",
+      "domain": "linode.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Linode_updated_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Linode_updated_logo.png",
+      "license": {
+        "license_short_name": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "attribution_required": "false",
+        "artist": "Christopher Aker",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.linode.com/company/press/\">https://www.linode.com/company/press/</a>",
+        "copyrighted": "True",
+        "restrictions": "",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/linode.png",
+      "contentHash": "5c79d8a063c761e329e04b3e772ea565b75804d8b4da1a61cf04e463da1f5355",
+      "extension": "png",
+      "filename": "linode.png"
+    },
+    {
+      "number": 54,
+      "id": "loewe",
+      "name": "Loewe",
+      "domain": "loewe.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Loewe_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Loewe_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Loewe",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.lvmh.com/news-documents/news/loewe-unveils-new-visual-identity/\">LVMH: Loewe unveils new visual identity</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/loewe.svg",
+      "contentHash": "f55f7883f61d68388a6bcb5aa7cbf793ac5c8fd831b2ef52818fe9cc80e2f7b2",
+      "extension": "svg",
+      "filename": "loewe.svg"
+    },
+    {
+      "number": 55,
+      "id": "lufthansa",
+      "name": "Lufthansa",
+      "domain": "lufthansa.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Lufthansa_Logo_2018.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Lufthansa Group",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://corporatedesign.lufthansa.com/d/Sy9Wlqgm4YPF/downloads\">Lufthansa Styleguide y0.9 - Downloads</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/lufthansa.svg",
+      "contentHash": "08d5ac5e7c619ef7931ca95af2831ce82fca11882dbb56267da1f9e01c464eda",
+      "extension": "svg",
+      "filename": "lufthansa.svg"
+    },
+    {
+      "number": 56,
+      "id": "mango",
+      "name": "Mango",
+      "domain": "mango.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Logo_of_Mango_%28new%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Logo_of_Mango_(new).svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.mango.com/web/oi/servicios/company/CA/comunicacion/dossier_economico.pdf\">http://www.mango.com/web/oi/servicios/company/CA/comunicacion/dossier_economico.pdf</a>",
+        "credit": "Mango",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/mango.svg",
+      "contentHash": "db87855f532a5a5982e1eb37b01dc7f1b73d456da08233968f2d2dc16326e62e",
+      "extension": "svg",
+      "filename": "mango.svg"
+    },
+    {
+      "number": 57,
+      "id": "maybelline",
+      "name": "Maybelline",
+      "domain": "maybelline.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Maybelline-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Maybelline-Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://de.wikipedia.org/wiki/L%E2%80%99Or%C3%A9al\" class=\"extiw\" title=\"de:L’Oréal\">L’Oréal</a>",
+        "credit": "Aus Skip-PDF",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/maybelline.svg",
+      "contentHash": "73e3555a6fa36cc3670e77a21af892dc48998c9df3749a2971816f68277ffc3d",
+      "extension": "svg",
+      "filename": "maybelline.svg"
+    },
+    {
+      "number": 58,
+      "id": "mckinsey-company",
+      "name": "McKinsey & Company",
+      "domain": "mckinsey.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/McKinsey_Script_Mark_2019.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:McKinsey_Script_Mark_2019.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Wolf Ollins Studio",
+        "credit": "SVG extracted from mck_icons on <a rel=\"nofollow\" class=\"external text\" href=\"https://www.mckinsey.com/\">https://www.mckinsey.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/mckinsey-company.svg",
+      "contentHash": "adc56256915d475838fe590d579e88818e5a603cc3761ba5e1a131ae7ddffbb3",
+      "extension": "svg",
+      "filename": "mckinsey-company.svg"
+    },
+    {
+      "number": 59,
+      "id": "medium",
+      "name": "Medium",
+      "domain": "medium.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Medium_%28website%29_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Medium_(website)_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "A Medium Corporation",
+        "credit": "Karene Tropen (<span class=\"mw-formatted-date\" title=\"2020-10-14\">October 14, 2020</span>). <a rel=\"nofollow\" class=\"external text\" href=\"https://blog.medium.com/a-more-expressive-medium-starting-with-medium-63b562206d8f#a433\">A more expressive Medium — starting with Medium (\"Logomark\")</a> <span style=\"font-size: 0.95em; font-weight: bold; color:#555; position: relative;\">(English)</span>. <i>blog.medium.com</i>.m",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/medium.svg",
+      "contentHash": "06a4518c54a5c45ee86884e0e6adabc01b01197ff4c91c0a4d362931f4f407a1",
+      "extension": "svg",
+      "filename": "medium.svg"
+    },
+    {
+      "number": 60,
+      "id": "michelin",
+      "name": "Michelin",
+      "domain": "michelin.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Michelin_Wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Michelin_Wordmark.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Trademarked by Michelin/Registrado por Michelin. Upload by: <a href=\"//commons.wikimedia.org/wiki/User:Spider_pig\" class=\"mw-redirect\" title=\"User:Spider pig\">Spider_pig</a>",
+        "credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/michelin.svg",
+      "contentHash": "eaf42780bc21c4734d5a613e528776e5eab00adedbf89202f9d6aee81876b2df",
+      "extension": "svg",
+      "filename": "michelin.svg"
+    },
+    {
+      "number": 61,
+      "id": "micron",
+      "name": "Micron",
+      "domain": "micron.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Micron_Technology_logo_2024.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Micron_Technology_logo_2024.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Micron Technology, Inc.",
+        "credit": "Own work using: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.micron.com/content/dam/micron/global/images/logos/micron-logo-black.zip\">https://www.micron.com/content/dam/micron/global/images/logos/micron-logo-black.zip</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/micron.svg",
+      "contentHash": "58efeb225ac55c7e0bf198e403f84815abbe49f4084178e1e199cb98c2eb59aa",
+      "extension": "svg",
+      "filename": "micron.svg"
+    },
+    {
+      "number": 62,
+      "id": "mitsubishi-fuso",
+      "name": "Mitsubishi Fuso",
+      "domain": "mitsubishi-fuso.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Fuso_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fuso_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Mitsubishi Fuso Truck and Bus Corporation",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.mitsubishi-fuso.com/ja/\">https://www.mitsubishi-fuso.com/ja/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/mitsubishi-fuso.svg",
+      "contentHash": "ed1d7b5aad9e581f2863f257c0ea77b9809f7c19e61ba3ea6c8e925eedc1a381",
+      "extension": "svg",
+      "filename": "mitsubishi-fuso.svg"
+    },
+    {
+      "number": 63,
+      "id": "moodys",
+      "name": "Moody's",
+      "domain": "moodys.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Moody%27s_new_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Moody%27s_new_logo.png",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.moodys.com/\">https://www.moodys.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/moodys.png",
+      "contentHash": "fcbfbece5da6fc1b1fc54936031a918ed6bed2cc033dfadaeface0ab1333e780",
+      "extension": "png",
+      "filename": "moodys.png"
+    },
+    {
+      "number": 64,
+      "id": "msc-group",
+      "name": "MSC Group",
+      "domain": "msc.com",
+      "split": "development",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Mediterranean_Shipping_Company_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Mediterranean Shipping Company",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.msc.com/getattachment/37d2fe6c-6762-4a69-a3e7-dcab567124f8/636567108367178465\">https://www.msc.com/getattachment/37d2fe6c-6762-4a69-a3e7-dcab567124f8/636567108367178465</a> (PDF)",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/msc-group.svg",
+      "contentHash": "895105353d72b0cd2dc017fd4fae2c2e442a4c3c84f0d939da6ec0a173adb60a",
+      "extension": "svg",
+      "filename": "msc-group.svg"
+    },
+    {
+      "number": 65,
+      "id": "nasdaq",
+      "name": "Nasdaq",
+      "domain": "nasdaq.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/NASDAQ_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:NASDAQ_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/en:Nasdaq\" class=\"extiw\" title=\"w:en:Nasdaq\"><span title=\"American fully electronic stock exchange\">Nasdaq</span></a>",
+        "credit": "Extracted from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.nasdaq.net/PublicPages/assets/MyMID/Trade_Calendar_2019.pdf\">https://www.nasdaq.net/PublicPages/assets/MyMID/Trade_Calendar_2019.pdf</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/nasdaq.svg",
+      "contentHash": "b86d39326a2d2e258b93454c4f11ee11a47c24eb33b3c0e88995db29967f6cba",
+      "extension": "svg",
+      "filename": "nasdaq.svg"
+    },
+    {
+      "number": 66,
+      "id": "national-grid",
+      "name": "National Grid",
+      "domain": "nationalgrid.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Nattygridlogo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Nattygridlogo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.nationalgrid.com/\">https://www.nationalgrid.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/national-grid.svg",
+      "contentHash": "aeca9bda0b703e1e1ff1920cca9c67f25896e6d667d6bac35e308bd9e0ba9889",
+      "extension": "svg",
+      "filename": "national-grid.svg"
+    },
+    {
+      "number": 67,
+      "id": "nescafe",
+      "name": "Nescafé",
+      "domain": "nescafe.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Nescaf%C3%A9_logo_2014.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Nescaf%C3%A9_logo_2014.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Nestlé",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://logos.fandom.com/wiki/Nescaf%C3%A9#2014%E2%80%93present\">https://logos.fandom.com/wiki/Nescaf%C3%A9#2014%E2%80%93present</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/nescafe.svg",
+      "contentHash": "6851fb7e09d0750c8a8663f8bbf8294989dd033ea30f16e98efc80533f9d8208",
+      "extension": "svg",
+      "filename": "nescafe.svg"
+    },
+    {
+      "number": 68,
+      "id": "nexon",
+      "name": "Nexon",
+      "domain": "nexon.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Nexon.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Nexon.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Nexon Corporation",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.nexon.com\">http://www.nexon.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/nexon.svg",
+      "contentHash": "e29e6d8a44e77a45f207550eaaf1ef59f39f9676682d33b90f682c7d3335c6b8",
+      "extension": "svg",
+      "filename": "nexon.svg"
+    },
+    {
+      "number": 69,
+      "id": "nippon-steel",
+      "name": "Nippon Steel",
+      "domain": "nipponsteel.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Nippon_Steel_-_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Nippon Steel",
+        "credit": "<span class=\"url\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.nipponsteel.com/product/catalog_download/pdf/P001en.pdf\">nipponsteel.com/product/catalog download/pdf/P001en.pdf</a></span>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/nippon-steel.svg",
+      "contentHash": "6affdac3a631f86ffd0992472fd9e7f0f468f0f77454fb15d5b3f49fa95375b6",
+      "extension": "svg",
+      "filename": "nippon-steel.svg"
+    },
+    {
+      "number": 70,
+      "id": "ola",
+      "name": "Ola",
+      "domain": "olacabs.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ola_Cabs_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Ola_Cabs_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.olacabs.com/webstatic/img/OLA.svg\">https://www.olacabs.com/webstatic/img/OLA.svg</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/ola.svg",
+      "contentHash": "119138002e7b8f35ec01bb8d807e6c7833361455460c14db977a41f29e6c3eae",
+      "extension": "svg",
+      "filename": "ola.svg"
+    },
+    {
+      "number": 71,
+      "id": "oneplus",
+      "name": "OnePlus",
+      "domain": "oneplus.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/OP_LU_Reg_1L_RGB_red_copy-01.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:OP_LU_Reg_1L_RGB_red_copy-01.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "OnePlus",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.oneplus.com/uk/brand/asset\">https://www.oneplus.com/uk/brand/asset</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/oneplus.svg",
+      "contentHash": "85a42d5d6a14dccdf8cf85f64d507a729fea4485239720b01589579eb273d806",
+      "extension": "svg",
+      "filename": "oneplus.svg"
+    },
+    {
+      "number": 72,
+      "id": "orlen",
+      "name": "ORLEN",
+      "domain": "orlen.pl",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Orlen_wordmark_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Orlen_wordmark_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "ORLEN SA",
+        "credit": "www.orlen.pl",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/orlen.svg",
+      "contentHash": "467eb4cec9e954944d6506282e839a174ba36bbeef39775373776d08d2abe812",
+      "extension": "svg",
+      "filename": "orlen.svg"
+    },
+    {
+      "number": 73,
+      "id": "oxxo",
+      "name": "OXXO",
+      "domain": "oxxo.com",
+      "split": "holdout",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Oxxo_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Oxxo_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=Template:Maria_soledad_corrales_garcia.&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Template:Maria soledad corrales garcia. (page does not exist)\">Template:Maria soledad corrales garcia.</a>",
+        "credit": "<a href=\"https://de.wikipedia.org/wiki/SVG\" class=\"extiw\" title=\"de:SVG\">SVG</a> erzeugt mit <a href=\"https://de.wikipedia.org/wiki/Inkscape\" class=\"extiw\" title=\"de:Inkscape\">Inkscape</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/oxxo.svg",
+      "contentHash": "f03c5b9c30c234312ca6309799202f5fed22357a4fa0f1a6923141e7f13e712a",
+      "extension": "svg",
+      "filename": "oxxo.svg"
+    },
+    {
+      "number": 74,
+      "id": "palantir",
+      "name": "Palantir",
+      "domain": "palantir.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Palantir_Technologies_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Palantir_Technologies_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<p>Palantir Technologies.\n</p>\nThe original uploader was <a href=\"https://en.wikipedia.org/wiki/User:KarimKoueider\" class=\"extiw\" title=\"wikipedia:User:KarimKoueider\">KarimKoueider</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>.",
+        "credit": "<p><bdi lang=\"en\" dir=\"ltr\">Transferred from <span class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//en.wikipedia.org\" href=\"https://en.wikipedia.org\">en.wikipedia</a></span> to Commons.</bdi><br>\n</p>\n(Original text : <i><a rel=\"nofollow\" class=\"external free\" href=\"https://investors.palantir.com/home/default.aspx\">https://investors.palantir.com/home/default.aspx</a></i>)",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/palantir.svg",
+      "contentHash": "6cb92a53619513e852029a0f405f65b27cd1443b2c37e1d94186d19ffe876e44",
+      "extension": "svg",
+      "filename": "palantir.svg"
+    },
+    {
+      "number": 75,
+      "id": "petrobras",
+      "name": "Petrobras",
+      "domain": "petrobras.com.br",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Petrobras_horizontal_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Petrobras_horizontal_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Petrobras - Petróleo Brasileiro S.A.",
+        "credit": "Own work based on: <a rel=\"nofollow\" class=\"external text\" href=\"http://www.petrobras.com.br/pt/quem-somos/perfil/a-marca-petrobras/caderno-de-assinaturas/\">Caderno de assinaturas</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/petrobras.svg",
+      "contentHash": "89eeb478084d32e4c5d1d85caef2dc027fdc53c6cba95fbf8a6d360df39ed0d9",
+      "extension": "svg",
+      "filename": "petrobras.svg"
+    },
+    {
+      "number": 76,
+      "id": "pokemon",
+      "name": "Pokémon",
+      "domain": "pokemon.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:International_Pok%C3%A9mon_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/The_Pok%C3%A9mon_Company\" class=\"extiw\" title=\"w:The Pokémon Company\">Pokémon</a>, <a href=\"https://en.wikipedia.org/wiki/Nintendo\" class=\"extiw\" title=\"w:Nintendo\">Nintendo</a>/<a href=\"https://en.wikipedia.org/wiki/Creatures_(company)\" class=\"extiw\" title=\"w:Creatures (company)\">Creatures Inc.</a>/<a href=\"https://en.wikipedia.org/wiki/Game_Freak\" class=\"extiw\" title=\"w:Game Freak\">Game Freak Inc.</a>",
+        "credit": "<bdi lang=\"en\" dir=\"ltr\">Transferred from <span class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//en.wikipedia.org\" href=\"https://en.wikipedia.org\">en.wikipedia</a></span> to Commons.</bdi> Based on DVD boxart.",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/pokemon.svg",
+      "contentHash": "9b356095a31f462dd8f0e123e2713158edf08749348c0c06c0641b59152b180f",
+      "extension": "svg",
+      "filename": "pokemon.svg"
+    },
+    {
+      "number": 77,
+      "id": "proximus",
+      "name": "Proximus",
+      "domain": "proximus.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Proximus_logo_2014.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Proximus_logo_2014.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Proximus",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.proximus.com/sites/default/files/proximus.zip\">Proximus Image bank Pictures</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/proximus.svg",
+      "contentHash": "201ed7cc85e80fd5e5e64dedae6a73f62af3524eab32066a5e2067267de330d5",
+      "extension": "svg",
+      "filename": "proximus.svg"
+    },
+    {
+      "number": 78,
+      "id": "qatar-airways",
+      "name": "Qatar Airways",
+      "domain": "qatarairways.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Qatar_Airways_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Qatar_Airways_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/Qatar_Airways\" class=\"extiw\" title=\"w:Qatar Airways\">Qatar Airways</a>",
+        "credit": "Own work based on: <a href=\"//commons.wikimedia.org/wiki/File:Qatar_Airways_Logo.png\" title=\"File:Qatar Airways Logo.png\">Qatar Airways Logo.png</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/qatar-airways.svg",
+      "contentHash": "22ebea491ab3e26d5abd66092b077417223fef82e5abe979018d0eec5fd7ae7c",
+      "extension": "svg",
+      "filename": "qatar-airways.svg"
+    },
+    {
+      "number": 79,
+      "id": "qualtrics",
+      "name": "Qualtrics",
+      "domain": "qualtrics.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Qualtrics_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Qualtrics_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Qualtrics",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.qualtrics.com/employee-pulse/\">https://www.qualtrics.com/employee-pulse/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/qualtrics.svg",
+      "contentHash": "c54e33d35f7d2acd9cff6b104c858441d81ed7101baa160ec04a55c425b168d4",
+      "extension": "svg",
+      "filename": "qualtrics.svg"
+    },
+    {
+      "number": 80,
+      "id": "rbc",
+      "name": "Royal Bank of Canada",
+      "domain": "rbc.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/RBC_logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RBC_logo.jpg",
+      "license": {
+        "license_short_name": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "attribution_required": "false",
+        "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Raysonho\" title=\"User:Raysonho\">Raysonho @ Open Grid Scheduler / Grid Engine</a>",
+        "credit": "This file was derived from:  <a href=\"//commons.wikimedia.org/wiki/File:KingStreetWRBC.jpg\" title=\"File:KingStreetWRBC.jpg\">KingStreetWRBC.jpg</a>: <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:KingStreetWRBC.jpg\" class=\"mw-file-description\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/KingStreetWRBC.jpg/60px-KingStreetWRBC.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"33\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/KingStreetWRBC.jpg/120px-KingStreetWRBC.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"4608\" data-file-height=\"3072\"></a></span><br>",
+        "copyrighted": "True",
+        "restrictions": "",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/rbc.jpg",
+      "contentHash": "eb6b74d7103fd360ff8406b13dcc79a4d1861bb46aee78577989f0cac378fa23",
+      "extension": "jpg",
+      "filename": "rbc.jpg"
+    },
+    {
+      "number": 81,
+      "id": "royal-caribbean",
+      "name": "Royal Caribbean",
+      "domain": "royalcaribbean.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Royal_Caribbean_logo_(2024).svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Royal_Caribbean_International\" class=\"extiw\" title=\"w:en:Royal Caribbean International\"><span title=\"cruise line brand founded in Norway and based in Miami, Florida\">Royal Caribbean International</span></a>\n</bdi>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.royalcaribbean.com/\">https://www.royalcaribbean.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/royal-caribbean.svg",
+      "contentHash": "57944c1bbc32e2b0082e6633a87ebf80b09241ebc469fd9f7d6d570e0954c0d5",
+      "extension": "svg",
+      "filename": "royal-caribbean.svg"
+    },
+    {
+      "number": 82,
+      "id": "saab",
+      "name": "Saab",
+      "domain": "saab.com",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Saab_wordmark_blue.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Saab_wordmark_blue.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Saab",
+        "credit": "Own work using: <a rel=\"nofollow\" class=\"external free\" href=\"http://www.saabaircraft.com/download/files/340AInsertFAR.pdf\">http://www.saabaircraft.com/download/files/340AInsertFAR.pdf</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/saab.svg",
+      "contentHash": "c611a8fec505d4a7596ce548cfc9295d412d5416b9113416ebf30fb091cb8c8f",
+      "extension": "svg",
+      "filename": "saab.svg"
+    },
+    {
+      "number": 83,
+      "id": "saint-gobain",
+      "name": "Saint-Gobain",
+      "domain": "saint-gobain.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Saint-Gobain_Logo_2025.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint-Gobain_Logo_2025.png",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.saint-gobain.com/en\">https://www.saint-gobain.com/en</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/saint-gobain.png",
+      "contentHash": "ebc6d8c3acc341d8c2be8c1737c744290ae10aa47407dd6076a8541b4b4d71d5",
+      "extension": "png",
+      "filename": "saint-gobain.png"
+    },
+    {
+      "number": 84,
+      "id": "saks-fifth-avenue",
+      "name": "Saks Fifth Avenue",
+      "domain": "saksfifthavenue.com",
+      "split": "development",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:SaksFifthAvenueA.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<p><a href=\"https://en.wikipedia.org/wiki/Saks_Fifth_Avenue\" class=\"extiw\" title=\"en:Saks Fifth Avenue\">en:Saks Fifth Avenue</a>.\n</p>\nOriginal uploader was <a href=\"https://en.wikipedia.org/wiki/User:Vargklo\" class=\"extiw\" title=\"en:User:Vargklo\">Vargklo</a> at <a class=\"external text\" data-mw-original-href=\"http://en.wikipedia.org\" href=\"https://en.wikipedia.org\">en.wikipedia</a>",
+        "credit": "<a href=\"https://en.wikipedia.org/wiki/Saks_Fifth_Avenue\" class=\"extiw\" title=\"en:Saks Fifth Avenue\">en:Saks Fifth Avenue</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/saks-fifth-avenue.svg",
+      "contentHash": "74838b401b209198be7cab90e0d7c8685aba6ee7eea580198ee94ed9c8f27179",
+      "extension": "svg",
+      "filename": "saks-fifth-avenue.svg"
+    },
+    {
+      "number": 85,
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "domain": "se.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Schneider_Electric_2007.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Schneider_Electric_2007.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"http://www.schneider-electric.com/documents/presentation/en/local/2008/04/ra2007-eng5.pdf\">Schneider Electric Annual Report 2007</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/schneider-electric.svg",
+      "contentHash": "e773b1740e22fd269a7dde94ace37063143c74422b8f729b88099d617beb1409",
+      "extension": "svg",
+      "filename": "schneider-electric.svg"
+    },
+    {
+      "number": 86,
+      "id": "seagate",
+      "name": "Seagate",
+      "domain": "seagate.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Seagate_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Seagate_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Компания <a href=\"https://ru.wikipedia.org/wiki/Seagate\" class=\"extiw\" title=\"ru:Seagate\">Seagate</a> Technology LLC (правообладатель)",
+        "credit": "Публичные материалы официального сайта компании Seagate Technology LLC <a rel=\"nofollow\" class=\"external autonumber\" href=\"http://www.seagate.com/www/en-us/about/branding/seagate_logo/\">[1]</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/seagate.svg",
+      "contentHash": "941c62bb8b60eddd8fa0cd14ee0a3c049c672a8a09561149e0487ea0428df6a7",
+      "extension": "svg",
+      "filename": "seagate.svg"
+    },
+    {
+      "number": 87,
+      "id": "shein",
+      "name": "Shein",
+      "domain": "shein.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Shein_Logo_2017.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Shein_Logo_2017.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Shein",
+        "credit": "Shein.com",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/shein.svg",
+      "contentHash": "c393a471e10990364e2bf05fd160140946394db9df09bbae6a075c11ff4c18b1",
+      "extension": "svg",
+      "filename": "shein.svg"
+    },
+    {
+      "number": 88,
+      "id": "singapore-airlines",
+      "name": "Singapore Airlines",
+      "domain": "singaporeair.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Singapore_Airlines_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Singapore_Airlines_wordmark.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Singapore Airlines Limited",
+        "credit": "www.singaporeair.com",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/singapore-airlines.svg",
+      "contentHash": "445a696fd9c74b07468c189eb38e660577a89edffebc30bea582f16f4b4465dc",
+      "extension": "svg",
+      "filename": "singapore-airlines.svg"
+    },
+    {
+      "number": 89,
+      "id": "sophos",
+      "name": "Sophos",
+      "domain": "sophos.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Sophos_logo2.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Sophos_logo2.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "™/®Sophos Group plc",
+        "credit": "Vectorised by <a href=\"//commons.wikimedia.org/wiki/User:Vulphere\" class=\"mw-redirect\" title=\"User:Vulphere\">Vulphere</a> from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.thomabravo.com/hubfs/logo-sophos.svg\">https://www.thomabravo.com/hubfs/logo-sophos.svg</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/sophos.svg",
+      "contentHash": "3c893ce80faf088b5dd977f0942192f43a73ccb8dc8089e249c5c7457e9d86e7",
+      "extension": "svg",
+      "filename": "sophos.svg"
+    },
+    {
+      "number": 90,
+      "id": "stmicroelectronics",
+      "name": "STMicroelectronics",
+      "domain": "st.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/ST_logo_2020_blue_V.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:ST_logo_2020_blue_V.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "STMicroelectronics",
+        "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.st.com/content/st_com/en.html\">Official site</a> <span style=\"font-size: 0.95em; font-weight: bold; color:#555; position: relative;\">(English)</span>. Retrieved on <span class=\"mw-formatted-date\" title=\"2021-10-23\">2021-10-23</span>.",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/stmicroelectronics.svg",
+      "contentHash": "9129becb362d925ebdaf3d3af05755fab1b2ed4dd25464c8021d06c2f01c7867",
+      "extension": "svg",
+      "filename": "stmicroelectronics.svg"
+    },
+    {
+      "number": 91,
+      "id": "tanishq",
+      "name": "Tanishq",
+      "domain": "tanishq.co.in",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Tanishq_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Tanishq_Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Tanishq",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://tanishq.co.in/aleya_catalog.pdf\">http://tanishq.co.in/aleya_catalog.pdf</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/tanishq.svg",
+      "contentHash": "9ad45bae6ebf5a01074f2684fc948e53c3e4acc7fbbf97b6e6528cb9fb9b26c0",
+      "extension": "svg",
+      "filename": "tanishq.svg"
+    },
+    {
+      "number": 92,
+      "id": "tepco",
+      "name": "TEPCO",
+      "domain": "tepco.co.jp",
+      "split": "holdout",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/TEPCO_symbol.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:TEPCO_symbol.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Tokyo Electric Power Company, Inc.",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.tepco.co.jp/index-j.html\">http://www.tepco.co.jp/index-j.html</a>",
+        "copyrighted": "False",
+        "restrictions": "",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/tepco.svg",
+      "contentHash": "e411dc69a779dc1c94fb55a16c425c647368141af8dadfdff7b1038ac01e3199",
+      "extension": "svg",
+      "filename": "tepco.svg"
+    },
+    {
+      "number": 93,
+      "id": "tokopedia",
+      "name": "Tokopedia",
+      "domain": "tokopedia.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Tokopedia.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Tokopedia.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "RYL",
+        "credit": "PT Tokopedia",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/tokopedia.svg",
+      "contentHash": "8246b3e60b01a6412932069a1b4a0729be9437e247ae6bfe8418d05f379ad28c",
+      "extension": "svg",
+      "filename": "tokopedia.svg"
+    },
+    {
+      "number": 94,
+      "id": "traton",
+      "name": "TRATON",
+      "domain": "traton.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Traton_Group_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "<ul><li>Vektordaten: SVG aus <a rel=\"nofollow\" class=\"external free\" href=\"https://traton.com/de.html\">https://traton.com/de.html</a> entnommen</li>\n<li>Farbinfo: Screenshot von <a rel=\"nofollow\" class=\"external free\" href=\"https://traton.com/de.html\">https://traton.com/de.html</a></li></ul>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/traton.svg",
+      "contentHash": "42db13a644127446b2f21243ccbf3112c81f697444a73b18aeb514c543a79bbe",
+      "extension": "svg",
+      "filename": "traton.svg"
+    },
+    {
+      "number": 95,
+      "id": "trend-micro",
+      "name": "Trend Micro",
+      "domain": "trendmicro.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Trend_Micro_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Trend Micro",
+        "credit": "Официальный сайт Trend Micro",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/trend-micro.svg",
+      "contentHash": "2824e2e631589a20a1c2368b060aa0b8ae383b09ec1c54cc97d3127fe5a12231",
+      "extension": "svg",
+      "filename": "trend-micro.svg"
+    },
+    {
+      "number": 96,
+      "id": "umc",
+      "name": "UMC",
+      "domain": "umc.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/UMC-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:UMC-Logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+        "credit": "nicht angegeben",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/umc.svg",
+      "contentHash": "4783431c4bb639ba36eab30978fa0b0018acfdd5d1774279b3de55b21bf37c1b",
+      "extension": "svg",
+      "filename": "umc.svg"
+    },
+    {
+      "number": 97,
+      "id": "unity",
+      "name": "Unity",
+      "domain": "unity.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Unity_2021.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Unity_2021.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Unity Technologies",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://brandguide.brandfolder.com/unity/downloadbrandassets\">https://brandguide.brandfolder.com/unity/downloadbrandassets</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/unity.svg",
+      "contentHash": "1e8e23ab9614065e2a0bdf7f0ede57429a8ac331c15c38b9ae72128c24a7c2ce",
+      "extension": "svg",
+      "filename": "unity.svg"
+    },
+    {
+      "number": 98,
+      "id": "us-bancorp",
+      "name": "U.S. Bancorp",
+      "domain": "usbank.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/US_Bank_logo_2023_color.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:US_Bank_logo_2023_color.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "U.S. Bank NA",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.usbank.com\">https://www.usbank.com</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/us-bancorp.svg",
+      "contentHash": "45af6b9ccb8c5611f81cc5f99761b96cf7f12647446c34b8f5069bc50f1b365a",
+      "extension": "svg",
+      "filename": "us-bancorp.svg"
+    },
+    {
+      "number": 99,
+      "id": "waitrose",
+      "name": "Waitrose",
+      "domain": "waitrose.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Waitrose_%26_Partners_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Waitrose_%26_Partners_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Waitrose &amp; Partners (John Lewis Partnership)",
+        "credit": "www.waitrose.com",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/waitrose.svg",
+      "contentHash": "776d2e2bec0a4c74acc3af8d56d0ad59aa5eb36a1bbe90cc21d47714b63b6327",
+      "extension": "svg",
+      "filename": "waitrose.svg"
+    },
+    {
+      "number": 100,
+      "id": "warner-bros",
+      "name": "Warner Bros.",
+      "domain": "warnerbros.com",
+      "split": "holdout",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Warner_Bros._logo_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Warner_Bros._logo_2023.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "<a href=\"https://en.wikipedia.org/wiki/Warner_Bros.\" class=\"extiw\" title=\"wikipedia:Warner Bros.\">Warner Bros. Entertainment</a> (<a href=\"https://en.wikipedia.org/wiki/Warner_Bros._Discovery\" class=\"extiw\" title=\"w:Warner Bros. Discovery\">Warner Bros. Discovery</a>)",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.wbitvp.com/\">https://www.wbitvp.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/warner-bros.svg",
+      "contentHash": "a2397d9ac66bb3a9d80d3f1a8828cedeae6cbe8bd33bf107987f8367464604b8",
+      "extension": "svg",
+      "filename": "warner-bros.svg"
+    },
+    {
+      "number": 101,
+      "id": "wix",
+      "name": "Wix",
+      "domain": "wix.com",
+      "split": "development",
+      "roles": [],
+      "failure": "role_or_theme_ineligible",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Wix_logo_svg.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wix_logo_svg.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Wix.com",
+        "credit": "Own work using: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.wix.com/about/design-assets\">https://www.wix.com/about/design-assets</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/wix.svg",
+      "contentHash": "e9a4e09c0a4a4383c098957cc9d9262aa2b875ce93ea6dc6ac3af213815eb58b",
+      "extension": "svg",
+      "filename": "wix.svg"
+    },
+    {
+      "number": 102,
+      "id": "yum-brands",
+      "name": "Yum! Brands",
+      "domain": "yum.com",
+      "split": "development",
+      "roles": [
+        "icon"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/Yum%21_Brands_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Yum!_Brands_logo.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Yum! Brands, Inc.",
+        "credit": "Obtained from <a rel=\"nofollow\" class=\"external free\" href=\"http://brandsoftheworld.com\">http://brandsoftheworld.com</a>. Color from image on Yum's website: <a rel=\"nofollow\" class=\"external free\" href=\"http://www.yum.com/images/logo_yum.png\">http://www.yum.com/images/logo_yum.png</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/yum-brands.svg",
+      "contentHash": "95854fa767aa67eaf6c76725b3dc709120988a070c6a0644833c9519c1ccb287",
+      "extension": "svg",
+      "filename": "yum-brands.svg"
+    },
+    {
+      "number": 103,
+      "id": "zillow",
+      "name": "Zillow",
+      "domain": "zillow.com",
+      "split": "development",
+      "roles": [
+        "wide"
+      ],
+      "failure": null,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Zillow_2024.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Zillow_2024.svg",
+      "license": {
+        "license_short_name": "Public domain",
+        "license_url": null,
+        "usage_terms": "Public domain",
+        "attribution_required": "false",
+        "artist": "Zillow",
+        "credit": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.zillow.com/\">https://www.zillow.com/</a>",
+        "copyrighted": "False",
+        "restrictions": "trademarked",
+        "trademark_notice": "Commons copyright/license metadata does not waive trademark restrictions."
+      },
+      "validatedFile": "treatment-final/validated/zillow.svg",
+      "contentHash": "7da1bbad218b16f0fb59e1f9b233c424e2e86894b93e2436ec4d79c04c290d3b",
+      "extension": "svg",
+      "filename": "zillow.svg"
+    }
+  ]
+}

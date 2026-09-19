@@ -1,0 +1,2355 @@
+{
+  "runId": "missing-logo-library-2026-09-19",
+  "reviewedAt": "2026-09-19T09:19:35.591Z",
+  "assignedIdentities": 188,
+  "approvedIdentities": 112,
+  "approvedAssets": 114,
+  "unresolvedIdentities": 76,
+  "unresolvedByCategory": {
+    "permission_restricted": 10,
+    "no_defensible_candidate": 63,
+    "identity_mismatch": 1,
+    "currentness_mismatch": 1,
+    "stale_identity_and_format_failure": 1
+  },
+  "outcomes": [
+    {
+      "brandId": "dell",
+      "name": "Dell",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "gopro",
+      "name": "GoPro",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "costco",
+      "name": "Costco",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "carrefour",
+      "name": "Carrefour",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "best-buy",
+      "name": "Best Buy",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "aldi",
+      "name": "Aldi",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "No safely distributable current asset survived the bounded official-source, prior-evidence, and visual-review attempt."
+    },
+    {
+      "brandId": "lululemon",
+      "name": "Lululemon",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "the-north-face",
+      "name": "The North Face",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "kraft-heinz",
+      "name": "Kraft Heinz",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/kraft-heinz/logo/a91464ae0d0156fb3f380c56c88a045d932285327aba31865e9425f095392e5f.png",
+          "sourceUrl": "https://www.kraftheinzcompany.com/images/logo_main.png",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "yum-brands",
+      "name": "Yum! Brands",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/yum-brands/logo/95854fa767aa67eaf6c76725b3dc709120988a070c6a0644833c9519c1ccb287.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/Yum%21_Brands_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "marriott",
+      "name": "Marriott",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "lyft",
+      "name": "Lyft",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/lyft/logo/116673474d734a497f4792c6520e40a91de7f6c0a0927e5dcd83235f3f57aa48.svg",
+          "sourceUrl": "https://www.lyft.com/press/media-kit",
+          "rationale": "First-party or official asset independently checked and visually reviewed."
+        }
+      ]
+    },
+    {
+      "brandId": "united-airlines",
+      "name": "United Airlines",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "emirates",
+      "name": "Emirates",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/emirates/logo/d067d6cf2b9d071b4ee66edcb29a526beeca9c5cc07ba02a5d20c534489ec728.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Emirates_banner_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "singapore-airlines",
+      "name": "Singapore Airlines",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/singapore-airlines/logo/445a696fd9c74b07468c189eb38e660577a89edffebc30bea582f16f4b4465dc.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Singapore_Airlines_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "abb",
+      "name": "ABB",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "schneider-electric",
+      "name": "Schneider Electric",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/schneider-electric/logo/e773b1740e22fd269a7dde94ace37063143c74422b8f729b88099d617beb1409.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Schneider_Electric_2007.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "3m",
+      "name": "3M",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/3m/logo/f1dc290891967c9e7e53d434406998daee2c31375575d0761534041d825adc05.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/3M_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "bank-of-america",
+      "name": "Bank of America",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/bank-of-america/logo/9eda96805415afc705c6a3013b3b792b5d35c9d57884ffedba7e52d476b008d8.png",
+          "sourceUrl": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/Logos/en_US/logos/bac-logo-v2.png",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "berkshire-hathaway",
+      "name": "Berkshire Hathaway",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/berkshire-hathaway/logo/bab6f6c1e94a34fb88f0ccd301c050dddf0a5dacade4a7e397f6d1642ba8bc7d.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Berkshire-Hathaway-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "the-new-york-times",
+      "name": "The New York Times",
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/the-new-york-times/icon/94de5ae7e9bcf74727f45bb30ae37f553db4594012e2704336da5fbbf3357c3e.png",
+          "sourceUrl": "https://www.nytimes.com/favicon.ico",
+          "rationale": "First-party or official asset independently checked and visually reviewed."
+        }
+      ]
+    },
+    {
+      "brandId": "bbc",
+      "name": "BBC",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "reuters",
+      "name": "Reuters",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "electronic-arts",
+      "name": "Electronic Arts",
+      "status": "approved",
+      "roles": [
+        "logo",
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/electronic-arts/logo/b61aaa182008050320e2a5365190a5bfc7dc1f290b094780a56c2bc7aaceba15.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Electronic_Arts_2020.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        },
+        {
+          "role": "icon",
+          "path": "assets/electronic-arts/icon/40500d8a55687a05bd5cf57718c2c1417f168f87a33ec2cc2524b480a0c3de88.svg",
+          "sourceUrl": "https://ea.com/",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "lufthansa",
+      "name": "Lufthansa",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/lufthansa/logo/08d5ac5e7c619ef7931ca95af2831ce82fca11882dbb56267da1f9e01c464eda.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "alibaba-group",
+      "name": "Alibaba Group",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "rappi",
+      "name": "Rappi",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "verizon",
+      "name": "Verizon",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "mckinsey-company",
+      "name": "McKinsey & Company",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/mckinsey-company/logo/adc56256915d475838fe590d579e88818e5a603cc3761ba5e1a131ae7ddffbb3.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/McKinsey_Script_Mark_2019.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "pwc",
+      "name": "PwC",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/pwc/logo/d8830e24ef8f185e6d2f19b71590c343547a673c8a16cb885df0953ef8d0ef31.png",
+          "sourceUrl": "https://www.pwc.com/",
+          "rationale": "First-party or official asset independently checked and visually reviewed."
+        }
+      ]
+    },
+    {
+      "brandId": "palantir",
+      "name": "Palantir",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/palantir/logo/6cb92a53619513e852029a0f405f65b27cd1443b2c37e1d94186d19ffe876e44.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Palantir_Technologies_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "bumble",
+      "name": "Bumble",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/bumble/logo/0163b8a5883a6c0f68eb08e2d83cf5522867b7bd1a40d861b100e610b82dc135.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Bumble_Logo_2025.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "shein",
+      "name": "Shein",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "asos",
+      "name": "ASOS",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/asos/logo/fd073acea6305fa992ff53ce88888dafab2d1504b0d68a3331d9211f92ce459e.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Asos.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "mango",
+      "name": "Mango",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/mango/logo/db87855f532a5a5982e1eb37b01dc7f1b73d456da08233968f2d2dc16326e62e.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Logo_of_Mango_%28new%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "kroger",
+      "name": "Kroger",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/kroger/logo/c6c6b5e4108c137e4e5648431bcc8e5739a8e32beb5e997220a5840fe56360ee.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Kroger_logo_%281961-2019%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "qatar-airways",
+      "name": "Qatar Airways",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/qatar-airways/logo/22ebea491ab3e26d5abd66092b077417223fef82e5abe979018d0eec5fd7ae7c.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Qatar_Airways_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "etihad-airways",
+      "name": "Etihad Airways",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "No safely distributable current asset survived the bounded official-source, prior-evidence, and visual-review attempt."
+    },
+    {
+      "brandId": "blackstone",
+      "name": "Blackstone",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/blackstone/logo/154ee89611edf1e980bed66b89df080484c9f5da6f0383dcf041997b63923c0a.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/The_Blackstone_Group_logo_%282%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "chevron",
+      "name": "Chevron",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/chevron/logo/9493eafb2e48bf909a88c744006d8c37e4973d1bad8abcde2db306f92d7adffc.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Chevron_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "charter-communications",
+      "name": "Charter Communications",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "america-movil",
+      "name": "América Móvil",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "northrop-grumman",
+      "name": "Northrop Grumman",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "us-bancorp",
+      "name": "U.S. Bancorp",
+      "status": "unresolved",
+      "category": "identity_mismatch",
+      "reason": "Identity mismatch: the candidate is the U.S. Bank subsidiary identity, not the U.S. Bancorp holding-company identity."
+    },
+    {
+      "brandId": "eaton",
+      "name": "Eaton",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "aig",
+      "name": "AIG",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/aig/logo/f7429f4390654b5c4534b28f3a6de11782572663c56b62a67b230aa36c4d3ba6.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/AIG_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "l3harris",
+      "name": "L3Harris",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/l3harris/logo/58da3e7421b81e478ba579d82274c5c5ef58d8ec9241c8779731a214165d2af4.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/L3Harris_Technologies_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "exelon",
+      "name": "Exelon",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/exelon/logo/a47afc59d4ba925260ebcd42a7052dae889facb84de9ee3f42bcccc912528b1a.svg",
+          "sourceUrl": "https://www.exeloncorp.com/content/dam/exelon/logo/Exelon_Registered_Trademark.svg",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "proximus",
+      "name": "Proximus",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/proximus/logo/201ed7cc85e80fd5e5e64dedae6a73f62af3524eab32066a5e2067267de330d5.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Proximus_logo_2014.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "dominion-energy",
+      "name": "Dominion Energy",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/dominion-energy/logo/638060d96a1bf69a41b4c538bdcc4e1e801d4e0db4a69f61c15f213d73fdcd9f.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Dominion_Energy_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "freeport-mcmoran",
+      "name": "Freeport-McMoRan",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/freeport-mcmoran/logo/2376802d27e34779336fc569435900357860b63563751a00a6b07ddba3f392b5.png",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Freeport_McMoRan.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "marsh-mclennan",
+      "name": "Marsh",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "ge-aerospace",
+      "name": "GE Aerospace",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/ge-aerospace/logo/1aa247a0aae4fddc26cf6767a427b9ff9535ee8a82f9702dcd45c9b05b4e3a11.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/GE_Aerospace_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "cummins",
+      "name": "Cummins",
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/cummins/icon/ca09429f77496d0d39d872930d80344d19e0fea07be44d3bcb8a8e22178b8699.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Cummins_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "cardinal-health",
+      "name": "Cardinal Health",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/cardinal-health/logo/4a05367935111e0906fbe33217578494d09f73186ffddfb7fdee494538cafaac.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Cardinal_Health_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "eli-lilly",
+      "name": "Eli Lilly",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/eli-lilly/logo/0cfc34726a793965a11f7e2807c68d8863525d3441ac551ea9ce6a492f9b1d6b.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Eli_Lilly_and_Company.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "p-g-e-corporation",
+      "name": "PG&E Corporation",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates)."
+    },
+    {
+      "brandId": "newmont",
+      "name": "Newmont",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_logo_claims)."
+    },
+    {
+      "brandId": "arthur-j-gallagher",
+      "name": "Arthur J. Gallagher",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/arthur-j-gallagher/logo/240a5cbf84e50158b1b9abc8cc6f5c782eb134afba42a45e8820a9cb8fb60589.svg",
+          "sourceUrl": "https://www.ajg.com/au/-/media/images/gallagher/us/logos/gallagher_horizontalsmall-3d.svg/?iar=0&hash=682DE2FF08F590D439CAADE396065C42",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "traton",
+      "name": "TRATON",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/traton/logo/42db13a644127446b2f21243ccbf3112c81f697444a73b18aeb514c543a79bbe.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Traton_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "barrick-mining",
+      "name": "Barrick Mining",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/barrick-mining/logo/5b385fa8bb63c3a3624986c283249925aeda6cfbdd89c50750c5ab22005a4f60.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Barrick_Gold_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "moodys",
+      "name": "Moody's",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/moodys/logo/fcbfbece5da6fc1b1fc54936031a918ed6bed2cc033dfadaeface0ab1333e780.png",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Moody%27s_new_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "volvo-group",
+      "name": "Volvo Group",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "cme-group",
+      "name": "CME Group",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "aia-group",
+      "name": "AIA Group",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/aia-group/logo/e60b1bc8be7084c6f9451e306624f588a439f74ad3896c9c4da627463daafbc3.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/AIA_wordmark_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "nasdaq",
+      "name": "Nasdaq",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/nasdaq/logo/b86d39326a2d2e258b93454c4f11ee11a47c24eb33b3c0e88995db29967f6cba.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/NASDAQ_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "saab",
+      "name": "Saab",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/saab/logo/c611a8fec505d4a7596ce548cfc9295d412d5416b9113416ebf30fb091cb8c8f.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Saab_wordmark_blue.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "hitachi",
+      "name": "Hitachi",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/hitachi/logo/6b68732647c9b06cb4153cc91049efc8356d7edf84287a71966ac053592dd14a.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Hitachi_2025_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "kddi",
+      "name": "KDDI",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/kddi/logo/d2b1abb73221883e0edcc0b3c51845272a45c6ecaaaab804b073b6954048a644.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/KDDI_logos.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "iberdrola",
+      "name": "Iberdrola",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/iberdrola/logo/c201465b75dfab4be6fdd13695b3af8ad615faf5b66cf6709cd5013d42293803.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Logo_Iberdrola_%282023%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "arcelormittal",
+      "name": "ArcelorMittal",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/arcelormittal/logo/6b6f1efac540902e787914546f5ec365c6e9423e837a8a9ea7b84d09d95e6a1d.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Arcelor_Mittal.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "e-on",
+      "name": "E.ON",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "nippon-steel",
+      "name": "Nippon Steel",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/nippon-steel/logo/6affdac3a631f86ffd0992472fd9e7f0f468f0f77454fb15d5b3f49fa95375b6.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Nippon_Steel_-_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "natwest-group",
+      "name": "NatWest Group",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "petrobras",
+      "name": "Petrobras",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/petrobras/logo/89eeb478084d32e4c5d1d85caef2dc027fdc53c6cba95fbf8a6d360df39ed0d9.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Petrobras_horizontal_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "textron",
+      "name": "Textron",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "national-grid",
+      "name": "National Grid",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/national-grid/logo/aeca9bda0b703e1e1ff1920cca9c67f25896e6d667d6bac35e308bd9e0ba9889.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Nattygridlogo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "kubota",
+      "name": "Kubota",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/kubota/logo/11d8c0cec235a94857fbe4eef65721b09e978fce910a4912c7bff44eb542aed4.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Kubota-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "china-unicom",
+      "name": "China Unicom",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "lg-uplus",
+      "name": "LG Uplus",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates)."
+    },
+    {
+      "brandId": "orlen",
+      "name": "ORLEN",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/orlen/logo/467eb4cec9e954944d6506282e839a174ba36bbeef39775373776d08d2abe812.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Orlen_wordmark_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "tepco",
+      "name": "TEPCO",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/tepco/logo/e411dc69a779dc1c94fb55a16c425c647368141af8dadfdff7b1038ac01e3199.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/TEPCO_symbol.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "intesa-sanpaolo",
+      "name": "Intesa Sanpaolo",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/intesa-sanpaolo/logo/ea18101e1c758785b9896018f6e93f9204195d3fd390466e85bef8760ef7302b.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Intesa_Sanpaolo_-_logo_%28Italy%2C_2007-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "sinopec",
+      "name": "Sinopec",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "petrochina",
+      "name": "PetroChina",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "ais-thailand",
+      "name": "AIS",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "cnooc",
+      "name": "CNOOC",
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/cnooc/icon/38b8a9afaa6d480a46ec4217daed0a77e619b0c9e6ab060d3d78ed4b645c028f.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/CNOOC_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "saint-gobain",
+      "name": "Saint-Gobain",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/saint-gobain/logo/ebc6d8c3acc341d8c2be8c1737c744290ae10aa47407dd6076a8541b4b4d71d5.png",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Saint-Gobain_Logo_2025.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "woodside-energy",
+      "name": "Woodside Energy",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "michelin",
+      "name": "Michelin",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/michelin/logo/eaf42780bc21c4734d5a613e528776e5eab00adedbf89202f9d6aee81876b2df.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Michelin_Wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "novo-nordisk",
+      "name": "Novo Nordisk",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "rbc",
+      "name": "Royal Bank of Canada",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/rbc/logo/eb6b74d7103fd360ff8406b13dcc79a4d1861bb46aee78577989f0cac378fa23.jpeg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/RBC_logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "coca-cola-company",
+      "name": "The Coca-Cola Company",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/coca-cola-company/logo/d2885ab26f57ed7da6129a38a70e8e293853d95f0b575c8a0d145d2c859e9b5b.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/The_Coca-Cola_Company_%282020%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "pdd-holdings",
+      "name": "PDD Holdings",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "tokopedia",
+      "name": "Tokopedia",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/tokopedia/logo/8246b3e60b01a6412932069a1b4a0729be9437e247ae6bfe8418d05f379ad28c.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Tokopedia.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "doritos",
+      "name": "Doritos",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "maybelline",
+      "name": "Maybelline",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/maybelline/logo/73e3555a6fa36cc3670e77a21af892dc48998c9df3749a2971816f68277ffc3d.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Maybelline-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "associated-british-foods",
+      "name": "Associated British Foods",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/associated-british-foods/logo/6b66e68bbb068c1c7b95a5af609204fae52cf3896b0f689ed7315c12bef8efef.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Associated_British_Foods_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "waitrose",
+      "name": "Waitrose",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/waitrose/logo/776d2e2bec0a4c74acc3af8d56d0ad59aa5eb36a1bbe90cc21d47714b63b6327.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Waitrose_%26_Partners_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "b-and-q",
+      "name": "B&Q",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/b-and-q/logo/35996606e0c6c4e78d2231e0e06bd855d0dc2b8c80a7420f7f618a2bfaf9b20d.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/B%26Q_company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "namshi",
+      "name": "Namshi",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "blinkit",
+      "name": "Blinkit",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "tanishq",
+      "name": "Tanishq",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/tanishq/logo/9ad45bae6ebf5a01074f2684fc948e53c3e4acc7fbbf97b6e6528cb9fb9b26c0.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Tanishq_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "bolt",
+      "name": "Bolt",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/bolt/logo/6be47939e5bc7c646fc0b2522d1a786c4bc32d28714c93bd6276a40a4badb738.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Bolt_Technology_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "prime-video",
+      "name": "Prime Video",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (search_candidates_truncated)."
+    },
+    {
+      "brandId": "ant-group",
+      "name": "Ant Group",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "malaysia-aviation-group",
+      "name": "Malaysia Aviation Group",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "msc-group",
+      "name": "MSC Group",
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/msc-group/icon/895105353d72b0cd2dc017fd4fae2c2e442a4c3c84f0d939da6ec0a173adb60a.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mediterranean_Shipping_Company_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "mitsubishi-fuso",
+      "name": "Mitsubishi Fuso",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/mitsubishi-fuso/logo/ed1d7b5aad9e581f2863f257c0ea77b9809f7c19e61ba3ea6c8e925eedc1a381.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Fuso_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "hisense",
+      "name": "Hisense",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "garmin",
+      "name": "Garmin",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "acer",
+      "name": "Acer",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "oneplus",
+      "name": "OnePlus",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/oneplus/logo/85a42d5d6a14dccdf8cf85f64d507a729fea4485239720b01589579eb273d806.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/OP_LU_Reg_1L_RGB_red_copy-01.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "pokemon",
+      "name": "Pokémon",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/pokemon/logo/9b356095a31f462dd8f0e123e2713158edf08749348c0c06c0641b59152b180f.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "transformers",
+      "name": "Transformers",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "monopoly",
+      "name": "Monopoly",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "dior",
+      "name": "Dior",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "garnier",
+      "name": "Garnier",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "kingfisher",
+      "name": "Kingfisher",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/kingfisher/logo/d4189ab753a0f5e0bd8b995a1c9082e69f57c1b60c37c76b0ca2c3d4815e6176.png",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Kingfisher_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "facebook",
+      "name": "Facebook",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "tiktok-shop",
+      "name": "TikTok Shop",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "ibis",
+      "name": "ibis",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "bsh-home-appliances",
+      "name": "BSH Home Appliances",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/bsh-home-appliances/logo/21bb526e10a92f6129ca53be4943780e5684299d925e899cf8e0027b73be40a5.svg",
+          "sourceUrl": "https://www.bsh-group.com/",
+          "rationale": "First-party or official asset independently checked and visually reviewed."
+        }
+      ]
+    },
+    {
+      "brandId": "fitbit",
+      "name": "Fitbit",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/fitbit/logo/14ad0f296f69ed5c58e96e009975133f98e65f636ea67cee2173efa358213208.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Fitbit_logo16.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "fendi",
+      "name": "Fendi",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/fendi/logo/268347be925d55817371d1563c155d47566c343fbfd6058dd57087cfc6e44fd5.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Fendi_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "garena",
+      "name": "Garena",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "lancome",
+      "name": "Lancôme",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "lawson",
+      "name": "Lawson",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/lawson/logo/053ee3b152dea6c3ead82e3b4f681275c9f695618183c3b93b310fab481a9cdb.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Lawson_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "castorama",
+      "name": "Castorama",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/castorama/logo/bcd9468fa37b11ed61f5aba96670e8acd77240af499ba061a5c907375c17783d.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Castorama_-_logo_%28France%2C_2014-%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "ola",
+      "name": "Ola",
+      "status": "unresolved",
+      "category": "currentness_mismatch",
+      "reason": "Currentness mismatch: the candidate glyph differs from the current official header identity."
+    },
+    {
+      "brandId": "wechat",
+      "name": "WeChat",
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/wechat/icon/c1e78351ce133b28e919a69a29725f3e1f3a35a2ae3b70e307704ae2a9a2d006.svg",
+          "sourceUrl": "https://newres.wechat.com/t/fed_upload/fdf269b2-1de3-4bb9-95c5-00150433b7f1/MjliNWVm.svg",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "star-wars",
+      "name": "Star Wars",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "air-france-klm",
+      "name": "Air France-KLM",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/air-france-klm/logo/d0e2880c66235ee10f5b83ba27838e73fea5b9a5802704672f418356912fad46.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Air_France_KLM_Group_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "royal-caribbean",
+      "name": "Royal Caribbean",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/royal-caribbean/logo/57944c1bbc32e2b0082e6633a87ebf80b09241ebc469fd9f7d6d570e0954c0d5.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Royal_Caribbean_logo_%282024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "ralph-lauren",
+      "name": "Ralph Lauren",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "givenchy",
+      "name": "Givenchy",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "jollibee",
+      "name": "Jollibee",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "nerf",
+      "name": "Nerf",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "thai-airways",
+      "name": "Thai Airways",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "oxxo",
+      "name": "OXXO",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/oxxo/logo/f03c5b9c30c234312ca6309799202f5fed22357a4fa0f1a6923141e7f13e712a.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Oxxo_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "harman",
+      "name": "Harman",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/harman/logo/fcf4f0018cee880bae989a132733923876e8060ce1c62754b2f764030d7c53c4.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Harman_International_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "kuaishou",
+      "name": "Kuaishou",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "warner-bros",
+      "name": "Warner Bros.",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/warner-bros/logo/a2397d9ac66bb3a9d80d3f1a8828cedeae6cbe8bd33bf107987f8367464604b8.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Warner_Bros._logo_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "sofitel",
+      "name": "Sofitel",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/sofitel/logo/90c8624cf3a1a742457c85adb9739f82f2df5fb2543e71db8812d85ed9d66300.svg",
+          "sourceUrl": "https://sofitel.accor.com/content/dam/brands/sof/global-marketing/brand-identity/logos/2601_mkt_0022.svg",
+          "rationale": "First-party or official asset independently checked and visually reviewed."
+        }
+      ]
+    },
+    {
+      "brandId": "royal-caribbean-group",
+      "name": "Royal Caribbean Group",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates)."
+    },
+    {
+      "brandId": "nissan",
+      "name": "Nissan",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/nissan/logo/32aaf43cf757eb9f009328f9e832652f202ad01b2d66d168a9c0da3d0079afb2.svg",
+          "sourceUrl": "https://www.nissan-global.com/library/assets/img/hd_logo.svg",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "calvin-klein",
+      "name": "Calvin Klein",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/calvin-klein/logo/a1ed18062f8ebb8974375b074432c1a8e22dd420234804353e637a1a2f7676ca.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Calvin_klein_logo_web23.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "nexon",
+      "name": "Nexon",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/nexon/logo/e29e6d8a44e77a45f207550eaaf1ef59f39f9676682d33b90f682c7d3335c6b8.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Nexon.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "clinique",
+      "name": "Clinique",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/clinique/logo/b270bb3eb8556c03a50d5020917bdf3d9a3335ca0cefd9738632ce1773e8758c.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Clinique_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "cartoon-network",
+      "name": "Cartoon Network",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/cartoon-network/logo/2b0a719d5d695bf27588d085dd41941a0eb5d7875ee145f5edd500ccc4ef7604.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Cartoon_Network_2010_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "nescafe",
+      "name": "Nescafé",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/nescafe/logo/6851fb7e09d0750c8a8663f8bbf8294989dd033ea30f16e98efc80533f9d8208.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Nescaf%C3%A9_logo_2014.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "loewe",
+      "name": "Loewe",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/loewe/logo/f55f7883f61d68388a6bcb5aa7cbf793ac5c8fd831b2ef52818fe9cc80e2f7b2.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Loewe_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "chowking",
+      "name": "Chowking",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/chowking/logo/d083d6742996a05e0151b8b80542f084b92dc99c2ee31fdb9e72806bacde5bd7.svg",
+          "sourceUrl": "https://www.chowking.ph/wp-content/uploads/2023/08/logo.svg",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "tata-cliq",
+      "name": "Tata CLiQ",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates)."
+    },
+    {
+      "brandId": "saks-fifth-avenue",
+      "name": "Saks Fifth Avenue",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/saks-fifth-avenue/logo/74838b401b209198be7cab90e0d7c8685aba6ee7eea580198ee94ed9c8f27179.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/SaksFifthAvenueA.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "digitalocean",
+      "name": "DigitalOcean",
+      "status": "unresolved",
+      "category": "permission_restricted",
+      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+    },
+    {
+      "brandId": "tsmc",
+      "name": "TSMC",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "sk-hynix",
+      "name": "SK hynix",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "micron",
+      "name": "Micron",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/micron/logo/58efeb225ac55c7e0bf198e403f84815abbe49f4084178e1e199cb98c2eb59aa.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Micron_Technology_logo_2024.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "medium",
+      "name": "Medium",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/medium/logo/06a4518c54a5c45ee86884e0e6adabc01b01197ff4c91c0a4d362931f4f407a1.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Medium_%28website%29_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "cyberark",
+      "name": "CyberArk",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/cyberark/logo/67e2f25233ffe02ea0a70301e7440e6371d8943ca3f759b1d128b590e7e9419b.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Cyberark-logo-dark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "vultr",
+      "name": "Vultr",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "linode",
+      "name": "Linode",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/linode/logo/5c79d8a063c761e329e04b3e772ea565b75804d8b4da1a61cf04e463da1f5355.png",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Linode_updated_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "rapid7",
+      "name": "Rapid7",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/rapid7/logo/b4ce9dd76cbf08c60661d88b6c8c904a26301dbd19bfc218f8891ec6803c0070.svg",
+          "sourceUrl": "https://www.rapid7.com/rapid7-logo.svg",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "wix",
+      "name": "Wix",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/wix/logo/e9a4e09c0a4a4383c098957cc9d9262aa2b875ce93ea6dc6ac3af213815eb58b.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Wix_logo_svg.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "analog-devices",
+      "name": "Analog Devices",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/analog-devices/logo/8c52bbff79a2ef34812120dfd9ddbdd209703faf2043687344db722a1fafb0fa.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Analog_Devices_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "teradata",
+      "name": "Teradata",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "railway",
+      "name": "Railway",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "character-ai",
+      "name": "Character.AI",
+      "status": "approved",
+      "roles": [
+        "logo",
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/character-ai/logo/67aa5371275d321118e0c015e21885544783b168dedf2fd04e7ffecbee3b2791.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Character.ai_2023_vector_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        },
+        {
+          "role": "icon",
+          "path": "assets/character-ai/icon/6b572b79dde98804eb3b1783b2d8e5fea45a75b316178b1398d41679e653ce7f.svg",
+          "sourceUrl": "https://character.ai/icon.svg",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "sophos",
+      "name": "Sophos",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/sophos/logo/3c893ce80faf088b5dd977f0942192f43a73ccb8dc8089e249c5c7457e9d86e7.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Sophos_logo2.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "trend-micro",
+      "name": "Trend Micro",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/trend-micro/logo/2824e2e631589a20a1c2368b060aa0b8ae383b09ec1c54cc97d3127fe5a12231.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "stmicroelectronics",
+      "name": "STMicroelectronics",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/stmicroelectronics/logo/9129becb362d925ebdaf3d3af05755fab1b2ed4dd25464c8021d06c2f01c7867.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/ST_logo_2020_blue_V.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "qualtrics",
+      "name": "Qualtrics",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/qualtrics/logo/c54e33d35f7d2acd9cff6b104c858441d81ed7101baa160ec04a55c425b168d4.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Qualtrics_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "hashicorp",
+      "name": "HashiCorp",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/hashicorp/logo/5be053ac8875f85be1ab9242a80c5f989055df0db96f82883fc35f563c0f2392.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/HashiCorp_horizontal_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "canonical",
+      "name": "Canonical",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/canonical/logo/64a9d96af5916450b60e48d99b9c07ae0735d244a9a1879f5944b3541d998211.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Canonical_logo_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "asml",
+      "name": "ASML",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/asml/logo/b0ebc06e55a0daab4c6463c37a40a92c51769a911b1236e3238a6fa7a267f63d.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/ASML_Holding_N.V._logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "mollie",
+      "name": "Mollie",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+    },
+    {
+      "brandId": "skyscanner",
+      "name": "Skyscanner",
+      "status": "unresolved",
+      "category": "no_defensible_candidate",
+      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+    },
+    {
+      "brandId": "zillow",
+      "name": "Zillow",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/zillow/logo/7da1bbad218b16f0fb59e1f9b233c424e2e86894b93e2436ec4d79c04c290d3b.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Zillow_2024.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "c3-ai",
+      "name": "C3 AI",
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/c3-ai/icon/3b3a9004fc8957d961c6e2b3b79cc26e1ca99ead2db0bdd24879b0e1567654df.svg",
+          "sourceUrl": "https://c3.ai/images/global/favicon.svg",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "aqua-security",
+      "name": "Aqua Security",
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/aqua-security/icon/c5876fa482ee8d765805468c94884ad43c1f03aa2496fa8342bd78acfa843bbf.png",
+          "sourceUrl": "https://www.aquasec.com/wp-content/themes/aqua4/apple-touch-icon-180x180.png",
+          "rationale": "Previously approved first-party asset rechecked in the assigned empty-identity review."
+        }
+      ]
+    },
+    {
+      "brandId": "afterpay",
+      "name": "Afterpay",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/afterpay/logo/0bca7c8aaaab2a78e07385f1f9279656f1d7759bdc41a5c8e97cde30ab809539.svg",
+          "sourceUrl": "https://www.afterpay.com/en-AU",
+          "rationale": "First-party or official asset independently checked and visually reviewed."
+        }
+      ]
+    },
+    {
+      "brandId": "unity",
+      "name": "Unity",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/unity/logo/1e8e23ab9614065e2a0bdf7f0ede57429a8ac331c15c38b9ae72128c24a7c2ce.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Unity_2021.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "umc",
+      "name": "UMC",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/umc/logo/4783431c4bb639ba36eab30978fa0b0018acfdd5d1774279b3de55b21bf37c1b.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/UMC-Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "seagate",
+      "name": "Seagate",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/seagate/logo/941c62bb8b60eddd8fa0cd14ee0a3c049c672a8a09561149e0487ea0428df6a7.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Seagate_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "hpe",
+      "name": "HPE",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/hpe/logo/f8a2f54ff3aef844a37e1895c9d296fc471efe4ae42bb0a4bdeb03b488376fc5.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Hewlett_Packard_Enterprise_logo_2025_expanded.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Identity, currentness, legibility, and role reviewed on light and dark contact sheets."
+        }
+      ]
+    },
+    {
+      "brandId": "8x8",
+      "name": "8x8",
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/8x8/logo/f7f85e2aa7b4142077b0ef7b3933ae15998aad4d04976d79b7a9611e79dff8f2.png",
+          "sourceUrl": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://8x8.com&size=256",
+          "rationale": "First-party or official asset independently checked and visually reviewed."
+        }
+      ]
+    },
+    {
+      "brandId": "pvh",
+      "name": "PVH Corp.",
+      "status": "unresolved",
+      "category": "stale_identity_and_format_failure",
+      "reason": "The only recovered candidate is the retired Phillips-Van Heusen identity and also failed safe format validation."
+    }
+  ]
+}
