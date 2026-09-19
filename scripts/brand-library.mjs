@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { access, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { dirname, extname, resolve } from 'node:path';
 import sharp from 'sharp';
+import { decodeIcoFrame } from '../src/ico.mjs';
 import { yoink } from '../src/index.mjs';
 import { mapConcurrent } from '../src/concurrency.mjs';
 
@@ -32,7 +33,11 @@ const brands = sourceRegistry.brands.map(item => Array.isArray(item) ? expand(it
 }));
 const expectedCount = sourceRegistry.expectedCount ?? 100;
 const runReportPath = async () => resolve(ROOT, 'runs', option('--run') ?? (await readJson(resolve(ROOT, 'latest-run.json'))).runId, 'report.json');
-const reviewImage = (path, width, height) => sharp(path, { density: 192 }).resize(width, height, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer();
+const reviewImage = async (path, width, height) => {
+  const bytes = await readFile(path);
+  const frame = decodeIcoFrame(bytes);
+  return sharp(frame?.input ?? bytes, { density: 192, ...frame?.options }).resize(width, height, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer();
+};
 
 async function visualHash(bytes) {
   try {
