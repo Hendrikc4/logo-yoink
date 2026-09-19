@@ -1,3 +1,5 @@
+import { isSafeSvg } from './svg-safety.mjs';
+
 const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 const SAFE_COLOR = /^(?:#[0-9a-f]{3,8}|rgba?\([^)]{1,80}\)|hsla?\([^)]{1,80}\)|[a-z]{3,24})$/i;
 const DOCUMENT_DEPENDENT_COLOR = /^(?:currentcolor|inherit|initial|unset|revert(?:-layer)?|var\s*\()/i;
@@ -15,6 +17,7 @@ function rootColor(markup, inheritedColor) {
 
 /** Make accepted SVG markup independent of the HTML document it came from. */
 export function normalizeStandaloneSvg(bytes, { inheritedColor } = {}) {
+  if (!isSafeSvg(bytes)) return null;
   let markup = Buffer.isBuffer(bytes) ? bytes.toString('utf8') : String(bytes ?? '');
   const match = markup.match(/<svg\b[^>]*>/i);
   if (!match) return null;
@@ -30,5 +33,6 @@ export function normalizeStandaloneSvg(bytes, { inheritedColor } = {}) {
     else if (!usableRootColor) root = root.replace(/>$/, ` color="${color}">`);
   }
   markup = `${markup.slice(0, match.index)}${root}${markup.slice(match.index + match[0].length)}`;
-  return Buffer.from(markup);
+  const normalized = Buffer.from(markup);
+  return isSafeSvg(normalized) ? normalized : null;
 }

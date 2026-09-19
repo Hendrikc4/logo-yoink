@@ -46,7 +46,7 @@ function mentionsDomain(html, domain) {
 export async function discoverLinkedInLogo({ domain, homepage, homepageHtml, companyUrl }, {
   timeoutMs = 5_000,
   diagnostics,
-  fetchImpl = fetch,
+  fetchImpl,
   validateUrl,
 } = {}) {
   const linkedInUrl = findLinkedInCompanyUrl(homepageHtml, homepage, companyUrl);

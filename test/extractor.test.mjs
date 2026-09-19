@@ -260,6 +260,20 @@ test('Jina HTML recovery renders an explicitly marked graphic logo but not ordin
   );
 });
 
+test('Jina local rendering closes a browser that resolves after its deadline', async () => {
+  let closed = 0;
+  await assert.rejects(internals.jinaBrandCandidate('https://example.com/', '<header></header>', {
+    timeoutMs: 5,
+    playwright: { chromium: {
+      launch: () => new Promise(resolve => setTimeout(() => resolve({
+        async close() { closed += 1; },
+      }), 15)),
+    } },
+  }), error => error?.code === 'LOGO_YOINK_BROWSER_TIMEOUT');
+  await new Promise(resolve => setTimeout(resolve, 25));
+  assert.equal(closed, 1);
+});
+
 test('parses favicon, Apple, manifest, and flexible Schema.org logo markup', () => {
   const html = `
     <link rel="icon" sizes="32x32" href="/favicon.png">

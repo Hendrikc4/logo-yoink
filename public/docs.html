@@ -147,7 +147,7 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
           <div class="property-table" role="table" aria-label="Scraper choices">
             <div class="property-row"><div><code>[]</code><b>static only</b></div><p>Fastest and most private. Reads first-party HTML and declared assets without launching a browser.</p></div>
             <div class="property-row"><div><code>["browser"]</code><b>default everywhere</b></div><p>Uses local Playwright only when a useful role is missing. Chromium installs during setup.</p></div>
-            <div class="property-row"><div><code>["jina"]</code><b>opt-in</b></div><p>Uses Jina Reader for blocked pages. The server needs <code>JINA_API_KEY</code>. Common bot protection may still deny access.</p></div>
+            <div class="property-row"><div><code>["jina"]</code><b>opt-in</b></div><p>Uses Jina Reader for blocked pages. The server needs <code>JINA_API_KEY</code> and <code>PUBLIC_DEMO_ALLOW_JINA=1</code>. Common bot protection may still deny access.</p></div>
           </div>
         </section>
 
@@ -282,7 +282,7 @@ console.log(assets.logo?.resolvedUrl);</code></pre>
             <div role="row"><code>BROWSER_DISCOVERY</code><b>1</b><p>Set to <code>0</code> to disable local Chromium discovery.</p></div>
             <div role="row"><code>JINA_API_KEY</code><b>unset</b><p>Makes request-level Jina recovery available; setting it does not enable Jina.</p></div>
             <div role="row"><code>BESTICON_URL</code><b>unset</b><p>Optional URL for a self-hosted Besticon service.</p></div>
-            <div role="row"><code>PUBLIC_DEMO_ALLOW_JINA</code><b>1</b><p>Set to <code>0</code> to prevent requests from opting into Jina.</p></div>
+            <div role="row"><code>PUBLIC_DEMO_ALLOW_JINA</code><b>0</b><p>Set to <code>1</code> to permit explicitly requested Jina calls after configuring a budget.</p></div>
             <div role="row"><code>PUBLIC_DEMO_BROWSER</code><b>1</b><p>Set to <code>0</code> to disable Chromium for web/API requests.</p></div>
             <div role="row"><code>PUBLIC_DEMO_WIKIMEDIA</code><b>1</b><p>Set to <code>0</code> to disable exact-domain Wikidata/Commons recovery.</p></div>
             <div role="row"><code>DEMO_RATE_LIMIT</code><b>20 / 10 min</b><p>Per-client in-process request window.</p></div>

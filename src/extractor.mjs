@@ -1,15 +1,16 @@
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 import { parseHomepage, resolveHttpUrl } from './discover-static.mjs';
-import { discoverBrowserLogos } from './discover-browser.mjs';
+import { boundedClose, discoverBrowserLogos, HARDENED_CHROMIUM_ARGS, withinDeadline } from './discover-browser.mjs';
 import { normalizeStandaloneSvg } from './standalone-svg.mjs';
+import { isSafeSvg } from './svg-safety.mjs';
 import { discoverOfficialBrandAssets, discoverSpaBundleAssets } from './discover-deep.mjs';
 import { hasWideEvidence, rankCandidates, scoreCandidate, SOURCE_WEIGHT } from './rank.mjs';
 import { measureTinyImageSuitability } from './tiny-image-suitability.mjs';
 import { matchGenericFingerprint } from './generic-asset-fingerprint.mjs';
 import { mapConcurrent } from './concurrency.mjs';
 import { isPrivateIp } from './network-safety.mjs';
-import { assertPublicUrl, fetchTimed, readLimited } from './http-client.mjs';
+import { assertPublicUrl, fetchTimed, readLimited, validatingRequest } from './http-client.mjs';
 import { matchesAssetPreferences, matchesLogoPreferences, normalizeAssetPreferences } from './asset-model.mjs';
 import { discoverWikimediaLogoCandidates, safeCommonsUrl } from './wikimedia-fallback.mjs';
 import { bimiCandidate, isSafeBimiSvg, lookupBimiAssertion } from './discover-bimi.mjs';
@@ -193,7 +194,7 @@ function applyBlockedRecoverySafety(items, enabled) {
   return items;
 }
 
-async function fetchJinaHomepage(targetUrl, { apiKey, timeoutMs = DEFAULT_TIMEOUT_MS, diagnostics, fetchImpl = fetch, validateUrl = assertPublicUrl } = {}) {
+async function fetchJinaHomepage(targetUrl, { apiKey, timeoutMs = DEFAULT_TIMEOUT_MS, diagnostics, fetchImpl = validatingRequest, validateUrl = assertPublicUrl } = {}) {
   if (!apiKey) throw new Error('Jina API key is not configured.');
   await validateUrl(targetUrl);
   const controller = new AbortController();
@@ -216,7 +217,7 @@ async function fetchJinaHomepage(targetUrl, { apiKey, timeoutMs = DEFAULT_TIMEOU
   }
 }
 
-async function fetchJinaBrandScreenshot(targetUrl, { apiKey, timeoutMs = 30_000, diagnostics, fetchImpl = fetch, validateUrl = assertPublicUrl } = {}) {
+async function fetchJinaBrandScreenshot(targetUrl, { apiKey, timeoutMs = 30_000, diagnostics, fetchImpl = validatingRequest, validateUrl = assertPublicUrl } = {}) {
   if (!apiKey) throw new Error('Jina API key is not configured.');
   await validateUrl(targetUrl);
   const controller = new AbortController();
@@ -272,25 +273,52 @@ async function remoteJinaBrandCandidate(targetUrl, { apiKey, timeoutMs, diagnost
   return brandScreenshotCandidate(targetUrl, bytes, 'jina-reader-screenshot', { fullCanvas: true });
 }
 
-async function jinaBrandCandidate(targetUrl, html, { timeoutMs = 12_000 } = {}) {
-  const { chromium } = await import('playwright');
-  const browser = await chromium.launch({ headless: true });
+async function jinaBrandCandidate(targetUrl, html, {
+  timeoutMs = 12_000,
+  playwright,
+  importPlaywright = () => import('playwright'),
+  launchOptions,
+} = {}) {
+  const deadlineAt = performance.now() + timeoutMs;
+  let browser;
+  let context;
+  let page;
   let bytes;
   try {
-    const context = await browser.newContext({ javaScriptEnabled: false, serviceWorkers: 'block', viewport: { width: 768, height: 384 } });
-    const page = await context.newPage();
+    const loaded = playwright ?? await withinDeadline(importPlaywright(), deadlineAt, 'loading Playwright for local Jina rendering');
+    const chromium = loaded?.chromium ?? loaded?.default?.chromium;
+    if (!chromium?.launch) throw new Error('Playwright does not expose a Chromium launcher.');
+    const resolvedLaunchOptions = typeof launchOptions === 'function'
+      ? await withinDeadline(launchOptions(), deadlineAt, 'resolving Chromium launch options')
+      : launchOptions;
+    browser = await withinDeadline(chromium.launch({
+      headless: true,
+      ...resolvedLaunchOptions,
+      args: [...new Set([...(resolvedLaunchOptions?.args ?? []), ...HARDENED_CHROMIUM_ARGS])],
+    }), deadlineAt, 'launching Chromium for local Jina rendering', boundedClose);
+    context = await withinDeadline(browser.newContext({
+      javaScriptEnabled: false,
+      serviceWorkers: 'block',
+      offline: true,
+      viewport: { width: 768, height: 384 },
+    }), deadlineAt, 'creating the local Jina render context', boundedClose);
+    page = await withinDeadline(context.newPage(), deadlineAt, 'creating the local Jina render page', boundedClose);
     page.setDefaultTimeout(timeoutMs);
-    await page.route('**/*', route => route.abort());
-    await page.setContent(html, { waitUntil: 'domcontentloaded', timeout: timeoutMs });
-    const isolated = await page.evaluate(script => {
+    await withinDeadline(context.routeWebSocket('**/*', webSocket => webSocket.close()), deadlineAt, 'blocking local Jina WebSockets');
+    await withinDeadline(context.route('**/*', route => route.abort()), deadlineAt, 'blocking local Jina network requests');
+    await withinDeadline(page.setContent(html, { waitUntil: 'domcontentloaded', timeout: timeoutMs }), deadlineAt, 'loading local Jina HTML');
+    const isolated = await withinDeadline(page.evaluate(script => {
       (0, eval)(script);
       return Boolean(document.querySelector('#logo-yoink-jina-brand'));
-    }, JINA_BRAND_CAPTURE_SCRIPT);
+    }, JINA_BRAND_CAPTURE_SCRIPT), deadlineAt, 'isolating the local Jina logo');
     if (!isolated) throw new Error('Jina HTML did not expose a likely home-linked brand element.');
-    bytes = await page.locator('#logo-yoink-jina-brand').screenshot({ type: 'png', animations: 'disabled', timeout: timeoutMs });
-    await context.close();
+    bytes = await withinDeadline(
+      page.locator('#logo-yoink-jina-brand').screenshot({ type: 'png', animations: 'disabled', timeout: timeoutMs }),
+      deadlineAt,
+      'capturing the local Jina logo',
+    );
   } finally {
-    await browser.close();
+    await Promise.all([boundedClose(page), boundedClose(context), boundedClose(browser)]);
   }
   return brandScreenshotCandidate(targetUrl, bytes, 'jina-reader-html-local-render');
 }
@@ -416,8 +444,8 @@ function imageMetadata(bytes, contentType) {
   if (bytes.length >= 10 && bytes[0] === 0 && bytes[1] === 0 && bytes[2] === 1 && bytes[3] === 0) { let width = 0, height = 0; for (let index = 0, count = bytes.readUInt16LE(4); index < count && 21 + index * 16 < bytes.length; index++) { width = Math.max(width, bytes[6 + index * 16] || 256); height = Math.max(height, bytes[7 + index * 16] || 256); } return { format: 'ico', mimeType: 'image/x-icon', width, height }; }
   if (bytes.length >= 10 && bytes.subarray(0, 3).toString('ascii') === 'GIF') return { format: 'gif', mimeType: 'image/gif', width: bytes.readUInt16LE(6), height: bytes.readUInt16LE(8) };
   if (bytes.length >= 4 && bytes[0] === 0xff && bytes[1] === 0xd8) { let offset = 2; while (offset + 8 < bytes.length) { if (bytes[offset] !== 0xff) { offset++; continue; } const marker = bytes[offset + 1], length = bytes.readUInt16BE(offset + 2); if ([0xc0,0xc1,0xc2,0xc3,0xc5,0xc6,0xc7,0xc9,0xca,0xcb,0xcd,0xce,0xcf].includes(marker)) return { format: 'jpg', mimeType: 'image/jpeg', width: bytes.readUInt16BE(offset + 7), height: bytes.readUInt16BE(offset + 5) }; if (length < 2) break; offset += length + 2; } }
-  const prefix = bytes.subarray(0, Math.min(bytes.length, 64 * 1024)).toString('utf8').replace(/^\uFEFF/, '').trimStart();
-  if (/^(?:<\?xml\b[^>]*>\s*)?(?:<!--[^]*?-->\s*)*<svg\b/i.test(prefix) && !/<(?:script|foreignObject)\b|\bon\w+\s*=|<!DOCTYPE|<!ENTITY|@import\b/i.test(prefix)) {
+  const prefix = bytes.toString('utf8').replace(/^\uFEFF/, '').trimStart();
+  if (prefix.startsWith('<') && isSafeSvg(prefix)) {
     const a = parseAttributes(prefix.match(/<svg\b[^>]*>/i)?.[0] ?? ''), viewBox = String(a.viewbox ?? '').split(/[\s,]+/).map(Number);
     const absolute = value => /^\s*\d+(?:\.\d+)?(?:px)?\s*$/i.test(String(value ?? '')) ? Number.parseFloat(value) : null;
     let width = absolute(a.width), height = absolute(a.height);
@@ -455,8 +483,9 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     let bytes = read.bytes;
     if (item.source === 'bimi' && String(response.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase() !== 'image/svg+xml') return null;
     let metadata = imageMetadata(bytes, response.headers.get('content-type'));
-    const svgSafetyValidated = metadata?.format === 'svg' ? isSafeBimiSvg(bytes) : null;
-    if (item.source === 'bimi' && svgSafetyValidated === false) return null;
+    const svgSafetyValidated = metadata?.format === 'svg' ? isSafeSvg(bytes) : null;
+    if (svgSafetyValidated === false) return null;
+    if (item.source === 'bimi' && !isSafeBimiSvg(bytes)) return null;
     if (item.source === 'bimi' && metadata?.format !== 'svg') return null;
     if (metadata?.format === 'svg') {
       bytes = normalizeStandaloneSvg(bytes, { inheritedColor: item.evidence?.inherited_color });
@@ -480,7 +509,8 @@ async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, sta
   try {
     const { rawBytes: _rawBytes, ...cleanItem } = item;
     let metadata = imageMetadata(bytes, contentType);
-    const svgSafetyValidated = metadata?.format === 'svg' ? isSafeBimiSvg(bytes) : null;
+    const svgSafetyValidated = metadata?.format === 'svg' ? isSafeSvg(bytes) : null;
+    if (svgSafetyValidated === false) return null;
     if (metadata?.format === 'svg') {
       bytes = normalizeStandaloneSvg(bytes, { inheritedColor: item.evidence?.inherited_color });
       metadata = bytes && imageMetadata(bytes, 'image/svg+xml');
@@ -677,7 +707,7 @@ export async function extractLogos(website, options = {}) {
         timeoutMs: attempt.timeoutMs,
         accept: 'text/html,application/xhtml+xml',
         diagnostics: network,
-        fetchImpl: options.fetchImpl ?? fetch,
+        fetchImpl: options.fetchImpl,
         validateUrl: options.validateUrl ?? assertPublicUrl,
       });
       if (!response.ok) {
@@ -782,7 +812,7 @@ export async function extractLogos(website, options = {}) {
         accept: request.accept ?? '*/*',
         diagnostics: network,
         headers: request.headers,
-        fetchImpl: request.fetchImpl ?? fetch,
+        fetchImpl: request.fetchImpl,
         validateUrl: request.validateUrl ?? assertPublicUrl,
       });
       if (request.detectArchive && /(?:application|multipart)\/(?:zip|x-zip-compressed)/i.test(response.headers.get('content-type') ?? '')) {
@@ -1177,7 +1207,7 @@ export async function extractLogos(website, options = {}) {
   }
 
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
-  const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
+  const totalBytes = network.bytesDownloaded + (browserDiagnostics?.transferBytes ?? browserDiagnostics?.declaredTransferBytes ?? 0);
   const processingRequested = options.removeBackground === true || options.backgroundRemoval === true || options.upscale != null || options.upscaleFactor != null;
   const processedAssets = processingRequested ? await processSelectedAssets(ranked.assets, options, ranked) : null;
   const genericAssetMatches = ranked.candidates.flatMap(item => item.observed?.generic_asset ? [{ url: item.resolvedUrl ?? item.resolved_url ?? item.url, ...item.observed.generic_asset }] : []);

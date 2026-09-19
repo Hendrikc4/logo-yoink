@@ -9,17 +9,23 @@ export function isIpAddress(hostname) {
 }
 
 export function isPrivateIp(hostname) {
-  const value = canonicalHostname(hostname);
+  let value = canonicalHostname(hostname);
   const family = isIP(value);
   if (!family) return false;
   if (family === 6) {
-    if (value === '::' || value === '::1' || /^(?:fc|fd|fe[89ab])/i.test(value) || /^2001:db8:/i.test(value)) return true;
+    // URL's IPv6 parser canonicalizes dotted, hexadecimal, and expanded mapped
+    // addresses to the same form, avoiding representation-dependent bypasses.
+    try {
+      value = new URL(`http://[${value}]/`).hostname.slice(1, -1);
+    } catch {}
     const mapped = value.match(/^::ffff:([\da-f]{1,4}):([\da-f]{1,4})$/i);
     if (mapped) {
       const number = Number.parseInt(mapped[1], 16) * 65536 + Number.parseInt(mapped[2], 16);
       return isPrivateIp(`${number >>> 24}.${number >>> 16 & 255}.${number >>> 8 & 255}.${number & 255}`);
     }
-    return false;
+    // Only global-unicast IPv6; reject translation/tunnelling prefixes that
+    // could reach IPv4 destinations outside this classifier's visibility.
+    return !/^[23][\da-f]{3}:/i.test(value) || /^2001:(?:db8:|0:|:)|^2002:/i.test(value);
   }
   const [a, b, c] = value.split('.').map(Number);
   return a === 0 || a === 10 || a === 127 ||
