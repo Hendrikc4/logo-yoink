@@ -274,6 +274,19 @@ Both `preferences.icon` and `preferences.logo` accept the same optional fields. 
 
 The response keeps canonical `assets.icon` and `assets.logo` selections and adds ordered `assetVariants.icon` and `assetVariants.logo` arrays. The selected asset is first. Additional entries must represent a distinct theme/color/background combination and clear `variantPolicy.minimumRoleScore` (currently 45, the medium-certainty boundary); delivery-size copies of the same artwork are not promoted as semantic variants. Every variant includes explicit metadata such as `{"theme":"dark","color":"white","background":"transparent"}` plus role-specific `certainty: { score, band }`.
 
+For transparent artwork, strongly different measured contrast on light and dark
+surfaces informs the theme metadata. This changes selection, not the source colors.
+Compact, ambiguous marks and explicitly stacked logos are not accepted as full
+wordmarks merely because their canvas is wide; `wordmark_caution` explains these
+cases. Short wordmarks explicitly labelled as such remain eligible.
+
+When a branded home link displays a logo inside a CSS sprite, a supported,
+pixel-aligned viewport can produce a native-resolution PNG crop. Such assets are
+explicitly marked `derived: true`, keep the complete source file and source URL in
+`original`, and record crop coordinates in `transformations`. Their `resolvedUrl`
+is the derived data URL. Unsupported positions, scaling, and ambiguous crops
+abstain; no pixels or lettering are invented.
+
 Grouped `assetFamilies`, every ranked `candidate`, normalized `preferences`, and discovery `diagnostics` remain available. `diagnostics.scrapers` reports which scraper choices were enabled and which actually ran. The homepage uses the canonical variant arrays for its inline icon and wordmark selectors. “More assets” contains only other high-confidence families and excludes every family already represented by a selected-role variant.
 
 The simplest response fields are top-level `icon` and `logo`. They are aliases of `assets.icon` and `assets.logo`. For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available. The deprecated `selectedByRole.favicon` key independently reports the best favicon-sized legacy selection; it never changes canonical `assets.icon` or `assets.logo`. When no true icon qualifies, a valid favicon-role candidate may become the canonical icon fallback.
@@ -359,7 +372,23 @@ The primary local settings are:
 | `PUBLIC_DEMO_WIKIMEDIA` | `1` | Set to `0` to disable Wikidata/Commons missing-role recovery in the demo |
 | `PUBLIC_DEMO_BIMI` | `0` | Set to `1` to enable the experimental BIMI fallback for web/API requests |
 
-`--deep-wide` only runs when the homepage has no accepted wide logo. It follows at most two strong first-party brand, press, or media links and can inspect official ZIP kits. `--spa-bundles` scans at most one same-origin entry bundle, up to 2.2 MB, for a company-logo asset literal.
+`--deep-wide` only runs when the homepage has no accepted wide logo. It attempts
+at most two brand, press, or media pages and can inspect official ZIP kits. Strong
+explicit links take priority; conventional `brand.<domain>` and `/brand` probes
+fill gaps. It retains displayed page logos as well as download links. When
+rendering is enabled, one discovered official page may be rendered after the
+homepage still has no wordmark. Each browser page retains its time and declared
+transfer limits, with a 300-request ceiling for sites using many small JavaScript
+chunks and one short retry for an empty rendered observation.
+`diagnostics.deep` and `diagnostics.browser.attempts` expose these recovery stages.
+`--spa-bundles` scans at most one same-origin entry bundle, up to 2.2 MB, for a
+company-logo asset literal.
+
+An HTTP-denied homepage can still reach the enabled public browser, cached
+favicon, and exact-domain Wikimedia recovery stages. A partial result retains
+the failed `reachability` attempts and sets `diagnostics.homepageUnavailable`;
+it does not claim that the homepage was accessed. If no eligible asset is
+recovered, extraction still fails. These fallbacks require no new service or key.
 
 `sitemap: true` enables a missing-wide-only recovery pass in the JavaScript API. It reads robots-declared sitemaps on the exact registrable domain, fetches at most one likely official page, and admits only wide-role candidates within separate request, byte, redirect, and wall-clock limits.
 
