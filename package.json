@@ -60,8 +60,17 @@
     "test": "node --test && node scripts/maintenance/validate-fixtures.mjs",
     "smoke": "node scripts/maintenance/smoke-local.mjs",
     "check:syntax": "node scripts/maintenance/check-syntax.mjs",
-    "check": "npm run check:syntax && node scripts/maintenance/validate-benchmark-qualification.mjs && npm test && npm run smoke",
+    "check": "npm run check:syntax && node scripts/maintenance/validate-benchmark-qualification.mjs && npm test && npm run smoke && npm run brands:verify && npm run brands:1000:verify && npm run brands:self-test",
     "fixtures:validate": "node scripts/maintenance/validate-fixtures.mjs"
+    ,"brands:refresh": "node scripts/brand-library.mjs refresh"
+    ,"brands:supplement": "node scripts/brand-library.mjs supplement"
+    ,"brands:curate": "node scripts/brand-library.mjs curate"
+    ,"brands:approve": "node scripts/brand-library.mjs approve"
+    ,"brands:review": "node scripts/brand-library.mjs review"
+    ,"brands:verify": "node scripts/brand-library.mjs verify"
+    ,"brands:self-test": "node scripts/brand-library.mjs self-test"
+    ,"brands:1000:build": "node scripts/brand-library-build-1000.mjs && node scripts/brand-library.mjs bootstrap --root brand-library/v2"
+    ,"brands:1000:verify": "node scripts/brand-library.mjs verify --root brand-library/v2"
   },
   "engines": {
     "node": ">=22"

@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-18T07-44-02-279Z",
+  "reviewer": "codex-ai-visual-review",
+  "reviewedAt": "2026-09-18T07:52:00Z",
+  "scope": "records 401–500, staged light-05 and dark-05",
+  "decisions": [
+    {
+      "brandId": "daimler-truck",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square asset is a tiny DAIMLER TRUCK text lockup, not a separate icon or symbol."
+    },
+    {
+      "brandId": "teck-resources",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The white Teck wordmark is visible on dark but disappears on light; no light-compatible variant is staged."
+    },
+    {
+      "brandId": "intercontinental-exchange",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square asset contains the ICE name lockup rather than a separate icon or symbol."
+    },
+    {
+      "brandId": "rheinmetall",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide asset contains only the geometric symbol and no Rheinmetall company name."
+    },
+    {
+      "brandId": "fortescue",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The white Fortescue wordmark is visible on dark but absent on light; no light-compatible variant is staged."
+    },
+    {
+      "brandId": "petrobras",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged square artwork has no discernible Petrobras mark on either background."
+    },
+    {
+      "brandId": "petrobras",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide artwork is a blank white wedge on dark and invisible on light, not a usable Petrobras wordmark."
+    },
+    {
+      "brandId": "bombardier",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The black Bombardier lettering is clear on light but disappears on dark; no dark-compatible variant is staged."
+    },
+    {
+      "brandId": "rwe",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The black RWE wordmark disappears on dark; no dark-compatible variant is staged."
+    },
+    {
+      "brandId": "posco-holdings",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The dark POSCO HOLDINGS lettering disappears against the dark background."
+    },
+    {
+      "brandId": "eni",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The black six-legged dog mark disappears against the dark background."
+    },
+    {
+      "brandId": "zoetis",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square image contains the complete zoetis name, not a standalone icon or symbol."
+    },
+    {
+      "brandId": "nucor",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide artwork is a gray swoosh without the Nucor company name, not a wordmark."
+    },
+    {
+      "brandId": "kubota",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The dark slogan/lettering is effectively invisible on the dark background, leaving only the blue Kubota text."
+    },
+    {
+      "brandId": "dow",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The square slot is a cropped Dow name lockup, not a standalone symbol."
+    },
+    {
+      "brandId": "repsol",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The dark blue repsol lettering and linework nearly disappear on dark; no dark-compatible variant is staged."
+    },
+    {
+      "brandId": "abbott",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The navy Abbott symbol has inadequate visibility on dark."
+    },
+    {
+      "brandId": "keyence",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The black KEYENCE lettering disappears on dark; no dark-compatible variant is staged."
+    },
+    {
+      "brandId": "stryker",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The icon reads SYK, the stock ticker, rather than displaying a Stryker brand symbol."
+    },
+    {
+      "brandId": "stryker",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The black Stryker lettering disappears on dark; no dark-compatible variant is staged."
+    },
+    {
+      "brandId": "kt-corporation",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide image is Korean promotional text, not a KT company-name wordmark."
+    },
+    {
+      "brandId": "basf",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The black BASF square-and-dot icon disappears on dark."
+    },
+    {
+      "brandId": "basf",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The white BASF lockup is visible on dark but disappears on light; no light-compatible variant is staged."
+    },
+    {
+      "brandId": "omv",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The white OMV lettering is visible on dark but absent on light; no light-compatible variant is staged."
+    },
+    {
+      "brandId": "boston-scientific",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The blue Boston Scientific lettering has inadequate visibility on dark."
+    },
+    {
+      "brandId": "credit-agricole",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The green lockup loses its name and mark on dark; no dark-compatible variant is staged."
+    },
+    {
+      "brandId": "bharti-airtel",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The black Airtel symbol disappears on dark."
+    },
+    {
+      "brandId": "linde",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The white Linde symbol and lettering are visible on dark but absent on light."
+    },
+    {
+      "brandId": "santander",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The white Santander name lockup is visible on dark but absent on light."
+    },
+    {
+      "brandId": "intuitive-surgical",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The white INTUITIVE lettering is visible on dark but absent on light."
+    },
+    {
+      "brandId": "telstra",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide artwork reads SPROUT, a different brand, not Telstra."
+    },
+    {
+      "brandId": "kansai-electric-power",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide artwork is a WITH YOU slogan lockup and omits the company name."
+    },
+    {
+      "brandId": "trane-technologies",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The black TRANE TECHNOLOGIES lettering disappears on dark."
+    },
+    {
+      "brandId": "edwards-lifesciences",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The full Edwards lettering appears only on dark; the light rendering lacks the name."
+    },
+    {
+      "brandId": "intesa-sanpaolo",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The tiny Intesa Sanpaolo lockup on light is blank on dark; no dark-compatible variant is staged."
+    },
+    {"brandId":"daimler-truck","role":"logo","action":"reject","reason":"Black Daimler Truck lettering disappears on dark; no dark-compatible variant is staged."},
+    {"brandId":"intercontinental-exchange","role":"logo","action":"reject","reason":"The black ICE lettering disappears on dark; no dark-compatible variant is staged."},
+    {"brandId":"mitsubishi-electric","role":"icon","action":"reject","reason":"The square asset is the complete tiny Mitsubishi Electric lockup, not a standalone symbol."},
+    {"brandId":"mitsubishi-heavy-industries","role":"icon","action":"reject","reason":"The square asset is the complete tiny Mitsubishi Heavy Industries lockup, not a standalone symbol."},
+    {"brandId":"equinor","role":"icon","action":"reject","reason":"The square artwork shows no discernible Equinor symbol on either background."},
+    {"brandId":"kubota","role":"icon","action":"reject","reason":"The square artwork has no discernible Kubota symbol on either background."},
+    {"brandId":"danaher","role":"icon","action":"reject","reason":"The staged icon is blank on both light and dark contact sheets."},
+    {"brandId":"societe-generale","role":"icon","action":"reject","reason":"The staged icon is blank on both light and dark contact sheets."},
+    {"brandId":"lg-uplus","role":"icon","action":"reject","reason":"The icon is the LG parent-company mark, not the LG Uplus telecom brand mark."},
+    {"brandId":"singtel","role":"icon","action":"reject","reason":"The square image includes the complete Singtel name rather than a separate icon or symbol."},
+    {"brandId":"air-products","role":"icon","action":"reject","reason":"The staged square asset shows no discernible Air Products mark on either background."},
+    {"brandId":"intesa-sanpaolo","role":"icon","action":"reject","reason":"The staged square asset shows no discernible Intesa Sanpaolo mark on either background."}
+  ]
+}

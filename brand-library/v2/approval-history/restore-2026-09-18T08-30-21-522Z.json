@@ -1,0 +1,126 @@
+{
+  "reviewer": "codex-ai-secondary-visual-qa",
+  "reviewedAt": "2026-09-18T08:29:02Z",
+  "decisions": [
+    {
+      "brandId": "pampers",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows a clean teal/yellow Pampers wordmark on both themes; black side blocks were sheet padding."
+    },
+    {
+      "brandId": "foodpanda",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows a clear magenta foodpanda wordmark on both themes; bars were sheet padding."
+    },
+    {
+      "brandId": "iag",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows the IAG corporate lockup legibly on both themes; black bars were sheet padding."
+    },
+    {
+      "brandId": "just-eat-takeaway",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows a clear orange Just Eat Takeaway.com lockup on both themes; bars were sheet padding."
+    },
+    {
+      "brandId": "indomaret",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows the full Indomaret logo panel on both themes without black side blocks."
+    },
+    {
+      "brandId": "abra-group",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows an unobstructed, colorful Abra lockup on both themes; vertical bars were sheet padding."
+    },
+    {
+      "brandId": "hyatt",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows a complete Hyatt wordmark on both themes; horizontal bars were sheet padding."
+    },
+    {
+      "brandId": "miele",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows the complete white Miele wordmark on its red panel on both themes; side blocks were sheet padding."
+    },
+    {
+      "brandId": "doordash",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows the orange DoorDash wordmark cleanly on both themes; bars were sheet padding."
+    },
+    {
+      "brandId": "zscaler",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows the full blue Zscaler wordmark on both themes without black bars."
+    },
+    {
+      "brandId": "worldpay",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 8 shows the red worldpay wordmark on its white backing in both themes; earlier apparent blanking was a sheet-rendering artifact."
+    },
+    {
+      "brandId": "mediatek",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 9 shows a clear orange MediaTek wordmark on both themes; black bars were sheet padding."
+    },
+    {
+      "brandId": "nexi",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 9 shows the full blue Nexi wordmark on both themes; side blocks were sheet padding."
+    },
+    {
+      "brandId": "weebly",
+      "role": "icon",
+      "action": "restore",
+      "reason": "Corrected page 9 shows a clean blue/white Weebly W icon on both themes; bars were sheet padding."
+    },
+    {
+      "brandId": "renesas",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 9 shows the complete blue Renesas wordmark on light and on a white-backed strip on dark; prior cropping was sheet padding."
+    },
+    {
+      "brandId": "lastpass",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 10 shows a clean magenta LastPass wordmark on both themes; bars were sheet padding."
+    },
+    {
+      "brandId": "globalfoundries",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 10 shows the full orange GlobalFoundries wordmark on both themes; bars were sheet padding."
+    },
+    {
+      "brandId": "zoho",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 10 shows the full four-color Zoho lockup on both themes; side blocks were sheet padding."
+    },
+    {
+      "brandId": "grafana-labs",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 10 shows a clear orange Grafana Labs wordmark on both themes; bars were sheet padding."
+    },
+    {
+      "brandId": "ringcentral",
+      "role": "logo",
+      "action": "restore",
+      "reason": "Corrected page 10 shows a clear blue/orange RingCentral wordmark on both themes; bars were sheet padding."
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import { isIP } from 'node:net';
 import { DomUtils, parseDocument } from 'htmlparser2';
 import { describesEmbeddedLogo } from './logo-semantics.mjs';
 
-const POSITIVE = /(?:^|[-_\s])(logo|brand|wordmark|identity|masthead)(?:$|[-_\s])/i;
+const POSITIVE = /(?:^|[-_\s])(logo|logotype|brand|wordmark|identity|masthead)(?:$|[-_\s])/i;
 const NEGATIVE = /customer|partner|sponsor|testimonial|payment|app.?store|flag|avatar|badge|award|client/i;
 const UI_CONTROL = /(?:^|[-_\s])(hamburger|menu-toggle|toggle-menu|close|search|chevron|arrow|whatsapp|tasks?|translate|language-switcher|button-icon)(?:$|[-_\s])|(?:^|[-_\s])fa-(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i;
 const HIGH_INTENT = /(?:^|[^a-z0-9])(brand(?:ing)?|press(?:room|\s+kit)?|media(?:\s+kit)?|news(?:room)?|logo(?:\s+kit)?|visual\s+identity|company)(?:[^a-z0-9]|$)/i;
@@ -50,7 +50,13 @@ function isHomeLink(value, base) {
 function evidence(node, base, order, extra = {}) {
   const a = attrs(node), surroundings = context(node);
   const linkAttributes = attrs(surroundings.link);
-  const localSemantic = [a.id, a.class, a.alt, a['aria-label'], a.title, a['data-ux'], linkAttributes.id, linkAttributes.class, linkAttributes['aria-label'], linkAttributes.title].filter(Boolean).join(' ');
+  // Branding is often labelled on a wrapper or in a component's data attributes.
+  // Keep this local: a whole header's labels must not turn every arrow into a logo.
+  const localNodes = [node, ...ancestors(node).slice(0, 2)].filter(DomUtils.isTag);
+  const componentLabels = localNodes.flatMap(item => Object.entries(attrs(item))
+    .filter(([key]) => /^(?:aria-label|title|data-(?:uia|ux|testid|hawkins-id))$/.test(key))
+    .map(([, value]) => value.replace(/([a-z])([A-Z])/g, '$1 $2'))).join(' ');
+  const localSemantic = [a.id, a.class, a.alt, a['aria-label'], a.title, componentLabels, linkAttributes.id, linkAttributes.class, linkAttributes['aria-label'], linkAttributes.title].filter(Boolean).join(' ');
   const semantic = [a.id, a.class, a.alt, a['aria-label'], a.title, surroundings.tokens].filter(Boolean).join(' ');
   const inheritedColor = [node, ...ancestors(node)].map(item => {
     const a = attrs(item);
@@ -63,9 +69,12 @@ function evidence(node, base, order, extra = {}) {
     alt: a.alt ?? '',
     aria_label: a['aria-label'] ?? '',
     class_tokens: String(a.class ?? '').split(/\s+/).filter(Boolean),
-    semantic_text: semantic,
+    semantic_text: `${localSemantic} ${semantic}`,
+    local_semantic: localSemantic,
+    anchor_text: surroundings.link ? boundedText(surroundings.link, 120) : '',
     positive_token: POSITIVE.test(localSemantic),
     negative_context: NEGATIVE.test(semantic) || UI_CONTROL.test(localSemantic) ||
+      (!POSITIVE.test(localSemantic) && /^home$/i.test(surroundings.link ? boundedText(surroundings.link, 120) : '')) ||
       surroundings.region === 'body' && describesEmbeddedLogo(a.alt) ||
       surroundings.region === 'footer' && /badge|award|partner/i.test(semantic),
     discovery_order: order,
@@ -83,7 +92,9 @@ function firstSrcset(value, base) {
   }).filter(item => item.url);
 }
 function dimensions(a) {
-  const width = Number.parseFloat(a.width), height = Number.parseFloat(a.height);
+  let width = Number.parseFloat(a.width), height = Number.parseFloat(a.height);
+  const box = String(a.viewbox ?? '').split(/[\s,]+/).map(Number);
+  if (box.length === 4 && box.every(Number.isFinite) && box[2] > 0 && box[3] > 0 && !Number.isFinite(width) && !Number.isFinite(height)) [width, height] = box.slice(2);
   return { width: Number.isFinite(width) ? width : null, height: Number.isFinite(height) ? height : null };
 }
 function boundedText(node, limit = 600) {
@@ -113,6 +124,27 @@ function isSelfContainedSvg(markup) {
   }
   for (const match of markup.matchAll(/url\(\s*["']?([^)'"\s]+)["']?\s*\)/gi)) if (!match[1].startsWith('#') && !match[1].startsWith('data:')) return false;
   return true;
+}
+
+function resolveSvgReferences(markup, nodes) {
+  let output = markup;
+  const added = new Set();
+  for (let pass = 0; pass < 16; pass++) {
+    const references = [...output.matchAll(/(?:url\(\s*["']?#|(?:href|xlink:href)=["']#)([^\s"')]+)/g)].map(match => match[1]);
+    const defined = new Set([...output.matchAll(/\bid=["']([^"']+)["']/g)].map(match => match[1]));
+    const missing = [...new Set(references)].filter(id => !defined.has(id));
+    if (!missing.length) return isSelfContainedSvg(output) ? output : null;
+    for (const id of missing) {
+      if (added.has(id) || added.size >= 16) return null;
+      const definition = nodes.find(node => attrs(node).id === id);
+      // Only copy SVG definitions; never pull arbitrary HTML or another document.
+      if (!definition || !ancestors(definition).some(node => node.name === 'svg')) return null;
+      added.add(id);
+      output = output.replace(/<\/svg>\s*$/i, `<defs>${DomUtils.getOuterHTML(definition)}</defs></svg>`);
+      if (output.length > 256 * 1024) return null;
+    }
+  }
+  return null;
 }
 
 export function parseHomepage(html, base, { companyName = '', collectDeepLinks = false } = {}) {
@@ -168,9 +200,13 @@ export function parseHomepage(html, base, { companyName = '', collectDeepLinks =
       const declared = dimensions(a);
       const largeEnoughHomeMark = proof.home_linked && (!declared.width || !declared.height || Math.min(declared.width, declared.height) >= 32);
       const eligible = !proof.negative_context && (proof.positive_token || largeEnoughHomeMark);
-      const markup = eligible ? DomUtils.getOuterHTML(node) : '';
-      if (eligible && markup && isSelfContainedSvg(markup)) {
-        add(`data:image/svg+xml;base64,${Buffer.from(markup).toString('base64')}`, 'inline-svg', { declared, evidence: proof });
+      const originalMarkup = eligible ? DomUtils.getOuterHTML(node) : '';
+      const markup = originalMarkup ? resolveSvgReferences(originalMarkup, nodes) : null;
+      if (eligible && markup) {
+        // Unresolved document variables can erase lettering while leaving a
+        // perfectly renderable background. Preserve it, but require a browser.
+        const requiresRendering = /\b(?:fill|stroke)\s*=\s*["'][^"']*var\s*\(|(?:fill|stroke)\s*:\s*var\s*\(/i.test(markup);
+        add(`data:image/svg+xml;base64,${Buffer.from(markup).toString('base64')}`, 'inline-svg', { declared, evidence: { ...proof, ...(requiresRendering ? { requires_rendering: true, eligible_roles: [] } : {}) } });
       }
     }
     if (node.name === 'noscript') {
@@ -207,4 +243,4 @@ export function parseHomepage(html, base, { companyName = '', collectDeepLinks =
   return { candidates, manifests: [...new Set(manifests)], brandPages: [...new Set(brandPages)], highIntentLinks: [...new Map(highIntentLinks.map(item => [item.url, item])).values()], entryScripts: [...new Set(entryScripts)], pageTitle };
 }
 
-export const internals = { context, evidence, firstSrcset, isSelfContainedSvg, linkEvidence };
+export const internals = { context, evidence, firstSrcset, isSelfContainedSvg, linkEvidence, resolveSvgReferences };

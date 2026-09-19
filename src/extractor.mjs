@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
+import { cropCssSprite } from './css-sprite.mjs';
 import { parseHomepage, resolveHttpUrl } from './discover-static.mjs';
 import { discoverBrowserLogos } from './discover-browser.mjs';
 import { normalizeStandaloneSvg } from './standalone-svg.mjs';
@@ -333,7 +334,8 @@ function provisionalQueue(item) {
   if (DOM_IMAGE_SOURCES.has(item.source) && !proof.positive_token && !proof.home_linked &&
       !['header', 'nav'].includes(proof.dom_region)) return null;
   const ratio = [...String(item.sizes ?? '').matchAll(/(\d+)x(\d+)/gi)]
-    .map(match => Number(match[1]) / Number(match[2])).find(Number.isFinite);
+    .map(match => Number(match[1]) / Number(match[2])).find(Number.isFinite) ??
+    (item.declared?.width > 0 && item.declared?.height > 0 ? item.declared.width / item.declared.height : undefined);
   if (ratio !== undefined && ratio >= 1.8) return 'wide';
   if (FAVICON_SOURCES.has(item.source)) return 'favicon';
   if (STRUCTURED_LOGO_SOURCES.has(item.source)) return 'wide';
@@ -595,8 +597,8 @@ function dedupeBytes(items) {
 function browserCandidateDisposition(item, homepage, eligibleRoles = ['icon', 'wide'], { headerRetention = true } = {}) {
   const proofs = Array.isArray(item.evidence) ? item.evidence : [item.evidence].filter(Boolean);
   const proof = proofs[0] ?? {};
-  const semantic = [proof.alt, proof.ariaLabel, proof.title, proof.id, proof.className].filter(Boolean).join(' ');
-  const uiControl = /(?:^|[-_\s])(hamburger|menu-toggle|toggle-menu|close|search|chevron|arrow|whatsapp|tasks?|translate|language-switcher|button-icon)(?:$|[-_\s])|(?:^|[-_\s])fa-(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i.test(semantic);
+  const semantic = [proof.alt, proof.ariaLabel, proof.title, proof.id, proof.className, proof.componentLabel].filter(Boolean).join(' ');
+  const uiControl = /(?:^|[-_\s])(hamburger|menu-toggle|toggle-menu|close|search|chevron|arrow|whatsapp|tasks?|translate|language-switcher|button-icon)(?:$|[-_\s])|(?:^|[-_\s])fa-(?:language|magnifying-glass|search|bars|xmark|close|chevron-(?:left|right|up|down)|arrow-(?:left|right|up|down)|whatsapp)(?:$|[-_\s])/i.test(semantic) || /^home$/i.test(proof.anchorText ?? '') && !/logo|brand|wordmark/i.test(semantic);
   const positive = /logo|brand|wordmark/i.test(semantic);
   const width = Number(proof.renderedBox?.width), height = Number(proof.renderedBox?.height);
   const ratio = width > 0 && height > 0 ? width / height : null;
@@ -615,13 +617,33 @@ function browserCandidateDisposition(item, homepage, eligibleRoles = ['icon', 'w
       alt: proof.alt ?? '',
       aria_label: proof.ariaLabel ?? '',
       semantic_text: semantic,
+      local_semantic: semantic,
       positive_token: positive,
       negative_context: uiControl,
       eligible_roles: eligibleRoles,
       themes: [...new Set(proofs.map(value => value?.theme).filter(Boolean))],
       rendered: true,
+      css_background: proof.cssBackground,
     },
   }) };
+}
+
+async function deriveCssSprite(item) {
+  if (item.source !== 'browser-css-background' || !item.evidence?.css_background ||
+      !item.evidence.home_linked || !item.evidence.positive_token) return null;
+  try {
+    const originalBytes = dataUrlBytes(item.dataUrl);
+    const cropped = await cropCssSprite(originalBytes, item, item.evidence.css_background);
+    if (!cropped) return null;
+    const dataUrl = `data:image/png;base64,${cropped.bytes.toString('base64')}`;
+    return await validateCandidateBytes({
+      url: dataUrl, source: 'browser-css-sprite', source_page: item.source_page,
+      evidence: { ...item.evidence, eligible_roles: ['wide'] },
+      derived: true,
+      original: { url: item.resolvedUrl, dataUrl: item.dataUrl, format: item.format, width: item.width, height: item.height, byte_hash: item.observed.byte_hash },
+      transformations: [{ type: 'css-sprite-crop', ...cropped.rect, resampled: false, css: item.evidence.css_background }],
+    }, cropped.bytes, { resolvedUrl: dataUrl, contentType: 'image/png' });
+  } catch { return null; }
 }
 
 function fromBrowserCandidate(item, homepage, eligibleRoles = ['icon', 'wide']) {
@@ -722,6 +744,11 @@ export async function extractLogos(website, options = {}) {
       reachability.push({ url: target, via: 'jina', ok: false, error: error.name === 'AbortError' ? 'timeout' : error.message });
     }
   }
+  const homepageUnavailable = !homepage;
+  // A denied HTML request must not prevent the independently bounded public
+  // browser, favicon, and exact-domain identity recovery stages from running.
+  if (!homepage && aggregateHomepageFailure(reachability) === 'blocked_interstitial' &&
+      (options.browser || options.cachedFavicon !== false || wikimediaFallback)) homepage = normalized.url.href;
   if (!homepage) {
     const failureClass = aggregateHomepageFailure(reachability);
     throw extractionFailure(`Could not reach the website. ${reachability.map(item => `${item.url}${item.via ? ` via ${item.via}` : ''}: ${item.skipped ?? item.error ?? `HTTP ${item.status}`}`).join(' | ')}`, {
@@ -973,24 +1000,39 @@ export async function extractLogos(website, options = {}) {
 
   let browserDiagnostics = null;
   if (options.browser && !jinaHomepageUsed && needsRenderedWideFallback(ranked, preferences)) {
-    const missingRoles = ['icon', 'wide'].filter(role => !ranked.selectedByRole[role]);
-    if (!missingRoles.includes('wide')) missingRoles.push('wide');
-    const rendered = await discoverBrowserLogos({ url: homepage, domain: normalized.domain, company: options.companyName }, {
-      browser: options.browserInstance,
-      darkMode: true,
-      timeoutMs: Math.min(12_000, timeoutMs),
-      userAgent: options.userAgent,
-      launchOptions: options.browserLaunchOptions,
-    });
-    browserDiagnostics = rendered.diagnostics;
-    const known = new Set(validated.map(item => item.url));
-    const browserConverted = rendered.candidates.map(item => fromBrowserCandidate(item, homepage, missingRoles)).filter(item => item && !known.has(item.url));
-    const browserItems = selectBrowserCandidates(browserConverted, 8, 2).chosen;
-    const extra = (await mapConcurrent(browserItems, 4, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
-    validated = dedupeBytes([...validated, ...extra]);
-    await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
-    await attachTinySuitability(validated);
-    ranked = rankValidated();
+    const brandPage = deepDiagnostics.official?.pages?.find(url => url !== homepage && sameRegistrableDomain(url, homepage));
+    for (const browserPage of [homepage, brandPage].filter(Boolean)) {
+      if (!needsRenderedWideFallback(ranked, preferences)) break;
+      const missingRoles = ['icon', 'wide'].filter(role => !ranked.selectedByRole[role]);
+      if (!missingRoles.includes('wide')) missingRoles.push('wide');
+      const rendered = await discoverBrowserLogos({ url: browserPage, domain: normalized.domain, company: options.companyName }, {
+        browser: options.browserInstance,
+        darkMode: true,
+        timeoutMs: Math.min(12_000, timeoutMs),
+        userAgent: options.userAgent,
+        launchOptions: options.browserLaunchOptions,
+      });
+      const previous = browserDiagnostics;
+      browserDiagnostics = { ...rendered.diagnostics,
+        status: previous?.status === 'ok' ? 'ok' : rendered.diagnostics.status,
+        requests: (previous?.requests ?? 0) + rendered.diagnostics.requests,
+        declaredTransferBytes: (previous?.declaredTransferBytes ?? 0) + rendered.diagnostics.declaredTransferBytes,
+        blockedRequests: (previous?.blockedRequests ?? 0) + rendered.diagnostics.blockedRequests,
+        resourceLimitHit: Boolean(previous?.resourceLimitHit || rendered.diagnostics.resourceLimitHit),
+        durationMs: (previous?.durationMs ?? 0) + rendered.diagnostics.durationMs,
+        errors: [...(previous?.errors ?? []), ...rendered.diagnostics.errors],
+        attempts: [...(previous?.attempts ?? []), { url: browserPage, ...rendered.diagnostics }],
+      };
+      const known = new Set(validated.map(item => item.url));
+      const browserConverted = rendered.candidates.map(item => fromBrowserCandidate(item, rendered.diagnostics.finalUrl ?? browserPage, missingRoles)).filter(item => item && (!known.has(item.url) || item.evidence?.css_background));
+      const browserItems = selectBrowserCandidates(browserConverted, 8, 2).chosen;
+      const extra = (await mapConcurrent(browserItems, 4, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
+      const sprites = (await Promise.all(extra.map(deriveCssSprite))).filter(Boolean);
+      validated = dedupeBytes([...validated, ...extra, ...sprites]);
+      await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
+      await attachTinySuitability(validated);
+      ranked = rankValidated();
+    }
   }
 
   let jinaScreenshot = null;
@@ -1178,15 +1220,24 @@ export async function extractLogos(website, options = {}) {
 
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
+  if (homepageUnavailable && !ranked.assets.icon && !ranked.assets.logo) {
+    const error = extractionFailure('Homepage was blocked and public recovery found no eligible logo assets.', {
+      network: { requests: totalRequests, bytesDownloaded: totalBytes }, reachability,
+      failureStage: 'public_recovery', failureClass: 'blocked_interstitial',
+    });
+    Object.assign(error.diagnostics, { browser: browserDiagnostics, deep: deepDiagnostics, wikimedia: wikimediaDiagnostics });
+    throw error;
+  }
   const processingRequested = options.removeBackground === true || options.backgroundRemoval === true || options.upscale != null || options.upscaleFactor != null;
   const processedAssets = processingRequested ? await processSelectedAssets(ranked.assets, options, ranked) : null;
   const genericAssetMatches = ranked.candidates.flatMap(item => item.observed?.generic_asset ? [{ url: item.resolvedUrl ?? item.resolved_url ?? item.url, ...item.observed.generic_asset }] : []);
-  return { input: website, domain: normalized.domain, homepage, icon: ranked.assets.icon, logo: ranked.assets.logo, preferences: ranked.preferences, preferenceMatch: ranked.preferenceMatch, assets: ranked.assets, ...(processedAssets ? { processedAssets } : {}), assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { iconSelection: ranked.diagnostics?.iconSelection, genericAssetMatches, discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, linkedin: linkedinDiagnostics, wikimedia: wikimediaDiagnostics, sitemap: sitemapDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', scrapers: { browser: { enabled: Boolean(options.browser), used: browserDiagnostics?.status === 'ok' }, jina: { enabled: Boolean(jinaApiKey), used: jinaHomepageUsed || jinaScreenshot?.status === 'ok' } }, browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
+  return { input: website, domain: normalized.domain, homepage, icon: ranked.assets.icon, logo: ranked.assets.logo, preferences: ranked.preferences, preferenceMatch: ranked.preferenceMatch, assets: ranked.assets, ...(processedAssets ? { processedAssets } : {}), assetVariants: ranked.assetVariants, variantPolicy: ranked.variantPolicy, selected: ranked.selected, selectedByRole: ranked.selectedByRole, assetFamilies: ranked.assetFamilies, candidates: ranked.candidates, diagnostics: { homepageUnavailable, deep: deepDiagnostics, iconSelection: ranked.diagnostics?.iconSelection, genericAssetMatches, discovered: all.length, uniqueConsidered: unique.length, roleQueues: queueSelection ? { reserved: ROLE_QUEUE_CAPS, used: queueSelection.queueCounts } : null, contentBounding: { enabled: Boolean(options.contentBoundingWide), ...contentStats }, validated: ranked.candidates.length, families: ranked.assetFamilies.length, duplicatesByHash: validatedRaw.length - dedupeBytes(validatedRaw).length, historicalSquareHighProxy: Boolean(ranked.selected?.squareish && ranked.selected?.highResolution), selectedWideProxy: Boolean(ranked.selectedByRole.wide && ranked.selectedByRole.wide.width / ranked.selectedByRole.wide.height >= 2.2), manifests: parsed.manifests.length, besticonEnabled: Boolean(options.besticonUrl), cachedFavicon: cachedFavicon ? { source: cachedFavicon.source, resolvedUrl: cachedFavicon.resolvedUrl } : null, bimi: bimiDiagnostics, dnsRequests: bimiDiagnostics.dnsRequests ?? 0, linkedin: linkedinDiagnostics, wikimedia: wikimediaDiagnostics, sitemap: sitemapDiagnostics, htmlTruncated, expandedPages, browserUsed: browserDiagnostics?.status === 'ok', scrapers: { browser: { enabled: Boolean(options.browser), used: browserDiagnostics?.status === 'ok' }, jina: { enabled: Boolean(jinaApiKey), used: jinaHomepageUsed || jinaScreenshot?.status === 'ok' } }, browser: browserDiagnostics, jina: { homepageUsed: jinaHomepageUsed, screenshot: jinaScreenshot }, staticRequests: network.requests, requests: totalRequests, bytesDownloaded: totalBytes, downloadedBytes: totalBytes, reachability, durationMs: Math.round(performance.now() - startedAt) } };
 }
 
 // The old internal helper represented icon-oriented ranking; retain that test/debug contract.
 export const internals = {
   imageMetadata, parseAttributes, parseHomepage, readLimited, provisionalQueue,
+  deriveCssSprite,
   selectRoleAware, measureContentBox, attachContentBoxes, attachTinySuitability, dedupeBytes,
   fromBrowserCandidate, browserCandidateDisposition, selectBrowserCandidates, needsRenderedWideFallback, discoveryPriority, validateCandidate, validateCandidateBytes, isRenderableSvg, imageBackground, fetchJinaHomepage, fetchJinaBrandScreenshot, jinaBrandCandidate, cachedFaviconSources,
   missingWikimediaRoles,

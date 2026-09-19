@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "runId": "deep-search-2026-09-18T08-55-09-137Z",
+  "reviewer": "codex-light-background-visual-review",
+  "reviewedAt": "2026-09-18T08:56:00Z",
+  "decisions": [
+    { "brandId": "hpe", "role": "logo", "action": "reject", "reason": "The official header SVG contains active CSS animation and an unstable visual state; a static HPE lockup is needed." }
+  ]
+}

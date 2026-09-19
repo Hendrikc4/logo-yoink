@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-14T10:48:54.956Z",
+  "reviewer": "codex-ai",
+  "decisions": [
+    {
+      "brandId": "nike",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The selected wide asset is the standalone Swoosh symbol, not a company-name wordmark/full lockup. Nike does not expose a separate company-name asset in this reviewed source set."
+    },
+    {
+      "brandId": "disney",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The domain favicon is a Disney+ product tile, not the Disney corporate identity; no distinct corporate symbol is approved in this set."
+    },
+    {
+      "brandId": "loreal",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The extracted circular glyph is a UI/loading mark, not a verified L’Oréal brand symbol; the company wordmark remains approved."
+    },
+    {
+      "brandId": "zara",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is the full Zara wordmark rather than a distinct icon; it is retained only in the wordmark role."
+    },
+    {
+      "brandId": "fedex",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is the full FedEx wordmark rather than a distinct icon; it is retained only in the wordmark role."
+    }
+  ]
+}

@@ -50,6 +50,11 @@ export interface LogoAsset {
   width: number;
   height: number;
   source: string;
+  /** True for a native-resolution CSS sprite crop. The complete source stays in original. */
+  derived?: boolean;
+  original?: { url: string; dataUrl: string; format: string; width: number; height: number; byte_hash: string };
+  transformations?: Record<string, unknown>[];
+  wordmark_caution?: 'stacked-logo' | 'explicit-symbol' | 'ambiguous-compact-mark' | null;
   [field: string]: unknown;
 }
 

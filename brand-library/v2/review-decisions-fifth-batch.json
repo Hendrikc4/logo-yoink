@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "codex-ai-visual-review",
+  "reviewedAt": "2026-09-18T08:03:25Z",
+  "sourceReport": "runs/2026-09-18T07-55-24-101Z/report.json",
+  "decisions": [
+    {
+      "brandId": "pokemon",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "dior",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "tim-hortons",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "expedia-group",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "kingfisher",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "bilibili",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "fendi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "garena",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "jumia",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "lancome",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "patanjali",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "thai-airways",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "jollibee",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet."
+    },
+    {
+      "brandId": "transformers",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The selected square tile is Hasbro Pulse, a retail/service brand, not a Transformers franchise symbol."
+    },
+    {
+      "brandId": "barbie",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The selected icon says Mattel, the parent company, not Barbie."
+    },
+    {
+      "brandId": "barbie",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The selected wide image is the Hot Wheels logo, not Barbie."
+    },
+    {
+      "brandId": "garnier",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The round icon says Color Match, a Garnier product/tool, not the Garnier brand symbol."
+    },
+    {
+      "brandId": "fitbit",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The selected square icon is a Google-branded shopping bag, not Fitbit."
+    },
+    {
+      "brandId": "sprite",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide asset says The Coca-Cola Company, the parent, rather than Sprite."
+    },
+    {
+      "brandId": "hot-wheels",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The selected icon says Mattel, the parent, rather than Hot Wheels."
+    },
+    {
+      "brandId": "hulu",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The selected icon is the Disney D mark, not Hulu."
+    },
+    {
+      "brandId": "star-wars",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The selected icon depicts a Mandalorian helmet/character, not a Star Wars brand symbol."
+    },
+    {
+      "brandId": "fanta",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide asset says The Coca-Cola Company, the parent, rather than Fanta."
+    },
+    {
+      "brandId": "nerf",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The selected square icon says Hasbro, the parent, rather than Nerf."
+    },
+    {
+      "brandId": "wechat",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide image is a website/navigation strip combining WeChat and QQ, not a clean WeChat wordmark."
+    },
+    {
+      "brandId": "soundcloud",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide asset contains only the SoundCloud waveform/cloud symbol and no company-name lettering."
+    },
+    {
+      "brandId": "ibis",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The selected icon combines multiple ibis-family hotel sub-brand tiles instead of a singular ibis identity."
+    },
+    {
+      "brandId": "ola",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact asset is OLA name lettering rather than a distinct standalone symbol."
+    },
+    {
+      "brandId": "givenchy",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact asset is GIVENCHY name lettering rather than a distinct standalone symbol."
+    },
+    {
+      "brandId": "levi-strauss",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "tim-hortons",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "garnier",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "kingfisher",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "carnival-corporation",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "vivo",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "jollibee",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "netmarble",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "deezer",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "capcut",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "salomon",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "pinduoduo",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "familymart",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "eternal",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "jio-mart",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "bsh-home-appliances",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "bsh-home-appliances",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "fitbit",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "asus",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "oppo",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "hotels-com",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "sea-limited",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "malaysia-airlines",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "lawson",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "infiniti",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "vizio",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "oura",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "insta360",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "givenchy",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "thai-airways",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown."
+    }
+  ]
+}
