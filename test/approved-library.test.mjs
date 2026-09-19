@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { matchesAssetPreferences, matchesRequiredPreferences, normalizeAssetPreferences } from '../src/asset-model.mjs';
 import { createHash } from 'node:crypto';
 import { mkdtemp, mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -219,4 +220,15 @@ test('demo/API service returns the normal extraction schema for library hits', a
   assert.equal(response.payload.assets.logo, null);
   assert.equal(response.payload.selectedByRole.icon, response.payload.assets.icon);
   assert.equal(response.payload.diagnostics.library.brandId, 'microsoft');
+});
+
+test('live preference matching does not claim an undeclared logo representation', () => {
+  const liveLogo = { variant: { theme: 'any', color: 'any', background: 'any' } };
+  const preferences = { logo: { representation: 'stacked_lockup', strict: true } };
+  assert.equal(matchesAssetPreferences(liveLogo, {}), true);
+  assert.equal(matchesAssetPreferences(liveLogo, preferences), false);
+  assert.equal(matchesRequiredPreferences(liveLogo, normalizeAssetPreferences(preferences).logo), false);
+  assert.equal(matchesAssetPreferences({ ...liveLogo, representation: 'horizontal_wordmark' }, preferences), false);
+  assert.equal(matchesAssetPreferences({ ...liveLogo, representation: 'stacked_lockup' }, preferences), true);
+  assert.equal(matchesAssetPreferences(liveLogo, { logo: { representation: ['stacked_lockup'] } }), false);
 });

@@ -109,6 +109,7 @@ export function assetPreferenceScore(item, preferences, role = 'logo') {
 
 export function matchesRequiredPreferences(item, requested) {
   if (!item) return false;
+  if (requested.representation !== undefined && ![requested.representation].flat().includes(item.representation)) return false;
   const variant = item.variant ?? describeAssetVariant(item);
   if (['color', 'background'].some(key => requested[key] !== 'any' && variant[key] !== requested[key])) return false;
   if (requested.theme === 'any') return true;
@@ -129,6 +130,7 @@ export function matchesAssetPreferences(item, preferences, role = 'logo') {
   if (!item) return false;
   const requested = normalizeAssetPreferences(preferences)[role];
   if (!requested) return false;
+  if (requested.representation !== undefined && ![requested.representation].flat().includes(item.representation)) return false;
   if (requested.strict) return matchesRequiredPreferences(item, requested);
   const variant = item.variant ?? describeAssetVariant(item);
   return ['theme', 'color', 'background'].every(key =>
