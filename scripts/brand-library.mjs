@@ -420,6 +420,40 @@ async function coverage() {
     }
   }
 
+  const recoveryRoot = resolve('reports/missing-logo-program-2026-09-19');
+  const gapAnalysisPath = resolve(recoveryRoot, 'gap-analysis.json');
+  const comparisonPath = resolve(recoveryRoot, 'comparison.json');
+  const reviewedCandidatesPath = resolve(recoveryRoot, 'reviewed-candidates/manifest.json');
+  const recoveryById = new Map();
+  const reviewedCandidatesById = new Map();
+  let gapAnalysis = null;
+  let comparison = null;
+  let reviewedCandidatesManifest = null;
+  if (await exists(gapAnalysisPath)) {
+    gapAnalysis = await readJson(gapAnalysisPath);
+    for (const row of gapAnalysis.rows ?? []) {
+      const current = manifestById.get(row.id) ?? {};
+      const currentMissingRoles = [
+        row.missingIcon && !current.assets?.icon ? 'icon' : null,
+        row.missingWide && !current.assets?.logo ? 'logo' : null,
+      ].filter(Boolean);
+      recoveryById.set(row.id, {
+        sourceFile: 'reports/missing-logo-program-2026-09-19/gap-analysis.json',
+        split: row.split ?? null, previouslyExposed: row.previouslyExposed ?? null,
+        currentExperiment: row.currentExperiment ?? null, currentMissingRoles,
+        missingIcon: Boolean(row.missingIcon), missingWide: Boolean(row.missingWide),
+      });
+    }
+  }
+  if (await exists(comparisonPath)) comparison = await readJson(comparisonPath);
+  if (await exists(reviewedCandidatesPath)) {
+    reviewedCandidatesManifest = await readJson(reviewedCandidatesPath);
+    for (const row of reviewedCandidatesManifest.rows ?? []) {
+      const { validatedFile, ...metadata } = row;
+      reviewedCandidatesById.set(row.id, { ...metadata, sourceFile: 'reports/missing-logo-program-2026-09-19/reviewed-candidates/manifest.json' });
+    }
+  }
+
   const runEvidenceById = new Map();
   const runReports = [];
   const isTransientFailure = message => /(?:408|425|429|5\d\d|abort|fetch|network|rate.?limit|temporar|tim(?:e|ed)[ -]?out|unavailable|connection)/i.test(String(message ?? ''));
@@ -478,10 +512,24 @@ async function coverage() {
     const approvedAny = Boolean(Object.keys(assets).length || variants.length);
     const research = researchById.get(brand.id) ?? [];
     const candidates = research.flatMap(evidence => (evidence.candidates ?? []).map(candidate => ({ ...candidate, sourceFile: evidence.sourceFile, researchReason: evidence.reason })));
+    const reviewedCandidate = reviewedCandidatesById.get(brand.id) ?? null;
+    const recoveryEvidence = recoveryById.get(brand.id) ?? null;
+    const reviewedRole = reviewedCandidate?.decision === 'pass' ? (reviewedCandidate.role === 'wide' ? 'logo' : reviewedCandidate.role) : null;
     const pendingCandidateReview = candidates.filter(candidate => {
       const role = candidate.role;
       return ['icon', 'logo'].includes(role) && !assets[role] && !(rejectedCandidates.get(`${brand.id}:${role}`)?.length);
     });
+    if (recoveryEvidence?.currentExperiment?.stage === 'eligible_pending_visual_review') {
+      for (const role of recoveryEvidence.currentMissingRoles) {
+        if (role === reviewedRole) continue;
+        pendingCandidateReview.push({
+          role, sourceFile: recoveryEvidence.sourceFile, sourceKind: 'missing-logo-program',
+          representation: role === 'logo' ? 'wordmark_or_lockup' : 'symbol',
+          recoveryStage: recoveryEvidence.currentExperiment.stage,
+          recoverySplit: recoveryEvidence.split,
+        });
+      }
+    }
     const restrictions = [
       ...(rightsById.get(brand.id) ?? []).map(record => ({ kind: 'rights-note', ...record })),
       ...research.filter(evidence => evidence.rawStatus === 'permission-gated').map(evidence => ({
@@ -515,8 +563,15 @@ async function coverage() {
         sourceFile: evidence.sourceFile, status: evidence.status, rawStatus: evidence.rawStatus,
         reason: evidence.reason, candidates: evidence.candidates.map(candidate => candidateSource(candidate, evidence.reason)),
       })),
+      recovery: recoveryEvidence ? {
+        sourceFile: recoveryEvidence.sourceFile, split: recoveryEvidence.split, previouslyExposed: recoveryEvidence.previouslyExposed,
+        currentExperiment: recoveryEvidence.currentExperiment, current_missing_roles: recoveryEvidence.currentMissingRoles,
+      } : null,
+      reviewed_candidate: reviewedCandidate,
       queue: {
-        pending_candidate_review: pendingCandidateReview.map(candidate => ({ ...candidateSource(candidate, candidate.researchReason), sourceFile: candidate.sourceFile })),
+        pending_candidate_review: pendingCandidateReview.map(candidate => ({ ...candidateSource(candidate, candidate.researchReason), sourceFile: candidate.sourceFile, recoveryStage: candidate.recoveryStage ?? null, recoverySplit: candidate.recoverySplit ?? null })),
+        reviewed_candidate_pass: reviewedCandidate ? [reviewedCandidate] : [],
+        recovery_role_theme_ineligible: recoveryEvidence?.currentExperiment?.stage === 'role_or_theme_ineligible',
         genuinely_no_art: genuinelyNoArt,
         transient_acquisition_failure: transientAcquisitionFailures,
         unresolved_identity_or_source: current.verificationStatus === 'unresolved',
@@ -532,6 +587,9 @@ async function coverage() {
   });
 
   const count = predicate => queueRows.filter(predicate).length;
+  const recoveryRows = queueRows.filter(row => row.recovery);
+  const recoveryStageCount = stage => recoveryRows.filter(row => row.recovery.currentExperiment?.stage === stage).length;
+  const recoveryStageRoleCount = stage => recoveryRows.reduce((total, row) => total + (row.recovery.currentExperiment?.stage === stage ? row.recovery.current_missing_roles.length : 0), 0);
   const summary = {
     identities: queueRows.length,
     approved_any: count(row => row.approved_any), icon_present: count(row => row.icon_present), company_name_logo_present: count(row => row.company_name_logo_present),
@@ -541,16 +599,28 @@ async function coverage() {
       result[layout] = queueRows.reduce((total, row) => total + Object.values(row.approved).filter(asset => asset.layout === layout).length, 0);
       return result;
     }, {}),
+    recovery: {
+      eligible_pending_visual_review: recoveryStageCount('eligible_pending_visual_review'),
+      eligible_pending_visual_review_roles: recoveryStageRoleCount('eligible_pending_visual_review'),
+      role_or_theme_ineligible: recoveryStageCount('role_or_theme_ineligible'),
+      role_or_theme_ineligible_roles: recoveryStageRoleCount('role_or_theme_ineligible'),
+      reviewed_candidate_passes: queueRows.reduce((total, row) => total + row.queue.reviewed_candidate_pass.length, 0),
+      sourceComparison: comparison?.summaries?.all?.stages ?? null,
+    },
     queue: {
       pending_candidate_review: count(row => row.queue.pending_candidate_review.length > 0), genuinely_no_art: count(row => row.queue.genuinely_no_art), transient_acquisition_failure: count(row => row.queue.transient_acquisition_failure.length > 0),
-      unresolved_identity_or_source: count(row => row.queue.unresolved_identity_or_source), recorded_restriction: count(row => row.queue.recorded_restriction.length > 0),
+      unresolved_identity_or_source: count(row => row.queue.unresolved_identity_or_source), recorded_restriction: count(row => row.queue.recorded_restriction.length > 0), recovery_role_theme_ineligible: count(row => row.queue.recovery_role_theme_ineligible),
       unknown_attempt_history: count(row => row.queue.unknown_attempt_history), never_attempted: count(row => row.queue.never_attempted),
     },
     attempt_history: { attempted: count(row => row.attempt_history.state === 'attempted'), unknown: count(row => row.attempt_history.state === 'unknown'), never_attempted: count(row => row.attempt_history.state === 'never_attempted') },
   };
   const report = {
     schemaVersion: 1, libraryId: sourceRegistry.libraryId, generatedAt: new Date().toISOString(),
-    inputs: { sources: 'sources.json', manifest: 'manifest.json', rights: await exists(rightsPath) ? 'rights-notes.json' : null, research: researchFiles, reviewDecisions: decisionFiles, localRunReports: runReports },
+    inputs: { sources: 'sources.json', manifest: 'manifest.json', rights: await exists(rightsPath) ? 'rights-notes.json' : null, research: researchFiles, reviewDecisions: decisionFiles, localRunReports: runReports, recovery: {
+      gapAnalysis: await exists(gapAnalysisPath) ? 'reports/missing-logo-program-2026-09-19/gap-analysis.json' : null,
+      comparison: await exists(comparisonPath) ? 'reports/missing-logo-program-2026-09-19/comparison.json' : null,
+      reviewedCandidates: await exists(reviewedCandidatesPath) ? 'reports/missing-logo-program-2026-09-19/reviewed-candidates/manifest.json' : null,
+    } },
     summary, brands: queueRows,
   };
   const output = option('--output');
