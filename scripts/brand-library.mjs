@@ -34,7 +34,7 @@ const brands = sourceRegistry.brands.map(item => Array.isArray(item) ? expand(it
 const expectedCount = sourceRegistry.expectedCount ?? 100;
 const runReportPath = async () => resolve(ROOT, 'runs', option('--run') ?? (await readJson(resolve(ROOT, 'latest-run.json'))).runId, 'report.json');
 const reviewImage = async (path, width, height) => {
-  const bytes = await readFile(path);
+  const bytes = Buffer.isBuffer(path) ? path : await readFile(path);
   const frame = decodeIcoFrame(bytes);
   return sharp(frame?.input ?? bytes, { density: 192, ...frame?.options }).resize(width, height, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer();
 };
