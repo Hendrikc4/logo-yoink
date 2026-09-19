@@ -1,0 +1,1845 @@
+[
+  {
+    "id": "dell",
+    "name": "Dell",
+    "domain": "dell.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "consumer electronics",
+    "country": "US",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://dell.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
+        "reviewedAt": "2026-09-18T07:42:10Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "gopro",
+    "name": "GoPro",
+    "domain": "gopro.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "cameras",
+    "country": "US",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://gopro.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
+        "reviewedAt": "2026-09-18T07:42:10Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "costco",
+    "name": "Costco",
+    "domain": "costco.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "retail",
+    "country": "US",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://costco.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "Costco requires express written approval for logo use; keep this identity permission-gated.",
+        "reviewedAt": "2026-09-18T08:45:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "carrefour",
+    "name": "Carrefour",
+    "domain": "carrefour.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "retail",
+    "country": "FR",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://carrefour.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged icon has no legible carrefour artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
+        "reviewedAt": "2026-09-18T07:42:10Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "The wide asset displays only the Carrefour emblem, with no company-name lettering; it is a symbol posing as a wordmark.",
+        "reviewedAt": "2026-09-18T07:42:10Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "best-buy",
+    "name": "Best Buy",
+    "domain": "bestbuy.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "retail",
+    "country": "US",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://bestbuy.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "aldi",
+    "name": "Aldi",
+    "domain": "aldi.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "retail",
+    "country": "DE",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://aldi.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://aldi.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "lululemon",
+    "name": "Lululemon",
+    "domain": "lululemon.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "apparel",
+    "country": "CA",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://lululemon.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "the-north-face",
+    "name": "The North Face",
+    "domain": "thenorthface.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "vf-corporation",
+    "sector": "apparel",
+    "country": "US",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://thenorthface.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged icon has no legible the-north-face artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
+        "reviewedAt": "2026-09-18T07:42:10Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://thenorthface.com/, https://www.thenorthface.com/, http://thenorthface.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "marriott",
+    "name": "Marriott",
+    "domain": "marriott.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "hospitality",
+    "country": "US",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://marriott.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "approved_asset_withdrawn",
+        "contentHash": "2e74b7863ebdf86a45c8c2038e44de440ca6725c89783106fae68ec83f57cfc9",
+        "reason": "Approved icon is only a generic peach ring, not an identifiable Marriott mark.",
+        "reviewer": "codex-ai-secondary-visual-qa",
+        "reviewedAt": "2026-09-18T08:21:44Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "united-airlines",
+    "name": "United Airlines",
+    "domain": "united.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "airline",
+    "country": "US",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://united.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page attempt failed after trying https://www.united.com/en/us/newsroom: Could not reach the website. https://www.united.com/en/us/newsroom: timeout | https://united.com/: timeout",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "abb",
+    "name": "ABB",
+    "domain": "abb.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Industrials",
+    "country": "CH",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; Major listed industrial automation company",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://abb.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page attempt failed after trying https://www.abb.com/global/en/company/media: Could not reach the website. https://www.abb.com/global/en/company/media: timeout | https://abb.com/: timeout",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "bbc",
+    "name": "BBC",
+    "domain": "bbc.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "media",
+    "country": "GB",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://bbc.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "approved_asset_withdrawn",
+        "contentHash": "9a49d63388db10567ffe14dadeeb0fa8933e140ac564cb2241da160e1dbd8f34",
+        "reason": "Approved BBC icon renders as three plain black squares without the BBC letters on light, and as a white panel with black squares on dark.",
+        "reviewer": "codex-ai-secondary-visual-qa",
+        "reviewedAt": "2026-09-18T08:21:44Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://bbc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "reuters",
+    "name": "Reuters",
+    "domain": "reuters.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": null,
+    "sector": "media",
+    "country": "GB",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://reuters.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
+        "reviewedAt": "2026-09-18T07:42:10Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://reuters.com/, https://www.reuters.com/, http://reuters.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "externalParentBrandId": "thomson-reuters",
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "alibaba-group",
+    "name": "Alibaba Group",
+    "domain": "alibabagroup.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": null,
+    "country": null,
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://alibabagroup.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "verizon",
+    "name": "Verizon",
+    "domain": "verizon.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Telecom",
+    "country": "US",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; Major listed US telecom operator",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://verizon.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://verizon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "shein",
+    "name": "Shein",
+    "domain": "shein.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "internet-platforms",
+    "country": "SG",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300; Included in repository major-brands-300-v1 benchmark; candidate identity/domain only, not an approved logo source.",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://shein.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged icon has no legible shein artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
+        "reviewedAt": "2026-09-18T07:42:10Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "The staged logo has no legible shein artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
+        "reviewedAt": "2026-09-18T07:42:10Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "etihad-airways",
+    "name": "Etihad Airways",
+    "domain": "etihad.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "airline",
+    "country": "AE",
+    "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
+    "cohort": "major-brands-fixture",
+    "officialHomepage": "https://etihad.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page attempt failed after trying https://www.etihad.com/en/news: Could not reach the website. https://www.etihad.com/en/news: timeout | https://etihad.com/: timeout",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "america-movil",
+    "name": "América Móvil",
+    "domain": "americamovil.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Telecom",
+    "country": "MX",
+    "selectionEvidence": "Major listed Latin American telecom group",
+    "cohort": "public",
+    "officialHomepage": "https://americamovil.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
+        "reviewedAt": "2026-09-18T07:50:24Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "The white lockup is invisible on the white review surface.",
+        "reviewedAt": "2026-09-18T08:45:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://americamovil.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "us-bancorp",
+    "name": "U.S. Bancorp",
+    "domain": "usbank.com",
+    "aliases": [
+      "usbankcorp.com"
+    ],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Finance",
+    "country": "US",
+    "selectionEvidence": "Major listed US bank; U.S. Bank operating brand",
+    "cohort": "public",
+    "officialHomepage": "https://usbank.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
+        "reviewedAt": "2026-09-18T07:50:24Z"
+      },
+      {
+        "role": "logo",
+        "kind": "approved_asset_withdrawn",
+        "contentHash": "45af6b9ccb8c5611f81cc5f99761b96cf7f12647446c34b8f5069bc50f1b365a",
+        "reason": "Approved wide U.S. Bancorp wordmark has thin black horizontal bars and blue lettering is very low-contrast on dark.",
+        "reviewer": "codex-ai-secondary-visual-qa",
+        "reviewedAt": "2026-09-18T08:21:44Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "This is the US Bank subsidiary lockup, not the U.S. Bancorp corporate identity.",
+        "reviewedAt": "2026-09-18T08:45:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "identity_mismatch",
+        "reason": "Identity mismatch: the candidate is the U.S. Bank subsidiary identity, not the U.S. Bancorp holding-company identity.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "eaton",
+    "name": "Eaton",
+    "domain": "eaton.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Industrials",
+    "country": "IE",
+    "selectionEvidence": "Major listed electrical equipment company",
+    "cohort": "public",
+    "officialHomepage": "https://eaton.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "Eaton’s official media-resources page requires permission for logo use and directs requests to its media team; no asset was approved.",
+        "sourcePage": "https://www.eaton.com/us/en-us/company/news-insights/media-resources.html",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "p-g-e-corporation",
+    "name": "PG&E Corporation",
+    "domain": "pgecorp.com",
+    "aliases": [
+      "pge.com"
+    ],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Utilities",
+    "country": "US",
+    "selectionEvidence": "Major listed US electric and gas utility parent",
+    "cohort": "public",
+    "officialHomepage": "https://pgecorp.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
+        "reviewedAt": "2026-09-18T07:50:24Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://pgecorp.com/, https://www.pgecorp.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "volvo-group",
+    "name": "Volvo Group",
+    "domain": "volvogroup.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Industrials",
+    "country": "SE",
+    "selectionEvidence": "Major listed truck group; distinct from Volvo Cars",
+    "cohort": "public",
+    "officialHomepage": "https://volvogroup.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown.",
+        "reviewedAt": "2026-09-18T07:50:24Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://volvogroup.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "e-on",
+    "name": "E.ON",
+    "domain": "eon.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Utilities",
+    "country": "DE",
+    "selectionEvidence": "Major listed German utility",
+    "cohort": "public",
+    "officialHomepage": "https://eon.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://eon.com/, https://www.eon.com/, http://eon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "china-unicom",
+    "name": "China Unicom",
+    "domain": "chinaunicom.com.hk",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Telecom",
+    "country": "CN",
+    "selectionEvidence": "Major listed Chinese telecom operator",
+    "cohort": "public",
+    "officialHomepage": "https://chinaunicom.com.hk/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://chinaunicom.com.hk/, https://www.chinaunicom.com.hk/ and returned no eligible asset.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "lg-uplus",
+    "name": "LG Uplus",
+    "domain": "lguplus.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Telecom",
+    "country": "KR",
+    "selectionEvidence": "Major listed Korean telecom operator; distinct from LG Electronics",
+    "cohort": "public",
+    "officialHomepage": "https://lguplus.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The icon is the LG parent-company mark, not the LG Uplus telecom brand mark.",
+        "reviewedAt": "2026-09-18T07:52:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page extraction tried https://www.lguplus.com/about/en, https://www.lguplus.com/about/en and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "sinopec",
+    "name": "Sinopec",
+    "domain": "sinopec.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Energy",
+    "country": "CN",
+    "selectionEvidence": "Major listed Chinese integrated oil company",
+    "cohort": "public",
+    "officialHomepage": "https://sinopec.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page extraction tried http://www.sinopecgroup.com/group/en/, http://www.sinopecgroup.com/group/en/ and returned no eligible asset.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "petrochina",
+    "name": "PetroChina",
+    "domain": "petrochina.com.cn",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Energy",
+    "country": "CN",
+    "selectionEvidence": "Major listed Chinese integrated oil company",
+    "cohort": "public",
+    "officialHomepage": "https://petrochina.com.cn/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page attempt failed after trying https://www.petrochina.com.cn/ptr/: Could not reach the website. https://www.petrochina.com.cn/ptr/: HTTP 412 | https://petrochina.com.cn/: getaddrinfo ENOTFOUND petrochina.com.cn | http://petrochina.com.cn/: dns-host-known-unreachable",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "ais-thailand",
+    "name": "AIS",
+    "domain": "ais.th",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Telecom",
+    "country": "TH",
+    "selectionEvidence": "Major listed Thai mobile operator",
+    "cohort": "public",
+    "officialHomepage": "https://ais.th/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged AIS favicon is blank or imperceptible on both review backgrounds.",
+        "reviewedAt": "2026-09-18T08:02:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://ais.th/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "novo-nordisk",
+    "name": "Novo Nordisk",
+    "domain": "novonordisk.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "Healthcare",
+    "country": "DK",
+    "selectionEvidence": "Major listed Danish pharmaceutical company",
+    "cohort": "public",
+    "officialHomepage": "https://novonordisk.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged Novo Nordisk favicon is blank or imperceptible on both review backgrounds.",
+        "reviewedAt": "2026-09-18T08:02:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://novonordisk.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "pdd-holdings",
+    "name": "PDD Holdings",
+    "domain": "pddholdings.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "internet-platforms",
+    "country": "IE",
+    "selectionEvidence": "Parent identity of Temu and Pinduoduo; Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
+    "cohort": "consumer",
+    "officialHomepage": "https://pddholdings.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://pddholdings.com/ and returned no eligible asset.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "doritos",
+    "name": "Doritos",
+    "domain": "doritos.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "pepsico",
+    "sector": "food",
+    "country": "US",
+    "selectionEvidence": "Global snack brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://doritos.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The square asset contains the complete Doritos name lockup rather than a standalone icon or symbol.",
+        "reviewedAt": "2026-09-18T08:02:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://doritos.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "externalParentBrandId": "pepsico",
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "namshi",
+    "name": "Namshi",
+    "domain": "namshi.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "noon",
+    "sector": "apparel ecommerce",
+    "country": "AE",
+    "selectionEvidence": "Major Middle East fashion marketplace",
+    "cohort": "consumer",
+    "officialHomepage": "https://namshi.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page attempt failed after trying https://www.namshi.com/uae-en/: Could not reach the website. https://www.namshi.com/uae-en/: timeout | https://namshi.com/: timeout",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "blinkit",
+    "name": "Blinkit",
+    "domain": "blinkit.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "eternal",
+    "sector": "quick commerce",
+    "country": "IN",
+    "selectionEvidence": "Major Indian quick-commerce brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://blinkit.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The square yellow asset contains the complete blinkit name rather than a separate icon or symbol.",
+        "reviewedAt": "2026-09-18T08:02:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://blinkit.com/, https://www.blinkit.com/, http://blinkit.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "ant-group",
+    "name": "Ant Group",
+    "domain": "antgroup.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "financial technology",
+    "country": "CN",
+    "selectionEvidence": "Parent of Alipay",
+    "cohort": "consumer",
+    "officialHomepage": "https://antgroup.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://antgroup.com/ and returned no eligible asset.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "malaysia-aviation-group",
+    "name": "Malaysia Aviation Group",
+    "domain": "malaysiaaviationgroup.com.my",
+    "aliases": [
+      "MAG"
+    ],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "aviation",
+    "country": "MY",
+    "selectionEvidence": "Parent of Malaysia Airlines",
+    "cohort": "consumer",
+    "officialHomepage": "https://malaysiaaviationgroup.com.my/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged favicon has no discernible mark on either review background.",
+        "reviewedAt": "2026-09-18T08:25:00Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "The wide asset says Malaysia Airlines, a subsidiary airline identity, rather than Malaysia Aviation Group.",
+        "reviewedAt": "2026-09-18T08:25:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://malaysiaaviationgroup.com.my/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "garmin",
+    "name": "Garmin",
+    "domain": "garmin.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "wearables",
+    "country": "CH",
+    "selectionEvidence": "Global wearables and navigation brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://garmin.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The black triangular Garmin icon disappears on the dark background.",
+        "reviewedAt": "2026-09-18T08:02:00Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "The black GARMIN wordmark disappears on the dark background.",
+        "reviewedAt": "2026-09-18T08:02:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://garmin.com/, https://www.garmin.com/, http://garmin.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "transformers",
+    "name": "Transformers",
+    "domain": "transformers.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "hasbro",
+    "sector": "toys and entertainment",
+    "country": "US",
+    "selectionEvidence": "Major global entertainment franchise",
+    "cohort": "consumer",
+    "officialHomepage": "https://transformers.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The selected square tile is Hasbro Pulse, a retail/service brand, not a Transformers franchise symbol.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/transformers, https://shop.hasbro.com/en-us/brands/transformers and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "monopoly",
+    "name": "Monopoly",
+    "domain": "monopoly.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "hasbro",
+    "sector": "games",
+    "country": "US",
+    "selectionEvidence": "Major global board-game brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://monopoly.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/monopoly, https://shop.hasbro.com/en-us/brands/monopoly and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "dior",
+    "name": "Dior",
+    "domain": "dior.com",
+    "aliases": [
+      "Christian Dior"
+    ],
+    "identityType": "brand",
+    "parentBrandId": "lvmh",
+    "sector": "luxury",
+    "country": "FR",
+    "selectionEvidence": "Interbrand Best Global Brands 2025",
+    "cohort": "consumer",
+    "officialHomepage": "https://dior.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://dior.com/, https://www.dior.com/, http://dior.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "garnier",
+    "name": "Garnier",
+    "domain": "garnier.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "loreal",
+    "sector": "beauty",
+    "country": "FR",
+    "selectionEvidence": "Global beauty brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://garnier.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The round icon says Color Match, a Garnier product/tool, not the Garnier brand symbol.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "The staged wordmark is absent or unreadable on the light-background sheet, with no usable light counterpart shown.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://garnier.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "facebook",
+    "name": "Facebook",
+    "domain": "facebook.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "meta",
+    "sector": "social media",
+    "country": "US",
+    "selectionEvidence": "Interbrand Best Global Brands 2025; distinct from Meta parent",
+    "cohort": "consumer",
+    "officialHomepage": "https://facebook.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://facebook.com/ and returned no eligible asset.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "tiktok-shop",
+    "name": "TikTok Shop",
+    "domain": "shop.tiktok.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "tiktok",
+    "sector": "social commerce",
+    "country": "SG",
+    "selectionEvidence": "Major commerce sub-brand; distinct logo availability to check",
+    "cohort": "consumer",
+    "officialHomepage": "https://shop.tiktok.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://shop.tiktok.com/ and returned no eligible asset.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "ibis",
+    "name": "ibis",
+    "domain": "ibis.accor.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "accor",
+    "sector": "hospitality",
+    "country": "FR",
+    "selectionEvidence": "Major global hotel brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://ibis.accor.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The selected icon combines multiple ibis-family hotel sub-brand tiles instead of a singular ibis identity.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "This asset groups multiple ibis sub-brands rather than the primary ibis wordmark.",
+        "reviewedAt": "2026-09-18T08:45:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://ibis.accor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "garena",
+    "name": "Garena",
+    "domain": "garena.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "sea-limited",
+    "sector": "gaming",
+    "country": "SG",
+    "selectionEvidence": "Major Southeast Asian game platform",
+    "cohort": "consumer",
+    "officialHomepage": "https://garena.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://garena.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "lancome",
+    "name": "Lancôme",
+    "domain": "lancome.com",
+    "aliases": [
+      "Lancome"
+    ],
+    "identityType": "brand",
+    "parentBrandId": "loreal",
+    "sector": "beauty",
+    "country": "FR",
+    "selectionEvidence": "Global luxury beauty brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://lancome.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://lancome.com/, https://www.lancome.com/, http://lancome.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "ola",
+    "name": "Ola",
+    "domain": "olacabs.com",
+    "aliases": [
+      "Ola Cabs"
+    ],
+    "identityType": "brand",
+    "parentBrandId": null,
+    "sector": "mobility",
+    "country": "IN",
+    "selectionEvidence": "Major Indian ride-hailing brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://olacabs.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The compact asset is OLA name lettering rather than a distinct standalone symbol.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "This is an app icon, not a wordmark or company lockup.",
+        "reviewedAt": "2026-09-18T08:41:20Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "currentness_mismatch",
+        "reason": "Currentness mismatch: the candidate glyph differs from the current official header identity.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "externalParentBrandId": "ani-technologies",
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "star-wars",
+    "name": "Star Wars",
+    "domain": "starwars.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "disney",
+    "sector": "entertainment",
+    "country": "US",
+    "selectionEvidence": "Major entertainment franchise identity",
+    "cohort": "consumer",
+    "officialHomepage": "https://starwars.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The selected icon depicts a Mandalorian helmet/character, not a Star Wars brand symbol.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://starwars.com/, https://www.starwars.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "ralph-lauren",
+    "name": "Ralph Lauren",
+    "domain": "ralphlauren.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "apparel",
+    "country": "US",
+    "selectionEvidence": "Interbrand Best Global Brands 2025",
+    "cohort": "consumer",
+    "officialHomepage": "https://ralphlauren.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh alternate official-page extraction tried https://corporate.ralphlauren.com/, https://corporate.ralphlauren.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "nerf",
+    "name": "Nerf",
+    "domain": "nerf.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "hasbro",
+    "sector": "toys",
+    "country": "US",
+    "selectionEvidence": "Major global toy brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://nerf.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The selected square icon says Hasbro, the parent, rather than Nerf.",
+        "reviewedAt": "2026-09-18T08:03:25Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://nerf.com/, https://www.nerf.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "royal-caribbean-group",
+    "name": "Royal Caribbean Group",
+    "domain": "rclinvestor.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "cruise",
+    "country": "US",
+    "selectionEvidence": "Parent of Royal Caribbean; investor domain",
+    "cohort": "consumer",
+    "officialHomepage": "https://rclinvestor.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged icon is the blue WordPress W emblem, not a Royal Caribbean Group mark.",
+        "reviewedAt": "2026-09-18T08:08:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://rclinvestor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "tata-cliq",
+    "name": "Tata CLiQ",
+    "domain": "tatacliq.com",
+    "aliases": [],
+    "identityType": "brand",
+    "parentBrandId": "tata",
+    "sector": "ecommerce",
+    "country": "IN",
+    "selectionEvidence": "Major Indian commerce brand",
+    "cohort": "consumer",
+    "officialHomepage": "https://tatacliq.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged Tata CLiQ favicon has no discernible mark on either review background.",
+        "reviewedAt": "2026-09-18T08:08:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://tatacliq.com/, https://www.tatacliq.com/, http://tatacliq.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "digitalocean",
+    "name": "DigitalOcean",
+    "domain": "digitalocean.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "developer-cloud",
+    "country": "US",
+    "selectionEvidence": "Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
+    "cohort": "tech",
+    "officialHomepage": "https://digitalocean.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The black DigitalOcean icon disappears on the dark background.",
+        "reviewedAt": "2026-09-18T08:08:00Z"
+      },
+      {
+        "role": "logo",
+        "kind": "persistent_role_gap",
+        "reason": "The black DigitalOcean name disappears on the dark background.",
+        "reviewedAt": "2026-09-18T08:08:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "permission_restricted",
+        "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "tsmc",
+    "name": "TSMC",
+    "domain": "tsmc.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "semiconductors-hardware",
+    "country": "TW",
+    "selectionEvidence": "Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
+    "cohort": "tech",
+    "officialHomepage": "https://tsmc.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged TSMC favicon has no discernible mark on either review background.",
+        "reviewedAt": "2026-09-18T08:08:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://tsmc.com/, https://www.tsmc.com/, http://tsmc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "sk-hynix",
+    "name": "SK hynix",
+    "domain": "skhynix.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "semiconductors-hardware",
+    "country": "KR",
+    "selectionEvidence": "Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
+    "cohort": "tech",
+    "officialHomepage": "https://skhynix.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "The staged SK hynix favicon has no discernible mark on either review background.",
+        "reviewedAt": "2026-09-18T08:08:00Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://skhynix.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "teradata",
+    "name": "Teradata",
+    "domain": "teradata.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "enterprise-software",
+    "country": "US",
+    "selectionEvidence": "Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
+    "cohort": "tech",
+    "officialHomepage": "https://teradata.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet.",
+        "reviewedAt": "2026-09-18T08:14:06Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://teradata.com/, https://www.teradata.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "skyscanner",
+    "name": "Skyscanner",
+    "domain": "skyscanner.net",
+    "aliases": [],
+    "identityType": "product",
+    "parentBrandId": "trip-com",
+    "sector": "internet-platforms",
+    "country": "GB",
+    "selectionEvidence": "Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
+    "cohort": "tech",
+    "officialHomepage": "https://skyscanner.net/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "role": "icon",
+        "kind": "persistent_role_gap",
+        "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet.",
+        "reviewedAt": "2026-09-18T08:14:06Z"
+      },
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "no_defensible_candidate",
+        "reason": "Fresh official-site extraction tried https://skyscanner.net/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  },
+  {
+    "id": "pvh",
+    "name": "PVH Corp.",
+    "domain": "pvh.com",
+    "aliases": [],
+    "identityType": "company",
+    "parentBrandId": null,
+    "sector": "apparel",
+    "country": "US",
+    "selectionEvidence": "Parent of Calvin Klein and Tommy Hilfiger",
+    "cohort": "consumer",
+    "officialHomepage": "https://pvh.com/",
+    "assets": {},
+    "variants": {},
+    "verificationStatus": "unresolved",
+    "notes": [
+      {
+        "kind": "missing-logo-bounded-review",
+        "outcome": "unresolved",
+        "category": "stale_identity_and_format_failure",
+        "reason": "The only recovered candidate is the retired Phillips-Van Heusen identity and also failed safe format validation.",
+        "reviewedAt": "2026-09-19T09:36:36.791Z",
+        "reviewer": "Codex visual review"
+      }
+    ],
+    "lastCheckedAt": "2026-09-19T09:36:36.791Z"
+  }
+]

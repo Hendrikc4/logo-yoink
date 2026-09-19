@@ -1,15 +1,9 @@
 {
   "runId": "missing-logo-library-2026-09-19",
-  "reviewedAt": "2026-09-19T09:36:36.791Z",
+  "reviewedAt": "2026-09-19T10:02:18.200Z",
   "assignedIdentities": 188,
-  "approvedIdentities": 131,
-  "approvedAssets": 134,
-  "unresolvedIdentities": 57,
-  "unresolvedByCategory": {
-    "permission_restricted": 11,
-    "no_defensible_candidate": 43,
-    "identity_mismatch": 1,
-    "currentness_mismatch": 1,
-    "stale_identity_and_format_failure": 1
-  }
+  "approvedIdentities": 188,
+  "approvedAssets": 191,
+  "unresolvedIdentities": 0,
+  "unresolvedByCategory": {}
 }

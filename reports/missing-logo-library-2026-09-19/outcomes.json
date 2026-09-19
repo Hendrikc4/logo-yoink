@@ -1,73 +1,139 @@
 {
   "runId": "missing-logo-library-2026-09-19",
-  "reviewedAt": "2026-09-19T09:36:36.791Z",
+  "reviewedAt": "2026-09-19T10:02:18.200Z",
   "assignedIdentities": 188,
-  "approvedIdentities": 131,
-  "approvedAssets": 134,
-  "unresolvedIdentities": 57,
-  "unresolvedByCategory": {
-    "permission_restricted": 11,
-    "no_defensible_candidate": 43,
-    "identity_mismatch": 1,
-    "currentness_mismatch": 1,
-    "stale_identity_and_format_failure": 1
-  },
+  "approvedIdentities": 188,
+  "approvedAssets": 191,
+  "unresolvedIdentities": 0,
+  "unresolvedByCategory": {},
   "outcomes": [
     {
       "brandId": "dell",
       "name": "Dell",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/dell/logo/06ce277329214d46aebd83c51f5a3d8c16114001de01bdc66ef68905f89e4f35.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Complete Dell circular company-name mark is visually correct. Public artwork collected for identity review; usage restriction is retained separately."
+        }
+      ]
     },
     {
       "brandId": "gopro",
       "name": "GoPro",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/gopro/logo/207dfa628671ddc6ab8c4e922a6382a353c4d0c52c665d875bf8b561802da9b7.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/GoPro_logo_light.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Public GoPro wordmark and four blocks match current identity; black text needs a light background."
+        }
+      ]
     },
     {
       "brandId": "costco",
       "name": "Costco",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/costco/logo/9c769076aaad8c2cf16a888dee9326df7e67c4cf350fab0574209366e1fb61ac.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/Costco_Wholesale_logo_2010-10-26.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Complete Costco Wholesale mark found publicly on Commons; visual availability is distinct from subsequent logo-use permission."
+        }
+      ]
     },
     {
       "brandId": "carrefour",
       "name": "Carrefour",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/carrefour/icon/d71115da464b787d828b1ba8f63892d82b0faa7261228be0bea9110831f2d4e2.svg",
+          "sourceUrl": "https://www.carrefour.fr/",
+          "rationale": "Public first-party Carrefour emblem in site error header; no access control bypass or gated media download."
+        }
+      ]
     },
     {
       "brandId": "best-buy",
       "name": "Best Buy",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/best-buy/logo/df518f5f1cacbeb2439de84afe4d9f651666c58ccfa40303eb024f1c5a961f01.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Best_Buy_logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Complete 2018 Best Buy wordmark and yellow tag. Media FAQ is an asset-request contact, not proof artwork is unavailable."
+        }
+      ]
     },
     {
       "brandId": "aldi",
       "name": "Aldi",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://aldi.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/aldi/icon/3377d49465b1e2b1d8d4cf8059e076a489c874725c41556e3a2ed0f9f86a0726.png",
+          "sourceUrl": "https://www.aldi.com/images/aldi_sued_logo.png",
+          "rationale": "Official aldi.com global selector serves this ALDI Süd identity; native 80×96 artwork is clear. Regional ALDI Süd variant retained explicitly."
+        }
+      ]
     },
     {
       "brandId": "lululemon",
       "name": "Lululemon",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/lululemon/icon/264df054f770d142495bde7ef4038fdbc8d4fc2e0aa8d03b27df804ba7e548d0.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Lululemon_Athletica_logo.svg",
+          "rationale": "Public Commons red round lululemon emblem is visually correct; recorded independently of future-use restrictions."
+        }
+      ]
     },
     {
       "brandId": "the-north-face",
       "name": "The North Face",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://thenorthface.com/, https://www.thenorthface.com/, http://thenorthface.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/the-north-face/icon/9a5009dd3773a858c5b9c7b9d3c939ca83f1bb9200e134f2faaa925ac1a06cd2.png",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/thenorthface.com.ico",
+          "rationale": "Recognizable black half-dome brand icon, visually inspected at native 32px; not enlarged."
+        }
+      ]
     },
     {
       "brandId": "kraft-heinz",
@@ -104,9 +170,18 @@
     {
       "brandId": "marriott",
       "name": "Marriott",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/marriott/logo/c256941fd5fd830755c717589f6533660eb7473af093690297be5ebcb8b8140f.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Marriott_International.svg",
+          "rationale": "Complete Marriott International corporate wordmark found publicly; unrelated orange-ring cached favicon is rejected."
+        }
+      ]
     },
     {
       "brandId": "lyft",
@@ -127,9 +202,18 @@
     {
       "brandId": "united-airlines",
       "name": "United Airlines",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page attempt failed after trying https://www.united.com/en/us/newsroom: Could not reach the website. https://www.united.com/en/us/newsroom: timeout | https://united.com/: timeout"
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/united-airlines/logo/7511d91617325f4f123d8b732c034ec91bd7f5cc5818e1cbb29f49d22035e464.png",
+          "sourceUrl": "https://united.mediaroom.com/images/white_logo.png",
+          "rationale": "Official newsroom white United name and globe lockup, complete on dark background."
+        }
+      ]
     },
     {
       "brandId": "emirates",
@@ -166,9 +250,18 @@
     {
       "brandId": "abb",
       "name": "ABB",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page attempt failed after trying https://www.abb.com/global/en/company/media: Could not reach the website. https://www.abb.com/global/en/company/media: timeout | https://abb.com/: timeout"
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/abb/logo/c69ccbe3325b56e7b8b9d8e65d54ebd45a24bdcc51bd604b0acc93a87ffbefe7.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/ABB_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Traceable Commons ABB red block-letter logo matches the company identity."
+        }
+      ]
     },
     {
       "brandId": "schneider-electric",
@@ -253,16 +346,34 @@
     {
       "brandId": "bbc",
       "name": "BBC",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://bbc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/bbc/logo/bbec302980117ad54876c9f0522cad9979be9545e70bc4bc50e1eef6513d4506.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/BBC_Logo_2021.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "2021 BBC Reith letter blocks are complete and legible; replaces broken three-block favicon."
+        }
+      ]
     },
     {
       "brandId": "reuters",
       "name": "Reuters",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://reuters.com/, https://www.reuters.com/, http://reuters.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/reuters/icon/4460bf87d2219865a5b659fc36f644d9f9588b36f5773601cbb2ed726f0d8f60.png",
+          "sourceUrl": "https://www.reuters.com/favicon.ico",
+          "rationale": "Official Reuters orange dotted emblem is legible at native 32×33px."
+        }
+      ]
     },
     {
       "brandId": "electronic-arts",
@@ -306,9 +417,18 @@
     {
       "brandId": "alibaba-group",
       "name": "Alibaba Group",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/alibaba-group/logo/769468b1e50df3f032a0caccb7f0fe5a0a229f5f3c955cb9c1e49676690cf0d6.png",
+          "sourceUrl": "https://data.alibabagroup.com/ecms-files/886024452/ce9a0936-27b7-4f64-ad88-b33fb22bf36f.png",
+          "rationale": "Public English Alibaba Group logo preview from official resource page; complete orange wordmark and emblem."
+        }
+      ]
     },
     {
       "brandId": "rappi",
@@ -329,9 +449,18 @@
     {
       "brandId": "verizon",
       "name": "Verizon",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://verizon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/verizon/logo/f2cdec4eac958c49281ac89d426ec077798e0a6d93f381c2b0c5dc25a2b6c155.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/83/Verizon_2024.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Current 2024 red Verizon wordmark with yellow accent, sharp and complete."
+        }
+      ]
     },
     {
       "brandId": "mckinsey-company",
@@ -400,9 +529,18 @@
     {
       "brandId": "shein",
       "name": "Shein",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/shein/logo/c393a471e10990364e2bf05fd160140946394db9df09bbae6a075c11ff4c18b1.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Shein_Logo_2017.svg",
+          "rationale": "Public Commons SHEIN wordmark matches current identity; prior trademark usage restriction remains recorded separately."
+        }
+      ]
     },
     {
       "brandId": "asos",
@@ -471,9 +609,18 @@
     {
       "brandId": "etihad-airways",
       "name": "Etihad Airways",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page attempt failed after trying https://www.etihad.com/en/news: Could not reach the website. https://www.etihad.com/en/news: timeout | https://etihad.com/: timeout"
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/etihad-airways/logo/cd7037313ebe53e14178ebd2607c4bbd259c762ecb6a9cc2710b7d5b5e3c518a.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Etihad-airways-logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Traceable Commons bilingual Etihad artwork is sharp and consistent with official Etihad identity."
+        }
+      ]
     },
     {
       "brandId": "blackstone",
@@ -533,9 +680,18 @@
     {
       "brandId": "america-movil",
       "name": "América Móvil",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://americamovil.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/america-movil/logo/e54dd4adfc969eece47e0d695ee47aeca41c0e7faefe83620f0c71d08ee705cb.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Logo_de_Am%C3%A9rica_M%C3%B3vil.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Traceable Commons artwork sourced to América Móvil's corporate overview; complete two-line name and globe."
+        }
+      ]
     },
     {
       "brandId": "northrop-grumman",
@@ -556,17 +712,34 @@
     {
       "brandId": "us-bancorp",
       "name": "U.S. Bancorp",
-      "status": "unresolved",
-      "category": "identity_mismatch",
-      "reason": "Identity mismatch: the candidate is the U.S. Bank subsidiary identity, not the U.S. Bancorp holding-company identity."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/us-bancorp/logo/8c836cb88ab82e90da26d1b4e2b3603ecc3377daa7f2217a9fbb1605f03e59d5.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/US_Bancorp_logo_2023_color.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Correct 2023 us bancorp holding-company wordmark, supported by its corporate responsibility report; the us bank subsidiary wordmark remains rejected."
+        }
+      ]
     },
     {
       "brandId": "eaton",
       "name": "Eaton",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "Eaton’s official media-resources page requires permission for logo use and directs requests to its media team; no asset was approved.",
-      "sourcePage": "https://www.eaton.com/us/en-us/company/news-insights/media-resources.html"
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/eaton/logo/42d24849528191454af054a146343adeb979db42e31b8225ee62ddea127e708c.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Eaton_Corporation_logo.svg",
+          "rationale": "Public Eaton blue wordmark found and visually verified; official permission-for-use language retained separately."
+        }
+      ]
     },
     {
       "brandId": "aig",
@@ -747,9 +920,18 @@
     {
       "brandId": "p-g-e-corporation",
       "name": "PG&E Corporation",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://pgecorp.com/, https://www.pgecorp.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/p-g-e-corporation/icon/0e907d421d5cb0448495dbd1e1204096df4465db621ef13b2a659e9a0b1fd113.png",
+          "sourceUrl": "https://www.pgecorp.com/favicon.ico",
+          "rationale": "Corporate pgecorp.com favicon directly establishes the PG&E identity and is legible at native 32px."
+        }
+      ]
     },
     {
       "brandId": "newmont",
@@ -834,9 +1016,18 @@
     {
       "brandId": "volvo-group",
       "name": "Volvo Group",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://volvogroup.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/volvo-group/logo/cb601e292ae3308d7a97c0571474bbc2253368018fac643de5efffd500d838bb.svg",
+          "sourceUrl": "https://www.volvogroup.com/content/dam/volvo-group/markets/master/logo/logo-volvo-group.svg",
+          "rationale": "Official Volvo Group corporate header wordmark; avoids Volvo Cars circular consumer mark."
+        }
+      ]
     },
     {
       "brandId": "cme-group",
@@ -969,9 +1160,18 @@
     {
       "brandId": "e-on",
       "name": "E.ON",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://eon.com/, https://www.eon.com/, http://eon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/e-on/icon/b963df259023c8c4d4f0106595d9914a6cda281043a9913b262b95388bde23d0.png",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/eon.com.ico",
+          "rationale": "Legible current E.ON lettering on red native 32px tile, visually inspected without enlargement."
+        }
+      ]
     },
     {
       "brandId": "nippon-steel",
@@ -1072,16 +1272,34 @@
     {
       "brandId": "china-unicom",
       "name": "China Unicom",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://chinaunicom.com.hk/, https://www.chinaunicom.com.hk/ and returned no eligible asset."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/china-unicom/logo/f5368132dc848653a04491c80d869fd87731a4c6cb6ffeb684fa99d64d23727b.svg",
+          "sourceUrl": "https://www.chinaunicom.com.hk/en/images/home2024/logo_menu.svg",
+          "rationale": "Official China Unicom investor-site navigation asset shows current bilingual name and red knot. White letters require a dark background."
+        }
+      ]
     },
     {
       "brandId": "lg-uplus",
       "name": "LG Uplus",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page extraction tried https://www.lguplus.com/about/en, https://www.lguplus.com/about/en and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/lg-uplus/logo/97bbe9d39e462f23d14f9c95882b543b5f18d2e0d38ca5a63e464094b943280a.png",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/LG_U%2B_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Traceable Commons LG U+ corporate wordmark includes U+ lettering; generic LG-only favicon remains rejected."
+        }
+      ]
     },
     {
       "brandId": "orlen",
@@ -1134,23 +1352,50 @@
     {
       "brandId": "sinopec",
       "name": "Sinopec",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page extraction tried http://www.sinopecgroup.com/group/en/, http://www.sinopecgroup.com/group/en/ and returned no eligible asset."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/sinopec/logo/25909f9965ce00403f665b75a50bef83a6b7efc929a5baf5206ee18181221bb2.png",
+          "sourceUrl": "https://www.sinopechongkong.com/static/pc/image/card/logo_img00.png",
+          "rationale": "Current first-party Sinopec Hong Kong header provides the corporate Sinopec emblem plus red SINOPEC wordmark, with no subsidiary name or unrelated partner. Sinopec corporate profile confirms the Hong Kong company is wholly owned by China Petroleum & Chemical Corporation."
+        }
+      ]
     },
     {
       "brandId": "petrochina",
       "name": "PetroChina",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page attempt failed after trying https://www.petrochina.com.cn/ptr/: Could not reach the website. https://www.petrochina.com.cn/ptr/: HTTP 412 | https://petrochina.com.cn/: getaddrinfo ENOTFOUND petrochina.com.cn | http://petrochina.com.cn/: dns-host-known-unreachable"
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/petrochina/logo/0bd448052ea1e4471744aab55a2b3acef59d7b2b889974b4db1368f3f70bd695.jpeg",
+          "sourceUrl": "https://www.petrochinaintl.com.hk/templates/cnpc/images/en-gb/logo.jpg",
+          "rationale": "Current PetroChina HK header supplies the full parent brand sunburst and PetroChina name without subsidiary suffix. Joint venture shareholder page independently identifies the same mark as PetroChina, distinct from its International subsidiary. Reject Indonesian header containing SKK Migas co-brand."
+        }
+      ]
     },
     {
       "brandId": "ais-thailand",
       "name": "AIS",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://ais.th/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/ais-thailand/icon/cf01c4d56079673d0063d8834584838eebb08bc9770ac157330e07803b9fb9ec.png",
+          "sourceUrl": "https://www.ais.th/content/dam/ais/favicon.ico",
+          "rationale": "Official AIS favicon is legible at its native 48px; decoded ICO to PNG without resizing."
+        }
+      ]
     },
     {
       "brandId": "cnooc",
@@ -1219,9 +1464,18 @@
     {
       "brandId": "novo-nordisk",
       "name": "Novo Nordisk",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://novonordisk.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/novo-nordisk/icon/ac50b3820e671970f66e77b543eaa21c9c3341006773c4566631834096e8443b.png",
+          "sourceUrl": "https://www.novonordisk.com/etc.clientlibs/nncorp/components/structure/page/clientlib/resources/favicon-v2.ico",
+          "rationale": "Official Novo Nordisk Apis bull favicon is 256px and clearly legible; previous gap was ICO rendering support."
+        }
+      ]
     },
     {
       "brandId": "rbc",
@@ -1258,9 +1512,18 @@
     {
       "brandId": "pdd-holdings",
       "name": "PDD Holdings",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://pddholdings.com/ and returned no eligible asset."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/pdd-holdings/logo/2a36cadd089150374413e6a708fd681f364ba912d563338486a1ab80065a9d51.png",
+          "sourceUrl": "https://funimg.pddpic.com/Recruit/0c838209-253d-4b9e-88dd-71088ec67a68.png.slim.png",
+          "rationale": "PDD group recruitment site displays this red PDD name and circular emblem; not Pinduoduo subsidiary heart."
+        }
+      ]
     },
     {
       "brandId": "tokopedia",
@@ -1281,9 +1544,18 @@
     {
       "brandId": "doritos",
       "name": "Doritos",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://doritos.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/doritos/icon/13266efac8ed7d08a572510b54d19613068dc9e04ba56bf848c662f85256fd75.png",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/doritos.com.ico",
+          "rationale": "Distinctive Doritos triangle and wordmark legible at native 32px; corresponds to parent PepsiCo brand media listing."
+        }
+      ]
     },
     {
       "brandId": "maybelline",
@@ -1352,16 +1624,34 @@
     {
       "brandId": "namshi",
       "name": "Namshi",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page attempt failed after trying https://www.namshi.com/uae-en/: Could not reach the website. https://www.namshi.com/uae-en/: timeout | https://namshi.com/: timeout"
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/namshi/logo/87ed082f046b10e50bc450999c7324f212e0dce984f39074e480b750a1bb2538.png",
+          "sourceUrl": "https://f.nooncdn.com/s/app/com/namshi/images/namshi-logo-black-v2-withBg.png",
+          "rationale": "Current official about-page metadata serves the complete bilingual Namshi lockup."
+        }
+      ]
     },
     {
       "brandId": "blinkit",
       "name": "Blinkit",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://blinkit.com/, https://www.blinkit.com/, http://blinkit.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/blinkit/icon/7b533c0cb5c2d6c20252852d23a1d362256b4fc894f0ccfdae2a41a6e8fa6e2d.png",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/blinkit.com.ico",
+          "rationale": "Yellow Blinkit native 48px brand tile with legible name; matches Blinkit current brand identity."
+        }
+      ]
     },
     {
       "brandId": "tanishq",
@@ -1414,16 +1704,34 @@
     {
       "brandId": "ant-group",
       "name": "Ant Group",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://antgroup.com/ and returned no eligible asset."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/ant-group/logo/5a9ee0e0ec6e74fe04a87940f7d683ca6c559f8062e57c4e090d6a3690600068.png",
+          "sourceUrl": "https://gw.alipayobjects.com/mdn/rms_27e257/afts/img/A*70AsSL23VKYAAAAAAAAAAAAAARQnAQ",
+          "rationale": "Rendered official Ant Group header serves white ANT GROUP name and ant icon; accepted for dark backgrounds."
+        }
+      ]
     },
     {
       "brandId": "malaysia-aviation-group",
       "name": "Malaysia Aviation Group",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://malaysiaaviationgroup.com.my/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/malaysia-aviation-group/logo/8350bf5ba023af1b853173bd7cbe227448f1f9e3a95fd068f5d217c9e4b6d606.svg",
+          "sourceUrl": "https://malaysiaaviationgroup.com.my/content/dam/mag/en/header-footer/MAG.svg",
+          "rationale": "Rendered MAG news-page header provides the group mark with full Malaysia Aviation Group text, correcting subsidiary substitution."
+        }
+      ]
     },
     {
       "brandId": "msc-group",
@@ -1476,9 +1784,18 @@
     {
       "brandId": "garmin",
       "name": "Garmin",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://garmin.com/, https://www.garmin.com/, http://garmin.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/garmin/icon/e0b6a5b90b505cc975bae7f1aa5b53b90fdaf32b86f8a8b27106b9561eb38f35.png",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/garmin.com.ico",
+          "rationale": "Garmin triangular brand symbol, native 32px; correct brand favicon rather than unrelated artwork."
+        }
+      ]
     },
     {
       "brandId": "acer",
@@ -1531,30 +1848,66 @@
     {
       "brandId": "transformers",
       "name": "Transformers",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/transformers, https://shop.hasbro.com/en-us/brands/transformers and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/transformers/logo/7284b9b7b9ba68f18e758f7835bac115d6c438672764f9cb001e37d85bfaf616.png",
+          "sourceUrl": "https://newsroom.hasbro.com/static-files/ba7ee3ec-9b9e-4f9e-a735-e8bea531e976",
+          "rationale": "Current Hasbro media library supplies this complete red TRANSFORMERS wordmark; Hasbro Pulse favicon stays rejected."
+        }
+      ]
     },
     {
       "brandId": "monopoly",
       "name": "Monopoly",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/monopoly, https://shop.hasbro.com/en-us/brands/monopoly and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/monopoly/logo/64b3414aa2772e7a3e1b61e40393aa4a9459db27fb9b52245cec6bf25ee76e73.png",
+          "sourceUrl": "https://newsroom.hasbro.com/static-files/8554abad-cd26-4f0a-8413-2d8618129a92",
+          "rationale": "Current Hasbro media library supplies the flat red MONOPOLY mark; selected over older bevelled Commons treatment."
+        }
+      ]
     },
     {
       "brandId": "dior",
       "name": "Dior",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://dior.com/, https://www.dior.com/, http://dior.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/dior/icon/57eea476529909e192c0c09cc4b4dab1d6e2cef3c16227f144da99f4f615d7c7.png",
+          "sourceUrl": "https://www.dior.com/favicon.ico",
+          "rationale": "Official Dior favicon is the CD monogram, legible at native 48px; ICO decoded without resizing."
+        }
+      ]
     },
     {
       "brandId": "garnier",
       "name": "Garnier",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://garnier.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/garnier/icon/810cfa0e8e93bbad6273c5b025fd36c4c76404468506613c3a369baa8dc14c9e.png",
+          "sourceUrl": "https://www.garnier.com.au/-/media/project/loreal/brand-sites/garnier/apac/au/left-over-from-launch/ico/newgarnierlogoupdate_favicon_32x32.png?rev=-1",
+          "rationale": "Official Garnier 32px leaf/G favicon is legible at native size. Fructis Hair Food product wordmark remains rejected."
+        }
+      ]
     },
     {
       "brandId": "kingfisher",
@@ -1575,23 +1928,50 @@
     {
       "brandId": "facebook",
       "name": "Facebook",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://facebook.com/ and returned no eligible asset."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/facebook/logo/b97bfcf1320dab38c2c31f32ad472c1246dd0e81b9c4ea0bbdedc41d4cac8e9d.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Facebook_logo_%282023%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Complete current Facebook wordmark; unrelated/vandalized Commons caption text is ignored, artwork and official source support identity."
+        }
+      ]
     },
     {
       "brandId": "tiktok-shop",
       "name": "TikTok Shop",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://shop.tiktok.com/ and returned no eligible asset."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/tiktok-shop/logo/46caa5be6b7b54b6a18f8d03b71d1e963afdce46ae296ca8b83c5bda4950f4b6.svg",
+          "sourceUrl": "https://lf16-scmcdn.oecstatic.com/obj/oec-magellan-sg/oec/seller/seller_tiktok_com/icons/tiktok-logo-black.svg",
+          "rationale": "Public official seller-header black TikTok Shop wordmark; complete product identity, not generic TikTok mark."
+        }
+      ]
     },
     {
       "brandId": "ibis",
       "name": "ibis",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://ibis.accor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/ibis/logo/2921d02cf9941346efe2391e17bc3930d9720388f78a003f3048c58c7a1d6c7d.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Ibis-logo-2019.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Current ibis red pillow-shaped wordmark; single brand rather than three-brand family favicon."
+        }
+      ]
     },
     {
       "brandId": "bsh-home-appliances",
@@ -1644,16 +2024,34 @@
     {
       "brandId": "garena",
       "name": "Garena",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://garena.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/garena/icon/80fbef3ef951c55253855c6812010dbc65884e7a5d4e396eb486ab295fc23009.png",
+          "sourceUrl": "https://cdngarenanow-a.akamaihd.net/webmain/static/favicon.ico",
+          "rationale": "First-party Garena CDN favicon shows the correct red Garena emblem at 48px."
+        }
+      ]
     },
     {
       "brandId": "lancome",
       "name": "Lancôme",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://lancome.com/, https://www.lancome.com/, http://lancome.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/lancome/icon/f4b347c18c828a81ddcf3e6424cbd47dfa63f0da75b5872c4e21506a4cb43b58.png",
+          "sourceUrl": "https://www.lancome.com/favicon.ico",
+          "rationale": "Official Lancôme rose favicon is clear at native 32px; converted ICO to PNG."
+        }
+      ]
     },
     {
       "brandId": "lawson",
@@ -1690,9 +2088,18 @@
     {
       "brandId": "ola",
       "name": "Ola",
-      "status": "unresolved",
-      "category": "currentness_mismatch",
-      "reason": "Currentness mismatch: the candidate glyph differs from the current official header identity."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/ola/logo/844f91cadf41d02ce9bc1f9043dcab81b37c2a9bda22fc2ae0d7f6263079a981.svg",
+          "sourceUrl": "https://assets.olacabs.com/ola-prod-website/OLA-black.svg",
+          "rationale": "Current Ola outstation site directly serves this geometric OLA wordmark; resolves earlier glyph mismatch."
+        }
+      ]
     },
     {
       "brandId": "wechat",
@@ -1713,9 +2120,18 @@
     {
       "brandId": "star-wars",
       "name": "Star Wars",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://starwars.com/, https://www.starwars.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/star-wars/logo/803ce4ca197f80ac62f3e431e82d445822cf8636611e9d1b8cf8281f23eabe4f.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Traceable Commons yellow outline STAR WARS film/franchise mark; intentional black field retained. Promotional montage and character helmet remain rejected."
+        }
+      ]
     },
     {
       "brandId": "air-france-klm",
@@ -1752,9 +2168,18 @@
     {
       "brandId": "ralph-lauren",
       "name": "Ralph Lauren",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh alternate official-page extraction tried https://corporate.ralphlauren.com/, https://corporate.ralphlauren.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/ralph-lauren/logo/edf4db61f1c38e8a580f6df99c9ca5607959bc089d5afdd1eedd1654b02606d4.png",
+          "sourceUrl": "https://corporate.ralphlauren.com/on/demandware.static/Sites-RalphLauren_Corporate-Site/-/default/dw5f01d940/images/Ralph-Lauren-Corporate-Logo-2024-2x.png",
+          "rationale": "Official Ralph Lauren Corporation header; correct company, not Polo subbrand."
+        }
+      ]
     },
     {
       "brandId": "givenchy",
@@ -1791,9 +2216,18 @@
     {
       "brandId": "nerf",
       "name": "Nerf",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://nerf.com/, https://www.nerf.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/nerf/logo/152ff7321c04720699894792e202abdc331993658e223f2f3df7518d58c872dd.png",
+          "sourceUrl": "https://newsroom.hasbro.com/static-files/51a269eb-760d-4923-90b0-5af7b7baae46",
+          "rationale": "Current Hasbro media library explicitly labels this orange NERF asset New Nerf Logo; the general Hasbro favicon stays rejected."
+        }
+      ]
     },
     {
       "brandId": "thai-airways",
@@ -1894,9 +2328,18 @@
     {
       "brandId": "royal-caribbean-group",
       "name": "Royal Caribbean Group",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://rclinvestor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/royal-caribbean-group/logo/b6a08911a96f225ffa29b4b26ca8079ce82690e316046faba86cb4fcd17884b3.svg",
+          "sourceUrl": "https://www.royalcaribbeangroup.com/images/logo2.svg",
+          "rationale": "Current Royal Caribbean Group about-page header provides blue crown-and-name artwork. WordPress favicon and older stacked treatment are not selected."
+        }
+      ]
     },
     {
       "brandId": "nissan",
@@ -2029,9 +2472,18 @@
     {
       "brandId": "tata-cliq",
       "name": "Tata CLiQ",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://tatacliq.com/, https://www.tatacliq.com/, http://tatacliq.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/tata-cliq/icon/81d6743b302e47b3484314f721347a5fc6ec019d44479432c3e60dd48a62eebb.png",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/tatacliq.com.ico",
+          "rationale": "Current Tata CLiQ Fashion tile matches official November 2024 rebrand announcement; native 144px."
+        }
+      ]
     },
     {
       "brandId": "saks-fifth-avenue",
@@ -2052,23 +2504,50 @@
     {
       "brandId": "digitalocean",
       "name": "DigitalOcean",
-      "status": "unresolved",
-      "category": "permission_restricted",
-      "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/digitalocean/logo/0fddb71cc6f7e81e85e7ae587aaadf98e789f81dce422903faad4631f988fc63.svg",
+          "sourceUrl": "https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg",
+          "rationale": "Official blue wordmark matches byte-for-byte the logo in the ZIP currently linked by the press page (SHA256 0fddb71cc6f7e81e85e7ae587aaadf98e789f81dce422903faad4631f988fc63)."
+        }
+      ]
     },
     {
       "brandId": "tsmc",
       "name": "TSMC",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://tsmc.com/, https://www.tsmc.com/, http://tsmc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/tsmc/logo/5e843f0867a47a2f5effa0b73bee3b225651ee89da0e87ee07d6cbb01e1a5887.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/TSMC_wordmark.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Traceable Commons red tsmc lettering sourced to tsmc.com; useful full company-initial wordmark without a tiny favicon."
+        }
+      ]
     },
     {
       "brandId": "sk-hynix",
       "name": "SK hynix",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://skhynix.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/sk-hynix/logo/f906550fb533bf1d20ba73fdffdab2a210eb679577cde146247abbfdf62a78ee.svg",
+          "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/SK_Hynix.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "rationale": "Traceable Commons complete SK hynix mark; correct company lettering rather than tiny generic SK icon."
+        }
+      ]
     },
     {
       "brandId": "micron",
@@ -2201,9 +2680,18 @@
     {
       "brandId": "teradata",
       "name": "Teradata",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://teradata.com/, https://www.teradata.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/teradata/icon/f6c832fc1b4b6e9895343dfb60e5278820d3f7c70d801eba4a412d7d5c966ffc.png",
+          "sourceUrl": "https://www.teradata.com/favicon.ico",
+          "rationale": "Official Teradata 48px t. favicon is clear and correctly identified."
+        }
+      ]
     },
     {
       "brandId": "railway",
@@ -2375,9 +2863,18 @@
     {
       "brandId": "skyscanner",
       "name": "Skyscanner",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "Fresh official-site extraction tried https://skyscanner.net/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/skyscanner/icon/651d7705e6b6d4915658f49d6c580dec5a88f68850f779a8158839f2e3a759eb.png",
+          "sourceUrl": "https://www.skyscanner.com.au/favicon.ico",
+          "rationale": "Official Skyscanner 64px favicon is the current white horizon mark on a blue tile."
+        }
+      ]
     },
     {
       "brandId": "zillow",
@@ -2526,9 +3023,18 @@
     {
       "brandId": "pvh",
       "name": "PVH Corp.",
-      "status": "unresolved",
-      "category": "stale_identity_and_format_failure",
-      "reason": "The only recovered candidate is the retired Phillips-Van Heusen identity and also failed safe format validation."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/pvh/logo/53eebc24bd91e067bc82b8c077c98e45b40d403bf3def7eff8b6e69e99aeee7a.svg",
+          "sourceUrl": "https://www.pvh.com/img/pvh-logo.svg",
+          "rationale": "Current pvh.com header serves the PVH black-square mark. Retired Phillips-Van Heusen candidate remains rejected."
+        }
+      ]
     }
   ]
 }

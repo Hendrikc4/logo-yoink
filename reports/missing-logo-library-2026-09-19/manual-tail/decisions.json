@@ -1,0 +1,755 @@
+[
+  {
+    "brandId": "dell",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Dell_logo_2016.svg",
+    "reason": "Complete Dell circular company-name mark is visually correct. Public artwork collected for identity review; usage restriction is retained separately.",
+    "approvals": [
+      {
+        "key": "manual-dell",
+        "role": "logo",
+        "representation": "compact_wordmark",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "Dell states logo use requires prior written permission. Visual collection is not a grant of reuse rights. Source: https://www.dell.com/en-us/lp/legal/trademarks-us"
+  },
+  {
+    "brandId": "gopro",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:GoPro_logo_light.svg",
+    "reason": "Public GoPro wordmark and four blocks match current identity; black text needs a light background.",
+    "approvals": [
+      {
+        "key": "manual-gopro",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "GoPro restricts use/copying of logos without prior written permission. Public artwork found; downstream usage clearance not assessed. Source: https://gopro.com/en/gb/legal/trademarks"
+  },
+  {
+    "brandId": "costco",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Costco_Wholesale_logo_2010-10-26.svg",
+    "reason": "Complete Costco Wholesale mark found publicly on Commons; visual availability is distinct from subsequent logo-use permission.",
+    "approvals": [
+      {
+        "key": "manual-costco",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "Costco website terms restrict copying/distribution of marks without permission. Public Commons artwork collected; reuse clearance remains separate. Source: https://www.costco.com/f/-/terms-and-conditions-of-use"
+  },
+  {
+    "brandId": "carrefour",
+    "identitySource": "https://www.carrefour.fr/",
+    "reason": "Public first-party Carrefour emblem in site error header; no access control bypass or gated media download.",
+    "approvals": [
+      {
+        "key": "official-carrefour",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "Carrefour media-library access is login-gated and its terms restrict unauthorized logo reproduction. This public site-header emblem was collected without accessing that library; no downstream license implied. Source: https://image.carrefour.com/front/V2login"
+  },
+  {
+    "brandId": "best-buy",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Best_Buy_logo_2018.svg",
+    "reason": "Complete 2018 Best Buy wordmark and yellow tag. Media FAQ is an asset-request contact, not proof artwork is unavailable.",
+    "approvals": [
+      {
+        "key": "manual-best-buy",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "Media FAQ directs logo requests to the press team; it does not establish that publicly available artwork is unavailable. Trademark rights remain with the owner. Source: https://corporate.bestbuy.com/media-faq/"
+  },
+  {
+    "brandId": "aldi",
+    "identitySource": "https://www.aldi.com/",
+    "reason": "Official aldi.com global selector serves this ALDI Süd identity; native 80×96 artwork is clear. Regional ALDI Süd variant retained explicitly.",
+    "approvals": [
+      {
+        "key": "existing-2",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "lululemon",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Lululemon_Athletica_logo.svg",
+    "reason": "Public Commons red round lululemon emblem is visually correct; recorded independently of future-use restrictions.",
+    "approvals": [
+      {
+        "key": "manual-lululemon",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "Lululemon terms restrict logo copying/use without prior written permission. Visual approval is not trademark-use clearance. Source: https://shop.lululemon.com/help/legal/terms-of-use"
+  },
+  {
+    "brandId": "the-north-face",
+    "identitySource": "https://thenorthface.com/",
+    "reason": "Recognizable black half-dome brand icon, visually inspected at native 32px; not enlarged.",
+    "approvals": [
+      {
+        "key": "existing-33",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "marriott",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Marriott_International.svg",
+    "reason": "Complete Marriott International corporate wordmark found publicly; unrelated orange-ring cached favicon is rejected.",
+    "approvals": [
+      {
+        "key": "manual-marriott",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "Wholesaler terms restrict marketing use of Marriott marks in that contractual context. This is not evidence that public artwork does not exist; no permission for future use is certified. Source: https://www.marriott.com/about/marriottwholesalers/terms.mi"
+  },
+  {
+    "brandId": "united-airlines",
+    "identitySource": "https://united.mediaroom.com/",
+    "reason": "Official newsroom white United name and globe lockup, complete on dark background.",
+    "approvals": [
+      {
+        "key": "official-united",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "dark"
+      }
+    ]
+  },
+  {
+    "brandId": "abb",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:ABB_logo.svg",
+    "reason": "Traceable Commons ABB red block-letter logo matches the company identity.",
+    "approvals": [
+      {
+        "key": "manual-abb",
+        "role": "logo",
+        "representation": "compact_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "bbc",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:BBC_Logo_2021.svg",
+    "reason": "2021 BBC Reith letter blocks are complete and legible; replaces broken three-block favicon.",
+    "approvals": [
+      {
+        "key": "manual-bbc",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "reuters",
+    "identitySource": "https://reuters.com/",
+    "reason": "Official Reuters orange dotted emblem is legible at native 32×33px.",
+    "approvals": [
+      {
+        "key": "existing-25",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "alibaba-group",
+    "identitySource": "https://home.alibabagroup.com/en-US/resource-logos",
+    "reason": "Public English Alibaba Group logo preview from official resource page; complete orange wordmark and emblem.",
+    "approvals": [
+      {
+        "key": "official-alibaba",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "Official resource page permits editorial use by accredited media with credit Source: www.alibabagroup.com; other use requires written permission. Proportional resizing only; public preview collected unchanged. Source: https://home.alibabagroup.com/en-US/resource-logos"
+  },
+  {
+    "brandId": "verizon",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Verizon_2024.svg",
+    "reason": "Current 2024 red Verizon wordmark with yellow accent, sharp and complete.",
+    "approvals": [
+      {
+        "key": "manual-verizon",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "shein",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Shein_Logo_2017.svg",
+    "reason": "Public Commons SHEIN wordmark matches current identity; prior trademark usage restriction remains recorded separately.",
+    "approvals": [
+      {
+        "key": "official-shein",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "SHEIN trademark notice reserves marks to Roadget and requires prior permission for use. Public Commons artwork collected for identity review, not publication. Source: https://m.shein.com/ma/copyright-noticeam-a-379.html"
+  },
+  {
+    "brandId": "etihad-airways",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Etihad-airways-logo.svg",
+    "reason": "Traceable Commons bilingual Etihad artwork is sharp and consistent with official Etihad identity.",
+    "approvals": [
+      {
+        "key": "manual-etihad-airways",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "america-movil",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Logo_de_Am%C3%A9rica_M%C3%B3vil.svg",
+    "reason": "Traceable Commons artwork sourced to América Móvil's corporate overview; complete two-line name and globe.",
+    "approvals": [
+      {
+        "key": "manual-america-movil",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "us-bancorp",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:US_Bancorp_logo_2023_color.svg",
+    "reason": "Correct 2023 us bancorp holding-company wordmark, supported by its corporate responsibility report; the us bank subsidiary wordmark remains rejected.",
+    "approvals": [
+      {
+        "key": "manual-us-bancorp",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "eaton",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Eaton_Corporation_logo.svg",
+    "reason": "Public Eaton blue wordmark found and visually verified; official permission-for-use language retained separately.",
+    "approvals": [
+      {
+        "key": "manual-eaton",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "Eaton media guidance says logo use requires permission from its media team. Public Commons file found; no subsequent usage clearance certified. Source: https://www.eaton.com/us/en-us/company/news-insights/media-resources.html"
+  },
+  {
+    "brandId": "p-g-e-corporation",
+    "identitySource": "https://www.pgecorp.com/",
+    "reason": "Corporate pgecorp.com favicon directly establishes the PG&E identity and is legible at native 32px.",
+    "approvals": [
+      {
+        "key": "existing-22",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "volvo-group",
+    "identitySource": "https://www.volvogroup.com/en/about-us.html",
+    "reason": "Official Volvo Group corporate header wordmark; avoids Volvo Cars circular consumer mark.",
+    "approvals": [
+      {
+        "key": "official-volvo",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "e-on",
+    "identitySource": "https://eon.com/",
+    "reason": "Legible current E.ON lettering on red native 32px tile, visually inspected without enlargement.",
+    "approvals": [
+      {
+        "key": "existing-8",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "china-unicom",
+    "identitySource": "https://www.chinaunicom.com.hk/en/about/profile.php",
+    "reason": "Official China Unicom investor-site navigation asset shows current bilingual name and red knot. White letters require a dark background.",
+    "approvals": [
+      {
+        "key": "official-china-unicom",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "dark"
+      }
+    ]
+  },
+  {
+    "brandId": "lg-uplus",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:LG_U%2B_logo.png",
+    "reason": "Traceable Commons LG U+ corporate wordmark includes U+ lettering; generic LG-only favicon remains rejected.",
+    "approvals": [
+      {
+        "key": "manual-lg-uplus",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "sinopec",
+    "identitySource": "https://www.sinopec.com/listco/en/000/000/061/61288.shtml",
+    "reason": "Current first-party Sinopec Hong Kong header provides the corporate Sinopec emblem plus red SINOPEC wordmark, with no subsidiary name or unrelated partner. Sinopec corporate profile confirms the Hong Kong company is wholly owned by China Petroleum & Chemical Corporation.",
+    "approvals": [
+      {
+        "key": "official-sinopec-hk",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "petrochina",
+    "identitySource": "https://www.petroineos.com/about-us/shareholders/petrochina/",
+    "reason": "Current PetroChina HK header supplies the full parent brand sunburst and PetroChina name without subsidiary suffix. Joint venture shareholder page independently identifies the same mark as PetroChina, distinct from its International subsidiary. Reject Indonesian header containing SKK Migas co-brand.",
+    "approvals": [
+      {
+        "key": "official-petrochina-hk",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "ais-thailand",
+    "identitySource": "https://www.ais.th/cover-page/Iphone-18",
+    "reason": "Official AIS favicon is legible at its native 48px; decoded ICO to PNG without resizing.",
+    "approvals": [
+      {
+        "key": "existing-1",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "novo-nordisk",
+    "identitySource": "https://www.novonordisk.com/",
+    "reason": "Official Novo Nordisk Apis bull favicon is 256px and clearly legible; previous gap was ICO rendering support.",
+    "approvals": [
+      {
+        "key": "existing-21",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "pdd-holdings",
+    "identitySource": "https://careers.pddglobalhr.com/campus/grad/detail?positionId=3d91a099-4a0a-456f-a1e2-78ee78155b22",
+    "reason": "PDD group recruitment site displays this red PDD name and circular emblem; not Pinduoduo subsidiary heart.",
+    "approvals": [
+      {
+        "key": "official-pdd",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "doritos",
+    "identitySource": "https://www.pepsico.com/brands/doritos",
+    "reason": "Distinctive Doritos triangle and wordmark legible at native 32px; corresponds to parent PepsiCo brand media listing.",
+    "approvals": [
+      {
+        "key": "existing-7",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "namshi",
+    "identitySource": "https://www.namshi.com/uae-en/about-us/",
+    "reason": "Current official about-page metadata serves the complete bilingual Namshi lockup.",
+    "approvals": [
+      {
+        "key": "official-namshi",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "blinkit",
+    "identitySource": "https://blinkit.com/",
+    "reason": "Yellow Blinkit native 48px brand tile with legible name; matches Blinkit current brand identity.",
+    "approvals": [
+      {
+        "key": "existing-5",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "ant-group",
+    "identitySource": "https://www.antgroup.com/en",
+    "reason": "Rendered official Ant Group header serves white ANT GROUP name and ant icon; accepted for dark backgrounds.",
+    "approvals": [
+      {
+        "key": "official-ant",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "dark"
+      }
+    ]
+  },
+  {
+    "brandId": "malaysia-aviation-group",
+    "identitySource": "https://malaysiaaviationgroup.com.my/en/MAG-media-centre/news-releases/2022/mag-launches-rising-to-a-new-horizon-a-new-journey-begins.html",
+    "reason": "Rendered MAG news-page header provides the group mark with full Malaysia Aviation Group text, correcting subsidiary substitution.",
+    "approvals": [
+      {
+        "key": "official-malaysia-aviation-group",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "garmin",
+    "identitySource": "https://garmin.com/",
+    "reason": "Garmin triangular brand symbol, native 32px; correct brand favicon rather than unrelated artwork.",
+    "approvals": [
+      {
+        "key": "existing-10",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "transformers",
+    "identitySource": "https://newsroom.hasbro.com/node/27206",
+    "reason": "Current Hasbro media library supplies this complete red TRANSFORMERS wordmark; Hasbro Pulse favicon stays rejected.",
+    "approvals": [
+      {
+        "key": "official-transformers",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "monopoly",
+    "identitySource": "https://newsroom.hasbro.com/node/27206",
+    "reason": "Current Hasbro media library supplies the flat red MONOPOLY mark; selected over older bevelled Commons treatment.",
+    "approvals": [
+      {
+        "key": "official-monopoly",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "dior",
+    "identitySource": "https://dior.com/",
+    "reason": "Official Dior favicon is the CD monogram, legible at native 48px; ICO decoded without resizing.",
+    "approvals": [
+      {
+        "key": "existing-6",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "garnier",
+    "identitySource": "https://www.garnier.com.au/",
+    "reason": "Official Garnier 32px leaf/G favicon is legible at native size. Fructis Hair Food product wordmark remains rejected.",
+    "approvals": [
+      {
+        "key": "existing-12",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "facebook",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Facebook_logo_(2023).svg",
+    "reason": "Complete current Facebook wordmark; unrelated/vandalized Commons caption text is ignored, artwork and official source support identity.",
+    "approvals": [
+      {
+        "key": "manual-facebook",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "tiktok-shop",
+    "identitySource": "https://seller.tiktok.com/",
+    "reason": "Public official seller-header black TikTok Shop wordmark; complete product identity, not generic TikTok mark.",
+    "approvals": [
+      {
+        "key": "official-tiktok-shop",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "TikTok Shop brand terms restrict mark use and require appropriate authorization. Public header artwork is collected for visual identity review, not publication. Source: https://seller-us.tiktok.com/university/essay?knowledge_id=879518449731341"
+  },
+  {
+    "brandId": "ibis",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Ibis-logo-2019.svg",
+    "reason": "Current ibis red pillow-shaped wordmark; single brand rather than three-brand family favicon.",
+    "approvals": [
+      {
+        "key": "manual-ibis",
+        "role": "logo",
+        "representation": "compact_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "garena",
+    "identitySource": "https://intl.garena.com/",
+    "reason": "First-party Garena CDN favicon shows the correct red Garena emblem at 48px.",
+    "approvals": [
+      {
+        "key": "existing-9",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "lancome",
+    "identitySource": "https://lancome.com/",
+    "reason": "Official Lancôme rose favicon is clear at native 32px; converted ICO to PNG.",
+    "approvals": [
+      {
+        "key": "existing-14",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "ola",
+    "identitySource": "https://outstation.olacabs.com/",
+    "reason": "Current Ola outstation site directly serves this geometric OLA wordmark; resolves earlier glyph mismatch.",
+    "approvals": [
+      {
+        "key": "official-ola",
+        "role": "logo",
+        "representation": "compact_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "star-wars",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:Star_Wars_Logo.svg",
+    "reason": "Traceable Commons yellow outline STAR WARS film/franchise mark; intentional black field retained. Promotional montage and character helmet remain rejected.",
+    "approvals": [
+      {
+        "key": "manual-star-wars",
+        "role": "logo",
+        "representation": "stacked_lockup",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "ralph-lauren",
+    "identitySource": "https://corporate.ralphlauren.com/",
+    "reason": "Official Ralph Lauren Corporation header; correct company, not Polo subbrand.",
+    "approvals": [
+      {
+        "key": "official-ralph",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "nerf",
+    "identitySource": "https://newsroom.hasbro.com/node/27206",
+    "reason": "Current Hasbro media library explicitly labels this orange NERF asset New Nerf Logo; the general Hasbro favicon stays rejected.",
+    "approvals": [
+      {
+        "key": "official-nerf",
+        "role": "logo",
+        "representation": "compact_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "royal-caribbean-group",
+    "identitySource": "https://www.royalcaribbeangroup.com/about",
+    "reason": "Current Royal Caribbean Group about-page header provides blue crown-and-name artwork. WordPress favicon and older stacked treatment are not selected.",
+    "approvals": [
+      {
+        "key": "official-royal",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "tata-cliq",
+    "identitySource": "https://blog.tatacliq.com/blog/2024/11/21/tata-cliq-rebrands-as-tata-cliq-fashion/",
+    "reason": "Current Tata CLiQ Fashion tile matches official November 2024 rebrand announcement; native 144px.",
+    "approvals": [
+      {
+        "key": "existing-31",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "digitalocean",
+    "identitySource": "https://www.digitalocean.com/press",
+    "reason": "Official blue wordmark matches byte-for-byte the logo in the ZIP currently linked by the press page (SHA256 0fddb71cc6f7e81e85e7ae587aaadf98e789f81dce422903faad4631f988fc63).",
+    "approvals": [
+      {
+        "key": "official-digitalocean",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ],
+    "usageNote": "DigitalOcean guidelines restrict logo use absent written permission or an authorized guideline. Public logo asset is found and visually usable; usage permission is not certified. Source: https://www.digitalocean.com/legal/trademark-usage-guidelines"
+  },
+  {
+    "brandId": "tsmc",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:TSMC_wordmark.svg",
+    "reason": "Traceable Commons red tsmc lettering sourced to tsmc.com; useful full company-initial wordmark without a tiny favicon.",
+    "approvals": [
+      {
+        "key": "manual-tsmc",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "sk-hynix",
+    "identitySource": "https://commons.wikimedia.org/wiki/File:SK_Hynix.svg",
+    "reason": "Traceable Commons complete SK hynix mark; correct company lettering rather than tiny generic SK icon.",
+    "approvals": [
+      {
+        "key": "manual-sk-hynix",
+        "role": "logo",
+        "representation": "horizontal_wordmark",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "teradata",
+    "identitySource": "https://www.teradata.com/",
+    "reason": "Official Teradata 48px t. favicon is clear and correctly identified.",
+    "approvals": [
+      {
+        "key": "existing-32",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "skyscanner",
+    "identitySource": "https://www.skyscanner.com.au/?previousCultureSource=GEO_LOCATION&redirectedFrom=www.skyscanner.net&userSessionDataId=1aae67cd-2652-4020-b05f-75e0ca66de25&session_handoff=eyJhbGciOiJFUzI1NiIsImtpZCI6InNlc3Npb24tc2VydmljZS1oYW5kb2ZmLWtleS0yMDI2LTA1IiwidHlwIjoiSldUIn0.eyJodHRwczovL3NreXNjYW5uZXIubmV0L3Nlc3Npb25faWQiOiIwMWEwYjhmZS1iM2RlLTgwMDQtOTViOS1kMzI5NmIxYTdkNTkiLCJleHAiOjE3ODk4MTAxMDV9.t4cWO9zQwA1fmYkybXBO16HvLuPDj7KfXLv5zqdLgHLoWxFvHTMIPToyFV1sA86PIwbWvsZmhofGJ8qiD-50-Q",
+    "reason": "Official Skyscanner 64px favicon is the current white horizon mark on a blue tile.",
+    "approvals": [
+      {
+        "key": "existing-28",
+        "role": "icon",
+        "representation": "symbol",
+        "theme": "light"
+      }
+    ]
+  },
+  {
+    "brandId": "pvh",
+    "identitySource": "https://www.pvh.com/company",
+    "reason": "Current pvh.com header serves the PVH black-square mark. Retired Phillips-Van Heusen candidate remains rejected.",
+    "approvals": [
+      {
+        "key": "official-pvh",
+        "role": "logo",
+        "representation": "compact_wordmark",
+        "theme": "light"
+      }
+    ]
+  }
+]
