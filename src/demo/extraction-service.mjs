@@ -1,4 +1,5 @@
 import { extractLogos, normalizeWebsite } from '../extractor.mjs';
+import { createSharedDemoAdmission } from './shared-admission.mjs';
 import {
   createDemoGuard,
   demoLimits,
@@ -30,6 +31,7 @@ export function createDemoExtractionService({
   normalize = normalizeWebsite,
   extractionOptions = () => publicDemoExtractionOptions(environment),
   allowBackgroundRemoval = false,
+  sharedAdmission = createSharedDemoAdmission({ environment }),
 } = {}) {
   return {
     async handle(request) {
@@ -39,13 +41,14 @@ export function createDemoExtractionService({
         if (body.removeBackground === true && !allowBackgroundRemoval) {
           throw new DemoHttpError(400, 'Model background removal is available only in local installs.');
         }
+        await sharedAdmission(request);
         const target = normalize(body.website);
         const options = { ...extractionOptions(), preferences: body.preferences };
         const requestedScrapers = body.scrapers ?? (options.browser ? ['browser'] : []);
         if (requestedScrapers.includes('browser') && !options.browser) {
           throw new DemoHttpError(400, 'The browser scraper is disabled on this server.');
         }
-        const configuredJinaKey = environment.PUBLIC_DEMO_ALLOW_JINA === '0' ? null : environment.JINA_API_KEY || null;
+        const configuredJinaKey = environment.PUBLIC_DEMO_ALLOW_JINA === '1' ? environment.JINA_API_KEY || null : null;
         if (requestedScrapers.includes('jina') && !configuredJinaKey) {
           throw new DemoHttpError(400, 'The Jina scraper is not configured on this server.');
         }

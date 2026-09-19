@@ -35,6 +35,17 @@ function json(response, status, value) {
   response.end(body);
 }
 
+function parseRequestUrl(request) {
+  const requestHost = request.headers.host;
+  if (requestHost !== undefined) {
+    const parsedHost = new URL(`http://${requestHost}`);
+    if (!parsedHost.hostname || parsedHost.username || parsedHost.password || parsedHost.pathname !== '/' || parsedHost.search || parsedHost.hash) {
+      throw new TypeError('Invalid Host header');
+    }
+  }
+  return new URL(request.url ?? '/', 'http://localhost');
+}
+
 async function serveFile(pathname, response) {
   const requested = pathname === '/' ? 'index.html' : ['/docs', '/docs/'].includes(pathname) ? 'docs.html' : pathname.slice(1);
   const safePath = normalize(requested).replace(/^(\.\.(\/|\\|$))+/, '');
@@ -50,20 +61,34 @@ async function serveFile(pathname, response) {
 }
 
 const server = createServer(async (request, response) => {
-  const url = new URL(request.url, `http://${request.headers.host ?? `${host}:${port}`}`);
-  if (request.method === 'POST' && url.pathname === '/api/extract') {
-    const result = await demoService.handle(request);
-    for (const [name, value] of Object.entries(result.headers)) response.setHeader(name, value);
-    return json(response, result.status, result.payload);
+  let url;
+  try {
+    url = parseRequestUrl(request);
+  } catch {
+    return json(response, 400, { error: 'Bad request.' });
   }
-  if (request.method === 'GET') return serveFile(url.pathname, response);
-  return json(response, 405, { error: 'Method not allowed.' });
+
+  try {
+    if (request.method === 'POST' && url.pathname === '/api/extract') {
+      const result = await demoService.handle(request);
+      for (const [name, value] of Object.entries(result.headers)) response.setHeader(name, value);
+      return json(response, result.status, result.payload);
+    }
+    if (request.method === 'GET') return await serveFile(url.pathname, response);
+    return json(response, 405, { error: 'Method not allowed.' });
+  } catch (error) {
+    console.error('Request failed:', error);
+    if (response.headersSent) return response.destroy();
+    return json(response, 500, { error: 'Internal server error.' });
+  }
 });
 
 server.listen(port, host, () => {
-  console.log(`Logo Yoink is running at http://${host}:${port}`);
+  const address = server.address();
+  const listeningPort = typeof address === 'object' && address ? address.port : port;
+  console.log(`Logo Yoink is running at http://${host}:${listeningPort}`);
   console.log(besticonUrl ? `Besticon fallback: ${besticonUrl}` : 'Besticon fallback: disabled');
-  console.log(jinaApiKey && process.env.PUBLIC_DEMO_ALLOW_JINA !== '0' ? 'Public demo Jina fallback: available by request' : 'Public demo Jina fallback: unavailable');
+  console.log(jinaApiKey && process.env.PUBLIC_DEMO_ALLOW_JINA === '1' ? 'Public demo Jina fallback: available by request' : 'Public demo Jina fallback: unavailable');
   console.log(`Public demo rendered fallback: ${browserDiscovery && process.env.PUBLIC_DEMO_BROWSER !== '0' ? 'enabled for missing roles' : 'disabled'}`);
   console.log(`Public demo Wikimedia fallback: ${process.env.PUBLIC_DEMO_WIKIMEDIA !== '0' ? 'enabled for missing roles' : 'disabled'}`);
 });

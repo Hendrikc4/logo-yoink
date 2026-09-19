@@ -392,7 +392,7 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
   const isolatedRuntime = Boolean(options.fetchImpl || options.validateUrl || options.cache !== undefined);
   const timeoutMs = Math.max(250, Math.min(10_000, options.timeoutMs ?? DEFAULT_TIMEOUT_MS));
   const runtime = {
-    fetchImpl: options.fetchImpl ?? fetch,
+    fetchImpl: options.fetchImpl,
     validateUrl: options.validateUrl ?? assertPublicUrl,
     timeoutMs,
     deadlineAt: performance.now() + timeoutMs,

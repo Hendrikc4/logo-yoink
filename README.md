@@ -263,7 +263,7 @@ curl -sS http://127.0.0.1:4310/api/extract \
 HTTP requests may likewise include `"linkedinFallback": true`,
 `"removeBackground": true`, and `"upscale": {"width": 1024, "height": 1024}`.
 
-The server uses its local browser by default. Send `"scrapers": []` for static-only extraction, `"scrapers": ["browser"]` for local browser rendering, `"scrapers": ["jina"]` for Jina, or both names together. Jina must be configured by the server owner with `JINA_API_KEY`; clients never send that secret.
+The server uses its local browser by default. Send `"scrapers": []` for static-only extraction, `"scrapers": ["browser"]` for local browser rendering, `"scrapers": ["jina"]` for Jina, or both names together. Jina must be configured by the server owner with `JINA_API_KEY` and `PUBLIC_DEMO_ALLOW_JINA=1`; clients never send that secret.
 
 The demo and API use the same default-on Wikidata/Commons fallback. Add
 `"wikimediaFallback": false` to disable that external identity source. Scraper
@@ -349,14 +349,14 @@ First-party homepage discovery still runs first. The bounded recovery stages onl
 | Need | How |
 | --- | --- |
 | Skip browser rendering | `BROWSER_DISCOVERY=0 npm start` |
-| Allow request-level Jina recovery for blocked or unusable homepages | Add `JINA_API_KEY` to `.env.local`, then request `"scrapers":["jina"]` |
+| Allow request-level Jina recovery for blocked or unusable homepages | Add `JINA_API_KEY` and `PUBLIC_DEMO_ALLOW_JINA=1` to `.env.local`, then request `"scrapers":["jina"]` |
 | Use a local [Besticon](https://github.com/mat/besticon) fallback | `BESTICON_URL=http://127.0.0.1:8080 npm start` |
 | Disable exact-domain Wikidata/Commons recovery | Add `--no-wikimedia-fallback` or set `PUBLIC_DEMO_WIKIMEDIA=0` |
 | Follow likely brand/press pages in the CLI | Add `--deep-wide` |
 | Inspect one same-origin SPA bundle too | Add `--deep-wide --spa-bundles` |
 | Try the measured BIMI icon fallback | Add `--bimi` (experimental, off by default) |
 
-Logo Yoink automatically loads a gitignored `.env.local` file. Setting `JINA_API_KEY` makes Jina available; it does not enable Jina by itself.
+Logo Yoink automatically loads a gitignored `.env.local` file. Setting `JINA_API_KEY` does not enable Jina by itself. HTTP requests also require `PUBLIC_DEMO_ALLOW_JINA=1`.
 
 The primary local settings are:
 
@@ -367,7 +367,7 @@ The primary local settings are:
 | `BROWSER_DISCOVERY` | `1` | Enable the Chromium fallback |
 | `JINA_API_KEY` | unset | Makes request-level Jina recovery available; it does not enable Jina |
 | `BESTICON_URL` | unset | Optional URL of a local Besticon service |
-| `PUBLIC_DEMO_ALLOW_JINA` | `1` | Set to `0` to prevent requests from opting into Jina, even when a key exists |
+| `PUBLIC_DEMO_ALLOW_JINA` | `0` | Set to `1` to allow explicitly requested Jina calls after configuring a budget |
 | `PUBLIC_DEMO_BROWSER` | `1` | Set to `0` to prevent web/API requests from using Chromium |
 | `PUBLIC_DEMO_WIKIMEDIA` | `1` | Set to `0` to disable Wikidata/Commons missing-role recovery in the demo |
 | `PUBLIC_DEMO_BIMI` | `0` | Set to `1` to enable the experimental BIMI fallback for web/API requests |
@@ -451,9 +451,11 @@ See [`docs/`](docs/) for the benchmark methodology, experiment logs, and visual-
 
 That is why Logo Yoink returns multiple ranked candidates instead of pretending one guess is always perfect.
 
-The server binds to localhost by default and rejects non-public targets while revalidating redirects. The included public demo route also enforces small JSON-only requests, same-origin browser calls, per-client and global rate limits, a two-extraction concurrency ceiling, duplicate-request coalescing, bounded extractor work, generic errors, and restrictive browser security headers. Local browser discovery defaults on; Jina is request-level opt-in even when `JINA_API_KEY` is configured. The one-entry first-party SPA-bundle probe and exact-domain Wikidata/Commons recovery are bounded missing-logo fallbacks. Set `PUBLIC_DEMO_ALLOW_JINA=0`, `PUBLIC_DEMO_BROWSER=0`, or `PUBLIC_DEMO_WIKIMEDIA=0` to prevent the corresponding fallback; the SPA probe remains capped at one same-origin bundle and 2.2 MB.
+The server binds to localhost by default. Static requests pin a validated public DNS address to each HTTP/TLS connection and revalidate redirects. Browser discovery uses an isolated context behind a validating HTTP/CONNECT proxy, including redirects and initial popup requests. The proxy limits actual inbound wire bytes and connection lifetime; service workers and WebSockets are blocked. SVG candidates must pass a full-document XML and CSS policy before decoding or returning downloadable bytes.
 
-The in-process rate limiter is intentionally dependency-free, so limits apply per running instance. A multi-instance public deployment should add a distributed edge rate limit or authentication, and should pin the validated public IP at connection time or enforce equivalent outbound-network rules to close the remaining DNS-rebinding window.
+The demo keeps small JSON-only requests, origin checks, local rate/concurrency limits, request coalescing and generic errors. On Vercel it additionally checks shared per-client and aggregate firewall counters before extraction, failing closed if either rule is absent or unavailable. Jina requires both `PUBLIC_DEMO_ALLOW_JINA=1` and a request opting in. Local single-instance installs need no distributed service.
+
+**Before deploying these changes**, configure the firewall rules and hosting limits in [the deployment security guide](docs/deployment-security.md). Vercel counters are regional, the local two-extraction cap is per instance, and CPU/memory isolation remains a hosting responsibility. These repository changes do not activate firewall rules or deploy the updated application.
 
 </details>
 

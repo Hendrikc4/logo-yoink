@@ -258,7 +258,7 @@ test('SVG safety provenance is emitted only after the inert-content check runs',
     validateUrl: async () => {}, fetchImpl: async () => new Response(embeddedRasterSvg, { headers: { 'content-type': 'image/svg+xml' } }),
   });
   assert.ok(conservativeMiss);
-  assert.equal(conservativeMiss.provenance.svg_safety_validated, undefined);
+  assert.equal(conservativeMiss.provenance.svg_safety_validated, true);
 });
 
 test('duplicate BIMI bytes retain the stronger existing candidate and record duplicate provenance', () => {

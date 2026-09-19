@@ -8,4 +8,6 @@ output/playwright/
 *.log
 .env
 .env.local
+.env.*
+!.env.example
 .vercel

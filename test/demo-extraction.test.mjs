@@ -72,7 +72,7 @@ test('shared demo extraction service forwards optional fallback and image proces
 test('shared demo extraction service makes browser and Jina request-level choices', async () => {
   const calls = [];
   const service = createDemoExtractionService({
-    environment: { JINA_API_KEY: 'secret' },
+    environment: { JINA_API_KEY: 'secret', PUBLIC_DEMO_ALLOW_JINA: '1' },
     extractionOptions: () => ({ browser: true, jinaApiKey: null }),
     extract: async (_website, options) => { calls.push(options); return {}; },
   });

@@ -1,4 +1,5 @@
 import { lookup as dnsLookup } from 'node:dns/promises';
+import { createBrowserEgressProxy } from './browser-egress-proxy.mjs';
 import { canonicalHostname, isIpAddress, isPrivateIp } from './network-safety.mjs';
 
 const DEFAULT_TIMEOUT_MS = 12_000;
@@ -8,6 +9,11 @@ const DEFAULT_HYDRATION_MS = 700;
 const DEFAULT_MAX_REQUESTS = 300;
 const DEFAULT_MAX_TRANSFER_BYTES = 8 * 1024 * 1024;
 const DEFAULT_VIEWPORT = { width: 1440, height: 900 };
+export const HARDENED_CHROMIUM_ARGS = Object.freeze([
+  '--disable-quic',
+  '--force-webrtc-ip-handling-policy=disable_non_proxied_udp',
+  '--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1',
+]);
 
 /**
  * Discover logo candidates that only exist in the rendered DOM.
@@ -19,6 +25,7 @@ const DEFAULT_VIEWPORT = { width: 1440, height: 900 };
 export async function discoverBrowserLogos(input, options = {}) {
   const startedAt = performance.now();
   const timeoutMs = positiveNumber(options.timeoutMs, DEFAULT_TIMEOUT_MS);
+  const deadlineAt = performance.now() + timeoutMs;
   const hydrationMs = Math.min(positiveNumber(options.hydrationMs, DEFAULT_HYDRATION_MS), 3_000);
   const maxRequests = positiveNumber(options.maxRequests, DEFAULT_MAX_REQUESTS);
   const maxTransferBytes = positiveNumber(options.maxTransferBytes, DEFAULT_MAX_TRANSFER_BYTES);
@@ -28,6 +35,7 @@ export async function discoverBrowserLogos(input, options = {}) {
     finalUrl: null,
     requests: 0,
     declaredTransferBytes: 0,
+    transferBytes: 0,
     blockedRequests: 0,
     resourceLimitHit: false,
     themesInspected: options.darkMode ? ['light', 'dark'] : ['light'],
@@ -36,15 +44,33 @@ export async function discoverBrowserLogos(input, options = {}) {
 
   let browser = options.browser ?? null;
   let ownsBrowser = false;
+  let proxy = null;
+  let context = null;
   let page = null;
   let budget = { requests: 0, declaredBytes: 0, blocked: 0, limitHit: false };
 
   try {
     const target = normaliseInput(input);
+    proxy = await withinDeadline(
+      (options.createEgressProxy ?? createBrowserEgressProxy)({
+        lookup: options.lookup,
+        connect: options.proxyConnect,
+        maxTransferBytes,
+        maxConnections: maxRequests,
+        timeoutMs: Math.max(1, Math.ceil(deadlineAt - performance.now())),
+      }),
+      deadlineAt,
+      'starting the browser egress proxy',
+      boundedClose,
+    );
     if (!browser) {
       let playwright;
       try {
-        playwright = options.playwright ?? await (options.importPlaywright ?? (() => import('playwright')))();
+        playwright = options.playwright ?? await withinDeadline(
+          (options.importPlaywright ?? (() => import('playwright')))(),
+          deadlineAt,
+          'loading Playwright',
+        );
       } catch (error) {
         diagnostics.status = 'unavailable';
         diagnostics.errors.push(`Playwright is unavailable: ${error.message}`);
@@ -57,22 +83,40 @@ export async function discoverBrowserLogos(input, options = {}) {
         return result([], diagnostics, startedAt);
       }
       const launchOptions = typeof options.launchOptions === 'function'
-        ? await options.launchOptions()
+        ? await withinDeadline(options.launchOptions(), deadlineAt, 'resolving Chromium launch options')
         : options.launchOptions;
-      browser = await chromium.launch({ headless: true, ...launchOptions });
+      const configuredArgs = [...new Set([...(launchOptions?.args ?? []), ...HARDENED_CHROMIUM_ARGS])];
+      browser = await withinDeadline(
+        chromium.launch({ headless: true, ...launchOptions, args: configuredArgs }),
+        deadlineAt,
+        'launching Chromium',
+        boundedClose,
+      );
       ownsBrowser = true;
+    } else {
+      // Injected browsers are caller-managed and cannot be retrofitted with
+      // process launch flags. Their per-discovery context is still isolated and
+      // forced through the validating proxy below.
     }
 
-    page = await browser.newPage({
+    if (!browser?.newContext) throw new Error('Browser does not support isolated proxy contexts.');
+    context = await withinDeadline(browser.newContext({
       viewport: options.viewport ?? DEFAULT_VIEWPORT,
       ...(options.userAgent ? { userAgent: options.userAgent } : {}),
       serviceWorkers: 'block',
-    });
+      proxy: { server: proxy.server, bypass: '<-loopback>' },
+    }), deadlineAt, 'creating an isolated browser context', boundedClose);
+    page = await withinDeadline(context.newPage(), deadlineAt, 'creating a browser page', boundedClose);
     page.setDefaultTimeout?.(timeoutMs);
     page.setDefaultNavigationTimeout?.(timeoutMs);
 
-    await installResourceLimits(page, budget, { maxRequests, maxTransferBytes, lookup: options.lookup });
+    await withinDeadline(
+      installResourceLimits(context, budget, { maxRequests, maxTransferBytes }),
+      deadlineAt,
+      'installing browser network limits',
+    );
 
+    const remainingMs = Math.max(0, deadlineAt - performance.now());
     const candidates = await withDeadline(async () => {
       await page.emulateMedia?.({ colorScheme: 'light', reducedMotion: 'reduce' });
       const response = await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: timeoutMs });
@@ -106,14 +150,15 @@ export async function discoverBrowserLogos(input, options = {}) {
         headerRetention: options.headerRetention !== false,
       });
       return [...light, ...dark];
-    }, timeoutMs, () => page?.close?.().catch(() => {}));
+    }, remainingMs, () => boundedClose(context));
 
     Object.assign(diagnostics, {
       status: 'ok',
       requests: budget.requests,
       declaredTransferBytes: budget.declaredBytes,
+      transferBytes: proxy.stats.bytes,
       blockedRequests: budget.blocked,
-      resourceLimitHit: budget.limitHit,
+      resourceLimitHit: budget.limitHit || proxy.stats.limitHit,
     });
     const discoveryTrace = {};
     const deduped = dedupeCandidates(candidates, discoveryTrace);
@@ -127,28 +172,34 @@ export async function discoverBrowserLogos(input, options = {}) {
     Object.assign(diagnostics, {
       requests: budget.requests,
       declaredTransferBytes: budget.declaredBytes,
-      blockedRequests: budget.blocked,
-      resourceLimitHit: budget.limitHit,
+      transferBytes: proxy?.stats?.bytes ?? 0,
+      blockedRequests: budget.blocked + (proxy?.stats?.blocked ?? 0),
+      resourceLimitHit: budget.limitHit || Boolean(proxy?.stats?.limitHit),
     });
-    await page?.close?.().catch(() => {});
-    if (ownsBrowser) await browser?.close?.().catch(() => {});
+    await Promise.all([
+      boundedClose(context),
+      boundedClose(page),
+      ownsBrowser ? boundedClose(browser) : undefined,
+      boundedClose(proxy),
+    ]);
   }
 }
 
-async function installResourceLimits(page, budget, limits) {
-  const hostChecks = new Map();
-  page.on?.('response', response => {
+async function installResourceLimits(context, budget, limits) {
+  context.on?.('response', response => {
     const length = Number(response.headers?.()['content-length'] ?? 0);
     if (Number.isFinite(length) && length > 0) budget.declaredBytes += length;
     if (budget.declaredBytes > limits.maxTransferBytes) budget.limitHit = true;
   });
 
-  await page.route?.('**/*', async route => {
+  if (!context.route || !context.routeWebSocket) throw new Error('Browser context lacks required network interception APIs.');
+  await context.routeWebSocket('**/*', webSocket => webSocket.close());
+  await context.route('**/*', async route => {
     budget.requests += 1;
     const request = route.request?.();
     const type = request?.resourceType?.() ?? '';
     const overBudget = budget.requests > limits.maxRequests || budget.declaredBytes > limits.maxTransferBytes;
-    const safeTarget = await isAllowedBrowserUrl(request?.url?.(), hostChecks, limits.lookup);
+    const safeTarget = isHttpBrowserUrl(request?.url?.());
     if (overBudget || !safeTarget || type === 'media' || type === 'font') {
       budget.blocked += 1;
       if (overBudget) budget.limitHit = true;
@@ -157,6 +208,10 @@ async function installResourceLimits(page, budget, limits) {
     }
     await route.continue();
   });
+}
+
+function isHttpBrowserUrl(value) {
+  try { return /^https?:$/.test(new URL(value).protocol); } catch { return false; }
 }
 
 async function boundedHydration(page, hydrationMs, timeoutMs) {
@@ -417,6 +472,38 @@ function withDeadline(work, timeoutMs, onTimeout) {
       }, timeoutMs);
     }),
   ]).finally(() => clearTimeout(timer));
+}
+
+export function withinDeadline(promise, deadlineAt, operation, cleanupLate) {
+  const remaining = Math.max(0, deadlineAt - performance.now());
+  let timer;
+  let expired = false;
+  const tracked = Promise.resolve(promise).then(async value => {
+    if (expired && cleanupLate) await cleanupLate(value);
+    return value;
+  });
+  return Promise.race([
+    tracked,
+    new Promise((_, reject) => {
+      timer = setTimeout(() => {
+        expired = true;
+        const error = new Error(`Rendered-browser discovery timed out while ${operation}.`);
+        error.code = 'LOGO_YOINK_BROWSER_TIMEOUT';
+        reject(error);
+      }, remaining);
+    }),
+  ]).finally(() => clearTimeout(timer));
+}
+
+export async function boundedClose(value) {
+  if (!value?.close) return;
+  let timer;
+  try {
+    await Promise.race([
+      Promise.resolve().then(() => value.close()).catch(() => {}),
+      new Promise(resolve => { timer = setTimeout(resolve, 1_000); }),
+    ]);
+  } finally { clearTimeout(timer); }
 }
 
 function result(candidates, diagnostics, startedAt) {

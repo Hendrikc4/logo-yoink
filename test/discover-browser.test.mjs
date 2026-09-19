@@ -4,6 +4,23 @@ import { discoverBrowserLogos, internals } from '../src/discover-browser.mjs';
 import { internals as extractorInternals } from '../src/extractor.mjs';
 import { rankCandidates } from '../src/rank.mjs';
 
+const fakeProxy = () => Promise.resolve({
+  server: 'http://127.0.0.1:43210',
+  stats: { bytes: 0, blocked: 0, limitHit: false },
+  async close() {},
+});
+
+function mockContext(page, overrides = {}) {
+  return {
+    on() {},
+    async route() {},
+    async routeWebSocket() {},
+    async newPage() { return page; },
+    async close() {},
+    ...overrides,
+  };
+}
+
 async function inspectFixture(html, css = '') {
   const { chromium } = await import('playwright');
   const browser = await chromium.launch({ headless: true });
@@ -42,18 +59,28 @@ test('resolves lazy serverless launch options only when launching a browser', as
       async launch(options) {
         launches.push(options);
         return {
-          async newPage() { throw new Error('stop after launch'); },
+          async newContext() { throw new Error('stop after launch'); },
           async close() {},
         };
       },
     } }),
+    createEgressProxy: fakeProxy,
     launchOptions: async () => {
       resolved += 1;
       return { executablePath: '/tmp/chromium', args: ['--serverless'] };
     },
   });
   assert.equal(resolved, 1);
-  assert.deepEqual(launches, [{ headless: true, executablePath: '/tmp/chromium', args: ['--serverless'] }]);
+  assert.deepEqual(launches, [{
+    headless: true,
+    executablePath: '/tmp/chromium',
+    args: [
+      '--serverless',
+      '--disable-quic',
+      '--force-webrtc-ip-handling-policy=disable_non_proxied_udp',
+      '--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1',
+    ],
+  }]);
   assert.equal(result.diagnostics.status, 'error');
 });
 
@@ -76,9 +103,9 @@ test('uses an injected browser, inspects both themes, and deduplicates URLs', as
     },
     async close() { calls.push(['close']); },
   };
-  const browser = { async newPage() { return page; } };
+  const browser = { async newContext() { return mockContext(page); } };
   const result = await discoverBrowserLogos({ url: 'https://example.com', company: 'Example' }, {
-    browser, darkMode: true, timeoutMs: 1_000,
+    browser, darkMode: true, timeoutMs: 1_000, createEgressProxy: fakeProxy,
   });
 
   assert.equal(result.diagnostics.status, 'ok');
@@ -144,18 +171,45 @@ test('hard deadline returns timeout diagnostics and closes the page', async () =
     async close() { closed += 1; },
   };
   const result = await discoverBrowserLogos('https://example.com', {
-    browser: { async newPage() { return page; } }, timeoutMs: 10,
+    browser: { async newContext() { return mockContext(page); } }, timeoutMs: 10, createEgressProxy: fakeProxy,
   });
   assert.equal(result.diagnostics.status, 'timeout');
   assert.ok(closed >= 1);
+});
+
+test('resources that resolve after the deadline are closed', async () => {
+  let proxyClosed = 0;
+  const proxyResult = await discoverBrowserLogos('https://example.com', {
+    timeoutMs: 5,
+    createEgressProxy: () => new Promise(resolve => setTimeout(() => resolve({
+      server: 'http://127.0.0.1:43210',
+      stats: { bytes: 0, blocked: 0, limitHit: false },
+      async close() { proxyClosed += 1; },
+    }), 15)),
+  });
+  assert.equal(proxyResult.diagnostics.status, 'timeout');
+  await new Promise(resolve => setTimeout(resolve, 25));
+  assert.equal(proxyClosed, 1);
+
+  let browserClosed = 0;
+  const browserResult = await discoverBrowserLogos('https://example.com', {
+    timeoutMs: 5,
+    createEgressProxy: fakeProxy,
+    playwright: { chromium: {
+      launch: () => new Promise(resolve => setTimeout(() => resolve({
+        async close() { browserClosed += 1; },
+      }), 15)),
+    } },
+  });
+  assert.equal(browserResult.diagnostics.status, 'timeout');
+  await new Promise(resolve => setTimeout(resolve, 25));
+  assert.equal(browserClosed, 1);
 });
 
 test('request route blocks resources after the configured request budget', async () => {
   let handler;
   const actions = [];
   const page = {
-    on() {},
-    async route(_pattern, callback) { handler = callback; },
     setDefaultTimeout() {}, setDefaultNavigationTimeout() {}, async emulateMedia() {},
     async goto() {
       for (let index = 0; index < 2; index++) {
@@ -168,9 +222,13 @@ test('request route blocks resources after the configured request budget', async
     async waitForLoadState() {}, url() { return 'https://example.test/'; },
     async evaluate() { return []; }, async close() {},
   };
+  const context = mockContext(page, {
+    async route(_pattern, callback) { handler = callback; },
+  });
   const result = await discoverBrowserLogos('https://example.test', {
-    browser: { async newPage() { return page; } }, maxRequests: 1,
+    browser: { async newContext() { return context; } }, maxRequests: 1,
     lookup: async () => [{ address: '93.184.216.34', family: 4 }],
+    createEgressProxy: fakeProxy,
   });
   assert.deepEqual(actions, ['continue', 'abort']);
   assert.equal(result.diagnostics.resourceLimitHit, true);
