@@ -437,10 +437,13 @@ async function coverage() {
         row.missingIcon && !current.assets?.icon ? 'icon' : null,
         row.missingWide && !current.assets?.logo ? 'logo' : null,
       ].filter(Boolean);
+      const candidateRoles = [...new Set((row.currentExperiment?.assets ?? []).filter(asset => asset.valid).flatMap(asset =>
+        row.currentExperiment.stage === 'eligible_pending_visual_review' ? asset.selectedRoles ?? [] : asset.evidence?.eligible_roles ?? []
+      ).map(role => role === 'wide' ? 'logo' : role))].filter(role => currentMissingRoles.includes(role));
       recoveryById.set(row.id, {
         sourceFile: 'reports/missing-logo-program-2026-09-19/gap-analysis.json',
         split: row.split ?? null, previouslyExposed: row.previouslyExposed ?? null,
-        currentExperiment: row.currentExperiment ?? null, currentMissingRoles,
+        currentExperiment: row.currentExperiment ?? null, currentMissingRoles, candidateRoles,
         missingIcon: Boolean(row.missingIcon), missingWide: Boolean(row.missingWide),
       });
     }
@@ -487,6 +490,7 @@ async function coverage() {
 
   const layoutFor = (asset, role) => {
     const representation = String(asset?.representation ?? '').toLowerCase();
+    if (/stacked/.test(representation)) return 'stacked';
     if (/(?:icon|symbol|square|compact|app[- ]icon|brand[- ]mark)/.test(representation)) return 'compact';
     if (/(?:wordmark|lockup)/.test(representation)) return 'horizontal';
     const width = Number(asset?.width), height = Number(asset?.height);
@@ -520,10 +524,12 @@ async function coverage() {
       return ['icon', 'logo'].includes(role) && !assets[role] && !(rejectedCandidates.get(`${brand.id}:${role}`)?.length);
     });
     if (recoveryEvidence?.currentExperiment?.stage === 'eligible_pending_visual_review') {
-      for (const role of recoveryEvidence.currentMissingRoles) {
+      for (const role of recoveryEvidence.candidateRoles) {
         if (role === reviewedRole) continue;
+        const captured = recoveryEvidence.currentExperiment.assets?.find(asset => (asset.selectedRoles ?? []).includes(role === 'logo' ? 'wide' : role));
         pendingCandidateReview.push({
           role, sourceFile: recoveryEvidence.sourceFile, sourceKind: 'missing-logo-program',
+          url: captured?.url, discoveryPage: captured?.provenance?.commons_description_url,
           representation: role === 'logo' ? 'wordmark_or_lockup' : 'symbol',
           recoveryStage: recoveryEvidence.currentExperiment.stage,
           recoverySplit: recoveryEvidence.split,
@@ -543,7 +549,7 @@ async function coverage() {
       })),
     ];
     const noArtEvidence = research.filter(evidence => evidence.status === 'no-art-found');
-    const hasResearchCandidate = candidates.length > 0;
+    const hasResearchCandidate = candidates.length > 0 || (recoveryEvidence?.currentExperiment?.assets ?? []).some(asset => asset.valid) || Boolean(reviewedCandidate);
     const genuinelyNoArt = !approvedAny && !hasResearchCandidate && !restrictions.length && !transientAcquisitionFailures.length && noArtEvidence.length > 0;
     const runEvidence = runEvidenceById.get(brand.id) ?? [];
     const attemptEvidence = [
@@ -565,16 +571,16 @@ async function coverage() {
       })),
       recovery: recoveryEvidence ? {
         sourceFile: recoveryEvidence.sourceFile, split: recoveryEvidence.split, previouslyExposed: recoveryEvidence.previouslyExposed,
-        currentExperiment: recoveryEvidence.currentExperiment, current_missing_roles: recoveryEvidence.currentMissingRoles,
+        currentExperiment: recoveryEvidence.currentExperiment, current_missing_roles: recoveryEvidence.currentMissingRoles, candidate_roles: recoveryEvidence.candidateRoles,
       } : null,
       reviewed_candidate: reviewedCandidate,
       queue: {
         pending_candidate_review: pendingCandidateReview.map(candidate => ({ ...candidateSource(candidate, candidate.researchReason), sourceFile: candidate.sourceFile, recoveryStage: candidate.recoveryStage ?? null, recoverySplit: candidate.recoverySplit ?? null })),
-        reviewed_candidate_pass: reviewedCandidate ? [reviewedCandidate] : [],
-        recovery_role_theme_ineligible: recoveryEvidence?.currentExperiment?.stage === 'role_or_theme_ineligible',
+        reviewed_candidate_pass: reviewedRole && !assets[reviewedRole] ? [reviewedCandidate] : [],
+        recovery_role_theme_ineligible: recoveryEvidence?.currentExperiment?.stage === 'role_or_theme_ineligible' && recoveryEvidence.candidateRoles.length > 0,
         genuinely_no_art: genuinelyNoArt,
         transient_acquisition_failure: transientAcquisitionFailures,
-        unresolved_identity_or_source: current.verificationStatus === 'unresolved',
+        unresolved_identity_or_source: !approvedAny && !hasResearchCandidate && current.verificationStatus === 'unresolved',
         recorded_restriction: restrictions,
         unknown_attempt_history: unknownAttemptHistory,
         never_attempted: explicitNeverAttempted,
@@ -588,14 +594,14 @@ async function coverage() {
 
   const count = predicate => queueRows.filter(predicate).length;
   const recoveryRows = queueRows.filter(row => row.recovery);
-  const recoveryStageCount = stage => recoveryRows.filter(row => row.recovery.currentExperiment?.stage === stage).length;
-  const recoveryStageRoleCount = stage => recoveryRows.reduce((total, row) => total + (row.recovery.currentExperiment?.stage === stage ? row.recovery.current_missing_roles.length : 0), 0);
+  const recoveryStageCount = stage => recoveryRows.filter(row => row.recovery.currentExperiment?.stage === stage && row.recovery.candidate_roles.length).length;
+  const recoveryStageRoleCount = stage => recoveryRows.reduce((total, row) => total + (row.recovery.currentExperiment?.stage === stage ? row.recovery.candidate_roles.length : 0), 0);
   const summary = {
     identities: queueRows.length,
     approved_any: count(row => row.approved_any), icon_present: count(row => row.icon_present), company_name_logo_present: count(row => row.company_name_logo_present),
     both: count(row => row.icon_present && row.company_name_logo_present), icon_only: count(row => row.icon_present && !row.company_name_logo_present), logo_only: count(row => row.company_name_logo_present && !row.icon_present), empty: count(row => !row.approved_any),
     approved_assets: queueRows.reduce((total, row) => total + Object.keys(row.approved).length + row.approved_variant_count, 0),
-    approved_layout: ['horizontal', 'compact', 'unknown'].reduce((result, layout) => {
+    approved_layout: ['horizontal', 'stacked', 'compact', 'unknown'].reduce((result, layout) => {
       result[layout] = queueRows.reduce((total, row) => total + Object.values(row.approved).filter(asset => asset.layout === layout).length, 0);
       return result;
     }, {}),
@@ -628,7 +634,7 @@ async function coverage() {
     await writeJson(resolve(output), report);
     console.log(JSON.stringify({ ...summary, output: resolve(output) }, null, 2));
   } else {
-    console.log(JSON.stringify(report, null, 2));
+    console.log(JSON.stringify(has('--list') ? report : summary, null, 2));
   }
 }
 
