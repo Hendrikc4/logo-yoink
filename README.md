@@ -221,6 +221,8 @@ result.logo; // best wordmark, or null
 
 `yoink` checks reviewed artwork for an exact canonical domain or explicit verified alias before contacting the site. It never widens a match to an arbitrary subdomain, parent, or subsidiary. Use `{ library: false }` (or call the low-level `extractLogos` export) to force live discovery. Use `roles: ['icon']` or `roles: ['logo']` when only one canonical role is needed.
 
+To update the approved 1,000-brand library whenever you choose, follow the [manual logo refresh procedure](docs/manual-logo-refresh.md). It covers collection, review, approval, and making the update available; no recurring refresh is scheduled.
+
 Browser rendering is enabled by default. To force the fastest static-only path:
 
 ```js
