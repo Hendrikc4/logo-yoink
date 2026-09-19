@@ -38,7 +38,7 @@ try {
   await writeFile(resolve(temporaryRoot, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
   await rm(runtimeRoot, { recursive: true, force: true });
   await rename(temporaryRoot, runtimeRoot);
-  process.stdout.write(`Prepared ${copied} approved brand-library assets for runtime packaging.\n`);
+  process.stderr.write(`Prepared ${copied} approved brand-library assets for runtime packaging.\n`);
 } catch (error) {
   await rm(temporaryRoot, { recursive: true, force: true });
   throw error;
