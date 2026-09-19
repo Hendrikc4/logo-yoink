@@ -1,0 +1,427 @@
+brand_id	name	domain	missing_role	available_role	original_cohort
+mcdonalds	McDonald's	mcdonalds.com	logo	icon	icon
+jd-com	JD.com	jd.com	logo	icon	icon
+zara	Zara	zara.com	icon	logo	logo
+bp	bp	bp.com	logo	icon	icon
+ge	GE	ge.com	logo	icon	icon
+fedex	FedEx	fedex.com	icon	logo	logo
+x	X	x.com	logo	icon	icon
+snapchat	Snapchat	snapchat.com	logo	icon	icon
+dell	Dell	dell.com	icon	logo	empty
+hp	HP	hp.com	logo	icon	icon
+bose	Bose	bose.com	icon	logo	logo
+gopro	GoPro	gopro.com	icon	logo	empty
+palo-alto-networks	Palo Alto Networks	paloaltonetworks.com	icon	logo	logo
+costco	Costco	costco.com	icon	logo	empty
+carrefour	Carrefour	carrefour.com	logo	icon	empty
+lowe-s	Lowe's	lowes.com	icon	logo	logo
+home-depot	The Home Depot	homedepot.com	logo	icon	icon
+best-buy	Best Buy	bestbuy.com	icon	logo	empty
+aldi	Aldi	aldi.com	logo	icon	empty
+puma	Puma	puma.com	logo	icon	icon
+lululemon	Lululemon	lululemon.com	logo	icon	empty
+patagonia	Patagonia	patagonia.com	icon	logo	logo
+levi-s	Levi's	levis.com	logo	icon	icon
+the-north-face	The North Face	thenorthface.com	logo	icon	empty
+ray-ban	Ray-Ban	ray-ban.com	icon	logo	logo
+warby-parker	Warby Parker	warbyparker.com	logo	icon	icon
+este-e-lauder	Estée Lauder	elcompanies.com	icon	logo	logo
+danone	Danone	danone.com	logo	icon	icon
+kraft-heinz	Kraft Heinz	kraftheinzcompany.com	icon	logo	empty
+mondelez-international	Mondelez International	mondelezinternational.com	icon	logo	logo
+mars	Mars	mars.com	icon	logo	logo
+heineken	Heineken	heineken.com	icon	logo	logo
+diageo	Diageo	diageo.com	icon	logo	logo
+subway	Subway	subway.com	icon	logo	logo
+domino-s	Domino's	dominos.com	logo	icon	icon
+chipotle	Chipotle	chipotle.com	logo	icon	icon
+yum-brands	Yum! Brands	yum.com	icon	logo	empty
+hilton	Hilton	hilton.com	logo	icon	icon
+marriott	Marriott	marriott.com	icon	logo	empty
+expedia	Expedia	expedia.com	logo	icon	icon
+lyft	Lyft	lyft.com	icon	logo	empty
+delta-air-lines	Delta Air Lines	delta.com	logo	icon	icon
+united-airlines	United Airlines	united.com	icon	logo	empty
+emirates	Emirates	emirates.com	icon	logo	empty
+singapore-airlines	Singapore Airlines	singaporeair.com	icon	logo	empty
+totalenergies	TotalEnergies	totalenergies.com	icon	logo	logo
+abb	ABB	abb.com	icon	logo	empty
+schneider-electric	Schneider Electric	se.com	icon	logo	empty
+3m	3M	3m.com	icon	logo	empty
+caterpillar	Caterpillar	cat.com	icon	logo	logo
+bank-of-america	Bank of America	bankofamerica.com	icon	logo	empty
+ubs	UBS	ubs.com	logo	icon	icon
+axa	AXA	axa.com	logo	icon	icon
+berkshire-hathaway	Berkshire Hathaway	berkshirehathaway.com	icon	logo	empty
+johnson-johnson	Johnson & Johnson	jnj.com	icon	logo	logo
+the-new-york-times	The New York Times	nytimes.com	logo	icon	empty
+bbc	BBC	bbc.com	icon	logo	empty
+reuters	Reuters	reuters.com	logo	icon	empty
+vimeo	Vimeo	vimeo.com	logo	icon	icon
+epic-games	Epic Games	epicgames.com	logo	icon	icon
+kakao	Kakao	kakaocorp.com	logo	icon	icon
+safran	Safran	safran-group.com	logo	icon	icon
+lufthansa	Lufthansa	lufthansa.com	icon	logo	empty
+zalando	Zalando	zalando.com	logo	icon	icon
+alibaba-group	Alibaba Group	alibabagroup.com	icon	logo	empty
+naver	Naver	navercorp.com	logo	icon	icon
+mitsubishi-motors	Mitsubishi Motors	mitsubishi-motors.com	logo	icon	icon
+tata	Tata	tata.com	logo	icon	icon
+infosys	Infosys	infosys.com	icon	logo	logo
+mercado-libre	Mercado Libre	mercadolibre.com	logo	icon	icon
+rappi	Rappi	rappi.com	icon	logo	empty
+safaricom	Safaricom	safaricom.co.ke	logo	icon	icon
+orange	Orange	orange.com	logo	icon	icon
+deutsche-telekom	Deutsche Telekom	telekom.com	logo	icon	icon
+verizon	Verizon	verizon.com	icon	logo	empty
+comcast	Comcast	corporate.comcast.com	icon	logo	logo
+hasbro	Hasbro	hasbro.com	logo	icon	icon
+fisher-price	Fisher-Price	fisher-price.com	icon	logo	logo
+gartner	Gartner	gartner.com	logo	icon	icon
+mckinsey-company	McKinsey & Company	mckinsey.com	icon	logo	empty
+kpmg	KPMG	kpmg.com	icon	logo	logo
+pwc	PwC	pwc.com	icon	logo	empty
+snap	Snap	snap.com	icon	logo	logo
+autodesk	Autodesk	autodesk.com	logo	icon	icon
+palantir	Palantir	palantir.com	icon	logo	empty
+bumble	Bumble	bumble.com	icon	logo	empty
+match-group	Match Group	mtch.com	logo	icon	icon
+indeed	Indeed	indeed.com	logo	icon	icon
+etsy	Etsy	etsy.com	logo	icon	icon
+ebay	eBay	ebay.com	icon	logo	logo
+shein	Shein	shein.com	icon	logo	empty
+asos	ASOS	asos.com	icon	logo	empty
+mango	Mango	mango.com	icon	logo	empty
+kroger	Kroger	kroger.com	icon	logo	empty
+publix	Publix	publix.com	logo	icon	icon
+rei	REI	rei.com	logo	icon	icon
+icelandair	Icelandair	icelandair.com	logo	icon	icon
+qatar-airways	Qatar Airways	qatarairways.com	icon	logo	empty
+etihad-airways	Etihad Airways	etihad.com	icon	logo	empty
+blackstone	Blackstone	blackstone.com	icon	logo	empty
+fidelity-national-information-services	FIS	fisglobal.com	icon	logo	logo
+chevron	Chevron	chevron.com	icon	logo	empty
+nextera-energy	NextEra Energy	nexteraenergy.com	icon	logo	logo
+bhp	BHP	bhp.com	icon	logo	logo
+america-movil	América Móvil	americamovil.com	icon	logo	empty
+northrop-grumman	Northrop Grumman	northropgrumman.com	icon	logo	empty
+rockwell-automation	Rockwell Automation	rockwellautomation.com	icon	logo	logo
+vale	Vale	vale.com	logo	icon	icon
+us-bancorp	U.S. Bancorp	usbank.com	icon	logo	empty
+chubb	Chubb	chubb.com	icon	logo	logo
+eaton	Eaton	eaton.com	icon	logo	empty
+bt-group	BT Group	bt.com	logo	icon	icon
+aig	AIG	aig.com	icon	logo	empty
+marathon-petroleum	Marathon Petroleum	marathonpetroleum.com	logo	icon	icon
+l3harris	L3Harris	l3harris.com	icon	logo	empty
+parker-hannifin	Parker Hannifin	parker.com	logo	icon	icon
+exelon	Exelon	exeloncorp.com	icon	logo	empty
+anglo-american	Anglo American	angloamerican.com	logo	icon	icon
+phillips-66	Phillips 66	phillips66.com	logo	icon	icon
+proximus	Proximus	proximus.com	icon	logo	empty
+dominion-energy	Dominion Energy	dominionenergy.com	icon	logo	empty
+freeport-mcmoran	Freeport-McMoRan	fcx.com	icon	logo	empty
+marsh-mclennan	Marsh	marsh.com	icon	logo	empty
+ge-aerospace	GE Aerospace	geaerospace.com	icon	logo	empty
+cummins	Cummins	cummins.com	logo	icon	empty
+cardinal-health	Cardinal Health	cardinalhealth.com	icon	logo	empty
+swisscom	Swisscom	swisscom.com	logo	icon	icon
+aon	Aon	aon.com	logo	icon	icon
+rolls-royce-holdings	Rolls-Royce	rolls-royce.com	logo	icon	icon
+paccar	PACCAR	paccar.com	logo	icon	icon
+eli-lilly	Eli Lilly	lilly.com	icon	logo	empty
+p-g-e-corporation	PG&E Corporation	pgecorp.com	logo	icon	empty
+newmont	Newmont	newmont.com	icon	logo	empty
+s-p-global	S&P Global	spglobal.com	logo	icon	icon
+arthur-j-gallagher	Arthur J. Gallagher	ajg.com	icon	logo	empty
+bae-systems	BAE Systems	baesystems.com	logo	icon	icon
+traton	TRATON	traton.com	icon	logo	empty
+xcel-energy	Xcel Energy	xcelenergy.com	icon	logo	logo
+barrick-mining	Barrick Mining	barrick.com	icon	logo	empty
+moodys	Moody's	moodys.com	icon	logo	empty
+volvo-group	Volvo Group	volvogroup.com	icon	logo	empty
+telenor	Telenor	telenor.com	logo	icon	icon
+sempra	Sempra	sempra.com	logo	icon	icon
+agnico-eagle-mines	Agnico Eagle Mines	agnicoeagle.com	logo	icon	icon
+cme-group	CME Group	cmegroup.com	logo	icon	empty
+aia-group	AIA Group	aia.com	icon	logo	empty
+daimler-truck	Daimler Truck	daimlertruck.com	logo	icon	icon
+tim	TIM	gruppotim.it	logo	icon	icon
+noble-corporation	Noble Corporation	noblecorp.com	logo	icon	icon
+rheinmetall	Rheinmetall	rheinmetall.com	logo	icon	icon
+komatsu	Komatsu	komatsu.com	icon	logo	logo
+nasdaq	Nasdaq	nasdaq.com	icon	logo	empty
+transocean	Transocean	deepwater.com	logo	icon	icon
+saab	Saab	saab.com	icon	logo	empty
+hitachi	Hitachi	hitachi.com	icon	logo	empty
+kddi	KDDI	kddi.com	icon	logo	empty
+iberdrola	Iberdrola	iberdrola.com	icon	logo	empty
+arcelormittal	ArcelorMittal	arcelormittal.com	icon	logo	empty
+mitsubishi-electric	Mitsubishi Electric	mitsubishielectric.com	icon	logo	logo
+vertex-pharmaceuticals	Vertex Pharmaceuticals	vrtx.com	logo	icon	icon
+e-on	E.ON	eon.com	logo	icon	empty
+nippon-steel	Nippon Steel	nipponsteel.com	icon	logo	empty
+natwest-group	NatWest Group	natwestgroup.com	icon	logo	empty
+petrobras	Petrobras	petrobras.com.br	icon	logo	empty
+mitsubishi-heavy-industries	Mitsubishi Heavy Industries	mhi.com	icon	logo	logo
+china-mobile	China Mobile	chinamobileltd.com	logo	icon	icon
+posco-holdings	POSCO Holdings	posco-inc.com	logo	icon	icon
+textron	Textron	textron.com	icon	logo	empty
+zoetis	Zoetis	zoetis.com	icon	logo	logo
+china-telecom	China Telecom	chinatelecom-h.com	logo	icon	icon
+national-grid	National Grid	nationalgrid.com	icon	logo	empty
+kubota	Kubota	kubota.com	icon	logo	empty
+china-unicom	China Unicom	chinaunicom.com.hk	icon	logo	empty
+stryker	Stryker	stryker.com	icon	logo	logo
+kt-corporation	KT	kt.com	logo	icon	icon
+hydro-one	Hydro One	hydroone.com	logo	icon	icon
+smc-corporation	SMC Corporation	smcworld.com	logo	icon	icon
+lg-uplus	LG Uplus	lguplus.com	icon	logo	empty
+australian-gas-light	AGL Energy	agl.com.au	logo	icon	icon
+sabic	SABIC	sabic.com	icon	logo	logo
+orlen	ORLEN	orlen.pl	icon	logo	empty
+becton-dickinson	BD	bd.com	logo	icon	icon
+tepco	TEPCO	tepco.co.jp	icon	logo	empty
+linde	Linde	linde.com	logo	icon	icon
+mol-group	MOL Group	molgroup.info	logo	icon	icon
+carrier-global	Carrier Global	carrier.com	icon	logo	logo
+telstra	Telstra	telstra.com.au	logo	icon	icon
+kansai-electric-power	Kansai Electric Power	kepco.co.jp	logo	icon	icon
+air-liquide	Air Liquide	airliquide.com	logo	icon	icon
+p-t-t	PTT	pttplc.com	logo	icon	icon
+trane-technologies	Trane Technologies	tranetechnologies.com	logo	icon	icon
+singtel	Singtel	singtel.com	icon	logo	logo
+air-products	Air Products	airproducts.com	icon	logo	logo
+intesa-sanpaolo	Intesa Sanpaolo	intesasanpaolo.com	icon	logo	empty
+sinopec	Sinopec	sinopec.com	icon	logo	empty
+zimmer-biomet	Zimmer Biomet	zimmerbiomet.com	logo	icon	icon
+edp	EDP	edp.com	logo	icon	icon
+lyondellbasell	LyondellBasell	lyondellbasell.com	logo	icon	icon
+unicredit	UniCredit	unicreditgroup.eu	logo	icon	icon
+petrochina	PetroChina	petrochina.com.cn	icon	logo	empty
+ais-thailand	AIS	ais.th	logo	icon	empty
+celanese	Celanese	celanese.com	logo	icon	icon
+cnooc	CNOOC	cnooc.com.cn	logo	icon	empty
+saint-gobain	Saint-Gobain	saint-gobain.com	icon	logo	empty
+vodacom	Vodacom	vodacom.com	logo	icon	icon
+ecolab	Ecolab	ecolab.com	logo	icon	icon
+abn-amro	ABN AMRO	abnamro.com	icon	logo	logo
+woodside-energy	Woodside Energy	woodside.com	icon	logo	empty
+santos	Santos	santos.com	logo	icon	icon
+labcorp	Labcorp	labcorp.com	logo	icon	icon
+origin-energy	Origin Energy	originenergy.com.au	logo	icon	icon
+michelin	Michelin	michelin.com	icon	logo	empty
+novo-nordisk	Novo Nordisk	novonordisk.com	logo	icon	empty
+rbc	Royal Bank of Canada	rbc.com	icon	logo	empty
+enbridge	Enbridge	enbridge.com	icon	logo	logo
+coca-cola-company	The Coca-Cola Company	coca-colacompany.com	icon	logo	empty
+pdd-holdings	PDD Holdings	pddholdings.com	icon	logo	empty
+horst-brandstaetter-group	Horst Brandstätter Group	horst-brandstaetter-group.com	logo	icon	icon
+tokopedia	Tokopedia	tokopedia.com	icon	logo	empty
+doritos	Doritos	doritos.com	logo	icon	empty
+tide	Tide	tide.com	icon	logo	logo
+maybelline	Maybelline	maybelline.com	icon	logo	empty
+associated-british-foods	Associated British Foods	abf.co.uk	icon	logo	empty
+waitrose	Waitrose	waitrose.com	icon	logo	empty
+b-and-q	B&Q	diy.com	icon	logo	empty
+namshi	Namshi	namshi.com	icon	logo	empty
+extra	eXtra	extra.com	logo	icon	icon
+femsa	FEMSA	femsa.com	icon	logo	logo
+blinkit	Blinkit	blinkit.com	logo	icon	empty
+bigbasket	BigBasket	bigbasket.com	logo	icon	icon
+tanishq	Tanishq	tanishq.co.in	icon	logo	empty
+amul	Amul	amul.com	icon	logo	logo
+sm-prime	SM Prime	smprime.com	logo	icon	icon
+bolt	Bolt	bolt.eu	icon	logo	empty
+prime-video	Prime Video	primevideo.com	icon	logo	empty
+amazon-music	Amazon Music	music.amazon.com	logo	icon	icon
+youtube	YouTube	youtube.com	icon	logo	logo
+instagram	Instagram	instagram.com	logo	icon	icon
+sky	Sky	sky.com	icon	logo	logo
+xfinity	Xfinity	xfinity.com	logo	icon	icon
+alipay	Alipay	alipay.com	logo	icon	icon
+ant-group	Ant Group	antgroup.com	icon	logo	empty
+xiaohongshu	Xiaohongshu	xiaohongshu.com	logo	icon	icon
+capital-a	Capital A	capitala.com	logo	icon	icon
+malaysia-aviation-group	Malaysia Aviation Group	malaysiaaviationgroup.com.my	icon	logo	empty
+accor	Accor	accor.com	logo	icon	icon
+msc-group	MSC Group	msc.com	logo	icon	empty
+toyota-lexus	Lexus	lexus.com	logo	icon	icon
+mitsubishi-fuso	Mitsubishi Fuso	mitsubishi-fuso.com	icon	logo	empty
+harley-davidson	Harley-Davidson	harley-davidson.com	logo	icon	icon
+hisense	Hisense	hisense.com	icon	logo	empty
+garmin	Garmin	garmin.com	logo	icon	empty
+fujifilm	Fujifilm	fujifilm.com	icon	logo	logo
+acer	Acer	acer.com	icon	logo	empty
+oneplus	OnePlus	oneplus.com	icon	logo	empty
+pokemon	Pokémon	pokemon.com	icon	logo	empty
+transformers	Transformers	transformers.com	icon	logo	empty
+monopoly	Monopoly	monopoly.com	icon	logo	empty
+dior	Dior	dior.com	logo	icon	empty
+tim-hortons	Tim Hortons	timhortons.com	logo	icon	icon
+bandai-namco-holdings	Bandai Namco Holdings	bandainamco.co.jp	logo	icon	icon
+salomon	Salomon	salomon.com	logo	icon	icon
+barbie	Barbie	barbie.com	icon	logo	logo
+airasia	AirAsia	airasia.com	icon	logo	logo
+lays	Lay's	lays.com	logo	icon	icon
+axe	AXE	axe.com	logo	icon	icon
+garnier	Garnier	garnier.com	logo	icon	empty
+titan-company	Titan Company	titancompany.in	logo	icon	icon
+tj-maxx	TJ Maxx	tjmaxx.tjx.com	logo	icon	icon
+sainsburys	Sainsbury's	sainsburys.co.uk	icon	logo	logo
+familymart	FamilyMart	family.co.jp	icon	logo	logo
+kingfisher	Kingfisher	kingfisher.com	icon	logo	empty
+myntra	Myntra	myntra.com	logo	icon	icon
+alpargatas	Alpargatas	alpargatas.com.br	logo	icon	icon
+zepto	Zepto	zeptonow.com	logo	icon	icon
+jio-mart	JioMart	jiomart.com	logo	icon	icon
+facebook	Facebook	facebook.com	icon	logo	empty
+tiktok-shop	TikTok Shop	shop.tiktok.com	icon	logo	empty
+ana-holdings	ANA Holdings	anahd.co.jp	logo	icon	icon
+ibis	ibis	ibis.accor.com	icon	logo	empty
+ducati	Ducati	ducati.com	logo	icon	icon
+bsh-home-appliances	BSH Home Appliances	bsh-group.com	icon	logo	empty
+fitbit	Fitbit	fitbit.com	icon	logo	empty
+leica	Leica	leica-camera.com	logo	icon	icon
+oppo	OPPO	oppo.com	logo	icon	icon
+sprite	Sprite	sprite.com	icon	logo	logo
+vf-corporation	VF Corporation	vfc.com	logo	icon	icon
+fendi	Fendi	fendi.com	icon	logo	empty
+hotels-com	Hotels.com	hotels.com	logo	icon	icon
+garena	Garena	garena.com	logo	icon	empty
+hot-wheels	Hot Wheels	hotwheels.com	icon	logo	logo
+jumia	Jumia	jumia.com	logo	icon	icon
+vaseline	Vaseline	vaseline.com	logo	icon	icon
+lancome	Lancôme	lancome.com	logo	icon	empty
+tjx-companies	The TJX Companies	tjx.com	icon	logo	logo
+lawson	Lawson	lawson.jp	icon	logo	empty
+castorama	Castorama	castorama.fr	icon	logo	empty
+swiggy	Swiggy	swiggy.com	logo	icon	icon
+ola	Ola	olacabs.com	icon	logo	empty
+hulu	Hulu	hulu.com	logo	icon	icon
+jbl	JBL	jbl.com	logo	icon	icon
+threads	Threads	threads.net	logo	icon	icon
+wechat	WeChat	wechat.com	logo	icon	empty
+star-wars	Star Wars	starwars.com	icon	logo	empty
+air-france-klm	Air France-KLM	airfranceklm.com	icon	logo	empty
+novotel	Novotel	novotel.accor.com	logo	icon	icon
+royal-caribbean	Royal Caribbean	royalcaribbean.com	icon	logo	empty
+whirlpool	Whirlpool	whirlpool.com	icon	logo	logo
+fanta	Fanta	fanta.com	icon	logo	logo
+ralph-lauren	Ralph Lauren	ralphlauren.com	icon	logo	empty
+givenchy	Givenchy	givenchy.com	icon	logo	empty
+jollibee	Jollibee	jollibee.com.ph	icon	logo	empty
+nerf	Nerf	nerf.com	icon	logo	empty
+thai-airways	Thai Airways	thaiairways.com	icon	logo	empty
+noon	noon	noon.com	logo	icon	icon
+pampers	Pampers	pampers.com	icon	logo	logo
+mac-cosmetics	MAC Cosmetics	maccosmetics.com	icon	logo	logo
+ross-dress-for-less	Ross Dress for Less	rossstores.com	logo	icon	icon
+oxxo	OXXO	oxxo.com	icon	logo	empty
+leroy-merlin	Leroy Merlin	leroymerlin.com	logo	icon	icon
+careem	Careem	careem.com	logo	icon	icon
+max-streaming	HBO Max	max.com	logo	icon	icon
+tidal	TIDAL	tidal.com	logo	icon	icon
+harman	Harman	harman.com	icon	logo	empty
+kuaishou	Kuaishou	kuaishou.com	icon	logo	empty
+qq	QQ	im.qq.com	logo	icon	icon
+warner-bros	Warner Bros.	warnerbros.com	icon	logo	empty
+discovery-channel	Discovery Channel	discovery.com	logo	icon	icon
+sofitel	Sofitel	sofitel.accor.com	icon	logo	empty
+royal-caribbean-group	Royal Caribbean Group	rclinvestor.com	icon	logo	empty
+nissan	Nissan	nissan-global.com	icon	logo	empty
+electrolux	Electrolux	electrolux.com	icon	logo	logo
+whoop	WHOOP	whoop.com	logo	icon	icon
+calvin-klein	Calvin Klein	calvinklein.com	icon	logo	empty
+jollibee-foods	Jollibee Foods	jollibeegroup.com	icon	logo	logo
+traveloka	Traveloka	traveloka.com	logo	icon	icon
+nexon	Nexon	nexon.com	icon	logo	empty
+flipkart	Flipkart	flipkart.com	logo	icon	icon
+clinique	Clinique	clinique.com	icon	logo	empty
+ross-stores	Ross Stores	corp.rossstores.com	logo	icon	icon
+paramount-plus	Paramount+	paramountplus.com	logo	icon	icon
+harman-kardon	Harman Kardon	harmankardon.com	logo	icon	icon
+telegram	Telegram	telegram.org	logo	icon	icon
+cartoon-network	Cartoon Network	cartoonnetwork.com	icon	logo	empty
+mazda	Mazda	mazda.com	logo	icon	icon
+royal-enfield	Royal Enfield	royalenfield.com	logo	icon	icon
+msi	MSI	msi.com	logo	icon	icon
+nokia	Nokia	nokia.com	logo	icon	icon
+nescafe	Nescafé	nescafe.com	icon	logo	empty
+tommy-hilfiger	Tommy Hilfiger	tommy.com	logo	icon	icon
+loewe	Loewe	loewe.com	icon	logo	empty
+chowking	Chowking	chowking.ph	icon	logo	empty
+tiket-com	tiket.com	tiket.com	logo	icon	icon
+krafton	Krafton	krafton.com	logo	icon	icon
+vietjet	Vietjet	vietjetair.com	logo	icon	icon
+tata-cliq	Tata CLiQ	tatacliq.com	logo	icon	empty
+maggi	Maggi	maggi.com	logo	icon	icon
+saks-fifth-avenue	Saks Fifth Avenue	saksfifthavenue.com	icon	logo	empty
+digitalocean	DigitalOcean	digitalocean.com	icon	logo	empty
+perplexity	Perplexity	perplexity.ai	logo	icon	icon
+tsmc	TSMC	tsmc.com	icon	logo	empty
+udemy	Udemy	udemy.com	logo	icon	icon
+xai	xAI	x.ai	logo	icon	icon
+sk-hynix	SK hynix	skhynix.com	icon	logo	empty
+cash-app	Cash App	cash.app	logo	icon	icon
+substack	Substack	substack.com	logo	icon	icon
+micron	Micron	micron.com	icon	logo	empty
+medium	Medium	medium.com	icon	logo	empty
+cyberark	CyberArk	cyberark.com	icon	logo	empty
+vultr	Vultr	vultr.com	logo	icon	empty
+midjourney	Midjourney	midjourney.com	logo	icon	icon
+linode	Linode	linode.com	icon	logo	empty
+rapid7	Rapid7	rapid7.com	icon	logo	empty
+wix	Wix	wix.com	icon	logo	empty
+analog-devices	Analog Devices	analog.com	icon	logo	empty
+teradata	Teradata	teradata.com	logo	icon	empty
+railway	Railway	railway.com	logo	icon	empty
+webflow	Webflow	webflow.com	logo	icon	icon
+fly-io	Fly.io	fly.io	logo	icon	icon
+sophos	Sophos	sophos.com	icon	logo	empty
+infineon	Infineon	infineon.com	icon	logo	logo
+strategy	Strategy	strategy.com	logo	icon	icon
+trend-micro	Trend Micro	trendmicro.com	icon	logo	empty
+stmicroelectronics	STMicroelectronics	st.com	icon	logo	empty
+qualtrics	Qualtrics	qualtrics.com	icon	logo	empty
+kaspersky	Kaspersky	kaspersky.com	icon	logo	logo
+renesas	Renesas	renesas.com	icon	logo	logo
+hashicorp	HashiCorp	hashicorp.com	icon	logo	empty
+smartsheet	Smartsheet	smartsheet.com	logo	icon	icon
+canonical	Canonical	canonical.com	icon	logo	empty
+asml	ASML	asml.com	icon	logo	empty
+mollie	Mollie	mollie.com	icon	logo	empty
+skyscanner	Skyscanner	skyscanner.net	logo	icon	empty
+labelbox	Labelbox	labelbox.com	icon	logo	logo
+zillow	Zillow	zillow.com	icon	logo	empty
+c3-ai	C3 AI	c3.ai	logo	icon	empty
+aqua-security	Aqua Security	aquasec.com	logo	icon	empty
+afterpay	Afterpay	afterpay.com	icon	logo	empty
+unity	Unity	unity.com	icon	logo	empty
+coda	Coda	coda.io	logo	icon	icon
+unreal-engine	Unreal Engine	unrealengine.com	logo	icon	icon
+databricks	Databricks	databricks.com	logo	icon	icon
+umc	UMC	umc.com	icon	logo	empty
+sofi	SoFi	sofi.com	logo	icon	icon
+freshworks	Freshworks	freshworks.com	logo	icon	icon
+fiverr	Fiverr	fiverr.com	logo	icon	icon
+intercom	Intercom	intercom.com	logo	icon	icon
+duo-security	Duo Security	duo.com	logo	icon	icon
+binance	Binance	binance.com	logo	icon	icon
+upwork	Upwork	upwork.com	logo	icon	icon
+beyondtrust	BeyondTrust	beyondtrust.com	logo	icon	icon
+onsemi	onsemi	onsemi.com	logo	icon	icon
+microchip-technology	Microchip Technology	microchip.com	logo	icon	icon
+bitstamp	Bitstamp	bitstamp.net	logo	icon	icon
+appian	Appian	appian.com	logo	icon	icon
+seagate	Seagate	seagate.com	icon	logo	empty
+circleci	CircleCI	circleci.com	logo	icon	icon
+hpe	HPE	hpe.com	icon	logo	empty
+raspberry-pi	Raspberry Pi	raspberrypi.com	logo	icon	icon
+five9	Five9	five9.com	logo	icon	icon
+jfrog	JFrog	jfrog.com	logo	icon	icon
+ericsson	Ericsson	ericsson.com	logo	icon	icon
+8x8	8x8	8x8.com	icon	logo	empty
+ramp	Ramp	ramp.com	logo	icon	icon
+the-pokemon-company	The Pokémon Company	pokemon.co.jp	logo	icon	icon
+pvh	PVH Corp.	pvh.com	icon	logo	empty

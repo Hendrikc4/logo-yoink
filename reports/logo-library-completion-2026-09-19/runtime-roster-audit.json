@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-09-19T10:28:31.037Z",
+  "mode": "Extracted npm package",
+  "requestedRolePolicy": "All existing primary roles for each brand; missing roles are not requested in this audit.",
+  "packagedAssetEntries": 1575,
+  "packageMatchesSourceHashes": true,
+  "returnedBrands": 1000,
+  "returnedRoles": 1574,
+  "liveCalls": 0,
+  "failures": []
+}

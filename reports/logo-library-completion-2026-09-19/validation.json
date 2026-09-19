@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-19T10:28:43.439Z",
+  "automatedTests": 497,
+  "testFailures": 0,
+  "fullCheckPassed": true,
+  "postMergeSyntaxFiles": 197,
+  "postMergeManifestBrands": 1000,
+  "postMergeManifestAssetEntries": 1575,
+  "package": {
+    "filename": "logo-yoink-0.4.0.tgz",
+    "packedBytes": 23770657,
+    "unpackedBytes": 35491671,
+    "libraryFileCount": 1576,
+    "unapprovedLibraryFiles": 0
+  },
+  "contactSheets": 20
+}

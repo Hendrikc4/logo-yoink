@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-09-19T10:28:04.036Z",
+  "baselineCommit": "9e43e79",
+  "before": {
+    "identities": 1000,
+    "any": 812,
+    "icons": 686,
+    "logos": 292,
+    "both": 166,
+    "empty": 188,
+    "entries": 979
+  },
+  "after": {
+    "identities": 1000,
+    "any": 1000,
+    "icons": 782,
+    "logos": 792,
+    "both": 574,
+    "empty": 0,
+    "entries": 1575
+  },
+  "newPrimaryAssets": 596,
+  "preservedOriginalPrimaryAssets": 978,
+  "remainingRoleCount": 426
+}
