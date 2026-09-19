@@ -6,6 +6,7 @@ import { normalizeAssetPreferences } from './asset-model.mjs';
 import { extractLogos, normalizeWebsite } from './extractor.mjs';
 import { processSelectedAssets } from './post-process.mjs';
 import { measureTinyImageSuitability } from './tiny-image-suitability.mjs';
+import { decodeIcoFrame } from './ico.mjs';
 
 const DEFAULT_MANIFEST_PATH = fileURLToPath(new URL('../brand-library/v2/manifest.json', import.meta.url));
 const RUNTIME_MANIFEST_PATH = fileURLToPath(new URL('../brand-library/runtime/manifest.json', import.meta.url));
@@ -107,7 +108,9 @@ async function materializeAsset({ asset, brand, manifest, manifestPath, role, li
   }
   const format = String(asset.format ?? '').toLowerCase();
   const mimeType = MIME_TYPES[format] ?? 'application/octet-stream';
-  const suitability = await measureTinyImageSuitability(bytes);
+  let decoded = null;
+  try { decoded = format === 'ico' ? decodeIcoFrame(bytes) : null; } catch { /* Unsupported ICO frames remain reviewed but unmeasured. */ }
+  const suitability = await measureTinyImageSuitability(decoded?.input ?? bytes, decoded?.options);
   const background = suitability?.canvas_background ?? 'unknown';
   const supportedThemes = ['light', 'dark'].filter(value => {
     if (background === 'transparent') return Number(suitability?.surface_contrast?.[value]) >= 0.08;

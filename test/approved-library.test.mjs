@@ -53,6 +53,24 @@ test('approved library serves exact domains and verified aliases without live ex
   assert.equal(exact.diagnostics.requests, 0);
 });
 
+test('Microsoft light-theme icon and logo stay on the approved no-network path', async () => {
+  let liveCalls = 0;
+  const startedAt = performance.now();
+  const result = await extractLogosWithLibrary('microsoft.com', {
+    roles: ['icon', 'logo'],
+    preferences: { icon: { theme: 'light' }, logo: { theme: 'light' } },
+  }, { liveExtract: async () => { liveCalls++; throw new Error('live extraction should not run'); } });
+
+  assert.equal(liveCalls, 0);
+  assert.equal(result.assets.icon.source, 'approved-library');
+  assert.equal(result.assets.logo.source, 'approved-library');
+  assert.equal(result.preferenceMatch.icon, 'exact');
+  assert.equal(result.preferenceMatch.logo, 'exact');
+  assert.equal(result.assets.icon.tinySuitability.canvas_background, 'transparent');
+  assert.ok(result.assets.icon.tinySuitability.surface_contrast.light >= 0.08);
+  assert.ok(performance.now() - startedAt < 1_000);
+});
+
 test('library matching never widens to arbitrary subdomains and supports an explicit live opt-out', async () => {
   const calls = [];
   const liveExtract = async (website, options) => {

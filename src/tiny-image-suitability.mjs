@@ -18,9 +18,9 @@ function surfaceDistance(red, green, blue, alpha, surface) {
     Math.abs(blue * opacity + surface * (1 - opacity) - surface)) / (255 * 3);
 }
 
-export async function measureTinyImageSuitability(input) {
+export async function measureTinyImageSuitability(input, options = {}) {
   try {
-    const { data, info } = await sharp(input, { limitInputPixels: 64 * 1024 * 1024 })
+    const { data, info } = await sharp(input, { ...options, limitInputPixels: 64 * 1024 * 1024 })
       .ensureAlpha()
       .resize(SAMPLE_EDGE, SAMPLE_EDGE, { fit: 'fill' })
       .raw()
