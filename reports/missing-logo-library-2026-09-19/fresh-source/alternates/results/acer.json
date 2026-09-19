@@ -1,0 +1,156 @@
+{
+  "brandId": "acer",
+  "name": "Acer",
+  "domain": "acer.com",
+  "attemptedAt": "2026-09-19T09:33:08.493Z",
+  "attemptedUrls": [
+    "https://news.acer.com/",
+    "https://news.acer.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "browser-img",
+      "url": "https://cdn.uc.assets.prezly.com/8e51e5e9-3cc7-4029-b9bf-1990cf2b6770/-/crop/4920x1732/514,582/-/preview/-/format/auto/-/stretch/off/-/progressive/yes/-/resize/256x/-/quality/smart/Acer-logo-digital-green.png",
+      "sourcePage": "https://news.acer.com/",
+      "format": "png",
+      "width": 256,
+      "height": 90,
+      "evidence": {
+        "dom_region": "header",
+        "home_linked": true,
+        "alt": "",
+        "aria_label": "",
+        "semantic_text": "Logo_logo__SEwEG Logo_landscape__HDUO5 Logo_large__WDdAz",
+        "local_semantic": "Logo_logo__SEwEG Logo_landscape__HDUO5 Logo_large__WDdAz",
+        "positive_token": true,
+        "negative_context": false,
+        "eligible_roles": [
+          "wide"
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "rendered": true
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://cdn.uc.assets.prezly.com/8e51e5e9-3cc7-4029-b9bf-1990cf2b6770/-/crop/4920x1732/514,582/-/preview/-/format/auto/-/stretch/off/-/progressive/yes/-/resize/256x/-/quality/smart/Acer-logo-digital-green.png",
+        "retrieved_at": "2026-09-19T09:33:19.326Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "any",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/acer/alternate-logo-a9836aaff84f319708b6807f4ec829571a2e249c38bfe6d17a5fc24c3db62444.png"
+    },
+    "icon": {
+      "source": "apple",
+      "url": "https://cdn.uc.assets.prezly.com/3103f8f6-33aa-4907-85e4-72a25abc5d6e/-/preview/180x180/favicon.png",
+      "sourcePage": "https://news.acer.com/",
+      "format": "png",
+      "width": 180,
+      "height": 180,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 3,
+        "inherited_color": null,
+        "company_name": "Acer",
+        "duplicate_sources": [
+          "apple",
+          "root-favicon"
+        ],
+        "duplicate_urls": [
+          "https://cdn.uc.assets.prezly.com/3103f8f6-33aa-4907-85e4-72a25abc5d6e/-/preview/180x180/favicon.png",
+          "https://news.acer.com/favicon.ico"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://cdn.uc.assets.prezly.com/3103f8f6-33aa-4907-85e4-72a25abc5d6e/-/preview/180x180/favicon.png",
+        "retrieved_at": "2026-09-19T09:33:10.864Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/acer/alternate-icon-19aff7afaa0ffc495c36581166f8f1215153c3d570b2bbc3075794cbe17fe508.png"
+    }
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "https://news.acer.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://news.acer.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://news.acer.com/",
+      "requests": 80,
+      "declaredTransferBytes": 1201116,
+      "transferBytes": 2395625,
+      "blockedRequests": 1,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 16,
+        "invalid_external": 0,
+        "duplicates": 10,
+        "retained": 6
+      },
+      "durationMs": 4193,
+      "candidates": 6,
+      "attempts": [
+        {
+          "url": "https://news.acer.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://news.acer.com/",
+          "requests": 80,
+          "declaredTransferBytes": 1201116,
+          "transferBytes": 2395625,
+          "blockedRequests": 1,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 16,
+            "invalid_external": 0,
+            "duplicates": 10,
+            "retained": 6
+          },
+          "durationMs": 4193,
+          "candidates": 6
+        }
+      ]
+    },
+    "network": null
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "brandId": "abb",
+  "name": "ABB",
+  "domain": "abb.com",
+  "attemptedAt": "2026-09-19T09:21:27.952Z",
+  "attemptedUrls": [
+    "https://abb.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://abb.com/: timeout | https://www.abb.com/: timeout"
+}

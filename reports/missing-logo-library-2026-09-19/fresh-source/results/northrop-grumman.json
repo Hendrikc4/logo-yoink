@@ -1,0 +1,137 @@
+{
+  "brandId": "northrop-grumman",
+  "name": "Northrop Grumman",
+  "domain": "northropgrumman.com",
+  "attemptedAt": "2026-09-19T09:22:44.499Z",
+  "attemptedUrls": [
+    "https://northropgrumman.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "schema",
+      "url": "https://cdn.northropgrumman.com/-/media/wp-content/uploads/2019/12/NGC-logo-white-on-clear.png",
+      "sourcePage": "https://www.northropgrumman.com/",
+      "format": "webp",
+      "width": 228,
+      "height": 52,
+      "evidence": {
+        "element": "script",
+        "dom_region": "head",
+        "discovery_order": 18,
+        "company_name": "Northrop Grumman"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://cdn.northropgrumman.com/-/media/wp-content/uploads/2019/12/NGC-logo-white-on-clear.png",
+        "retrieved_at": "2026-09-19T09:22:46.351Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "dark",
+        "color": "white",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/northrop-grumman/logo-d5fba9ab9c0d85be1bcd0f632b0e1f1fadb0a0ac4890b7594fd6b1674b639106.webp"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.northropgrumman.com/favicon.ico",
+      "sourcePage": "https://www.northropgrumman.com/",
+      "format": "ico",
+      "width": 48,
+      "height": 48,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Northrop Grumman"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.northropgrumman.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:22:45.911Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/northrop-grumman/icon-93e30c726b16da06ba9208e991bf0c41ad579265926cdab5bfd626d897a0103d.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://northropgrumman.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.northropgrumman.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.northropgrumman.com/",
+      "requests": 128,
+      "declaredTransferBytes": 1594994,
+      "transferBytes": 3039888,
+      "blockedRequests": 86,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 10,
+        "invalid_external": 0,
+        "duplicates": 3,
+        "retained": 7
+      },
+      "durationMs": 5250,
+      "candidates": 7,
+      "attempts": [
+        {
+          "url": "https://www.northropgrumman.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.northropgrumman.com/",
+          "requests": 128,
+          "declaredTransferBytes": 1594994,
+          "transferBytes": 3039888,
+          "blockedRequests": 86,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 10,
+            "invalid_external": 0,
+            "duplicates": 3,
+            "retained": 7
+          },
+          "durationMs": 5250,
+          "candidates": 7
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

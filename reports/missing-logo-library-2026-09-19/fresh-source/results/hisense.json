@@ -1,0 +1,11 @@
+{
+  "brandId": "hisense",
+  "name": "Hisense",
+  "domain": "hisense.com",
+  "attemptedAt": "2026-09-19T09:25:42.191Z",
+  "attemptedUrls": [
+    "https://hisense.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Homepage was blocked and public recovery found no eligible logo assets."
+}

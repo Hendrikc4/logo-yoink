@@ -1,0 +1,88 @@
+{
+  "brandId": "givenchy",
+  "name": "Givenchy",
+  "domain": "givenchy.com",
+  "attemptedAt": "2026-09-19T09:26:53.110Z",
+  "attemptedUrls": [
+    "https://givenchy.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "inline-svg",
+      "url": "https://www.givenchy.com/int/en/homepage#inline-svg",
+      "sourcePage": "https://www.givenchy.com/int/en/homepage",
+      "format": "svg",
+      "width": 195,
+      "height": 20,
+      "evidence": {
+        "element": "svg",
+        "dom_region": "header",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "Givenchy header-logo__container Givenchy givenchy-logo header-logo__container Givenchy header-logo js-header-logo header-container header banner wrapper pt_storefront   KL-D-26 KL-LANG-en KL-P_URL_1-int KL-P_URL_2-en KL-URL-homepage KL-URL-LEVEL-3 KL-CMS_URL-LEVEL-3 KL-UA-DESKTOP sp-HOME KL-rainbow context-eshop transparent-header white-header  giv-style",
+        "local_semantic": "Givenchy header-logo__container Givenchy",
+        "anchor_text": "Givenchy Givenchy",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 33,
+        "inherited_color": null,
+        "company_name": "Givenchy"
+      },
+      "provenance": {
+        "retrieved_asset_url": "[inline-image-data-omitted]",
+        "retrieved_at": "2026-09-19T09:26:59.945Z",
+        "http_status": 200,
+        "svg_safety_validated": true
+      },
+      "variant": {
+        "theme": "light",
+        "color": "white",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/givenchy/logo-4ef18c11886df206ad48496b257dfac275c008b320393a3e7c9884a0958470ef.svg"
+    },
+    "icon": {
+      "source": "manifest",
+      "url": "https://www.givenchy.com/on/demandware.static/Sites-GIV_INT-Site/-/default/dw14efcd7e/images/favicon/android-chrome-512x512.png",
+      "sourcePage": "https://www.givenchy.com/on/demandware.store/Sites-GIV_INT-Site/en/Manifest-Start",
+      "format": "png",
+      "width": 512,
+      "height": 512,
+      "evidence": {
+        "element": "manifest",
+        "discovery_order": 8,
+        "manifest_purpose": "any",
+        "manifest_names": []
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.givenchy.com/on/demandware.static/Sites-GIV_INT-Site/-/default/dw14efcd7e/images/favicon/android-chrome-512x512.png",
+        "retrieved_at": "2026-09-19T09:27:01.192Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/givenchy/icon-d0ddc7bc6d0678dc989460282ca56835c8bac92514b817c3c17a8fbba3b1db1c.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://givenchy.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.givenchy.com/int/en/homepage"
+      }
+    ],
+    "browser": null,
+    "deepWide": null,
+    "network": null
+  }
+}

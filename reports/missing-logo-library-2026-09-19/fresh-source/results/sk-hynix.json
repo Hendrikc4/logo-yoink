@@ -1,0 +1,138 @@
+{
+  "brandId": "sk-hynix",
+  "name": "SK hynix",
+  "domain": "skhynix.com",
+  "attemptedAt": "2026-09-19T09:27:37.906Z",
+  "attemptedUrls": [
+    "https://skhynix.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://mis-prod-koce-skhynixhomepage-cdn-01-ep.azureedge.net/img/favicon.ico",
+      "sourcePage": "https://www.skhynix.com/",
+      "format": "ico",
+      "width": 16,
+      "height": 16,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "SK hynix"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://mis-prod-koce-skhynixhomepage-cdn-01-ep.azureedge.net/img/favicon.ico",
+        "retrieved_at": "2026-09-19T09:27:41.044Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/sk-hynix/icon-2abaf67fe3591a90ae5ef6e12666da0a1fc2b1acea8c25d9171f506338f171b7.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://skhynix.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.skhynix.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://news.skhynix.com/en/",
+      "requests": 168,
+      "declaredTransferBytes": 12984168,
+      "transferBytes": 8389843,
+      "blockedRequests": 44,
+      "resourceLimitHit": true,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 3,
+        "invalid_external": 0,
+        "duplicates": 1,
+        "retained": 2
+      },
+      "durationMs": 9426,
+      "candidates": 2,
+      "attempts": [
+        {
+          "url": "https://www.skhynix.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.skhynix.com/",
+          "requests": 82,
+          "declaredTransferBytes": 3823487,
+          "transferBytes": 4824436,
+          "blockedRequests": 13,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 5402,
+          "candidates": 1
+        },
+        {
+          "url": "https://news.skhynix.com/en/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://news.skhynix.com/en/",
+          "requests": 86,
+          "declaredTransferBytes": 9160681,
+          "transferBytes": 8389843,
+          "blockedRequests": 31,
+          "resourceLimitHit": true,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 3,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 2
+          },
+          "durationMs": 4024,
+          "candidates": 2
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

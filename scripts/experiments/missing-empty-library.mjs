@@ -3,6 +3,8 @@ import { createHash } from 'node:crypto';
 import { access, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { basename, dirname, extname, join, resolve } from 'node:path';
 import sharp from 'sharp';
+import { yoink } from '../../src/index.mjs';
+import { mapConcurrent } from '../../src/concurrency.mjs';
 
 const command = process.argv[2] ?? 'review';
 const sourceRoot = resolve(process.argv[3] ?? '/Users/hendrik/.codex/worktrees/290d/logo-yoink/runs/missing-logo-program-2026-09-19/treatment-final');
@@ -261,15 +263,15 @@ async function applyDecisions() {
   const approvals = new Map();
   const outcomes = new Map();
 
-  const permissionRestricted = new Set(['alibaba-group', 'best-buy', 'carrefour', 'costco', 'dell', 'digitalocean', 'gopro', 'lululemon', 'marriott', 'shein']);
+  const permissionRestricted = new Set(['alibaba-group', 'best-buy', 'carrefour', 'costco', 'dell', 'digitalocean', 'eaton', 'gopro', 'lululemon', 'marriott', 'shein']);
   const identityRejected = new Map([
     ['ola', 'Currentness mismatch: the candidate glyph differs from the current official header identity.'],
     ['us-bancorp', 'Identity mismatch: the candidate is the U.S. Bank subsidiary identity, not the U.S. Bancorp holding-company identity.'],
     ['pvh', 'The only recovered candidate is the retired Phillips-Van Heusen identity and also failed safe format validation.'],
   ]);
   const iconRepresentations = new Set(['cnooc', 'cummins', 'msc-group', 'rbc']);
-  const stackedLogos = new Set(['associated-british-foods', 'best-buy', 'digitalocean', 'emirates', 'fendi', 'harman', 'hpe', 'saint-gobain', 'saks-fifth-avenue', 'stmicroelectronics', 'tanishq', 'warner-bros']);
-  const compactLogos = new Set(['3m', '8x8', 'aig', 'b-and-q', 'berkshire-hathaway', 'bolt', 'cartoon-network', 'chevron', 'dell', 'kroger', 'oxxo', 'yum-brands']);
+  const stackedLogos = new Set(['air-france-klm', 'analog-devices', 'associated-british-foods', 'best-buy', 'digitalocean', 'emirates', 'fendi', 'freeport-mcmoran', 'harman', 'hpe', 'maybelline', 'mckinsey-company', 'qatar-airways', 'saint-gobain', 'saks-fifth-avenue', 'singapore-airlines', 'stmicroelectronics', 'tanishq', 'trend-micro', 'waitrose', 'warner-bros']);
+  const compactLogos = new Set(['3m', '8x8', 'aia-group', 'aig', 'b-and-q', 'bolt', 'cartoon-network', 'chevron', 'dell', 'kroger', 'oxxo', 'yum-brands']);
 
   for (const row of treatment.rows) {
     if (!baselineIds.has(row.id)) continue;
@@ -328,16 +330,81 @@ async function applyDecisions() {
   const manual = [
     { brandId: '8x8', role: 'logo', sourcePath: 'brand-library/v2/assets/8x8/icon/f7f85e2aa7b4142077b0ef7b3933ae15998aad4d04976d79b7a9611e79dff8f2.png', sourceUrl: 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://8x8.com&size=256', discoveryPage: 'https://www.8x8.com/', sourceKind: 'google-favicon', representation: 'compact_wordmark' },
     { brandId: 'afterpay', role: 'logo', sourcePath: 'brand-library/v2/assets/afterpay/logo/0bca7c8aaaab2a78e07385f1f9279656f1d7759bdc41a5c8e97cde30ab809539.svg', sourceUrl: 'https://www.afterpay.com/en-AU', discoveryPage: 'https://www.afterpay.com/en-AU', sourceKind: 'browser-inline-svg', representation: 'horizontal_wordmark' },
-    { brandId: 'bsh-home-appliances', role: 'logo', sourcePath: 'brand-library/v2/assets/bsh-home-appliances/logo/21bb526e10a92f6129ca53be4943780e5684299d925e899cf8e0027b73be40a5.svg', sourceUrl: 'https://www.bsh-group.com/', discoveryPage: 'https://www.bsh-group.com/', sourceKind: 'first-party-inline-svg', representation: 'compact_wordmark' },
+    { brandId: 'bsh-home-appliances', role: 'logo', sourcePath: 'brand-library/v2/assets/bsh-home-appliances/logo/21bb526e10a92f6129ca53be4943780e5684299d925e899cf8e0027b73be40a5.svg', sourceUrl: 'https://www.bsh-group.com/', discoveryPage: 'https://www.bsh-group.com/', sourceKind: 'first-party-inline-svg', representation: 'horizontal_wordmark' },
     { brandId: 'lyft', role: 'logo', sourcePath: 'brand-library/v2/assets/lyft/icon/116673474d734a497f4792c6520e40a91de7f6c0a0927e5dcd83235f3f57aa48.svg', sourceUrl: 'https://www.lyft.com/press/media-kit', discoveryPage: 'https://www.lyft.com/press/media-kit', sourceKind: 'official-media-kit-and-first-party-inline-svg', representation: 'compact_wordmark' },
     { brandId: 'pwc', role: 'logo', sourcePath: 'brand-library/v2/assets/pwc/icon/d8830e24ef8f185e6d2f19b71590c343547a673c8a16cb885df0953ef8d0ef31.png', sourceUrl: 'https://www.pwc.com/', discoveryPage: 'https://www.pwc.com/', sourceKind: 'official-touch-icon', representation: 'compact_wordmark' },
+    { brandId: 'prime-video', role: 'logo', sourcePath: 'brand-library/v2/assets/prime-video/logo/3a23bbb495d359596d90f6cfffae773cde66062dde7aa50979afc9619addd95d.png', sourceUrl: 'https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png', discoveryPage: 'https://primevideo.com/', sourceKind: 'official-homepage-asset', representation: 'horizontal_wordmark', theme: 'dark' },
     { brandId: 'sofitel', role: 'logo', sourcePath: 'brand-library/v2/assets/sofitel/logo/90c8624cf3a1a742457c85adb9739f82f2df5fb2543e71db8812d85ed9d66300.svg', sourceUrl: 'https://sofitel.accor.com/content/dam/brands/sof/global-marketing/brand-identity/logos/2601_mkt_0022.svg', discoveryPage: 'https://sofitel.accor.com/', sourceKind: 'first-party-brand-asset', representation: 'stacked_lockup' },
     { brandId: 'the-new-york-times', role: 'icon', sourcePath: 'brand-library/v2/assets/the-new-york-times/icon/94de5ae7e9bcf74727f45bb30ae37f553db4594012e2704336da5fbbf3357c3e.png', sourceUrl: 'https://www.nytimes.com/favicon.ico', discoveryPage: 'https://www.nytimes.com/', sourceKind: 'official-favicon', representation: 'symbol' },
   ];
   for (const item of manual) {
     if (!baselineIds.has(item.brandId)) continue;
     const asset = await materializeAsset({ ...item, provenanceChain: [{ kind: 'manual-targeted-research-and-visual-review', reviewedAt }] }, reviewedAt);
+    if (item.theme) asset.theme = item.theme;
     approvals.set(`${item.brandId}:${item.role}`, { brandId: item.brandId, role: item.role, asset, rationale: 'First-party or official asset independently checked and visually reviewed.' });
+  }
+
+  const freshReportPath = join(outputRoot, 'fresh-source', 'report.json');
+  const freshReport = await exists(freshReportPath) ? await readJson(freshReportPath) : null;
+  const freshById = new Map((freshReport?.results ?? []).map(row => [row.brandId, row]));
+  const freshApprovals = [
+    ['charter-communications', 'logo', 'logo', 'stacked_lockup', 'light'],
+    ['charter-communications', 'icon', 'icon', 'symbol', 'light'],
+    ['givenchy', 'logo', 'logo', 'horizontal_wordmark', 'light'],
+    ['jollibee', 'logo', 'logo', 'horizontal_wordmark', 'light'],
+    ['marsh-mclennan', 'logo', 'logo', 'horizontal_wordmark', 'dark'],
+    ['mollie', 'logo', 'icon', 'compact_wordmark', 'light'],
+    ['natwest-group', 'logo', 'logo', 'horizontal_wordmark', 'dark'],
+    ['newmont', 'logo', 'logo', 'horizontal_wordmark', 'dark'],
+    ['northrop-grumman', 'logo', 'logo', 'stacked_lockup', 'dark'],
+    ['railway', 'icon', 'icon', 'symbol', 'light'],
+    ['rappi', 'logo', 'icon', 'compact_wordmark', 'light'],
+    ['textron', 'logo', 'logo', 'horizontal_wordmark', 'light'],
+    ['thai-airways', 'logo', 'logo', 'horizontal_wordmark', 'light'],
+    ['vultr', 'icon', 'icon', 'symbol', 'light'],
+    ['woodside-energy', 'logo', 'icon', 'stacked_lockup', 'light'],
+  ];
+  for (const [brandId, role, sourceRole, representation, theme] of freshApprovals) {
+    const recovered = freshById.get(brandId)?.assets?.[sourceRole];
+    if (!recovered?.localPath || !baselineIds.has(brandId)) continue;
+    const asset = await materializeAsset({
+      brandId,
+      role,
+      sourcePath: recovered.localPath,
+      sourceUrl: recovered.url?.startsWith('data:') ? recovered.sourcePage : recovered.url,
+      discoveryPage: recovered.sourcePage ?? manifest.brands.find(brand => brand.id === brandId)?.officialHomepage,
+      sourceKind: `official-homepage-${recovered.source}`,
+      representation,
+      provenanceChain: [{ kind: 'fresh-official-source-recovery', report: 'reports/missing-logo-library-2026-09-19/fresh-source/report.json', attemptedAt: freshById.get(brandId).attemptedAt }],
+    }, reviewedAt);
+    asset.theme = theme;
+    approvals.set(`${brandId}:${role}`, { brandId, role, asset, rationale: 'Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review.' });
+  }
+
+  const alternateReportPath = join(outputRoot, 'fresh-source', 'alternates', 'report.json');
+  const alternateReport = await exists(alternateReportPath) ? await readJson(alternateReportPath) : null;
+  const alternateById = new Map((alternateReport?.results ?? []).map(row => [row.brandId, row]));
+  const alternateApprovals = [
+    ['acer', 'logo', 'logo', 'horizontal_wordmark', 'light'],
+    ['cme-group', 'icon', 'icon', 'symbol', 'light'],
+    ['hisense', 'logo', 'logo', 'horizontal_wordmark', 'light'],
+    ['kuaishou', 'logo', 'logo', 'horizontal_wordmark', 'light'],
+  ];
+  for (const [brandId, role, sourceRole, representation, theme] of alternateApprovals) {
+    const recovered = alternateById.get(brandId)?.assets?.[sourceRole];
+    if (!recovered?.localPath || !baselineIds.has(brandId)) continue;
+    const asset = await materializeAsset({
+      brandId,
+      role,
+      sourcePath: recovered.localPath,
+      sourceUrl: recovered.url?.startsWith('data:') ? recovered.sourcePage : recovered.url,
+      discoveryPage: recovered.sourcePage ?? alternateById.get(brandId).attemptedUrls[0],
+      sourceKind: `official-alternate-page-${recovered.source}`,
+      representation,
+      provenanceChain: [{ kind: 'alternate-official-page-recovery', report: 'reports/missing-logo-library-2026-09-19/fresh-source/alternates/report.json', attemptedAt: alternateById.get(brandId).attemptedAt }],
+    }, reviewedAt);
+    asset.theme = theme;
+    approvals.set(`${brandId}:${role}`, { brandId, role, asset, rationale: 'Alternate first-party page candidate passed light/dark visual, identity, role, and usability review.' });
   }
 
   for (const brand of baseline) {
@@ -360,18 +427,29 @@ async function applyDecisions() {
     let category = 'no_defensible_candidate';
     if (permissionRestricted.has(brand.id)) {
       category = 'permission_restricted';
-      reason = 'An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.';
+      reason = brand.id === 'eaton'
+        ? 'Eaton’s official media-resources page requires permission for logo use and directs requests to its media team; no asset was approved.'
+        : 'An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.';
     } else if (identityRejected.has(brand.id)) {
       category = brand.id === 'us-bancorp' ? 'identity_mismatch' : brand.id === 'ola' ? 'currentness_mismatch' : 'stale_identity_and_format_failure';
       reason = identityRejected.get(brand.id);
     } else {
       const row = treatmentById.get(brand.id);
-      reason = row ? `The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (${row.diagnostics?.status ?? row.assets?.[0]?.failure ?? 'no approved asset'}).` : 'No safely distributable current asset survived the bounded official-source, prior-evidence, and visual-review attempt.';
+      const fresh = freshById.get(brand.id);
+      const alternate = alternateById.get(brand.id);
+      if (alternate?.outcome === 'attempt_failed') reason = `Fresh alternate official-page attempt failed after trying ${alternate.attemptedUrls.join(', ')}: ${alternate.error}`;
+      else if (alternate?.outcome === 'no_candidate_recovered') reason = `Fresh alternate official-page extraction tried ${alternate.attemptedUrls.join(', ')} and returned no eligible asset.`;
+      else if (alternate?.outcome === 'candidate_recovered_review_required') reason = `Fresh alternate official-page extraction tried ${alternate.attemptedUrls.join(', ')} and recovered candidate files, but none passed final identity, role, format, and legibility review.`;
+      else if (fresh?.outcome === 'attempt_failed') reason = `Fresh official-site attempt failed after trying ${fresh.attemptedUrls.join(', ')}: ${fresh.error}`;
+      else if (fresh?.outcome === 'no_candidate_recovered') reason = `Fresh official-site extraction tried ${fresh.attemptedUrls.join(', ')} and returned no eligible asset.`;
+      else if (fresh?.outcome === 'candidate_recovered_review_required') reason = `Fresh official-site extraction tried ${fresh.attemptedUrls.join(', ')} and recovered candidate files, but none passed final identity, role, format, and legibility review.`;
+      else reason = row ? `The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (${row.diagnostics?.status ?? row.assets?.[0]?.failure ?? 'no approved asset'}).` : 'No safely distributable current asset survived the bounded official-source, prior-evidence, and visual-review attempt.';
     }
     brand.verificationStatus = 'unresolved';
     brand.lastCheckedAt = reviewedAt;
-    brand.notes = [...(brand.notes ?? []), { kind: 'missing-logo-bounded-review', outcome: 'unresolved', category, reason, reviewedAt, reviewer: 'Codex visual review' }];
-    outcomes.set(brand.id, { brandId: brand.id, name: brand.name, status: 'unresolved', category, reason });
+    const sourcePage = brand.id === 'eaton' ? 'https://www.eaton.com/us/en-us/company/news-insights/media-resources.html' : undefined;
+    brand.notes = [...(brand.notes ?? []), { kind: 'missing-logo-bounded-review', outcome: 'unresolved', category, reason, ...(sourcePage ? { sourcePage } : {}), reviewedAt, reviewer: 'Codex visual review' }];
+    outcomes.set(brand.id, { brandId: brand.id, name: brand.name, status: 'unresolved', category, reason, ...(sourcePage ? { sourcePage } : {}) });
   }
 
   manifest.generatedAt = reviewedAt;
@@ -406,8 +484,183 @@ async function applyDecisions() {
   console.log(JSON.stringify(summary, null, 2));
 }
 
+function compactAsset(asset, localPath = null) {
+  if (!asset) return null;
+  const resolvedUrl = asset.resolvedUrl ?? asset.url ?? null;
+  return {
+    source: asset.source ?? null,
+    url: resolvedUrl?.startsWith('data:') ? `${asset.source_page ?? asset.sourcePage ?? 'inline'}#inline-svg` : resolvedUrl,
+    sourcePage: asset.source_page ?? asset.sourcePage ?? null,
+    format: asset.format ?? null,
+    width: asset.width ?? asset.observed?.width ?? null,
+    height: asset.height ?? asset.observed?.height ?? null,
+    evidence: asset.evidence ?? null,
+    provenance: asset.provenance ?? null,
+    variant: asset.variant ?? null,
+    localPath,
+  };
+}
+
+function scrubInlineData(value) {
+  if (Array.isArray(value)) return value.map(scrubInlineData);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, scrubInlineData(item)]));
+  if (typeof value === 'string' && value.startsWith('data:image')) return '[inline-image-data-omitted]';
+  return value;
+}
+
+async function persistFreshAsset(brandId, role, asset) {
+  if (!asset?.dataUrl) return compactAsset(asset);
+  const comma = asset.dataUrl.indexOf(',');
+  if (comma < 0) return compactAsset(asset);
+  const bytes = Buffer.from(asset.dataUrl.slice(comma + 1), 'base64');
+  const format = asset.format ?? 'bin';
+  const path = join(outputRoot, 'fresh-source', 'assets', brandId, `${role}-${hash(bytes)}.${format}`);
+  await mkdir(dirname(path), { recursive: true });
+  await writeFile(path, bytes);
+  return compactAsset(asset, path.replace(`${process.cwd()}/`, ''));
+}
+
+async function recoverFresh() {
+  const outcomes = await readJson(join(outputRoot, 'outcomes.json'));
+  const manifest = await readJson(resolve('brand-library/v2/manifest.json'));
+  const byId = new Map(manifest.brands.map(brand => [brand.id, brand]));
+  const resultDirectory = join(outputRoot, 'fresh-source', 'results');
+  await mkdir(resultDirectory, { recursive: true });
+  const checkpointIds = new Set((await readdir(resultDirectory)).filter(file => file.endsWith('.json')).map(file => file.slice(0, -5)));
+  const outcomeById = new Map(outcomes.outcomes.map(row => [row.brandId, row]));
+  const targetIds = new Set([...outcomes.outcomes.filter(row => row.status === 'unresolved' && row.category === 'no_defensible_candidate').map(row => row.brandId), ...checkpointIds]);
+  const targets = [...targetIds].map(brandId => outcomeById.get(brandId) ?? { brandId });
+  await mapConcurrent(targets, Number(process.env.LOGO_RECOVERY_WORKERS ?? 2), async target => {
+    const path = join(resultDirectory, `${target.brandId}.json`);
+    if (await exists(path)) return;
+    const brand = byId.get(target.brandId);
+    const attemptedAt = new Date().toISOString();
+    try {
+      const result = await yoink(brand.officialHomepage ?? `https://${brand.domain}/`, {
+        companyName: brand.name,
+        scrapers: ['browser'],
+        deep: true,
+        spaBundles: true,
+        wikimedia: false,
+        cachedFavicon: true,
+        timeoutMs: 12_000,
+        preferences: { logo: { theme: 'light' }, icon: { theme: 'light' } },
+      });
+      const logo = await persistFreshAsset(brand.id, 'logo', result.assets?.logo);
+      const icon = await persistFreshAsset(brand.id, 'icon', result.assets?.icon);
+      await writeJson(path, {
+        brandId: brand.id,
+        name: brand.name,
+        domain: brand.domain,
+        attemptedAt,
+        attemptedUrls: [...new Set([brand.officialHomepage ?? `https://${brand.domain}/`, ...(result.diagnostics?.reachability ?? []).map(item => item.url).filter(Boolean)])],
+        outcome: logo || icon ? 'candidate_recovered_review_required' : 'no_candidate_recovered',
+        assets: { logo, icon },
+        diagnostics: {
+          homepage: result.diagnostics?.homepage ?? null,
+          reachability: result.diagnostics?.reachability ?? [],
+          browser: result.diagnostics?.browser ?? null,
+          deepWide: result.diagnostics?.deepWide ?? null,
+          network: result.diagnostics?.network ?? result.network ?? null,
+        },
+      });
+      console.log(`${brand.id}: ${logo ? 'logo' : '-'} ${icon ? 'icon' : '-'}`);
+    } catch (error) {
+      await writeJson(path, { brandId: brand.id, name: brand.name, domain: brand.domain, attemptedAt, attemptedUrls: [brand.officialHomepage ?? `https://${brand.domain}/`], outcome: 'attempt_failed', error: error.message });
+      console.log(`${brand.id}: failed (${error.message})`);
+    }
+  });
+  const results = [];
+  for (const target of targets) {
+    const path = join(resultDirectory, `${target.brandId}.json`);
+    const result = scrubInlineData(await readJson(path));
+    for (const asset of Object.values(result.assets ?? {})) {
+      if (asset?.url?.startsWith('data:') || asset?.url === '[inline-image-data-omitted]') asset.url = `${asset.sourcePage ?? 'inline'}#inline-svg`;
+    }
+    await writeJson(path, result);
+    results.push(result);
+  }
+  const summary = {
+    generatedAt: new Date().toISOString(),
+    targets: targets.length,
+    candidateIdentities: results.filter(row => row.outcome === 'candidate_recovered_review_required').length,
+    noCandidate: results.filter(row => row.outcome === 'no_candidate_recovered').length,
+    failed: results.filter(row => row.outcome === 'attempt_failed').length,
+    results,
+  };
+  await writeJson(join(outputRoot, 'fresh-source', 'report.json'), summary);
+  console.log(JSON.stringify({ targets: summary.targets, candidateIdentities: summary.candidateIdentities, noCandidate: summary.noCandidate, failed: summary.failed }, null, 2));
+}
+
+async function reviewFresh() {
+  const report = await readJson(join(outputRoot, 'fresh-source', 'report.json'));
+  const rows = report.results.flatMap(result => Object.entries(result.assets ?? {}).flatMap(([role, asset]) => asset?.localPath ? [{ id: result.brandId, name: result.name, role, asset, path: resolve(asset.localPath) }] : []));
+  rows.sort((left, right) => left.id.localeCompare(right.id) || left.role.localeCompare(right.role));
+  rows.forEach((row, index) => {
+    row.number = index + 1;
+    row.rolesLabel = `${row.role} · ${row.asset.source ?? 'unknown'} · ${row.asset.width ?? '?'}×${row.asset.height ?? '?'}`;
+  });
+  await renderRows(rows, join(outputRoot, 'fresh-source', 'review'));
+  await writeJson(join(outputRoot, 'fresh-source', 'review-index.json'), { generatedAt: new Date().toISOString(), rows: rows.map(row => ({ number: row.number, id: row.id, name: row.name, role: row.role, source: row.asset.source, sourceUrl: row.asset.url, sourcePage: row.asset.sourcePage, localPath: row.asset.localPath })) });
+  console.log(`Rendered ${rows.length} fresh candidate assets for ${new Set(rows.map(row => row.id)).size} identities.`);
+}
+
+async function recoverAlternates() {
+  const manifest = await readJson(resolve('brand-library/v2/manifest.json'));
+  const byId = new Map(manifest.brands.map(brand => [brand.id, brand]));
+  const targets = [
+    ['abb', 'https://www.abb.com/global/en/company/media'],
+    ['united-airlines', 'https://www.united.com/en/us/newsroom'],
+    ['etihad-airways', 'https://www.etihad.com/en/news'],
+    ['cme-group', 'https://brand.cmegroup.com/logo.html'],
+    ['lg-uplus', 'https://www.lguplus.com/about/en'],
+    ['sinopec', 'http://www.sinopecgroup.com/group/en/'],
+    ['petrochina', 'https://www.petrochina.com.cn/ptr/'],
+    ['namshi', 'https://www.namshi.com/uae-en/'],
+    ['hisense', 'https://global.hisense.com/'],
+    ['acer', 'https://news.acer.com/'],
+    ['transformers', 'https://shop.hasbro.com/en-us/brands/transformers'],
+    ['monopoly', 'https://shop.hasbro.com/en-us/brands/monopoly'],
+    ['ralph-lauren', 'https://corporate.ralphlauren.com/'],
+    ['kuaishou', 'https://ir.kuaishou.com/'],
+  ];
+  const directory = join(outputRoot, 'fresh-source', 'alternates', 'results');
+  await mkdir(directory, { recursive: true });
+  await mapConcurrent(targets, 2, async ([brandId, url]) => {
+    const brand = byId.get(brandId);
+    const path = join(directory, `${brandId}.json`);
+    const attemptedAt = new Date().toISOString();
+    try {
+      const result = await yoink(url, { companyName: brand.name, scrapers: ['browser'], deep: true, spaBundles: true, wikimedia: false, cachedFavicon: true, timeoutMs: 12_000, preferences: { logo: { theme: 'light' }, icon: { theme: 'light' } } });
+      const logo = await persistFreshAsset(brandId, 'alternate-logo', result.assets?.logo);
+      const icon = await persistFreshAsset(brandId, 'alternate-icon', result.assets?.icon);
+      const record = { brandId, name: brand.name, domain: brand.domain, attemptedAt, attemptedUrls: [url, ...(result.diagnostics?.reachability ?? []).map(item => item.url).filter(Boolean)], outcome: logo || icon ? 'candidate_recovered_review_required' : 'no_candidate_recovered', assets: { logo, icon }, diagnostics: { reachability: result.diagnostics?.reachability ?? [], browser: result.diagnostics?.browser ?? null, network: result.diagnostics?.network ?? result.network ?? null } };
+      await writeJson(path, record);
+      console.log(`${brandId}: ${logo ? 'logo' : '-'} ${icon ? 'icon' : '-'}`);
+    } catch (error) {
+      await writeJson(path, { brandId, name: brand.name, domain: brand.domain, attemptedAt, attemptedUrls: [url], outcome: 'attempt_failed', error: error.message });
+      console.log(`${brandId}: failed (${error.message})`);
+    }
+  });
+  const results = await Promise.all(targets.map(([brandId]) => readJson(join(directory, `${brandId}.json`))));
+  await writeJson(join(outputRoot, 'fresh-source', 'alternates', 'report.json'), { generatedAt: new Date().toISOString(), targets: targets.length, candidateIdentities: results.filter(row => row.outcome === 'candidate_recovered_review_required').length, results });
+}
+
+async function reviewAlternates() {
+  const report = await readJson(join(outputRoot, 'fresh-source', 'alternates', 'report.json'));
+  const rows = report.results.flatMap(result => Object.entries(result.assets ?? {}).flatMap(([role, asset]) => asset?.localPath ? [{ id: result.brandId, name: result.name, role, asset, path: resolve(asset.localPath) }] : []));
+  rows.sort((left, right) => left.id.localeCompare(right.id) || left.role.localeCompare(right.role));
+  rows.forEach((row, index) => { row.number = index + 1; row.rolesLabel = `${row.role} · ${row.asset.source ?? 'unknown'} · ${row.asset.width ?? '?'}×${row.asset.height ?? '?'}`; });
+  await renderRows(rows, join(outputRoot, 'fresh-source', 'alternates', 'review'));
+  console.log(`Rendered ${rows.length} alternate-page assets for ${new Set(rows.map(row => row.id)).size} identities.`);
+}
+
 if (command === 'review') await review();
 else if (command === 'review-existing') await reviewExisting();
 else if (command === 'review-final') await reviewFinal();
 else if (command === 'apply') await applyDecisions();
-else throw new Error('Usage: node scripts/experiments/missing-empty-library.mjs review|review-existing|review-final|apply [treatment-final-dir]');
+else if (command === 'recover-fresh') await recoverFresh();
+else if (command === 'review-fresh') await reviewFresh();
+else if (command === 'recover-alternates') await recoverAlternates();
+else if (command === 'review-alternates') await reviewAlternates();
+else throw new Error('Usage: node scripts/experiments/missing-empty-library.mjs review|review-existing|review-final|apply|recover-fresh|review-fresh|recover-alternates|review-alternates [treatment-final-dir]');

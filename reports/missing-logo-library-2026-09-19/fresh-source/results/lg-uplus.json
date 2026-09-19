@@ -1,0 +1,11 @@
+{
+  "brandId": "lg-uplus",
+  "name": "LG Uplus",
+  "domain": "lguplus.com",
+  "attemptedAt": "2026-09-19T09:24:31.367Z",
+  "attemptedUrls": [
+    "https://lguplus.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Homepage was blocked and public recovery found no eligible logo assets."
+}

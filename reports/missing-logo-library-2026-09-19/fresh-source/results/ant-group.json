@@ -1,0 +1,71 @@
+{
+  "brandId": "ant-group",
+  "name": "Ant Group",
+  "domain": "antgroup.com",
+  "attemptedAt": "2026-09-19T09:25:26.794Z",
+  "attemptedUrls": [
+    "https://antgroup.com/"
+  ],
+  "outcome": "no_candidate_recovered",
+  "assets": {
+    "logo": null,
+    "icon": null
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://antgroup.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://antgroup.com/"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": "https://antgroup.com/",
+      "requests": 2,
+      "declaredTransferBytes": 82,
+      "transferBytes": 19414,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+      ],
+      "httpStatus": 200,
+      "durationMs": 4197,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://antgroup.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": "https://antgroup.com/",
+          "requests": 2,
+          "declaredTransferBytes": 82,
+          "transferBytes": 19414,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+          ],
+          "httpStatus": 200,
+          "durationMs": 4197,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

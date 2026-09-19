@@ -1,0 +1,111 @@
+{
+  "brandId": "verizon",
+  "name": "Verizon",
+  "domain": "verizon.com",
+  "attemptedAt": "2026-09-19T09:21:59.834Z",
+  "attemptedUrls": [
+    "https://verizon.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "duckduckgo-favicon",
+      "url": "https://icons.duckduckgo.com/ip3/verizon.com.ico",
+      "sourcePage": null,
+      "format": "ico",
+      "width": 16,
+      "height": 16,
+      "evidence": {
+        "element": "cached-favicon",
+        "provider": "duckduckgo",
+        "duplicate_sources": [
+          "root-favicon",
+          "duckduckgo-favicon"
+        ],
+        "duplicate_urls": [
+          "https://www.verizon.com/favicon.ico",
+          "https://icons.duckduckgo.com/ip3/verizon.com.ico"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/verizon.com.ico",
+        "retrieved_at": "2026-09-19T09:22:19.627Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/verizon/icon-78328f11dc8ba89b315d91a57b2901e1b5f0e11408054cd50e9106c6e4acc01e.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://verizon.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.verizon.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.verizon.com/",
+      "requests": 80,
+      "declaredTransferBytes": 642265,
+      "transferBytes": 1695860,
+      "blockedRequests": 18,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 0,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 0
+      },
+      "durationMs": 7375,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.verizon.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.verizon.com/",
+          "requests": 80,
+          "declaredTransferBytes": 642265,
+          "transferBytes": 1695860,
+          "blockedRequests": 18,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 0,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 0
+          },
+          "durationMs": 7375,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

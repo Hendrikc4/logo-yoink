@@ -1,0 +1,120 @@
+{
+  "brandId": "ralph-lauren",
+  "name": "Ralph Lauren",
+  "domain": "ralphlauren.com",
+  "attemptedAt": "2026-09-19T09:33:19.328Z",
+  "attemptedUrls": [
+    "https://corporate.ralphlauren.com/",
+    "https://corporate.ralphlauren.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "official-archive",
+      "url": "zip+https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip#Polo_Ralph_Lauren_navy_on_white_logo.png",
+      "sourcePage": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip",
+      "format": "png",
+      "width": 2500,
+      "height": 763,
+      "evidence": {
+        "eligible_roles": [
+          "wide"
+        ],
+        "archive_member": "Polo_Ralph_Lauren_navy_on_white_logo.png",
+        "archive_score": 79,
+        "semantic_text": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip asset-download Media Assets Ralph Lauren Corporation (2669 x 98) Polo Player navy (1250 x 2500) Ralph Lauren navy on white (2268 x 164) Ralph Lauren white on navy (3300 x 537) Polo Ralph Lauren navy on white (2500 x 763) Polo_Ralph_Lauren_navy_on_white_logo.png",
+        "positive_token": true,
+        "deep_official": true,
+        "theme": "dark"
+      },
+      "provenance": {
+        "retrieved_asset_url": "zip+https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip#Polo_Ralph_Lauren_navy_on_white_logo.png",
+        "retrieved_at": "2026-09-19T09:33:23.953Z",
+        "http_status": 200,
+        "source_chain": [
+          {
+            "kind": "homepage",
+            "url": "https://corporate.ralphlauren.com/"
+          },
+          {
+            "kind": "official-page",
+            "url": "https://corporate.ralphlauren.com/newsroom",
+            "source_page": "https://corporate.ralphlauren.com/",
+            "context": "Newsroom https://corporate.ralphlauren.com/newsroom footer-nav-item Our Company Newsroom"
+          },
+          {
+            "kind": "official-page",
+            "url": "https://corporate.ralphlauren.com/logos",
+            "source_page": "https://corporate.ralphlauren.com/newsroom",
+            "context": "Logos https://corporate.ralphlauren.com/logos corp-secondary-button MEDIA RESOURCES MEDIA RESOURCES Logos Images"
+          },
+          {
+            "kind": "archive",
+            "url": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip",
+            "source_page": "https://corporate.ralphlauren.com/logos",
+            "context": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip asset-download Media Assets Ralph Lauren Corporation (2669 x 98) Polo Player navy (1250 x 2500) Ralph Lauren navy on white (2268 x 164) Ralph Lauren white on navy (3300 x 537) Polo Ralph Lauren navy on white (2500 x 763)"
+          },
+          {
+            "kind": "archive-member",
+            "url": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip",
+            "member": "Polo_Ralph_Lauren_navy_on_white_logo.png"
+          }
+        ]
+      },
+      "variant": {
+        "theme": "light",
+        "color": "white",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/ralph-lauren/alternate-logo-593b356b8a8c97897808db6c191b4f85e9791d0ab51fb735423d62c14b2c56a7.png"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://corporate.ralphlauren.com/on/demandware.static/Sites-RalphLauren_Corporate-Site/-/default/dwac2f2583/images/favicon_rl.ico",
+      "sourcePage": "https://corporate.ralphlauren.com/",
+      "format": "ico",
+      "width": 16,
+      "height": 16,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " lang-",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Ralph Lauren"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://corporate.ralphlauren.com/on/demandware.static/Sites-RalphLauren_Corporate-Site/-/default/dwac2f2583/images/favicon_rl.ico",
+        "retrieved_at": "2026-09-19T09:33:20.016Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/ralph-lauren/alternate-icon-ae9ffc8c842a47cc4f4817bd664e3d58fae021b85dbd546d7bf8653efd4268c4.ico"
+    }
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "https://corporate.ralphlauren.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://corporate.ralphlauren.com/"
+      }
+    ],
+    "browser": null,
+    "network": null
+  }
+}

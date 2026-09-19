@@ -1,0 +1,11 @@
+{
+  "brandId": "ralph-lauren",
+  "name": "Ralph Lauren",
+  "domain": "ralphlauren.com",
+  "attemptedAt": "2026-09-19T09:26:50.507Z",
+  "attemptedUrls": [
+    "https://ralphlauren.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://ralphlauren.com/: HTTP 307 | https://www.ralphlauren.com/: HTTP 307 | http://ralphlauren.com/: HTTP 307"
+}

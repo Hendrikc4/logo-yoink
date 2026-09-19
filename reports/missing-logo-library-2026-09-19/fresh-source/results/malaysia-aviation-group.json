@@ -1,0 +1,139 @@
+{
+  "brandId": "malaysia-aviation-group",
+  "name": "Malaysia Aviation Group",
+  "domain": "malaysiaaviationgroup.com.my",
+  "attemptedAt": "2026-09-19T09:25:28.927Z",
+  "attemptedUrls": [
+    "https://malaysiaaviationgroup.com.my/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "schema",
+      "url": "https://www.malaysiaairlines.com/content/dam/mh/my/en/header-footer/Malaysia-Airlines-logo.png",
+      "sourcePage": "https://malaysiaaviationgroup.com.my/en/home.html",
+      "format": "png",
+      "width": 142,
+      "height": 35,
+      "evidence": {
+        "element": "script",
+        "dom_region": "head",
+        "discovery_order": 3,
+        "company_name": "Malaysia Aviation Group"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.malaysiaairlines.com/content/dam/mh/my/en/header-footer/Malaysia-Airlines-logo.png",
+        "retrieved_at": "2026-09-19T09:25:34.164Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/malaysia-aviation-group/logo-569b840aab319844632a77efc48c36f0f755544ec030bb9d6c42ac74b3862f7b.png"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://malaysiaaviationgroup.com.my/etc.clientlibs/mh/clientlibs/clientlib-vue/resources/favicon.ico",
+      "sourcePage": "https://malaysiaaviationgroup.com.my/en/home.html",
+      "format": "ico",
+      "width": 64,
+      "height": 64,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Malaysia Aviation Group"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://malaysiaaviationgroup.com.my/etc.clientlibs/mh/clientlibs/clientlib-vue/resources/favicon.ico",
+        "retrieved_at": "2026-09-19T09:25:31.933Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/malaysia-aviation-group/icon-a0c75e9ccea3e8735495b72853b7e14477013ce3d1661ce9f73e6ba0b6d5c6e2.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://malaysiaaviationgroup.com.my/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://malaysiaaviationgroup.com.my/en/home.html"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://malaysiaaviationgroup.com.my/en/home.html",
+      "requests": 60,
+      "declaredTransferBytes": 3516434,
+      "transferBytes": 4401124,
+      "blockedRequests": 13,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 29,
+        "invalid_external": 0,
+        "duplicates": 13,
+        "retained": 16
+      },
+      "durationMs": 5389,
+      "candidates": 16,
+      "attempts": [
+        {
+          "url": "https://malaysiaaviationgroup.com.my/en/home.html",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://malaysiaaviationgroup.com.my/en/home.html",
+          "requests": 60,
+          "declaredTransferBytes": 3516434,
+          "transferBytes": 4401124,
+          "blockedRequests": 13,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 29,
+            "invalid_external": 0,
+            "duplicates": 13,
+            "retained": 16
+          },
+          "durationMs": 5389,
+          "candidates": 16
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

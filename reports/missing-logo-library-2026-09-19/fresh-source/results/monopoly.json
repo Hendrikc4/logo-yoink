@@ -1,0 +1,11 @@
+{
+  "brandId": "monopoly",
+  "name": "Monopoly",
+  "domain": "monopoly.com",
+  "attemptedAt": "2026-09-19T09:26:05.149Z",
+  "attemptedUrls": [
+    "https://monopoly.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://monopoly.com/: timeout | https://www.monopoly.com/: write EPROTO 80E177F801000000:error:0A000458:SSL routines:ssl3_read_bytes:tlsv1 unrecognized name:ssl/record/rec_layer_s3.c:918:SSL alert number 112\n | http://monopoly.com/: timeout"
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "researchedAt": "2026-09-19T09:34:25.303Z",
+  "records": [
+    {
+      "brandId": "eaton",
+      "sourcePage": "https://www.eaton.com/us/en-us/company/news-insights/media-resources.html",
+      "result": "permission_required",
+      "evidence": "The official media-resources page directs logo-use requests to Eaton's media team and provides artwork only through that permission path.",
+      "decision": "Keep unresolved as permission_restricted; do not substitute third-party artwork."
+    }
+  ]
+}

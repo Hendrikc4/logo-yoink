@@ -1,0 +1,81 @@
+{
+  "brandId": "tiktok-shop",
+  "name": "TikTok Shop",
+  "domain": "shop.tiktok.com",
+  "attemptedAt": "2026-09-19T09:26:26.095Z",
+  "attemptedUrls": [
+    "https://shop.tiktok.com/"
+  ],
+  "outcome": "no_candidate_recovered",
+  "assets": {
+    "logo": null,
+    "icon": null
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://shop.tiktok.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://shop.tiktok.com/us"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://shop.tiktok.com/us",
+      "requests": 21,
+      "declaredTransferBytes": 450694,
+      "transferBytes": 503898,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 0,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 0
+      },
+      "durationMs": 5254,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://shop.tiktok.com/us",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://shop.tiktok.com/us",
+          "requests": 21,
+          "declaredTransferBytes": 450694,
+          "transferBytes": 503898,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 0,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 0
+          },
+          "durationMs": 5254,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

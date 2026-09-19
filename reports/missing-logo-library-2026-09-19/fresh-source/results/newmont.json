@@ -1,0 +1,139 @@
+{
+  "brandId": "newmont",
+  "name": "Newmont",
+  "domain": "newmont.com",
+  "attemptedAt": "2026-09-19T09:23:21.767Z",
+  "attemptedUrls": [
+    "https://newmont.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://s24.q4cdn.com/382246808/files/design/logo/Newmont-Color-Rev-RGB.png",
+      "sourcePage": "https://newmont.com/home/default.aspx",
+      "format": "png",
+      "width": 789,
+      "height": 117,
+      "evidence": {
+        "element": "img",
+        "dom_region": "body",
+        "home_linked": true,
+        "alt": "Newmont Corporation Logo",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "Newmont Corporation Logo Newmont Corporation Logo module_container module_container--inner module_container module_container--outer _ctrl0_ctl18_divModuleContainer module module-embed module-logo  HeaderPaneDiv5 HeaderPaneDiv pane_inner clearfix pane pane--header grid--no-gutter layout_header layout_inner layout layout--home fmForm1 Form litPageDiv PageHome SectionHome ParentSection_home PageDefaultInner pageClass Sectionhome PageDefault PageHome LayoutHomePageLayout Languageen-US BodyBackground ddcad960d28ef8331f1a8562e3e7ac118b533988 StudioLegacy Legacy",
+        "local_semantic": "Newmont Corporation Logo",
+        "anchor_text": "",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 2,
+        "inherited_color": null,
+        "company_name": "Newmont"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://s24.q4cdn.com/382246808/files/design/logo/Newmont-Color-Rev-RGB.png",
+        "retrieved_at": "2026-09-19T09:23:23.056Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "dark",
+        "color": "color",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/newmont/logo-619857a65721d64d789290f810e03d3f7e4f24dc3b5fd89413e2e99e2398600e.png"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://s24.q4cdn.com/382246808/files/favicon.ico",
+      "sourcePage": "https://newmont.com/home/default.aspx",
+      "format": "ico",
+      "width": 16,
+      "height": 16,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ddcad960d28ef8331f1a8562e3e7ac118b533988 StudioLegacy Legacy",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Newmont"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://s24.q4cdn.com/382246808/files/favicon.ico",
+        "retrieved_at": "2026-09-19T09:23:23.041Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/newmont/icon-9900fcda3081df65c06a8f982cb3b5680921fec73aeea51fe55ff1ed68d494fa.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://newmont.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://newmont.com/home/default.aspx"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 2,
+      "declaredTransferBytes": 0,
+      "transferBytes": 13846,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 554,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://newmont.com/home/default.aspx",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 0,
+          "transferBytes": 13846,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 554,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

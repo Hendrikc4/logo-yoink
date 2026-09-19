@@ -1,0 +1,109 @@
+{
+  "brandId": "garmin",
+  "name": "Garmin",
+  "domain": "garmin.com",
+  "attemptedAt": "2026-09-19T09:25:45.860Z",
+  "attemptedUrls": [
+    "https://garmin.com/",
+    "https://www.garmin.com/",
+    "http://garmin.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "duckduckgo-favicon",
+      "url": "https://icons.duckduckgo.com/ip3/garmin.com.ico",
+      "sourcePage": null,
+      "format": "png",
+      "width": 32,
+      "height": 32,
+      "evidence": {
+        "element": "cached-favicon",
+        "provider": "duckduckgo"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/garmin.com.ico",
+        "retrieved_at": "2026-09-19T09:25:47.832Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "light",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/garmin/icon-e0b6a5b90b505cc975bae7f1aa5b53b90fdaf32b86f8a8b27106b9561eb38f35.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://garmin.com/",
+        "stage": "primary",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "https://www.garmin.com/",
+        "stage": "alternate_https_host",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "http://garmin.com/",
+        "stage": "http_compatibility",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 2,
+      "declaredTransferBytes": 0,
+      "transferBytes": 20270,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 1795,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://garmin.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 0,
+          "transferBytes": 20270,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 1795,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "libraryId": "major-brands-1000-v1",
-  "generatedAt": "2026-09-19T09:19:35.591Z",
+  "generatedAt": "2026-09-19T09:36:36.791Z",
   "approvedFromRun": "missing-logo-library-2026-09-19",
   "brands": [
     {
@@ -6058,11 +6058,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "hp",
@@ -6357,11 +6357,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "qualcomm",
@@ -7304,11 +7304,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "carrefour",
@@ -7343,11 +7343,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "lowe-s",
@@ -7453,11 +7453,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "aldi",
@@ -7479,12 +7479,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "No safely distributable current asset survived the bounded official-source, prior-evidence, and visual-review attempt.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://aldi.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "lidl",
@@ -7758,11 +7758,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "patagonia",
@@ -7894,12 +7894,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://thenorthface.com/, https://www.thenorthface.com/, http://thenorthface.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "ray-ban",
@@ -8222,13 +8222,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "horizontal_wordmark"
         }
       },
@@ -8257,11 +8257,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "mondelez-international",
@@ -8760,8 +8760,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -8779,11 +8779,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "hilton",
@@ -8853,11 +8853,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "booking-com",
@@ -8986,13 +8986,13 @@
           "provenanceChain": [
             {
               "kind": "manual-targeted-research-and-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -9010,11 +9010,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "delta-air-lines",
@@ -9084,12 +9084,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page attempt failed after trying https://www.united.com/en/us/newsroom: Could not reach the website. https://www.united.com/en/us/newsroom: timeout | https://united.com/: timeout",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "emirates",
@@ -9143,8 +9143,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -9162,11 +9162,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "singapore-airlines",
@@ -9185,7 +9185,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/singapore-airlines/logo/445a696fd9c74b07468c189eb38e660577a89edffebc30bea582f16f4b4465dc.svg",
           "format": "svg",
           "width": 800,
@@ -9220,8 +9220,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -9233,11 +9233,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "qantas",
@@ -9584,12 +9584,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page attempt failed after trying https://www.abb.com/global/en/company/media: Could not reach the website. https://www.abb.com/global/en/company/media: timeout | https://abb.com/: timeout",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "schneider-electric",
@@ -9643,8 +9643,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -9662,11 +9662,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "honeywell",
@@ -9766,8 +9766,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -9779,11 +9779,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "caterpillar",
@@ -9898,13 +9898,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "horizontal_wordmark"
         }
       },
@@ -9939,11 +9939,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "wells-fargo",
@@ -10397,7 +10397,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "compact_wordmark",
+          "representation": "horizontal_wordmark",
           "path": "assets/berkshire-hathaway/logo/bab6f6c1e94a34fb88f0ccd301c050dddf0a5dacade4a7e397f6d1642ba8bc7d.svg",
           "format": "svg",
           "width": 597,
@@ -10432,8 +10432,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -10445,11 +10445,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "unitedhealth-group",
@@ -11313,13 +11313,13 @@
           "provenanceChain": [
             {
               "kind": "manual-targeted-research-and-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -11337,12 +11337,12 @@
           "roles": [
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
       "externalParentBrandId": "new-york-times-company",
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "the-guardian",
@@ -11419,12 +11419,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://bbc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "financial-times",
@@ -11499,13 +11499,13 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://reuters.com/, https://www.reuters.com/, http://reuters.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
       "externalParentBrandId": "thomson-reuters",
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "warner-bros-discovery",
@@ -11848,8 +11848,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         },
         "icon": {
           "role": "icon",
@@ -11868,13 +11868,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "symbol"
         }
       },
@@ -11910,11 +11910,11 @@
             "logo",
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "epic-games",
@@ -12424,8 +12424,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -12443,11 +12443,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "ryanair",
@@ -12638,11 +12638,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "baidu",
@@ -13363,9 +13363,37 @@
       "selectionEvidence": "repository major-brands-300 fixture, 2026-08-24; fixtures/companies-800.json major-brands-300",
       "cohort": "major-brands-fixture",
       "officialHomepage": "https://rappi.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/rappi/logo/f37db8c168ddec384fc08aab8a1423d776685e817be9acc16b089cc59018c21d.svg",
+          "format": "svg",
+          "width": 128,
+          "height": 128,
+          "bytes": 7192,
+          "contentHash": "f37db8c168ddec384fc08aab8a1423d776685e817be9acc16b089cc59018c21d",
+          "visualHash": "1e1548a16ec7e3fd0ec9901d90b03b2f1e04eace619da4a58033808a9d3810f9",
+          "sourceUrl": "https://www.rappi.com.mx/#inline-svg",
+          "discoveryPage": "https://www.rappi.com.mx/",
+          "sourceKind": "official-homepage-inline-svg",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:21:56.873Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -13375,14 +13403,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "mtn",
@@ -13646,12 +13675,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://verizon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "at-t",
@@ -14364,7 +14393,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/mckinsey-company/logo/adc56256915d475838fe590d579e88818e5a603cc3761ba5e1a131ae7ddffbb3.svg",
           "format": "svg",
           "width": 104,
@@ -14399,8 +14428,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -14412,11 +14441,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "deloitte",
@@ -14608,13 +14637,13 @@
           "provenanceChain": [
             {
               "kind": "manual-targeted-research-and-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -14638,11 +14667,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "wendy-s",
@@ -14935,8 +14964,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -14960,11 +14989,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "bumble",
@@ -15018,8 +15047,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -15043,12 +15072,12 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
       "externalParentBrandId": "bumble-inc",
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "match-group",
@@ -15688,11 +15717,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "asos",
@@ -15746,8 +15775,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -15765,11 +15794,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "mango",
@@ -15823,8 +15852,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -15848,11 +15877,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "decathlon",
@@ -16011,8 +16040,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -16030,11 +16059,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "publix",
@@ -16223,7 +16252,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/qatar-airways/logo/22ebea491ab3e26d5abd66092b077417223fef82e5abe979018d0eec5fd7ae7c.svg",
           "format": "svg",
           "width": 267,
@@ -16258,8 +16287,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -16271,11 +16300,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "etihad-airways",
@@ -16297,12 +16326,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "No safely distributable current asset survived the bounded official-source, prior-evidence, and visual-review attempt.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page attempt failed after trying https://www.etihad.com/en/news: Could not reach the website. https://www.etihad.com/en/news: timeout | https://etihad.com/: timeout",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "playmobil",
@@ -16526,8 +16555,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -16551,11 +16580,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "progressive",
@@ -16826,8 +16855,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -16845,11 +16874,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "rtx",
@@ -17020,20 +17049,77 @@
       "selectionEvidence": "Major listed US cable operator; Spectrum is service brand; Charter points to corporate.charter.com in its 2026 results: https://corporate.charter.com/newsroom/charter-announces-second-quarter-2026-results",
       "cohort": "public",
       "officialHomepage": "https://corporate.charter.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "stacked_lockup",
+          "path": "assets/charter-communications/logo/23fe07baf5b20e33c5a1f17400561d8b7a640ef8b93ed39589dc5717cccbea56.webp",
+          "format": "webp",
+          "width": 1263,
+          "height": 378,
+          "bytes": 20854,
+          "contentHash": "23fe07baf5b20e33c5a1f17400561d8b7a640ef8b93ed39589dc5717cccbea56",
+          "visualHash": "69b621513a672ee50bfea8ca1a9303a3e02f446076f7102f78436642aca1551e",
+          "sourceUrl": "https://corporate.charter.com/static/d617519f6e8ec1333149b2e86dd914fb/6e782/Charter_Communications_Logo_Preview_0.webp",
+          "discoveryPage": "https://corporate.charter.com/",
+          "sourceKind": "official-homepage-schema",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:22:30.279Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "symbol",
+          "path": "assets/charter-communications/icon/c3b1a64547d01d69c64e1b86944bbedf25ca63f4c6e7cf6da3802abd3aa2f3e5.png",
+          "format": "png",
+          "width": 48,
+          "height": 48,
+          "bytes": 589,
+          "contentHash": "c3b1a64547d01d69c64e1b86944bbedf25ca63f4c6e7cf6da3802abd3aa2f3e5",
+          "visualHash": "f9d6e1803edb7e8155b4393f6b3f3f892cf4a9c7402333d7c48481b132527b6f",
+          "sourceUrl": "https://corporate.charter.com/favicon.png",
+          "discoveryPage": "https://corporate.charter.com/",
+          "sourceKind": "official-homepage-html-icon",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:22:30.279Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo",
+            "icon"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "nextera-energy",
@@ -17538,12 +17624,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://americamovil.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "duke-energy",
@@ -17844,9 +17930,37 @@
       "selectionEvidence": "Major listed defense contractor",
       "cohort": "public",
       "officialHomepage": "https://northropgrumman.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "stacked_lockup",
+          "path": "assets/northrop-grumman/logo/d5fba9ab9c0d85be1bcd0f632b0e1f1fadb0a0ac4890b7594fd6b1674b639106.webp",
+          "format": "webp",
+          "width": 228,
+          "height": 52,
+          "bytes": 1352,
+          "contentHash": "d5fba9ab9c0d85be1bcd0f632b0e1f1fadb0a0ac4890b7594fd6b1674b639106",
+          "visualHash": "0aadb2aa1a9359edb9f77fe2208411cec39cf6a0c8525f6800e492bc5877785b",
+          "sourceUrl": "https://cdn.northropgrumman.com/-/media/wp-content/uploads/2019/12/NGC-logo-white-on-clear.png",
+          "discoveryPage": "https://www.northropgrumman.com/",
+          "sourceKind": "official-homepage-schema",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:22:44.499Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -17862,14 +17976,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "rockwell-automation",
@@ -18165,11 +18280,11 @@
           "outcome": "unresolved",
           "category": "identity_mismatch",
           "reason": "Identity mismatch: the candidate is the U.S. Bank subsidiary identity, not the U.S. Bancorp holding-company identity.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "chubb",
@@ -18383,13 +18498,14 @@
         {
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "category": "permission_restricted",
+          "reason": "Eaton’s official media-resources page requires permission for logo use and directs requests to its media team; no asset was approved.",
+          "sourcePage": "https://www.eaton.com/us/en-us/company/news-insights/media-resources.html",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "centene",
@@ -18700,8 +18816,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -18719,11 +18835,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "marathon-petroleum",
@@ -18816,8 +18932,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -18843,11 +18959,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "parker-hannifin",
@@ -19051,13 +19167,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "horizontal_wordmark"
         }
       },
@@ -19092,11 +19208,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "anglo-american",
@@ -19489,8 +19605,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -19520,11 +19636,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "dominion-energy",
@@ -19578,8 +19694,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -19597,11 +19713,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "freeport-mcmoran",
@@ -19620,7 +19736,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/freeport-mcmoran/logo/2376802d27e34779336fc569435900357860b63563751a00a6b07ddba3f392b5.png",
           "format": "png",
           "width": 2000,
@@ -19655,8 +19771,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -19686,11 +19802,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "bny",
@@ -19756,9 +19872,37 @@
       "selectionEvidence": "Major listed insurance broker and adviser; Marsh McLennan changed its brand to Marsh in January 2026: https://www.marsh.com/en/about/legal-entity-us-ca.html",
       "cohort": "public",
       "officialHomepage": "https://marsh.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/marsh-mclennan/logo/6d3719f9d00d2a2f17b640df0e87425d134b873709b36691f365eac64cf4ca76.svg",
+          "format": "svg",
+          "width": 573,
+          "height": 128,
+          "bytes": 2859,
+          "contentHash": "6d3719f9d00d2a2f17b640df0e87425d134b873709b36691f365eac64cf4ca76",
+          "visualHash": "3495c06478c754b461962c5da4c832e2ed09c2a9555e4425e1cef77fc62a2aa1",
+          "sourceUrl": "https://www.marsh.com/content/dam/marsh/Imagery/marsh-2/marsh-logo/brand-logos.svg",
+          "discoveryPage": "https://www.marsh.com/en-gb/home.html",
+          "sourceKind": "official-homepage-dom-img",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:22:55.621Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -19792,14 +19936,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "valero",
@@ -19904,8 +20049,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -19929,11 +20074,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "cummins",
@@ -19987,8 +20132,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -20008,11 +20153,11 @@
           "roles": [
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "cardinal-health",
@@ -20066,8 +20211,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -20085,11 +20230,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "swisscom",
@@ -20498,8 +20643,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -20517,11 +20662,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "tele2",
@@ -20610,12 +20755,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://pgecorp.com/, https://www.pgecorp.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "newmont",
@@ -20629,9 +20774,37 @@
       "selectionEvidence": "Major listed gold miner",
       "cohort": "public",
       "officialHomepage": "https://newmont.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/newmont/logo/619857a65721d64d789290f810e03d3f7e4f24dc3b5fd89413e2e99e2398600e.png",
+          "format": "png",
+          "width": 789,
+          "height": 117,
+          "bytes": 7084,
+          "contentHash": "619857a65721d64d789290f810e03d3f7e4f24dc3b5fd89413e2e99e2398600e",
+          "visualHash": "ed7083819fde8621d5c908ec392c5d9841abde3ba44056ac8f32f1b01eecf475",
+          "sourceUrl": "https://s24.q4cdn.com/382246808/files/design/logo/Newmont-Color-Rev-RGB.png",
+          "discoveryPage": "https://newmont.com/home/default.aspx",
+          "sourceKind": "official-homepage-dom-img",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:23:21.767Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -20647,14 +20820,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_logo_claims).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "s-p-global",
@@ -20727,13 +20901,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "horizontal_wordmark"
         }
       },
@@ -20768,11 +20942,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "halliburton",
@@ -20920,8 +21094,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -20945,11 +21119,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "abbvie",
@@ -21175,8 +21349,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -21194,11 +21368,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "moodys",
@@ -21252,8 +21426,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -21283,11 +21457,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "ping-an-insurance",
@@ -21457,12 +21631,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://volvogroup.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "bristol-myers-squibb",
@@ -21690,20 +21864,49 @@
       "selectionEvidence": "Major listed derivatives exchange operator",
       "cohort": "public",
       "officialHomepage": "https://cmegroup.com/",
-      "assets": {},
+      "assets": {
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "symbol",
+          "path": "assets/cme-group/icon/caf3c907d29b91f36ad864fb0f94154058f65ae3aa7592bb0a125eb08fbbf9d0.png",
+          "format": "png",
+          "width": 256,
+          "height": 256,
+          "bytes": 5940,
+          "contentHash": "caf3c907d29b91f36ad864fb0f94154058f65ae3aa7592bb0a125eb08fbbf9d0",
+          "visualHash": "602a3e587b9bc2614a73ad6962d76540c754562081d9f9e2b6f58c3cb48feea4",
+          "sourceUrl": "https://brand.cmegroup.com/images/webclip.png",
+          "discoveryPage": "https://brand.cmegroup.com/logo.html",
+          "sourceKind": "official-alternate-page-apple",
+          "provenanceChain": [
+            {
+              "kind": "alternate-official-page-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/alternates/report.json",
+              "attemptedAt": "2026-09-19T09:32:24.630Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "icon"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "aia-group",
@@ -21722,7 +21925,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "compact_wordmark",
           "path": "assets/aia-group/logo/e60b1bc8be7084c6f9451e306624f588a439f74ad3896c9c4da627463daafbc3.svg",
           "format": "svg",
           "width": 324,
@@ -21757,8 +21960,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -21776,11 +21979,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "technipfmc",
@@ -22641,8 +22844,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -22654,11 +22857,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "transocean",
@@ -22751,8 +22954,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -22764,11 +22967,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "hitachi",
@@ -22822,8 +23025,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -22835,11 +23038,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "regeneron",
@@ -22937,8 +23140,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -22950,11 +23153,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "iberdrola",
@@ -23008,8 +23211,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -23021,11 +23224,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "arcelormittal",
@@ -23079,8 +23282,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -23092,11 +23295,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "lloyds-banking-group",
@@ -23379,12 +23582,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://eon.com/, https://www.eon.com/, http://eon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "nippon-steel",
@@ -23442,8 +23645,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -23455,11 +23658,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "natwest-group",
@@ -23473,20 +23676,49 @@
       "selectionEvidence": "Major listed UK banking group",
       "cohort": "public",
       "officialHomepage": "https://natwestgroup.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/natwest-group/logo/68f9e65ee37a2ade93eb26549a2c4b7fdd3e5386d5ec9abfea6c4ef1e22e3ff6.svg",
+          "format": "svg",
+          "width": 709,
+          "height": 165,
+          "bytes": 18049,
+          "contentHash": "68f9e65ee37a2ade93eb26549a2c4b7fdd3e5386d5ec9abfea6c4ef1e22e3ff6",
+          "visualHash": "3539f102f3a507946f6fae609c843a5b6320f689997a58845a78452d06c0a192",
+          "sourceUrl": "https://www.natwestgroup.com/content/dam/championlogos/Logo_Wh_NatWestGroupColleague-Hor.svg",
+          "discoveryPage": "https://www.natwestgroup.com/",
+          "sourceKind": "official-homepage-dom-img",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:23:54.148Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "petrobras",
@@ -23540,8 +23772,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -23565,11 +23797,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "bombardier",
@@ -23955,20 +24187,49 @@
       "selectionEvidence": "Major listed aerospace and industrial company",
       "cohort": "public",
       "officialHomepage": "https://textron.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/textron/logo/697b598590ee83432b7f0460b8c27b0551220927957dbe6a2fe442b28fe24796.png",
+          "format": "png",
+          "width": 340,
+          "height": 70,
+          "bytes": 6806,
+          "contentHash": "697b598590ee83432b7f0460b8c27b0551220927957dbe6a2fe442b28fe24796",
+          "visualHash": "646d7f595cba8319869cd8b9c84f1fd8187696c3a31d01a849ab733c1113652c",
+          "sourceUrl": "https://s206.q4cdn.com/111183019/files/design/site_logo/textron.png",
+          "discoveryPage": "https://investor.textron.com/news-releases/photo-logo-request/default.aspx",
+          "sourceKind": "official-homepage-dom-img",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:23:57.309Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "kawasaki-heavy-industries",
@@ -24181,8 +24442,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -24194,11 +24455,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "nucor",
@@ -24394,8 +24655,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -24419,11 +24680,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "danaher",
@@ -24496,12 +24757,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://chinaunicom.com.hk/, https://www.chinaunicom.com.hk/ and returned no eligible asset.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "sse",
@@ -25466,12 +25727,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page extraction tried https://www.lguplus.com/about/en, https://www.lguplus.com/about/en and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "australian-gas-light",
@@ -25654,8 +25915,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -25667,11 +25928,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "daikin",
@@ -25871,8 +26132,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -25884,11 +26145,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "linde",
@@ -26639,8 +26900,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -26670,11 +26931,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "sinopec",
@@ -26696,12 +26957,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page extraction tried http://www.sinopecgroup.com/group/en/, http://www.sinopecgroup.com/group/en/ and returned no eligible asset.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "johnson-controls",
@@ -26986,12 +27247,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page attempt failed after trying https://www.petrochina.com.cn/ptr/: Could not reach the website. https://www.petrochina.com.cn/ptr/: HTTP 412 | https://petrochina.com.cn/: getaddrinfo ENOTFOUND petrochina.com.cn | http://petrochina.com.cn/: dns-host-known-unreachable",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "legrand",
@@ -27116,12 +27377,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://ais.th/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "endesa",
@@ -27319,8 +27580,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -27332,11 +27593,11 @@
           "roles": [
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "saint-gobain",
@@ -27390,8 +27651,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -27403,11 +27664,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "tenet-healthcare",
@@ -27601,9 +27862,37 @@
       "selectionEvidence": "Major listed Australian energy company",
       "cohort": "public",
       "officialHomepage": "https://woodside.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "stacked_lockup",
+          "path": "assets/woodside-energy/logo/607681790c50bca0ae4946550655e5a07b7b707842d14197b81abaf34930c83b.svg",
+          "format": "svg",
+          "width": 574,
+          "height": 462,
+          "bytes": 8472,
+          "contentHash": "607681790c50bca0ae4946550655e5a07b7b707842d14197b81abaf34930c83b",
+          "visualHash": "1846caeae8d0f435044ae5015cd81e0228366a7dad435065a4c829711ca3b7fc",
+          "sourceUrl": "https://www.woodside.com/assets/static/images/svg/logo-colour-vertical.svg",
+          "discoveryPage": "https://www.woodside.com/",
+          "sourceKind": "official-homepage-dom-img",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:24:43.401Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -27619,14 +27908,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "thyssenkrupp",
@@ -28080,8 +28370,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -28099,11 +28389,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "novo-nordisk",
@@ -28131,12 +28421,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://novonordisk.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "rbc",
@@ -28190,8 +28480,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -28209,11 +28499,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "enbridge",
@@ -28364,8 +28654,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -28395,11 +28685,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "fast-retailing",
@@ -28822,12 +29112,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://pddholdings.com/ and returned no eligible asset.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "amer-sports",
@@ -29005,8 +29295,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -29018,11 +29308,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "doritos",
@@ -29050,13 +29340,13 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://doritos.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
       "externalParentBrandId": "pepsico",
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "pepsico",
@@ -29272,7 +29562,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/maybelline/logo/73e3555a6fa36cc3670e77a21af892dc48998c9df3749a2971816f68277ffc3d.svg",
           "format": "svg",
           "width": 643,
@@ -29307,8 +29597,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -29340,11 +29630,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "associated-british-foods",
@@ -29400,8 +29690,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -29419,11 +29709,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "tk-maxx",
@@ -29481,7 +29771,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/waitrose/logo/776d2e2bec0a4c74acc3af8d56d0ad59aa5eb36a1bbe90cc21d47714b63b6327.svg",
           "format": "svg",
           "width": 1544,
@@ -29516,8 +29806,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -29529,11 +29819,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "7-eleven",
@@ -29626,8 +29916,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -29639,11 +29929,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "namshi",
@@ -29665,12 +29955,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page attempt failed after trying https://www.namshi.com/uae-en/: Could not reach the website. https://www.namshi.com/uae-en/: timeout | https://namshi.com/: timeout",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "extra",
@@ -29880,12 +30170,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://blinkit.com/, https://www.blinkit.com/, http://blinkit.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "bigbasket",
@@ -30022,8 +30312,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -30041,11 +30331,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "amul",
@@ -30178,8 +30468,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -30197,11 +30487,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "prime-video",
@@ -30215,9 +30505,36 @@
       "selectionEvidence": "Major video-streaming brand distinct from Amazon parent",
       "cohort": "consumer",
       "officialHomepage": "https://primevideo.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/prime-video/logo/3a23bbb495d359596d90f6cfffae773cde66062dde7aa50979afc9619addd95d.png",
+          "format": "png",
+          "width": 320,
+          "height": 62,
+          "bytes": 2036,
+          "contentHash": "3a23bbb495d359596d90f6cfffae773cde66062dde7aa50979afc9619addd95d",
+          "visualHash": "9206edb79c29cb03d9295b2d251faa556813e653f55763069b0dc401b43db187",
+          "sourceUrl": "https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png",
+          "discoveryPage": "https://primevideo.com/",
+          "sourceKind": "official-homepage-asset",
+          "provenanceChain": [
+            {
+              "kind": "manual-targeted-research-and-visual-review",
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -30233,14 +30550,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (search_candidates_truncated).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "amazon-music",
@@ -30860,12 +31178,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://antgroup.com/ and returned no eligible asset.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "xiaohongshu",
@@ -30981,12 +31299,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://malaysiaaviationgroup.com.my/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "accor",
@@ -31129,8 +31447,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -31148,11 +31466,11 @@
           "roles": [
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "toyota-lexus",
@@ -31245,8 +31563,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -31266,12 +31584,12 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
       "externalParentBrandId": "archion",
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "harley-davidson",
@@ -31383,20 +31701,49 @@
       "selectionEvidence": "Major global television and appliance brand",
       "cohort": "consumer",
       "officialHomepage": "https://hisense.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/hisense/logo/e990e6111dac0655269e66aae4134bbc320495dc343cd5188fc4e0b56e9b6b82.png",
+          "format": "png",
+          "width": 190,
+          "height": 30,
+          "bytes": 4815,
+          "contentHash": "e990e6111dac0655269e66aae4134bbc320495dc343cd5188fc4e0b56e9b6b82",
+          "visualHash": "616794b1b52dcc576b214c6bf2c523e043284cbcdc71f02a8bad27646c77e418",
+          "sourceUrl": "https://dtc-aus-api.hisense.com/medias/logo.png?context=bWFzdGVyfGltYWdlc3w0ODE1fGltYWdlL3BuZ3xhREF6TDJoa1pDODROemszT0RrMk9EQXlNek0wTDJ4dloyOHVjRzVufDRkMTQwNTAwNDYwZWUxYzU1YTQ0N2MzNWI5MDNjNGZiYWQ0YzQwYjE5MDQ1M2YyNDdmMTg3NjMwMzlhZDAxYWQ",
+          "discoveryPage": "https://hisense.com.au/",
+          "sourceKind": "official-alternate-page-dom-img",
+          "provenanceChain": [
+            {
+              "kind": "alternate-official-page-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/alternates/report.json",
+              "attemptedAt": "2026-09-19T09:32:58.644Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "garmin",
@@ -31430,12 +31777,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://garmin.com/, https://www.garmin.com/, http://garmin.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "fujifilm",
@@ -31534,20 +31881,49 @@
       "selectionEvidence": "Major global PC brand; Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
       "cohort": "consumer",
       "officialHomepage": "https://acer.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/acer/logo/a9836aaff84f319708b6807f4ec829571a2e249c38bfe6d17a5fc24c3db62444.png",
+          "format": "png",
+          "width": 256,
+          "height": 90,
+          "bytes": 7543,
+          "contentHash": "a9836aaff84f319708b6807f4ec829571a2e249c38bfe6d17a5fc24c3db62444",
+          "visualHash": "3660027e0b09d3f4d63231abb806c16de00fad9f53071ff1068851e589386ae8",
+          "sourceUrl": "https://cdn.uc.assets.prezly.com/8e51e5e9-3cc7-4029-b9bf-1990cf2b6770/-/crop/4920x1732/514,582/-/preview/-/format/auto/-/stretch/off/-/progressive/yes/-/resize/256x/-/quality/smart/Acer-logo-digital-green.png",
+          "discoveryPage": "https://news.acer.com/",
+          "sourceKind": "official-alternate-page-browser-img",
+          "provenanceChain": [
+            {
+              "kind": "alternate-official-page-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/alternates/report.json",
+              "attemptedAt": "2026-09-19T09:33:08.493Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "oneplus",
@@ -31601,8 +31977,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -31620,11 +31996,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "blackberry",
@@ -31785,8 +32161,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -31804,11 +32180,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "transformers",
@@ -31836,12 +32212,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/transformers, https://shop.hasbro.com/en-us/brands/transformers and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "monopoly",
@@ -31863,12 +32239,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/monopoly, https://shop.hasbro.com/en-us/brands/monopoly and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "heineken-nv",
@@ -32003,12 +32379,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://dior.com/, https://www.dior.com/, http://dior.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "tim-hortons",
@@ -32541,12 +32917,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://garnier.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "titan-company",
@@ -32763,8 +33139,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -32788,11 +33164,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "myntra",
@@ -33276,12 +33652,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://facebook.com/ and returned no eligible asset.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "messenger",
@@ -33442,12 +33818,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://shop.tiktok.com/ and returned no eligible asset.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "ana-holdings",
@@ -33520,12 +33896,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://ibis.accor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "carnival-corporation",
@@ -33668,7 +34044,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "compact_wordmark",
+          "representation": "horizontal_wordmark",
           "path": "assets/bsh-home-appliances/logo/21bb526e10a92f6129ca53be4943780e5684299d925e899cf8e0027b73be40a5.svg",
           "format": "svg",
           "width": 1333,
@@ -33682,13 +34058,13 @@
           "provenanceChain": [
             {
               "kind": "manual-targeted-research-and-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -33712,11 +34088,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "tcl",
@@ -33829,8 +34205,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -33854,11 +34230,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "leica",
@@ -34142,8 +34518,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -34161,11 +34537,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "popeyes",
@@ -34298,12 +34674,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://garena.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "sea-limited",
@@ -34620,12 +34996,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://lancome.com/, https://www.lancome.com/, http://lancome.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "patanjali",
@@ -34808,8 +35184,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -34827,11 +35203,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "castorama",
@@ -34889,8 +35265,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -34902,11 +35278,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "swiggy",
@@ -34982,12 +35358,12 @@
           "outcome": "unresolved",
           "category": "currentness_mismatch",
           "reason": "Currentness mismatch: the candidate glyph differs from the current official header identity.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
       "externalParentBrandId": "ani-technologies",
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "hulu",
@@ -35196,13 +35572,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "symbol"
         }
       },
@@ -35243,11 +35619,11 @@
           "roles": [
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "star-wars",
@@ -35275,12 +35651,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://starwars.com/, https://www.starwars.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "nbcuniversal",
@@ -35347,7 +35723,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/air-france-klm/logo/d0e2880c66235ee10f5b83ba27838e73fea5b9a5802704672f418356912fad46.svg",
           "format": "svg",
           "width": 380,
@@ -35382,8 +35758,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -35395,11 +35771,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "novotel",
@@ -35492,8 +35868,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -35511,11 +35887,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "infiniti",
@@ -35989,12 +36365,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh alternate official-page extraction tried https://corporate.ralphlauren.com/, https://corporate.ralphlauren.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "givenchy",
@@ -36008,9 +36384,37 @@
       "selectionEvidence": "Global luxury fashion brand",
       "cohort": "consumer",
       "officialHomepage": "https://givenchy.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/givenchy/logo/4ef18c11886df206ad48496b257dfac275c008b320393a3e7c9884a0958470ef.svg",
+          "format": "svg",
+          "width": 520,
+          "height": 53,
+          "bytes": 1854,
+          "contentHash": "4ef18c11886df206ad48496b257dfac275c008b320393a3e7c9884a0958470ef",
+          "visualHash": "bbab403ba9644bf05c8f704ea35061a1f96d277d791e5a5be9b96d8c89f33f10",
+          "sourceUrl": "https://www.givenchy.com/int/en/homepage#inline-svg",
+          "discoveryPage": "https://www.givenchy.com/int/en/homepage",
+          "sourceKind": "official-homepage-inline-svg",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:26:53.110Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -36026,14 +36430,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "jollibee",
@@ -36047,9 +36452,37 @@
       "selectionEvidence": "Major Asian restaurant chain",
       "cohort": "consumer",
       "officialHomepage": "https://jollibee.com.ph/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/jollibee/logo/9a5830156e9e4c224031be99f45b5a41a93d222c601f6eb365f931c6b3b8ec0b.webp",
+          "format": "webp",
+          "width": 164,
+          "height": 49,
+          "bytes": 2716,
+          "contentHash": "9a5830156e9e4c224031be99f45b5a41a93d222c601f6eb365f931c6b3b8ec0b",
+          "visualHash": "0821a431812285dccd1e0cccd5961faa10709c7e536a6fa7a534ae52a063ca9a",
+          "sourceUrl": "https://www.jollibee.com.ph/sites/apollocmsmkt/files/styles/webp_optimized/public/2025-07/footer-logo.png.webp?itok=VdVK21QI",
+          "discoveryPage": "https://www.jollibee.com.ph/home",
+          "sourceKind": "official-homepage-dom-img",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:27:01.959Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -36071,14 +36504,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "priceline",
@@ -36272,12 +36706,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://nerf.com/, https://www.nerf.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "thai-airways",
@@ -36291,9 +36725,37 @@
       "selectionEvidence": "Major Southeast Asian flag carrier",
       "cohort": "consumer",
       "officialHomepage": "https://thaiairways.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/thai-airways/logo/1e4af80fd5ce16502ebc1351b9beefbe14b695550a6279e66c4e6b0ba26e8b53.png",
+          "format": "png",
+          "width": 2560,
+          "height": 753,
+          "bytes": 97079,
+          "contentHash": "1e4af80fd5ce16502ebc1351b9beefbe14b695550a6279e66c4e6b0ba26e8b53",
+          "visualHash": "81066fb4b8debf6b08fc8fab3e9b9ce65c4101dd408fbba97abe54f028ab932e",
+          "sourceUrl": "https://www.thaiairways.com/content/dam/thaiairways/Thai_logo.png",
+          "discoveryPage": "https://www.thaiairways.com/",
+          "sourceKind": "official-homepage-schema",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:27:11.097Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -36309,14 +36771,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "noon",
@@ -36687,8 +37150,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -36700,11 +37163,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "leroy-merlin",
@@ -37011,8 +37474,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -37024,11 +37487,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "kuaishou",
@@ -37042,9 +37505,37 @@
       "selectionEvidence": "Major Chinese short-video platform",
       "cohort": "consumer",
       "officialHomepage": "https://kuaishou.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "horizontal_wordmark",
+          "path": "assets/kuaishou/logo/934c8c4325171ae91f719b31178bca9502fbe3c6951c2c4a89ac76435d544a6b.png",
+          "format": "png",
+          "width": 432,
+          "height": 80,
+          "bytes": 13144,
+          "contentHash": "934c8c4325171ae91f719b31178bca9502fbe3c6951c2c4a89ac76435d544a6b",
+          "visualHash": "8943a3d1502c92d4ce607a96350916d2adf1593c99facd7c90cce426235c1726",
+          "sourceUrl": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/themes/site/nir_pid3884/dist/images/logo-black.png?x=09152026-16:46",
+          "discoveryPage": "https://ir.kuaishou.com/",
+          "sourceKind": "official-alternate-page-dom-img",
+          "provenanceChain": [
+            {
+              "kind": "alternate-official-page-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/alternates/report.json",
+              "attemptedAt": "2026-09-19T09:33:23.956Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -37054,14 +37545,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "qq",
@@ -37154,8 +37646,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -37179,11 +37671,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "discovery-channel",
@@ -37333,13 +37825,13 @@
           "provenanceChain": [
             {
               "kind": "manual-targeted-research-and-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -37363,11 +37855,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "royal-caribbean-group",
@@ -37395,12 +37887,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://rclinvestor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "nissan",
@@ -37432,13 +37924,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "horizontal_wordmark"
         }
       },
@@ -37473,11 +37965,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "triumph-motorcycles",
@@ -37851,8 +38343,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -37864,11 +38356,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "celine",
@@ -38071,8 +38563,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -38090,11 +38582,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "just-eat-takeaway",
@@ -38403,8 +38895,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -38422,12 +38914,12 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
       "externalParentBrandId": "estee-lauder-companies",
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "ross-stores",
@@ -38983,8 +39475,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -39008,11 +39500,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "national-geographic",
@@ -39596,8 +40088,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -39621,11 +40113,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "tommy-hilfiger",
@@ -39725,8 +40217,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -39744,11 +40236,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "chowking",
@@ -39780,13 +40272,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "horizontal_wordmark"
         }
       },
@@ -39821,11 +40313,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "tiket-com",
@@ -40062,12 +40554,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://tatacliq.com/, https://www.tatacliq.com/, http://tatacliq.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "maggi",
@@ -40255,8 +40747,8 @@
           ],
           "transformation": "safe-svg-normalization",
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -40274,11 +40766,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "mongodb",
@@ -40357,11 +40849,11 @@
           "outcome": "unresolved",
           "category": "permission_restricted",
           "reason": "An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "perplexity",
@@ -40504,12 +40996,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://tsmc.com/, https://www.tsmc.com/, http://tsmc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "square",
@@ -40826,12 +41318,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://skhynix.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "cash-app",
@@ -41181,8 +41673,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -41206,11 +41698,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "adyen",
@@ -41310,8 +41802,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -41335,11 +41827,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "uipath",
@@ -41546,8 +42038,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -41571,11 +42063,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "broadcom",
@@ -41789,9 +42281,37 @@
       "selectionEvidence": "Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
       "cohort": "tech",
       "officialHomepage": "https://vultr.com/",
-      "assets": {},
+      "assets": {
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "symbol",
+          "path": "assets/vultr/icon/56a74651e8d84dfef8766a496c09fe20aaf1ce5f790732f3651460d4454a9f66.png",
+          "format": "png",
+          "width": 192,
+          "height": 192,
+          "bytes": 3451,
+          "contentHash": "56a74651e8d84dfef8766a496c09fe20aaf1ce5f790732f3651460d4454a9f66",
+          "visualHash": "e6752d2d7e62b22f24801e7ca7c964f3b87ab7dab221ab00a395fc192ee81b70",
+          "sourceUrl": "https://www.vultr.com/favicon.ico",
+          "discoveryPage": "https://vultr.com/",
+          "sourceKind": "official-homepage-root-favicon",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:27:47.599Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -41807,14 +42327,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "icon"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "midjourney",
@@ -42171,8 +42692,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -42196,11 +42717,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "runway",
@@ -42278,13 +42799,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "horizontal_wordmark"
         }
       },
@@ -42319,11 +42840,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "texas-instruments",
@@ -42462,8 +42983,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -42493,11 +43014,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "splunk",
@@ -42702,7 +43223,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/analog-devices/logo/8c52bbff79a2ef34812120dfd9ddbdd209703faf2043687344db722a1fafb0fa.svg",
           "format": "svg",
           "width": 630,
@@ -42737,8 +43258,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -42750,11 +43271,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "airwallex",
@@ -42898,12 +43419,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://teradata.com/, https://www.teradata.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "railway",
@@ -42917,9 +43438,37 @@
       "selectionEvidence": "Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
       "cohort": "tech",
       "officialHomepage": "https://railway.com/",
-      "assets": {},
+      "assets": {
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "symbol",
+          "path": "assets/railway/icon/04feac814a9dd78b36de8711d685300fd5ad3bae9a81dd3c4743f7f66c6d9484.svg",
+          "format": "svg",
+          "width": 32,
+          "height": 32,
+          "bytes": 1399,
+          "contentHash": "04feac814a9dd78b36de8711d685300fd5ad3bae9a81dd3c4743f7f66c6d9484",
+          "visualHash": "b11e2519052d05b4d202c689afc49ddf89b0b8c2132b80e06aa12566669f3647",
+          "sourceUrl": "https://railway.com/#inline-svg",
+          "discoveryPage": "https://railway.com/",
+          "sourceKind": "official-homepage-inline-svg",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:27:54.217Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -42935,14 +43484,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "icon"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "character-ai",
@@ -42996,8 +43546,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         },
         "icon": {
           "role": "icon",
@@ -43016,13 +43566,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "symbol"
         }
       },
@@ -43058,11 +43608,11 @@
             "logo",
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "mimecast",
@@ -43477,8 +44027,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -43508,11 +44058,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "infineon",
@@ -43826,7 +44376,7 @@
           "role": "logo",
           "theme": "light",
           "locale": "global",
-          "representation": "horizontal_wordmark",
+          "representation": "stacked_lockup",
           "path": "assets/trend-micro/logo/2824e2e631589a20a1c2368b060aa0b8ae383b09ec1c54cc97d3127fe5a12231.svg",
           "format": "svg",
           "width": 800,
@@ -43861,8 +44411,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -43886,11 +44436,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "stmicroelectronics",
@@ -43944,8 +44494,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -43963,11 +44513,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "paytm",
@@ -44129,8 +44679,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -44154,11 +44704,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "heroku",
@@ -44549,8 +45099,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -44568,11 +45118,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "synthesia",
@@ -45263,8 +45813,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -45296,11 +45846,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "descript",
@@ -45452,8 +46002,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -45471,11 +46021,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "mollie",
@@ -45489,9 +46039,37 @@
       "selectionEvidence": "Usage-oriented technology cohort candidate; domain and current identity require source verification before asset approval.",
       "cohort": "tech",
       "officialHomepage": "https://mollie.com/",
-      "assets": {},
+      "assets": {
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/mollie/logo/1fe0eb97bc883c1ad37bf301d7adac649d689d0470d1b7bcf69f185cffd0af7c.png",
+          "format": "png",
+          "width": 270,
+          "height": 270,
+          "bytes": 1631,
+          "contentHash": "1fe0eb97bc883c1ad37bf301d7adac649d689d0470d1b7bcf69f185cffd0af7c",
+          "visualHash": "fc8d3a675c5cecda2d4c04eba02b7696be6102fb276c3d1fde9a29740e11afca",
+          "sourceUrl": "https://framerusercontent.com/images/qv5pP6IyH5pkUJsKlgG23E4RbBM.png",
+          "discoveryPage": "https://www.mollie.com/",
+          "sourceKind": "official-homepage-apple",
+          "provenanceChain": [
+            {
+              "kind": "fresh-official-source-recovery",
+              "report": "reports/missing-logo-library-2026-09-19/fresh-source/report.json",
+              "attemptedAt": "2026-09-19T09:28:10.459Z"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
+        }
+      },
       "variants": {},
-      "verificationStatus": "unresolved",
+      "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
           "role": "icon",
@@ -45501,14 +46079,15 @@
         },
         {
           "kind": "missing-logo-bounded-review",
-          "outcome": "unresolved",
-          "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "outcome": "approved",
+          "roles": [
+            "logo"
+          ],
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "skyscanner",
@@ -45536,12 +46115,12 @@
           "kind": "missing-logo-bounded-review",
           "outcome": "unresolved",
           "category": "no_defensible_candidate",
-          "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities).",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reason": "Fresh official-site extraction tried https://skyscanner.net/ and recovered candidate files, but none passed final identity, role, format, and legibility review.",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "asana",
@@ -46231,8 +46810,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -46264,11 +46843,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "miro",
@@ -46403,13 +46982,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "symbol"
         }
       },
@@ -46444,11 +47023,11 @@
           "roles": [
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "aqua-security",
@@ -46480,13 +47059,13 @@
           "provenanceChain": [
             {
               "kind": "restored-after-bounded-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z",
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z",
           "representation": "symbol"
         }
       },
@@ -46521,11 +47100,11 @@
           "roles": [
             "icon"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "kla",
@@ -46617,13 +47196,13 @@
           "provenanceChain": [
             {
               "kind": "manual-targeted-research-and-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -46641,11 +47220,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "redfin",
@@ -46804,8 +47383,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -46817,11 +47396,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "datarobot",
@@ -47667,8 +48246,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -47680,11 +48259,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "sofi",
@@ -49845,8 +50424,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -49864,11 +50443,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "fireblocks",
@@ -50145,8 +50724,8 @@
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -50164,11 +50743,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "chainalysis",
@@ -51172,13 +51751,13 @@
           "provenanceChain": [
             {
               "kind": "manual-targeted-research-and-visual-review",
-              "reviewedAt": "2026-09-19T09:19:35.591Z"
+              "reviewedAt": "2026-09-19T09:36:36.791Z"
             }
           ],
           "transformation": null,
           "verificationStatus": "approved_ai_visual_review",
-          "lastCheckedAt": "2026-09-19T09:19:35.591Z",
-          "lastConfirmedCurrentAt": "2026-09-19T09:19:35.591Z"
+          "lastCheckedAt": "2026-09-19T09:36:36.791Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:36:36.791Z"
         }
       },
       "variants": {},
@@ -51198,11 +51777,11 @@
           "roles": [
             "logo"
           ],
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "postman",
@@ -51611,11 +52190,11 @@
           "outcome": "unresolved",
           "category": "stale_identity_and_format_failure",
           "reason": "The only recovered candidate is the retired Phillips-Van Heusen identity and also failed safe format validation.",
-          "reviewedAt": "2026-09-19T09:19:35.591Z",
+          "reviewedAt": "2026-09-19T09:36:36.791Z",
           "reviewer": "Codex visual review"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:19:35.591Z"
+      "lastCheckedAt": "2026-09-19T09:36:36.791Z"
     },
     {
       "id": "didi",

@@ -1,0 +1,146 @@
+{
+  "brandId": "nerf",
+  "name": "Nerf",
+  "domain": "nerf.com",
+  "attemptedAt": "2026-09-19T09:27:03.910Z",
+  "attemptedUrls": [
+    "https://nerf.com/",
+    "https://www.nerf.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://consumercare.hasbro.com/favicon.ico",
+      "sourcePage": "https://consumercare.hasbro.com/en-au/where-to-buy",
+      "format": "png",
+      "width": 48,
+      "height": 48,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Nerf"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://consumercare.hasbro.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:27:19.148Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/nerf/icon-c2216cdd14a25eb7528bde2523f11cb2aba05b84d14c38579bcb9aed4fcf7784.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://nerf.com/",
+        "stage": "primary",
+        "ok": false,
+        "error": "timeout",
+        "failureKind": "timeout"
+      },
+      {
+        "url": "https://www.nerf.com/",
+        "stage": "alternate_https_host",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://consumercare.hasbro.com/en-au/where-to-buy"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://consumercare.hasbro.com/en-au/sitemap",
+      "requests": 140,
+      "declaredTransferBytes": 11946696,
+      "transferBytes": 6223839,
+      "blockedRequests": 12,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 12,
+        "invalid_external": 0,
+        "duplicates": 5,
+        "retained": 7
+      },
+      "durationMs": 5996,
+      "candidates": 7,
+      "attempts": [
+        {
+          "url": "https://consumercare.hasbro.com/en-au/where-to-buy",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://consumercare.hasbro.com/en-au/where-to-buy",
+          "requests": 76,
+          "declaredTransferBytes": 5837393,
+          "transferBytes": 6062454,
+          "blockedRequests": 6,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 12,
+            "invalid_external": 0,
+            "duplicates": 5,
+            "retained": 7
+          },
+          "durationMs": 3012,
+          "candidates": 7
+        },
+        {
+          "url": "https://consumercare.hasbro.com/en-au/sitemap",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://consumercare.hasbro.com/en-au/sitemap",
+          "requests": 64,
+          "declaredTransferBytes": 6109303,
+          "transferBytes": 6223839,
+          "blockedRequests": 6,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 12,
+            "invalid_external": 0,
+            "duplicates": 5,
+            "retained": 7
+          },
+          "durationMs": 2984,
+          "candidates": 7
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

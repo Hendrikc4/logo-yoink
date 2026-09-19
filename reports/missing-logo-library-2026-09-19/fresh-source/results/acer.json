@@ -1,0 +1,11 @@
+{
+  "brandId": "acer",
+  "name": "Acer",
+  "domain": "acer.com",
+  "attemptedAt": "2026-09-19T09:25:50.144Z",
+  "attemptedUrls": [
+    "https://acer.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://acer.com/: timeout | https://www.acer.com/: timeout"
+}

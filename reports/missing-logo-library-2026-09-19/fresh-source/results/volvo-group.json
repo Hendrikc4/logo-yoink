@@ -1,0 +1,118 @@
+{
+  "brandId": "volvo-group",
+  "name": "Volvo Group",
+  "domain": "volvogroup.com",
+  "attemptedAt": "2026-09-19T09:23:26.555Z",
+  "attemptedUrls": [
+    "https://volvogroup.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "duckduckgo-favicon",
+      "url": "https://icons.duckduckgo.com/ip3/volvogroup.com.ico",
+      "sourcePage": null,
+      "format": "ico",
+      "width": 64,
+      "height": 64,
+      "evidence": {
+        "element": "cached-favicon",
+        "provider": "duckduckgo"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/volvogroup.com.ico",
+        "retrieved_at": "2026-09-19T09:23:35.389Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/volvo-group/icon-7060e8d2c2717dc373567d53028ec7bd6419408d5b1495c3d0ec02c05939d708.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://volvogroup.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.volvogroup.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 142,
+      "declaredTransferBytes": 10293035,
+      "transferBytes": 920395,
+      "blockedRequests": 11,
+      "resourceLimitHit": true,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 404."
+      ],
+      "httpStatus": 404,
+      "durationMs": 15300,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.volvogroup.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.volvogroup.com/en/",
+          "requests": 93,
+          "declaredTransferBytes": 9427597,
+          "transferBytes": 8389107,
+          "blockedRequests": 8,
+          "resourceLimitHit": true,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 11951,
+          "candidates": 1
+        },
+        {
+          "url": "https://www.volvogroup.com/brand",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 49,
+          "declaredTransferBytes": 865438,
+          "transferBytes": 920395,
+          "blockedRequests": 3,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 404."
+          ],
+          "httpStatus": 404,
+          "durationMs": 3349,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

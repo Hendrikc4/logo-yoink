@@ -1,0 +1,123 @@
+{
+  "brandId": "royal-caribbean-group",
+  "name": "Royal Caribbean Group",
+  "domain": "rclinvestor.com",
+  "attemptedAt": "2026-09-19T09:27:27.208Z",
+  "attemptedUrls": [
+    "https://rclinvestor.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "root-favicon",
+      "url": "https://www.rclinvestor.com/wp/wp-includes/images/w-logo-blue-white-bg.png",
+      "sourcePage": "https://www.rclinvestor.com/",
+      "format": "png",
+      "width": 80,
+      "height": 80,
+      "evidence": {},
+      "provenance": {
+        "retrieved_asset_url": "https://www.rclinvestor.com/wp/wp-includes/images/w-logo-blue-white-bg.png",
+        "retrieved_at": "2026-09-19T09:27:32.315Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "dark",
+        "color": "white",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/royal-caribbean-group/icon-6bdb369337ac2496761c6f063bffea0aa6a91d4662279c399071a468251f51f0.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://rclinvestor.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.rclinvestor.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.rclinvestor.com/press-releases/",
+      "requests": 70,
+      "declaredTransferBytes": 19300191,
+      "transferBytes": 769231,
+      "blockedRequests": 30,
+      "resourceLimitHit": true,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 1,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 1
+      },
+      "durationMs": 10591,
+      "candidates": 1,
+      "attempts": [
+        {
+          "url": "https://www.rclinvestor.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.rclinvestor.com/",
+          "requests": 36,
+          "declaredTransferBytes": 18667506,
+          "transferBytes": 8389949,
+          "blockedRequests": 18,
+          "resourceLimitHit": true,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 1,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 1
+          },
+          "durationMs": 5209,
+          "candidates": 1
+        },
+        {
+          "url": "https://www.rclinvestor.com/press-releases/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.rclinvestor.com/press-releases/",
+          "requests": 34,
+          "declaredTransferBytes": 632685,
+          "transferBytes": 769231,
+          "blockedRequests": 12,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 1,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 1
+          },
+          "durationMs": 5382,
+          "candidates": 1
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

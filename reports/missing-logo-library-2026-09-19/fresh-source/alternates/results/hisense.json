@@ -1,0 +1,148 @@
+{
+  "brandId": "hisense",
+  "name": "Hisense",
+  "domain": "hisense.com",
+  "attemptedAt": "2026-09-19T09:32:58.644Z",
+  "attemptedUrls": [
+    "https://global.hisense.com/",
+    "https://global.hisense.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://dtc-aus-api.hisense.com/medias/logo.png?context=bWFzdGVyfGltYWdlc3w0ODE1fGltYWdlL3BuZ3xhREF6TDJoa1pDODROemszT0RrMk9EQXlNek0wTDJ4dloyOHVjRzVufDRkMTQwNTAwNDYwZWUxYzU1YTQ0N2MzNWI5MDNjNGZiYWQ0YzQwYjE5MDQ1M2YyNDdmMTg3NjMwMzlhZDAxYWQ",
+      "sourcePage": "https://hisense.com.au/",
+      "format": "png",
+      "width": 190,
+      "height": 30,
+      "evidence": {
+        "element": "img",
+        "dom_region": "header",
+        "home_linked": false,
+        "alt": "Hisense",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "Hisense Hisense Hisense Hisense Hisense is-loading SiteLogo has-components header cx-header LandingPage2Template stop-navigating cxFeat_headerLayoutForSmallerViewports cxFeat_a11yPdpGridArrangement cxFeat_a11yMiniCartFocusOnMobile cxFeat_a11yShowDownArrowOnFocusedSelectMenu cxFeat_a11yHideConsentButtonWhenBannerVisible cxFeat_a11yScrollToTopPositioning cxFeat_a11yNavigationButtonsAriaFixes dtc-theme",
+        "local_semantic": "Hisense Hisense Hisense",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 1,
+        "inherited_color": null,
+        "company_name": "Hisense"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://dtc-aus-api.hisense.com/medias/logo.png?context=bWFzdGVyfGltYWdlc3w0ODE1fGltYWdlL3BuZ3xhREF6TDJoa1pDODROemszT0RrMk9EQXlNek0wTDJ4dloyOHVjRzVufDRkMTQwNTAwNDYwZWUxYzU1YTQ0N2MzNWI5MDNjNGZiYWQ0YzQwYjE5MDQ1M2YyNDdmMTg3NjMwMzlhZDAxYWQ",
+        "retrieved_at": "2026-09-19T09:33:02.292Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/hisense/alternate-logo-e990e6111dac0655269e66aae4134bbc320495dc343cd5188fc4e0b56e9b6b82.png"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://hisense.com.au/favicon.ico",
+      "sourcePage": "https://hisense.com.au/",
+      "format": "ico",
+      "width": 32,
+      "height": 32,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Hisense"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://hisense.com.au/favicon.ico",
+        "retrieved_at": "2026-09-19T09:33:00.925Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/hisense/alternate-icon-615a801c56e910d8ff1ea7c56a23436fe0b33abf26c40b02282c49af1f3cd51c.ico"
+    }
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "https://global.hisense.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://hisense.com.au/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://hisense.com.au/",
+      "requests": 148,
+      "declaredTransferBytes": 7954472,
+      "transferBytes": 8388805,
+      "blockedRequests": 25,
+      "resourceLimitHit": true,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 0,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 0
+      },
+      "durationMs": 3435,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://hisense.com.au/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://hisense.com.au/",
+          "requests": 148,
+          "declaredTransferBytes": 7954472,
+          "transferBytes": 8388805,
+          "blockedRequests": 25,
+          "resourceLimitHit": true,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 0,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 0
+          },
+          "durationMs": 3435,
+          "candidates": 0
+        }
+      ]
+    },
+    "network": null
+  }
+}

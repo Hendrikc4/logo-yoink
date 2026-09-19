@@ -1,0 +1,106 @@
+{
+  "brandId": "p-g-e-corporation",
+  "name": "PG&E Corporation",
+  "domain": "pgecorp.com",
+  "attemptedAt": "2026-09-19T09:23:06.106Z",
+  "attemptedUrls": [
+    "https://pgecorp.com/",
+    "https://www.pgecorp.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "root-favicon",
+      "url": "https://www.pgecorp.com/favicon.ico",
+      "sourcePage": "https://www.pgecorp.com/",
+      "format": "ico",
+      "width": 32,
+      "height": 32,
+      "evidence": {},
+      "provenance": {
+        "retrieved_asset_url": "https://www.pgecorp.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:23:22.142Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/p-g-e-corporation/icon-7ce88c066f450be3617154c225b6aea2e521a245327e7e12256da49ee8b33aed.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://pgecorp.com/",
+        "stage": "primary",
+        "ok": false,
+        "error": "timeout",
+        "failureKind": "timeout"
+      },
+      {
+        "url": "https://www.pgecorp.com/",
+        "stage": "alternate_https_host",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.pgecorp.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.pgecorp.com/",
+      "requests": 36,
+      "declaredTransferBytes": 887951,
+      "transferBytes": 946267,
+      "blockedRequests": 11,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 1,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 1
+      },
+      "durationMs": 4797,
+      "candidates": 1,
+      "attempts": [
+        {
+          "url": "https://www.pgecorp.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.pgecorp.com/",
+          "requests": 36,
+          "declaredTransferBytes": 887951,
+          "transferBytes": 946267,
+          "blockedRequests": 11,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 1,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 1
+          },
+          "durationMs": 4797,
+          "candidates": 1
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

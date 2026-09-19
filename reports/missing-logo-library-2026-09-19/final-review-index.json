@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T09:19:39.290Z",
+  "generatedAt": "2026-09-19T09:36:40.111Z",
   "rows": [
     {
       "number": 1,
@@ -19,6 +19,14 @@
     },
     {
       "number": 3,
+      "id": "acer",
+      "name": "Acer",
+      "role": "logo",
+      "path": "assets/acer/logo/a9836aaff84f319708b6807f4ec829571a2e249c38bfe6d17a5fc24c3db62444.png",
+      "contentHash": "a9836aaff84f319708b6807f4ec829571a2e249c38bfe6d17a5fc24c3db62444"
+    },
+    {
+      "number": 4,
       "id": "afterpay",
       "name": "Afterpay",
       "role": "logo",
@@ -26,7 +34,7 @@
       "contentHash": "0bca7c8aaaab2a78e07385f1f9279656f1d7759bdc41a5c8e97cde30ab809539"
     },
     {
-      "number": 4,
+      "number": 5,
       "id": "aia-group",
       "name": "AIA Group",
       "role": "logo",
@@ -34,7 +42,7 @@
       "contentHash": "e60b1bc8be7084c6f9451e306624f588a439f74ad3896c9c4da627463daafbc3"
     },
     {
-      "number": 5,
+      "number": 6,
       "id": "aig",
       "name": "AIG",
       "role": "logo",
@@ -42,7 +50,7 @@
       "contentHash": "f7429f4390654b5c4534b28f3a6de11782572663c56b62a67b230aa36c4d3ba6"
     },
     {
-      "number": 6,
+      "number": 7,
       "id": "air-france-klm",
       "name": "Air France-KLM",
       "role": "logo",
@@ -50,7 +58,7 @@
       "contentHash": "d0e2880c66235ee10f5b83ba27838e73fea5b9a5802704672f418356912fad46"
     },
     {
-      "number": 7,
+      "number": 8,
       "id": "analog-devices",
       "name": "Analog Devices",
       "role": "logo",
@@ -58,7 +66,7 @@
       "contentHash": "8c52bbff79a2ef34812120dfd9ddbdd209703faf2043687344db722a1fafb0fa"
     },
     {
-      "number": 8,
+      "number": 9,
       "id": "aqua-security",
       "name": "Aqua Security",
       "role": "icon",
@@ -66,7 +74,7 @@
       "contentHash": "c5876fa482ee8d765805468c94884ad43c1f03aa2496fa8342bd78acfa843bbf"
     },
     {
-      "number": 9,
+      "number": 10,
       "id": "arcelormittal",
       "name": "ArcelorMittal",
       "role": "logo",
@@ -74,7 +82,7 @@
       "contentHash": "6b6f1efac540902e787914546f5ec365c6e9423e837a8a9ea7b84d09d95e6a1d"
     },
     {
-      "number": 10,
+      "number": 11,
       "id": "arthur-j-gallagher",
       "name": "Arthur J. Gallagher",
       "role": "logo",
@@ -82,7 +90,7 @@
       "contentHash": "240a5cbf84e50158b1b9abc8cc6f5c782eb134afba42a45e8820a9cb8fb60589"
     },
     {
-      "number": 11,
+      "number": 12,
       "id": "asml",
       "name": "ASML",
       "role": "logo",
@@ -90,7 +98,7 @@
       "contentHash": "b0ebc06e55a0daab4c6463c37a40a92c51769a911b1236e3238a6fa7a267f63d"
     },
     {
-      "number": 12,
+      "number": 13,
       "id": "asos",
       "name": "ASOS",
       "role": "logo",
@@ -98,7 +106,7 @@
       "contentHash": "fd073acea6305fa992ff53ce88888dafab2d1504b0d68a3331d9211f92ce459e"
     },
     {
-      "number": 13,
+      "number": 14,
       "id": "associated-british-foods",
       "name": "Associated British Foods",
       "role": "logo",
@@ -106,7 +114,7 @@
       "contentHash": "6b66e68bbb068c1c7b95a5af609204fae52cf3896b0f689ed7315c12bef8efef"
     },
     {
-      "number": 14,
+      "number": 15,
       "id": "b-and-q",
       "name": "B&Q",
       "role": "logo",
@@ -114,7 +122,7 @@
       "contentHash": "35996606e0c6c4e78d2231e0e06bd855d0dc2b8c80a7420f7f618a2bfaf9b20d"
     },
     {
-      "number": 15,
+      "number": 16,
       "id": "bank-of-america",
       "name": "Bank of America",
       "role": "logo",
@@ -122,7 +130,7 @@
       "contentHash": "9eda96805415afc705c6a3013b3b792b5d35c9d57884ffedba7e52d476b008d8"
     },
     {
-      "number": 16,
+      "number": 17,
       "id": "barrick-mining",
       "name": "Barrick Mining",
       "role": "logo",
@@ -130,7 +138,7 @@
       "contentHash": "5b385fa8bb63c3a3624986c283249925aeda6cfbdd89c50750c5ab22005a4f60"
     },
     {
-      "number": 17,
+      "number": 18,
       "id": "berkshire-hathaway",
       "name": "Berkshire Hathaway",
       "role": "logo",
@@ -138,7 +146,7 @@
       "contentHash": "bab6f6c1e94a34fb88f0ccd301c050dddf0a5dacade4a7e397f6d1642ba8bc7d"
     },
     {
-      "number": 18,
+      "number": 19,
       "id": "blackstone",
       "name": "Blackstone",
       "role": "logo",
@@ -146,7 +154,7 @@
       "contentHash": "154ee89611edf1e980bed66b89df080484c9f5da6f0383dcf041997b63923c0a"
     },
     {
-      "number": 19,
+      "number": 20,
       "id": "bolt",
       "name": "Bolt",
       "role": "logo",
@@ -154,7 +162,7 @@
       "contentHash": "6be47939e5bc7c646fc0b2522d1a786c4bc32d28714c93bd6276a40a4badb738"
     },
     {
-      "number": 20,
+      "number": 21,
       "id": "bsh-home-appliances",
       "name": "BSH Home Appliances",
       "role": "logo",
@@ -162,7 +170,7 @@
       "contentHash": "21bb526e10a92f6129ca53be4943780e5684299d925e899cf8e0027b73be40a5"
     },
     {
-      "number": 21,
+      "number": 22,
       "id": "bumble",
       "name": "Bumble",
       "role": "logo",
@@ -170,7 +178,7 @@
       "contentHash": "0163b8a5883a6c0f68eb08e2d83cf5522867b7bd1a40d861b100e610b82dc135"
     },
     {
-      "number": 22,
+      "number": 23,
       "id": "c3-ai",
       "name": "C3 AI",
       "role": "icon",
@@ -178,7 +186,7 @@
       "contentHash": "3b3a9004fc8957d961c6e2b3b79cc26e1ca99ead2db0bdd24879b0e1567654df"
     },
     {
-      "number": 23,
+      "number": 24,
       "id": "calvin-klein",
       "name": "Calvin Klein",
       "role": "logo",
@@ -186,7 +194,7 @@
       "contentHash": "a1ed18062f8ebb8974375b074432c1a8e22dd420234804353e637a1a2f7676ca"
     },
     {
-      "number": 24,
+      "number": 25,
       "id": "canonical",
       "name": "Canonical",
       "role": "logo",
@@ -194,7 +202,7 @@
       "contentHash": "64a9d96af5916450b60e48d99b9c07ae0735d244a9a1879f5944b3541d998211"
     },
     {
-      "number": 25,
+      "number": 26,
       "id": "cardinal-health",
       "name": "Cardinal Health",
       "role": "logo",
@@ -202,7 +210,7 @@
       "contentHash": "4a05367935111e0906fbe33217578494d09f73186ffddfb7fdee494538cafaac"
     },
     {
-      "number": 26,
+      "number": 27,
       "id": "cartoon-network",
       "name": "Cartoon Network",
       "role": "logo",
@@ -210,7 +218,7 @@
       "contentHash": "2b0a719d5d695bf27588d085dd41941a0eb5d7875ee145f5edd500ccc4ef7604"
     },
     {
-      "number": 27,
+      "number": 28,
       "id": "castorama",
       "name": "Castorama",
       "role": "logo",
@@ -218,7 +226,7 @@
       "contentHash": "bcd9468fa37b11ed61f5aba96670e8acd77240af499ba061a5c907375c17783d"
     },
     {
-      "number": 28,
+      "number": 29,
       "id": "character-ai",
       "name": "Character.AI",
       "role": "icon",
@@ -226,7 +234,7 @@
       "contentHash": "6b572b79dde98804eb3b1783b2d8e5fea45a75b316178b1398d41679e653ce7f"
     },
     {
-      "number": 29,
+      "number": 30,
       "id": "character-ai",
       "name": "Character.AI",
       "role": "logo",
@@ -234,7 +242,23 @@
       "contentHash": "67aa5371275d321118e0c015e21885544783b168dedf2fd04e7ffecbee3b2791"
     },
     {
-      "number": 30,
+      "number": 31,
+      "id": "charter-communications",
+      "name": "Charter Communications",
+      "role": "icon",
+      "path": "assets/charter-communications/icon/c3b1a64547d01d69c64e1b86944bbedf25ca63f4c6e7cf6da3802abd3aa2f3e5.png",
+      "contentHash": "c3b1a64547d01d69c64e1b86944bbedf25ca63f4c6e7cf6da3802abd3aa2f3e5"
+    },
+    {
+      "number": 32,
+      "id": "charter-communications",
+      "name": "Charter Communications",
+      "role": "logo",
+      "path": "assets/charter-communications/logo/23fe07baf5b20e33c5a1f17400561d8b7a640ef8b93ed39589dc5717cccbea56.webp",
+      "contentHash": "23fe07baf5b20e33c5a1f17400561d8b7a640ef8b93ed39589dc5717cccbea56"
+    },
+    {
+      "number": 33,
       "id": "chevron",
       "name": "Chevron",
       "role": "logo",
@@ -242,7 +266,7 @@
       "contentHash": "9493eafb2e48bf909a88c744006d8c37e4973d1bad8abcde2db306f92d7adffc"
     },
     {
-      "number": 31,
+      "number": 34,
       "id": "chowking",
       "name": "Chowking",
       "role": "logo",
@@ -250,7 +274,7 @@
       "contentHash": "d083d6742996a05e0151b8b80542f084b92dc99c2ee31fdb9e72806bacde5bd7"
     },
     {
-      "number": 32,
+      "number": 35,
       "id": "clinique",
       "name": "Clinique",
       "role": "logo",
@@ -258,7 +282,15 @@
       "contentHash": "b270bb3eb8556c03a50d5020917bdf3d9a3335ca0cefd9738632ce1773e8758c"
     },
     {
-      "number": 33,
+      "number": 36,
+      "id": "cme-group",
+      "name": "CME Group",
+      "role": "icon",
+      "path": "assets/cme-group/icon/caf3c907d29b91f36ad864fb0f94154058f65ae3aa7592bb0a125eb08fbbf9d0.png",
+      "contentHash": "caf3c907d29b91f36ad864fb0f94154058f65ae3aa7592bb0a125eb08fbbf9d0"
+    },
+    {
+      "number": 37,
       "id": "cnooc",
       "name": "CNOOC",
       "role": "icon",
@@ -266,7 +298,7 @@
       "contentHash": "38b8a9afaa6d480a46ec4217daed0a77e619b0c9e6ab060d3d78ed4b645c028f"
     },
     {
-      "number": 34,
+      "number": 38,
       "id": "coca-cola-company",
       "name": "The Coca-Cola Company",
       "role": "logo",
@@ -274,7 +306,7 @@
       "contentHash": "d2885ab26f57ed7da6129a38a70e8e293853d95f0b575c8a0d145d2c859e9b5b"
     },
     {
-      "number": 35,
+      "number": 39,
       "id": "cummins",
       "name": "Cummins",
       "role": "icon",
@@ -282,7 +314,7 @@
       "contentHash": "ca09429f77496d0d39d872930d80344d19e0fea07be44d3bcb8a8e22178b8699"
     },
     {
-      "number": 36,
+      "number": 40,
       "id": "cyberark",
       "name": "CyberArk",
       "role": "logo",
@@ -290,7 +322,7 @@
       "contentHash": "67e2f25233ffe02ea0a70301e7440e6371d8943ca3f759b1d128b590e7e9419b"
     },
     {
-      "number": 37,
+      "number": 41,
       "id": "dominion-energy",
       "name": "Dominion Energy",
       "role": "logo",
@@ -298,7 +330,7 @@
       "contentHash": "638060d96a1bf69a41b4c538bdcc4e1e801d4e0db4a69f61c15f213d73fdcd9f"
     },
     {
-      "number": 38,
+      "number": 42,
       "id": "electronic-arts",
       "name": "Electronic Arts",
       "role": "icon",
@@ -306,7 +338,7 @@
       "contentHash": "40500d8a55687a05bd5cf57718c2c1417f168f87a33ec2cc2524b480a0c3de88"
     },
     {
-      "number": 39,
+      "number": 43,
       "id": "electronic-arts",
       "name": "Electronic Arts",
       "role": "logo",
@@ -314,7 +346,7 @@
       "contentHash": "b61aaa182008050320e2a5365190a5bfc7dc1f290b094780a56c2bc7aaceba15"
     },
     {
-      "number": 40,
+      "number": 44,
       "id": "eli-lilly",
       "name": "Eli Lilly",
       "role": "logo",
@@ -322,7 +354,7 @@
       "contentHash": "0cfc34726a793965a11f7e2807c68d8863525d3441ac551ea9ce6a492f9b1d6b"
     },
     {
-      "number": 41,
+      "number": 45,
       "id": "emirates",
       "name": "Emirates",
       "role": "logo",
@@ -330,7 +362,7 @@
       "contentHash": "d067d6cf2b9d071b4ee66edcb29a526beeca9c5cc07ba02a5d20c534489ec728"
     },
     {
-      "number": 42,
+      "number": 46,
       "id": "exelon",
       "name": "Exelon",
       "role": "logo",
@@ -338,7 +370,7 @@
       "contentHash": "a47afc59d4ba925260ebcd42a7052dae889facb84de9ee3f42bcccc912528b1a"
     },
     {
-      "number": 43,
+      "number": 47,
       "id": "fendi",
       "name": "Fendi",
       "role": "logo",
@@ -346,7 +378,7 @@
       "contentHash": "268347be925d55817371d1563c155d47566c343fbfd6058dd57087cfc6e44fd5"
     },
     {
-      "number": 44,
+      "number": 48,
       "id": "fitbit",
       "name": "Fitbit",
       "role": "logo",
@@ -354,7 +386,7 @@
       "contentHash": "14ad0f296f69ed5c58e96e009975133f98e65f636ea67cee2173efa358213208"
     },
     {
-      "number": 45,
+      "number": 49,
       "id": "freeport-mcmoran",
       "name": "Freeport-McMoRan",
       "role": "logo",
@@ -362,7 +394,7 @@
       "contentHash": "2376802d27e34779336fc569435900357860b63563751a00a6b07ddba3f392b5"
     },
     {
-      "number": 46,
+      "number": 50,
       "id": "ge-aerospace",
       "name": "GE Aerospace",
       "role": "logo",
@@ -370,7 +402,15 @@
       "contentHash": "1aa247a0aae4fddc26cf6767a427b9ff9535ee8a82f9702dcd45c9b05b4e3a11"
     },
     {
-      "number": 47,
+      "number": 51,
+      "id": "givenchy",
+      "name": "Givenchy",
+      "role": "logo",
+      "path": "assets/givenchy/logo/4ef18c11886df206ad48496b257dfac275c008b320393a3e7c9884a0958470ef.svg",
+      "contentHash": "4ef18c11886df206ad48496b257dfac275c008b320393a3e7c9884a0958470ef"
+    },
+    {
+      "number": 52,
       "id": "harman",
       "name": "Harman",
       "role": "logo",
@@ -378,7 +418,7 @@
       "contentHash": "fcf4f0018cee880bae989a132733923876e8060ce1c62754b2f764030d7c53c4"
     },
     {
-      "number": 48,
+      "number": 53,
       "id": "hashicorp",
       "name": "HashiCorp",
       "role": "logo",
@@ -386,7 +426,15 @@
       "contentHash": "5be053ac8875f85be1ab9242a80c5f989055df0db96f82883fc35f563c0f2392"
     },
     {
-      "number": 49,
+      "number": 54,
+      "id": "hisense",
+      "name": "Hisense",
+      "role": "logo",
+      "path": "assets/hisense/logo/e990e6111dac0655269e66aae4134bbc320495dc343cd5188fc4e0b56e9b6b82.png",
+      "contentHash": "e990e6111dac0655269e66aae4134bbc320495dc343cd5188fc4e0b56e9b6b82"
+    },
+    {
+      "number": 55,
       "id": "hitachi",
       "name": "Hitachi",
       "role": "logo",
@@ -394,7 +442,7 @@
       "contentHash": "6b68732647c9b06cb4153cc91049efc8356d7edf84287a71966ac053592dd14a"
     },
     {
-      "number": 50,
+      "number": 56,
       "id": "hpe",
       "name": "HPE",
       "role": "logo",
@@ -402,7 +450,7 @@
       "contentHash": "f8a2f54ff3aef844a37e1895c9d296fc471efe4ae42bb0a4bdeb03b488376fc5"
     },
     {
-      "number": 51,
+      "number": 57,
       "id": "iberdrola",
       "name": "Iberdrola",
       "role": "logo",
@@ -410,7 +458,7 @@
       "contentHash": "c201465b75dfab4be6fdd13695b3af8ad615faf5b66cf6709cd5013d42293803"
     },
     {
-      "number": 52,
+      "number": 58,
       "id": "intesa-sanpaolo",
       "name": "Intesa Sanpaolo",
       "role": "logo",
@@ -418,7 +466,15 @@
       "contentHash": "ea18101e1c758785b9896018f6e93f9204195d3fd390466e85bef8760ef7302b"
     },
     {
-      "number": 53,
+      "number": 59,
+      "id": "jollibee",
+      "name": "Jollibee",
+      "role": "logo",
+      "path": "assets/jollibee/logo/9a5830156e9e4c224031be99f45b5a41a93d222c601f6eb365f931c6b3b8ec0b.webp",
+      "contentHash": "9a5830156e9e4c224031be99f45b5a41a93d222c601f6eb365f931c6b3b8ec0b"
+    },
+    {
+      "number": 60,
       "id": "kddi",
       "name": "KDDI",
       "role": "logo",
@@ -426,7 +482,7 @@
       "contentHash": "d2b1abb73221883e0edcc0b3c51845272a45c6ecaaaab804b073b6954048a644"
     },
     {
-      "number": 54,
+      "number": 61,
       "id": "kingfisher",
       "name": "Kingfisher",
       "role": "logo",
@@ -434,7 +490,7 @@
       "contentHash": "d4189ab753a0f5e0bd8b995a1c9082e69f57c1b60c37c76b0ca2c3d4815e6176"
     },
     {
-      "number": 55,
+      "number": 62,
       "id": "kraft-heinz",
       "name": "Kraft Heinz",
       "role": "logo",
@@ -442,7 +498,7 @@
       "contentHash": "a91464ae0d0156fb3f380c56c88a045d932285327aba31865e9425f095392e5f"
     },
     {
-      "number": 56,
+      "number": 63,
       "id": "kroger",
       "name": "Kroger",
       "role": "logo",
@@ -450,7 +506,15 @@
       "contentHash": "c6c6b5e4108c137e4e5648431bcc8e5739a8e32beb5e997220a5840fe56360ee"
     },
     {
-      "number": 57,
+      "number": 64,
+      "id": "kuaishou",
+      "name": "Kuaishou",
+      "role": "logo",
+      "path": "assets/kuaishou/logo/934c8c4325171ae91f719b31178bca9502fbe3c6951c2c4a89ac76435d544a6b.png",
+      "contentHash": "934c8c4325171ae91f719b31178bca9502fbe3c6951c2c4a89ac76435d544a6b"
+    },
+    {
+      "number": 65,
       "id": "kubota",
       "name": "Kubota",
       "role": "logo",
@@ -458,7 +522,7 @@
       "contentHash": "11d8c0cec235a94857fbe4eef65721b09e978fce910a4912c7bff44eb542aed4"
     },
     {
-      "number": 58,
+      "number": 66,
       "id": "l3harris",
       "name": "L3Harris",
       "role": "logo",
@@ -466,7 +530,7 @@
       "contentHash": "58da3e7421b81e478ba579d82274c5c5ef58d8ec9241c8779731a214165d2af4"
     },
     {
-      "number": 59,
+      "number": 67,
       "id": "lawson",
       "name": "Lawson",
       "role": "logo",
@@ -474,7 +538,7 @@
       "contentHash": "053ee3b152dea6c3ead82e3b4f681275c9f695618183c3b93b310fab481a9cdb"
     },
     {
-      "number": 60,
+      "number": 68,
       "id": "linode",
       "name": "Linode",
       "role": "logo",
@@ -482,7 +546,7 @@
       "contentHash": "5c79d8a063c761e329e04b3e772ea565b75804d8b4da1a61cf04e463da1f5355"
     },
     {
-      "number": 61,
+      "number": 69,
       "id": "loewe",
       "name": "Loewe",
       "role": "logo",
@@ -490,7 +554,7 @@
       "contentHash": "f55f7883f61d68388a6bcb5aa7cbf793ac5c8fd831b2ef52818fe9cc80e2f7b2"
     },
     {
-      "number": 62,
+      "number": 70,
       "id": "lufthansa",
       "name": "Lufthansa",
       "role": "logo",
@@ -498,7 +562,7 @@
       "contentHash": "08d5ac5e7c619ef7931ca95af2831ce82fca11882dbb56267da1f9e01c464eda"
     },
     {
-      "number": 63,
+      "number": 71,
       "id": "lyft",
       "name": "Lyft",
       "role": "logo",
@@ -506,7 +570,7 @@
       "contentHash": "116673474d734a497f4792c6520e40a91de7f6c0a0927e5dcd83235f3f57aa48"
     },
     {
-      "number": 64,
+      "number": 72,
       "id": "mango",
       "name": "Mango",
       "role": "logo",
@@ -514,7 +578,15 @@
       "contentHash": "db87855f532a5a5982e1eb37b01dc7f1b73d456da08233968f2d2dc16326e62e"
     },
     {
-      "number": 65,
+      "number": 73,
+      "id": "marsh-mclennan",
+      "name": "Marsh",
+      "role": "logo",
+      "path": "assets/marsh-mclennan/logo/6d3719f9d00d2a2f17b640df0e87425d134b873709b36691f365eac64cf4ca76.svg",
+      "contentHash": "6d3719f9d00d2a2f17b640df0e87425d134b873709b36691f365eac64cf4ca76"
+    },
+    {
+      "number": 74,
       "id": "maybelline",
       "name": "Maybelline",
       "role": "logo",
@@ -522,7 +594,7 @@
       "contentHash": "73e3555a6fa36cc3670e77a21af892dc48998c9df3749a2971816f68277ffc3d"
     },
     {
-      "number": 66,
+      "number": 75,
       "id": "mckinsey-company",
       "name": "McKinsey & Company",
       "role": "logo",
@@ -530,7 +602,7 @@
       "contentHash": "adc56256915d475838fe590d579e88818e5a603cc3761ba5e1a131ae7ddffbb3"
     },
     {
-      "number": 67,
+      "number": 76,
       "id": "medium",
       "name": "Medium",
       "role": "logo",
@@ -538,7 +610,7 @@
       "contentHash": "06a4518c54a5c45ee86884e0e6adabc01b01197ff4c91c0a4d362931f4f407a1"
     },
     {
-      "number": 68,
+      "number": 77,
       "id": "michelin",
       "name": "Michelin",
       "role": "logo",
@@ -546,7 +618,7 @@
       "contentHash": "eaf42780bc21c4734d5a613e528776e5eab00adedbf89202f9d6aee81876b2df"
     },
     {
-      "number": 69,
+      "number": 78,
       "id": "micron",
       "name": "Micron",
       "role": "logo",
@@ -554,7 +626,7 @@
       "contentHash": "58efeb225ac55c7e0bf198e403f84815abbe49f4084178e1e199cb98c2eb59aa"
     },
     {
-      "number": 70,
+      "number": 79,
       "id": "mitsubishi-fuso",
       "name": "Mitsubishi Fuso",
       "role": "logo",
@@ -562,7 +634,15 @@
       "contentHash": "ed1d7b5aad9e581f2863f257c0ea77b9809f7c19e61ba3ea6c8e925eedc1a381"
     },
     {
-      "number": 71,
+      "number": 80,
+      "id": "mollie",
+      "name": "Mollie",
+      "role": "logo",
+      "path": "assets/mollie/logo/1fe0eb97bc883c1ad37bf301d7adac649d689d0470d1b7bcf69f185cffd0af7c.png",
+      "contentHash": "1fe0eb97bc883c1ad37bf301d7adac649d689d0470d1b7bcf69f185cffd0af7c"
+    },
+    {
+      "number": 81,
       "id": "moodys",
       "name": "Moody's",
       "role": "logo",
@@ -570,7 +650,7 @@
       "contentHash": "fcbfbece5da6fc1b1fc54936031a918ed6bed2cc033dfadaeface0ab1333e780"
     },
     {
-      "number": 72,
+      "number": 82,
       "id": "msc-group",
       "name": "MSC Group",
       "role": "icon",
@@ -578,7 +658,7 @@
       "contentHash": "895105353d72b0cd2dc017fd4fae2c2e442a4c3c84f0d939da6ec0a173adb60a"
     },
     {
-      "number": 73,
+      "number": 83,
       "id": "nasdaq",
       "name": "Nasdaq",
       "role": "logo",
@@ -586,7 +666,7 @@
       "contentHash": "b86d39326a2d2e258b93454c4f11ee11a47c24eb33b3c0e88995db29967f6cba"
     },
     {
-      "number": 74,
+      "number": 84,
       "id": "national-grid",
       "name": "National Grid",
       "role": "logo",
@@ -594,7 +674,15 @@
       "contentHash": "aeca9bda0b703e1e1ff1920cca9c67f25896e6d667d6bac35e308bd9e0ba9889"
     },
     {
-      "number": 75,
+      "number": 85,
+      "id": "natwest-group",
+      "name": "NatWest Group",
+      "role": "logo",
+      "path": "assets/natwest-group/logo/68f9e65ee37a2ade93eb26549a2c4b7fdd3e5386d5ec9abfea6c4ef1e22e3ff6.svg",
+      "contentHash": "68f9e65ee37a2ade93eb26549a2c4b7fdd3e5386d5ec9abfea6c4ef1e22e3ff6"
+    },
+    {
+      "number": 86,
       "id": "nescafe",
       "name": "Nescafé",
       "role": "logo",
@@ -602,7 +690,15 @@
       "contentHash": "6851fb7e09d0750c8a8663f8bbf8294989dd033ea30f16e98efc80533f9d8208"
     },
     {
-      "number": 76,
+      "number": 87,
+      "id": "newmont",
+      "name": "Newmont",
+      "role": "logo",
+      "path": "assets/newmont/logo/619857a65721d64d789290f810e03d3f7e4f24dc3b5fd89413e2e99e2398600e.png",
+      "contentHash": "619857a65721d64d789290f810e03d3f7e4f24dc3b5fd89413e2e99e2398600e"
+    },
+    {
+      "number": 88,
       "id": "nexon",
       "name": "Nexon",
       "role": "logo",
@@ -610,7 +706,7 @@
       "contentHash": "e29e6d8a44e77a45f207550eaaf1ef59f39f9676682d33b90f682c7d3335c6b8"
     },
     {
-      "number": 77,
+      "number": 89,
       "id": "nippon-steel",
       "name": "Nippon Steel",
       "role": "logo",
@@ -618,7 +714,7 @@
       "contentHash": "6affdac3a631f86ffd0992472fd9e7f0f468f0f77454fb15d5b3f49fa95375b6"
     },
     {
-      "number": 78,
+      "number": 90,
       "id": "nissan",
       "name": "Nissan",
       "role": "logo",
@@ -626,7 +722,15 @@
       "contentHash": "32aaf43cf757eb9f009328f9e832652f202ad01b2d66d168a9c0da3d0079afb2"
     },
     {
-      "number": 79,
+      "number": 91,
+      "id": "northrop-grumman",
+      "name": "Northrop Grumman",
+      "role": "logo",
+      "path": "assets/northrop-grumman/logo/d5fba9ab9c0d85be1bcd0f632b0e1f1fadb0a0ac4890b7594fd6b1674b639106.webp",
+      "contentHash": "d5fba9ab9c0d85be1bcd0f632b0e1f1fadb0a0ac4890b7594fd6b1674b639106"
+    },
+    {
+      "number": 92,
       "id": "oneplus",
       "name": "OnePlus",
       "role": "logo",
@@ -634,7 +738,7 @@
       "contentHash": "85a42d5d6a14dccdf8cf85f64d507a729fea4485239720b01589579eb273d806"
     },
     {
-      "number": 80,
+      "number": 93,
       "id": "orlen",
       "name": "ORLEN",
       "role": "logo",
@@ -642,7 +746,7 @@
       "contentHash": "467eb4cec9e954944d6506282e839a174ba36bbeef39775373776d08d2abe812"
     },
     {
-      "number": 81,
+      "number": 94,
       "id": "oxxo",
       "name": "OXXO",
       "role": "logo",
@@ -650,7 +754,7 @@
       "contentHash": "f03c5b9c30c234312ca6309799202f5fed22357a4fa0f1a6923141e7f13e712a"
     },
     {
-      "number": 82,
+      "number": 95,
       "id": "palantir",
       "name": "Palantir",
       "role": "logo",
@@ -658,7 +762,7 @@
       "contentHash": "6cb92a53619513e852029a0f405f65b27cd1443b2c37e1d94186d19ffe876e44"
     },
     {
-      "number": 83,
+      "number": 96,
       "id": "petrobras",
       "name": "Petrobras",
       "role": "logo",
@@ -666,7 +770,7 @@
       "contentHash": "89eeb478084d32e4c5d1d85caef2dc027fdc53c6cba95fbf8a6d360df39ed0d9"
     },
     {
-      "number": 84,
+      "number": 97,
       "id": "pokemon",
       "name": "Pokémon",
       "role": "logo",
@@ -674,7 +778,15 @@
       "contentHash": "9b356095a31f462dd8f0e123e2713158edf08749348c0c06c0641b59152b180f"
     },
     {
-      "number": 85,
+      "number": 98,
+      "id": "prime-video",
+      "name": "Prime Video",
+      "role": "logo",
+      "path": "assets/prime-video/logo/3a23bbb495d359596d90f6cfffae773cde66062dde7aa50979afc9619addd95d.png",
+      "contentHash": "3a23bbb495d359596d90f6cfffae773cde66062dde7aa50979afc9619addd95d"
+    },
+    {
+      "number": 99,
       "id": "proximus",
       "name": "Proximus",
       "role": "logo",
@@ -682,7 +794,7 @@
       "contentHash": "201ed7cc85e80fd5e5e64dedae6a73f62af3524eab32066a5e2067267de330d5"
     },
     {
-      "number": 86,
+      "number": 100,
       "id": "pwc",
       "name": "PwC",
       "role": "logo",
@@ -690,7 +802,7 @@
       "contentHash": "d8830e24ef8f185e6d2f19b71590c343547a673c8a16cb885df0953ef8d0ef31"
     },
     {
-      "number": 87,
+      "number": 101,
       "id": "qatar-airways",
       "name": "Qatar Airways",
       "role": "logo",
@@ -698,7 +810,7 @@
       "contentHash": "22ebea491ab3e26d5abd66092b077417223fef82e5abe979018d0eec5fd7ae7c"
     },
     {
-      "number": 88,
+      "number": 102,
       "id": "qualtrics",
       "name": "Qualtrics",
       "role": "logo",
@@ -706,7 +818,15 @@
       "contentHash": "c54e33d35f7d2acd9cff6b104c858441d81ed7101baa160ec04a55c425b168d4"
     },
     {
-      "number": 89,
+      "number": 103,
+      "id": "railway",
+      "name": "Railway",
+      "role": "icon",
+      "path": "assets/railway/icon/04feac814a9dd78b36de8711d685300fd5ad3bae9a81dd3c4743f7f66c6d9484.svg",
+      "contentHash": "04feac814a9dd78b36de8711d685300fd5ad3bae9a81dd3c4743f7f66c6d9484"
+    },
+    {
+      "number": 104,
       "id": "rapid7",
       "name": "Rapid7",
       "role": "logo",
@@ -714,7 +834,15 @@
       "contentHash": "b4ce9dd76cbf08c60661d88b6c8c904a26301dbd19bfc218f8891ec6803c0070"
     },
     {
-      "number": 90,
+      "number": 105,
+      "id": "rappi",
+      "name": "Rappi",
+      "role": "logo",
+      "path": "assets/rappi/logo/f37db8c168ddec384fc08aab8a1423d776685e817be9acc16b089cc59018c21d.svg",
+      "contentHash": "f37db8c168ddec384fc08aab8a1423d776685e817be9acc16b089cc59018c21d"
+    },
+    {
+      "number": 106,
       "id": "rbc",
       "name": "Royal Bank of Canada",
       "role": "logo",
@@ -722,7 +850,7 @@
       "contentHash": "eb6b74d7103fd360ff8406b13dcc79a4d1861bb46aee78577989f0cac378fa23"
     },
     {
-      "number": 91,
+      "number": 107,
       "id": "royal-caribbean",
       "name": "Royal Caribbean",
       "role": "logo",
@@ -730,7 +858,7 @@
       "contentHash": "57944c1bbc32e2b0082e6633a87ebf80b09241ebc469fd9f7d6d570e0954c0d5"
     },
     {
-      "number": 92,
+      "number": 108,
       "id": "saab",
       "name": "Saab",
       "role": "logo",
@@ -738,7 +866,7 @@
       "contentHash": "c611a8fec505d4a7596ce548cfc9295d412d5416b9113416ebf30fb091cb8c8f"
     },
     {
-      "number": 93,
+      "number": 109,
       "id": "saint-gobain",
       "name": "Saint-Gobain",
       "role": "logo",
@@ -746,7 +874,7 @@
       "contentHash": "ebc6d8c3acc341d8c2be8c1737c744290ae10aa47407dd6076a8541b4b4d71d5"
     },
     {
-      "number": 94,
+      "number": 110,
       "id": "saks-fifth-avenue",
       "name": "Saks Fifth Avenue",
       "role": "logo",
@@ -754,7 +882,7 @@
       "contentHash": "74838b401b209198be7cab90e0d7c8685aba6ee7eea580198ee94ed9c8f27179"
     },
     {
-      "number": 95,
+      "number": 111,
       "id": "schneider-electric",
       "name": "Schneider Electric",
       "role": "logo",
@@ -762,7 +890,7 @@
       "contentHash": "e773b1740e22fd269a7dde94ace37063143c74422b8f729b88099d617beb1409"
     },
     {
-      "number": 96,
+      "number": 112,
       "id": "seagate",
       "name": "Seagate",
       "role": "logo",
@@ -770,7 +898,7 @@
       "contentHash": "941c62bb8b60eddd8fa0cd14ee0a3c049c672a8a09561149e0487ea0428df6a7"
     },
     {
-      "number": 97,
+      "number": 113,
       "id": "singapore-airlines",
       "name": "Singapore Airlines",
       "role": "logo",
@@ -778,7 +906,7 @@
       "contentHash": "445a696fd9c74b07468c189eb38e660577a89edffebc30bea582f16f4b4465dc"
     },
     {
-      "number": 98,
+      "number": 114,
       "id": "sofitel",
       "name": "Sofitel",
       "role": "logo",
@@ -786,7 +914,7 @@
       "contentHash": "90c8624cf3a1a742457c85adb9739f82f2df5fb2543e71db8812d85ed9d66300"
     },
     {
-      "number": 99,
+      "number": 115,
       "id": "sophos",
       "name": "Sophos",
       "role": "logo",
@@ -794,7 +922,7 @@
       "contentHash": "3c893ce80faf088b5dd977f0942192f43a73ccb8dc8089e249c5c7457e9d86e7"
     },
     {
-      "number": 100,
+      "number": 116,
       "id": "stmicroelectronics",
       "name": "STMicroelectronics",
       "role": "logo",
@@ -802,7 +930,7 @@
       "contentHash": "9129becb362d925ebdaf3d3af05755fab1b2ed4dd25464c8021d06c2f01c7867"
     },
     {
-      "number": 101,
+      "number": 117,
       "id": "tanishq",
       "name": "Tanishq",
       "role": "logo",
@@ -810,7 +938,7 @@
       "contentHash": "9ad45bae6ebf5a01074f2684fc948e53c3e4acc7fbbf97b6e6528cb9fb9b26c0"
     },
     {
-      "number": 102,
+      "number": 118,
       "id": "tepco",
       "name": "TEPCO",
       "role": "logo",
@@ -818,7 +946,23 @@
       "contentHash": "e411dc69a779dc1c94fb55a16c425c647368141af8dadfdff7b1038ac01e3199"
     },
     {
-      "number": 103,
+      "number": 119,
+      "id": "textron",
+      "name": "Textron",
+      "role": "logo",
+      "path": "assets/textron/logo/697b598590ee83432b7f0460b8c27b0551220927957dbe6a2fe442b28fe24796.png",
+      "contentHash": "697b598590ee83432b7f0460b8c27b0551220927957dbe6a2fe442b28fe24796"
+    },
+    {
+      "number": 120,
+      "id": "thai-airways",
+      "name": "Thai Airways",
+      "role": "logo",
+      "path": "assets/thai-airways/logo/1e4af80fd5ce16502ebc1351b9beefbe14b695550a6279e66c4e6b0ba26e8b53.png",
+      "contentHash": "1e4af80fd5ce16502ebc1351b9beefbe14b695550a6279e66c4e6b0ba26e8b53"
+    },
+    {
+      "number": 121,
       "id": "the-new-york-times",
       "name": "The New York Times",
       "role": "icon",
@@ -826,7 +970,7 @@
       "contentHash": "94de5ae7e9bcf74727f45bb30ae37f553db4594012e2704336da5fbbf3357c3e"
     },
     {
-      "number": 104,
+      "number": 122,
       "id": "tokopedia",
       "name": "Tokopedia",
       "role": "logo",
@@ -834,7 +978,7 @@
       "contentHash": "8246b3e60b01a6412932069a1b4a0729be9437e247ae6bfe8418d05f379ad28c"
     },
     {
-      "number": 105,
+      "number": 123,
       "id": "traton",
       "name": "TRATON",
       "role": "logo",
@@ -842,7 +986,7 @@
       "contentHash": "42db13a644127446b2f21243ccbf3112c81f697444a73b18aeb514c543a79bbe"
     },
     {
-      "number": 106,
+      "number": 124,
       "id": "trend-micro",
       "name": "Trend Micro",
       "role": "logo",
@@ -850,7 +994,7 @@
       "contentHash": "2824e2e631589a20a1c2368b060aa0b8ae383b09ec1c54cc97d3127fe5a12231"
     },
     {
-      "number": 107,
+      "number": 125,
       "id": "umc",
       "name": "UMC",
       "role": "logo",
@@ -858,7 +1002,7 @@
       "contentHash": "4783431c4bb639ba36eab30978fa0b0018acfdd5d1774279b3de55b21bf37c1b"
     },
     {
-      "number": 108,
+      "number": 126,
       "id": "unity",
       "name": "Unity",
       "role": "logo",
@@ -866,7 +1010,15 @@
       "contentHash": "1e8e23ab9614065e2a0bdf7f0ede57429a8ac331c15c38b9ae72128c24a7c2ce"
     },
     {
-      "number": 109,
+      "number": 127,
+      "id": "vultr",
+      "name": "Vultr",
+      "role": "icon",
+      "path": "assets/vultr/icon/56a74651e8d84dfef8766a496c09fe20aaf1ce5f790732f3651460d4454a9f66.png",
+      "contentHash": "56a74651e8d84dfef8766a496c09fe20aaf1ce5f790732f3651460d4454a9f66"
+    },
+    {
+      "number": 128,
       "id": "waitrose",
       "name": "Waitrose",
       "role": "logo",
@@ -874,7 +1026,7 @@
       "contentHash": "776d2e2bec0a4c74acc3af8d56d0ad59aa5eb36a1bbe90cc21d47714b63b6327"
     },
     {
-      "number": 110,
+      "number": 129,
       "id": "warner-bros",
       "name": "Warner Bros.",
       "role": "logo",
@@ -882,7 +1034,7 @@
       "contentHash": "a2397d9ac66bb3a9d80d3f1a8828cedeae6cbe8bd33bf107987f8367464604b8"
     },
     {
-      "number": 111,
+      "number": 130,
       "id": "wechat",
       "name": "WeChat",
       "role": "icon",
@@ -890,7 +1042,7 @@
       "contentHash": "c1e78351ce133b28e919a69a29725f3e1f3a35a2ae3b70e307704ae2a9a2d006"
     },
     {
-      "number": 112,
+      "number": 131,
       "id": "wix",
       "name": "Wix",
       "role": "logo",
@@ -898,7 +1050,15 @@
       "contentHash": "e9a4e09c0a4a4383c098957cc9d9262aa2b875ce93ea6dc6ac3af213815eb58b"
     },
     {
-      "number": 113,
+      "number": 132,
+      "id": "woodside-energy",
+      "name": "Woodside Energy",
+      "role": "logo",
+      "path": "assets/woodside-energy/logo/607681790c50bca0ae4946550655e5a07b7b707842d14197b81abaf34930c83b.svg",
+      "contentHash": "607681790c50bca0ae4946550655e5a07b7b707842d14197b81abaf34930c83b"
+    },
+    {
+      "number": 133,
       "id": "yum-brands",
       "name": "Yum! Brands",
       "role": "logo",
@@ -906,7 +1066,7 @@
       "contentHash": "95854fa767aa67eaf6c76725b3dc709120988a070c6a0644833c9519c1ccb287"
     },
     {
-      "number": 114,
+      "number": 134,
       "id": "zillow",
       "name": "Zillow",
       "role": "logo",

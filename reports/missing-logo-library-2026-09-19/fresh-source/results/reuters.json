@@ -1,0 +1,106 @@
+{
+  "brandId": "reuters",
+  "name": "Reuters",
+  "domain": "reuters.com",
+  "attemptedAt": "2026-09-19T09:21:43.330Z",
+  "attemptedUrls": [
+    "https://reuters.com/",
+    "https://www.reuters.com/",
+    "http://reuters.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "root-favicon",
+      "url": "https://www.reuters.com/favicon.ico",
+      "sourcePage": "https://reuters.com/",
+      "format": "ico",
+      "width": 32,
+      "height": 33,
+      "evidence": {},
+      "provenance": {
+        "retrieved_asset_url": "https://www.reuters.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:21:47.159Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/reuters/icon-821bc756e59ef5044ee35b8af0e8488f18016f86e9dcb3501a5841a7f8552120.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://reuters.com/",
+        "stage": "primary",
+        "ok": false,
+        "status": 401,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "https://www.reuters.com/",
+        "stage": "alternate_https_host",
+        "ok": false,
+        "status": 401,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "http://reuters.com/",
+        "stage": "http_compatibility",
+        "ok": false,
+        "status": 401,
+        "failureKind": "blocked_interstitial"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 2,
+      "declaredTransferBytes": 771,
+      "transferBytes": 28916,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 401."
+      ],
+      "httpStatus": 401,
+      "durationMs": 7500,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://reuters.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 771,
+          "transferBytes": 28916,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 401."
+          ],
+          "httpStatus": 401,
+          "durationMs": 7500,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

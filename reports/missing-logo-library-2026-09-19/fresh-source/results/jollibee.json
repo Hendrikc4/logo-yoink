@@ -1,0 +1,188 @@
+{
+  "brandId": "jollibee",
+  "name": "Jollibee",
+  "domain": "jollibee.com.ph",
+  "attemptedAt": "2026-09-19T09:27:01.959Z",
+  "attemptedUrls": [
+    "https://jollibee.com.ph/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://www.jollibee.com.ph/sites/apollocmsmkt/files/styles/webp_optimized/public/2025-07/footer-logo.png.webp?itok=VdVK21QI",
+      "sourcePage": "https://www.jollibee.com.ph/home",
+      "format": "webp",
+      "width": 164,
+      "height": 49,
+      "evidence": {
+        "element": "img",
+        "dom_region": "footer",
+        "home_linked": true,
+        "alt": "Jollibee",
+        "aria_label": "",
+        "class_tokens": [
+          "image-style-webp-optimized"
+        ],
+        "semantic_text": "image-style-webp-optimized Jollibee jollibee, opening in a new tab. jollibee, opening in a new tab. jollibee, opening in a new tab. jollibee, opening in a new tab. image-style-webp-optimized Jollibee image-style-webp-optimized field field--name-field-image field--type-image field--label-hidden field__item jollibee, opening in a new tab. paragraph paragraph--type--icon-images-with-links paragraph--view-mode--default field__item field field--name-field-icon-image-with-link field--type-entity-reference-revisions field--label-hidden field__items content block-jfc-global-theme-footerlogo block-content-icon_images_with_link block block-block-content block-block-contentd88396cf-8d82-4c0d-a1e5-ce23ba074a4b footer-col footer-logo content-row footer-first row region region-footer-first site-footer__top clearfix container site-footer page page-wrapper dialog-off-canvas-main-canvas layout-no-sidebars page-node-8591 path-frontpage node--type-static-page",
+        "local_semantic": "image-style-webp-optimized Jollibee jollibee, opening in a new tab. jollibee, opening in a new tab. jollibee, opening in a new tab. jollibee, opening in a new tab.",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 68,
+        "inherited_color": null,
+        "company_name": "Jollibee",
+        "duplicate_sources": [
+          "dom-img"
+        ],
+        "duplicate_urls": [
+          "https://www.jollibee.com.ph/sites/apollocmsmkt/files/styles/webp_optimized/public/2025-07/footer-logo.png.webp?itok=VdVK21QI"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.jollibee.com.ph/sites/apollocmsmkt/files/styles/webp_optimized/public/2025-07/footer-logo.png.webp?itok=VdVK21QI",
+        "retrieved_at": "2026-09-19T09:27:03.224Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/jollibee/logo-9a5830156e9e4c224031be99f45b5a41a93d222c601f6eb365f931c6b3b8ec0b.webp"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.jollibee.com.ph/themes/custom/jollibee_theme/favicon.ico",
+      "sourcePage": "https://www.jollibee.com.ph/home",
+      "format": "ico",
+      "width": 48,
+      "height": 48,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Jollibee",
+        "duplicate_sources": [
+          "html-icon",
+          "root-favicon"
+        ],
+        "duplicate_urls": [
+          "https://www.jollibee.com.ph/themes/custom/jollibee_theme/favicon.ico",
+          "https://www.jollibee.com.ph/favicon.ico"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.jollibee.com.ph/themes/custom/jollibee_theme/favicon.ico",
+        "retrieved_at": "2026-09-19T09:27:03.216Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/jollibee/icon-0df71e13bc94080fe94c5cdbb6baf254e58eccc345c6e5ac78731956f8417bc1.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://jollibee.com.ph/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.jollibee.com.ph/home"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.jollibee.com.ph/news/jollibee-brand-of-the-year-2026",
+      "requests": 140,
+      "declaredTransferBytes": 6538419,
+      "transferBytes": 4305522,
+      "blockedRequests": 10,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 3,
+        "invalid_external": 0,
+        "duplicates": 1,
+        "retained": 2
+      },
+      "durationMs": 6423,
+      "candidates": 2,
+      "attempts": [
+        {
+          "url": "https://www.jollibee.com.ph/home",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.jollibee.com.ph/home",
+          "requests": 78,
+          "declaredTransferBytes": 2449286,
+          "transferBytes": 2757003,
+          "blockedRequests": 5,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 9,
+            "invalid_external": 0,
+            "duplicates": 4,
+            "retained": 5
+          },
+          "durationMs": 3275,
+          "candidates": 5
+        },
+        {
+          "url": "https://www.jollibee.com.ph/news/jollibee-brand-of-the-year-2026",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.jollibee.com.ph/news/jollibee-brand-of-the-year-2026",
+          "requests": 62,
+          "declaredTransferBytes": 4089133,
+          "transferBytes": 4305522,
+          "blockedRequests": 5,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 3,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 2
+          },
+          "durationMs": 3148,
+          "candidates": 2
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

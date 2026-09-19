@@ -1,0 +1,97 @@
+{
+  "brandId": "garnier",
+  "name": "Garnier",
+  "domain": "garnier.com",
+  "attemptedAt": "2026-09-19T09:26:20.305Z",
+  "attemptedUrls": [
+    "https://garnier.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://www.garnier.com.au/-/media/project/loreal/brand-sites/garnier/apac/au/brand-logos/new-header-logos/fructis-hair-food-resized.png?rev=f9867f05a7454faf8fb06b65a7b0b031",
+      "sourcePage": "https://www.garnier.com.au/",
+      "format": "png",
+      "width": 175,
+      "height": 58,
+      "evidence": {
+        "element": "img",
+        "dom_region": "nav",
+        "home_linked": false,
+        "alt": "Nutrisse Logo",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "Nutrisse Logo Nutrisse Logo megamenu__item__link--images megamenu__item__list-images mega-menu__columns mega-menu__level1--subcolumn mega-menu__level1--column2 mega-menu__level1--column mega-menu__level1--glcolumn  row container panel-title-list level__two--new new_header_megamenublock nav-sidebar-wrapper collapse navbar-collapse header__navigation Menu principal navigation menu_item_container site-header__wrapper navbar navbar-default nav-center navbar-fixed-top new-main__header new-header banner header main clearfix main-container wrapper default-device wireframe-images bodyclass gotham-fontsgotham-fonts id no-js",
+        "local_semantic": "Nutrisse Logo",
+        "anchor_text": "",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 35,
+        "inherited_color": null,
+        "company_name": "Garnier"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.garnier.com.au/-/media/project/loreal/brand-sites/garnier/apac/au/brand-logos/new-header-logos/fructis-hair-food-resized.png?rev=f9867f05a7454faf8fb06b65a7b0b031",
+        "retrieved_at": "2026-09-19T09:26:23.654Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "light",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/garnier/logo-d4e3d5e1ff3cf5e1861176bb3476b6532d5a60a4ee7ee9370eff79679ce0781a.png"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.garnier.com.au/-/media/project/loreal/brand-sites/garnier/apac/au/left-over-from-launch/ico/newgarnierlogoupdate_favicon_32x32.png?rev=-1",
+      "sourcePage": "https://www.garnier.com.au/",
+      "format": "png",
+      "width": 32,
+      "height": 32,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " id no-js",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Garnier"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.garnier.com.au/-/media/project/loreal/brand-sites/garnier/apac/au/left-over-from-launch/ico/newgarnierlogoupdate_favicon_32x32.png?rev=-1",
+        "retrieved_at": "2026-09-19T09:26:23.785Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/garnier/icon-810cfa0e8e93bbad6273c5b025fd36c4c76404468506613c3a369baa8dc14c9e.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://garnier.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.garnier.com.au/"
+      }
+    ],
+    "browser": null,
+    "deepWide": null,
+    "network": null
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "brandId": "ibis",
+  "name": "ibis",
+  "domain": "ibis.accor.com",
+  "attemptedAt": "2026-09-19T09:26:35.119Z",
+  "attemptedUrls": [
+    "https://ibis.accor.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://ibis.accor.com/content/dam/brands/ibh/global-marketing/brand-identity/logos/favicon.svg",
+      "sourcePage": "https://ibis.accor.com/select-country.html",
+      "format": "svg",
+      "width": 32,
+      "height": 32,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "ibis"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://ibis.accor.com/content/dam/brands/ibh/global-marketing/brand-identity/logos/favicon.svg",
+        "retrieved_at": "2026-09-19T09:26:37.340Z",
+        "http_status": 200,
+        "svg_safety_validated": true
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/ibis/icon-cef5c5b2c5b4a55d8321b76edb5cade33108195d5a555897e9a9d015abb3541c.svg"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://ibis.accor.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://ibis.accor.com/select-country.html"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://ibis.accor.com/select-country.html",
+      "requests": 52,
+      "declaredTransferBytes": 1390026,
+      "transferBytes": 2169316,
+      "blockedRequests": 1,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 2,
+        "invalid_external": 0,
+        "duplicates": 1,
+        "retained": 1
+      },
+      "durationMs": 3254,
+      "candidates": 1,
+      "attempts": [
+        {
+          "url": "https://ibis.accor.com/select-country.html",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://ibis.accor.com/select-country.html",
+          "requests": 52,
+          "declaredTransferBytes": 1390026,
+          "transferBytes": 2169316,
+          "blockedRequests": 1,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 3254,
+          "candidates": 1
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

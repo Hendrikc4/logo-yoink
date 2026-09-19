@@ -1,0 +1,11 @@
+{
+  "brandId": "kuaishou",
+  "name": "Kuaishou",
+  "domain": "kuaishou.com",
+  "attemptedAt": "2026-09-19T09:27:17.887Z",
+  "attemptedUrls": [
+    "https://kuaishou.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://kuaishou.com/: timeout | https://www.kuaishou.com/: timeout"
+}

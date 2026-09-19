@@ -1,0 +1,115 @@
+{
+  "brandId": "aldi",
+  "name": "Aldi",
+  "domain": "aldi.com",
+  "attemptedAt": "2026-09-19T09:21:09.407Z",
+  "attemptedUrls": [
+    "https://aldi.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "dom-img",
+      "url": "https://www.aldi.com/images/aldi_sued_logo.png",
+      "sourcePage": "https://www.aldi.com/",
+      "format": "png",
+      "width": 80,
+      "height": 96,
+      "evidence": {
+        "element": "img",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "ALDI South Logo",
+        "aria_label": "",
+        "class_tokens": [
+          "header_logo"
+        ],
+        "semantic_text": "header_logo ALDI South Logo header_logo ALDI South Logo header_logo header container-785",
+        "local_semantic": "header_logo ALDI South Logo",
+        "anchor_text": "",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 1,
+        "inherited_color": null,
+        "company_name": "Aldi"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.aldi.com/images/aldi_sued_logo.png",
+        "retrieved_at": "2026-09-19T09:21:19.272Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/aldi/icon-3377d49465b1e2b1d8d4cf8059e076a489c874725c41556e3a2ed0f9f86a0726.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://aldi.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.aldi.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.aldi.com/",
+      "requests": 48,
+      "declaredTransferBytes": 105318,
+      "transferBytes": 118674,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 4,
+        "invalid_external": 0,
+        "duplicates": 2,
+        "retained": 2
+      },
+      "durationMs": 4287,
+      "candidates": 2,
+      "attempts": [
+        {
+          "url": "https://www.aldi.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.aldi.com/",
+          "requests": 48,
+          "declaredTransferBytes": 105318,
+          "transferBytes": 118674,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 4,
+            "invalid_external": 0,
+            "duplicates": 2,
+            "retained": 2
+          },
+          "durationMs": 4287,
+          "candidates": 2
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

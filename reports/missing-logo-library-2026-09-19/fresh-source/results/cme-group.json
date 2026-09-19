@@ -1,0 +1,11 @@
+{
+  "brandId": "cme-group",
+  "name": "CME Group",
+  "domain": "cmegroup.com",
+  "attemptedAt": "2026-09-19T09:23:30.040Z",
+  "attemptedUrls": [
+    "https://cmegroup.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://cmegroup.com/: timeout | https://www.cmegroup.com/: timeout"
+}

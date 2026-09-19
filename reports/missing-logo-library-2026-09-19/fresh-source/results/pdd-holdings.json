@@ -1,0 +1,81 @@
+{
+  "brandId": "pdd-holdings",
+  "name": "PDD Holdings",
+  "domain": "pddholdings.com",
+  "attemptedAt": "2026-09-19T09:24:56.449Z",
+  "attemptedUrls": [
+    "https://pddholdings.com/"
+  ],
+  "outcome": "no_candidate_recovered",
+  "assets": {
+    "logo": null,
+    "icon": null
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://pddholdings.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://pddholdings.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://pddholdings.com/",
+      "requests": 11,
+      "declaredTransferBytes": 167742,
+      "transferBytes": 261892,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 0,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 0
+      },
+      "durationMs": 4640,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://pddholdings.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://pddholdings.com/",
+          "requests": 11,
+          "declaredTransferBytes": 167742,
+          "transferBytes": 261892,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 0,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 0
+          },
+          "durationMs": 4640,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

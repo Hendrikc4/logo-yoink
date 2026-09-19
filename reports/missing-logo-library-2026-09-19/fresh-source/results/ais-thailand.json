@@ -1,0 +1,100 @@
+{
+  "brandId": "ais-thailand",
+  "name": "AIS",
+  "domain": "ais.th",
+  "attemptedAt": "2026-09-19T09:24:42.836Z",
+  "attemptedUrls": [
+    "https://ais.th/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "root-favicon",
+      "url": "https://www.ais.th/content/dam/ais/favicon.ico",
+      "sourcePage": "https://www.ais.th/cover-page/Iphone-18",
+      "format": "ico",
+      "width": 48,
+      "height": 48,
+      "evidence": {},
+      "provenance": {
+        "retrieved_asset_url": "https://www.ais.th/content/dam/ais/favicon.ico",
+        "retrieved_at": "2026-09-19T09:24:49.557Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/ais-thailand/icon-273b63c7c7f7ef779591d6bfe204ed8280b6f117ef2e14d406aabaec28766d87.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://ais.th/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.ais.th/cover-page/Iphone-18"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.ais.th/cover-page/Iphone-18",
+      "requests": 222,
+      "declaredTransferBytes": 3978559,
+      "transferBytes": 4470853,
+      "blockedRequests": 140,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 0,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 0
+      },
+      "durationMs": 4967,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.ais.th/cover-page/Iphone-18",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.ais.th/cover-page/Iphone-18",
+          "requests": 222,
+          "declaredTransferBytes": 3978559,
+          "transferBytes": 4470853,
+          "blockedRequests": 140,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 0,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 0
+          },
+          "durationMs": 4967,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

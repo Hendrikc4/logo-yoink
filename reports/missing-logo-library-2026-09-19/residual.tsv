@@ -1,0 +1,57 @@
+dell	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+gopro	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+costco	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+carrefour	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+best-buy	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+aldi	no_defensible_candidate	Fresh official-site extraction tried https://aldi.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+lululemon	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+the-north-face	no_defensible_candidate	Fresh official-site extraction tried https://thenorthface.com/, https://www.thenorthface.com/, http://thenorthface.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+marriott	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+united-airlines	no_defensible_candidate	Fresh alternate official-page attempt failed after trying https://www.united.com/en/us/newsroom: Could not reach the website. https://www.united.com/en/us/newsroom: timeout | https://united.com/: timeout
+abb	no_defensible_candidate	Fresh alternate official-page attempt failed after trying https://www.abb.com/global/en/company/media: Could not reach the website. https://www.abb.com/global/en/company/media: timeout | https://abb.com/: timeout
+bbc	no_defensible_candidate	Fresh official-site extraction tried https://bbc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+reuters	no_defensible_candidate	Fresh official-site extraction tried https://reuters.com/, https://www.reuters.com/, http://reuters.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+alibaba-group	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+verizon	no_defensible_candidate	Fresh official-site extraction tried https://verizon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+shein	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+etihad-airways	no_defensible_candidate	Fresh alternate official-page attempt failed after trying https://www.etihad.com/en/news: Could not reach the website. https://www.etihad.com/en/news: timeout | https://etihad.com/: timeout
+america-movil	no_defensible_candidate	Fresh official-site extraction tried https://americamovil.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+us-bancorp	identity_mismatch	Identity mismatch: the candidate is the U.S. Bank subsidiary identity, not the U.S. Bancorp holding-company identity.
+eaton	permission_restricted	Eaton’s official media-resources page requires permission for logo use and directs requests to its media team; no asset was approved.
+p-g-e-corporation	no_defensible_candidate	Fresh official-site extraction tried https://pgecorp.com/, https://www.pgecorp.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+volvo-group	no_defensible_candidate	Fresh official-site extraction tried https://volvogroup.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+e-on	no_defensible_candidate	Fresh official-site extraction tried https://eon.com/, https://www.eon.com/, http://eon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+china-unicom	no_defensible_candidate	Fresh official-site extraction tried https://chinaunicom.com.hk/, https://www.chinaunicom.com.hk/ and returned no eligible asset.
+lg-uplus	no_defensible_candidate	Fresh alternate official-page extraction tried https://www.lguplus.com/about/en, https://www.lguplus.com/about/en and recovered candidate files, but none passed final identity, role, format, and legibility review.
+sinopec	no_defensible_candidate	Fresh alternate official-page extraction tried http://www.sinopecgroup.com/group/en/, http://www.sinopecgroup.com/group/en/ and returned no eligible asset.
+petrochina	no_defensible_candidate	Fresh alternate official-page attempt failed after trying https://www.petrochina.com.cn/ptr/: Could not reach the website. https://www.petrochina.com.cn/ptr/: HTTP 412 | https://petrochina.com.cn/: getaddrinfo ENOTFOUND petrochina.com.cn | http://petrochina.com.cn/: dns-host-known-unreachable
+ais-thailand	no_defensible_candidate	Fresh official-site extraction tried https://ais.th/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+novo-nordisk	no_defensible_candidate	Fresh official-site extraction tried https://novonordisk.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+pdd-holdings	no_defensible_candidate	Fresh official-site extraction tried https://pddholdings.com/ and returned no eligible asset.
+doritos	no_defensible_candidate	Fresh official-site extraction tried https://doritos.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+namshi	no_defensible_candidate	Fresh alternate official-page attempt failed after trying https://www.namshi.com/uae-en/: Could not reach the website. https://www.namshi.com/uae-en/: timeout | https://namshi.com/: timeout
+blinkit	no_defensible_candidate	Fresh official-site extraction tried https://blinkit.com/, https://www.blinkit.com/, http://blinkit.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+ant-group	no_defensible_candidate	Fresh official-site extraction tried https://antgroup.com/ and returned no eligible asset.
+malaysia-aviation-group	no_defensible_candidate	Fresh official-site extraction tried https://malaysiaaviationgroup.com.my/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+garmin	no_defensible_candidate	Fresh official-site extraction tried https://garmin.com/, https://www.garmin.com/, http://garmin.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+transformers	no_defensible_candidate	Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/transformers, https://shop.hasbro.com/en-us/brands/transformers and recovered candidate files, but none passed final identity, role, format, and legibility review.
+monopoly	no_defensible_candidate	Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/monopoly, https://shop.hasbro.com/en-us/brands/monopoly and recovered candidate files, but none passed final identity, role, format, and legibility review.
+dior	no_defensible_candidate	Fresh official-site extraction tried https://dior.com/, https://www.dior.com/, http://dior.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+garnier	no_defensible_candidate	Fresh official-site extraction tried https://garnier.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+facebook	no_defensible_candidate	Fresh official-site extraction tried https://facebook.com/ and returned no eligible asset.
+tiktok-shop	no_defensible_candidate	Fresh official-site extraction tried https://shop.tiktok.com/ and returned no eligible asset.
+ibis	no_defensible_candidate	Fresh official-site extraction tried https://ibis.accor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+garena	no_defensible_candidate	Fresh official-site extraction tried https://garena.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+lancome	no_defensible_candidate	Fresh official-site extraction tried https://lancome.com/, https://www.lancome.com/, http://lancome.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+ola	currentness_mismatch	Currentness mismatch: the candidate glyph differs from the current official header identity.
+star-wars	no_defensible_candidate	Fresh official-site extraction tried https://starwars.com/, https://www.starwars.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+ralph-lauren	no_defensible_candidate	Fresh alternate official-page extraction tried https://corporate.ralphlauren.com/, https://corporate.ralphlauren.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+nerf	no_defensible_candidate	Fresh official-site extraction tried https://nerf.com/, https://www.nerf.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+royal-caribbean-group	no_defensible_candidate	Fresh official-site extraction tried https://rclinvestor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+tata-cliq	no_defensible_candidate	Fresh official-site extraction tried https://tatacliq.com/, https://www.tatacliq.com/, http://tatacliq.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+digitalocean	permission_restricted	An explicit first-party or project-recorded logo-use restriction remains; no distributable asset was approved.
+tsmc	no_defensible_candidate	Fresh official-site extraction tried https://tsmc.com/, https://www.tsmc.com/, http://tsmc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+sk-hynix	no_defensible_candidate	Fresh official-site extraction tried https://skhynix.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+teradata	no_defensible_candidate	Fresh official-site extraction tried https://teradata.com/, https://www.teradata.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+skyscanner	no_defensible_candidate	Fresh official-site extraction tried https://skyscanner.net/ and recovered candidate files, but none passed final identity, role, format, and legibility review.
+pvh	stale_identity_and_format_failure	The only recovered candidate is the retired Phillips-Van Heusen identity and also failed safe format validation.

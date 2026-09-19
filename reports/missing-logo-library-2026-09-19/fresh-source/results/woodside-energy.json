@@ -1,0 +1,175 @@
+{
+  "brandId": "woodside-energy",
+  "name": "Woodside Energy",
+  "domain": "woodside.com",
+  "attemptedAt": "2026-09-19T09:24:43.401Z",
+  "attemptedUrls": [
+    "https://woodside.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://www.woodside.com/assets/static/images/svg/logo-white-horizontal.svg",
+      "sourcePage": "https://www.woodside.com/",
+      "format": "svg",
+      "width": 352.81,
+      "height": 111.93,
+      "evidence": {
+        "element": "img",
+        "dom_region": "footer",
+        "home_linked": true,
+        "alt": "Woodside logo",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "Woodside logo Woodside logo Woodside logo Woodside logo Woodside logo footer-bottom__nav u-flex-container u-flex-center u-flex-container u-flex-space-between u-flex-center u-desktop-block o-container footer-bottom site-footer footer site-wrap  template-homepage",
+        "local_semantic": "Woodside logo Woodside logo Woodside logo",
+        "anchor_text": "",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 36,
+        "inherited_color": null,
+        "company_name": "Woodside Energy",
+        "duplicate_sources": [
+          "dom-img"
+        ],
+        "duplicate_urls": [
+          "https://www.woodside.com/assets/static/images/svg/logo-white-horizontal.svg"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.woodside.com/assets/static/images/svg/logo-white-horizontal.svg",
+        "retrieved_at": "2026-09-19T09:24:44.744Z",
+        "http_status": 200,
+        "svg_safety_validated": true
+      },
+      "variant": {
+        "theme": "dark",
+        "color": "white",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/woodside-energy/logo-f85d78ab2f3100b599bcda9d8621d16d4139a5661c0c4e70c57f46e9447a590c.svg"
+    },
+    "icon": {
+      "source": "dom-img",
+      "url": "https://www.woodside.com/assets/static/images/svg/logo-colour-vertical.svg",
+      "sourcePage": "https://www.woodside.com/",
+      "format": "svg",
+      "width": 215.43,
+      "height": 173.07,
+      "evidence": {
+        "element": "img",
+        "dom_region": "header",
+        "home_linked": true,
+        "alt": "Woodside",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "Woodside Woodside header__logo u-flex-container u-flex-center o-container site-header header header site-wrap  template-homepage",
+        "local_semantic": "Woodside",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 5,
+        "inherited_color": null,
+        "company_name": "Woodside Energy",
+        "duplicate_sources": [
+          "dom-img"
+        ],
+        "duplicate_urls": [
+          "https://www.woodside.com/assets/static/images/svg/logo-colour-vertical.svg"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.woodside.com/assets/static/images/svg/logo-colour-vertical.svg",
+        "retrieved_at": "2026-09-19T09:24:44.765Z",
+        "http_status": 200,
+        "svg_safety_validated": true
+      },
+      "variant": {
+        "theme": "light",
+        "color": "color",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/woodside-energy/icon-607681790c50bca0ae4946550655e5a07b7b707842d14197b81abaf34930c83b.svg"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://woodside.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.woodside.com/"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 4,
+      "declaredTransferBytes": 0,
+      "transferBytes": 16861,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403.",
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 993,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.woodside.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 0,
+          "transferBytes": 16792,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 499,
+          "candidates": 0
+        },
+        {
+          "url": "https://www.woodside.com/media-centre/announcements",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 0,
+          "transferBytes": 16861,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 494,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

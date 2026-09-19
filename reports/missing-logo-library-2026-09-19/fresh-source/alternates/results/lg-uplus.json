@@ -1,0 +1,112 @@
+{
+  "brandId": "lg-uplus",
+  "name": "LG Uplus",
+  "domain": "lguplus.com",
+  "attemptedAt": "2026-09-19T09:32:39.635Z",
+  "attemptedUrls": [
+    "https://www.lguplus.com/about/en",
+    "https://www.lguplus.com/about/en"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.lguplus.com/static/pc-static/favicon_16_lgu.ico",
+      "sourcePage": "https://www.lguplus.com/about/en",
+      "format": "ico",
+      "width": 16,
+      "height": 16,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " __variable_bb6ec3",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "LG Uplus",
+        "duplicate_sources": [
+          "html-icon",
+          "root-favicon"
+        ],
+        "duplicate_urls": [
+          "https://www.lguplus.com/static/pc-static/favicon_16_lgu.ico",
+          "https://www.lguplus.com/favicon.ico"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.lguplus.com/static/pc-static/favicon_16_lgu.ico",
+        "retrieved_at": "2026-09-19T09:32:41.009Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/lg-uplus/alternate-icon-d808614cd013e86cdb4d9811c1d1e02dd39cb34265e5778709005ea97f36780f.ico"
+    }
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "https://www.lguplus.com/about/en",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.lguplus.com/about/en"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 2,
+      "declaredTransferBytes": 0,
+      "transferBytes": 13350,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 492,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.lguplus.com/about/en",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 0,
+          "transferBytes": 13350,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 492,
+          "candidates": 0
+        }
+      ]
+    },
+    "network": null
+  }
+}

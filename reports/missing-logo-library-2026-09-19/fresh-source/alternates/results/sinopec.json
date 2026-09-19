@@ -1,0 +1,100 @@
+{
+  "brandId": "sinopec",
+  "name": "Sinopec",
+  "domain": "sinopec.com",
+  "attemptedAt": "2026-09-19T09:32:39.636Z",
+  "attemptedUrls": [
+    "http://www.sinopecgroup.com/group/en/",
+    "http://www.sinopecgroup.com/group/en/"
+  ],
+  "outcome": "no_candidate_recovered",
+  "assets": {
+    "logo": null,
+    "icon": null
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "http://www.sinopecgroup.com/group/en/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "http://www.sinopecgroup.com/group/en/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "http://www.sinopecgroup.com/group/en/000/000/041/41542.shtml",
+      "requests": 148,
+      "declaredTransferBytes": 2758026,
+      "transferBytes": 705751,
+      "blockedRequests": 3,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Rendered-browser discovery exceeded 11830.482707999996ms."
+      ],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 2,
+        "invalid_external": 0,
+        "duplicates": 1,
+        "retained": 1
+      },
+      "durationMs": 19218,
+      "candidates": 1,
+      "attempts": [
+        {
+          "url": "http://www.sinopecgroup.com/group/en/",
+          "status": "timeout",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 106,
+          "declaredTransferBytes": 1735364,
+          "transferBytes": 1779602,
+          "blockedRequests": 3,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Rendered-browser discovery exceeded 11830.482707999996ms."
+          ],
+          "durationMs": 12001,
+          "candidates": 0
+        },
+        {
+          "url": "http://www.sinopecgroup.com/group/en/000/000/041/41542.shtml",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "http://www.sinopecgroup.com/group/en/000/000/041/41542.shtml",
+          "requests": 42,
+          "declaredTransferBytes": 1022662,
+          "transferBytes": 705751,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 7217,
+          "candidates": 1
+        }
+      ]
+    },
+    "network": null
+  }
+}

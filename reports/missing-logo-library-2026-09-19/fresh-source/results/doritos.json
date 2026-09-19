@@ -1,0 +1,115 @@
+{
+  "brandId": "doritos",
+  "name": "Doritos",
+  "domain": "doritos.com",
+  "attemptedAt": "2026-09-19T09:25:05.286Z",
+  "attemptedUrls": [
+    "https://doritos.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "duckduckgo-favicon",
+      "url": "https://icons.duckduckgo.com/ip3/doritos.com.ico",
+      "sourcePage": null,
+      "format": "png",
+      "width": 32,
+      "height": 32,
+      "evidence": {
+        "element": "cached-favicon",
+        "provider": "duckduckgo"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/doritos.com.ico",
+        "retrieved_at": "2026-09-19T09:25:09.149Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/doritos/icon-13266efac8ed7d08a572510b54d19613068dc9e04ba56bf848c662f85256fd75.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://doritos.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.doritos.com/"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 2,
+      "declaredTransferBytes": 1527,
+      "transferBytes": 7845,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403.",
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 878,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.doritos.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 1,
+          "declaredTransferBytes": 760,
+          "transferBytes": 7814,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 440,
+          "candidates": 0
+        },
+        {
+          "url": "https://www.doritos.com/brand",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 1,
+          "declaredTransferBytes": 767,
+          "transferBytes": 7845,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 438,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

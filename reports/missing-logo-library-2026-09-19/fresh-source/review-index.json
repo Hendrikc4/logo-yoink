@@ -1,0 +1,555 @@
+{
+  "generatedAt": "2026-09-19T09:36:36.674Z",
+  "rows": [
+    {
+      "number": 1,
+      "id": "ais-thailand",
+      "name": "AIS",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.ais.th/content/dam/ais/favicon.ico",
+      "sourcePage": "https://www.ais.th/cover-page/Iphone-18",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/ais-thailand/icon-273b63c7c7f7ef779591d6bfe204ed8280b6f117ef2e14d406aabaec28766d87.ico"
+    },
+    {
+      "number": 2,
+      "id": "aldi",
+      "name": "Aldi",
+      "role": "icon",
+      "source": "dom-img",
+      "sourceUrl": "https://www.aldi.com/images/aldi_sued_logo.png",
+      "sourcePage": "https://www.aldi.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/aldi/icon-3377d49465b1e2b1d8d4cf8059e076a489c874725c41556e3a2ed0f9f86a0726.png"
+    },
+    {
+      "number": 3,
+      "id": "america-movil",
+      "name": "América Móvil",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://s22.q4cdn.com/604986553/files/favicon.ico",
+      "sourcePage": "https://www.americamovil.com/English/overview/default.aspx",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/america-movil/icon-8f724ce82de5fe0d2a99cfb6ec29acdc0d5a63f3f47d9bccf73ae2e7a23efce8.ico"
+    },
+    {
+      "number": 4,
+      "id": "bbc",
+      "name": "BBC",
+      "role": "icon",
+      "source": "manifest",
+      "sourceUrl": "https://static.files.bbci.co.uk/bbcdotcom/web/20260907-085256-bea8b058c0-web-3.21.0/android-chrome-512x512.png",
+      "sourcePage": "https://static.files.bbci.co.uk/bbcdotcom/web/20260907-085256-bea8b058c0-web-3.21.0/site.webmanifest",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/bbc/icon-9a49d63388db10567ffe14dadeeb0fa8933e140ac564cb2241da160e1dbd8f34.png"
+    },
+    {
+      "number": 5,
+      "id": "blinkit",
+      "name": "Blinkit",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/blinkit.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/blinkit/icon-7b533c0cb5c2d6c20252852d23a1d362256b4fc894f0ccfdae2a41a6e8fa6e2d.png"
+    },
+    {
+      "number": 6,
+      "id": "charter-communications",
+      "name": "Charter Communications",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://corporate.charter.com/favicon.png",
+      "sourcePage": "https://corporate.charter.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/charter-communications/icon-c3b1a64547d01d69c64e1b86944bbedf25ca63f4c6e7cf6da3802abd3aa2f3e5.png"
+    },
+    {
+      "number": 7,
+      "id": "charter-communications",
+      "name": "Charter Communications",
+      "role": "logo",
+      "source": "schema",
+      "sourceUrl": "https://corporate.charter.com/static/d617519f6e8ec1333149b2e86dd914fb/6e782/Charter_Communications_Logo_Preview_0.webp",
+      "sourcePage": "https://corporate.charter.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/charter-communications/logo-23fe07baf5b20e33c5a1f17400561d8b7a640ef8b93ed39589dc5717cccbea56.webp"
+    },
+    {
+      "number": 8,
+      "id": "dior",
+      "name": "Dior",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.dior.com/favicon.ico",
+      "sourcePage": "https://dior.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/dior/icon-8ebf579f460497f609fe3cc6777c3111a5ffdf6fdbe509c99556dc851e498fc1.ico"
+    },
+    {
+      "number": 9,
+      "id": "doritos",
+      "name": "Doritos",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/doritos.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/doritos/icon-13266efac8ed7d08a572510b54d19613068dc9e04ba56bf848c662f85256fd75.png"
+    },
+    {
+      "number": 10,
+      "id": "e-on",
+      "name": "E.ON",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/eon.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/e-on/icon-b963df259023c8c4d4f0106595d9914a6cda281043a9913b262b95388bde23d0.png"
+    },
+    {
+      "number": 11,
+      "id": "garena",
+      "name": "Garena",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://cdngarenanow-a.akamaihd.net/webmain/static/favicon.ico",
+      "sourcePage": "https://intl.garena.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/garena/icon-2718a74b957935c247823e5c371952a4f56a254d4ebd9bb66422630fd8d3c775.ico"
+    },
+    {
+      "number": 12,
+      "id": "garmin",
+      "name": "Garmin",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/garmin.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/garmin/icon-e0b6a5b90b505cc975bae7f1aa5b53b90fdaf32b86f8a8b27106b9561eb38f35.png"
+    },
+    {
+      "number": 13,
+      "id": "garnier",
+      "name": "Garnier",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://www.garnier.com.au/-/media/project/loreal/brand-sites/garnier/apac/au/left-over-from-launch/ico/newgarnierlogoupdate_favicon_32x32.png?rev=-1",
+      "sourcePage": "https://www.garnier.com.au/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/garnier/icon-810cfa0e8e93bbad6273c5b025fd36c4c76404468506613c3a369baa8dc14c9e.png"
+    },
+    {
+      "number": 14,
+      "id": "garnier",
+      "name": "Garnier",
+      "role": "logo",
+      "source": "dom-img",
+      "sourceUrl": "https://www.garnier.com.au/-/media/project/loreal/brand-sites/garnier/apac/au/brand-logos/new-header-logos/fructis-hair-food-resized.png?rev=f9867f05a7454faf8fb06b65a7b0b031",
+      "sourcePage": "https://www.garnier.com.au/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/garnier/logo-d4e3d5e1ff3cf5e1861176bb3476b6532d5a60a4ee7ee9370eff79679ce0781a.png"
+    },
+    {
+      "number": 15,
+      "id": "givenchy",
+      "name": "Givenchy",
+      "role": "icon",
+      "source": "manifest",
+      "sourceUrl": "https://www.givenchy.com/on/demandware.static/Sites-GIV_INT-Site/-/default/dw14efcd7e/images/favicon/android-chrome-512x512.png",
+      "sourcePage": "https://www.givenchy.com/on/demandware.store/Sites-GIV_INT-Site/en/Manifest-Start",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/givenchy/icon-d0ddc7bc6d0678dc989460282ca56835c8bac92514b817c3c17a8fbba3b1db1c.png"
+    },
+    {
+      "number": 16,
+      "id": "givenchy",
+      "name": "Givenchy",
+      "role": "logo",
+      "source": "inline-svg",
+      "sourceUrl": "https://www.givenchy.com/int/en/homepage#inline-svg",
+      "sourcePage": "https://www.givenchy.com/int/en/homepage",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/givenchy/logo-4ef18c11886df206ad48496b257dfac275c008b320393a3e7c9884a0958470ef.svg"
+    },
+    {
+      "number": 17,
+      "id": "ibis",
+      "name": "ibis",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://ibis.accor.com/content/dam/brands/ibh/global-marketing/brand-identity/logos/favicon.svg",
+      "sourcePage": "https://ibis.accor.com/select-country.html",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/ibis/icon-cef5c5b2c5b4a55d8321b76edb5cade33108195d5a555897e9a9d015abb3541c.svg"
+    },
+    {
+      "number": 18,
+      "id": "jollibee",
+      "name": "Jollibee",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://www.jollibee.com.ph/themes/custom/jollibee_theme/favicon.ico",
+      "sourcePage": "https://www.jollibee.com.ph/home",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/jollibee/icon-0df71e13bc94080fe94c5cdbb6baf254e58eccc345c6e5ac78731956f8417bc1.ico"
+    },
+    {
+      "number": 19,
+      "id": "jollibee",
+      "name": "Jollibee",
+      "role": "logo",
+      "source": "dom-img",
+      "sourceUrl": "https://www.jollibee.com.ph/sites/apollocmsmkt/files/styles/webp_optimized/public/2025-07/footer-logo.png.webp?itok=VdVK21QI",
+      "sourcePage": "https://www.jollibee.com.ph/home",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/jollibee/logo-9a5830156e9e4c224031be99f45b5a41a93d222c601f6eb365f931c6b3b8ec0b.webp"
+    },
+    {
+      "number": 20,
+      "id": "lancome",
+      "name": "Lancôme",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.lancome.com/favicon.ico",
+      "sourcePage": "https://lancome.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/lancome/icon-eef877e212d499857683d92e043e0e81668b2ca1935fe163c7746db99c8c4406.ico"
+    },
+    {
+      "number": 21,
+      "id": "malaysia-aviation-group",
+      "name": "Malaysia Aviation Group",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://malaysiaaviationgroup.com.my/etc.clientlibs/mh/clientlibs/clientlib-vue/resources/favicon.ico",
+      "sourcePage": "https://malaysiaaviationgroup.com.my/en/home.html",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/malaysia-aviation-group/icon-a0c75e9ccea3e8735495b72853b7e14477013ce3d1661ce9f73e6ba0b6d5c6e2.ico"
+    },
+    {
+      "number": 22,
+      "id": "malaysia-aviation-group",
+      "name": "Malaysia Aviation Group",
+      "role": "logo",
+      "source": "schema",
+      "sourceUrl": "https://www.malaysiaairlines.com/content/dam/mh/my/en/header-footer/Malaysia-Airlines-logo.png",
+      "sourcePage": "https://malaysiaaviationgroup.com.my/en/home.html",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/malaysia-aviation-group/logo-569b840aab319844632a77efc48c36f0f755544ec030bb9d6c42ac74b3862f7b.png"
+    },
+    {
+      "number": 23,
+      "id": "marsh-mclennan",
+      "name": "Marsh",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.marsh.com/favicon.ico",
+      "sourcePage": "https://www.marsh.com/en-gb/home.html",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/marsh-mclennan/icon-5256a6fd9c4e0941b174174baebf1a551c24f37544915248a4712f00679a972a.ico"
+    },
+    {
+      "number": 24,
+      "id": "marsh-mclennan",
+      "name": "Marsh",
+      "role": "logo",
+      "source": "dom-img",
+      "sourceUrl": "https://www.marsh.com/content/dam/marsh/Imagery/marsh-2/marsh-logo/brand-logos.svg",
+      "sourcePage": "https://www.marsh.com/en-gb/home.html",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/marsh-mclennan/logo-6d3719f9d00d2a2f17b640df0e87425d134b873709b36691f365eac64cf4ca76.svg"
+    },
+    {
+      "number": 25,
+      "id": "mollie",
+      "name": "Mollie",
+      "role": "icon",
+      "source": "apple",
+      "sourceUrl": "https://framerusercontent.com/images/qv5pP6IyH5pkUJsKlgG23E4RbBM.png",
+      "sourcePage": "https://www.mollie.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/mollie/icon-1fe0eb97bc883c1ad37bf301d7adac649d689d0470d1b7bcf69f185cffd0af7c.png"
+    },
+    {
+      "number": 26,
+      "id": "natwest-group",
+      "name": "NatWest Group",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://www.natwestgroup.com/apps/settings/wcm/designs/responsive_champion/clientlibs/resources/responsive_natwest_group_favicon.ico",
+      "sourcePage": "https://www.natwestgroup.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/natwest-group/icon-c70b2a715696f999f7c3918fc972e15ebcbd737396563a5c1499ed818dd0f320.ico"
+    },
+    {
+      "number": 27,
+      "id": "natwest-group",
+      "name": "NatWest Group",
+      "role": "logo",
+      "source": "dom-img",
+      "sourceUrl": "https://www.natwestgroup.com/content/dam/championlogos/Logo_Wh_NatWestGroupColleague-Hor.svg",
+      "sourcePage": "https://www.natwestgroup.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/natwest-group/logo-68f9e65ee37a2ade93eb26549a2c4b7fdd3e5386d5ec9abfea6c4ef1e22e3ff6.svg"
+    },
+    {
+      "number": 28,
+      "id": "nerf",
+      "name": "Nerf",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://consumercare.hasbro.com/favicon.ico",
+      "sourcePage": "https://consumercare.hasbro.com/en-au/where-to-buy",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/nerf/icon-c2216cdd14a25eb7528bde2523f11cb2aba05b84d14c38579bcb9aed4fcf7784.png"
+    },
+    {
+      "number": 29,
+      "id": "newmont",
+      "name": "Newmont",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://s24.q4cdn.com/382246808/files/favicon.ico",
+      "sourcePage": "https://newmont.com/home/default.aspx",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/newmont/icon-9900fcda3081df65c06a8f982cb3b5680921fec73aeea51fe55ff1ed68d494fa.ico"
+    },
+    {
+      "number": 30,
+      "id": "newmont",
+      "name": "Newmont",
+      "role": "logo",
+      "source": "dom-img",
+      "sourceUrl": "https://s24.q4cdn.com/382246808/files/design/logo/Newmont-Color-Rev-RGB.png",
+      "sourcePage": "https://newmont.com/home/default.aspx",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/newmont/logo-619857a65721d64d789290f810e03d3f7e4f24dc3b5fd89413e2e99e2398600e.png"
+    },
+    {
+      "number": 31,
+      "id": "northrop-grumman",
+      "name": "Northrop Grumman",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://www.northropgrumman.com/favicon.ico",
+      "sourcePage": "https://www.northropgrumman.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/northrop-grumman/icon-93e30c726b16da06ba9208e991bf0c41ad579265926cdab5bfd626d897a0103d.ico"
+    },
+    {
+      "number": 32,
+      "id": "northrop-grumman",
+      "name": "Northrop Grumman",
+      "role": "logo",
+      "source": "schema",
+      "sourceUrl": "https://cdn.northropgrumman.com/-/media/wp-content/uploads/2019/12/NGC-logo-white-on-clear.png",
+      "sourcePage": "https://www.northropgrumman.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/northrop-grumman/logo-d5fba9ab9c0d85be1bcd0f632b0e1f1fadb0a0ac4890b7594fd6b1674b639106.webp"
+    },
+    {
+      "number": 33,
+      "id": "novo-nordisk",
+      "name": "Novo Nordisk",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://www.novonordisk.com/etc.clientlibs/nncorp/components/structure/page/clientlib/resources/favicon-v2.ico",
+      "sourcePage": "https://www.novonordisk.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/novo-nordisk/icon-acfd54d8ab0a64557c0ab7b2e534c169b729da35d2923ec5f32d321772351891.ico"
+    },
+    {
+      "number": 34,
+      "id": "p-g-e-corporation",
+      "name": "PG&E Corporation",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.pgecorp.com/favicon.ico",
+      "sourcePage": "https://www.pgecorp.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/p-g-e-corporation/icon-7ce88c066f450be3617154c225b6aea2e521a245327e7e12256da49ee8b33aed.ico"
+    },
+    {
+      "number": 35,
+      "id": "railway",
+      "name": "Railway",
+      "role": "icon",
+      "source": "inline-svg",
+      "sourceUrl": "https://railway.com/#inline-svg",
+      "sourcePage": "https://railway.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/railway/icon-04feac814a9dd78b36de8711d685300fd5ad3bae9a81dd3c4743f7f66c6d9484.svg"
+    },
+    {
+      "number": 36,
+      "id": "rappi",
+      "name": "Rappi",
+      "role": "icon",
+      "source": "inline-svg",
+      "sourceUrl": "https://www.rappi.com.mx/#inline-svg",
+      "sourcePage": "https://www.rappi.com.mx/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/rappi/icon-f37db8c168ddec384fc08aab8a1423d776685e817be9acc16b089cc59018c21d.svg"
+    },
+    {
+      "number": 37,
+      "id": "reuters",
+      "name": "Reuters",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.reuters.com/favicon.ico",
+      "sourcePage": "https://reuters.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/reuters/icon-821bc756e59ef5044ee35b8af0e8488f18016f86e9dcb3501a5841a7f8552120.ico"
+    },
+    {
+      "number": 38,
+      "id": "royal-caribbean-group",
+      "name": "Royal Caribbean Group",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.rclinvestor.com/wp/wp-includes/images/w-logo-blue-white-bg.png",
+      "sourcePage": "https://www.rclinvestor.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/royal-caribbean-group/icon-6bdb369337ac2496761c6f063bffea0aa6a91d4662279c399071a468251f51f0.png"
+    },
+    {
+      "number": 39,
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://mis-prod-koce-skhynixhomepage-cdn-01-ep.azureedge.net/img/favicon.ico",
+      "sourcePage": "https://www.skhynix.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/sk-hynix/icon-2abaf67fe3591a90ae5ef6e12666da0a1fc2b1acea8c25d9171f506338f171b7.ico"
+    },
+    {
+      "number": 40,
+      "id": "skyscanner",
+      "name": "Skyscanner",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://www.skyscanner.com.au/favicon.ico",
+      "sourcePage": "https://www.skyscanner.com.au/?previousCultureSource=GEO_LOCATION&redirectedFrom=www.skyscanner.net&userSessionDataId=1aae67cd-2652-4020-b05f-75e0ca66de25&session_handoff=eyJhbGciOiJFUzI1NiIsImtpZCI6InNlc3Npb24tc2VydmljZS1oYW5kb2ZmLWtleS0yMDI2LTA1IiwidHlwIjoiSldUIn0.eyJodHRwczovL3NreXNjYW5uZXIubmV0L3Nlc3Npb25faWQiOiIwMWEwYjhmZS1iM2RlLTgwMDQtOTViOS1kMzI5NmIxYTdkNTkiLCJleHAiOjE3ODk4MTAxMDV9.t4cWO9zQwA1fmYkybXBO16HvLuPDj7KfXLv5zqdLgHLoWxFvHTMIPToyFV1sA86PIwbWvsZmhofGJ8qiD-50-Q",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/skyscanner/icon-690d4b12a36a0bef6a09f0a419cccab9ae0fe3cc21c1e534dcf2d4a82c2d2e4e.ico"
+    },
+    {
+      "number": 41,
+      "id": "star-wars",
+      "name": "Star Wars",
+      "role": "icon",
+      "source": "apple",
+      "sourceUrl": "https://lumiere-a.akamaihd.net/v1/images/sw-the-mandalorian-and-grogu-sw-favicon-512x512_cf5319d3.png?region=0%2C0%2C512%2C512",
+      "sourcePage": "https://www.starwars.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/star-wars/icon-776ca5a4cd65d996bde218781cffd5163d14151a1c75e710926dff8a23046ed1.png"
+    },
+    {
+      "number": 42,
+      "id": "star-wars",
+      "name": "Star Wars",
+      "role": "logo",
+      "source": "browser-img",
+      "sourceUrl": "https://lumiere-a.akamaihd.net/v1/images/star-wars-swstarfighter-50-module-hero-desktop_64a8ebe3.jpeg?region=0,0,2048,878",
+      "sourcePage": "https://www.starwars.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/star-wars/logo-bdbdf202bcf4e776f56730f1f5bc2a26d192493a8f2a9116156b93265ce65c95.jpg"
+    },
+    {
+      "number": 43,
+      "id": "tata-cliq",
+      "name": "Tata CLiQ",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/tatacliq.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/tata-cliq/icon-81d6743b302e47b3484314f721347a5fc6ec019d44479432c3e60dd48a62eebb.png"
+    },
+    {
+      "number": 44,
+      "id": "teradata",
+      "name": "Teradata",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.teradata.com/favicon.ico",
+      "sourcePage": "https://www.teradata.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/teradata/icon-8c4ab99839ad70ad3d01be54f38d7eb2645c3d724e99c017d649fe8787efea72.ico"
+    },
+    {
+      "number": 45,
+      "id": "textron",
+      "name": "Textron",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://www.textron.com/sites/default/files/favicon.ico",
+      "sourcePage": "https://www.textron.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/textron/icon-e6ce20f37b3154ed999f6bb70b03e6500a2da86e3e9035a199544c9dc6b3f140.png"
+    },
+    {
+      "number": 46,
+      "id": "textron",
+      "name": "Textron",
+      "role": "logo",
+      "source": "dom-img",
+      "sourceUrl": "https://s206.q4cdn.com/111183019/files/design/site_logo/textron.png",
+      "sourcePage": "https://investor.textron.com/news-releases/photo-logo-request/default.aspx",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/textron/logo-697b598590ee83432b7f0460b8c27b0551220927957dbe6a2fe442b28fe24796.png"
+    },
+    {
+      "number": 47,
+      "id": "thai-airways",
+      "name": "Thai Airways",
+      "role": "icon",
+      "source": "html-icon",
+      "sourceUrl": "https://www.thaiairways.com/favicon.ico",
+      "sourcePage": "https://www.thaiairways.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/thai-airways/icon-e6efd9212c945bbe88bae8978b189c0f6393c5e4d24eb825447321e120b93f98.ico"
+    },
+    {
+      "number": 48,
+      "id": "thai-airways",
+      "name": "Thai Airways",
+      "role": "logo",
+      "source": "schema",
+      "sourceUrl": "https://www.thaiairways.com/content/dam/thaiairways/Thai_logo.png",
+      "sourcePage": "https://www.thaiairways.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/thai-airways/logo-1e4af80fd5ce16502ebc1351b9beefbe14b695550a6279e66c4e6b0ba26e8b53.png"
+    },
+    {
+      "number": 49,
+      "id": "the-north-face",
+      "name": "The North Face",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/thenorthface.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/the-north-face/icon-80e7eae330499d23bba5374ddf33632362343ad3376cadd9ba4662aec98e64de.ico"
+    },
+    {
+      "number": 50,
+      "id": "tsmc",
+      "name": "TSMC",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/tsmc.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/tsmc/icon-52eaea48d663cf5e7ae1c8fd587ba0b30cffc6cd318f9b6f075c7b35ba187dac.ico"
+    },
+    {
+      "number": 51,
+      "id": "verizon",
+      "name": "Verizon",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/verizon.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/verizon/icon-78328f11dc8ba89b315d91a57b2901e1b5f0e11408054cd50e9106c6e4acc01e.ico"
+    },
+    {
+      "number": 52,
+      "id": "volvo-group",
+      "name": "Volvo Group",
+      "role": "icon",
+      "source": "duckduckgo-favicon",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/volvogroup.com.ico",
+      "sourcePage": null,
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/volvo-group/icon-7060e8d2c2717dc373567d53028ec7bd6419408d5b1495c3d0ec02c05939d708.ico"
+    },
+    {
+      "number": 53,
+      "id": "vultr",
+      "name": "Vultr",
+      "role": "icon",
+      "source": "root-favicon",
+      "sourceUrl": "https://www.vultr.com/favicon.ico",
+      "sourcePage": "https://vultr.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/vultr/icon-56a74651e8d84dfef8766a496c09fe20aaf1ce5f790732f3651460d4454a9f66.png"
+    },
+    {
+      "number": 54,
+      "id": "woodside-energy",
+      "name": "Woodside Energy",
+      "role": "icon",
+      "source": "dom-img",
+      "sourceUrl": "https://www.woodside.com/assets/static/images/svg/logo-colour-vertical.svg",
+      "sourcePage": "https://www.woodside.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/woodside-energy/icon-607681790c50bca0ae4946550655e5a07b7b707842d14197b81abaf34930c83b.svg"
+    },
+    {
+      "number": 55,
+      "id": "woodside-energy",
+      "name": "Woodside Energy",
+      "role": "logo",
+      "source": "dom-img",
+      "sourceUrl": "https://www.woodside.com/assets/static/images/svg/logo-white-horizontal.svg",
+      "sourcePage": "https://www.woodside.com/",
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/woodside-energy/logo-f85d78ab2f3100b599bcda9d8621d16d4139a5661c0c4e70c57f46e9447a590c.svg"
+    }
+  ]
+}

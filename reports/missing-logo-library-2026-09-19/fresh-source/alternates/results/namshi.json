@@ -1,0 +1,11 @@
+{
+  "brandId": "namshi",
+  "name": "Namshi",
+  "domain": "namshi.com",
+  "attemptedAt": "2026-09-19T09:32:43.642Z",
+  "attemptedUrls": [
+    "https://www.namshi.com/uae-en/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://www.namshi.com/uae-en/: timeout | https://namshi.com/: timeout"
+}

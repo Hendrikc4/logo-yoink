@@ -1,0 +1,164 @@
+{
+  "brandId": "marsh-mclennan",
+  "name": "Marsh",
+  "domain": "marsh.com",
+  "attemptedAt": "2026-09-19T09:22:55.621Z",
+  "attemptedUrls": [
+    "https://marsh.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://www.marsh.com/content/dam/marsh/Imagery/marsh-2/marsh-logo/brand-logos.svg",
+      "sourcePage": "https://www.marsh.com/en-gb/home.html",
+      "format": "svg",
+      "width": 215,
+      "height": 48,
+      "evidence": {
+        "element": "img",
+        "dom_region": "footer",
+        "home_linked": true,
+        "alt": "Marsh ",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "Marsh  Marsh  c-new-footer__logo c-new-footer__top c-new-footer__wrapper c-new-footer marshmmcfooter aem-GridColumn aem-GridColumn--default--12 aem-Grid aem-Grid--12 aem-Grid--default--12  container-b785b874d8 cmp-container experiencefragment-4a91a731d4 cmp-experiencefragment cmp-experiencefragment--marsh-footer-new contentpage-fe97337a27 contentpage page basicpage",
+        "local_semantic": "Marsh ",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 17,
+        "inherited_color": null,
+        "company_name": "Marsh",
+        "duplicate_sources": [
+          "dom-img"
+        ],
+        "duplicate_urls": [
+          "https://www.marsh.com/content/dam/marsh/Imagery/marsh-2/marsh-logo/brand-logos.svg"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.marsh.com/content/dam/marsh/Imagery/marsh-2/marsh-logo/brand-logos.svg",
+        "retrieved_at": "2026-09-19T09:22:58.910Z",
+        "http_status": 200,
+        "svg_safety_validated": true
+      },
+      "variant": {
+        "theme": "dark",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/marsh-mclennan/logo-6d3719f9d00d2a2f17b640df0e87425d134b873709b36691f365eac64cf4ca76.svg"
+    },
+    "icon": {
+      "source": "root-favicon",
+      "url": "https://www.marsh.com/favicon.ico",
+      "sourcePage": "https://www.marsh.com/en-gb/home.html",
+      "format": "ico",
+      "width": 256,
+      "height": 256,
+      "evidence": {},
+      "provenance": {
+        "retrieved_asset_url": "https://www.marsh.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:22:58.393Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/marsh-mclennan/icon-5256a6fd9c4e0941b174174baebf1a551c24f37544915248a4712f00679a972a.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://marsh.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.marsh.com/en-gb/home.html"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.marsh.com/en/corp/about/news/marsh-mclennan-and-bloomberg-media-announce-global-knowledge-partnership.html",
+      "requests": 195,
+      "declaredTransferBytes": 2416875,
+      "transferBytes": 2011703,
+      "blockedRequests": 63,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 3,
+        "invalid_external": 0,
+        "duplicates": 1,
+        "retained": 2
+      },
+      "durationMs": 7623,
+      "candidates": 2,
+      "attempts": [
+        {
+          "url": "https://www.marsh.com/en-gb/home.html",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.marsh.com/en-gb/home.html",
+          "requests": 124,
+          "declaredTransferBytes": 1739479,
+          "transferBytes": 3270482,
+          "blockedRequests": 45,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 3629,
+          "candidates": 1
+        },
+        {
+          "url": "https://www.marsh.com/en/corp/about/news/marsh-mclennan-and-bloomberg-media-announce-global-knowledge-partnership.html",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.marsh.com/en/corp/about/news/marsh-mclennan-and-bloomberg-media-announce-global-knowledge-partnership.html",
+          "requests": 71,
+          "declaredTransferBytes": 677396,
+          "transferBytes": 2011703,
+          "blockedRequests": 18,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 3,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 2
+          },
+          "durationMs": 3994,
+          "candidates": 2
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

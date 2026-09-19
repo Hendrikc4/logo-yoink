@@ -1,0 +1,11 @@
+{
+  "brandId": "petrochina",
+  "name": "PetroChina",
+  "domain": "petrochina.com.cn",
+  "attemptedAt": "2026-09-19T09:32:41.863Z",
+  "attemptedUrls": [
+    "https://www.petrochina.com.cn/ptr/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://www.petrochina.com.cn/ptr/: HTTP 412 | https://petrochina.com.cn/: getaddrinfo ENOTFOUND petrochina.com.cn | http://petrochina.com.cn/: dns-host-known-unreachable"
+}

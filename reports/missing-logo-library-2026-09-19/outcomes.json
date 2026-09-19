@@ -1,13 +1,13 @@
 {
   "runId": "missing-logo-library-2026-09-19",
-  "reviewedAt": "2026-09-19T09:19:35.591Z",
+  "reviewedAt": "2026-09-19T09:36:36.791Z",
   "assignedIdentities": 188,
-  "approvedIdentities": 112,
-  "approvedAssets": 114,
-  "unresolvedIdentities": 76,
+  "approvedIdentities": 131,
+  "approvedAssets": 134,
+  "unresolvedIdentities": 57,
   "unresolvedByCategory": {
-    "permission_restricted": 10,
-    "no_defensible_candidate": 63,
+    "permission_restricted": 11,
+    "no_defensible_candidate": 43,
     "identity_mismatch": 1,
     "currentness_mismatch": 1,
     "stale_identity_and_format_failure": 1
@@ -53,7 +53,7 @@
       "name": "Aldi",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "No safely distributable current asset survived the bounded official-source, prior-evidence, and visual-review attempt."
+      "reason": "Fresh official-site extraction tried https://aldi.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "lululemon",
@@ -67,7 +67,7 @@
       "name": "The North Face",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://thenorthface.com/, https://www.thenorthface.com/, http://thenorthface.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "kraft-heinz",
@@ -129,7 +129,7 @@
       "name": "United Airlines",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh alternate official-page attempt failed after trying https://www.united.com/en/us/newsroom: Could not reach the website. https://www.united.com/en/us/newsroom: timeout | https://united.com/: timeout"
     },
     {
       "brandId": "emirates",
@@ -168,7 +168,7 @@
       "name": "ABB",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh alternate official-page attempt failed after trying https://www.abb.com/global/en/company/media: Could not reach the website. https://www.abb.com/global/en/company/media: timeout | https://abb.com/: timeout"
     },
     {
       "brandId": "schneider-electric",
@@ -255,14 +255,14 @@
       "name": "BBC",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://bbc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "reuters",
       "name": "Reuters",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://reuters.com/, https://www.reuters.com/, http://reuters.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "electronic-arts",
@@ -313,16 +313,25 @@
     {
       "brandId": "rappi",
       "name": "Rappi",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/rappi/logo/f37db8c168ddec384fc08aab8a1423d776685e817be9acc16b089cc59018c21d.svg",
+          "sourceUrl": "https://www.rappi.com.mx/#inline-svg",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "verizon",
       "name": "Verizon",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://verizon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "mckinsey-company",
@@ -464,7 +473,7 @@
       "name": "Etihad Airways",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "No safely distributable current asset survived the bounded official-source, prior-evidence, and visual-review attempt."
+      "reason": "Fresh alternate official-page attempt failed after trying https://www.etihad.com/en/news: Could not reach the website. https://www.etihad.com/en/news: timeout | https://etihad.com/: timeout"
     },
     {
       "brandId": "blackstone",
@@ -501,23 +510,48 @@
     {
       "brandId": "charter-communications",
       "name": "Charter Communications",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo",
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/charter-communications/logo/23fe07baf5b20e33c5a1f17400561d8b7a640ef8b93ed39589dc5717cccbea56.webp",
+          "sourceUrl": "https://corporate.charter.com/static/d617519f6e8ec1333149b2e86dd914fb/6e782/Charter_Communications_Logo_Preview_0.webp",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        },
+        {
+          "role": "icon",
+          "path": "assets/charter-communications/icon/c3b1a64547d01d69c64e1b86944bbedf25ca63f4c6e7cf6da3802abd3aa2f3e5.png",
+          "sourceUrl": "https://corporate.charter.com/favicon.png",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "america-movil",
       "name": "América Móvil",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://americamovil.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "northrop-grumman",
       "name": "Northrop Grumman",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/northrop-grumman/logo/d5fba9ab9c0d85be1bcd0f632b0e1f1fadb0a0ac4890b7594fd6b1674b639106.webp",
+          "sourceUrl": "https://cdn.northropgrumman.com/-/media/wp-content/uploads/2019/12/NGC-logo-white-on-clear.png",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "us-bancorp",
@@ -530,8 +564,9 @@
       "brandId": "eaton",
       "name": "Eaton",
       "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "category": "permission_restricted",
+      "reason": "Eaton’s official media-resources page requires permission for logo use and directs requests to its media team; no asset was approved.",
+      "sourcePage": "https://www.eaton.com/us/en-us/company/news-insights/media-resources.html"
     },
     {
       "brandId": "aig",
@@ -632,9 +667,18 @@
     {
       "brandId": "marsh-mclennan",
       "name": "Marsh",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/marsh-mclennan/logo/6d3719f9d00d2a2f17b640df0e87425d134b873709b36691f365eac64cf4ca76.svg",
+          "sourceUrl": "https://www.marsh.com/content/dam/marsh/Imagery/marsh-2/marsh-logo/brand-logos.svg",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "ge-aerospace",
@@ -705,14 +749,23 @@
       "name": "PG&E Corporation",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates)."
+      "reason": "Fresh official-site extraction tried https://pgecorp.com/, https://www.pgecorp.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "newmont",
       "name": "Newmont",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_logo_claims)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/newmont/logo/619857a65721d64d789290f810e03d3f7e4f24dc3b5fd89413e2e99e2398600e.png",
+          "sourceUrl": "https://s24.q4cdn.com/382246808/files/design/logo/Newmont-Color-Rev-RGB.png",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "arthur-j-gallagher",
@@ -783,14 +836,23 @@
       "name": "Volvo Group",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://volvogroup.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "cme-group",
       "name": "CME Group",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/cme-group/icon/caf3c907d29b91f36ad864fb0f94154058f65ae3aa7592bb0a125eb08fbbf9d0.png",
+          "sourceUrl": "https://brand.cmegroup.com/images/webclip.png",
+          "rationale": "Alternate first-party page candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "aia-group",
@@ -909,7 +971,7 @@
       "name": "E.ON",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://eon.com/, https://www.eon.com/, http://eon.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "nippon-steel",
@@ -930,9 +992,18 @@
     {
       "brandId": "natwest-group",
       "name": "NatWest Group",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/natwest-group/logo/68f9e65ee37a2ade93eb26549a2c4b7fdd3e5386d5ec9abfea6c4ef1e22e3ff6.svg",
+          "sourceUrl": "https://www.natwestgroup.com/content/dam/championlogos/Logo_Wh_NatWestGroupColleague-Hor.svg",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "petrobras",
@@ -953,9 +1024,18 @@
     {
       "brandId": "textron",
       "name": "Textron",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/textron/logo/697b598590ee83432b7f0460b8c27b0551220927957dbe6a2fe442b28fe24796.png",
+          "sourceUrl": "https://s206.q4cdn.com/111183019/files/design/site_logo/textron.png",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "national-grid",
@@ -994,14 +1074,14 @@
       "name": "China Unicom",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://chinaunicom.com.hk/, https://www.chinaunicom.com.hk/ and returned no eligible asset."
     },
     {
       "brandId": "lg-uplus",
       "name": "LG Uplus",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates)."
+      "reason": "Fresh alternate official-page extraction tried https://www.lguplus.com/about/en, https://www.lguplus.com/about/en and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "orlen",
@@ -1056,21 +1136,21 @@
       "name": "Sinopec",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh alternate official-page extraction tried http://www.sinopecgroup.com/group/en/, http://www.sinopecgroup.com/group/en/ and returned no eligible asset."
     },
     {
       "brandId": "petrochina",
       "name": "PetroChina",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh alternate official-page attempt failed after trying https://www.petrochina.com.cn/ptr/: Could not reach the website. https://www.petrochina.com.cn/ptr/: HTTP 412 | https://petrochina.com.cn/: getaddrinfo ENOTFOUND petrochina.com.cn | http://petrochina.com.cn/: dns-host-known-unreachable"
     },
     {
       "brandId": "ais-thailand",
       "name": "AIS",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://ais.th/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "cnooc",
@@ -1107,9 +1187,18 @@
     {
       "brandId": "woodside-energy",
       "name": "Woodside Energy",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/woodside-energy/logo/607681790c50bca0ae4946550655e5a07b7b707842d14197b81abaf34930c83b.svg",
+          "sourceUrl": "https://www.woodside.com/assets/static/images/svg/logo-colour-vertical.svg",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "michelin",
@@ -1132,7 +1221,7 @@
       "name": "Novo Nordisk",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://novonordisk.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "rbc",
@@ -1171,7 +1260,7 @@
       "name": "PDD Holdings",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://pddholdings.com/ and returned no eligible asset."
     },
     {
       "brandId": "tokopedia",
@@ -1194,7 +1283,7 @@
       "name": "Doritos",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://doritos.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "maybelline",
@@ -1265,14 +1354,14 @@
       "name": "Namshi",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh alternate official-page attempt failed after trying https://www.namshi.com/uae-en/: Could not reach the website. https://www.namshi.com/uae-en/: timeout | https://namshi.com/: timeout"
     },
     {
       "brandId": "blinkit",
       "name": "Blinkit",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://blinkit.com/, https://www.blinkit.com/, http://blinkit.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "tanishq",
@@ -1309,23 +1398,32 @@
     {
       "brandId": "prime-video",
       "name": "Prime Video",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (search_candidates_truncated)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/prime-video/logo/3a23bbb495d359596d90f6cfffae773cde66062dde7aa50979afc9619addd95d.png",
+          "sourceUrl": "https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png",
+          "rationale": "First-party or official asset independently checked and visually reviewed."
+        }
+      ]
     },
     {
       "brandId": "ant-group",
       "name": "Ant Group",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://antgroup.com/ and returned no eligible asset."
     },
     {
       "brandId": "malaysia-aviation-group",
       "name": "Malaysia Aviation Group",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://malaysiaaviationgroup.com.my/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "msc-group",
@@ -1362,23 +1460,41 @@
     {
       "brandId": "hisense",
       "name": "Hisense",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/hisense/logo/e990e6111dac0655269e66aae4134bbc320495dc343cd5188fc4e0b56e9b6b82.png",
+          "sourceUrl": "https://dtc-aus-api.hisense.com/medias/logo.png?context=bWFzdGVyfGltYWdlc3w0ODE1fGltYWdlL3BuZ3xhREF6TDJoa1pDODROemszT0RrMk9EQXlNek0wTDJ4dloyOHVjRzVufDRkMTQwNTAwNDYwZWUxYzU1YTQ0N2MzNWI5MDNjNGZiYWQ0YzQwYjE5MDQ1M2YyNDdmMTg3NjMwMzlhZDAxYWQ",
+          "rationale": "Alternate first-party page candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "garmin",
       "name": "Garmin",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://garmin.com/, https://www.garmin.com/, http://garmin.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "acer",
       "name": "Acer",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/acer/logo/a9836aaff84f319708b6807f4ec829571a2e249c38bfe6d17a5fc24c3db62444.png",
+          "sourceUrl": "https://cdn.uc.assets.prezly.com/8e51e5e9-3cc7-4029-b9bf-1990cf2b6770/-/crop/4920x1732/514,582/-/preview/-/format/auto/-/stretch/off/-/progressive/yes/-/resize/256x/-/quality/smart/Acer-logo-digital-green.png",
+          "rationale": "Alternate first-party page candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "oneplus",
@@ -1417,28 +1533,28 @@
       "name": "Transformers",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/transformers, https://shop.hasbro.com/en-us/brands/transformers and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "monopoly",
       "name": "Monopoly",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh alternate official-page extraction tried https://shop.hasbro.com/en-us/brands/monopoly, https://shop.hasbro.com/en-us/brands/monopoly and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "dior",
       "name": "Dior",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://dior.com/, https://www.dior.com/, http://dior.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "garnier",
       "name": "Garnier",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://garnier.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "kingfisher",
@@ -1461,21 +1577,21 @@
       "name": "Facebook",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://facebook.com/ and returned no eligible asset."
     },
     {
       "brandId": "tiktok-shop",
       "name": "TikTok Shop",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://shop.tiktok.com/ and returned no eligible asset."
     },
     {
       "brandId": "ibis",
       "name": "ibis",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://ibis.accor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "bsh-home-appliances",
@@ -1530,14 +1646,14 @@
       "name": "Garena",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://garena.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "lancome",
       "name": "Lancôme",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://lancome.com/, https://www.lancome.com/, http://lancome.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "lawson",
@@ -1599,7 +1715,7 @@
       "name": "Star Wars",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://starwars.com/, https://www.starwars.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "air-france-klm",
@@ -1638,35 +1754,62 @@
       "name": "Ralph Lauren",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh alternate official-page extraction tried https://corporate.ralphlauren.com/, https://corporate.ralphlauren.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "givenchy",
       "name": "Givenchy",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/givenchy/logo/4ef18c11886df206ad48496b257dfac275c008b320393a3e7c9884a0958470ef.svg",
+          "sourceUrl": "https://www.givenchy.com/int/en/homepage#inline-svg",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "jollibee",
       "name": "Jollibee",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/jollibee/logo/9a5830156e9e4c224031be99f45b5a41a93d222c601f6eb365f931c6b3b8ec0b.webp",
+          "sourceUrl": "https://www.jollibee.com.ph/sites/apollocmsmkt/files/styles/webp_optimized/public/2025-07/footer-logo.png.webp?itok=VdVK21QI",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "nerf",
       "name": "Nerf",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://nerf.com/, https://www.nerf.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "thai-airways",
       "name": "Thai Airways",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/thai-airways/logo/1e4af80fd5ce16502ebc1351b9beefbe14b695550a6279e66c4e6b0ba26e8b53.png",
+          "sourceUrl": "https://www.thaiairways.com/content/dam/thaiairways/Thai_logo.png",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "oxxo",
@@ -1703,9 +1846,18 @@
     {
       "brandId": "kuaishou",
       "name": "Kuaishou",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/kuaishou/logo/934c8c4325171ae91f719b31178bca9502fbe3c6951c2c4a89ac76435d544a6b.png",
+          "sourceUrl": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/themes/site/nir_pid3884/dist/images/logo-black.png?x=09152026-16:46",
+          "rationale": "Alternate first-party page candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "warner-bros",
@@ -1744,7 +1896,7 @@
       "name": "Royal Caribbean Group",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates)."
+      "reason": "Fresh official-site extraction tried https://rclinvestor.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "nissan",
@@ -1879,7 +2031,7 @@
       "name": "Tata CLiQ",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_search_candidates)."
+      "reason": "Fresh official-site extraction tried https://tatacliq.com/, https://www.tatacliq.com/, http://tatacliq.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "saks-fifth-avenue",
@@ -1909,14 +2061,14 @@
       "name": "TSMC",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "reason": "Fresh official-site extraction tried https://tsmc.com/, https://www.tsmc.com/, http://tsmc.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "sk-hynix",
       "name": "SK hynix",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://skhynix.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "micron",
@@ -1969,9 +2121,18 @@
     {
       "brandId": "vultr",
       "name": "Vultr",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/vultr/icon/56a74651e8d84dfef8766a496c09fe20aaf1ce5f790732f3651460d4454a9f66.png",
+          "sourceUrl": "https://www.vultr.com/favicon.ico",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "linode",
@@ -2042,14 +2203,23 @@
       "name": "Teradata",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://teradata.com/, https://www.teradata.com/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "railway",
       "name": "Railway",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "icon"
+      ],
+      "assets": [
+        {
+          "role": "icon",
+          "path": "assets/railway/icon/04feac814a9dd78b36de8711d685300fd5ad3bae9a81dd3c4743f7f66c6d9484.svg",
+          "sourceUrl": "https://railway.com/#inline-svg",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "character-ai",
@@ -2189,16 +2359,25 @@
     {
       "brandId": "mollie",
       "name": "Mollie",
-      "status": "unresolved",
-      "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (no_verified_current_logo)."
+      "status": "approved",
+      "roles": [
+        "logo"
+      ],
+      "assets": [
+        {
+          "role": "logo",
+          "path": "assets/mollie/logo/1fe0eb97bc883c1ad37bf301d7adac649d689d0470d1b7bcf69f185cffd0af7c.png",
+          "sourceUrl": "https://framerusercontent.com/images/qv5pP6IyH5pkUJsKlgG23E4RbBM.png",
+          "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+        }
+      ]
     },
     {
       "brandId": "skyscanner",
       "name": "Skyscanner",
       "status": "unresolved",
       "category": "no_defensible_candidate",
-      "reason": "The bounded treatment produced no candidate that passed format, identity, currentness, legibility, and role review (ambiguous_entities)."
+      "reason": "Fresh official-site extraction tried https://skyscanner.net/ and recovered candidate files, but none passed final identity, role, format, and legibility review."
     },
     {
       "brandId": "zillow",

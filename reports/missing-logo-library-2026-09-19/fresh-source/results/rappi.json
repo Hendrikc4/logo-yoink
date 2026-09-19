@@ -1,0 +1,148 @@
+{
+  "brandId": "rappi",
+  "name": "Rappi",
+  "domain": "rappi.com",
+  "attemptedAt": "2026-09-19T09:21:56.873Z",
+  "attemptedUrls": [
+    "https://rappi.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "inline-svg",
+      "url": "https://www.rappi.com.mx/#inline-svg",
+      "sourcePage": "https://www.rappi.com.mx/",
+      "format": "svg",
+      "width": 48,
+      "height": 48,
+      "evidence": {
+        "element": "svg",
+        "dom_region": "body",
+        "home_linked": true,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [
+          "sc-kbhJrz",
+          "gEBQRr"
+        ],
+        "semantic_text": "sc-kbhJrz gEBQRr sc-kYxDKI fGupwo sc-kbhJrz gEBQRr sc-kbhJrz gEBQRr sc-kYxDKI fGupwo sc-fiCwlc fOZZzi rappi-temporary-web-container sc-kMkxaj cXluyr __next body",
+        "local_semantic": "sc-kbhJrz gEBQRr sc-kYxDKI fGupwo",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 3,
+        "inherited_color": null,
+        "company_name": "Rappi",
+        "duplicate_sources": [
+          "inline-svg"
+        ],
+        "duplicate_urls": [
+          "[inline-image-data-omitted]"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "[inline-image-data-omitted]",
+        "retrieved_at": "2026-09-19T09:21:59.855Z",
+        "http_status": 200,
+        "svg_safety_validated": true
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/rappi/icon-f37db8c168ddec384fc08aab8a1423d776685e817be9acc16b089cc59018c21d.svg"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://rappi.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.rappi.com.mx/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.rappi.com.mx/catalogo/products/a-1",
+      "requests": 229,
+      "declaredTransferBytes": 1409760,
+      "transferBytes": 2151616,
+      "blockedRequests": 15,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 1,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 1
+      },
+      "durationMs": 9216,
+      "candidates": 1,
+      "attempts": [
+        {
+          "url": "https://www.rappi.com.mx/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.rappi.com.mx/",
+          "requests": 132,
+          "declaredTransferBytes": 1082102,
+          "transferBytes": 3079335,
+          "blockedRequests": 9,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 2
+          },
+          "durationMs": 5287,
+          "candidates": 2
+        },
+        {
+          "url": "https://www.rappi.com.mx/catalogo/products/a-1",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.rappi.com.mx/catalogo/products/a-1",
+          "requests": 97,
+          "declaredTransferBytes": 327658,
+          "transferBytes": 2151616,
+          "blockedRequests": 6,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 1,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 1
+          },
+          "durationMs": 3929,
+          "candidates": 1
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

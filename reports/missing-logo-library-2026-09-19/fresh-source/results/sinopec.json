@@ -1,0 +1,11 @@
+{
+  "brandId": "sinopec",
+  "name": "Sinopec",
+  "domain": "sinopec.com",
+  "attemptedAt": "2026-09-19T09:24:39.356Z",
+  "attemptedUrls": [
+    "https://sinopec.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://sinopec.com/: getaddrinfo ENOTFOUND sinopec.com | https://www.sinopec.com/: timeout | http://sinopec.com/: dns-host-known-unreachable"
+}

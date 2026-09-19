@@ -1,0 +1,179 @@
+{
+  "brandId": "natwest-group",
+  "name": "NatWest Group",
+  "domain": "natwestgroup.com",
+  "attemptedAt": "2026-09-19T09:23:54.148Z",
+  "attemptedUrls": [
+    "https://natwestgroup.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://www.natwestgroup.com/content/dam/championlogos/Logo_Wh_NatWestGroupColleague-Hor.svg",
+      "sourcePage": "https://www.natwestgroup.com/",
+      "format": "svg",
+      "width": 266,
+      "height": 62,
+      "evidence": {
+        "element": "img",
+        "dom_region": "header",
+        "home_linked": false,
+        "alt": "NatWest Group Logo",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "NatWest Group Logo Nat West Group Logo iah__logo-link NatWest Group Logo NatWest Group Logo iah__logo-link iah__logo iah__l2__main-links iah__container iah__l2 iah__l2--visible-md iah__l2--visible-sm  ia__main-content l1_hide  iah iah--responsive site-content main-wrapper editablehomepage-11cc2fc643 editablehomepage page basicpage no-js et-shelf sb_enable  responsive_natwest_group responsive__publish ",
+        "local_semantic": "NatWest Group Logo Nat West Group Logo iah__logo-link NatWest Group Logo",
+        "anchor_text": "",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 3,
+        "inherited_color": null,
+        "company_name": "NatWest Group",
+        "duplicate_sources": [
+          "dom-img"
+        ],
+        "duplicate_urls": [
+          "https://www.natwestgroup.com/content/dam/championlogos/Logo_Wh_NatWestGroupColleague-Hor.svg"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.natwestgroup.com/content/dam/championlogos/Logo_Wh_NatWestGroupColleague-Hor.svg",
+        "retrieved_at": "2026-09-19T09:23:59.758Z",
+        "http_status": 200,
+        "svg_safety_validated": true
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/natwest-group/logo-68f9e65ee37a2ade93eb26549a2c4b7fdd3e5386d5ec9abfea6c4ef1e22e3ff6.svg"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.natwestgroup.com/apps/settings/wcm/designs/responsive_champion/clientlibs/resources/responsive_natwest_group_favicon.ico",
+      "sourcePage": "https://www.natwestgroup.com/",
+      "format": "ico",
+      "width": 16,
+      "height": 16,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " no-js et-shelf sb_enable  responsive_natwest_group responsive__publish ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 1,
+        "inherited_color": null,
+        "company_name": "NatWest Group"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.natwestgroup.com/apps/settings/wcm/designs/responsive_champion/clientlibs/resources/responsive_natwest_group_favicon.ico",
+        "retrieved_at": "2026-09-19T09:24:00.866Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/natwest-group/icon-c70b2a715696f999f7c3918fc972e15ebcbd737396563a5c1499ed818dd0f320.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://natwestgroup.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.natwestgroup.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.natwestgroup.com/news-and-insights/news-room/media-contacts.html",
+      "requests": 204,
+      "declaredTransferBytes": 2316778,
+      "transferBytes": 1503493,
+      "blockedRequests": 21,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 8,
+        "invalid_external": 0,
+        "duplicates": 4,
+        "retained": 4
+      },
+      "durationMs": 7491,
+      "candidates": 4,
+      "attempts": [
+        {
+          "url": "https://www.natwestgroup.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.natwestgroup.com/",
+          "requests": 106,
+          "declaredTransferBytes": 1243836,
+          "transferBytes": 4581318,
+          "blockedRequests": 9,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 11,
+            "invalid_external": 0,
+            "duplicates": 4,
+            "retained": 7
+          },
+          "durationMs": 3831,
+          "candidates": 7
+        },
+        {
+          "url": "https://www.natwestgroup.com/news-and-insights/news-room/media-contacts.html",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.natwestgroup.com/news-and-insights/news-room/media-contacts.html",
+          "requests": 98,
+          "declaredTransferBytes": 1072942,
+          "transferBytes": 1503493,
+          "blockedRequests": 12,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 8,
+            "invalid_external": 0,
+            "duplicates": 4,
+            "retained": 4
+          },
+          "durationMs": 3660,
+          "candidates": 4
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

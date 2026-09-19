@@ -1,0 +1,140 @@
+{
+  "brandId": "mollie",
+  "name": "Mollie",
+  "domain": "mollie.com",
+  "attemptedAt": "2026-09-19T09:28:10.459Z",
+  "attemptedUrls": [
+    "https://mollie.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "apple",
+      "url": "https://framerusercontent.com/images/qv5pP6IyH5pkUJsKlgG23E4RbBM.png",
+      "sourcePage": "https://www.mollie.com/",
+      "format": "png",
+      "width": 270,
+      "height": 270,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 2,
+        "inherited_color": null,
+        "company_name": "Mollie"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://framerusercontent.com/images/qv5pP6IyH5pkUJsKlgG23E4RbBM.png",
+        "retrieved_at": "2026-09-19T09:28:12.232Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/mollie/icon-1fe0eb97bc883c1ad37bf301d7adac649d689d0470d1b7bcf69f185cffd0af7c.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://mollie.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.mollie.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.mollie.com/success-stories/how-mollie-helped-plnktn-scale-subscriptions-across-europe",
+      "requests": 332,
+      "declaredTransferBytes": 1040726,
+      "transferBytes": 2799832,
+      "blockedRequests": 23,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 0,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 0
+      },
+      "durationMs": 7099,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.mollie.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.mollie.com/",
+          "requests": 189,
+          "declaredTransferBytes": 392845,
+          "transferBytes": 3907613,
+          "blockedRequests": 13,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 4,
+            "invalid_external": 0,
+            "duplicates": 3,
+            "retained": 1
+          },
+          "durationMs": 2844,
+          "candidates": 1
+        },
+        {
+          "url": "https://www.mollie.com/success-stories/how-mollie-helped-plnktn-scale-subscriptions-across-europe",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.mollie.com/success-stories/how-mollie-helped-plnktn-scale-subscriptions-across-europe",
+          "requests": 143,
+          "declaredTransferBytes": 647881,
+          "transferBytes": 2799832,
+          "blockedRequests": 10,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 0,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 0
+          },
+          "durationMs": 4255,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

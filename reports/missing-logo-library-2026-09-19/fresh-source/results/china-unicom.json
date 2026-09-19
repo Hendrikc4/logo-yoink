@@ -1,0 +1,87 @@
+{
+  "brandId": "china-unicom",
+  "name": "China Unicom",
+  "domain": "chinaunicom.com.hk",
+  "attemptedAt": "2026-09-19T09:24:20.789Z",
+  "attemptedUrls": [
+    "https://chinaunicom.com.hk/",
+    "https://www.chinaunicom.com.hk/"
+  ],
+  "outcome": "no_candidate_recovered",
+  "assets": {
+    "logo": null,
+    "icon": null
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://chinaunicom.com.hk/",
+        "stage": "primary",
+        "ok": false,
+        "error": "self-signed certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+        "failureKind": "tls"
+      },
+      {
+        "url": "https://www.chinaunicom.com.hk/",
+        "stage": "alternate_https_host",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.chinaunicom.com.hk/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.chinaunicom.com.hk/en/global/home.php",
+      "requests": 81,
+      "declaredTransferBytes": 20187005,
+      "transferBytes": 8390861,
+      "blockedRequests": 31,
+      "resourceLimitHit": true,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 4,
+        "invalid_external": 0,
+        "duplicates": 2,
+        "retained": 2
+      },
+      "durationMs": 4475,
+      "candidates": 2,
+      "attempts": [
+        {
+          "url": "https://www.chinaunicom.com.hk/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.chinaunicom.com.hk/en/global/home.php",
+          "requests": 81,
+          "declaredTransferBytes": 20187005,
+          "transferBytes": 8390861,
+          "blockedRequests": 31,
+          "resourceLimitHit": true,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 4,
+            "invalid_external": 0,
+            "duplicates": 2,
+            "retained": 2
+          },
+          "durationMs": 4475,
+          "candidates": 2
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

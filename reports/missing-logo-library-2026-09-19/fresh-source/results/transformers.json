@@ -1,0 +1,11 @@
+{
+  "brandId": "transformers",
+  "name": "Transformers",
+  "domain": "transformers.com",
+  "attemptedAt": "2026-09-19T09:25:58.787Z",
+  "attemptedUrls": [
+    "https://transformers.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://transformers.com/: timeout | https://www.transformers.com/: timeout"
+}

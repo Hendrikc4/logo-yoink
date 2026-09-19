@@ -1,0 +1,113 @@
+{
+  "brandId": "skyscanner",
+  "name": "Skyscanner",
+  "domain": "skyscanner.net",
+  "attemptedAt": "2026-09-19T09:28:13.153Z",
+  "attemptedUrls": [
+    "https://skyscanner.net/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.skyscanner.com.au/favicon.ico",
+      "sourcePage": "https://www.skyscanner.com.au/?previousCultureSource=GEO_LOCATION&redirectedFrom=www.skyscanner.net&userSessionDataId=1aae67cd-2652-4020-b05f-75e0ca66de25&session_handoff=eyJhbGciOiJFUzI1NiIsImtpZCI6InNlc3Npb24tc2VydmljZS1oYW5kb2ZmLWtleS0yMDI2LTA1IiwidHlwIjoiSldUIn0.eyJodHRwczovL3NreXNjYW5uZXIubmV0L3Nlc3Npb25faWQiOiIwMWEwYjhmZS1iM2RlLTgwMDQtOTViOS1kMzI5NmIxYTdkNTkiLCJleHAiOjE3ODk4MTAxMDV9.t4cWO9zQwA1fmYkybXBO16HvLuPDj7KfXLv5zqdLgHLoWxFvHTMIPToyFV1sA86PIwbWvsZmhofGJ8qiD-50-Q",
+      "format": "ico",
+      "width": 64,
+      "height": 64,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 1,
+        "inherited_color": null,
+        "company_name": "Skyscanner"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.skyscanner.com.au/favicon.ico",
+        "retrieved_at": "2026-09-19T09:28:16.321Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/skyscanner/icon-690d4b12a36a0bef6a09f0a419cccab9ae0fe3cc21c1e534dcf2d4a82c2d2e4e.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://skyscanner.net/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.skyscanner.com.au/?previousCultureSource=GEO_LOCATION&redirectedFrom=www.skyscanner.net&userSessionDataId=1aae67cd-2652-4020-b05f-75e0ca66de25&session_handoff=eyJhbGciOiJFUzI1NiIsImtpZCI6InNlc3Npb24tc2VydmljZS1oYW5kb2ZmLWtleS0yMDI2LTA1IiwidHlwIjoiSldUIn0.eyJodHRwczovL3NreXNjYW5uZXIubmV0L3Nlc3Npb25faWQiOiIwMWEwYjhmZS1iM2RlLTgwMDQtOTViOS1kMzI5NmIxYTdkNTkiLCJleHAiOjE3ODk4MTAxMDV9.t4cWO9zQwA1fmYkybXBO16HvLuPDj7KfXLv5zqdLgHLoWxFvHTMIPToyFV1sA86PIwbWvsZmhofGJ8qiD-50-Q"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.skyscanner.com.au/sttc/px/captcha-v2/index.html?url=Lz9zZXNzaW9uX2hhbmRvZmY9ZXlKaGJHY2lPaUpGVXpJMU5pSXNJbXRwWkNJNkluTmxjM05wYjI0dGMyVnlkbWxqWlMxb1lXNWtiMlptTFd0bGVTMHlNREkyTFRBMUlpd2lkSGx3SWpvaVNsZFVJbjAuZXlKb2RIUndjem92TDNOcmVYTmpZVzV1WlhJdWJtVjBMM05sYzNOcGIyNWZhV1FpT2lJd01XRXdZamhtWlMxaU0yUmxMVGd3TURRdE9UVmlPUzFrTXpJNU5tSXhZVGRrTlRraUxDSmxlSEFpT2pFM09EazRNVEF4TURWOS50NGNXTzl6UXdBMWZtWWt5YlhCTzE2SHZMdVBEajdLZlhMdjV6cWRMZ0hMb1d4RnZIVE1JUFRveUZWMXNBODZQSXdiV3ZzWm1ob2ZHSjhxaUQtNTAtUSZyZWRpcmVjdGVkRnJvbT13d3cuc2t5c2Nhbm5lci5uZXQmdXNlclNlc3Npb25EYXRhSWQ9MWFhZTY3Y2QtMjY1Mi00MDIwLWIwNWYtNzVlMGNhNjZkZTI1JnByZXZpb3VzQ3VsdHVyZVNvdXJjZT1HRU9fTE9DQVRJT04=&uuid=725c6263-b40c-11f1-848b-1077cff20ede&vid=",
+      "requests": 16,
+      "declaredTransferBytes": 995112,
+      "transferBytes": 747441,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 2,
+        "invalid_external": 0,
+        "duplicates": 1,
+        "retained": 1
+      },
+      "durationMs": 3522,
+      "candidates": 1,
+      "attempts": [
+        {
+          "url": "https://www.skyscanner.com.au/?previousCultureSource=GEO_LOCATION&redirectedFrom=www.skyscanner.net&userSessionDataId=1aae67cd-2652-4020-b05f-75e0ca66de25&session_handoff=eyJhbGciOiJFUzI1NiIsImtpZCI6InNlc3Npb24tc2VydmljZS1oYW5kb2ZmLWtleS0yMDI2LTA1IiwidHlwIjoiSldUIn0.eyJodHRwczovL3NreXNjYW5uZXIubmV0L3Nlc3Npb25faWQiOiIwMWEwYjhmZS1iM2RlLTgwMDQtOTViOS1kMzI5NmIxYTdkNTkiLCJleHAiOjE3ODk4MTAxMDV9.t4cWO9zQwA1fmYkybXBO16HvLuPDj7KfXLv5zqdLgHLoWxFvHTMIPToyFV1sA86PIwbWvsZmhofGJ8qiD-50-Q",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.skyscanner.com.au/sttc/px/captcha-v2/index.html?url=Lz9zZXNzaW9uX2hhbmRvZmY9ZXlKaGJHY2lPaUpGVXpJMU5pSXNJbXRwWkNJNkluTmxjM05wYjI0dGMyVnlkbWxqWlMxb1lXNWtiMlptTFd0bGVTMHlNREkyTFRBMUlpd2lkSGx3SWpvaVNsZFVJbjAuZXlKb2RIUndjem92TDNOcmVYTmpZVzV1WlhJdWJtVjBMM05sYzNOcGIyNWZhV1FpT2lJd01XRXdZamhtWlMxaU0yUmxMVGd3TURRdE9UVmlPUzFrTXpJNU5tSXhZVGRrTlRraUxDSmxlSEFpT2pFM09EazRNVEF4TURWOS50NGNXTzl6UXdBMWZtWWt5YlhCTzE2SHZMdVBEajdLZlhMdjV6cWRMZ0hMb1d4RnZIVE1JUFRveUZWMXNBODZQSXdiV3ZzWm1ob2ZHSjhxaUQtNTAtUSZyZWRpcmVjdGVkRnJvbT13d3cuc2t5c2Nhbm5lci5uZXQmdXNlclNlc3Npb25EYXRhSWQ9MWFhZTY3Y2QtMjY1Mi00MDIwLWIwNWYtNzVlMGNhNjZkZTI1JnByZXZpb3VzQ3VsdHVyZVNvdXJjZT1HRU9fTE9DQVRJT04=&uuid=725c6263-b40c-11f1-848b-1077cff20ede&vid=",
+          "requests": 16,
+          "declaredTransferBytes": 995112,
+          "transferBytes": 747441,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 3522,
+          "candidates": 1
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

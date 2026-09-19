@@ -1,0 +1,11 @@
+{
+  "brandId": "prime-video",
+  "name": "Prime Video",
+  "domain": "primevideo.com",
+  "attemptedAt": "2026-09-19T09:25:26.391Z",
+  "attemptedUrls": [
+    "https://primevideo.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://primevideo.com/: Hostname resolves to a non-public address. | https://www.primevideo.com/: Hostname resolves to a non-public address. | http://primevideo.com/: Hostname resolves to a non-public address."
+}

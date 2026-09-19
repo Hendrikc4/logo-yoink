@@ -1,0 +1,162 @@
+{
+  "brandId": "charter-communications",
+  "name": "Charter Communications",
+  "domain": "corporate.charter.com",
+  "attemptedAt": "2026-09-19T09:22:30.279Z",
+  "attemptedUrls": [
+    "https://corporate.charter.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "schema",
+      "url": "https://corporate.charter.com/static/d617519f6e8ec1333149b2e86dd914fb/6e782/Charter_Communications_Logo_Preview_0.webp",
+      "sourcePage": "https://corporate.charter.com/",
+      "format": "webp",
+      "width": 1263,
+      "height": 378,
+      "evidence": {
+        "element": "script",
+        "dom_region": "head",
+        "discovery_order": 613,
+        "company_name": "Charter Communications"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://corporate.charter.com/static/d617519f6e8ec1333149b2e86dd914fb/6e782/Charter_Communications_Logo_Preview_0.webp",
+        "retrieved_at": "2026-09-19T09:22:35.872Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/charter-communications/logo-23fe07baf5b20e33c5a1f17400561d8b7a640ef8b93ed39589dc5717cccbea56.webp"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://corporate.charter.com/favicon.png",
+      "sourcePage": "https://corporate.charter.com/",
+      "format": "png",
+      "width": 48,
+      "height": 48,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 2,
+        "inherited_color": null,
+        "company_name": "Charter Communications"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://corporate.charter.com/favicon.png",
+        "retrieved_at": "2026-09-19T09:22:35.655Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/charter-communications/icon-c3b1a64547d01d69c64e1b86944bbedf25ca63f4c6e7cf6da3802abd3aa2f3e5.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://corporate.charter.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://corporate.charter.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://corporate.charter.com/newsroom",
+      "requests": 106,
+      "declaredTransferBytes": 3556534,
+      "transferBytes": 2388837,
+      "blockedRequests": 25,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 2,
+        "invalid_external": 0,
+        "duplicates": 1,
+        "retained": 1
+      },
+      "durationMs": 10401,
+      "candidates": 1,
+      "attempts": [
+        {
+          "url": "https://corporate.charter.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://corporate.charter.com/",
+          "requests": 65,
+          "declaredTransferBytes": 3339003,
+          "transferBytes": 2636446,
+          "blockedRequests": 16,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 6299,
+          "candidates": 1
+        },
+        {
+          "url": "https://corporate.charter.com/newsroom",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://corporate.charter.com/newsroom",
+          "requests": 41,
+          "declaredTransferBytes": 217531,
+          "transferBytes": 2388837,
+          "blockedRequests": 9,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 4102,
+          "candidates": 1
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

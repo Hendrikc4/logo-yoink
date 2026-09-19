@@ -1,0 +1,115 @@
+{
+  "brandId": "garena",
+  "name": "Garena",
+  "domain": "garena.com",
+  "attemptedAt": "2026-09-19T09:26:36.677Z",
+  "attemptedUrls": [
+    "https://garena.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://cdngarenanow-a.akamaihd.net/webmain/static/favicon.ico",
+      "sourcePage": "https://intl.garena.com/",
+      "format": "ico",
+      "width": 48,
+      "height": 48,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Garena"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://cdngarenanow-a.akamaihd.net/webmain/static/favicon.ico",
+        "retrieved_at": "2026-09-19T09:26:41.043Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/garena/icon-2718a74b957935c247823e5c371952a4f56a254d4ebd9bb66422630fd8d3c775.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://garena.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://intl.garena.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://intl.garena.com/",
+      "requests": 65,
+      "declaredTransferBytes": 7377221,
+      "transferBytes": 6570467,
+      "blockedRequests": 2,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 0,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 0
+      },
+      "durationMs": 6449,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://intl.garena.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://intl.garena.com/",
+          "requests": 65,
+          "declaredTransferBytes": 7377221,
+          "transferBytes": 6570467,
+          "blockedRequests": 2,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 0,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 0
+          },
+          "durationMs": 6449,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

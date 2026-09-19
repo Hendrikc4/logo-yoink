@@ -1,0 +1,137 @@
+{
+  "brandId": "monopoly",
+  "name": "Monopoly",
+  "domain": "monopoly.com",
+  "attemptedAt": "2026-09-19T09:33:17.136Z",
+  "attemptedUrls": [
+    "https://shop.hasbro.com/en-us/brands/monopoly",
+    "https://shop.hasbro.com/en-us/brands/monopoly"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://consumercare.hasbro.com/favicon.ico",
+      "sourcePage": "https://consumercare.hasbro.com/en-au/where-to-buy",
+      "format": "png",
+      "width": 48,
+      "height": 48,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Monopoly"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://consumercare.hasbro.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:33:18.873Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/monopoly/alternate-icon-c2216cdd14a25eb7528bde2523f11cb2aba05b84d14c38579bcb9aed4fcf7784.png"
+    }
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "https://shop.hasbro.com/en-us/brands/monopoly",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://consumercare.hasbro.com/en-au/where-to-buy"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://consumercare.hasbro.com/en-au/sitemap",
+      "requests": 137,
+      "declaredTransferBytes": 12239764,
+      "transferBytes": 6202702,
+      "blockedRequests": 12,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 12,
+        "invalid_external": 0,
+        "duplicates": 5,
+        "retained": 7
+      },
+      "durationMs": 6351,
+      "candidates": 7,
+      "attempts": [
+        {
+          "url": "https://consumercare.hasbro.com/en-au/where-to-buy",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://consumercare.hasbro.com/en-au/where-to-buy",
+          "requests": 75,
+          "declaredTransferBytes": 6150990,
+          "transferBytes": 6266657,
+          "blockedRequests": 6,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 12,
+            "invalid_external": 0,
+            "duplicates": 5,
+            "retained": 7
+          },
+          "durationMs": 3184,
+          "candidates": 7
+        },
+        {
+          "url": "https://consumercare.hasbro.com/en-au/sitemap",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://consumercare.hasbro.com/en-au/sitemap",
+          "requests": 62,
+          "declaredTransferBytes": 6088774,
+          "transferBytes": 6202702,
+          "blockedRequests": 6,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 12,
+            "invalid_external": 0,
+            "duplicates": 5,
+            "retained": 7
+          },
+          "durationMs": 3167,
+          "candidates": 7
+        }
+      ]
+    },
+    "network": null
+  }
+}

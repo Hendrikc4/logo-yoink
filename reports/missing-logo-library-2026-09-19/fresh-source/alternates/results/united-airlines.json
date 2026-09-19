@@ -1,0 +1,11 @@
+{
+  "brandId": "united-airlines",
+  "name": "United Airlines",
+  "domain": "united.com",
+  "attemptedAt": "2026-09-19T09:32:09.625Z",
+  "attemptedUrls": [
+    "https://www.united.com/en/us/newsroom"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://www.united.com/en/us/newsroom: timeout | https://united.com/: timeout"
+}

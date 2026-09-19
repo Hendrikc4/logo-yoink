@@ -1,0 +1,104 @@
+{
+  "brandId": "facebook",
+  "name": "Facebook",
+  "domain": "facebook.com",
+  "attemptedAt": "2026-09-19T09:26:24.803Z",
+  "attemptedUrls": [
+    "https://facebook.com/"
+  ],
+  "outcome": "no_candidate_recovered",
+  "assets": {
+    "logo": null,
+    "icon": null
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://facebook.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.facebook.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fbrand%2F",
+      "requests": 54,
+      "declaredTransferBytes": 3462149,
+      "transferBytes": 1882970,
+      "blockedRequests": 8,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 2,
+        "invalid_external": 0,
+        "duplicates": 1,
+        "retained": 1
+      },
+      "durationMs": 6678,
+      "candidates": 1,
+      "attempts": [
+        {
+          "url": "https://www.facebook.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.facebook.com/",
+          "requests": 27,
+          "declaredTransferBytes": 1719231,
+          "transferBytes": 1861300,
+          "blockedRequests": 4,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 3429,
+          "candidates": 1
+        },
+        {
+          "url": "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fbrand%2F",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fbrand%2F",
+          "requests": 27,
+          "declaredTransferBytes": 1742918,
+          "transferBytes": 1882970,
+          "blockedRequests": 4,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 3249,
+          "candidates": 1
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

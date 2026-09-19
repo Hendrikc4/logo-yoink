@@ -1,0 +1,109 @@
+{
+  "brandId": "tata-cliq",
+  "name": "Tata CLiQ",
+  "domain": "tatacliq.com",
+  "attemptedAt": "2026-09-19T09:27:32.892Z",
+  "attemptedUrls": [
+    "https://tatacliq.com/",
+    "https://www.tatacliq.com/",
+    "http://tatacliq.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "duckduckgo-favicon",
+      "url": "https://icons.duckduckgo.com/ip3/tatacliq.com.ico",
+      "sourcePage": null,
+      "format": "png",
+      "width": 144,
+      "height": 144,
+      "evidence": {
+        "element": "cached-favicon",
+        "provider": "duckduckgo"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/tatacliq.com.ico",
+        "retrieved_at": "2026-09-19T09:27:34.562Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/tata-cliq/icon-81d6743b302e47b3484314f721347a5fc6ec019d44479432c3e60dd48a62eebb.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://tatacliq.com/",
+        "stage": "primary",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "https://www.tatacliq.com/",
+        "stage": "alternate_https_host",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "http://tatacliq.com/",
+        "stage": "http_compatibility",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 5,
+      "declaredTransferBytes": 715,
+      "transferBytes": 26554,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 652,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://tatacliq.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 5,
+          "declaredTransferBytes": 715,
+          "transferBytes": 26554,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 652,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

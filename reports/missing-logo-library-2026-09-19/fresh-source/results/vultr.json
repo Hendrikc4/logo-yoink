@@ -1,0 +1,106 @@
+{
+  "brandId": "vultr",
+  "name": "Vultr",
+  "domain": "vultr.com",
+  "attemptedAt": "2026-09-19T09:27:47.599Z",
+  "attemptedUrls": [
+    "https://vultr.com/",
+    "https://www.vultr.com/",
+    "http://vultr.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "root-favicon",
+      "url": "https://www.vultr.com/favicon.ico",
+      "sourcePage": "https://vultr.com/",
+      "format": "png",
+      "width": 192,
+      "height": 192,
+      "evidence": {},
+      "provenance": {
+        "retrieved_asset_url": "https://www.vultr.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:27:50.910Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/vultr/icon-56a74651e8d84dfef8766a496c09fe20aaf1ce5f790732f3651460d4454a9f66.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://vultr.com/",
+        "stage": "primary",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "https://www.vultr.com/",
+        "stage": "alternate_https_host",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "http://vultr.com/",
+        "stage": "http_compatibility",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 2,
+      "declaredTransferBytes": 324,
+      "transferBytes": 22534,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 1510,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://vultr.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 324,
+          "transferBytes": 22534,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 1510,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

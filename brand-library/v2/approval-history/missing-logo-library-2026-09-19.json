@@ -1,17 +1,17 @@
 {
   "reviewer": "Codex visual review",
-  "reviewedAt": "2026-09-19T09:19:35.591Z",
+  "reviewedAt": "2026-09-19T09:36:36.791Z",
   "runId": "missing-logo-library-2026-09-19",
   "summary": {
     "runId": "missing-logo-library-2026-09-19",
-    "reviewedAt": "2026-09-19T09:19:35.591Z",
+    "reviewedAt": "2026-09-19T09:36:36.791Z",
     "assignedIdentities": 188,
-    "approvedIdentities": 112,
-    "approvedAssets": 114,
-    "unresolvedIdentities": 76,
+    "approvedIdentities": 131,
+    "approvedAssets": 134,
+    "unresolvedIdentities": 57,
     "unresolvedByCategory": {
-      "permission_restricted": 10,
-      "no_defensible_candidate": 63,
+      "permission_restricted": 11,
+      "no_defensible_candidate": 43,
       "identity_mismatch": 1,
       "currentness_mismatch": 1,
       "stale_identity_and_format_failure": 1
@@ -916,6 +916,14 @@
     },
     {
       "action": "approve",
+      "brandId": "prime-video",
+      "role": "logo",
+      "contentHash": "3a23bbb495d359596d90f6cfffae773cde66062dde7aa50979afc9619addd95d",
+      "sourceUrl": "https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png",
+      "rationale": "First-party or official asset independently checked and visually reviewed."
+    },
+    {
+      "action": "approve",
       "brandId": "sofitel",
       "role": "logo",
       "contentHash": "90c8624cf3a1a742457c85adb9739f82f2df5fb2543e71db8812d85ed9d66300",
@@ -929,6 +937,158 @@
       "contentHash": "94de5ae7e9bcf74727f45bb30ae37f553db4594012e2704336da5fbbf3357c3e",
       "sourceUrl": "https://www.nytimes.com/favicon.ico",
       "rationale": "First-party or official asset independently checked and visually reviewed."
+    },
+    {
+      "action": "approve",
+      "brandId": "charter-communications",
+      "role": "logo",
+      "contentHash": "23fe07baf5b20e33c5a1f17400561d8b7a640ef8b93ed39589dc5717cccbea56",
+      "sourceUrl": "https://corporate.charter.com/static/d617519f6e8ec1333149b2e86dd914fb/6e782/Charter_Communications_Logo_Preview_0.webp",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "charter-communications",
+      "role": "icon",
+      "contentHash": "c3b1a64547d01d69c64e1b86944bbedf25ca63f4c6e7cf6da3802abd3aa2f3e5",
+      "sourceUrl": "https://corporate.charter.com/favicon.png",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "givenchy",
+      "role": "logo",
+      "contentHash": "4ef18c11886df206ad48496b257dfac275c008b320393a3e7c9884a0958470ef",
+      "sourceUrl": "https://www.givenchy.com/int/en/homepage#inline-svg",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "jollibee",
+      "role": "logo",
+      "contentHash": "9a5830156e9e4c224031be99f45b5a41a93d222c601f6eb365f931c6b3b8ec0b",
+      "sourceUrl": "https://www.jollibee.com.ph/sites/apollocmsmkt/files/styles/webp_optimized/public/2025-07/footer-logo.png.webp?itok=VdVK21QI",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "marsh-mclennan",
+      "role": "logo",
+      "contentHash": "6d3719f9d00d2a2f17b640df0e87425d134b873709b36691f365eac64cf4ca76",
+      "sourceUrl": "https://www.marsh.com/content/dam/marsh/Imagery/marsh-2/marsh-logo/brand-logos.svg",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "mollie",
+      "role": "logo",
+      "contentHash": "1fe0eb97bc883c1ad37bf301d7adac649d689d0470d1b7bcf69f185cffd0af7c",
+      "sourceUrl": "https://framerusercontent.com/images/qv5pP6IyH5pkUJsKlgG23E4RbBM.png",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "natwest-group",
+      "role": "logo",
+      "contentHash": "68f9e65ee37a2ade93eb26549a2c4b7fdd3e5386d5ec9abfea6c4ef1e22e3ff6",
+      "sourceUrl": "https://www.natwestgroup.com/content/dam/championlogos/Logo_Wh_NatWestGroupColleague-Hor.svg",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "newmont",
+      "role": "logo",
+      "contentHash": "619857a65721d64d789290f810e03d3f7e4f24dc3b5fd89413e2e99e2398600e",
+      "sourceUrl": "https://s24.q4cdn.com/382246808/files/design/logo/Newmont-Color-Rev-RGB.png",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "northrop-grumman",
+      "role": "logo",
+      "contentHash": "d5fba9ab9c0d85be1bcd0f632b0e1f1fadb0a0ac4890b7594fd6b1674b639106",
+      "sourceUrl": "https://cdn.northropgrumman.com/-/media/wp-content/uploads/2019/12/NGC-logo-white-on-clear.png",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "railway",
+      "role": "icon",
+      "contentHash": "04feac814a9dd78b36de8711d685300fd5ad3bae9a81dd3c4743f7f66c6d9484",
+      "sourceUrl": "https://railway.com/#inline-svg",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "rappi",
+      "role": "logo",
+      "contentHash": "f37db8c168ddec384fc08aab8a1423d776685e817be9acc16b089cc59018c21d",
+      "sourceUrl": "https://www.rappi.com.mx/#inline-svg",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "textron",
+      "role": "logo",
+      "contentHash": "697b598590ee83432b7f0460b8c27b0551220927957dbe6a2fe442b28fe24796",
+      "sourceUrl": "https://s206.q4cdn.com/111183019/files/design/site_logo/textron.png",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "thai-airways",
+      "role": "logo",
+      "contentHash": "1e4af80fd5ce16502ebc1351b9beefbe14b695550a6279e66c4e6b0ba26e8b53",
+      "sourceUrl": "https://www.thaiairways.com/content/dam/thaiairways/Thai_logo.png",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "vultr",
+      "role": "icon",
+      "contentHash": "56a74651e8d84dfef8766a496c09fe20aaf1ce5f790732f3651460d4454a9f66",
+      "sourceUrl": "https://www.vultr.com/favicon.ico",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "woodside-energy",
+      "role": "logo",
+      "contentHash": "607681790c50bca0ae4946550655e5a07b7b707842d14197b81abaf34930c83b",
+      "sourceUrl": "https://www.woodside.com/assets/static/images/svg/logo-colour-vertical.svg",
+      "rationale": "Fresh first-party homepage candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "acer",
+      "role": "logo",
+      "contentHash": "a9836aaff84f319708b6807f4ec829571a2e249c38bfe6d17a5fc24c3db62444",
+      "sourceUrl": "https://cdn.uc.assets.prezly.com/8e51e5e9-3cc7-4029-b9bf-1990cf2b6770/-/crop/4920x1732/514,582/-/preview/-/format/auto/-/stretch/off/-/progressive/yes/-/resize/256x/-/quality/smart/Acer-logo-digital-green.png",
+      "rationale": "Alternate first-party page candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "cme-group",
+      "role": "icon",
+      "contentHash": "caf3c907d29b91f36ad864fb0f94154058f65ae3aa7592bb0a125eb08fbbf9d0",
+      "sourceUrl": "https://brand.cmegroup.com/images/webclip.png",
+      "rationale": "Alternate first-party page candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "hisense",
+      "role": "logo",
+      "contentHash": "e990e6111dac0655269e66aae4134bbc320495dc343cd5188fc4e0b56e9b6b82",
+      "sourceUrl": "https://dtc-aus-api.hisense.com/medias/logo.png?context=bWFzdGVyfGltYWdlc3w0ODE1fGltYWdlL3BuZ3xhREF6TDJoa1pDODROemszT0RrMk9EQXlNek0wTDJ4dloyOHVjRzVufDRkMTQwNTAwNDYwZWUxYzU1YTQ0N2MzNWI5MDNjNGZiYWQ0YzQwYjE5MDQ1M2YyNDdmMTg3NjMwMzlhZDAxYWQ",
+      "rationale": "Alternate first-party page candidate passed light/dark visual, identity, role, and usability review."
+    },
+    {
+      "action": "approve",
+      "brandId": "kuaishou",
+      "role": "logo",
+      "contentHash": "934c8c4325171ae91f719b31178bca9502fbe3c6951c2c4a89ac76435d544a6b",
+      "sourceUrl": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/themes/site/nir_pid3884/dist/images/logo-black.png?x=09152026-16:46",
+      "rationale": "Alternate first-party page candidate passed light/dark visual, identity, role, and usability review."
     }
   ]
 }

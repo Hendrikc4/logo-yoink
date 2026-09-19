@@ -1,0 +1,138 @@
+{
+  "brandId": "novo-nordisk",
+  "name": "Novo Nordisk",
+  "domain": "novonordisk.com",
+  "attemptedAt": "2026-09-19T09:24:49.880Z",
+  "attemptedUrls": [
+    "https://novonordisk.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.novonordisk.com/etc.clientlibs/nncorp/components/structure/page/clientlib/resources/favicon-v2.ico",
+      "sourcePage": "https://www.novonordisk.com/",
+      "format": "ico",
+      "width": 256,
+      "height": 256,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Novo Nordisk"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.novonordisk.com/etc.clientlibs/nncorp/components/structure/page/clientlib/resources/favicon-v2.ico",
+        "retrieved_at": "2026-09-19T09:24:58.560Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/novo-nordisk/icon-acfd54d8ab0a64557c0ab7b2e534c169b729da35d2923ec5f32d321772351891.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://novonordisk.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.novonordisk.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.novonordisk.com/news-and-media/latest-news/lasting-health-starts-now.html",
+      "requests": 142,
+      "declaredTransferBytes": 8288872,
+      "transferBytes": 7939492,
+      "blockedRequests": 20,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 26,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 26
+      },
+      "durationMs": 12093,
+      "candidates": 26,
+      "attempts": [
+        {
+          "url": "https://www.novonordisk.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.novonordisk.com/",
+          "requests": 61,
+          "declaredTransferBytes": 619814,
+          "transferBytes": 1066811,
+          "blockedRequests": 9,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 2
+          },
+          "durationMs": 5604,
+          "candidates": 2
+        },
+        {
+          "url": "https://www.novonordisk.com/news-and-media/latest-news/lasting-health-starts-now.html",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.novonordisk.com/news-and-media/latest-news/lasting-health-starts-now.html",
+          "requests": 81,
+          "declaredTransferBytes": 7669058,
+          "transferBytes": 7939492,
+          "blockedRequests": 11,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 26,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 26
+          },
+          "durationMs": 6489,
+          "candidates": 26
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "brandId": "e-on",
+  "name": "E.ON",
+  "domain": "eon.com",
+  "attemptedAt": "2026-09-19T09:23:45.043Z",
+  "attemptedUrls": [
+    "https://eon.com/",
+    "https://www.eon.com/",
+    "http://eon.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "duckduckgo-favicon",
+      "url": "https://icons.duckduckgo.com/ip3/eon.com.ico",
+      "sourcePage": null,
+      "format": "png",
+      "width": 32,
+      "height": 32,
+      "evidence": {
+        "element": "cached-favicon",
+        "provider": "duckduckgo"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/eon.com.ico",
+        "retrieved_at": "2026-09-19T09:23:52.113Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/e-on/icon-b963df259023c8c4d4f0106595d9914a6cda281043a9913b262b95388bde23d0.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://eon.com/",
+        "stage": "primary",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "https://www.eon.com/",
+        "stage": "alternate_https_host",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "http://eon.com/",
+        "stage": "http_compatibility",
+        "ok": false,
+        "error": "timeout",
+        "failureKind": "timeout"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 2,
+      "declaredTransferBytes": 0,
+      "transferBytes": 18202,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 863,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://eon.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 0,
+          "transferBytes": 18202,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 863,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "brandId": "railway",
+  "name": "Railway",
+  "domain": "railway.com",
+  "attemptedAt": "2026-09-19T09:27:54.217Z",
+  "attemptedUrls": [
+    "https://railway.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "inline-svg",
+      "url": "https://railway.com/#inline-svg",
+      "sourcePage": "https://railway.com/",
+      "format": "svg",
+      "width": 144,
+      "height": 144,
+      "evidence": {
+        "element": "svg",
+        "dom_region": "footer",
+        "home_linked": true,
+        "alt": "",
+        "aria_label": "Railway Logo",
+        "class_tokens": [
+          "logo",
+          "w-6",
+          "h-6",
+          "md:w-8",
+          "md:h-8",
+          "flex"
+        ],
+        "semantic_text": "logo w-6 h-6 md:w-8 md:h-8 flex Railway Logo Railway Logo active logo w-6 h-6 md:w-8 md:h-8 flex Railway Logo logo w-6 h-6 md:w-8 md:h-8 flex Railway Logo active flex flex-col lg:flex-row items-center gap-y-4 lg:gap-y-0 lg:gap-x-8 flex flex-col gap-y-4 lg:gap-y-0 lg:flex-row items-center justify-between max-w-7xl mx-auto pt-12 pb-24 px-12 2xl:px-0 bg-sl-footer border-t border-sl-border/10 secret-landing relative min-h-screen bg-oatmeal text-sl-fg",
+        "local_semantic": "logo w-6 h-6 md:w-8 md:h-8 flex Railway Logo Railway Logo active",
+        "anchor_text": "",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 113,
+        "inherited_color": null,
+        "company_name": "Railway",
+        "duplicate_sources": [
+          "inline-svg"
+        ],
+        "duplicate_urls": [
+          "[inline-image-data-omitted]"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "[inline-image-data-omitted]",
+        "retrieved_at": "2026-09-19T09:27:56.520Z",
+        "http_status": 200,
+        "svg_safety_validated": true
+      },
+      "variant": {
+        "theme": "light",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/railway/icon-04feac814a9dd78b36de8711d685300fd5ad3bae9a81dd3c4743f7f66c6d9484.svg"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://railway.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://railway.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://railway.com/design",
+      "requests": 552,
+      "declaredTransferBytes": 5301296,
+      "transferBytes": 2411318,
+      "blockedRequests": 7,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 12,
+        "invalid_external": 0,
+        "duplicates": 7,
+        "retained": 5
+      },
+      "durationMs": 7987,
+      "candidates": 5,
+      "attempts": [
+        {
+          "url": "https://railway.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://railway.com/",
+          "requests": 298,
+          "declaredTransferBytes": 3140396,
+          "transferBytes": 3313760,
+          "blockedRequests": 5,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 27,
+            "invalid_external": 0,
+            "duplicates": 7,
+            "retained": 20
+          },
+          "durationMs": 3797,
+          "candidates": 20
+        },
+        {
+          "url": "https://railway.com/design",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://railway.com/design",
+          "requests": 254,
+          "declaredTransferBytes": 2160900,
+          "transferBytes": 2411318,
+          "blockedRequests": 2,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 12,
+            "invalid_external": 0,
+            "duplicates": 7,
+            "retained": 5
+          },
+          "durationMs": 4190,
+          "candidates": 5
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "brandId": "etihad-airways",
+  "name": "Etihad Airways",
+  "domain": "etihad.com",
+  "attemptedAt": "2026-09-19T09:22:15.781Z",
+  "attemptedUrls": [
+    "https://etihad.com/"
+  ],
+  "outcome": "attempt_failed",
+  "error": "Could not reach the website. https://etihad.com/: timeout | https://www.etihad.com/: timeout"
+}

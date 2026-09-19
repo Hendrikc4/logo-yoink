@@ -1,0 +1,170 @@
+{
+  "brandId": "textron",
+  "name": "Textron",
+  "domain": "textron.com",
+  "attemptedAt": "2026-09-19T09:23:57.309Z",
+  "attemptedUrls": [
+    "https://textron.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://s206.q4cdn.com/111183019/files/design/site_logo/textron.png",
+      "sourcePage": "https://investor.textron.com/news-releases/photo-logo-request/default.aspx",
+      "format": "png",
+      "width": 340,
+      "height": 70,
+      "evidence": {
+        "element": "img",
+        "dom_region": "header",
+        "home_linked": false,
+        "alt": "Textron, logo",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "Textron, logo Textron, logo _ctrl0_ctl01_divMobileNavigationLogo evergreen-primary-navigation-menu-logo evergreen-primary-navigation-menu-logo--mobile evergreen-primary-navigation-menu-container evergreen-container evergreen-container--outer evergreen-container--no-padding evergreen-primary-navigation evergreen-primary-navigation-container _ctrl0_ctl01_divModuleContainer evergreen evergreen-no-padding NavigationPaneDiv1 NavigationPaneDiv _ctrl0_NavigationPaneContainer evergreen-pane evergreen-pane--navigation evergreen-section evergreen-section--navigation Announcement section _ctrl0_EvergreenLayoutHeader evergreen-layout-header evergreen-layout-header--small-banner evergreen-layout-header-wrapper evergreen-layout--inner evergreen-layout evergreen-layout--subpage fmForm1 Form litPageDiv PageNewsReleasesPhotoampLogoRequest SectionNewsReleasesPhotoampLogoRequest ParentSection_news-releases PageDefaultInner pageClass Sectionnews-releases PageDefault PageNewsReleasesPhotoLogoRequest LayoutSubPageEvergreen Languageen-US BodyBackground 359e6b42f15c503156828da3d3b1f283e978ea2a StudioBase CanvasPlus",
+        "local_semantic": "Textron, logo",
+        "anchor_text": "",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 2,
+        "inherited_color": null,
+        "company_name": "Textron",
+        "eligible_roles": [
+          "wide"
+        ],
+        "deep_official": true,
+        "duplicate_sources": [
+          "dom-img"
+        ],
+        "duplicate_urls": [
+          "https://s206.q4cdn.com/111183019/files/design/site_logo/textron.png"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://s206.q4cdn.com/111183019/files/design/site_logo/textron.png",
+        "retrieved_at": "2026-09-19T09:24:17.200Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/textron/logo-697b598590ee83432b7f0460b8c27b0551220927957dbe6a2fe442b28fe24796.png"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.textron.com/sites/default/files/favicon.ico",
+      "sourcePage": "https://www.textron.com/",
+      "format": "png",
+      "width": 16,
+      "height": 16,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " h100class has-video",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Textron"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.textron.com/sites/default/files/favicon.ico",
+        "retrieved_at": "2026-09-19T09:24:03.971Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/textron/icon-e6ce20f37b3154ed999f6bb70b03e6500a2da86e3e9035a199544c9dc6b3f140.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://textron.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.textron.com/"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 153,
+      "declaredTransferBytes": 4300673,
+      "transferBytes": 13766,
+      "blockedRequests": 23,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Rendered-browser discovery exceeded 11840.538499999995ms.",
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 12636,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.textron.com/",
+          "status": "timeout",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 152,
+          "declaredTransferBytes": 4300673,
+          "transferBytes": 4430163,
+          "blockedRequests": 23,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Rendered-browser discovery exceeded 11840.538499999995ms."
+          ],
+          "durationMs": 11999,
+          "candidates": 0
+        },
+        {
+          "url": "https://investor.textron.com/news-releases/photo-logo-request/default.aspx",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 1,
+          "declaredTransferBytes": 0,
+          "transferBytes": 13766,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 637,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

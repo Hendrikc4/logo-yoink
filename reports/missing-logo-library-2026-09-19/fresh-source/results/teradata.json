@@ -1,0 +1,131 @@
+{
+  "brandId": "teradata",
+  "name": "Teradata",
+  "domain": "teradata.com",
+  "attemptedAt": "2026-09-19T09:27:53.626Z",
+  "attemptedUrls": [
+    "https://teradata.com/",
+    "https://www.teradata.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "root-favicon",
+      "url": "https://www.teradata.com/favicon.ico",
+      "sourcePage": "https://www.teradata.com/",
+      "format": "ico",
+      "width": 48,
+      "height": 48,
+      "evidence": {},
+      "provenance": {
+        "retrieved_asset_url": "https://www.teradata.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:27:57.095Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/teradata/icon-8c4ab99839ad70ad3d01be54f38d7eb2645c3d724e99c017d649fe8787efea72.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://teradata.com/",
+        "stage": "primary",
+        "ok": false,
+        "error": "socket hang up",
+        "failureKind": "transport"
+      },
+      {
+        "url": "https://www.teradata.com/",
+        "stage": "alternate_https_host",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.teradata.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.teradata.com/newsroom",
+      "requests": 170,
+      "declaredTransferBytes": 3233247,
+      "transferBytes": 2100729,
+      "blockedRequests": 18,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 28,
+        "invalid_external": 0,
+        "duplicates": 14,
+        "retained": 14
+      },
+      "durationMs": 9195,
+      "candidates": 14,
+      "attempts": [
+        {
+          "url": "https://www.teradata.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.teradata.com/",
+          "requests": 77,
+          "declaredTransferBytes": 1516087,
+          "transferBytes": 1850896,
+          "blockedRequests": 3,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 17,
+            "invalid_external": 0,
+            "duplicates": 8,
+            "retained": 9
+          },
+          "durationMs": 4353,
+          "candidates": 9
+        },
+        {
+          "url": "https://www.teradata.com/newsroom",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.teradata.com/newsroom",
+          "requests": 93,
+          "declaredTransferBytes": 1717160,
+          "transferBytes": 2100729,
+          "blockedRequests": 15,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 28,
+            "invalid_external": 0,
+            "duplicates": 14,
+            "retained": 14
+          },
+          "durationMs": 4842,
+          "candidates": 14
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

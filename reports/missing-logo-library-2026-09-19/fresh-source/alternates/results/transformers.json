@@ -1,0 +1,105 @@
+{
+  "brandId": "transformers",
+  "name": "Transformers",
+  "domain": "transformers.com",
+  "attemptedAt": "2026-09-19T09:33:08.883Z",
+  "attemptedUrls": [
+    "https://shop.hasbro.com/en-us/brands/transformers",
+    "https://shop.hasbro.com/en-us/brands/transformers"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "manifest",
+      "url": "https://www.hasbropulse.com/mobify/bundle/2620/static/img/global/hasbro-pulse-icon-512.png",
+      "sourcePage": "https://www.hasbropulse.com/mobify/bundle/2620/static/manifest.json",
+      "format": "png",
+      "width": 512,
+      "height": 512,
+      "evidence": {
+        "element": "manifest",
+        "discovery_order": 1,
+        "manifest_purpose": "any",
+        "manifest_names": [
+          "Hasbro Pulse",
+          "Hasbro Pulse"
+        ]
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.hasbropulse.com/mobify/bundle/2620/static/img/global/hasbro-pulse-icon-512.png",
+        "retrieved_at": "2026-09-19T09:33:11.184Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/transformers/alternate-icon-f7429d9a3be470a1510d85dde8e80a08b85f666284c007c37a92a6b30da34972.png"
+    }
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "https://shop.hasbro.com/en-us/brands/transformers",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.hasbropulse.com/collections/transformers?utm_source=redirect&utm_medium=domain_redirect&utm_campaign=shop_hasbro_transformers"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.hasbropulse.com/collections/transformers?utm_source=redirect&utm_medium=domain_redirect&utm_campaign=shop_hasbro_transformers",
+      "requests": 117,
+      "declaredTransferBytes": 495956,
+      "transferBytes": 2275672,
+      "blockedRequests": 6,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 9,
+        "invalid_external": 0,
+        "duplicates": 5,
+        "retained": 4
+      },
+      "durationMs": 3727,
+      "candidates": 4,
+      "attempts": [
+        {
+          "url": "https://www.hasbropulse.com/collections/transformers?utm_source=redirect&utm_medium=domain_redirect&utm_campaign=shop_hasbro_transformers",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.hasbropulse.com/collections/transformers?utm_source=redirect&utm_medium=domain_redirect&utm_campaign=shop_hasbro_transformers",
+          "requests": 117,
+          "declaredTransferBytes": 495956,
+          "transferBytes": 2275672,
+          "blockedRequests": 6,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 9,
+            "invalid_external": 0,
+            "duplicates": 5,
+            "retained": 4
+          },
+          "durationMs": 3727,
+          "candidates": 4
+        }
+      ]
+    },
+    "network": null
+  }
+}

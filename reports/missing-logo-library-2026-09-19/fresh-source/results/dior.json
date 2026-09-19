@@ -1,0 +1,106 @@
+{
+  "brandId": "dior",
+  "name": "Dior",
+  "domain": "dior.com",
+  "attemptedAt": "2026-09-19T09:26:13.790Z",
+  "attemptedUrls": [
+    "https://dior.com/",
+    "https://www.dior.com/",
+    "http://dior.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "root-favicon",
+      "url": "https://www.dior.com/favicon.ico",
+      "sourcePage": "https://dior.com/",
+      "format": "ico",
+      "width": 48,
+      "height": 48,
+      "evidence": {},
+      "provenance": {
+        "retrieved_asset_url": "https://www.dior.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:26:20.037Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/dior/icon-8ebf579f460497f609fe3cc6777c3111a5ffdf6fdbe509c99556dc851e498fc1.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://dior.com/",
+        "stage": "primary",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "https://www.dior.com/",
+        "stage": "alternate_https_host",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      },
+      {
+        "url": "http://dior.com/",
+        "stage": "http_compatibility",
+        "ok": false,
+        "status": 403,
+        "failureKind": "blocked_interstitial"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 1,
+      "declaredTransferBytes": 753,
+      "transferBytes": 12185,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 1934,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://dior.com/",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 1,
+          "declaredTransferBytes": 753,
+          "transferBytes": 12185,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 1934,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

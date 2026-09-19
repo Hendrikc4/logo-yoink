@@ -1,0 +1,1183 @@
+{
+  "generatedAt": "2026-09-19T09:33:27.395Z",
+  "targets": 14,
+  "candidateIdentities": 8,
+  "results": [
+    {
+      "brandId": "abb",
+      "name": "ABB",
+      "domain": "abb.com",
+      "attemptedAt": "2026-09-19T09:32:09.617Z",
+      "attemptedUrls": [
+        "https://www.abb.com/global/en/company/media"
+      ],
+      "outcome": "attempt_failed",
+      "error": "Could not reach the website. https://www.abb.com/global/en/company/media: timeout | https://abb.com/: timeout"
+    },
+    {
+      "brandId": "united-airlines",
+      "name": "United Airlines",
+      "domain": "united.com",
+      "attemptedAt": "2026-09-19T09:32:09.625Z",
+      "attemptedUrls": [
+        "https://www.united.com/en/us/newsroom"
+      ],
+      "outcome": "attempt_failed",
+      "error": "Could not reach the website. https://www.united.com/en/us/newsroom: timeout | https://united.com/: timeout"
+    },
+    {
+      "brandId": "etihad-airways",
+      "name": "Etihad Airways",
+      "domain": "etihad.com",
+      "attemptedAt": "2026-09-19T09:32:24.630Z",
+      "attemptedUrls": [
+        "https://www.etihad.com/en/news"
+      ],
+      "outcome": "attempt_failed",
+      "error": "Could not reach the website. https://www.etihad.com/en/news: timeout | https://etihad.com/: timeout"
+    },
+    {
+      "brandId": "cme-group",
+      "name": "CME Group",
+      "domain": "cmegroup.com",
+      "attemptedAt": "2026-09-19T09:32:24.630Z",
+      "attemptedUrls": [
+        "https://brand.cmegroup.com/logo.html",
+        "https://brand.cmegroup.com/logo.html"
+      ],
+      "outcome": "candidate_recovered_review_required",
+      "assets": {
+        "logo": {
+          "source": "browser-img",
+          "url": "https://brand.cmegroup.com/images/cme-group-logo_minimum-size.png",
+          "sourcePage": "https://brand.cmegroup.com/logo.html",
+          "format": "png",
+          "width": 724,
+          "height": 238,
+          "evidence": {
+            "dom_region": "document",
+            "home_linked": false,
+            "alt": "Logo Minimum Size Guides",
+            "aria_label": "",
+            "semantic_text": "Logo Minimum Size Guides image-2",
+            "local_semantic": "Logo Minimum Size Guides image-2",
+            "positive_token": true,
+            "negative_context": false,
+            "eligible_roles": [
+              "wide"
+            ],
+            "themes": [
+              "light"
+            ],
+            "rendered": true
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://brand.cmegroup.com/images/cme-group-logo_minimum-size.png",
+            "retrieved_at": "2026-09-19T09:32:39.598Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "light",
+            "color": "unknown",
+            "background": "opaque"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/cme-group/alternate-logo-f6f92220b8e78225526bccbe48801b370335dec09e72b640986d517d0f495466.png"
+        },
+        "icon": {
+          "source": "apple",
+          "url": "https://brand.cmegroup.com/images/webclip.png",
+          "sourcePage": "https://brand.cmegroup.com/logo.html",
+          "format": "png",
+          "width": 256,
+          "height": 256,
+          "evidence": {
+            "element": "link",
+            "dom_region": "body",
+            "home_linked": false,
+            "alt": "",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": " ",
+            "local_semantic": "",
+            "anchor_text": "",
+            "positive_token": false,
+            "negative_context": false,
+            "discovery_order": 3,
+            "inherited_color": null,
+            "company_name": "CME Group"
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://brand.cmegroup.com/images/webclip.png",
+            "retrieved_at": "2026-09-19T09:32:26.415Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "opaque"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/cme-group/alternate-icon-caf3c907d29b91f36ad864fb0f94154058f65ae3aa7592bb0a125eb08fbbf9d0.png"
+        }
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "https://brand.cmegroup.com/logo.html",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "https://brand.cmegroup.com/logo.html"
+          }
+        ],
+        "browser": {
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://brand.cmegroup.com/logo.html",
+          "requests": 23,
+          "declaredTransferBytes": 773742,
+          "transferBytes": 854919,
+          "blockedRequests": 4,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 22,
+            "invalid_external": 0,
+            "duplicates": 6,
+            "retained": 16
+          },
+          "durationMs": 4114,
+          "candidates": 16,
+          "attempts": [
+            {
+              "url": "https://brand.cmegroup.com/logo.html",
+              "status": "ok",
+              "browserReused": false,
+              "finalUrl": "https://brand.cmegroup.com/logo.html",
+              "requests": 23,
+              "declaredTransferBytes": 773742,
+              "transferBytes": 854919,
+              "blockedRequests": 4,
+              "resourceLimitHit": false,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [],
+              "httpStatus": 200,
+              "discovery": {
+                "observed": 22,
+                "invalid_external": 0,
+                "duplicates": 6,
+                "retained": 16
+              },
+              "durationMs": 4114,
+              "candidates": 16
+            }
+          ]
+        },
+        "network": null
+      }
+    },
+    {
+      "brandId": "lg-uplus",
+      "name": "LG Uplus",
+      "domain": "lguplus.com",
+      "attemptedAt": "2026-09-19T09:32:39.635Z",
+      "attemptedUrls": [
+        "https://www.lguplus.com/about/en",
+        "https://www.lguplus.com/about/en"
+      ],
+      "outcome": "candidate_recovered_review_required",
+      "assets": {
+        "logo": null,
+        "icon": {
+          "source": "html-icon",
+          "url": "https://www.lguplus.com/static/pc-static/favicon_16_lgu.ico",
+          "sourcePage": "https://www.lguplus.com/about/en",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "evidence": {
+            "element": "link",
+            "dom_region": "body",
+            "home_linked": false,
+            "alt": "",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": " __variable_bb6ec3",
+            "local_semantic": "",
+            "anchor_text": "",
+            "positive_token": false,
+            "negative_context": false,
+            "discovery_order": 0,
+            "inherited_color": null,
+            "company_name": "LG Uplus",
+            "duplicate_sources": [
+              "html-icon",
+              "root-favicon"
+            ],
+            "duplicate_urls": [
+              "https://www.lguplus.com/static/pc-static/favicon_16_lgu.ico",
+              "https://www.lguplus.com/favicon.ico"
+            ]
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://www.lguplus.com/static/pc-static/favicon_16_lgu.ico",
+            "retrieved_at": "2026-09-19T09:32:41.009Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "unknown"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/lg-uplus/alternate-icon-d808614cd013e86cdb4d9811c1d1e02dd39cb34265e5778709005ea97f36780f.ico"
+        }
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "https://www.lguplus.com/about/en",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "https://www.lguplus.com/about/en"
+          }
+        ],
+        "browser": {
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 0,
+          "transferBytes": 13350,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 492,
+          "candidates": 0,
+          "attempts": [
+            {
+              "url": "https://www.lguplus.com/about/en",
+              "status": "error",
+              "browserReused": false,
+              "finalUrl": null,
+              "requests": 2,
+              "declaredTransferBytes": 0,
+              "transferBytes": 13350,
+              "blockedRequests": 0,
+              "resourceLimitHit": false,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [
+                "Browser homepage returned HTTP 403."
+              ],
+              "httpStatus": 403,
+              "durationMs": 492,
+              "candidates": 0
+            }
+          ]
+        },
+        "network": null
+      }
+    },
+    {
+      "brandId": "sinopec",
+      "name": "Sinopec",
+      "domain": "sinopec.com",
+      "attemptedAt": "2026-09-19T09:32:39.636Z",
+      "attemptedUrls": [
+        "http://www.sinopecgroup.com/group/en/",
+        "http://www.sinopecgroup.com/group/en/"
+      ],
+      "outcome": "no_candidate_recovered",
+      "assets": {
+        "logo": null,
+        "icon": null
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "http://www.sinopecgroup.com/group/en/",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "http://www.sinopecgroup.com/group/en/"
+          }
+        ],
+        "browser": {
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "http://www.sinopecgroup.com/group/en/000/000/041/41542.shtml",
+          "requests": 148,
+          "declaredTransferBytes": 2758026,
+          "transferBytes": 705751,
+          "blockedRequests": 3,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Rendered-browser discovery exceeded 11830.482707999996ms."
+          ],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 2,
+            "invalid_external": 0,
+            "duplicates": 1,
+            "retained": 1
+          },
+          "durationMs": 19218,
+          "candidates": 1,
+          "attempts": [
+            {
+              "url": "http://www.sinopecgroup.com/group/en/",
+              "status": "timeout",
+              "browserReused": false,
+              "finalUrl": null,
+              "requests": 106,
+              "declaredTransferBytes": 1735364,
+              "transferBytes": 1779602,
+              "blockedRequests": 3,
+              "resourceLimitHit": false,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [
+                "Rendered-browser discovery exceeded 11830.482707999996ms."
+              ],
+              "durationMs": 12001,
+              "candidates": 0
+            },
+            {
+              "url": "http://www.sinopecgroup.com/group/en/000/000/041/41542.shtml",
+              "status": "ok",
+              "browserReused": false,
+              "finalUrl": "http://www.sinopecgroup.com/group/en/000/000/041/41542.shtml",
+              "requests": 42,
+              "declaredTransferBytes": 1022662,
+              "transferBytes": 705751,
+              "blockedRequests": 0,
+              "resourceLimitHit": false,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [],
+              "httpStatus": 200,
+              "discovery": {
+                "observed": 2,
+                "invalid_external": 0,
+                "duplicates": 1,
+                "retained": 1
+              },
+              "durationMs": 7217,
+              "candidates": 1
+            }
+          ]
+        },
+        "network": null
+      }
+    },
+    {
+      "brandId": "petrochina",
+      "name": "PetroChina",
+      "domain": "petrochina.com.cn",
+      "attemptedAt": "2026-09-19T09:32:41.863Z",
+      "attemptedUrls": [
+        "https://www.petrochina.com.cn/ptr/"
+      ],
+      "outcome": "attempt_failed",
+      "error": "Could not reach the website. https://www.petrochina.com.cn/ptr/: HTTP 412 | https://petrochina.com.cn/: getaddrinfo ENOTFOUND petrochina.com.cn | http://petrochina.com.cn/: dns-host-known-unreachable"
+    },
+    {
+      "brandId": "namshi",
+      "name": "Namshi",
+      "domain": "namshi.com",
+      "attemptedAt": "2026-09-19T09:32:43.642Z",
+      "attemptedUrls": [
+        "https://www.namshi.com/uae-en/"
+      ],
+      "outcome": "attempt_failed",
+      "error": "Could not reach the website. https://www.namshi.com/uae-en/: timeout | https://namshi.com/: timeout"
+    },
+    {
+      "brandId": "hisense",
+      "name": "Hisense",
+      "domain": "hisense.com",
+      "attemptedAt": "2026-09-19T09:32:58.644Z",
+      "attemptedUrls": [
+        "https://global.hisense.com/",
+        "https://global.hisense.com/"
+      ],
+      "outcome": "candidate_recovered_review_required",
+      "assets": {
+        "logo": {
+          "source": "dom-img",
+          "url": "https://dtc-aus-api.hisense.com/medias/logo.png?context=bWFzdGVyfGltYWdlc3w0ODE1fGltYWdlL3BuZ3xhREF6TDJoa1pDODROemszT0RrMk9EQXlNek0wTDJ4dloyOHVjRzVufDRkMTQwNTAwNDYwZWUxYzU1YTQ0N2MzNWI5MDNjNGZiYWQ0YzQwYjE5MDQ1M2YyNDdmMTg3NjMwMzlhZDAxYWQ",
+          "sourcePage": "https://hisense.com.au/",
+          "format": "png",
+          "width": 190,
+          "height": 30,
+          "evidence": {
+            "element": "img",
+            "dom_region": "header",
+            "home_linked": false,
+            "alt": "Hisense",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": "Hisense Hisense Hisense Hisense Hisense is-loading SiteLogo has-components header cx-header LandingPage2Template stop-navigating cxFeat_headerLayoutForSmallerViewports cxFeat_a11yPdpGridArrangement cxFeat_a11yMiniCartFocusOnMobile cxFeat_a11yShowDownArrowOnFocusedSelectMenu cxFeat_a11yHideConsentButtonWhenBannerVisible cxFeat_a11yScrollToTopPositioning cxFeat_a11yNavigationButtonsAriaFixes dtc-theme",
+            "local_semantic": "Hisense Hisense Hisense",
+            "anchor_text": "",
+            "positive_token": false,
+            "negative_context": false,
+            "discovery_order": 1,
+            "inherited_color": null,
+            "company_name": "Hisense"
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://dtc-aus-api.hisense.com/medias/logo.png?context=bWFzdGVyfGltYWdlc3w0ODE1fGltYWdlL3BuZ3xhREF6TDJoa1pDODROemszT0RrMk9EQXlNek0wTDJ4dloyOHVjRzVufDRkMTQwNTAwNDYwZWUxYzU1YTQ0N2MzNWI5MDNjNGZiYWQ0YzQwYjE5MDQ1M2YyNDdmMTg3NjMwMzlhZDAxYWQ",
+            "retrieved_at": "2026-09-19T09:33:02.292Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "transparent"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/hisense/alternate-logo-e990e6111dac0655269e66aae4134bbc320495dc343cd5188fc4e0b56e9b6b82.png"
+        },
+        "icon": {
+          "source": "html-icon",
+          "url": "https://hisense.com.au/favicon.ico",
+          "sourcePage": "https://hisense.com.au/",
+          "format": "ico",
+          "width": 32,
+          "height": 32,
+          "evidence": {
+            "element": "link",
+            "dom_region": "body",
+            "home_linked": false,
+            "alt": "",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": " ",
+            "local_semantic": "",
+            "anchor_text": "",
+            "positive_token": false,
+            "negative_context": false,
+            "discovery_order": 0,
+            "inherited_color": null,
+            "company_name": "Hisense"
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://hisense.com.au/favicon.ico",
+            "retrieved_at": "2026-09-19T09:33:00.925Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "unknown"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/hisense/alternate-icon-615a801c56e910d8ff1ea7c56a23436fe0b33abf26c40b02282c49af1f3cd51c.ico"
+        }
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "https://global.hisense.com/",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "https://hisense.com.au/"
+          }
+        ],
+        "browser": {
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://hisense.com.au/",
+          "requests": 148,
+          "declaredTransferBytes": 7954472,
+          "transferBytes": 8388805,
+          "blockedRequests": 25,
+          "resourceLimitHit": true,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 0,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 0
+          },
+          "durationMs": 3435,
+          "candidates": 0,
+          "attempts": [
+            {
+              "url": "https://hisense.com.au/",
+              "status": "ok",
+              "browserReused": false,
+              "finalUrl": "https://hisense.com.au/",
+              "requests": 148,
+              "declaredTransferBytes": 7954472,
+              "transferBytes": 8388805,
+              "blockedRequests": 25,
+              "resourceLimitHit": true,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [],
+              "httpStatus": 200,
+              "emptyObservationRetried": true,
+              "discovery": {
+                "observed": 0,
+                "invalid_external": 0,
+                "duplicates": 0,
+                "retained": 0
+              },
+              "durationMs": 3435,
+              "candidates": 0
+            }
+          ]
+        },
+        "network": null
+      }
+    },
+    {
+      "brandId": "acer",
+      "name": "Acer",
+      "domain": "acer.com",
+      "attemptedAt": "2026-09-19T09:33:08.493Z",
+      "attemptedUrls": [
+        "https://news.acer.com/",
+        "https://news.acer.com/"
+      ],
+      "outcome": "candidate_recovered_review_required",
+      "assets": {
+        "logo": {
+          "source": "browser-img",
+          "url": "https://cdn.uc.assets.prezly.com/8e51e5e9-3cc7-4029-b9bf-1990cf2b6770/-/crop/4920x1732/514,582/-/preview/-/format/auto/-/stretch/off/-/progressive/yes/-/resize/256x/-/quality/smart/Acer-logo-digital-green.png",
+          "sourcePage": "https://news.acer.com/",
+          "format": "png",
+          "width": 256,
+          "height": 90,
+          "evidence": {
+            "dom_region": "header",
+            "home_linked": true,
+            "alt": "",
+            "aria_label": "",
+            "semantic_text": "Logo_logo__SEwEG Logo_landscape__HDUO5 Logo_large__WDdAz",
+            "local_semantic": "Logo_logo__SEwEG Logo_landscape__HDUO5 Logo_large__WDdAz",
+            "positive_token": true,
+            "negative_context": false,
+            "eligible_roles": [
+              "wide"
+            ],
+            "themes": [
+              "light",
+              "dark"
+            ],
+            "rendered": true
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://cdn.uc.assets.prezly.com/8e51e5e9-3cc7-4029-b9bf-1990cf2b6770/-/crop/4920x1732/514,582/-/preview/-/format/auto/-/stretch/off/-/progressive/yes/-/resize/256x/-/quality/smart/Acer-logo-digital-green.png",
+            "retrieved_at": "2026-09-19T09:33:19.326Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "any",
+            "color": "unknown",
+            "background": "transparent"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/acer/alternate-logo-a9836aaff84f319708b6807f4ec829571a2e249c38bfe6d17a5fc24c3db62444.png"
+        },
+        "icon": {
+          "source": "apple",
+          "url": "https://cdn.uc.assets.prezly.com/3103f8f6-33aa-4907-85e4-72a25abc5d6e/-/preview/180x180/favicon.png",
+          "sourcePage": "https://news.acer.com/",
+          "format": "png",
+          "width": 180,
+          "height": 180,
+          "evidence": {
+            "element": "link",
+            "dom_region": "body",
+            "home_linked": false,
+            "alt": "",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": " ",
+            "local_semantic": "",
+            "anchor_text": "",
+            "positive_token": false,
+            "negative_context": false,
+            "discovery_order": 3,
+            "inherited_color": null,
+            "company_name": "Acer",
+            "duplicate_sources": [
+              "apple",
+              "root-favicon"
+            ],
+            "duplicate_urls": [
+              "https://cdn.uc.assets.prezly.com/3103f8f6-33aa-4907-85e4-72a25abc5d6e/-/preview/180x180/favicon.png",
+              "https://news.acer.com/favicon.ico"
+            ]
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://cdn.uc.assets.prezly.com/3103f8f6-33aa-4907-85e4-72a25abc5d6e/-/preview/180x180/favicon.png",
+            "retrieved_at": "2026-09-19T09:33:10.864Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "transparent"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/acer/alternate-icon-19aff7afaa0ffc495c36581166f8f1215153c3d570b2bbc3075794cbe17fe508.png"
+        }
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "https://news.acer.com/",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "https://news.acer.com/"
+          }
+        ],
+        "browser": {
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://news.acer.com/",
+          "requests": 80,
+          "declaredTransferBytes": 1201116,
+          "transferBytes": 2395625,
+          "blockedRequests": 1,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 16,
+            "invalid_external": 0,
+            "duplicates": 10,
+            "retained": 6
+          },
+          "durationMs": 4193,
+          "candidates": 6,
+          "attempts": [
+            {
+              "url": "https://news.acer.com/",
+              "status": "ok",
+              "browserReused": false,
+              "finalUrl": "https://news.acer.com/",
+              "requests": 80,
+              "declaredTransferBytes": 1201116,
+              "transferBytes": 2395625,
+              "blockedRequests": 1,
+              "resourceLimitHit": false,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [],
+              "httpStatus": 200,
+              "discovery": {
+                "observed": 16,
+                "invalid_external": 0,
+                "duplicates": 10,
+                "retained": 6
+              },
+              "durationMs": 4193,
+              "candidates": 6
+            }
+          ]
+        },
+        "network": null
+      }
+    },
+    {
+      "brandId": "transformers",
+      "name": "Transformers",
+      "domain": "transformers.com",
+      "attemptedAt": "2026-09-19T09:33:08.883Z",
+      "attemptedUrls": [
+        "https://shop.hasbro.com/en-us/brands/transformers",
+        "https://shop.hasbro.com/en-us/brands/transformers"
+      ],
+      "outcome": "candidate_recovered_review_required",
+      "assets": {
+        "logo": null,
+        "icon": {
+          "source": "manifest",
+          "url": "https://www.hasbropulse.com/mobify/bundle/2620/static/img/global/hasbro-pulse-icon-512.png",
+          "sourcePage": "https://www.hasbropulse.com/mobify/bundle/2620/static/manifest.json",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "evidence": {
+            "element": "manifest",
+            "discovery_order": 1,
+            "manifest_purpose": "any",
+            "manifest_names": [
+              "Hasbro Pulse",
+              "Hasbro Pulse"
+            ]
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://www.hasbropulse.com/mobify/bundle/2620/static/img/global/hasbro-pulse-icon-512.png",
+            "retrieved_at": "2026-09-19T09:33:11.184Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "transparent"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/transformers/alternate-icon-f7429d9a3be470a1510d85dde8e80a08b85f666284c007c37a92a6b30da34972.png"
+        }
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "https://shop.hasbro.com/en-us/brands/transformers",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "https://www.hasbropulse.com/collections/transformers?utm_source=redirect&utm_medium=domain_redirect&utm_campaign=shop_hasbro_transformers"
+          }
+        ],
+        "browser": {
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.hasbropulse.com/collections/transformers?utm_source=redirect&utm_medium=domain_redirect&utm_campaign=shop_hasbro_transformers",
+          "requests": 117,
+          "declaredTransferBytes": 495956,
+          "transferBytes": 2275672,
+          "blockedRequests": 6,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 9,
+            "invalid_external": 0,
+            "duplicates": 5,
+            "retained": 4
+          },
+          "durationMs": 3727,
+          "candidates": 4,
+          "attempts": [
+            {
+              "url": "https://www.hasbropulse.com/collections/transformers?utm_source=redirect&utm_medium=domain_redirect&utm_campaign=shop_hasbro_transformers",
+              "status": "ok",
+              "browserReused": false,
+              "finalUrl": "https://www.hasbropulse.com/collections/transformers?utm_source=redirect&utm_medium=domain_redirect&utm_campaign=shop_hasbro_transformers",
+              "requests": 117,
+              "declaredTransferBytes": 495956,
+              "transferBytes": 2275672,
+              "blockedRequests": 6,
+              "resourceLimitHit": false,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [],
+              "httpStatus": 200,
+              "discovery": {
+                "observed": 9,
+                "invalid_external": 0,
+                "duplicates": 5,
+                "retained": 4
+              },
+              "durationMs": 3727,
+              "candidates": 4
+            }
+          ]
+        },
+        "network": null
+      }
+    },
+    {
+      "brandId": "monopoly",
+      "name": "Monopoly",
+      "domain": "monopoly.com",
+      "attemptedAt": "2026-09-19T09:33:17.136Z",
+      "attemptedUrls": [
+        "https://shop.hasbro.com/en-us/brands/monopoly",
+        "https://shop.hasbro.com/en-us/brands/monopoly"
+      ],
+      "outcome": "candidate_recovered_review_required",
+      "assets": {
+        "logo": null,
+        "icon": {
+          "source": "html-icon",
+          "url": "https://consumercare.hasbro.com/favicon.ico",
+          "sourcePage": "https://consumercare.hasbro.com/en-au/where-to-buy",
+          "format": "png",
+          "width": 48,
+          "height": 48,
+          "evidence": {
+            "element": "link",
+            "dom_region": "body",
+            "home_linked": false,
+            "alt": "",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": " ",
+            "local_semantic": "",
+            "anchor_text": "",
+            "positive_token": false,
+            "negative_context": false,
+            "discovery_order": 0,
+            "inherited_color": null,
+            "company_name": "Monopoly"
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://consumercare.hasbro.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:33:18.873Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "transparent"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/monopoly/alternate-icon-c2216cdd14a25eb7528bde2523f11cb2aba05b84d14c38579bcb9aed4fcf7784.png"
+        }
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "https://shop.hasbro.com/en-us/brands/monopoly",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "https://consumercare.hasbro.com/en-au/where-to-buy"
+          }
+        ],
+        "browser": {
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://consumercare.hasbro.com/en-au/sitemap",
+          "requests": 137,
+          "declaredTransferBytes": 12239764,
+          "transferBytes": 6202702,
+          "blockedRequests": 12,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 12,
+            "invalid_external": 0,
+            "duplicates": 5,
+            "retained": 7
+          },
+          "durationMs": 6351,
+          "candidates": 7,
+          "attempts": [
+            {
+              "url": "https://consumercare.hasbro.com/en-au/where-to-buy",
+              "status": "ok",
+              "browserReused": false,
+              "finalUrl": "https://consumercare.hasbro.com/en-au/where-to-buy",
+              "requests": 75,
+              "declaredTransferBytes": 6150990,
+              "transferBytes": 6266657,
+              "blockedRequests": 6,
+              "resourceLimitHit": false,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [],
+              "httpStatus": 200,
+              "discovery": {
+                "observed": 12,
+                "invalid_external": 0,
+                "duplicates": 5,
+                "retained": 7
+              },
+              "durationMs": 3184,
+              "candidates": 7
+            },
+            {
+              "url": "https://consumercare.hasbro.com/en-au/sitemap",
+              "status": "ok",
+              "browserReused": false,
+              "finalUrl": "https://consumercare.hasbro.com/en-au/sitemap",
+              "requests": 62,
+              "declaredTransferBytes": 6088774,
+              "transferBytes": 6202702,
+              "blockedRequests": 6,
+              "resourceLimitHit": false,
+              "themesInspected": [
+                "light",
+                "dark"
+              ],
+              "errors": [],
+              "httpStatus": 200,
+              "discovery": {
+                "observed": 12,
+                "invalid_external": 0,
+                "duplicates": 5,
+                "retained": 7
+              },
+              "durationMs": 3167,
+              "candidates": 7
+            }
+          ]
+        },
+        "network": null
+      }
+    },
+    {
+      "brandId": "ralph-lauren",
+      "name": "Ralph Lauren",
+      "domain": "ralphlauren.com",
+      "attemptedAt": "2026-09-19T09:33:19.328Z",
+      "attemptedUrls": [
+        "https://corporate.ralphlauren.com/",
+        "https://corporate.ralphlauren.com/"
+      ],
+      "outcome": "candidate_recovered_review_required",
+      "assets": {
+        "logo": {
+          "source": "official-archive",
+          "url": "zip+https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip#Polo_Ralph_Lauren_navy_on_white_logo.png",
+          "sourcePage": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip",
+          "format": "png",
+          "width": 2500,
+          "height": 763,
+          "evidence": {
+            "eligible_roles": [
+              "wide"
+            ],
+            "archive_member": "Polo_Ralph_Lauren_navy_on_white_logo.png",
+            "archive_score": 79,
+            "semantic_text": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip asset-download Media Assets Ralph Lauren Corporation (2669 x 98) Polo Player navy (1250 x 2500) Ralph Lauren navy on white (2268 x 164) Ralph Lauren white on navy (3300 x 537) Polo Ralph Lauren navy on white (2500 x 763) Polo_Ralph_Lauren_navy_on_white_logo.png",
+            "positive_token": true,
+            "deep_official": true,
+            "theme": "dark"
+          },
+          "provenance": {
+            "retrieved_asset_url": "zip+https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip#Polo_Ralph_Lauren_navy_on_white_logo.png",
+            "retrieved_at": "2026-09-19T09:33:23.953Z",
+            "http_status": 200,
+            "source_chain": [
+              {
+                "kind": "homepage",
+                "url": "https://corporate.ralphlauren.com/"
+              },
+              {
+                "kind": "official-page",
+                "url": "https://corporate.ralphlauren.com/newsroom",
+                "source_page": "https://corporate.ralphlauren.com/",
+                "context": "Newsroom https://corporate.ralphlauren.com/newsroom footer-nav-item Our Company Newsroom"
+              },
+              {
+                "kind": "official-page",
+                "url": "https://corporate.ralphlauren.com/logos",
+                "source_page": "https://corporate.ralphlauren.com/newsroom",
+                "context": "Logos https://corporate.ralphlauren.com/logos corp-secondary-button MEDIA RESOURCES MEDIA RESOURCES Logos Images"
+              },
+              {
+                "kind": "archive",
+                "url": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip",
+                "source_page": "https://corporate.ralphlauren.com/logos",
+                "context": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip asset-download Media Assets Ralph Lauren Corporation (2669 x 98) Polo Player navy (1250 x 2500) Ralph Lauren navy on white (2268 x 164) Ralph Lauren white on navy (3300 x 537) Polo Ralph Lauren navy on white (2500 x 763)"
+              },
+              {
+                "kind": "archive-member",
+                "url": "https://corporate.ralphlauren.com/on/demandware.static/-/Sites-RalphLauren_Corporate-Library/default/dw1a9a1ccd/assets/images/MEDIA_ASSETS/Polo_Ralph_Lauren_navy_on_white_logo.png.zip",
+                "member": "Polo_Ralph_Lauren_navy_on_white_logo.png"
+              }
+            ]
+          },
+          "variant": {
+            "theme": "light",
+            "color": "white",
+            "background": "transparent"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/ralph-lauren/alternate-logo-593b356b8a8c97897808db6c191b4f85e9791d0ab51fb735423d62c14b2c56a7.png"
+        },
+        "icon": {
+          "source": "html-icon",
+          "url": "https://corporate.ralphlauren.com/on/demandware.static/Sites-RalphLauren_Corporate-Site/-/default/dwac2f2583/images/favicon_rl.ico",
+          "sourcePage": "https://corporate.ralphlauren.com/",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "evidence": {
+            "element": "link",
+            "dom_region": "body",
+            "home_linked": false,
+            "alt": "",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": " lang-",
+            "local_semantic": "",
+            "anchor_text": "",
+            "positive_token": false,
+            "negative_context": false,
+            "discovery_order": 0,
+            "inherited_color": null,
+            "company_name": "Ralph Lauren"
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://corporate.ralphlauren.com/on/demandware.static/Sites-RalphLauren_Corporate-Site/-/default/dwac2f2583/images/favicon_rl.ico",
+            "retrieved_at": "2026-09-19T09:33:20.016Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "unknown"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/ralph-lauren/alternate-icon-ae9ffc8c842a47cc4f4817bd664e3d58fae021b85dbd546d7bf8653efd4268c4.ico"
+        }
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "https://corporate.ralphlauren.com/",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "https://corporate.ralphlauren.com/"
+          }
+        ],
+        "browser": null,
+        "network": null
+      }
+    },
+    {
+      "brandId": "kuaishou",
+      "name": "Kuaishou",
+      "domain": "kuaishou.com",
+      "attemptedAt": "2026-09-19T09:33:23.956Z",
+      "attemptedUrls": [
+        "https://ir.kuaishou.com/",
+        "https://ir.kuaishou.com/"
+      ],
+      "outcome": "candidate_recovered_review_required",
+      "assets": {
+        "logo": {
+          "source": "dom-img",
+          "url": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/themes/site/nir_pid3884/dist/images/logo-black.png?x=09152026-16:46",
+          "sourcePage": "https://ir.kuaishou.com/",
+          "format": "png",
+          "width": 432,
+          "height": 80,
+          "evidence": {
+            "element": "img",
+            "dom_region": "nav",
+            "home_linked": true,
+            "alt": "Kuaishou Technology Logo",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": "kuaishou-mobile Kuaishou Technology Logo kuaishou-mobile Kuaishou Technology Logo kuaishou-mobile idm-navbar-brand idm-my-4 navbar navbar-dark navbar-expand-xl idm-w-100 Main Navigation idm-row container header__main-navigation page__header bg-fixed bg-cover idm-bg-dark dialog-off-canvas-main-canvas body-sidebars-none nir-node nir-node--type-nir-landing-page nir-node--5806 path-frontpage page-node-type-nir-landing-page",
+            "local_semantic": "kuaishou-mobile Kuaishou Technology Logo",
+            "anchor_text": "",
+            "positive_token": true,
+            "negative_context": false,
+            "discovery_order": 2,
+            "inherited_color": null,
+            "company_name": "Kuaishou"
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/themes/site/nir_pid3884/dist/images/logo-black.png?x=09152026-16:46",
+            "retrieved_at": "2026-09-19T09:33:26.300Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "light",
+            "color": "black",
+            "background": "transparent"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/kuaishou/alternate-logo-934c8c4325171ae91f719b31178bca9502fbe3c6951c2c4a89ac76435d544a6b.png"
+        },
+        "icon": {
+          "source": "html-icon",
+          "url": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/files/favicon.ico",
+          "sourcePage": "https://ir.kuaishou.com/",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "evidence": {
+            "element": "link",
+            "dom_region": "body",
+            "home_linked": false,
+            "alt": "",
+            "aria_label": "",
+            "class_tokens": [],
+            "semantic_text": " ",
+            "local_semantic": "",
+            "anchor_text": "",
+            "positive_token": false,
+            "negative_context": false,
+            "discovery_order": 0,
+            "inherited_color": null,
+            "company_name": "Kuaishou"
+          },
+          "provenance": {
+            "retrieved_asset_url": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/files/favicon.ico",
+            "retrieved_at": "2026-09-19T09:33:26.290Z",
+            "http_status": 200
+          },
+          "variant": {
+            "theme": "unknown",
+            "color": "unknown",
+            "background": "unknown"
+          },
+          "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/kuaishou/alternate-icon-bf5395b95b48de26617dcc05a1cd826f0e29e643ef862569285127992c1e26f1.ico"
+        }
+      },
+      "diagnostics": {
+        "reachability": [
+          {
+            "url": "https://ir.kuaishou.com/",
+            "stage": "primary",
+            "ok": true,
+            "status": 200,
+            "finalUrl": "https://ir.kuaishou.com/"
+          }
+        ],
+        "browser": null,
+        "network": null
+      }
+    }
+  ]
+}

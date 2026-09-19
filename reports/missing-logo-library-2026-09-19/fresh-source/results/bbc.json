@@ -1,0 +1,128 @@
+{
+  "brandId": "bbc",
+  "name": "BBC",
+  "domain": "bbc.com",
+  "attemptedAt": "2026-09-19T09:21:41.124Z",
+  "attemptedUrls": [
+    "https://bbc.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "manifest",
+      "url": "https://static.files.bbci.co.uk/bbcdotcom/web/20260907-085256-bea8b058c0-web-3.21.0/android-chrome-512x512.png",
+      "sourcePage": "https://static.files.bbci.co.uk/bbcdotcom/web/20260907-085256-bea8b058c0-web-3.21.0/site.webmanifest",
+      "format": "png",
+      "width": 512,
+      "height": 512,
+      "evidence": {
+        "element": "manifest",
+        "discovery_order": 1,
+        "manifest_purpose": "any",
+        "manifest_names": []
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://static.files.bbci.co.uk/bbcdotcom/web/20260907-085256-bea8b058c0-web-3.21.0/android-chrome-512x512.png",
+        "retrieved_at": "2026-09-19T09:21:44.253Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/bbc/icon-9a49d63388db10567ffe14dadeeb0fa8933e140ac564cb2241da160e1dbd8f34.png"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://bbc.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.bbc.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.bbc.com/news/articles/c6e30580jqjpo",
+      "requests": 191,
+      "declaredTransferBytes": 2406548,
+      "transferBytes": 1291406,
+      "blockedRequests": 13,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 8,
+        "invalid_external": 0,
+        "duplicates": 2,
+        "retained": 6
+      },
+      "durationMs": 7091,
+      "candidates": 6,
+      "attempts": [
+        {
+          "url": "https://www.bbc.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.bbc.com/",
+          "requests": 116,
+          "declaredTransferBytes": 1473333,
+          "transferBytes": 1799236,
+          "blockedRequests": 6,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 8,
+            "invalid_external": 0,
+            "duplicates": 2,
+            "retained": 6
+          },
+          "durationMs": 4004,
+          "candidates": 6
+        },
+        {
+          "url": "https://www.bbc.com/news/articles/c6e30580jqjpo",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.bbc.com/news/articles/c6e30580jqjpo",
+          "requests": 75,
+          "declaredTransferBytes": 933215,
+          "transferBytes": 1291406,
+          "blockedRequests": 7,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 8,
+            "invalid_external": 0,
+            "duplicates": 2,
+            "retained": 6
+          },
+          "durationMs": 3087,
+          "candidates": 6
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

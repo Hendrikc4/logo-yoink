@@ -1,0 +1,147 @@
+{
+  "brandId": "cme-group",
+  "name": "CME Group",
+  "domain": "cmegroup.com",
+  "attemptedAt": "2026-09-19T09:32:24.630Z",
+  "attemptedUrls": [
+    "https://brand.cmegroup.com/logo.html",
+    "https://brand.cmegroup.com/logo.html"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "browser-img",
+      "url": "https://brand.cmegroup.com/images/cme-group-logo_minimum-size.png",
+      "sourcePage": "https://brand.cmegroup.com/logo.html",
+      "format": "png",
+      "width": 724,
+      "height": 238,
+      "evidence": {
+        "dom_region": "document",
+        "home_linked": false,
+        "alt": "Logo Minimum Size Guides",
+        "aria_label": "",
+        "semantic_text": "Logo Minimum Size Guides image-2",
+        "local_semantic": "Logo Minimum Size Guides image-2",
+        "positive_token": true,
+        "negative_context": false,
+        "eligible_roles": [
+          "wide"
+        ],
+        "themes": [
+          "light"
+        ],
+        "rendered": true
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://brand.cmegroup.com/images/cme-group-logo_minimum-size.png",
+        "retrieved_at": "2026-09-19T09:32:39.598Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "light",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/cme-group/alternate-logo-f6f92220b8e78225526bccbe48801b370335dec09e72b640986d517d0f495466.png"
+    },
+    "icon": {
+      "source": "apple",
+      "url": "https://brand.cmegroup.com/images/webclip.png",
+      "sourcePage": "https://brand.cmegroup.com/logo.html",
+      "format": "png",
+      "width": 256,
+      "height": 256,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 3,
+        "inherited_color": null,
+        "company_name": "CME Group"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://brand.cmegroup.com/images/webclip.png",
+        "retrieved_at": "2026-09-19T09:32:26.415Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "opaque"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/cme-group/alternate-icon-caf3c907d29b91f36ad864fb0f94154058f65ae3aa7592bb0a125eb08fbbf9d0.png"
+    }
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "https://brand.cmegroup.com/logo.html",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://brand.cmegroup.com/logo.html"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://brand.cmegroup.com/logo.html",
+      "requests": 23,
+      "declaredTransferBytes": 773742,
+      "transferBytes": 854919,
+      "blockedRequests": 4,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "discovery": {
+        "observed": 22,
+        "invalid_external": 0,
+        "duplicates": 6,
+        "retained": 16
+      },
+      "durationMs": 4114,
+      "candidates": 16,
+      "attempts": [
+        {
+          "url": "https://brand.cmegroup.com/logo.html",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://brand.cmegroup.com/logo.html",
+          "requests": 23,
+          "declaredTransferBytes": 773742,
+          "transferBytes": 854919,
+          "blockedRequests": 4,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "discovery": {
+            "observed": 22,
+            "invalid_external": 0,
+            "duplicates": 6,
+            "retained": 16
+          },
+          "durationMs": 4114,
+          "candidates": 16
+        }
+      ]
+    },
+    "network": null
+  }
+}

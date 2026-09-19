@@ -1,0 +1,139 @@
+{
+  "brandId": "thai-airways",
+  "name": "Thai Airways",
+  "domain": "thaiairways.com",
+  "attemptedAt": "2026-09-19T09:27:11.097Z",
+  "attemptedUrls": [
+    "https://thaiairways.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "schema",
+      "url": "https://www.thaiairways.com/content/dam/thaiairways/Thai_logo.png",
+      "sourcePage": "https://www.thaiairways.com/",
+      "format": "png",
+      "width": 2560,
+      "height": 753,
+      "evidence": {
+        "element": "script",
+        "dom_region": "head",
+        "discovery_order": 4,
+        "company_name": "Thai Airways"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.thaiairways.com/content/dam/thaiairways/Thai_logo.png",
+        "retrieved_at": "2026-09-19T09:27:12.570Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/thai-airways/logo-1e4af80fd5ce16502ebc1351b9beefbe14b695550a6279e66c4e6b0ba26e8b53.png"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://www.thaiairways.com/favicon.ico",
+      "sourcePage": "https://www.thaiairways.com/",
+      "format": "ico",
+      "width": 32,
+      "height": 32,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 3,
+        "inherited_color": null,
+        "company_name": "Thai Airways"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://www.thaiairways.com/favicon.ico",
+        "retrieved_at": "2026-09-19T09:27:12.287Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/thai-airways/icon-e6efd9212c945bbe88bae8978b189c0f6393c5e4d24eb825447321e120b93f98.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://thaiairways.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.thaiairways.com/"
+      }
+    ],
+    "browser": {
+      "status": "ok",
+      "browserReused": false,
+      "finalUrl": "https://www.thaiairways.com/",
+      "requests": 100,
+      "declaredTransferBytes": 8,
+      "transferBytes": 3854544,
+      "blockedRequests": 3,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [],
+      "httpStatus": 200,
+      "emptyObservationRetried": true,
+      "discovery": {
+        "observed": 4,
+        "invalid_external": 0,
+        "duplicates": 0,
+        "retained": 4
+      },
+      "durationMs": 4701,
+      "candidates": 4,
+      "attempts": [
+        {
+          "url": "https://www.thaiairways.com/",
+          "status": "ok",
+          "browserReused": false,
+          "finalUrl": "https://www.thaiairways.com/",
+          "requests": 100,
+          "declaredTransferBytes": 8,
+          "transferBytes": 3854544,
+          "blockedRequests": 3,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [],
+          "httpStatus": 200,
+          "emptyObservationRetried": true,
+          "discovery": {
+            "observed": 4,
+            "invalid_external": 0,
+            "duplicates": 0,
+            "retained": 4
+          },
+          "durationMs": 4701,
+          "candidates": 4
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}

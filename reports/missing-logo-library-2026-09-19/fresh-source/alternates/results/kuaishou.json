@@ -1,0 +1,96 @@
+{
+  "brandId": "kuaishou",
+  "name": "Kuaishou",
+  "domain": "kuaishou.com",
+  "attemptedAt": "2026-09-19T09:33:23.956Z",
+  "attemptedUrls": [
+    "https://ir.kuaishou.com/",
+    "https://ir.kuaishou.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": {
+      "source": "dom-img",
+      "url": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/themes/site/nir_pid3884/dist/images/logo-black.png?x=09152026-16:46",
+      "sourcePage": "https://ir.kuaishou.com/",
+      "format": "png",
+      "width": 432,
+      "height": 80,
+      "evidence": {
+        "element": "img",
+        "dom_region": "nav",
+        "home_linked": true,
+        "alt": "Kuaishou Technology Logo",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": "kuaishou-mobile Kuaishou Technology Logo kuaishou-mobile Kuaishou Technology Logo kuaishou-mobile idm-navbar-brand idm-my-4 navbar navbar-dark navbar-expand-xl idm-w-100 Main Navigation idm-row container header__main-navigation page__header bg-fixed bg-cover idm-bg-dark dialog-off-canvas-main-canvas body-sidebars-none nir-node nir-node--type-nir-landing-page nir-node--5806 path-frontpage page-node-type-nir-landing-page",
+        "local_semantic": "kuaishou-mobile Kuaishou Technology Logo",
+        "anchor_text": "",
+        "positive_token": true,
+        "negative_context": false,
+        "discovery_order": 2,
+        "inherited_color": null,
+        "company_name": "Kuaishou"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/themes/site/nir_pid3884/dist/images/logo-black.png?x=09152026-16:46",
+        "retrieved_at": "2026-09-19T09:33:26.300Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "light",
+        "color": "black",
+        "background": "transparent"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/kuaishou/alternate-logo-934c8c4325171ae91f719b31178bca9502fbe3c6951c2c4a89ac76435d544a6b.png"
+    },
+    "icon": {
+      "source": "html-icon",
+      "url": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/files/favicon.ico",
+      "sourcePage": "https://ir.kuaishou.com/",
+      "format": "ico",
+      "width": 48,
+      "height": 48,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " ",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "Kuaishou"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://ir.kuaishou.com/sites/g/files/knoqqb81046/files/favicon.ico",
+        "retrieved_at": "2026-09-19T09:33:26.290Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/kuaishou/alternate-icon-bf5395b95b48de26617dcc05a1cd826f0e29e643ef862569285127992c1e26f1.ico"
+    }
+  },
+  "diagnostics": {
+    "reachability": [
+      {
+        "url": "https://ir.kuaishou.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://ir.kuaishou.com/"
+      }
+    ],
+    "browser": null,
+    "network": null
+  }
+}

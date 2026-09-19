@@ -1,0 +1,127 @@
+{
+  "brandId": "america-movil",
+  "name": "América Móvil",
+  "domain": "americamovil.com",
+  "attemptedAt": "2026-09-19T09:22:30.785Z",
+  "attemptedUrls": [
+    "https://americamovil.com/"
+  ],
+  "outcome": "candidate_recovered_review_required",
+  "assets": {
+    "logo": null,
+    "icon": {
+      "source": "html-icon",
+      "url": "https://s22.q4cdn.com/604986553/files/favicon.ico",
+      "sourcePage": "https://www.americamovil.com/English/overview/default.aspx",
+      "format": "ico",
+      "width": 16,
+      "height": 16,
+      "evidence": {
+        "element": "link",
+        "dom_region": "body",
+        "home_linked": false,
+        "alt": "",
+        "aria_label": "",
+        "class_tokens": [],
+        "semantic_text": " 4a9998bcb5012b942bdaf8a57188719a58ba66a8 StudioLegacy Legacy",
+        "local_semantic": "",
+        "anchor_text": "",
+        "positive_token": false,
+        "negative_context": false,
+        "discovery_order": 0,
+        "inherited_color": null,
+        "company_name": "América Móvil"
+      },
+      "provenance": {
+        "retrieved_asset_url": "https://s22.q4cdn.com/604986553/files/favicon.ico",
+        "retrieved_at": "2026-09-19T09:22:40.963Z",
+        "http_status": 200
+      },
+      "variant": {
+        "theme": "unknown",
+        "color": "unknown",
+        "background": "unknown"
+      },
+      "localPath": "reports/missing-logo-library-2026-09-19/fresh-source/assets/america-movil/icon-8f724ce82de5fe0d2a99cfb6ec29acdc0d5a63f3f47d9bccf73ae2e7a23efce8.ico"
+    }
+  },
+  "diagnostics": {
+    "homepage": null,
+    "reachability": [
+      {
+        "url": "https://americamovil.com/",
+        "stage": "primary",
+        "ok": true,
+        "status": 200,
+        "finalUrl": "https://www.americamovil.com/English/overview/default.aspx"
+      }
+    ],
+    "browser": {
+      "status": "error",
+      "browserReused": false,
+      "finalUrl": null,
+      "requests": 3,
+      "declaredTransferBytes": 0,
+      "transferBytes": 13971,
+      "blockedRequests": 0,
+      "resourceLimitHit": false,
+      "themesInspected": [
+        "light",
+        "dark"
+      ],
+      "errors": [
+        "Browser homepage returned HTTP 403.",
+        "Browser homepage returned HTTP 403."
+      ],
+      "httpStatus": 403,
+      "durationMs": 2102,
+      "candidates": 0,
+      "attempts": [
+        {
+          "url": "https://www.americamovil.com/English/overview/default.aspx",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 2,
+          "declaredTransferBytes": 0,
+          "transferBytes": 13966,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 1571,
+          "candidates": 0
+        },
+        {
+          "url": "https://www.americamovil.com/English/press-room/default.aspx",
+          "status": "error",
+          "browserReused": false,
+          "finalUrl": null,
+          "requests": 1,
+          "declaredTransferBytes": 0,
+          "transferBytes": 13971,
+          "blockedRequests": 0,
+          "resourceLimitHit": false,
+          "themesInspected": [
+            "light",
+            "dark"
+          ],
+          "errors": [
+            "Browser homepage returned HTTP 403."
+          ],
+          "httpStatus": 403,
+          "durationMs": 531,
+          "candidates": 0
+        }
+      ]
+    },
+    "deepWide": null,
+    "network": null
+  }
+}
