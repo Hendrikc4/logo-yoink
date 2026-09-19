@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "libraryId": "major-brands-1000-v1",
-  "generatedAt": "2026-09-19T09:40:39.826Z",
-  "approvedFromRun": "icon-only-2026-09-19",
+  "generatedAt": "2026-09-19T09:47:23Z",
+  "approvedFromRun": "logo-only-icon-collection-2026-09-19T09-47-23Z",
   "brands": [
     {
       "id": "apple",
@@ -923,19 +923,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:52:07.486Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "official_compact_brand_tile",
+          "path": "assets/disney/icon/74820cd7636baa3d6a2307e76d1f4cf3dbdbab756c76aac2d45e545948fa81f1.png",
+          "format": "png",
+          "width": 200,
+          "height": 200,
+          "bytes": 3319,
+          "contentHash": "74820cd7636baa3d6a2307e76d1f4cf3dbdbab756c76aac2d45e545948fa81f1",
+          "sourceUrl": "https://static-mh.content.disney.io/matterhorn/assets/apple-touch-icon-2747f4e2a5dd.png",
+          "discoveryPage": "https://www.disney.com/",
+          "sourceKind": "apple",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://static-mh.content.disney.io/matterhorn/assets/apple-touch-icon-2747f4e2a5dd.png",
+            "retrieved_at": "2026-09-19T09:17:16.943Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:17:16.961Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-14T10:52:07.486Z",
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The domain favicon is a Disney+ product tile, not the Disney corporate identity; no distinct corporate symbol is approved in this set.",
-          "reviewedAt": "2026-09-14T10:48:54.956Z"
-        }
-      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z",
+      "verificationStatus": "approved_complete",
+      "notes": [],
       "seededFrom": "major-brands-100-v1",
       "externalParentBrandId": "the-walt-disney-company"
     },
@@ -2954,19 +2971,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-14T10:33:49.481Z",
           "lastConfirmedCurrentAt": "2026-09-14T10:52:07.943Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/loreal/icon/009ea637360f57b43590af03884c42b769f8f3e5f44753530f7819b14ffedb83.png",
+          "format": "png",
+          "width": 384,
+          "height": 384,
+          "bytes": 10105,
+          "contentHash": "009ea637360f57b43590af03884c42b769f8f3e5f44753530f7819b14ffedb83",
+          "sourceUrl": "https://www.loreal.com/themes/LorealCorp/images/icons/icon-384x384.png",
+          "discoveryPage": "https://www.loreal.com/en/",
+          "sourceKind": "manifest",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.loreal.com/themes/LorealCorp/images/icons/icon-384x384.png",
+            "retrieved_at": "2026-09-19T09:17:16.347Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:17:21.450Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-14T10:51:48.754Z",
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The extracted circular glyph is a UI/loading mark, not a verified L’Oréal brand symbol; the company wordmark remains approved.",
-          "reviewedAt": "2026-09-14T10:48:54.956Z"
-        }
-      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z",
+      "verificationStatus": "approved_complete",
+      "notes": [],
       "seededFrom": "major-brands-100-v1"
     },
     {
@@ -3127,7 +3161,7 @@
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-14T10:51:57.565Z",
+      "lastCheckedAt": "2026-09-19T09:47:23Z",
       "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
@@ -3135,6 +3169,14 @@
           "kind": "persistent_role_gap",
           "reason": "The compact candidate is the full Zara wordmark rather than a distinct icon; it is retained only in the wordmark role.",
           "reviewedAt": "2026-09-14T10:48:54.956Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
       "seededFrom": "major-brands-100-v1",
@@ -4323,7 +4365,7 @@
         }
       },
       "variants": {},
-      "lastCheckedAt": "2026-09-14T10:51:57.570Z",
+      "lastCheckedAt": "2026-09-19T09:47:23Z",
       "verificationStatus": "approved_with_role_gap",
       "notes": [
         {
@@ -4331,6 +4373,14 @@
           "kind": "persistent_role_gap",
           "reason": "The compact candidate is the full FedEx wordmark rather than a distinct icon; it is retained only in the wordmark role.",
           "reviewedAt": "2026-09-14T10:48:54.956Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "Visual review found no separate compact company mark; the available candidate is a wordmark, blank/low-contrast asset, product tile, or otherwise unsuitable for the icon role.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
       "seededFrom": "major-brands-100-v1"
@@ -6676,9 +6726,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged logo has no legible bose artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
           "reviewedAt": "2026-09-18T07:42:10Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "Visual review found no separate compact company mark; the available candidate is a wordmark, blank/low-contrast asset, product tile, or otherwise unsuitable for the icon role.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "canon",
@@ -6910,17 +6968,35 @@
           "verificationStatus": "approved_ai_visual_review_restored",
           "lastCheckedAt": "2026-09-18T07:32:09.464Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "official_compact_monogram",
+          "path": "assets/qualcomm/icon/366c7f5489de155381857f756881faf72ceb12f78833f5dc17f7bff913be6884.ico",
+          "format": "ico",
+          "width": 32,
+          "height": 32,
+          "bytes": 4286,
+          "contentHash": "366c7f5489de155381857f756881faf72ceb12f78833f5dc17f7bff913be6884",
+          "sourceUrl": "https://www.qualcomm.com/etc.clientlibs/qcomm-martech/clientlibs/clientlib-react/resources/favicon.ico",
+          "discoveryPage": "https://www.qualcomm.com/",
+          "sourceKind": "manifest",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.qualcomm.com/etc.clientlibs/qcomm-martech/clientlibs/clientlib-react/resources/favicon.ico",
+            "retrieved_at": "2026-09-19T09:17:18.966Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:17:27.249Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -6938,7 +7014,7 @@
           "reviewedAt": "2026-09-18T08:28:29Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:09.464Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "block",
@@ -7183,17 +7259,35 @@
           "verificationStatus": "approved_ai_visual_review_restored",
           "lastCheckedAt": "2026-09-18T07:32:09.479Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "official_compact_monogram",
+          "path": "assets/workday/icon/191c6208283772cc7287e4b6ecc19b06bce92b0963bf3c763245d4bd267d02eb.ico",
+          "format": "ico",
+          "width": 32,
+          "height": 32,
+          "bytes": 4286,
+          "contentHash": "191c6208283772cc7287e4b6ecc19b06bce92b0963bf3c763245d4bd267d02eb",
+          "sourceUrl": "https://www.workday.com/favicon.ico",
+          "discoveryPage": "https://www.workday.com/",
+          "sourceKind": "root-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.workday.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:17:23.724Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:17:27.440Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -7211,7 +7305,7 @@
           "reviewedAt": "2026-09-18T08:28:29Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:09.479Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "snowflake",
@@ -7250,17 +7344,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T09:58:26.232Z",
           "lastConfirmedCurrentAt": "2026-09-18T09:58:56.076Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/snowflake/icon/a2fe870b107a5e87a9d4a366723e11cf63b441fc30d5567838c6fb69a0738b20.svg",
+          "format": "svg",
+          "width": 28,
+          "height": 28,
+          "bytes": 1930,
+          "contentHash": "a2fe870b107a5e87a9d4a366723e11cf63b441fc30d5567838c6fb69a0738b20",
+          "sourceUrl": "https://www.snowflake.com/en/",
+          "discoveryPage": "https://www.snowflake.com/en/",
+          "sourceKind": "inline-svg",
+          "provenanceChain": {
+            "retrieved_asset_url": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9ImN1cnJlbnRDb2xvciIgdmlld0JveD0iMCAwIDI4IDI4IiBhcmlhLWxhYmVsPSJTbm93Zmxha2UgbG9nbyIgY2xhc3M9ImxvZ28taW1nIiByb2xlPSJpbWciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0ibTI3IDEyLjA5NC0zLjMgMS45MDggMy4zIDEuOTAyYTEuNzM5IDEuNzM5IDAgMSAxLTEuNzM3IDMuMDEybC01LjkxMS0zLjQxMmExLjcxOCAxLjcxOCAwIDAgMS0uNzktLjk5MyAxLjcgMS43IDAgMCAxLS4wNzgtLjU2NWMuMDA0LS4xMzcuMDI0LS4yNzQuMDYtLjQxMWExLjc1IDEuNzUgMCAwIDEgLjgwNi0xLjA0NWw1LjkwOS0zLjQwOGExLjczNyAxLjczNyAwIDAgMSAyLjM3My42MzhBMS43MyAxLjczIDAgMCAxIDI3IDEyLjA5M1ptLTMuMTI1IDkuMjQ2LTUuOTA2LTMuNDA2YTEuNzA4IDEuNzA4IDAgMCAwLTEuMDA3LS4yMjggMS43MzUgMS43MzUgMCAwIDAtMS42MDggMS43MzR2Ni44MmExLjczOSAxLjczOSAwIDEgMCAzLjQ3NyAwdi0zLjgxNWwzLjMwNyAxLjkwOWExLjczNCAxLjczNCAwIDAgMCAyLjM3NC0uNjM0IDEuNzQ0IDEuNzQ0IDAgMCAwLS42MzctMi4zOFptLTYuODE2LTYuNjcyLTIuNDU2IDIuNDUzYS40ODYuNDg2IDAgMCAxLS4zMDguMTNIMTMuNTc0YS40OTUuNDk1IDAgMCAxLS4zMDgtLjEzbC0yLjQ1Ni0yLjQ1M2EuNDkyLjQ5MiAwIDAgMS0uMTI3LS4zMDZWMTMuNjRjMC0uMS4wNTYtLjIzOS4xMjctLjMxbDIuNDU0LTIuNDUyYS40OTIuNDkyIDAgMCAxIC4zMDgtLjEyOEgxNC4yOTVjLjEgMCAuMjM3LjA1Ni4zMDguMTI4bDIuNDU2IDIuNDUzYy4wNy4wNy4xMjcuMjA5LjEyNy4zMXYuNzIyYS41MDEuNTAxIDAgMCAxLS4xMjcuMzA2Wm0tMS45NjMtLjY4YS41MTcuNTE3IDAgMCAwLS4xMzEtLjMxbC0uNzEtLjcwOWEuNS41IDAgMCAwLS4zMDktLjEyOWgtLjAyOGEuNDk0LjQ5NCAwIDAgMC0uMzA2LjEzbC0uNzEuNzA4YS41MS41MSAwIDAgMC0uMTI1LjMxdi4wMjhjMCAuMDk5LjA1NC4yMzYuMTI0LjMwNmwuNzExLjcxYy4wNy4wNzEuMjA3LjEzLjMwNi4xM2guMDI4YS41MDQuNTA0IDAgMCAwIC4zMDgtLjEzbC43MTEtLjcxYS41LjUgMCAwIDAgLjEzLS4zMDZ2LS4wMjhaTTMuOTkzIDYuNjU2bDUuOTA5IDMuNDFjLjMxOC4xODMuNjcuMjU2IDEuMDA4LjIyOGExLjc0IDEuNzQgMCAwIDAgMS42MDktMS43MzZ2LTYuODJhMS43MzkgMS43MzkgMCAwIDAtMy40NzcgMHYzLjgxNmwtMy4zMS0xLjkxMmExLjc0IDEuNzQgMCAwIDAtMS43NCAzLjAxNFptMTIuOTcgMy42MzhhMS43MiAxLjcyIDAgMCAwIDEuMDA2LS4yMjhsNS45MDYtMy40MWExLjc0MiAxLjc0MiAwIDAgMCAuNjM3LTIuMzc4IDEuNzM4IDEuNzM4IDAgMCAwLTIuMzc0LS42MzZMMTguODMgNS41NTVWMS43MzZhMS43MzggMS43MzggMCAwIDAtMy40NzYgMHY2LjgyMWExLjczNyAxLjczNyAwIDAgMCAxLjYwOCAxLjczNlptLTYuMDUzIDcuNDEyYTEuNzA4IDEuNzA4IDAgMCAwLTEuMDA4LjIyOGwtNS45MSAzLjQwNmExLjc0NSAxLjc0NSAwIDAgMC0uNjM1IDIuMzggMS43MzggMS43MzggMCAwIDAgMi4zNzMuNjM0bDMuMzEtMS45MDl2My44MTZhMS43MzcgMS43MzcgMCAxIDAgMy40NzcgMFYxOS40NGExLjczNCAxLjczNCAwIDAgMC0xLjYwNy0xLjczNFptLTEuNjAyLTMuMTk1Yy4wNTgtLjE4NS4wODItLjM3Ni4wNzgtLjU2NWExLjczMyAxLjczMyAwIDAgMC0uODcyLTEuNDU2TDIuNjEgOS4wODJhMS43MzYgMS43MzYgMCAwIDAtMi4zNzQuNjM4IDEuNzMzIDEuNzMzIDAgMCAwIC42MzYgMi4zNzNsMy4zIDEuOTA5TC44NyAxNS45MDRhMS43MzkgMS43MzkgMCAxIDAgMS43MzggMy4wMTJsNS45MDUtMy40MTJjLjQtLjIyOC42Ny0uNTg4Ljc5NS0uOTkzWiIgY2xpcC1ydWxlPSJldmVub2RkIi8+PC9zdmc+",
+            "retrieved_at": "2026-09-19T09:17:22.978Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:17:35.827Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon has no legible snowflake artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -7268,7 +7381,7 @@
           "reviewedAt": "2026-09-18T07:42:10Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T09:58:26.232Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "datadog",
@@ -7738,9 +7851,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged logo has no legible palo-alto-networks artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
           "reviewedAt": "2026-09-18T07:42:10Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The bounded candidate is a photographic/app tile, not a Palo Alto Networks brand mark; retain unresolved until a valid compact source is found.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "crowdstrike",
@@ -7825,17 +7946,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/fortinet/icon/77ea4d448047e2546d58461bb507d2ed99a3a52a5d6e1c0345806e40fd5e5cf1.svg",
+          "format": "svg",
+          "width": 700,
+          "height": 700,
+          "bytes": 1312,
+          "contentHash": "77ea4d448047e2546d58461bb507d2ed99a3a52a5d6e1c0345806e40fd5e5cf1",
+          "sourceUrl": "https://www.fortinet.com/content/dam/fortinet/images/favicon/safari-pinned-tab.svg",
+          "discoveryPage": "https://www.fortinet.com/",
+          "sourceKind": "mask-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.fortinet.com/content/dam/fortinet/images/favicon/safari-pinned-tab.svg",
+            "retrieved_at": "2026-09-19T09:17:28.454Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:17:32.805Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon has no legible fortinet artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -7843,7 +7983,7 @@
           "reviewedAt": "2026-09-18T07:42:10Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "akamai",
@@ -7882,17 +8022,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/akamai/icon/3c3cdb6fa0840e023d7b48714b246119cdb7a16cfc5c09818ee0bba9bc29bae9.png",
+          "format": "png",
+          "width": 32,
+          "height": 32,
+          "bytes": 385,
+          "contentHash": "3c3cdb6fa0840e023d7b48714b246119cdb7a16cfc5c09818ee0bba9bc29bae9",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/akamai.com.ico",
+          "discoveryPage": "https://akamai.com/",
+          "sourceKind": "duckduckgo-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/akamai.com.ico",
+            "retrieved_at": "2026-09-19T09:17:34.659Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:17:37.060Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon has no legible akamai artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -7902,7 +8060,7 @@
           "reviewedAt": "2026-09-18T08:21:44Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "costco",
@@ -8017,8 +8175,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T09:58:26.232Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "No bounded attempt established a current identity-correct compact Lowe's icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "home-depot",
@@ -8542,9 +8709,17 @@
           "reason": "Approved icon is only a cropped mountain/sky image with no Patagonia mark or text; it reads as an unbranded image fragment.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:21:44Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "No bounded attempt established a current identity-correct compact Patagonia icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T09:59:30.830Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "levi-s",
@@ -8677,9 +8852,17 @@
           "kind": "persistent_role_gap",
           "reason": "The compact asset is the full Ray-Ban signature wordmark, not a separate pictorial symbol.",
           "reviewedAt": "2026-09-18T07:42:10Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T09:59:30.830Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "warby-parker",
@@ -8775,9 +8958,17 @@
           "reason": "Approved icon is blank in both light and dark review sheets.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:21:44Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The bounded candidate is an ELC/parent-company tile rather than an identity-correct Estée Lauder compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "sephora",
@@ -8816,17 +9007,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T09:58:26.232Z",
           "lastConfirmedCurrentAt": "2026-09-18T09:58:56.076Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/sephora/icon/e0b033fc883040f8fee622c448308eb293e7294487ac9da466ec845a00f9d1f5.ico",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "bytes": 15406,
+          "contentHash": "e0b033fc883040f8fee622c448308eb293e7294487ac9da466ec845a00f9d1f5",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/sephora.com.ico",
+          "discoveryPage": "https://sephora.com/",
+          "sourceKind": "duckduckgo-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/sephora.com.ico",
+            "retrieved_at": "2026-09-19T09:17:55.049Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:17:58.062Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon has no legible sephora artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -8834,7 +9043,7 @@
           "reviewedAt": "2026-09-18T07:42:10Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T09:58:26.232Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "colgate-palmolive",
@@ -9079,9 +9288,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged logo has no legible mondelez-international artwork on the light-background contact sheet, and no usable counterpart for that theme is shown.",
           "reviewedAt": "2026-09-18T07:42:10Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The official candidate is a generic globe graphic rather than an identity-specific Mondelēz compact mark; retain unresolved until a company-specific mark is sourced.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T09:58:26.232Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "mars",
@@ -9125,9 +9342,17 @@
           "kind": "persistent_role_gap",
           "reason": "The square image is a collage of Mars portfolio product brands, not a Mars company symbol.",
           "reviewedAt": "2026-09-18T07:42:10Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "No bounded attempt established a current identity-correct compact Mars icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:22.586Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "heineken",
@@ -9189,9 +9414,17 @@
           "reason": "Corrected sheets show the clean Heineken wordmark without bars, legible on both themes.",
           "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
           "reviewedAt": "2026-09-18T08:28:29Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is a full Heineken lockup compressed into a square; it does not establish a standalone compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:22.598Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "diageo",
@@ -9248,9 +9481,17 @@
           "reason": "Approved wide asset has large black side blocks around a small white center, causing poor dark-theme display.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:21:44Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is the full Diageo wordmark, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "nando-s",
@@ -9377,9 +9618,17 @@
           "reason": "Corrected sheets show the clean Subway wordmark without bars, legible on both themes.",
           "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
           "reviewedAt": "2026-09-18T08:28:29Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "No bounded attempt established a current identity-correct compact Subway icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:22.610Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "domino-s",
@@ -10375,17 +10624,35 @@
           "verificationStatus": "approved_ai_visual_review_restored",
           "lastCheckedAt": "2026-09-18T07:32:35.640Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "official_compact_monogram",
+          "path": "assets/exxonmobil/icon/eb68c82ea486e5e2951a44e6c8fc759a97558c8b25ba26bddde7b60e024ce289.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 1150,
+          "contentHash": "eb68c82ea486e5e2951a44e6c8fc759a97558c8b25ba26bddde7b60e024ce289",
+          "sourceUrl": "https://corporate.exxonmobil.com/-/media/global/icons/xx-favicon.ico",
+          "discoveryPage": "https://corporate.exxonmobil.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://corporate.exxonmobil.com/-/media/global/icons/xx-favicon.ico",
+            "retrieved_at": "2026-09-19T09:18:03.972Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:07.050Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -10403,7 +10670,7 @@
           "reviewedAt": "2026-09-18T08:28:29Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:35.640Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "totalenergies",
@@ -10463,9 +10730,17 @@
           "reason": "Corrected sheets show the clean TotalEnergies wordmark without bars, legible on both themes.",
           "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
           "reviewedAt": "2026-09-18T08:28:29Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is the full TotalEnergies lockup and does not establish a standalone compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:35.645Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "bosch",
@@ -10504,17 +10779,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/bosch/icon/aea86489c41a2cb330cde366c527c26c27325ecb7cb73d398e58cbc9b9588637.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 23592,
+          "contentHash": "aea86489c41a2cb330cde366c527c26c27325ecb7cb73d398e58cbc9b9588637",
+          "sourceUrl": "https://www.bosch.com/media/tech/tech_images/android-chrome-512x512.png",
+          "discoveryPage": "https://www.bosch.com/",
+          "sourceKind": "manifest",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.bosch.com/media/tech/tech_images/android-chrome-512x512.png",
+            "retrieved_at": "2026-09-19T09:18:09.133Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:11.147Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon has no legible bosch artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -10524,7 +10817,7 @@
           "reviewedAt": "2026-09-18T08:21:44Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "abb",
@@ -10815,8 +11108,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_transient_failure",
+          "reason": "Official site acquisition timed out on both bounded attempts; retry later.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "john-deere",
@@ -11054,25 +11356,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:16:24.609Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:22:56.467Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "official_compact_wordmark",
+          "path": "assets/citigroup/icon/18e5ba189113898beea710bbfe7faef7176a9fe9603d767301baba15de180874.png",
+          "format": "png",
+          "width": 48,
+          "height": 48,
+          "bytes": 1832,
+          "contentHash": "18e5ba189113898beea710bbfe7faef7176a9fe9603d767301baba15de180874",
+          "sourceUrl": "https://www.citigroup.com/global/citigroup-ui/akpublic/images/gpa_favicon.ico",
+          "discoveryPage": "https://www.citigroup.com/global",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.citigroup.com/global/citigroup-ui/akpublic/images/gpa_favicon.ico",
+            "retrieved_at": "2026-09-19T09:18:12.977Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:15.475Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The selected Citi consumer/banking wordmark is being used for the distinct Citigroup parent identity.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The 48px favicon is a tiny Citi text wordmark, not a distinct icon or symbol.",
-          "reviewedAt": "2026-09-18T08:25:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:16:24.609Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "morgan-stanley",
@@ -11306,17 +11619,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "official_compact_monogram",
+          "path": "assets/blackrock/icon/aad3adcfdc5cf9192c1a2de3cd540071c0176e731da89792d4c751feb10f15f1.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 1150,
+          "contentHash": "aad3adcfdc5cf9192c1a2de3cd540071c0176e731da89792d4c751feb10f15f1",
+          "sourceUrl": "https://www.blackrock.com/apac-retail-c-assets/favicon.ico",
+          "discoveryPage": "https://www.blackrock.com/au",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.blackrock.com/apac-retail-c-assets/favicon.ico",
+            "retrieved_at": "2026-09-19T09:18:18.840Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:19.755Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -11324,7 +11655,7 @@
           "reviewedAt": "2026-09-18T07:42:10Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "allianz",
@@ -11653,17 +11984,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "official_compact_monogram",
+          "path": "assets/unitedhealth-group/icon/31e1c116e909afad99d62e2514339fb531514074a3be7a998eb272f6809d20c4.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 1150,
+          "contentHash": "31e1c116e909afad99d62e2514339fb531514074a3be7a998eb272f6809d20c4",
+          "sourceUrl": "https://www.unitedhealthgroup.com/etc.clientlibs/uhg/clientlibs/clientlib-site/resources/images/favicon.ico",
+          "discoveryPage": "https://www.unitedhealthgroup.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.unitedhealthgroup.com/etc.clientlibs/uhg/clientlibs/clientlib-site/resources/images/favicon.ico",
+            "retrieved_at": "2026-09-19T09:18:11.935Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:13.222Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The U icon belongs to UnitedHealthcare, an operating business, not the distinct UnitedHealth Group identity.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -11671,7 +12020,7 @@
           "reviewedAt": "2026-09-18T07:42:10Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "cvs-health",
@@ -11884,9 +12233,17 @@
           "reason": "Corrected sheets show the clean red Johnson & Johnson wordmark without bars on both themes.",
           "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
           "reviewedAt": "2026-09-18T08:28:29Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is a generic back-to-top arrow from site UI, not the Johnson & Johnson identity.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:48.711Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "pfizer",
@@ -12092,10 +12449,34 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/novartis/icon/5ad6659ce3a3508825248ccede1bdbfa78e56d08635552df33050e2e7b2d93c4.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 45292,
+          "contentHash": "5ad6659ce3a3508825248ccede1bdbfa78e56d08635552df33050e2e7b2d93c4",
+          "sourceUrl": "https://www.novartis.com/themes/custom/cosmos/favicon-512x512.png",
+          "discoveryPage": "https://www.novartis.com/",
+          "sourceKind": "manifest",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.novartis.com/themes/custom/cosmos/favicon-512x512.png",
+            "retrieved_at": "2026-09-19T09:18:19.509Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:26.116Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -12112,7 +12493,7 @@
           "reviewedAt": "2026-09-18T08:21:44Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "merck",
@@ -13080,10 +13461,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:55:09.138Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:55:48.035Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/paramount/icon/2edd1284cbc5a8b22666ef65acc8a56bf035e31f0b1bb497e4e51b835dc1de8a.svg",
+          "format": "svg",
+          "width": 50,
+          "height": 40,
+          "bytes": 4229,
+          "contentHash": "2edd1284cbc5a8b22666ef65acc8a56bf035e31f0b1bb497e4e51b835dc1de8a",
+          "sourceUrl": "https://www.paramount.com/sites/g/files/dxjhpe356/files/ParamountDotCom/Others/Images/Header/Vector_50X40%20%282%29.svg",
+          "discoveryPage": "https://www.paramount.com/",
+          "sourceKind": "dom-img",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.paramount.com/sites/g/files/dxjhpe356/files/ParamountDotCom/Others/Images/Header/Vector_50X40%20%282%29.svg",
+            "retrieved_at": "2026-09-19T09:18:24.268Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:27.864Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -13098,9 +13504,17 @@
           "reason": "Approved white Paramount icon disappears on light, leaving only black horizontal bars.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:21:44Z"
+        },
+        {
+          "role": "icon",
+          "kind": "approved_asset_restored",
+          "contentHash": "2edd1284cbc5a8b22666ef65acc8a56bf035e31f0b1bb497e4e51b835dc1de8a",
+          "reason": "Restored as a dark-theme asset after current review confirmed the official white Paramount mountain mark is intact and visible on dark; the earlier withdrawal came from an opaque light contact-sheet presentation that showed black bars, not from the source asset.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:55:09.138Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "al-jazeera",
@@ -14415,19 +14829,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/baidu/icon/c70088079fe9441a726c66ce0e73ae38315ec80051d3dd542c41b82fa0a1993a.ico",
+          "format": "ico",
+          "width": 64,
+          "height": 64,
+          "bytes": 16958,
+          "contentHash": "c70088079fe9441a726c66ce0e73ae38315ec80051d3dd542c41b82fa0a1993a",
+          "sourceUrl": "https://www.baidu.com/favicon.ico",
+          "discoveryPage": "https://www.baidu.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.baidu.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:18:23.215Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:34.030Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "bytedance",
@@ -14873,9 +15304,17 @@
           "reason": "Corrected sheets show the clean Infosys wordmark without side blocks, legible on both themes.",
           "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
           "reviewedAt": "2026-09-18T08:28:29Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is a cropped/wordmark-style Infosys tile, not a distinct compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:48.866Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "wipro",
@@ -15925,9 +16364,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged logo has no legible comcast artwork on the dark-background contact sheet, and no usable counterpart for that theme is shown.",
           "reviewedAt": "2026-09-18T07:42:10Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_transient_failure",
+          "reason": "Official corporate site acquisition timed out or failed DNS on both bounded attempts; retry later.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "sega",
@@ -16315,9 +16762,17 @@
           "kind": "persistent_role_gap",
           "reason": "The selected wide image is the Hot Wheels product logo, not Fisher-Price.",
           "reviewedAt": "2026-09-18T07:42:10Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is the Mattel mark, not Fisher-Price.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "peloton",
@@ -16880,17 +17335,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/deloitte/icon/334ae0b965f6a52f87500ee87443a5a8c30b952842aec14e44db3e03d12c856b.ico",
+          "format": "ico",
+          "width": 64,
+          "height": 64,
+          "bytes": 32988,
+          "contentHash": "334ae0b965f6a52f87500ee87443a5a8c30b952842aec14e44db3e03d12c856b",
+          "sourceUrl": "https://www.deloitte.com/content/dam/assets-shared/icons/au/apple-icon-144x144.png",
+          "discoveryPage": "https://www.deloitte.com/au/en.html",
+          "sourceKind": "apple",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.deloitte.com/content/dam/assets-shared/icons/au/apple-icon-144x144.png",
+            "retrieved_at": "2026-09-19T09:18:37.927Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:40.954Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -16898,7 +17371,7 @@
           "reviewedAt": "2026-09-18T07:42:10Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "accenture",
@@ -17025,9 +17498,17 @@
           "reason": "Corrected sheets show the complete KPMG logo without side blocks; its white field keeps it legible on dark.",
           "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
           "reviewedAt": "2026-09-18T08:28:29Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "No bounded attempt established a current identity-correct compact KPMG icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:32:50.347Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "pwc",
@@ -17216,9 +17697,17 @@
           "kind": "persistent_role_gap",
           "reason": "The black Snap Inc. wordmark is visible on light but disappears on the dark review background.",
           "reviewedAt": "2026-09-18T08:25:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is a Snap Inc. wordmark tile, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "autodesk",
@@ -17388,19 +17877,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:45:12.934Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:46:57.488Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/sas/icon/506407560e2bd741588c4367ca47be99929f8564927a2b1f05491cc9169d2958.ico",
+          "format": "ico",
+          "width": 32,
+          "height": 32,
+          "bytes": 8348,
+          "contentHash": "506407560e2bd741588c4367ca47be99929f8564927a2b1f05491cc9169d2958",
+          "sourceUrl": "https://www.sas.com/favicon.ico",
+          "discoveryPage": "https://www.sas.com/en_us/home.geo.html",
+          "sourceKind": "root-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.sas.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:18:39.222Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:46.367Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible icon artwork on either the light or dark staged contact sheet.",
-          "reviewedAt": "2026-09-18T07:42:10Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:45:12.934Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "palantir",
@@ -18182,8 +18688,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "temu",
@@ -19412,19 +19927,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/fiserv/icon/77e828913bfd21a17563e474acbbbf99504d24242b751b5a81f9050b4f5328ab.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 1150,
+          "contentHash": "77e828913bfd21a17563e474acbbbf99504d24242b751b5a81f9050b4f5328ab",
+          "sourceUrl": "https://www.fiserv.com/content/dam/fiserv-com/favicon-med.ico",
+          "discoveryPage": "https://www.fiserv.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.fiserv.com/content/dam/fiserv-com/favicon-med.ico",
+            "retrieved_at": "2026-09-19T09:18:41.828Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:46.068Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "fidelity-national-information-services",
@@ -19512,9 +20044,17 @@
           "reason": "Corrected sheets show the clean green FIS mark without side blocks, legible on both themes.",
           "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
           "reviewedAt": "2026-09-18T08:28:29Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is an FIS wordmark tile, not a separate compact symbol; retain unresolved rather than infer a role gap.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:38:39.169Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "chevron",
@@ -19632,17 +20172,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/rtx/icon/a6d91fdd0388266a5741b0932c585dd185abaa4e4fe6329b307bc17fb56b8f5b.png",
+          "format": "png",
+          "width": 360,
+          "height": 356,
+          "bytes": 9338,
+          "contentHash": "a6d91fdd0388266a5741b0932c585dd185abaa4e4fe6329b307bc17fb56b8f5b",
+          "sourceUrl": "https://www.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx-balck-favicon.png?rev=3da99ab1a2a54dca92c98a2ede690339&rid=e3e3f4840c2742cc9f36e2d33430c8cd",
+          "discoveryPage": "https://www.rtx.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx-balck-favicon.png?rev=3da99ab1a2a54dca92c98a2ede690339&rid=e3e3f4840c2742cc9f36e2d33430c8cd",
+            "retrieved_at": "2026-09-19T09:18:51.143Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:51.144Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -19650,7 +20208,7 @@
           "reviewedAt": "2026-09-18T07:50:24Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "ge-vernova",
@@ -19907,9 +20465,17 @@
           "reason": "Approved wide NextEra Energy logo has large black side blocks and dark lettering loses contrast on dark.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:21:44Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The official candidate is a generic globe-like graphic without sufficiently identity-specific evidence for NextEra Energy.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "bhp",
@@ -19969,9 +20535,17 @@
           "reason": "Corrected sheets show the clean orange BHP wordmark without side blocks.",
           "reviewer": "codex-ai-secondary-visual-qa-corrected-sheets",
           "reviewedAt": "2026-09-18T08:28:29Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "Visual review found no separate compact company mark; the available candidate is a wordmark, blank/low-contrast asset, product tile, or otherwise unsuitable for the icon role.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:38:23.355Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "charles-schwab",
@@ -20322,17 +20896,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/lockheed-martin/icon/d474f603dd702b484b81a56b7f4a16b78f21790f4f30ec65f5009c425078a91f.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 318,
+          "contentHash": "d474f603dd702b484b81a56b7f4a16b78f21790f4f30ec65f5009c425078a91f",
+          "sourceUrl": "https://www.lockheedmartin.com/favicon.ico",
+          "discoveryPage": "https://lockheedmartin.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.lockheedmartin.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:18:55.962Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:18:56.579Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -20340,7 +20932,7 @@
           "reviewedAt": "2026-09-18T07:50:24Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "emerson",
@@ -20464,17 +21056,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:52:02.791Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:52:40.854Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/cigna/icon/d1222b6cafd0b3561e4c403cc3f1b9590f42914612473a239c6ee9c29c7f9eda.ico",
+          "format": "ico",
+          "width": 32,
+          "height": 32,
+          "bytes": 4286,
+          "contentHash": "d1222b6cafd0b3561e4c403cc3f1b9590f42914612473a239c6ee9c29c7f9eda",
+          "sourceUrl": "https://www.thecignagroup.com/favicon.ico",
+          "discoveryPage": "https://www.thecignagroup.com/",
+          "sourceKind": "root-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.thecignagroup.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:18:59.992Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:07.330Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -20484,7 +21094,7 @@
           "reviewedAt": "2026-09-18T08:21:44Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:52:02.791Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "america-movil",
@@ -20975,9 +21585,17 @@
           "kind": "persistent_role_gap",
           "reason": "The round slash symbol resembles a prohibited/no-entry UI glyph, not a Rockwell Automation brand mark.",
           "reviewedAt": "2026-09-18T07:50:24Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is a generic cancel/prohibited glyph, not Rockwell Automation.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "humana",
@@ -21322,9 +21940,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown.",
           "reviewedAt": "2026-09-18T07:50:24Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The bounded candidate is not an identity-correct Chubb compact mark; retain unresolved until a valid source is found.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "robinhood",
@@ -21464,19 +22090,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/occidental-petroleum/icon/ffdb072b2978ab3dd4fdf7362790c2f30f0f088a171e0416c342c23b328dd8c7.png",
+          "format": "png",
+          "width": 40,
+          "height": 42,
+          "bytes": 1906,
+          "contentHash": "ffdb072b2978ab3dd4fdf7362790c2f30f0f088a171e0416c342c23b328dd8c7",
+          "sourceUrl": "https://www.oxy.com/siteassets/images/logos/logo.png",
+          "discoveryPage": "https://www.oxy.com/",
+          "sourceKind": "dom-img",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.oxy.com/siteassets/images/logos/logo.png",
+            "retrieved_at": "2026-09-19T09:19:05.395Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:10.042Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The square candidate is the OXY name lettering inside a circle, not a distinct standalone symbol.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "general-dynamics",
@@ -21647,17 +22290,35 @@
           "verificationStatus": "approved_ai_visual_review_restored",
           "lastCheckedAt": "2026-09-18T07:39:55.656Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:51:35.344Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/centene/icon/5e57b6e36cb52a01874c764ce2bdbeeb3898c6ffe0b8ce1548bacfa791f92278.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 1150,
+          "contentHash": "5e57b6e36cb52a01874c764ce2bdbeeb3898c6ffe0b8ce1548bacfa791f92278",
+          "sourceUrl": "https://www.centene.com/content/dam/centenedotcom/logos/centene-favicon.ico",
+          "discoveryPage": "https://www.centene.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.centene.com/content/dam/centenedotcom/logos/centene-favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:09.668Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:12.764Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -21675,7 +22336,7 @@
           "reviewedAt": "2026-09-18T08:28:29Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:39:55.656Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "bt-group",
@@ -21760,19 +22421,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/american-electric-power/icon/271d70c9c6fd695034e240bcdbe1e0d8266525f2f68a8702f06b25ef13110419.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 1150,
+          "contentHash": "271d70c9c6fd695034e240bcdbe1e0d8266525f2f68a8702f06b25ef13110419",
+          "sourceUrl": "https://www.aep.com/favicon.ico",
+          "discoveryPage": "https://www.aep.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.aep.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:11.290Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:19.699Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "glencore",
@@ -22190,17 +22868,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/mckesson/icon/60aa9a7cfa9f1210a0b582367897645960f306d59f6dce4e8358ca94afd56a09.ico",
+          "format": "ico",
+          "width": 63,
+          "height": 64,
+          "bytes": 16702,
+          "contentHash": "60aa9a7cfa9f1210a0b582367897645960f306d59f6dce4e8358ca94afd56a09",
+          "sourceUrl": "https://www.mckesson.com/siteassets/images/z-mckesson-logosicons/favicon.png",
+          "discoveryPage": "https://www.mckesson.com/",
+          "sourceKind": "apple",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.mckesson.com/siteassets/images/z-mckesson-logosicons/favicon.png",
+            "retrieved_at": "2026-09-19T09:19:13.665Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:14.815Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -22208,7 +22904,7 @@
           "reviewedAt": "2026-09-18T07:50:24Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "kpn",
@@ -22525,17 +23221,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/metlife/icon/1eef92dedc0905c59802af50c5e8baed28bbd828154eb643a526148cb035de95.ico",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "bytes": 15406,
+          "contentHash": "1eef92dedc0905c59802af50c5e8baed28bbd828154eb643a526148cb035de95",
+          "sourceUrl": "https://www.metlife.com/content/dam/globalMarketingPlatformAssets/images/social/nf/favicon.ico",
+          "discoveryPage": "https://www.metlife.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.metlife.com/content/dam/globalMarketingPlatformAssets/images/social/nf/favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:15.675Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:16.471Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -22543,7 +23257,7 @@
           "reviewedAt": "2026-09-18T07:50:24Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "phillips-66",
@@ -23309,19 +24023,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/valero/icon/50bded1a662e4a0524674d925a09255133ed347821673e07ab20e84ce1a281a8.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 1150,
+          "contentHash": "50bded1a662e4a0524674d925a09255133ed347821673e07ab20e84ce1a281a8",
+          "sourceUrl": "https://www.valero.com/themes/custom/valero/favicon.ico",
+          "discoveryPage": "https://www.valero.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.valero.com/themes/custom/valero/favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:15.742Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:29.222Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "ge-aerospace",
@@ -23645,17 +24376,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/constellation-energy/icon/6b27e0d10955c9d4901809ec9fe1dffc35c626e3cfb33e172187c89aed3c9671.ico",
+          "format": "ico",
+          "width": 32,
+          "height": 32,
+          "bytes": 4286,
+          "contentHash": "6b27e0d10955c9d4901809ec9fe1dffc35c626e3cfb33e172187c89aed3c9671",
+          "sourceUrl": "https://www.constellationenergy.com/content/dam/constellationenergy/icons/miscellaneous/favicon.ico",
+          "discoveryPage": "https://www.constellationenergy.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.constellationenergy.com/content/dam/constellationenergy/icons/miscellaneous/favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:20.118Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:23.852Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -23663,7 +24412,7 @@
           "reviewedAt": "2026-09-18T07:50:24Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "southern-copper",
@@ -24157,10 +24906,34 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:51:49.240Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:52:40.620Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/tele2/icon/c274cacb3582c90d6c8c231408321672ac34fc757218035fcf6b9de61d57ecdc.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 29327,
+          "contentHash": "c274cacb3582c90d6c8c231408321672ac34fc757218035fcf6b9de61d57ecdc",
+          "sourceUrl": "https://www.tele2.com/favicons/web-app-manifest-512x512.png",
+          "discoveryPage": "https://www.tele2.com/",
+          "sourceKind": "manifest",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.tele2.com/favicons/web-app-manifest-512x512.png",
+            "retrieved_at": "2026-09-19T09:19:23.558Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:37.604Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -24175,9 +24948,17 @@
           "reason": "Approved dark Tele2 icon nearly disappears on dark.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:21:44Z"
+        },
+        {
+          "role": "icon",
+          "kind": "approved_asset_restored",
+          "contentHash": "c274cacb3582c90d6c8c231408321672ac34fc757218035fcf6b9de61d57ecdc",
+          "reason": "Restored as a light-theme asset after current review confirmed the official Tele2 T2 mark is intact and legible on light; the prior withdrawal was limited to disappearance on dark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:51:49.240Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "p-g-e-corporation",
@@ -24444,19 +25225,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/halliburton/icon/2e1fab2ac85e71c31ef93e463e3abf6fd84166c180640bb8087ad8499f9ef66f.ico",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "bytes": 15406,
+          "contentHash": "2e1fab2ac85e71c31ef93e463e3abf6fd84166c180640bb8087ad8499f9ef66f",
+          "sourceUrl": "https://www.halliburton.com/content/dam/halliburton/assets/icons/favicon.ico",
+          "discoveryPage": "https://www.halliburton.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.halliburton.com/content/dam/halliburton/assets/icons/favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:23.531Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:30.560Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "bae-systems",
@@ -24784,8 +25582,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:51:49.240Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "barrick-mining",
@@ -25067,17 +25874,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/baker-hughes/icon/0d3533fb337f47c634119410c835b62e684a872a24d26cb547dd9116a98259fe.ico",
+          "format": "ico",
+          "width": 64,
+          "height": 64,
+          "bytes": 16958,
+          "contentHash": "0d3533fb337f47c634119410c835b62e684a872a24d26cb547dd9116a98259fe",
+          "sourceUrl": "https://www.bakerhughes.com/themes/custom/bh/favicon.ico",
+          "discoveryPage": "https://www.bakerhughes.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.bakerhughes.com/themes/custom/bh/favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:32.726Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:33.813Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon shows no discernible brand artwork on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T07:50:24Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -25085,7 +25910,7 @@
           "reviewedAt": "2026-09-18T07:50:24Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "thales",
@@ -26279,8 +27104,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The bounded Komatsu candidate is blank/low-contrast and does not establish a valid compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "gilead-sciences",
@@ -26392,12 +27226,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:52:02.791Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:52:40.854Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/ntt/icon/ef704335f212a7447f39e2b5da0d95f1367bd5c4ad3f3097573169d45a409d3b.png",
+          "format": "png",
+          "width": 320,
+          "height": 320,
+          "bytes": 13079,
+          "contentHash": "ef704335f212a7447f39e2b5da0d95f1367bd5c4ad3f3097573169d45a409d3b",
+          "sourceUrl": "https://group.ntt/favicon.png",
+          "discoveryPage": "https://group.ntt/en/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://group.ntt/favicon.png",
+            "retrieved_at": "2026-09-19T09:19:38.297Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:38.487Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-18T08:52:02.791Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "enel",
@@ -26827,12 +27685,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/regeneron/icon/1acc2fa952bad818d3950e317057d1428a98e1b1798ac21863248c2d77e8d064.ico",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "bytes": 15086,
+          "contentHash": "1acc2fa952bad818d3950e317057d1428a98e1b1798ac21863248c2d77e8d064",
+          "sourceUrl": "https://www.regeneron.com/favicon.ico",
+          "discoveryPage": "https://www.regeneron.com/",
+          "sourceKind": "root-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.regeneron.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:39.874Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:40.049Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "kddi",
@@ -27151,12 +28033,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/aramco/icon/00e2b39ea4b815dff3ef399e40948fa35468c5d173918a314e8f199f91f601c6.png",
+          "format": "png",
+          "width": 558,
+          "height": 558,
+          "bytes": 49113,
+          "contentHash": "00e2b39ea4b815dff3ef399e40948fa35468c5d173918a314e8f199f91f601c6",
+          "sourceUrl": "https://www.aramco.com/dist/client/favicon/mstile-310x310.png",
+          "discoveryPage": "https://www.aramco.com/",
+          "sourceKind": "ms-tile",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.aramco.com/dist/client/favicon/mstile-310x310.png",
+            "retrieved_at": "2026-09-19T09:19:47.940Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:48.443Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "embraer",
@@ -27195,12 +28101,37 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/embraer/icon/a3ca8337bf4aa25cefe61bf0ed836c59e514a5d98c97cec775ae1929c1d401e2.svg",
+          "format": "svg",
+          "width": 17.815,
+          "height": 17.813,
+          "bytes": 322,
+          "contentHash": "a3ca8337bf4aa25cefe61bf0ed836c59e514a5d98c97cec775ae1929c1d401e2",
+          "sourceUrl": "https://embraer.com/assets/images/Embraer-mark.svg",
+          "discoveryPage": "https://embraer.com/",
+          "sourceKind": "dom-img",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://embraer.com/assets/images/Embraer-mark.svg",
+            "retrieved_at": "2026-09-19T09:19:40.428Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:45.267Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "mitsubishi-electric",
@@ -27249,9 +28180,17 @@
           "kind": "persistent_role_gap",
           "reason": "The square asset is the complete tiny Mitsubishi Electric lockup, not a standalone symbol.",
           "reviewedAt": "2026-09-18T07:52:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is a full Mitsubishi Electric lockup inside an app tile, not a separate symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "vertex-pharmaceuticals",
@@ -27336,12 +28275,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/softbank-corp/icon/a4c0a4b9f35aa94f73593e57513d0025243bd13236f74d9c545f7580c066267a.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 1150,
+          "contentHash": "a4c0a4b9f35aa94f73593e57513d0025243bd13236f74d9c545f7580c066267a",
+          "sourceUrl": "https://www.softbank.jp/site/set/common/p/img/favicon.ico",
+          "discoveryPage": "https://www.softbank.jp/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.softbank.jp/site/set/common/p/img/favicon.ico",
+            "retrieved_at": "2026-09-19T09:19:49.495Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:50.008Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "e-on",
@@ -27704,9 +28667,17 @@
           "kind": "persistent_role_gap",
           "reason": "The square asset is the complete tiny Mitsubishi Heavy Industries lockup, not a standalone symbol.",
           "reviewedAt": "2026-09-18T07:52:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is a full Mitsubishi Heavy Industries lockup, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "biogen",
@@ -28016,19 +28987,37 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:46:16.210Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/eni/icon/0efb5bf179d6d915c51fccf879562c33f506c708eeec6da8ddc93dd2eca35368.svg",
+          "format": "svg",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 8094,
+          "contentHash": "0efb5bf179d6d915c51fccf879562c33f506c708eeec6da8ddc93dd2eca35368",
+          "sourceUrl": "https://www.eni.com/content/dam/enicom/images/favicons/safari-pinned-tab.svg",
+          "discoveryPage": "https://www.eni.com/it-IT/home.html",
+          "sourceKind": "mask-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.eni.com/content/dam/enicom/images/favicons/safari-pinned-tab.svg",
+            "retrieved_at": "2026-09-19T09:19:50.704Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:19:52.167Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The black six-legged dog mark disappears against the dark background.",
-          "reviewedAt": "2026-09-18T07:52:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T07:46:16.210Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "textron",
@@ -28202,9 +29191,17 @@
           "kind": "persistent_role_gap",
           "reason": "The square image contains the complete zoetis name, not a standalone icon or symbol.",
           "reviewedAt": "2026-09-18T07:52:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is the full Zoetis wordmark inside a square tile, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:46:22.271Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "china-telecom",
@@ -28408,10 +29405,34 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:46:34.764Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/deutsche-bank/icon/a18404818a482ffc0571cb05c07695b2dfe96036b257a1d653b50891b0edcccd.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 3173,
+          "contentHash": "a18404818a482ffc0571cb05c07695b2dfe96036b257a1d653b50891b0edcccd",
+          "sourceUrl": "https://prod2.master.dwebcms.db.com/application/themes/default/favicon/android-chrome-512x512.png",
+          "discoveryPage": "https://www.db.com/",
+          "sourceKind": "manifest",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://prod2.master.dwebcms.db.com/application/themes/default/favicon/android-chrome-512x512.png",
+            "retrieved_at": "2026-09-19T09:19:59.726Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:00.124Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -28422,7 +29443,7 @@
           "reviewedAt": "2026-09-18T08:38:00Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:46:34.764Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "equinor",
@@ -28456,19 +29477,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:46:37.772Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/equinor/icon/b5bd5085da81705147ec5609f13f98df823dd40ecddf64e639766c31614e69ca.ico",
+          "format": "ico",
+          "width": 32,
+          "height": 32,
+          "bytes": 4286,
+          "contentHash": "b5bd5085da81705147ec5609f13f98df823dd40ecddf64e639766c31614e69ca",
+          "sourceUrl": "https://www.equinor.com/favicon.ico?favicon.1q221ig3m5jcb.ico?dpl=0091520996f5",
+          "discoveryPage": "https://www.equinor.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.equinor.com/favicon.ico?favicon.1q221ig3m5jcb.ico?dpl=0091520996f5",
+            "retrieved_at": "2026-09-19T09:20:02.570Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:07.938Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The square artwork shows no discernible Equinor symbol on either background.",
-          "reviewedAt": "2026-09-18T07:52:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T07:46:37.772Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "kubota",
@@ -28590,19 +29628,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/danaher/icon/dab3c90e0294a4dfab6aeb4b969cbda648f29689987a78d16c86360b4570dd3e.ico",
+          "format": "ico",
+          "width": 32,
+          "height": 32,
+          "bytes": 4286,
+          "contentHash": "dab3c90e0294a4dfab6aeb4b969cbda648f29689987a78d16c86360b4570dd3e",
+          "sourceUrl": "https://www.danaher.com/themes/custom/danaher/favicon.ico",
+          "discoveryPage": "https://www.danaher.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.danaher.com/themes/custom/danaher/favicon.ico",
+            "retrieved_at": "2026-09-19T09:20:02.340Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:12.192Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon is blank on both light and dark contact sheets.",
-          "reviewedAt": "2026-09-18T07:52:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "china-unicom",
@@ -28709,19 +29764,37 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:46:53.795Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:52:43.314Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/dow/icon/91e955ec13967c125324ba1b6cac501738b17959a6796fab2fc4402dbf93f98f.svg",
+          "format": "svg",
+          "width": 21,
+          "height": 17,
+          "bytes": 1218,
+          "contentHash": "91e955ec13967c125324ba1b6cac501738b17959a6796fab2fc4402dbf93f98f",
+          "sourceUrl": "https://www.dow.com/content/dam/images/public-images/icons/brand-index.svg",
+          "discoveryPage": "https://www.dow.com/en-us",
+          "sourceKind": "dom-img",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.dow.com/content/dam/images/public-images/icons/brand-index.svg",
+            "retrieved_at": "2026-09-19T09:20:02.879Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:04.994Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The square slot is a cropped Dow name lockup, not a standalone symbol.",
-          "reviewedAt": "2026-09-18T07:52:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T07:46:53.795Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "commerzbank",
@@ -28829,10 +29902,34 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/repsol/icon/c86bd31dbf1a6cf8668aacf3076a9ea78471c934ddaaf1eb5af3e66fab7be6bd.png",
+          "format": "png",
+          "width": 180,
+          "height": 180,
+          "bytes": 12715,
+          "contentHash": "c86bd31dbf1a6cf8668aacf3076a9ea78471c934ddaaf1eb5af3e66fab7be6bd",
+          "sourceUrl": "https://www.repsol.com/content/dam/repsol-catalog/icons/favicon.png",
+          "discoveryPage": "https://www.repsol.com/es/index.cshtml",
+          "sourceKind": "schema",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.repsol.com/content/dam/repsol-catalog/icons/favicon.png",
+            "retrieved_at": "2026-09-19T09:20:06.541Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:18.761Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -28847,9 +29944,17 @@
           "reason": "The dark-blue Repsol favicon nearly disappears on the dark review background.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:38:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "approved_asset_restored",
+          "contentHash": "c86bd31dbf1a6cf8668aacf3076a9ea78471c934ddaaf1eb5af3e66fab7be6bd",
+          "reason": "Restored as a light-theme asset after current review confirmed the official Repsol mark is intact and legible on light; the prior withdrawal was limited to disappearance on dark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "fanuc",
@@ -28934,19 +30039,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/abbott/icon/b2f92075582fc3a0c601ba239cce029fcc29bd1b6cb6a4351ee63930c733a976.png",
+          "format": "png",
+          "width": 182,
+          "height": 180,
+          "bytes": 1533,
+          "contentHash": "b2f92075582fc3a0c601ba239cce029fcc29bd1b6cb6a4351ee63930c733a976",
+          "sourceUrl": "https://www.abbott.com/etc.clientlibs/abbott-core/clientlibs/favicons/clientlib-favicon-abbottcore/resources/apple-touch-icon-180x180.png",
+          "discoveryPage": "https://www.abbott.com/en-us/homepage",
+          "sourceKind": "apple",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.abbott.com/etc.clientlibs/abbott-core/clientlibs/favicons/clientlib-favicon-abbottcore/resources/apple-touch-icon-180x180.png",
+            "retrieved_at": "2026-09-19T09:20:08.373Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:21.095Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The navy Abbott symbol has inadequate visibility on dark.",
-          "reviewedAt": "2026-09-18T07:52:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "skt",
@@ -29391,9 +30513,17 @@
           "kind": "persistent_role_gap",
           "reason": "The black Stryker lettering disappears on dark; no dark-compatible variant is staged.",
           "reviewedAt": "2026-09-18T07:52:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is the full Stryker wordmark inside a square tile, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "kt-corporation",
@@ -29620,19 +30750,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/societe-generale/icon/3649514db0427f11d4c4dcbb15d91473ac4fe8310030d9ca3e18dcc2fae7b54d.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 318,
+          "contentHash": "3649514db0427f11d4c4dcbb15d91473ac4fe8310030d9ca3e18dcc2fae7b54d",
+          "sourceUrl": "https://www.societegenerale.com/themes/custom/sg_refonte/favicon.ico",
+          "discoveryPage": "https://www.societegenerale.com/fr",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.societegenerale.com/themes/custom/sg_refonte/favicon.ico",
+            "retrieved_at": "2026-09-19T09:20:27.221Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:36.031Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon is blank on both light and dark contact sheets.",
-          "reviewedAt": "2026-09-18T07:52:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "omv",
@@ -29946,8 +31093,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_transient_failure",
+          "reason": "Official site acquisition timed out on both bounded attempts; retry later.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "credit-agricole",
@@ -30562,8 +31718,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T07:48:43.385Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "intuitive-surgical",
@@ -31077,9 +32242,17 @@
           "kind": "persistent_role_gap",
           "reason": "The square image includes the complete Singtel name rather than a separate icon or symbol.",
           "reviewedAt": "2026-09-18T07:52:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is the full Singtel wordmark, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "kepco-korea",
@@ -31182,9 +32355,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged square asset shows no discernible Air Products mark on either background.",
           "reviewedAt": "2026-09-18T07:52:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:49:21.298Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "intesa-sanpaolo",
@@ -31681,19 +32862,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:42:09.529Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:43:37.642Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/legrand/icon/7c5eed0f1dc77ab224e3c1f26e7ac7dd347730ef908e145fc1183a8819e5eabe.ico",
+          "format": "ico",
+          "width": 16,
+          "height": 16,
+          "bytes": 318,
+          "contentHash": "7c5eed0f1dc77ab224e3c1f26e7ac7dd347730ef908e145fc1183a8819e5eabe",
+          "sourceUrl": "https://www.legrand.com/themes/custom/legrand/favicon.ico",
+          "discoveryPage": "https://www.legrand.com/en",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.legrand.com/themes/custom/legrand/favicon.ico",
+            "retrieved_at": "2026-09-19T09:20:39.229Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:46.152Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The favicon has no discernible Legrand mark on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T08:02:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "hca-healthcare",
@@ -32153,19 +33351,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:50:39.565Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:57:30.356Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/tenet-healthcare/icon/33b99abcdf05693f05a8ddd98b8cc0043db02d0f6fbd95d4b92a937f62551d52.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 118484,
+          "contentHash": "33b99abcdf05693f05a8ddd98b8cc0043db02d0f6fbd95d4b92a937f62551d52",
+          "sourceUrl": "https://www.tenethealth.com/Assets/Images/icon512.png",
+          "discoveryPage": "https://www.tenethealth.com/",
+          "sourceKind": "manifest",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.tenethealth.com/Assets/Images/icon512.png",
+            "retrieved_at": "2026-09-19T09:20:36.010Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:20:37.001Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The glossy blue star is unrelated to the staged Tenet Health interlocking-ring identity, so it is not a verified company symbol.",
-          "reviewedAt": "2026-09-18T08:02:00Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T07:50:39.565Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "vodacom",
@@ -32311,8 +33526,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_transient_failure",
+          "reason": "Official site returned HTTP 503 on both bounded attempts; retry later.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "woodside-energy",
@@ -33231,9 +34455,17 @@
           "kind": "persistent_role_gap",
           "reason": "The reversed Enbridge wordmark leaves only its gold symbol visible on light; the company name disappears.",
           "reviewedAt": "2026-09-18T08:02:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "bridgestone",
@@ -34399,9 +35631,17 @@
           "kind": "persistent_role_gap",
           "reason": "The circular asset contains the complete Tide name and functions as a compact wordmark, not a separate symbol.",
           "reviewedAt": "2026-09-18T08:02:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is the full Tide wordmark lockup, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "cerave",
@@ -35021,8 +36261,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T07:53:05.531Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_transient_failure",
+          "reason": "The first attempt timed out and the deep retry produced no icon; retain as transient until reacquired.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "havaianas",
@@ -35384,9 +36633,18 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
       "externalParentBrandId": "gcmmf",
-      "lastCheckedAt": "2026-09-18T07:53:24.634Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "sm-prime",
@@ -35744,9 +37002,17 @@
           "kind": "persistent_role_gap",
           "reason": "The black YouTube lettering disappears on the dark background, leaving only the red play lozenge.",
           "reviewedAt": "2026-09-18T08:02:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:55:09.138Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "instagram",
@@ -36022,17 +37288,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/hbo/icon/5ce2cbe4ee8bf386445e52370fe2362d6e30a4a681ae97cba9a9c97a5c71b0ca.png",
+          "format": "png",
+          "width": 32,
+          "height": 32,
+          "bytes": 1576,
+          "contentHash": "5ce2cbe4ee8bf386445e52370fe2362d6e30a4a681ae97cba9a9c97a5c71b0ca",
+          "sourceUrl": "https://www.hbo.com/favicon.ico",
+          "discoveryPage": "https://www.hbo.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.hbo.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:20:56.834Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:21:00.342Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The black circular HBO favicon is effectively invisible on the dark background.",
-          "reviewedAt": "2026-09-18T08:02:00Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -36040,7 +37324,7 @@
           "reviewedAt": "2026-09-18T08:02:00Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "cnn",
@@ -36223,9 +37507,17 @@
           "kind": "persistent_role_gap",
           "reason": "The black outlined bell is a notification UI glyph, not the Sky brand symbol.",
           "reviewedAt": "2026-09-18T08:02:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is a notification bell control, not Sky branding.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:53:51.188Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "xfinity",
@@ -37042,9 +38334,17 @@
           "kind": "persistent_role_gap",
           "reason": "The square asset repeats the complete FUJIFILM name lockup rather than a standalone icon or symbol.",
           "reviewedAt": "2026-09-18T08:02:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is the full Fujifilm wordmark, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:54:52.557Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "dji",
@@ -37801,19 +39101,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:55:55.115Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/expedia-group/icon/cd7eb307fd927baea9ab64678409fa758fb8d8b14723bc48462e4249c37d91ff.ico",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "bytes": 15406,
+          "contentHash": "cd7eb307fd927baea9ab64678409fa758fb8d8b14723bc48462e4249c37d91ff",
+          "sourceUrl": "https://expediagroup.com/favicon.ico",
+          "discoveryPage": "https://expediagroup.com/en-us",
+          "sourceKind": "root-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://expediagroup.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:21:05.644Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:21:06.660Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet.",
-          "reviewedAt": "2026-09-18T08:03:25Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T07:55:55.115Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "ly-corporation",
@@ -38105,9 +39422,17 @@
           "kind": "persistent_role_gap",
           "reason": "The selected wide image is the Hot Wheels logo, not Barbie.",
           "reviewedAt": "2026-09-18T08:03:25Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is the Mattel mark, not Barbie.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:55:09.138Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "airasia",
@@ -38153,10 +39478,18 @@
           "reason": "The green M favicon represents the AirAsia MOVE app rather than the AirAsia airline identity represented by the red wordmark.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:38:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The green M is an AirAsia MOVE/product icon rather than the roster company mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
       "externalParentBrandId": "airasia-x",
-      "lastCheckedAt": "2026-09-18T07:56:15.076Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "pinduoduo",
@@ -38493,8 +39826,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T07:56:40.385Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Deep retry reached a blocked 403 interstitial and did not establish a current compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "familymart",
@@ -38538,9 +39880,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged icon is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown.",
           "reviewedAt": "2026-09-18T08:03:25Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is the full FamilyMart lockup, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:56:43.968Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "kingfisher",
@@ -40037,10 +41387,18 @@
           "reason": "The approved icon comes from Coca-Cola's generic coke-logo.svg and displays an unrelated black-and-white wave rather than Sprite's mark.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:38:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate resolves to Coca-Cola artwork, not Sprite.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
       "externalParentBrandId": "coca-cola-company",
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "vf-corporation",
@@ -40418,9 +41776,17 @@
           "kind": "persistent_role_gap",
           "reason": "The selected icon says Mattel, the parent, rather than Hot Wheels.",
           "reviewedAt": "2026-09-18T08:03:25Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is the Mattel mark, not Hot Wheels.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T07:59:03.384Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "malaysia-airlines",
@@ -40718,19 +42084,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:59:23.391Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/patanjali/icon/0523c636f5780e32149deeef28d39f1768ee778cfd367cdbc422916632041e1e.ico",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "bytes": 15086,
+          "contentHash": "0523c636f5780e32149deeef28d39f1768ee778cfd367cdbc422916632041e1e",
+          "sourceUrl": "https://www.patanjaliayurved.net/assets/img/favicon.ico",
+          "discoveryPage": "https://www.patanjaliayurved.net/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.patanjaliayurved.net/assets/img/favicon.ico",
+            "retrieved_at": "2026-09-19T09:21:25.300Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:21:26.408Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible brand artwork appears in the staged icon area on either light or dark sheet.",
-          "reviewedAt": "2026-09-18T08:03:25Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T07:59:23.391Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "tjx-companies",
@@ -40773,8 +42156,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "asda",
@@ -40808,12 +42200,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:59:31.778Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/asda/icon/45c1ebbbbfc8025354f8164e15862ce6ac37388ca28fd5dd5915fb039029ce7b.png",
+          "format": "png",
+          "width": 32,
+          "height": 32,
+          "bytes": 545,
+          "contentHash": "45c1ebbbbfc8025354f8164e15862ce6ac37388ca28fd5dd5915fb039029ce7b",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/asda.com.ico",
+          "discoveryPage": "https://asda.com/",
+          "sourceKind": "duckduckgo-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/asda.com.ico",
+            "retrieved_at": "2026-09-19T09:21:34.003Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:21:35.295Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-18T07:59:31.778Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "lawson",
@@ -41677,19 +43093,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:00:44.993Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/infiniti/icon/fe6397e605a60f36b736ffacc7dcf145c162ebf365f505dd98ee86e2545fbc07.png",
+          "format": "png",
+          "width": 152,
+          "height": 152,
+          "bytes": 5123,
+          "contentHash": "fe6397e605a60f36b736ffacc7dcf145c162ebf365f505dd98ee86e2545fbc07",
+          "sourceUrl": "https://libs.infiniti-cdn.net/etc/designs/infiniti_next_v4/26.09.30.NISSAN-13/common-assets/img/favicon/favicon_152x152.png",
+          "discoveryPage": "https://www.infiniti.com/",
+          "sourceKind": "apple",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://libs.infiniti-cdn.net/etc/designs/infiniti_next_v4/26.09.30.NISSAN-13/common-assets/img/favicon/favicon_152x152.png",
+            "retrieved_at": "2026-09-19T09:21:31.387Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:21:33.639Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon is absent or unreadable on the dark-background sheet, with no usable dark counterpart shown.",
-          "reviewedAt": "2026-09-18T08:03:25Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:00:44.993Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "yamaha-motor",
@@ -41791,8 +43224,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_transient_failure",
+          "reason": "Official site acquisition timed out on both bounded attempts; retry later.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "vizio",
@@ -42200,10 +43642,18 @@
           "reason": "The approved icon comes from Coca-Cola's generic coke-logo.svg and displays an unrelated black-and-white wave rather than Fanta's mark.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:38:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate resolves to Coca-Cola artwork, not Fanta.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
       "externalParentBrandId": "coca-cola-company",
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "ralph-lauren",
@@ -42829,9 +44279,17 @@
           "reason": "Corrected page 8 shows a clean teal/yellow Pampers wordmark on both themes; black side blocks were sheet padding.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:29:02Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The candidate is a navigation chevron, not a Pampers mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:02:00.271Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "mac-cosmetics",
@@ -42888,10 +44346,18 @@
           "kind": "persistent_role_gap",
           "reason": "The black MAC wordmark is visible on light but disappears on dark.",
           "reviewedAt": "2026-09-18T08:08:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is MAC lettering, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
       "externalParentBrandId": "estee-lauder-companies",
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "ross-dress-for-less",
@@ -44024,8 +45490,17 @@
       },
       "variants": {},
       "verificationStatus": "approved_with_role_gap",
-      "notes": [],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "notes": [
+        {
+          "role": "icon",
+          "kind": "icon_collection_transient_failure",
+          "reason": "Official site acquisition timed out on both bounded attempts; retry later.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
+        }
+      ],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "sharp",
@@ -44531,9 +46006,17 @@
           "kind": "persistent_role_gap",
           "reason": "The dark Jollibee Group lettering is effectively invisible on dark, leaving only its red flower.",
           "reviewedAt": "2026-09-18T08:08:00Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is the full Jollibee Foods wordmark, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "traveloka",
@@ -47313,12 +48796,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/mongodb/icon/1143ff8a5619ad9d016e3d94462f44ae9047ab4ac4c39722d265c88961591a1a.ico",
+          "format": "ico",
+          "width": 64,
+          "height": 64,
+          "bytes": 32988,
+          "contentHash": "1143ff8a5619ad9d016e3d94462f44ae9047ab4ac4c39722d265c88961591a1a",
+          "sourceUrl": "https://www.mongodb.com/assets/images/global/favicon.ico",
+          "discoveryPage": "https://www.mongodb.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.mongodb.com/assets/images/global/favicon.ico",
+            "retrieved_at": "2026-09-19T09:21:47.375Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:21:48.734Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "digitalocean",
@@ -48195,17 +49702,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:51:49.240Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:52:40.620Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/ovhcloud/icon/7cb0e37153002b7d9a65df42ee5d66860d791b1e079c7da9cda2aa4b2adce1ce.svg",
+          "format": "svg",
+          "width": 40,
+          "height": 40,
+          "bytes": 1356,
+          "contentHash": "7cb0e37153002b7d9a65df42ee5d66860d791b1e079c7da9cda2aa4b2adce1ce",
+          "sourceUrl": "https://www.ovhcloud.com/sites/default/files/2023-11/github.svg",
+          "discoveryPage": "https://www.ovhcloud.com/en-au/",
+          "sourceKind": "dom-img",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.ovhcloud.com/sites/default/files/2023-11/github.svg",
+            "retrieved_at": "2026-09-19T09:21:57.111Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:07.453Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The source is named github.svg and the displayed speech/code glyph is not the OVHcloud emblem.",
-          "reviewedAt": "2026-09-18T08:08:00Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -48215,7 +49741,7 @@
           "reviewedAt": "2026-09-18T08:21:17Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:51:49.240Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "deepseek",
@@ -49015,17 +50541,35 @@
           "verificationStatus": "approved_ai_visual_review_restored",
           "lastCheckedAt": "2026-09-18T08:07:04.511Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:09:24.289Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/worldpay/icon/a3cbd71d25b54d6a1ac3282b9aab80825f3ed48173299221e77d78369079b301.ico",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "bytes": 15086,
+          "contentHash": "a3cbd71d25b54d6a1ac3282b9aab80825f3ed48173299221e77d78369079b301",
+          "sourceUrl": "https://worldpay.com/favicon.ico",
+          "discoveryPage": "https://worldpay.com/en",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://worldpay.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:22:02.701Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:03.759Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged Worldpay favicon is blank or imperceptible on both review backgrounds.",
-          "reviewedAt": "2026-09-18T08:08:00Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -49043,7 +50587,7 @@
           "reviewedAt": "2026-09-18T08:29:02Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:07:04.511Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "wordpress-com",
@@ -49441,17 +50985,35 @@
           "verificationStatus": "approved_ai_visual_review_restored",
           "lastCheckedAt": "2026-09-18T08:07:23.659Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/mediatek/icon/fb469d9dfdb4d0ad9fd558e421561406abf1f1ea758568dd14ad98dc79fff633.ico",
+          "format": "ico",
+          "width": 256,
+          "height": 256,
+          "bytes": 370070,
+          "contentHash": "fb469d9dfdb4d0ad9fd558e421561406abf1f1ea758568dd14ad98dc79fff633",
+          "sourceUrl": "https://www.mediatek.com/hubfs/fav-icon.ico",
+          "discoveryPage": "https://www.mediatek.com/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.mediatek.com/hubfs/fav-icon.ico",
+            "retrieved_at": "2026-09-19T09:21:57.803Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:21:58.828Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T08:14:06Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -49469,7 +51031,7 @@
           "reviewedAt": "2026-09-18T08:29:02Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:07:23.659Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "nexi",
@@ -49503,17 +51065,35 @@
           "verificationStatus": "approved_ai_visual_review_restored",
           "lastCheckedAt": "2026-09-18T08:07:24.385Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/nexi/icon/ddcb12028caf567e0f9d6af1adc7e51df78b7c800f99eab2608c11ca47f9b77e.ico",
+          "format": "ico",
+          "width": 64,
+          "height": 64,
+          "bytes": 34494,
+          "contentHash": "ddcb12028caf567e0f9d6af1adc7e51df78b7c800f99eab2608c11ca47f9b77e",
+          "sourceUrl": "https://www.nexigroup.com/etc.clientlibs/corp/clientlibs/clientlib-site/resources/favicons/favicon.ico",
+          "discoveryPage": "https://www.nexigroup.com/en/",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.nexigroup.com/etc.clientlibs/corp/clientlibs/clientlib-site/resources/favicons/favicon.ico",
+            "retrieved_at": "2026-09-19T09:22:08.147Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:14.951Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T08:14:06Z"
-        },
         {
           "role": "logo",
           "kind": "approved_asset_withdrawn",
@@ -49531,7 +51111,7 @@
           "reviewedAt": "2026-09-18T08:29:02Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:07:24.385Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "automattic",
@@ -50573,17 +52153,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/airwallex/icon/0bfcf07de6095340c6926dd464d13bc6b856dcb35d7fcbb5ae55a64c20f24345.ico",
+          "format": "ico",
+          "width": 48,
+          "height": 48,
+          "bytes": 15086,
+          "contentHash": "0bfcf07de6095340c6926dd464d13bc6b856dcb35d7fcbb5ae55a64c20f24345",
+          "sourceUrl": "https://grw-landing.airwallex.com/favicon.ico",
+          "discoveryPage": "https://www.airwallex.com/en-au",
+          "sourceKind": "html-icon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://grw-landing.airwallex.com/favicon.ico",
+            "retrieved_at": "2026-09-19T09:22:00.910Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:05.583Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T08:14:06Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -50591,7 +52189,7 @@
           "reviewedAt": "2026-09-18T08:14:06Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "squarespace",
@@ -51475,9 +53073,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown.",
           "reviewedAt": "2026-09-18T08:14:06Z"
+        },
+        {
+          "role": "icon",
+          "kind": "persistent_role_gap",
+          "reason": "The candidate is the full Infineon wordmark, not a separate compact symbol.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "payoneer",
@@ -51866,17 +53472,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:43:42.834Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:44:58.285Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/writer/icon/b96b305320a0c0a84b79a1eb6b6427c98b34580f020da82a151717480b38f7f7.png",
+          "format": "png",
+          "width": 180,
+          "height": 180,
+          "bytes": 3336,
+          "contentHash": "b96b305320a0c0a84b79a1eb6b6427c98b34580f020da82a151717480b38f7f7",
+          "sourceUrl": "https://writer.com/wp-content/uploads/2021/08/writer-w-logo-1.png?w=180",
+          "discoveryPage": "https://writer.com/",
+          "sourceKind": "apple",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://writer.com/wp-content/uploads/2021/08/writer-w-logo-1.png?w=180",
+            "retrieved_at": "2026-09-19T09:22:07.460Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:13.435Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown.",
-          "reviewedAt": "2026-09-18T08:14:06Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -51884,7 +53508,7 @@
           "reviewedAt": "2026-09-18T08:14:06Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:43:42.834Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "trend-micro",
@@ -52458,9 +54082,17 @@
           "kind": "persistent_role_gap",
           "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet.",
           "reviewedAt": "2026-09-18T08:14:06Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The 16px ICO is too low-resolution for a reliable approved library icon; retain as unresolved.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:10:01.477Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "renesas",
@@ -52520,9 +54152,17 @@
           "reason": "Corrected page 9 shows the complete blue Renesas wordmark on light and on a white-backed strip on dark; prior cropping was sheet padding.",
           "reviewer": "codex-ai-secondary-visual-qa",
           "reviewedAt": "2026-09-18T08:29:02Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "The bounded Renesas candidate is blank/low-contrast and does not establish a valid compact mark.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:10:01.690Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "phonepe",
@@ -52961,17 +54601,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/marvell/icon/76aaa7be704bc86366cdb5b5c7cb267b980e68221fe7af98efd94bfb95133d49.png",
+          "format": "png",
+          "width": 192,
+          "height": 192,
+          "bytes": 6811,
+          "contentHash": "76aaa7be704bc86366cdb5b5c7cb267b980e68221fe7af98efd94bfb95133d49",
+          "sourceUrl": "https://icons.duckduckgo.com/ip3/marvell.com.ico",
+          "discoveryPage": "https://marvell.com/",
+          "sourceKind": "duckduckgo-favicon",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://icons.duckduckgo.com/ip3/marvell.com.ico",
+            "retrieved_at": "2026-09-19T09:22:24.279Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:40.034Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown.",
-          "reviewedAt": "2026-09-18T08:14:06Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -52979,7 +54637,7 @@
           "reviewedAt": "2026-09-18T08:14:06Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "razorpay",
@@ -53633,17 +55291,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:47:00.862Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:47:27.279Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/monday-com/icon/cf47b445881656b93de1d9cfd9a46865eac11b0e2920556bc6c7fdd126c9fdac.png",
+          "format": "png",
+          "width": 122,
+          "height": 122,
+          "bytes": 838,
+          "contentHash": "cf47b445881656b93de1d9cfd9a46865eac11b0e2920556bc6c7fdd126c9fdac",
+          "sourceUrl": "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/monday-logo-2.svg",
+          "discoveryPage": "https://monday.com/",
+          "sourceKind": "schema",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/monday-logo-2.svg",
+            "retrieved_at": "2026-09-19T09:22:16.870Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:25.876Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown.",
-          "reviewedAt": "2026-09-18T08:14:06Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -53651,7 +55327,7 @@
           "reviewedAt": "2026-09-18T08:14:06Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:47:00.862Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "canonical",
@@ -54682,9 +56358,17 @@
           "kind": "persistent_role_gap",
           "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown.",
           "reviewedAt": "2026-09-18T08:14:06Z"
+        },
+        {
+          "role": "icon",
+          "kind": "icon_collection_unresolved_source",
+          "reason": "No bounded attempt established a current identity-correct compact Labelbox icon; do not infer that the brand has no separate icon.",
+          "reviewer": "Codex visual review",
+          "reviewedAt": "2026-09-19T09:47:23Z",
+          "source": "logo-only-icon-collection"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:42:09.529Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "snyk",
@@ -54782,17 +56466,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:39:38.439Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:41:53.710Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/lam-research/icon/c4fdd495ccc4c419aaffd89f0db4e5c5cd53ce61d1ebbf4355763c9abf430144.png",
+          "format": "png",
+          "width": 180,
+          "height": 180,
+          "bytes": 6615,
+          "contentHash": "c4fdd495ccc4c419aaffd89f0db4e5c5cd53ce61d1ebbf4355763c9abf430144",
+          "sourceUrl": "https://www.lamresearch.com/wp-content/uploads/2021/07/cropped-Favicon_512-180x180.png",
+          "discoveryPage": "https://www.lamresearch.com/",
+          "sourceKind": "apple",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.lamresearch.com/wp-content/uploads/2021/07/cropped-Favicon_512-180x180.png",
+            "retrieved_at": "2026-09-19T09:22:33.423Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:38.854Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown.",
-          "reviewedAt": "2026-09-18T08:14:06Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -54800,7 +56502,7 @@
           "reviewedAt": "2026-09-18T08:14:06Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:39:38.439Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "affirm",
@@ -55049,17 +56751,35 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:55:09.138Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:55:48.035Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/jetbrains/icon/de781d376a4f3abab4505e17649e5b8bf08a0440ea1f5cae69548678243890c9.png",
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "bytes": 45159,
+          "contentHash": "de781d376a4f3abab4505e17649e5b8bf08a0440ea1f5cae69548678243890c9",
+          "sourceUrl": "https://www.jetbrains.com/icon-512.png",
+          "discoveryPage": "https://www.jetbrains.com/",
+          "sourceKind": "manifest",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://www.jetbrains.com/icon-512.png",
+            "retrieved_at": "2026-09-19T09:22:40.007Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:44.488Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet.",
-          "reviewedAt": "2026-09-18T08:14:06Z"
-        },
         {
           "role": "logo",
           "kind": "persistent_role_gap",
@@ -55067,7 +56787,7 @@
           "reviewedAt": "2026-09-18T08:14:06Z"
         }
       ],
-      "lastCheckedAt": "2026-09-18T08:55:09.138Z"
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "c3-ai",
@@ -57653,19 +59373,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:13:03.580Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:18:13.606Z"
+        },
+        "icon": {
+          "role": "icon",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_brand_mark",
+          "path": "assets/ase-technology/icon/2bff2735cb1cc83454dc14b1633275f6c6f6f2f9742e773bf22c44c93e286980.png",
+          "format": "png",
+          "width": 256,
+          "height": 256,
+          "bytes": 21164,
+          "contentHash": "2bff2735cb1cc83454dc14b1633275f6c6f6f2f9742e773bf22c44c93e286980",
+          "sourceUrl": "https://cdn.prod.website-files.com/64367fc53a6c9c22a4baffe3/6667ef1ce24e956d4aecae96_favicon%201.png",
+          "discoveryPage": "https://www.aseglobal.com/",
+          "sourceKind": "apple",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://cdn.prod.website-files.com/64367fc53a6c9c22a4baffe3/6667ef1ce24e956d4aecae96_favicon%201.png",
+            "retrieved_at": "2026-09-19T09:22:39.479Z",
+            "http_status": 200
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:22:40.794Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:47:23Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
-      "notes": [
-        {
-          "role": "icon",
-          "kind": "persistent_role_gap",
-          "reason": "Circular play button is a generic video control, not the ASE Technology brand symbol.",
-          "reviewedAt": "2026-09-18T08:17:04Z"
-        }
-      ],
-      "lastCheckedAt": "2026-09-18T08:13:03.580Z"
+      "verificationStatus": "approved_complete",
+      "notes": [],
+      "lastCheckedAt": "2026-09-19T09:47:23Z"
     },
     {
       "id": "binance",

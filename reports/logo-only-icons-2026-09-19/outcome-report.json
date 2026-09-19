@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "task": "logo-only-icon-collection",
+  "baselineRef": "9e43e79",
+  "reviewer": "Codex visual review",
+  "reviewedAt": "2026-09-19T09:47:23Z",
+  "scope": {
+    "baselineTargets": 126,
+    "exactLogoOnlyBaseline": true
+  },
+  "summary": {
+    "approvedIcons": 64,
+    "noSeparateIcon": 12,
+    "transientFailure": 7,
+    "unresolvedSource": 43,
+    "remainingLogoOnly": 62
+  },
+  "outcomes": {
+    "approve": [
+      "disney",
+      "loreal",
+      "qualcomm",
+      "workday",
+      "snowflake",
+      "fortinet",
+      "akamai",
+      "sephora",
+      "exxonmobil",
+      "bosch",
+      "citigroup",
+      "blackrock",
+      "unitedhealth-group",
+      "novartis",
+      "paramount",
+      "baidu",
+      "deloitte",
+      "sas",
+      "fiserv",
+      "rtx",
+      "lockheed-martin",
+      "cigna",
+      "occidental-petroleum",
+      "centene",
+      "american-electric-power",
+      "mckesson",
+      "metlife",
+      "valero",
+      "constellation-energy",
+      "tele2",
+      "halliburton",
+      "baker-hughes",
+      "ntt",
+      "regeneron",
+      "aramco",
+      "embraer",
+      "softbank-corp",
+      "eni",
+      "deutsche-bank",
+      "equinor",
+      "danaher",
+      "dow",
+      "repsol",
+      "abbott",
+      "societe-generale",
+      "legrand",
+      "tenet-healthcare",
+      "hbo",
+      "expedia-group",
+      "patanjali",
+      "asda",
+      "infiniti",
+      "mongodb",
+      "ovhcloud",
+      "worldpay",
+      "mediatek",
+      "nexi",
+      "airwallex",
+      "writer",
+      "marvell",
+      "monday-com",
+      "lam-research",
+      "jetbrains",
+      "ase-technology"
+    ],
+    "no_separate_icon": [
+      "fedex",
+      "bose",
+      "diageo",
+      "snap",
+      "bhp",
+      "zoetis",
+      "singtel",
+      "tide",
+      "fujifilm",
+      "mac-cosmetics",
+      "jollibee-foods",
+      "infineon"
+    ],
+    "transient_failure": [
+      "caterpillar",
+      "comcast",
+      "whirlpool",
+      "electrolux",
+      "sabic",
+      "abn-amro",
+      "femsa"
+    ],
+    "unresolved_source": [
+      "zara",
+      "palo-alto-networks",
+      "lowe-s",
+      "patagonia",
+      "ray-ban",
+      "este-e-lauder",
+      "mondelez-international",
+      "mars",
+      "heineken",
+      "subway",
+      "totalenergies",
+      "johnson-johnson",
+      "infosys",
+      "fisher-price",
+      "kpmg",
+      "ebay",
+      "fidelity-national-information-services",
+      "nextera-energy",
+      "rockwell-automation",
+      "chubb",
+      "komatsu",
+      "mitsubishi-electric",
+      "mitsubishi-heavy-industries",
+      "stryker",
+      "sky",
+      "barbie",
+      "airasia",
+      "sainsburys",
+      "familymart",
+      "sprite",
+      "hot-wheels",
+      "tjx-companies",
+      "fanta",
+      "pampers",
+      "kaspersky",
+      "renesas",
+      "labelbox",
+      "xcel-energy",
+      "carrier-global",
+      "air-products",
+      "enbridge",
+      "amul",
+      "youtube"
+    ]
+  },
+  "approved": [
+    {
+      "brandId": "disney",
+      "name": "Disney",
+      "sourceUrl": "https://static-mh.content.disney.io/matterhorn/assets/apple-touch-icon-2747f4e2a5dd.png",
+      "discoveryPage": "https://www.disney.com/",
+      "path": "assets/disney/icon/74820cd7636baa3d6a2307e76d1f4cf3dbdbab756c76aac2d45e545948fa81f1.png",
+      "contentHash": "74820cd7636baa3d6a2307e76d1f4cf3dbdbab756c76aac2d45e545948fa81f1"
+    },
+    {
+      "brandId": "loreal",
+      "name": "L'Oréal",
+      "sourceUrl": "https://www.loreal.com/themes/LorealCorp/images/icons/icon-384x384.png",
+      "discoveryPage": "https://www.loreal.com/en/",
+      "path": "assets/loreal/icon/009ea637360f57b43590af03884c42b769f8f3e5f44753530f7819b14ffedb83.png",
+      "contentHash": "009ea637360f57b43590af03884c42b769f8f3e5f44753530f7819b14ffedb83"
+    },
+    {
+      "brandId": "qualcomm",
+      "name": "Qualcomm",
+      "sourceUrl": "https://www.qualcomm.com/etc.clientlibs/qcomm-martech/clientlibs/clientlib-react/resources/favicon.ico",
+      "discoveryPage": "https://www.qualcomm.com/",
+      "path": "assets/qualcomm/icon/366c7f5489de155381857f756881faf72ceb12f78833f5dc17f7bff913be6884.ico",
+      "contentHash": "366c7f5489de155381857f756881faf72ceb12f78833f5dc17f7bff913be6884"
+    },
+    {
+      "brandId": "workday",
+      "name": "Workday",
+      "sourceUrl": "https://www.workday.com/favicon.ico",
+      "discoveryPage": "https://www.workday.com/",
+      "path": "assets/workday/icon/191c6208283772cc7287e4b6ecc19b06bce92b0963bf3c763245d4bd267d02eb.ico",
+      "contentHash": "191c6208283772cc7287e4b6ecc19b06bce92b0963bf3c763245d4bd267d02eb"
+    },
+    {
+      "brandId": "snowflake",
+      "name": "Snowflake",
+      "sourceUrl": "https://www.snowflake.com/en/",
+      "discoveryPage": "https://www.snowflake.com/en/",
+      "path": "assets/snowflake/icon/a2fe870b107a5e87a9d4a366723e11cf63b441fc30d5567838c6fb69a0738b20.svg",
+      "contentHash": "a2fe870b107a5e87a9d4a366723e11cf63b441fc30d5567838c6fb69a0738b20"
+    },
+    {
+      "brandId": "fortinet",
+      "name": "Fortinet",
+      "sourceUrl": "https://www.fortinet.com/content/dam/fortinet/images/favicon/safari-pinned-tab.svg",
+      "discoveryPage": "https://www.fortinet.com/",
+      "path": "assets/fortinet/icon/77ea4d448047e2546d58461bb507d2ed99a3a52a5d6e1c0345806e40fd5e5cf1.svg",
+      "contentHash": "77ea4d448047e2546d58461bb507d2ed99a3a52a5d6e1c0345806e40fd5e5cf1"
+    },
+    {
+      "brandId": "akamai",
+      "name": "Akamai",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/akamai.com.ico",
+      "discoveryPage": "https://akamai.com/",
+      "path": "assets/akamai/icon/3c3cdb6fa0840e023d7b48714b246119cdb7a16cfc5c09818ee0bba9bc29bae9.png",
+      "contentHash": "3c3cdb6fa0840e023d7b48714b246119cdb7a16cfc5c09818ee0bba9bc29bae9"
+    },
+    {
+      "brandId": "sephora",
+      "name": "Sephora",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/sephora.com.ico",
+      "discoveryPage": "https://sephora.com/",
+      "path": "assets/sephora/icon/e0b033fc883040f8fee622c448308eb293e7294487ac9da466ec845a00f9d1f5.ico",
+      "contentHash": "e0b033fc883040f8fee622c448308eb293e7294487ac9da466ec845a00f9d1f5"
+    },
+    {
+      "brandId": "exxonmobil",
+      "name": "ExxonMobil",
+      "sourceUrl": "https://corporate.exxonmobil.com/-/media/global/icons/xx-favicon.ico",
+      "discoveryPage": "https://corporate.exxonmobil.com/",
+      "path": "assets/exxonmobil/icon/eb68c82ea486e5e2951a44e6c8fc759a97558c8b25ba26bddde7b60e024ce289.ico",
+      "contentHash": "eb68c82ea486e5e2951a44e6c8fc759a97558c8b25ba26bddde7b60e024ce289"
+    },
+    {
+      "brandId": "bosch",
+      "name": "Bosch",
+      "sourceUrl": "https://www.bosch.com/media/tech/tech_images/android-chrome-512x512.png",
+      "discoveryPage": "https://www.bosch.com/",
+      "path": "assets/bosch/icon/aea86489c41a2cb330cde366c527c26c27325ecb7cb73d398e58cbc9b9588637.png",
+      "contentHash": "aea86489c41a2cb330cde366c527c26c27325ecb7cb73d398e58cbc9b9588637"
+    },
+    {
+      "brandId": "citigroup",
+      "name": "Citigroup",
+      "sourceUrl": "https://www.citigroup.com/global/citigroup-ui/akpublic/images/gpa_favicon.ico",
+      "discoveryPage": "https://www.citigroup.com/global",
+      "path": "assets/citigroup/icon/18e5ba189113898beea710bbfe7faef7176a9fe9603d767301baba15de180874.png",
+      "contentHash": "18e5ba189113898beea710bbfe7faef7176a9fe9603d767301baba15de180874"
+    },
+    {
+      "brandId": "blackrock",
+      "name": "BlackRock",
+      "sourceUrl": "https://www.blackrock.com/apac-retail-c-assets/favicon.ico",
+      "discoveryPage": "https://www.blackrock.com/au",
+      "path": "assets/blackrock/icon/aad3adcfdc5cf9192c1a2de3cd540071c0176e731da89792d4c751feb10f15f1.ico",
+      "contentHash": "aad3adcfdc5cf9192c1a2de3cd540071c0176e731da89792d4c751feb10f15f1"
+    },
+    {
+      "brandId": "unitedhealth-group",
+      "name": "UnitedHealth Group",
+      "sourceUrl": "https://www.unitedhealthgroup.com/etc.clientlibs/uhg/clientlibs/clientlib-site/resources/images/favicon.ico",
+      "discoveryPage": "https://www.unitedhealthgroup.com/",
+      "path": "assets/unitedhealth-group/icon/31e1c116e909afad99d62e2514339fb531514074a3be7a998eb272f6809d20c4.ico",
+      "contentHash": "31e1c116e909afad99d62e2514339fb531514074a3be7a998eb272f6809d20c4"
+    },
+    {
+      "brandId": "novartis",
+      "name": "Novartis",
+      "sourceUrl": "https://www.novartis.com/themes/custom/cosmos/favicon-512x512.png",
+      "discoveryPage": "https://www.novartis.com/",
+      "path": "assets/novartis/icon/5ad6659ce3a3508825248ccede1bdbfa78e56d08635552df33050e2e7b2d93c4.png",
+      "contentHash": "5ad6659ce3a3508825248ccede1bdbfa78e56d08635552df33050e2e7b2d93c4"
+    },
+    {
+      "brandId": "paramount",
+      "name": "Paramount",
+      "sourceUrl": "https://www.paramount.com/sites/g/files/dxjhpe356/files/ParamountDotCom/Others/Images/Header/Vector_50X40%20%282%29.svg",
+      "discoveryPage": "https://www.paramount.com/",
+      "path": "assets/paramount/icon/2edd1284cbc5a8b22666ef65acc8a56bf035e31f0b1bb497e4e51b835dc1de8a.svg",
+      "contentHash": "2edd1284cbc5a8b22666ef65acc8a56bf035e31f0b1bb497e4e51b835dc1de8a"
+    },
+    {
+      "brandId": "baidu",
+      "name": "Baidu",
+      "sourceUrl": "https://www.baidu.com/favicon.ico",
+      "discoveryPage": "https://www.baidu.com/",
+      "path": "assets/baidu/icon/c70088079fe9441a726c66ce0e73ae38315ec80051d3dd542c41b82fa0a1993a.ico",
+      "contentHash": "c70088079fe9441a726c66ce0e73ae38315ec80051d3dd542c41b82fa0a1993a"
+    },
+    {
+      "brandId": "deloitte",
+      "name": "Deloitte",
+      "sourceUrl": "https://www.deloitte.com/content/dam/assets-shared/icons/au/apple-icon-144x144.png",
+      "discoveryPage": "https://www.deloitte.com/au/en.html",
+      "path": "assets/deloitte/icon/334ae0b965f6a52f87500ee87443a5a8c30b952842aec14e44db3e03d12c856b.ico",
+      "contentHash": "334ae0b965f6a52f87500ee87443a5a8c30b952842aec14e44db3e03d12c856b"
+    },
+    {
+      "brandId": "sas",
+      "name": "SAS",
+      "sourceUrl": "https://www.sas.com/favicon.ico",
+      "discoveryPage": "https://www.sas.com/en_us/home.geo.html",
+      "path": "assets/sas/icon/506407560e2bd741588c4367ca47be99929f8564927a2b1f05491cc9169d2958.ico",
+      "contentHash": "506407560e2bd741588c4367ca47be99929f8564927a2b1f05491cc9169d2958"
+    },
+    {
+      "brandId": "fiserv",
+      "name": "Fiserv",
+      "sourceUrl": "https://www.fiserv.com/content/dam/fiserv-com/favicon-med.ico",
+      "discoveryPage": "https://www.fiserv.com/",
+      "path": "assets/fiserv/icon/77e828913bfd21a17563e474acbbbf99504d24242b751b5a81f9050b4f5328ab.ico",
+      "contentHash": "77e828913bfd21a17563e474acbbbf99504d24242b751b5a81f9050b4f5328ab"
+    },
+    {
+      "brandId": "rtx",
+      "name": "RTX",
+      "sourceUrl": "https://www.rtx.com/-/media/themes/raytheon-technologies/rtx-shared/rtx-theme/images/rtx-balck-favicon.png?rev=3da99ab1a2a54dca92c98a2ede690339&rid=e3e3f4840c2742cc9f36e2d33430c8cd",
+      "discoveryPage": "https://www.rtx.com/",
+      "path": "assets/rtx/icon/a6d91fdd0388266a5741b0932c585dd185abaa4e4fe6329b307bc17fb56b8f5b.png",
+      "contentHash": "a6d91fdd0388266a5741b0932c585dd185abaa4e4fe6329b307bc17fb56b8f5b"
+    },
+    {
+      "brandId": "lockheed-martin",
+      "name": "Lockheed Martin",
+      "sourceUrl": "https://www.lockheedmartin.com/favicon.ico",
+      "discoveryPage": "https://lockheedmartin.com/",
+      "path": "assets/lockheed-martin/icon/d474f603dd702b484b81a56b7f4a16b78f21790f4f30ec65f5009c425078a91f.ico",
+      "contentHash": "d474f603dd702b484b81a56b7f4a16b78f21790f4f30ec65f5009c425078a91f"
+    },
+    {
+      "brandId": "cigna",
+      "name": "The Cigna Group",
+      "sourceUrl": "https://www.thecignagroup.com/favicon.ico",
+      "discoveryPage": "https://www.thecignagroup.com/",
+      "path": "assets/cigna/icon/d1222b6cafd0b3561e4c403cc3f1b9590f42914612473a239c6ee9c29c7f9eda.ico",
+      "contentHash": "d1222b6cafd0b3561e4c403cc3f1b9590f42914612473a239c6ee9c29c7f9eda"
+    },
+    {
+      "brandId": "occidental-petroleum",
+      "name": "Occidental Petroleum",
+      "sourceUrl": "https://www.oxy.com/siteassets/images/logos/logo.png",
+      "discoveryPage": "https://www.oxy.com/",
+      "path": "assets/occidental-petroleum/icon/ffdb072b2978ab3dd4fdf7362790c2f30f0f088a171e0416c342c23b328dd8c7.png",
+      "contentHash": "ffdb072b2978ab3dd4fdf7362790c2f30f0f088a171e0416c342c23b328dd8c7"
+    },
+    {
+      "brandId": "centene",
+      "name": "Centene",
+      "sourceUrl": "https://www.centene.com/content/dam/centenedotcom/logos/centene-favicon.ico",
+      "discoveryPage": "https://www.centene.com/",
+      "path": "assets/centene/icon/5e57b6e36cb52a01874c764ce2bdbeeb3898c6ffe0b8ce1548bacfa791f92278.ico",
+      "contentHash": "5e57b6e36cb52a01874c764ce2bdbeeb3898c6ffe0b8ce1548bacfa791f92278"
+    },
+    {
+      "brandId": "american-electric-power",
+      "name": "American Electric Power",
+      "sourceUrl": "https://www.aep.com/favicon.ico",
+      "discoveryPage": "https://www.aep.com/",
+      "path": "assets/american-electric-power/icon/271d70c9c6fd695034e240bcdbe1e0d8266525f2f68a8702f06b25ef13110419.ico",
+      "contentHash": "271d70c9c6fd695034e240bcdbe1e0d8266525f2f68a8702f06b25ef13110419"
+    },
+    {
+      "brandId": "mckesson",
+      "name": "McKesson",
+      "sourceUrl": "https://www.mckesson.com/siteassets/images/z-mckesson-logosicons/favicon.png",
+      "discoveryPage": "https://www.mckesson.com/",
+      "path": "assets/mckesson/icon/60aa9a7cfa9f1210a0b582367897645960f306d59f6dce4e8358ca94afd56a09.ico",
+      "contentHash": "60aa9a7cfa9f1210a0b582367897645960f306d59f6dce4e8358ca94afd56a09"
+    },
+    {
+      "brandId": "metlife",
+      "name": "MetLife",
+      "sourceUrl": "https://www.metlife.com/content/dam/globalMarketingPlatformAssets/images/social/nf/favicon.ico",
+      "discoveryPage": "https://www.metlife.com/",
+      "path": "assets/metlife/icon/1eef92dedc0905c59802af50c5e8baed28bbd828154eb643a526148cb035de95.ico",
+      "contentHash": "1eef92dedc0905c59802af50c5e8baed28bbd828154eb643a526148cb035de95"
+    },
+    {
+      "brandId": "valero",
+      "name": "Valero",
+      "sourceUrl": "https://www.valero.com/themes/custom/valero/favicon.ico",
+      "discoveryPage": "https://www.valero.com/",
+      "path": "assets/valero/icon/50bded1a662e4a0524674d925a09255133ed347821673e07ab20e84ce1a281a8.ico",
+      "contentHash": "50bded1a662e4a0524674d925a09255133ed347821673e07ab20e84ce1a281a8"
+    },
+    {
+      "brandId": "constellation-energy",
+      "name": "Constellation Energy",
+      "sourceUrl": "https://www.constellationenergy.com/content/dam/constellationenergy/icons/miscellaneous/favicon.ico",
+      "discoveryPage": "https://www.constellationenergy.com/",
+      "path": "assets/constellation-energy/icon/6b27e0d10955c9d4901809ec9fe1dffc35c626e3cfb33e172187c89aed3c9671.ico",
+      "contentHash": "6b27e0d10955c9d4901809ec9fe1dffc35c626e3cfb33e172187c89aed3c9671"
+    },
+    {
+      "brandId": "tele2",
+      "name": "Tele2",
+      "sourceUrl": "https://www.tele2.com/favicons/web-app-manifest-512x512.png",
+      "discoveryPage": "https://www.tele2.com/",
+      "path": "assets/tele2/icon/c274cacb3582c90d6c8c231408321672ac34fc757218035fcf6b9de61d57ecdc.png",
+      "contentHash": "c274cacb3582c90d6c8c231408321672ac34fc757218035fcf6b9de61d57ecdc"
+    },
+    {
+      "brandId": "halliburton",
+      "name": "Halliburton",
+      "sourceUrl": "https://www.halliburton.com/content/dam/halliburton/assets/icons/favicon.ico",
+      "discoveryPage": "https://www.halliburton.com/",
+      "path": "assets/halliburton/icon/2e1fab2ac85e71c31ef93e463e3abf6fd84166c180640bb8087ad8499f9ef66f.ico",
+      "contentHash": "2e1fab2ac85e71c31ef93e463e3abf6fd84166c180640bb8087ad8499f9ef66f"
+    },
+    {
+      "brandId": "baker-hughes",
+      "name": "Baker Hughes",
+      "sourceUrl": "https://www.bakerhughes.com/themes/custom/bh/favicon.ico",
+      "discoveryPage": "https://www.bakerhughes.com/",
+      "path": "assets/baker-hughes/icon/0d3533fb337f47c634119410c835b62e684a872a24d26cb547dd9116a98259fe.ico",
+      "contentHash": "0d3533fb337f47c634119410c835b62e684a872a24d26cb547dd9116a98259fe"
+    },
+    {
+      "brandId": "ntt",
+      "name": "NTT",
+      "sourceUrl": "https://group.ntt/favicon.png",
+      "discoveryPage": "https://group.ntt/en/",
+      "path": "assets/ntt/icon/ef704335f212a7447f39e2b5da0d95f1367bd5c4ad3f3097573169d45a409d3b.png",
+      "contentHash": "ef704335f212a7447f39e2b5da0d95f1367bd5c4ad3f3097573169d45a409d3b"
+    },
+    {
+      "brandId": "regeneron",
+      "name": "Regeneron",
+      "sourceUrl": "https://www.regeneron.com/favicon.ico",
+      "discoveryPage": "https://www.regeneron.com/",
+      "path": "assets/regeneron/icon/1acc2fa952bad818d3950e317057d1428a98e1b1798ac21863248c2d77e8d064.ico",
+      "contentHash": "1acc2fa952bad818d3950e317057d1428a98e1b1798ac21863248c2d77e8d064"
+    },
+    {
+      "brandId": "aramco",
+      "name": "Saudi Aramco",
+      "sourceUrl": "https://www.aramco.com/dist/client/favicon/mstile-310x310.png",
+      "discoveryPage": "https://www.aramco.com/",
+      "path": "assets/aramco/icon/00e2b39ea4b815dff3ef399e40948fa35468c5d173918a314e8f199f91f601c6.png",
+      "contentHash": "00e2b39ea4b815dff3ef399e40948fa35468c5d173918a314e8f199f91f601c6"
+    },
+    {
+      "brandId": "embraer",
+      "name": "Embraer",
+      "sourceUrl": "https://embraer.com/assets/images/Embraer-mark.svg",
+      "discoveryPage": "https://embraer.com/",
+      "path": "assets/embraer/icon/a3ca8337bf4aa25cefe61bf0ed836c59e514a5d98c97cec775ae1929c1d401e2.svg",
+      "contentHash": "a3ca8337bf4aa25cefe61bf0ed836c59e514a5d98c97cec775ae1929c1d401e2"
+    },
+    {
+      "brandId": "softbank-corp",
+      "name": "SoftBank Corp.",
+      "sourceUrl": "https://www.softbank.jp/site/set/common/p/img/favicon.ico",
+      "discoveryPage": "https://www.softbank.jp/",
+      "path": "assets/softbank-corp/icon/a4c0a4b9f35aa94f73593e57513d0025243bd13236f74d9c545f7580c066267a.ico",
+      "contentHash": "a4c0a4b9f35aa94f73593e57513d0025243bd13236f74d9c545f7580c066267a"
+    },
+    {
+      "brandId": "eni",
+      "name": "Eni",
+      "sourceUrl": "https://www.eni.com/content/dam/enicom/images/favicons/safari-pinned-tab.svg",
+      "discoveryPage": "https://www.eni.com/it-IT/home.html",
+      "path": "assets/eni/icon/0efb5bf179d6d915c51fccf879562c33f506c708eeec6da8ddc93dd2eca35368.svg",
+      "contentHash": "0efb5bf179d6d915c51fccf879562c33f506c708eeec6da8ddc93dd2eca35368"
+    },
+    {
+      "brandId": "deutsche-bank",
+      "name": "Deutsche Bank",
+      "sourceUrl": "https://prod2.master.dwebcms.db.com/application/themes/default/favicon/android-chrome-512x512.png",
+      "discoveryPage": "https://www.db.com/",
+      "path": "assets/deutsche-bank/icon/a18404818a482ffc0571cb05c07695b2dfe96036b257a1d653b50891b0edcccd.png",
+      "contentHash": "a18404818a482ffc0571cb05c07695b2dfe96036b257a1d653b50891b0edcccd"
+    },
+    {
+      "brandId": "equinor",
+      "name": "Equinor",
+      "sourceUrl": "https://www.equinor.com/favicon.ico?favicon.1q221ig3m5jcb.ico?dpl=0091520996f5",
+      "discoveryPage": "https://www.equinor.com/",
+      "path": "assets/equinor/icon/b5bd5085da81705147ec5609f13f98df823dd40ecddf64e639766c31614e69ca.ico",
+      "contentHash": "b5bd5085da81705147ec5609f13f98df823dd40ecddf64e639766c31614e69ca"
+    },
+    {
+      "brandId": "danaher",
+      "name": "Danaher",
+      "sourceUrl": "https://www.danaher.com/themes/custom/danaher/favicon.ico",
+      "discoveryPage": "https://www.danaher.com/",
+      "path": "assets/danaher/icon/dab3c90e0294a4dfab6aeb4b969cbda648f29689987a78d16c86360b4570dd3e.ico",
+      "contentHash": "dab3c90e0294a4dfab6aeb4b969cbda648f29689987a78d16c86360b4570dd3e"
+    },
+    {
+      "brandId": "dow",
+      "name": "Dow",
+      "sourceUrl": "https://www.dow.com/content/dam/images/public-images/icons/brand-index.svg",
+      "discoveryPage": "https://www.dow.com/en-us",
+      "path": "assets/dow/icon/91e955ec13967c125324ba1b6cac501738b17959a6796fab2fc4402dbf93f98f.svg",
+      "contentHash": "91e955ec13967c125324ba1b6cac501738b17959a6796fab2fc4402dbf93f98f"
+    },
+    {
+      "brandId": "repsol",
+      "name": "Repsol",
+      "sourceUrl": "https://www.repsol.com/content/dam/repsol-catalog/icons/favicon.png",
+      "discoveryPage": "https://www.repsol.com/es/index.cshtml",
+      "path": "assets/repsol/icon/c86bd31dbf1a6cf8668aacf3076a9ea78471c934ddaaf1eb5af3e66fab7be6bd.png",
+      "contentHash": "c86bd31dbf1a6cf8668aacf3076a9ea78471c934ddaaf1eb5af3e66fab7be6bd"
+    },
+    {
+      "brandId": "abbott",
+      "name": "Abbott",
+      "sourceUrl": "https://www.abbott.com/etc.clientlibs/abbott-core/clientlibs/favicons/clientlib-favicon-abbottcore/resources/apple-touch-icon-180x180.png",
+      "discoveryPage": "https://www.abbott.com/en-us/homepage",
+      "path": "assets/abbott/icon/b2f92075582fc3a0c601ba239cce029fcc29bd1b6cb6a4351ee63930c733a976.png",
+      "contentHash": "b2f92075582fc3a0c601ba239cce029fcc29bd1b6cb6a4351ee63930c733a976"
+    },
+    {
+      "brandId": "societe-generale",
+      "name": "Société Générale",
+      "sourceUrl": "https://www.societegenerale.com/themes/custom/sg_refonte/favicon.ico",
+      "discoveryPage": "https://www.societegenerale.com/fr",
+      "path": "assets/societe-generale/icon/3649514db0427f11d4c4dcbb15d91473ac4fe8310030d9ca3e18dcc2fae7b54d.ico",
+      "contentHash": "3649514db0427f11d4c4dcbb15d91473ac4fe8310030d9ca3e18dcc2fae7b54d"
+    },
+    {
+      "brandId": "legrand",
+      "name": "Legrand",
+      "sourceUrl": "https://www.legrand.com/themes/custom/legrand/favicon.ico",
+      "discoveryPage": "https://www.legrand.com/en",
+      "path": "assets/legrand/icon/7c5eed0f1dc77ab224e3c1f26e7ac7dd347730ef908e145fc1183a8819e5eabe.ico",
+      "contentHash": "7c5eed0f1dc77ab224e3c1f26e7ac7dd347730ef908e145fc1183a8819e5eabe"
+    },
+    {
+      "brandId": "tenet-healthcare",
+      "name": "Tenet Healthcare",
+      "sourceUrl": "https://www.tenethealth.com/Assets/Images/icon512.png",
+      "discoveryPage": "https://www.tenethealth.com/",
+      "path": "assets/tenet-healthcare/icon/33b99abcdf05693f05a8ddd98b8cc0043db02d0f6fbd95d4b92a937f62551d52.png",
+      "contentHash": "33b99abcdf05693f05a8ddd98b8cc0043db02d0f6fbd95d4b92a937f62551d52"
+    },
+    {
+      "brandId": "hbo",
+      "name": "HBO",
+      "sourceUrl": "https://www.hbo.com/favicon.ico",
+      "discoveryPage": "https://www.hbo.com/",
+      "path": "assets/hbo/icon/5ce2cbe4ee8bf386445e52370fe2362d6e30a4a681ae97cba9a9c97a5c71b0ca.png",
+      "contentHash": "5ce2cbe4ee8bf386445e52370fe2362d6e30a4a681ae97cba9a9c97a5c71b0ca"
+    },
+    {
+      "brandId": "expedia-group",
+      "name": "Expedia Group",
+      "sourceUrl": "https://expediagroup.com/favicon.ico",
+      "discoveryPage": "https://expediagroup.com/en-us",
+      "path": "assets/expedia-group/icon/cd7eb307fd927baea9ab64678409fa758fb8d8b14723bc48462e4249c37d91ff.ico",
+      "contentHash": "cd7eb307fd927baea9ab64678409fa758fb8d8b14723bc48462e4249c37d91ff"
+    },
+    {
+      "brandId": "patanjali",
+      "name": "Patanjali",
+      "sourceUrl": "https://www.patanjaliayurved.net/assets/img/favicon.ico",
+      "discoveryPage": "https://www.patanjaliayurved.net/",
+      "path": "assets/patanjali/icon/0523c636f5780e32149deeef28d39f1768ee778cfd367cdbc422916632041e1e.ico",
+      "contentHash": "0523c636f5780e32149deeef28d39f1768ee778cfd367cdbc422916632041e1e"
+    },
+    {
+      "brandId": "asda",
+      "name": "Asda",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/asda.com.ico",
+      "discoveryPage": "https://asda.com/",
+      "path": "assets/asda/icon/45c1ebbbbfc8025354f8164e15862ce6ac37388ca28fd5dd5915fb039029ce7b.png",
+      "contentHash": "45c1ebbbbfc8025354f8164e15862ce6ac37388ca28fd5dd5915fb039029ce7b"
+    },
+    {
+      "brandId": "infiniti",
+      "name": "Infiniti",
+      "sourceUrl": "https://libs.infiniti-cdn.net/etc/designs/infiniti_next_v4/26.09.30.NISSAN-13/common-assets/img/favicon/favicon_152x152.png",
+      "discoveryPage": "https://www.infiniti.com/",
+      "path": "assets/infiniti/icon/fe6397e605a60f36b736ffacc7dcf145c162ebf365f505dd98ee86e2545fbc07.png",
+      "contentHash": "fe6397e605a60f36b736ffacc7dcf145c162ebf365f505dd98ee86e2545fbc07"
+    },
+    {
+      "brandId": "mongodb",
+      "name": "MongoDB",
+      "sourceUrl": "https://www.mongodb.com/assets/images/global/favicon.ico",
+      "discoveryPage": "https://www.mongodb.com/",
+      "path": "assets/mongodb/icon/1143ff8a5619ad9d016e3d94462f44ae9047ab4ac4c39722d265c88961591a1a.ico",
+      "contentHash": "1143ff8a5619ad9d016e3d94462f44ae9047ab4ac4c39722d265c88961591a1a"
+    },
+    {
+      "brandId": "ovhcloud",
+      "name": "OVHcloud",
+      "sourceUrl": "https://www.ovhcloud.com/sites/default/files/2023-11/github.svg",
+      "discoveryPage": "https://www.ovhcloud.com/en-au/",
+      "path": "assets/ovhcloud/icon/7cb0e37153002b7d9a65df42ee5d66860d791b1e079c7da9cda2aa4b2adce1ce.svg",
+      "contentHash": "7cb0e37153002b7d9a65df42ee5d66860d791b1e079c7da9cda2aa4b2adce1ce"
+    },
+    {
+      "brandId": "worldpay",
+      "name": "Worldpay",
+      "sourceUrl": "https://worldpay.com/favicon.ico",
+      "discoveryPage": "https://worldpay.com/en",
+      "path": "assets/worldpay/icon/a3cbd71d25b54d6a1ac3282b9aab80825f3ed48173299221e77d78369079b301.ico",
+      "contentHash": "a3cbd71d25b54d6a1ac3282b9aab80825f3ed48173299221e77d78369079b301"
+    },
+    {
+      "brandId": "mediatek",
+      "name": "MediaTek",
+      "sourceUrl": "https://www.mediatek.com/hubfs/fav-icon.ico",
+      "discoveryPage": "https://www.mediatek.com/",
+      "path": "assets/mediatek/icon/fb469d9dfdb4d0ad9fd558e421561406abf1f1ea758568dd14ad98dc79fff633.ico",
+      "contentHash": "fb469d9dfdb4d0ad9fd558e421561406abf1f1ea758568dd14ad98dc79fff633"
+    },
+    {
+      "brandId": "nexi",
+      "name": "Nexi",
+      "sourceUrl": "https://www.nexigroup.com/etc.clientlibs/corp/clientlibs/clientlib-site/resources/favicons/favicon.ico",
+      "discoveryPage": "https://www.nexigroup.com/en/",
+      "path": "assets/nexi/icon/ddcb12028caf567e0f9d6af1adc7e51df78b7c800f99eab2608c11ca47f9b77e.ico",
+      "contentHash": "ddcb12028caf567e0f9d6af1adc7e51df78b7c800f99eab2608c11ca47f9b77e"
+    },
+    {
+      "brandId": "airwallex",
+      "name": "Airwallex",
+      "sourceUrl": "https://grw-landing.airwallex.com/favicon.ico",
+      "discoveryPage": "https://www.airwallex.com/en-au",
+      "path": "assets/airwallex/icon/0bfcf07de6095340c6926dd464d13bc6b856dcb35d7fcbb5ae55a64c20f24345.ico",
+      "contentHash": "0bfcf07de6095340c6926dd464d13bc6b856dcb35d7fcbb5ae55a64c20f24345"
+    },
+    {
+      "brandId": "writer",
+      "name": "Writer",
+      "sourceUrl": "https://writer.com/wp-content/uploads/2021/08/writer-w-logo-1.png?w=180",
+      "discoveryPage": "https://writer.com/",
+      "path": "assets/writer/icon/b96b305320a0c0a84b79a1eb6b6427c98b34580f020da82a151717480b38f7f7.png",
+      "contentHash": "b96b305320a0c0a84b79a1eb6b6427c98b34580f020da82a151717480b38f7f7"
+    },
+    {
+      "brandId": "marvell",
+      "name": "Marvell",
+      "sourceUrl": "https://icons.duckduckgo.com/ip3/marvell.com.ico",
+      "discoveryPage": "https://marvell.com/",
+      "path": "assets/marvell/icon/76aaa7be704bc86366cdb5b5c7cb267b980e68221fe7af98efd94bfb95133d49.png",
+      "contentHash": "76aaa7be704bc86366cdb5b5c7cb267b980e68221fe7af98efd94bfb95133d49"
+    },
+    {
+      "brandId": "monday-com",
+      "name": "monday.com",
+      "sourceUrl": "https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/monday-logo-2.svg",
+      "discoveryPage": "https://monday.com/",
+      "path": "assets/monday-com/icon/cf47b445881656b93de1d9cfd9a46865eac11b0e2920556bc6c7fdd126c9fdac.png",
+      "contentHash": "cf47b445881656b93de1d9cfd9a46865eac11b0e2920556bc6c7fdd126c9fdac"
+    },
+    {
+      "brandId": "lam-research",
+      "name": "Lam Research",
+      "sourceUrl": "https://www.lamresearch.com/wp-content/uploads/2021/07/cropped-Favicon_512-180x180.png",
+      "discoveryPage": "https://www.lamresearch.com/",
+      "path": "assets/lam-research/icon/c4fdd495ccc4c419aaffd89f0db4e5c5cd53ce61d1ebbf4355763c9abf430144.png",
+      "contentHash": "c4fdd495ccc4c419aaffd89f0db4e5c5cd53ce61d1ebbf4355763c9abf430144"
+    },
+    {
+      "brandId": "jetbrains",
+      "name": "JetBrains",
+      "sourceUrl": "https://www.jetbrains.com/icon-512.png",
+      "discoveryPage": "https://www.jetbrains.com/",
+      "path": "assets/jetbrains/icon/de781d376a4f3abab4505e17649e5b8bf08a0440ea1f5cae69548678243890c9.png",
+      "contentHash": "de781d376a4f3abab4505e17649e5b8bf08a0440ea1f5cae69548678243890c9"
+    },
+    {
+      "brandId": "ase-technology",
+      "name": "ASE Technology",
+      "sourceUrl": "https://cdn.prod.website-files.com/64367fc53a6c9c22a4baffe3/6667ef1ce24e956d4aecae96_favicon%201.png",
+      "discoveryPage": "https://www.aseglobal.com/",
+      "path": "assets/ase-technology/icon/2bff2735cb1cc83454dc14b1633275f6c6f6f2f9742e773bf22c44c93e286980.png",
+      "contentHash": "2bff2735cb1cc83454dc14b1633275f6c6f6f2f9742e773bf22c44c93e286980"
+    }
+  ],
+  "evidence": {
+    "collectionReport": "reports/logo-only-icons-2026-09-19/collection-report.json",
+    "decisions": "reports/logo-only-icons-2026-09-19/decisions.json",
+    "lightSheets": "review/light-01.png through review/light-05.png",
+    "darkSheets": "review/dark-01.png through review/dark-05.png"
+  },
+  "acquisitionSummary": {
+    "brands": 126,
+    "candidateAvailable": 102,
+    "noCandidateFound": 17,
+    "transientFailure": 7,
+    "officialCandidates": 102,
+    "deepRetryCandidates": 0
+  },
+  "auditedCandidateRecords": 126
+}

@@ -1,0 +1,719 @@
+{
+  "schemaVersion": 1,
+  "task": "logo-only-icon-collection",
+  "reviewer": "Codex visual review",
+  "reviewedAt": "2026-09-19T09:47:23Z",
+  "decisions": [
+    {
+      "brandId": "disney",
+      "action": "approve",
+      "representation": "official_compact_brand_tile",
+      "reason": "Visual review confirms the official blue Disney compact tile; it contains no Disney+ arc and is identity-correct."
+    },
+    {
+      "brandId": "loreal",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "zara",
+      "action": "unresolved_source",
+      "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark."
+    },
+    {
+      "brandId": "fedex",
+      "action": "no_separate_icon",
+      "reason": "Visual review found no separate compact company mark; the available candidate is a wordmark, blank/low-contrast asset, product tile, or otherwise unsuitable for the icon role."
+    },
+    {
+      "brandId": "bose",
+      "action": "no_separate_icon",
+      "reason": "Visual review found no separate compact company mark; the available candidate is a wordmark, blank/low-contrast asset, product tile, or otherwise unsuitable for the icon role."
+    },
+    {
+      "brandId": "qualcomm",
+      "action": "approve",
+      "representation": "official_compact_monogram",
+      "reason": "Official Qualcomm Q monogram is intentionally used as the compact favicon mark; enlargement blur does not invalidate its native icon use."
+    },
+    {
+      "brandId": "workday",
+      "action": "approve",
+      "representation": "official_compact_monogram",
+      "reason": "Official Workday W monogram is an intentional compact favicon mark; native-size use is acceptable."
+    },
+    {
+      "brandId": "snowflake",
+      "action": "approve",
+      "theme": "light",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "palo-alto-networks",
+      "action": "unresolved_source",
+      "reason": "The bounded candidate is a photographic/app tile, not a Palo Alto Networks brand mark; retain unresolved until a valid compact source is found."
+    },
+    {
+      "brandId": "fortinet",
+      "action": "approve",
+      "theme": "dark",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "akamai",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "lowe-s",
+      "action": "unresolved_source",
+      "reason": "No bounded attempt established a current identity-correct compact Lowe's icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "patagonia",
+      "action": "unresolved_source",
+      "reason": "No bounded attempt established a current identity-correct compact Patagonia icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "ray-ban",
+      "action": "unresolved_source",
+      "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark."
+    },
+    {
+      "brandId": "este-e-lauder",
+      "action": "unresolved_source",
+      "reason": "The bounded candidate is an ELC/parent-company tile rather than an identity-correct Estée Lauder compact mark."
+    },
+    {
+      "brandId": "sephora",
+      "action": "approve",
+      "theme": "light",
+      "representation": "compact_brand_mark",
+      "reason": "The official Sephora S mark is a valid standalone compact brand symbol and remains legible on both review surfaces."
+    },
+    {
+      "brandId": "mondelez-international",
+      "action": "unresolved_source",
+      "reason": "The official candidate is a generic globe graphic rather than an identity-specific Mondelēz compact mark; retain unresolved until a company-specific mark is sourced."
+    },
+    {
+      "brandId": "mars",
+      "action": "unresolved_source",
+      "reason": "No bounded attempt established a current identity-correct compact Mars icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "heineken",
+      "action": "unresolved_source",
+      "reason": "The candidate is a full Heineken lockup compressed into a square; it does not establish a standalone compact mark."
+    },
+    {
+      "brandId": "diageo",
+      "action": "no_separate_icon",
+      "reason": "The candidate is the full Diageo wordmark, not a separate compact symbol."
+    },
+    {
+      "brandId": "subway",
+      "action": "unresolved_source",
+      "reason": "No bounded attempt established a current identity-correct compact Subway icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "exxonmobil",
+      "action": "approve",
+      "representation": "official_compact_monogram",
+      "reason": "Official ExxonMobil XX monogram is an intentional compact favicon mark; native-size use is acceptable."
+    },
+    {
+      "brandId": "totalenergies",
+      "action": "unresolved_source",
+      "reason": "The candidate is the full TotalEnergies lockup and does not establish a standalone compact mark."
+    },
+    {
+      "brandId": "bosch",
+      "action": "approve",
+      "theme": "light",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "caterpillar",
+      "action": "transient_failure",
+      "reason": "Official site acquisition timed out on both bounded attempts; retry later."
+    },
+    {
+      "brandId": "citigroup",
+      "action": "approve",
+      "representation": "official_compact_wordmark",
+      "reason": "Official Citi compact four-letter mark is intentionally served as the company favicon and remains identity-correct at native size."
+    },
+    {
+      "brandId": "blackrock",
+      "action": "approve",
+      "representation": "official_compact_monogram",
+      "reason": "Official BlackRock B monogram is an intentional compact favicon mark; native-size use is acceptable."
+    },
+    {
+      "brandId": "unitedhealth-group",
+      "action": "approve",
+      "representation": "official_compact_monogram",
+      "reason": "Official UnitedHealth U monogram is an intentional compact favicon mark; native-size use is acceptable."
+    },
+    {
+      "brandId": "johnson-johnson",
+      "action": "unresolved_source",
+      "reason": "The candidate is a generic back-to-top arrow from site UI, not the Johnson & Johnson identity."
+    },
+    {
+      "brandId": "novartis",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "paramount",
+      "action": "approve",
+      "theme": "dark",
+      "restoresWithdrawn": true,
+      "restorationReason": "Restored as a dark-theme asset after current review confirmed the official white Paramount mountain mark is intact and visible on dark; the earlier withdrawal came from an opaque light contact-sheet presentation that showed black bars, not from the source asset.",
+      "representation": "compact_brand_mark",
+      "reason": "Official Paramount mountain mark is valid for dark-theme use; the prior withdrawn hash is explicitly restored with its theme limitation recorded."
+    },
+    {
+      "brandId": "baidu",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Baidu paw-and-du favicon is an identity-correct compact app/brand icon, not a cropped wordmark."
+    },
+    {
+      "brandId": "infosys",
+      "action": "unresolved_source",
+      "reason": "The candidate is a cropped/wordmark-style Infosys tile, not a distinct compact mark."
+    },
+    {
+      "brandId": "fisher-price",
+      "action": "unresolved_source",
+      "reason": "The candidate is the Mattel mark, not Fisher-Price."
+    },
+    {
+      "brandId": "comcast",
+      "action": "transient_failure",
+      "reason": "Official corporate site acquisition timed out or failed DNS on both bounded attempts; retry later."
+    },
+    {
+      "brandId": "deloitte",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Deloitte D-and-dot mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "kpmg",
+      "action": "unresolved_source",
+      "reason": "No bounded attempt established a current identity-correct compact KPMG icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "snap",
+      "action": "no_separate_icon",
+      "reason": "The candidate is a Snap Inc. wordmark tile, not a separate compact symbol."
+    },
+    {
+      "brandId": "sas",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official SAS interlocking S mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "ebay",
+      "action": "unresolved_source",
+      "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark."
+    },
+    {
+      "brandId": "fiserv",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Fiserv stylized S mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "fidelity-national-information-services",
+      "action": "unresolved_source",
+      "reason": "The candidate is an FIS wordmark tile, not a separate compact symbol; retain unresolved rather than infer a role gap."
+    },
+    {
+      "brandId": "rtx",
+      "action": "approve",
+      "theme": "light",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "nextera-energy",
+      "action": "unresolved_source",
+      "reason": "The official candidate is a generic globe-like graphic without sufficiently identity-specific evidence for NextEra Energy."
+    },
+    {
+      "brandId": "bhp",
+      "action": "no_separate_icon",
+      "reason": "Visual review found no separate compact company mark; the available candidate is a wordmark, blank/low-contrast asset, product tile, or otherwise unsuitable for the icon role."
+    },
+    {
+      "brandId": "lockheed-martin",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Lockheed Martin star-and-orbit mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "cigna",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Cigna tree/flower mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "rockwell-automation",
+      "action": "unresolved_source",
+      "reason": "The candidate is a generic cancel/prohibited glyph, not Rockwell Automation."
+    },
+    {
+      "brandId": "chubb",
+      "action": "unresolved_source",
+      "reason": "The bounded candidate is not an identity-correct Chubb compact mark; retain unresolved until a valid source is found."
+    },
+    {
+      "brandId": "occidental-petroleum",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "centene",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Centene C mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "american-electric-power",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official AEP compact mark is identity-correct and usable at normal icon size."
+    },
+    {
+      "brandId": "mckesson",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official McKesson MC mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "metlife",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official MetLife M mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "valero",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Valero V mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "constellation-energy",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Constellation Energy stripe mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "tele2",
+      "action": "approve",
+      "theme": "light",
+      "restoresWithdrawn": true,
+      "restorationReason": "Restored as a light-theme asset after current review confirmed the official Tele2 T2 mark is intact and legible on light; the prior withdrawal was limited to disappearance on dark.",
+      "representation": "compact_brand_mark",
+      "reason": "Official Tele2 T2 mark is valid for light-theme use; the prior withdrawn hash is explicitly restored with its theme limitation recorded."
+    },
+    {
+      "brandId": "halliburton",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Halliburton H-in-circle mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "baker-hughes",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Baker Hughes C mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "komatsu",
+      "action": "unresolved_source",
+      "reason": "The bounded Komatsu candidate is blank/low-contrast and does not establish a valid compact mark."
+    },
+    {
+      "brandId": "ntt",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "regeneron",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Regeneron R-in-circle mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "aramco",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "embraer",
+      "action": "approve",
+      "theme": "dark",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "mitsubishi-electric",
+      "action": "unresolved_source",
+      "reason": "The candidate is a full Mitsubishi Electric lockup inside an app tile, not a separate symbol."
+    },
+    {
+      "brandId": "softbank-corp",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official SoftBank equals-sign mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "mitsubishi-heavy-industries",
+      "action": "unresolved_source",
+      "reason": "The candidate is a full Mitsubishi Heavy Industries lockup, not a separate compact symbol."
+    },
+    {
+      "brandId": "eni",
+      "action": "approve",
+      "theme": "light",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "zoetis",
+      "action": "no_separate_icon",
+      "reason": "The candidate is the full Zoetis wordmark inside a square tile, not a separate compact symbol."
+    },
+    {
+      "brandId": "deutsche-bank",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "equinor",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Equinor star/flower mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "danaher",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Danaher abstract D mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "dow",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "repsol",
+      "action": "approve",
+      "theme": "light",
+      "restoresWithdrawn": true,
+      "restorationReason": "Restored as a light-theme asset after current review confirmed the official Repsol mark is intact and legible on light; the prior withdrawal was limited to disappearance on dark.",
+      "representation": "compact_brand_mark",
+      "reason": "Official Repsol mark is valid for light-theme use; the prior withdrawn hash is explicitly restored with its theme limitation recorded."
+    },
+    {
+      "brandId": "abbott",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "stryker",
+      "action": "unresolved_source",
+      "reason": "The candidate is the full Stryker wordmark inside a square tile, not a separate compact symbol."
+    },
+    {
+      "brandId": "societe-generale",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Société Générale red/black square mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "singtel",
+      "action": "no_separate_icon",
+      "reason": "The candidate is the full Singtel wordmark, not a separate compact symbol."
+    },
+    {
+      "brandId": "legrand",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Legrand compact L mark is a valid standalone company symbol at normal icon size."
+    },
+    {
+      "brandId": "tenet-healthcare",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "tide",
+      "action": "no_separate_icon",
+      "reason": "The candidate is the full Tide wordmark lockup, not a separate compact symbol."
+    },
+    {
+      "brandId": "hbo",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "sky",
+      "action": "unresolved_source",
+      "reason": "The candidate is a notification bell control, not Sky branding."
+    },
+    {
+      "brandId": "fujifilm",
+      "action": "no_separate_icon",
+      "reason": "The candidate is the full Fujifilm wordmark, not a separate compact symbol."
+    },
+    {
+      "brandId": "expedia-group",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Expedia Group e mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "barbie",
+      "action": "unresolved_source",
+      "reason": "The candidate is the Mattel mark, not Barbie."
+    },
+    {
+      "brandId": "airasia",
+      "action": "unresolved_source",
+      "reason": "The green M is an AirAsia MOVE/product icon rather than the roster company mark."
+    },
+    {
+      "brandId": "sainsburys",
+      "action": "unresolved_source",
+      "reason": "Deep retry reached a blocked 403 interstitial and did not establish a current compact mark."
+    },
+    {
+      "brandId": "familymart",
+      "action": "unresolved_source",
+      "reason": "The candidate is the full FamilyMart lockup, not a separate compact symbol."
+    },
+    {
+      "brandId": "sprite",
+      "action": "unresolved_source",
+      "reason": "The candidate resolves to Coca-Cola artwork, not Sprite."
+    },
+    {
+      "brandId": "hot-wheels",
+      "action": "unresolved_source",
+      "reason": "The candidate is the Mattel mark, not Hot Wheels."
+    },
+    {
+      "brandId": "patanjali",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Patanjali P-and-swoosh mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "tjx-companies",
+      "action": "unresolved_source",
+      "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark."
+    },
+    {
+      "brandId": "asda",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "infiniti",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "whirlpool",
+      "action": "transient_failure",
+      "reason": "Official site acquisition timed out on both bounded attempts; retry later."
+    },
+    {
+      "brandId": "fanta",
+      "action": "unresolved_source",
+      "reason": "The candidate resolves to Coca-Cola artwork, not Fanta."
+    },
+    {
+      "brandId": "pampers",
+      "action": "unresolved_source",
+      "reason": "The candidate is a navigation chevron, not a Pampers mark."
+    },
+    {
+      "brandId": "mac-cosmetics",
+      "action": "no_separate_icon",
+      "reason": "The candidate is MAC lettering, not a separate compact symbol."
+    },
+    {
+      "brandId": "electrolux",
+      "action": "transient_failure",
+      "reason": "Official site acquisition timed out on both bounded attempts; retry later."
+    },
+    {
+      "brandId": "jollibee-foods",
+      "action": "no_separate_icon",
+      "reason": "The candidate is the full Jollibee Foods wordmark, not a separate compact symbol."
+    },
+    {
+      "brandId": "mongodb",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official MongoDB leaf mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "ovhcloud",
+      "action": "approve",
+      "theme": "dark",
+      "representation": "compact_brand_mark",
+      "reason": "The official OVHcloud speech-bubble/code mark is a valid standalone compact company symbol for dark-theme use."
+    },
+    {
+      "brandId": "worldpay",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Worldpay W mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "mediatek",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official MediaTek M mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "nexi",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Nexi N mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "airwallex",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "The official Airwallex A mark is a valid standalone compact company symbol."
+    },
+    {
+      "brandId": "infineon",
+      "action": "no_separate_icon",
+      "reason": "The candidate is the full Infineon wordmark, not a separate compact symbol."
+    },
+    {
+      "brandId": "writer",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "kaspersky",
+      "action": "unresolved_source",
+      "reason": "The 16px ICO is too low-resolution for a reliable approved library icon; retain as unresolved."
+    },
+    {
+      "brandId": "renesas",
+      "action": "unresolved_source",
+      "reason": "The bounded Renesas candidate is blank/low-contrast and does not establish a valid compact mark."
+    },
+    {
+      "brandId": "marvell",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "monday-com",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "labelbox",
+      "action": "unresolved_source",
+      "reason": "No bounded attempt established a current identity-correct compact Labelbox icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "lam-research",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "jetbrains",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "ase-technology",
+      "action": "approve",
+      "representation": "compact_brand_mark",
+      "reason": "Visual review confirms a standalone compact company mark or official compact app/brand icon; source URL and identity evidence are retained in the collection report."
+    },
+    {
+      "brandId": "xcel-energy",
+      "action": "unresolved_source",
+      "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "sabic",
+      "action": "transient_failure",
+      "reason": "Official site acquisition timed out on both bounded attempts; retry later."
+    },
+    {
+      "brandId": "carrier-global",
+      "action": "unresolved_source",
+      "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "air-products",
+      "action": "unresolved_source",
+      "reason": "Homepage was blocked and bounded recovery did not establish a current, identity-correct compact mark."
+    },
+    {
+      "brandId": "abn-amro",
+      "action": "transient_failure",
+      "reason": "Official site returned HTTP 503 on both bounded attempts; retry later."
+    },
+    {
+      "brandId": "enbridge",
+      "action": "unresolved_source",
+      "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "femsa",
+      "action": "transient_failure",
+      "reason": "The first attempt timed out and the deep retry produced no icon; retain as transient until reacquired."
+    },
+    {
+      "brandId": "amul",
+      "action": "unresolved_source",
+      "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon."
+    },
+    {
+      "brandId": "youtube",
+      "action": "unresolved_source",
+      "reason": "Official homepage and deep retry returned no separate identity-correct compact icon; do not infer that the brand has no separate icon."
+    }
+  ]
+}
