@@ -1,0 +1,90 @@
+{
+  "reviewer": "codex-ai-secondary-visual-qa",
+  "reviewedAt": "2026-09-18T08:38:00Z",
+  "decisions": [
+    {
+      "brandId": "daimler-truck",
+      "role": "logo",
+      "action": "withdraw",
+      "reason": "Black DAIMLER TRUCK letters are clear on light but disappear on the dark review background."
+    },
+    {
+      "brandId": "deutsche-bank",
+      "role": "icon",
+      "action": "withdraw",
+      "reason": "The black Deutsche Bank square-and-slash symbol is effectively invisible on dark."
+    },
+    {
+      "brandId": "repsol",
+      "role": "icon",
+      "action": "withdraw",
+      "reason": "The dark-blue Repsol favicon nearly disappears on the dark review background."
+    },
+    {
+      "brandId": "essilorluxottica",
+      "role": "logo",
+      "action": "withdraw",
+      "reason": "The white EssilorLuxottica wordmark is invisible on the light review background."
+    },
+    {
+      "brandId": "lvmh",
+      "role": "logo",
+      "action": "withdraw",
+      "reason": "The white LVMH wordmark disappears entirely on the light review background."
+    },
+    {
+      "brandId": "booking-holdings",
+      "role": "logo",
+      "action": "withdraw",
+      "reason": "The white BOOKING HOLDINGS wordmark is invisible on light and only reads on dark."
+    },
+    {
+      "brandId": "cerave",
+      "role": "logo",
+      "action": "withdraw",
+      "reason": "The dark Cera portion of the wordmark becomes nearly invisible on dark, leaving only the white Ve panel."
+    },
+    {
+      "brandId": "maybelline",
+      "role": "logo",
+      "action": "withdraw",
+      "reason": "The white MAYBELLINE NEW YORK wordmark disappears entirely on the light background."
+    },
+    {
+      "brandId": "mitsubishi-fuso",
+      "role": "icon",
+      "action": "withdraw",
+      "reason": "Black FUSO lettering is visible on light but disappears on dark, leaving only the red Mitsubishi diamonds."
+    },
+    {
+      "brandId": "airasia",
+      "role": "icon",
+      "action": "withdraw",
+      "reason": "The green M favicon represents the AirAsia MOVE app rather than the AirAsia airline identity represented by the red wordmark."
+    },
+    {
+      "brandId": "sprite",
+      "role": "icon",
+      "action": "withdraw",
+      "reason": "The approved icon comes from Coca-Cola's generic coke-logo.svg and displays an unrelated black-and-white wave rather than Sprite's mark."
+    },
+    {
+      "brandId": "wechat",
+      "role": "icon",
+      "action": "withdraw",
+      "reason": "The white WeChat speech bubbles disappear completely on light and are visible only on dark."
+    },
+    {
+      "brandId": "nbcuniversal",
+      "role": "logo",
+      "action": "withdraw",
+      "reason": "The white NBCUniversal name disappears on light, leaving only a small peacock; it reads on dark."
+    },
+    {
+      "brandId": "fanta",
+      "role": "icon",
+      "action": "withdraw",
+      "reason": "The approved icon comes from Coca-Cola's generic coke-logo.svg and displays an unrelated black-and-white wave rather than Fanta's mark."
+    }
+  ]
+}

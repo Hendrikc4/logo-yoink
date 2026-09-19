@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "runId": "deep-search-2026-09-18T08-52-57-907Z",
+  "reviewer": "codex-light-background-visual-review",
+  "reviewedAt": "2026-09-18T08:54:00Z",
+  "decisions": [
+    { "brandId": "pwc", "role": "icon", "action": "reject", "reason": "The favicon renders as a tiny text lockup rather than a legible compact symbol." },
+    { "brandId": "kroger", "role": "icon", "action": "reject", "reason": "The shopping-cart app icon represents a consumer app, not the Kroger corporate mark." },
+    { "brandId": "wix", "role": "icon", "action": "reject", "reason": "The square image contains a full Wix wordmark rather than an icon-role symbol." }
+  ]
+}

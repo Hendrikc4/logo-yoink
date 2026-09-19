@@ -43,6 +43,13 @@ function semanticText(item) {
 }
 
 function inferredTheme(item) {
+  // A page's color scheme is not proof that an extracted file contrasts on it.
+  const contrast = item.tinySuitability?.surface_contrast;
+  if (item.background === 'transparent' && Number.isFinite(contrast?.light) && Number.isFinite(contrast?.dark)) {
+    const preferred = contrast.light > contrast.dark ? 'light' : 'dark';
+    const other = preferred === 'light' ? 'dark' : 'light';
+    if (contrast[preferred] >= 0.3 && contrast[other] <= 0.15 && contrast[preferred] >= 3 * contrast[other]) return preferred;
+  }
   const explicit = [
     ...(Array.isArray(item.evidence?.themes) ? item.evidence.themes : []),
     item.evidence?.theme,

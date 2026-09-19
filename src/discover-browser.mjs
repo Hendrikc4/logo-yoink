@@ -3,7 +3,9 @@ import { canonicalHostname, isIpAddress, isPrivateIp } from './network-safety.mj
 
 const DEFAULT_TIMEOUT_MS = 12_000;
 const DEFAULT_HYDRATION_MS = 700;
-const DEFAULT_MAX_REQUESTS = 80;
+// Modern split bundles can require >160 small scripts before the header mounts.
+// The independent 12s deadline and 8 MiB declared-transfer cap still apply.
+const DEFAULT_MAX_REQUESTS = 300;
 const DEFAULT_MAX_TRANSFER_BYTES = 8 * 1024 * 1024;
 const DEFAULT_VIEWPORT = { width: 1440, height: 900 };
 
@@ -63,7 +65,7 @@ export async function discoverBrowserLogos(input, options = {}) {
 
     page = await browser.newPage({
       viewport: options.viewport ?? DEFAULT_VIEWPORT,
-      userAgent: options.userAgent ?? 'Mozilla/5.0 (compatible; LogoYoink/0.1; rendered-logo-discovery)',
+      ...(options.userAgent ? { userAgent: options.userAgent } : {}),
       serviceWorkers: 'block',
     });
     page.setDefaultTimeout?.(timeoutMs);
@@ -73,16 +75,25 @@ export async function discoverBrowserLogos(input, options = {}) {
 
     const candidates = await withDeadline(async () => {
       await page.emulateMedia?.({ colorScheme: 'light', reducedMotion: 'reduce' });
-      await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: timeoutMs });
+      const response = await page.goto(target.url, { waitUntil: 'domcontentloaded', timeout: timeoutMs });
+      diagnostics.httpStatus = response?.status?.() ?? null;
+      if (diagnostics.httpStatus >= 400) throw new Error(`Browser homepage returned HTTP ${diagnostics.httpStatus}.`);
       await boundedHydration(page, hydrationMs, timeoutMs);
       diagnostics.finalUrl = page.url?.() ?? target.url;
 
-      const light = await inspectRenderedCandidates(page, {
+      let light = await inspectRenderedCandidates(page, {
         theme: 'light',
         company: target.company,
         domain: target.domain,
         headerRetention: options.headerRetention !== false,
       });
+      // Some shells reach network-idle between their chunk load and header mount.
+      // Retry only an empty observation, within the same overall deadline.
+      if (!light.length) {
+        await page.waitForTimeout?.(1_500);
+        diagnostics.emptyObservationRetried = true;
+        light = await inspectRenderedCandidates(page, { theme: 'light', company: target.company, domain: target.domain, headerRetention: options.headerRetention !== false });
+      }
       if (!options.darkMode) return light;
 
       await page.emulateMedia?.({ colorScheme: 'dark', reducedMotion: 'reduce' });
@@ -190,17 +201,23 @@ async function inspectRenderedCandidates(page, context) {
       return { anchorHref: href, homeLinked: hostname(parsed.hostname) === hostname(location.hostname) && (path === '/' || (headerRetention && localizedRoot)) };
     };
     const region = element => element.closest('header') ? 'header' :
-      element.closest('nav') ? 'nav' : element.closest('[role="banner"]') ? 'banner' : 'document';
+      element.closest('nav') ? 'nav' : element.closest('footer') ? 'footer' : element.closest('[role="banner"]') ? 'banner' : 'document';
     const evidence = (element, rect, style) => {
       const link = homeLink(element);
+      const localNodes = [element, element.parentElement, element.parentElement?.parentElement].filter(Boolean);
+      const componentLabel = localNodes.flatMap(node => [...node.attributes]
+        .filter(attribute => /^(?:data-(?:uia|ux|testid|hawkins-id)|title)$/.test(attribute.name))
+        .map(attribute => attribute.value.replace(/([a-z])([A-Z])/g, '$1 $2'))).join(' ');
       return {
         theme,
         domRegion: region(element),
         renderedBox: { x: rect.x, y: rect.y, width: rect.width, height: rect.height },
         backgroundColor: clean(style.backgroundColor),
         alt: clean(element.getAttribute('alt')),
-        title: clean(element.getAttribute('title')),
-        ariaLabel: clean(element.getAttribute('aria-label')),
+        title: clean(element.getAttribute('title') || element.querySelector(':scope > title')?.textContent),
+        ariaLabel: clean(element.getAttribute('aria-label') || element.closest('[aria-label]')?.getAttribute('aria-label')),
+        anchorText: clean(element.closest('a')?.textContent).slice(0, 120),
+        componentLabel,
         id: clean(element.id),
         className: typeof element.className === 'string' ? clean(element.className) : clean(element.getAttribute('class')),
         company,
@@ -219,6 +236,13 @@ async function inspectRenderedCandidates(page, context) {
     const scope = document.querySelector(logoScope) ?? document.body;
     const images = new Set(scope.querySelectorAll('img[alt*="logo" i], img[class*="logo" i], img[id*="logo" i]'));
     const svgs = new Set(scope.querySelectorAll('svg[aria-label*="logo" i], svg[class*="logo" i], svg[id*="logo" i]'));
+    for (const title of [...scope.querySelectorAll('svg > title')].slice(0, 80)) {
+      if (/logo|wordmark|brand/i.test(title.textContent || '')) svgs.add(title.parentElement);
+    }
+    for (const wrapper of [...scope.querySelectorAll('[aria-label*="logo" i], [class*="logo" i], [id*="logo" i], [data-uia*="logo" i]')].slice(0, 80)) {
+      wrapper.querySelectorAll('img').forEach(image => images.add(image));
+      wrapper.querySelectorAll('svg').forEach(svg => svgs.add(svg));
+    }
     const structuralBackgrounds = new Set();
     const homeBackgrounds = new Set(homeRoots);
     for (const root of roots) {
@@ -299,7 +323,13 @@ async function inspectRenderedCandidates(page, context) {
       if (!visible(element, rect, style) || !style.backgroundImage || style.backgroundImage === 'none') continue;
       for (const match of style.backgroundImage.matchAll(/url\(["']?([^"')]+)["']?\)/g)) {
         const url = httpUrl(match[1]);
-        if (url) output.push({ url, source: 'browser-css-background', kind: 'external', evidence: evidence(element, rect, style) });
+        if (url) output.push({ url, source: 'browser-css-background', kind: 'external', evidence: {
+          ...evidence(element, rect, style),
+          ...(!style.backgroundImage.includes(',') && style.transform === 'none' && style.backgroundOrigin === 'padding-box' ? { cssBackground: {
+            width: element.clientWidth, height: element.clientHeight,
+            positionX: style.backgroundPositionX, positionY: style.backgroundPositionY, size: style.backgroundSize,
+          } } : {}),
+        } });
       }
     }
     return output;
@@ -321,7 +351,7 @@ function dedupeCandidates(candidates, trace = null) {
   let invalidExternal = 0, duplicates = 0;
   for (const item of candidates ?? []) {
     if (!item || (item.kind === 'external' && !/^https?:\/\//i.test(item.url ?? ''))) { invalidExternal += 1; continue; }
-    const key = item.kind === 'inline-svg' ? `svg:${item.inlineSvg}` : `url:${item.url}`;
+    const key = item.kind === 'inline-svg' ? `svg:${item.inlineSvg}` : `url:${item.url}:${JSON.stringify(item.evidence?.cssBackground ?? null)}`;
     const existing = positions.get(key);
     if (existing === undefined) {
       positions.set(key, output.length);

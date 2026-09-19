@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "brandId": "alibaba-group",
+      "sourcePage": "https://home.alibabagroup.com/en-US/resource-logos",
+      "restriction": "Media-library downloads are restricted to accredited-media editorial use.",
+      "decision": "Do not import into the distributable asset library without permission."
+    },
+    {
+      "brandId": "charter-communications",
+      "sourcePage": "https://corporate.charter.com/media-library/logos",
+      "restriction": "Corporate logo package is marked for editorial use only.",
+      "decision": "Do not import into the distributable asset library without permission."
+    },
+    {
+      "brandId": "costco",
+      "sourcePage": "https://www.costco.com/f/-/logo-media-requests",
+      "restriction": "Costco states that logo use requires express written approval.",
+      "decision": "Keep a permission-gated gap rather than substitute an unlicensed lookalike."
+    }
+  ]
+}

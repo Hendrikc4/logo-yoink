@@ -8,6 +8,9 @@ const DEFAULT_TIMEOUT_MS = 5_000;
 const DEFAULT_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
 const MAX_SEARCH_RESULTS = 10;
 const MAX_ENTITY_CANDIDATES = 20;
+const MAX_WEBSITE_CANDIDATES = 20;
+// ISO 639-1 language codes; arbitrary short strings such as app/api/tv are not locales.
+const LANGUAGE_CODES = new Set(('aa ab ae af ak am an ar as av ay az ba be bg bh bi bm bn bo br bs ca ce ch co cr cs cu cv cy da de dv dz ee el en eo es et eu fa ff fi fj fo fr fy ga gd gl gn gu gv ha he hi ho hr ht hu hy hz ia id ie ig ii ik io is it iu ja jv ka kg ki kj kk kl km kn ko kr ks ku kv kw ky la lb lg li ln lo lt lu lv mg mh mi mk ml mn mr ms mt my na nb nd ne ng nl nn no nr nv ny oc oj om or os pa pi pl ps pt qu rm rn ro ru rw sa sc sd se sg si sk sl sm sn so sq sr ss st su sv sw ta te tg th ti tk tl tn to tr ts tt tw ty ug uk ur uz ve vi vo wa wo xh yi yo za zh zu').split(' '));
 const DEFAULT_CACHE = new Map();
 const DEFAULT_PENDING = new Map();
 const MAX_CACHE_BYTES = 32 * 1024 * 1024;
@@ -104,7 +107,7 @@ function officialWebsiteEvidence(entity, requestedDomain, now = new Date()) {
         ? 'www'
         : /^(?:corporate|company|about)$/.test(relativeHost)
           ? 'corporate'
-          : /^[a-z]{2,3}(?:-[a-z]{2})?$/.test(relativeHost)
+          : isLanguageTag(relativeHost)
             ? 'language'
             : null;
     // A shared registrable domain is not enough when the statement points at an arbitrary
@@ -114,11 +117,13 @@ function officialWebsiteEvidence(entity, requestedDomain, now = new Date()) {
     const segments = url.pathname.split('/').filter(Boolean);
     const pathScope = segments.length === 0
       ? 'root'
-      : segments.length === 1 && /^[a-z]{2,3}(?:-[a-z]{2})?$/i.test(segments[0])
+      : segments.length === 1 && isLanguageTag(segments[0])
         ? 'language'
         : segments.length === 1 && /^(?:about|about-us|company|corporate)$/i.test(segments[0])
           ? 'corporate'
-          : null;
+          : segments.length === 1 && /^(?:index|default)\.[a-z0-9]{1,5}$/i.test(segments[0])
+            ? 'default_document'
+            : null;
     // A root/locale/corporate landing page identifies the site. A product path on an apex or
     // www host does not: apple.com/music and google.com/maps are separate entities that happen
     // to share the organization's registrable domain.
@@ -135,6 +140,10 @@ function officialWebsiteEvidence(entity, requestedDomain, now = new Date()) {
     });
   }
   return evidence;
+}
+
+function isLanguageTag(value) {
+  return /^[a-z]{2}(?:-[a-z]{2})?$/i.test(value) && LANGUAGE_CODES.has(value.toLowerCase().split('-')[0]);
 }
 
 export function safeCommonsUrl(value, expectedHost, pathPrefix = '/') {
@@ -307,6 +316,13 @@ function searchIds(payload) {
     .filter(id => /^Q\d+$/.test(String(id)));
 }
 
+function websiteSearchQuery(domain) {
+  // This is candidate discovery only. Prefix hits can include product pages or
+  // lookalike domains and must still pass officialWebsiteEvidence below.
+  return `haswbstatement:${['http://', 'https://', 'http://www.', 'https://www.']
+    .map(prefix => `P856=${prefix}${domain}*`).join('|')}`;
+}
+
 function pagesFromCommons(payload) {
   return Array.isArray(payload?.query?.pages) ? payload.query.pages : [];
 }
@@ -337,44 +353,82 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
   try {
     stats.status = 'searching';
     stats.searchTerms = searchTerms(requestedDomain);
-    const searches = [];
-    for (const term of stats.searchTerms) {
-      searches.push(await requestJson(apiUrl(WIKIDATA_API, {
+    // The two independent searches share one deadline. Await both settlements so
+    // a failed branch cannot leave requests mutating diagnostics after return.
+    const searchResults = await Promise.allSettled(stats.searchTerms.map(term =>
+      requestJson(apiUrl(WIKIDATA_API, {
         action: 'wbsearchentities', search: term, language: 'en', uselang: 'en', type: 'item', limit: MAX_SEARCH_RESULTS,
-      }), runtime));
-    }
+      }), runtime)));
+    const failedSearch = searchResults.find(result => result.status === 'rejected');
+    if (failedSearch) throw failedSearch.reason;
+    const searches = searchResults.map(result => result.value);
     const allIds = [...new Set(searches.flatMap(searchIds))];
-    const ids = allIds.slice(0, MAX_ENTITY_CANDIDATES);
+    let ids = allIds.slice(0, MAX_ENTITY_CANDIDATES);
     stats.searchCandidateCount = allIds.length;
     stats.searchCandidatesTruncated = allIds.length > ids.length;
     stats.candidateEntityIds = ids;
-    if (!ids.length) return { candidates: [], diagnostics: { ...stats, status: 'no_search_candidates' } };
-
-    const entitiesPayload = await requestJson(apiUrl(WIKIDATA_API, {
-      action: 'wbgetentities', ids: ids.join('|'), props: 'claims',
-    }), runtime);
-    const entities = entitiesPayload?.entities;
-    if (!entities || typeof entities !== 'object' || Array.isArray(entities)) throw new Error('Wikidata entity response was malformed.');
-    const matches = [];
-    for (const id of ids) {
+    const entities = {};
+    const loadEntities = async requestedIds => {
+      if (!requestedIds.length) return;
+      const payload = await requestJson(apiUrl(WIKIDATA_API, {
+        action: 'wbgetentities', ids: requestedIds.join('|'), props: 'claims',
+      }), runtime);
+      if (!payload?.entities || typeof payload.entities !== 'object' || Array.isArray(payload.entities)) throw new Error('Wikidata entity response was malformed.');
+      // A partial response must not silently hide an identity rival.
+      if (requestedIds.some(id => !Object.hasOwn(payload.entities, id))) throw new Error('Wikidata entity response was incomplete.');
+      if (requestedIds.some(id => {
+        const entity = payload.entities[id];
+        return !entity || typeof entity !== 'object' || Array.isArray(entity) ||
+          !(entity.id === id || /^Q\d+$/.test(entity.id) && entity.redirects?.from === id && entity.redirects?.to === entity.id);
+      })) throw new Error('Wikidata entity record was malformed.');
+      Object.assign(entities, payload.entities);
+    };
+    const domainMatches = () => ids.flatMap(id => {
       const entity = entities[id];
       const websites = officialWebsiteEvidence(entity, requestedDomain, runtime.now());
-      if (!websites.length) continue;
+      if (!websites.length) return [];
       const logoSelection = selectCurrentLogoClaims(entity?.claims?.P154, runtime.now());
-      matches.push({ id, websites, ambiguousLogoClaims: logoSelection.ambiguous, claims: logoSelection.claims });
+      return [{ id, websites, ambiguousLogoClaims: logoSelection.ambiguous, claims: logoSelection.claims }];
+    });
+    await loadEntities(ids);
+    let matches = domainMatches();
+    if (!matches.length) {
+      // Domain labels such as "bestbuy" are often absent from labels/aliases.
+      // Search the indexed official-website statements without guessing a name.
+      const query = websiteSearchQuery(requestedDomain);
+      const payload = await requestJson(apiUrl(WIKIDATA_API, {
+        list: 'search', srsearch: query, srnamespace: 0, srlimit: MAX_WEBSITE_CANDIDATES + 1, srprop: '',
+      }), runtime);
+      if (!Array.isArray(payload?.query?.search)) throw new Error('Wikidata website search response was malformed.');
+      const hits = payload.query.search;
+      if (hits.some(hit => !/^Q\d+$/.test(String(hit?.title)))) throw new Error('Wikidata website search hit was malformed.');
+      const websiteIds = [...new Set(hits.map(hit => hit.title))];
+      const truncated = hits.length > MAX_WEBSITE_CANDIDATES || payload.continue?.sroffset != null ||
+        Number(payload.query.searchinfo?.totalhits) > hits.length;
+      stats.websiteSearch = { query, candidateEntityIds: websiteIds, truncated };
+      if (truncated) return { candidates: [], diagnostics: { ...stats, status: 'search_candidates_truncated', searchCandidatesTruncated: true } };
+      const extraIds = websiteIds.filter(id => !ids.includes(id));
+      await loadEntities(extraIds);
+      ids = [...ids, ...extraIds];
+      stats.candidateEntityIds = ids;
+      stats.searchCandidateCount = ids.length;
+      matches = domainMatches();
     }
+    if (!ids.length) return { candidates: [], diagnostics: { ...stats, status: 'no_search_candidates' } };
     stats.domainMatchedEntityIds = matches.map(match => match.id);
     if (stats.searchCandidatesTruncated && matches.length === 1) {
       return { candidates: [], diagnostics: { ...stats, status: 'search_candidates_truncated' } };
     }
     if (matches.length !== 1) {
-      return { candidates: [], diagnostics: { ...stats, status: matches.length ? 'ambiguous_entities' : 'no_verified_current_logo' } };
+      return { candidates: [], diagnostics: { ...stats, status: matches.length ? 'ambiguous_entities' : 'no_verified_current_logo', reason: matches.length ? 'multiple_domain_matches' : 'no_domain_match' } };
     }
     if (matches[0].ambiguousLogoClaims) {
       return { candidates: [], diagnostics: { ...stats, status: 'ambiguous_logo_claims' } };
     }
     if (!matches[0].claims.length) {
-      return { candidates: [], diagnostics: { ...stats, status: 'no_verified_current_logo' } };
+      const logoClaims = entities[matches[0].id]?.claims?.P154 ?? [];
+      return { candidates: [], diagnostics: { ...stats, status: 'no_verified_current_logo', reason: 'no_current_logo_claim',
+        logoClaimDispositions: logoClaims.map(claim => currentLogoClaimDisposition(claim, runtime.now())) } };
     }
 
     const chosen = matches[0];

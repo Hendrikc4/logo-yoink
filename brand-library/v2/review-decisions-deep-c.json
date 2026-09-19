@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "runId": "deep-search-2026-09-18T08-43-42-831Z",
+  "reviewer": "codex-light-background-visual-review",
+  "reviewedAt": "2026-09-18T08:45:00Z",
+  "decisions": [
+    { "brandId": "costco", "role": "logo", "action": "reject", "reason": "Costco requires express written approval for logo use; keep this identity permission-gated." },
+    { "brandId": "america-movil", "role": "logo", "action": "reject", "reason": "The white lockup is invisible on the white review surface." },
+    { "brandId": "us-bancorp", "role": "logo", "action": "reject", "reason": "This is the US Bank subsidiary lockup, not the U.S. Bancorp corporate identity." },
+    { "brandId": "freeport-mcmoran", "role": "logo", "action": "reject", "reason": "The tiny FM badge does not serve as a readable corporate wordmark." },
+    { "brandId": "coca-cola-company", "role": "icon", "action": "reject", "reason": "This is a tiny Coca-Cola Company text lockup, not a usable square symbol." },
+    { "brandId": "prime-video", "role": "logo", "action": "reject", "reason": "The white wordmark disappears on the white review surface." },
+    { "brandId": "ibis", "role": "logo", "action": "reject", "reason": "This asset groups multiple ibis sub-brands rather than the primary ibis wordmark." },
+    { "brandId": "jollibee", "role": "logo", "action": "reject", "reason": "Only the mascot symbol is visible on white; the company name is absent from the wordmark role." },
+    { "brandId": "warner-bros", "role": "logo", "action": "reject", "reason": "This is the shield symbol without the Warner Bros. name, so it is the wrong role." },
+    { "brandId": "zillow", "role": "icon", "action": "reject", "reason": "The square asset contains a tiny full wordmark rather than a legible compact Zillow symbol." },
+    { "brandId": "seagate", "role": "logo", "action": "reject", "reason": "The pale gray wordmark has inadequate contrast on white." }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "codex-ai-visual-review",
+  "reviewedAt": "2026-09-18T08:14:06Z",
+  "sourceReport": "runs/2026-09-18T08-07-18-546Z/report.json",
+  "decisions": [
+    {
+      "brandId": "mediatek",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "nexi",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "rapid7",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "airwallex",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "teradata",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "qualtrics",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "trend-micro",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "kaspersky",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "renesas",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "asml",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "skyscanner",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "zillow",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "jetbrains",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "rightmove",
+      "role": "icon",
+      "action": "reject",
+      "reason": "No discernible brand artwork appears in the staged icon area on either light or dark contact sheet."
+    },
+    {
+      "brandId": "linode",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is Akamai's mark, not a Linode identity."
+    },
+    {
+      "brandId": "linode",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide candidate explicitly says Akamai Cloud, not Linode."
+    },
+    {
+      "brandId": "sophos",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is a generic warning/alert triangle, not the Sophos symbol."
+    },
+    {
+      "brandId": "paytm",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide artwork includes an 'I love UPI' campaign/payment-rail lockup rather than a clean Paytm wordmark."
+    },
+    {
+      "brandId": "arm",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is a dark photograph of a stage/event, not an Arm brand symbol."
+    },
+    {
+      "brandId": "canonical",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is Ubuntu's circle-of-friends product logo, not the Canonical company mark."
+    },
+    {
+      "brandId": "webflow",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The wide asset is only a stylized W symbol; it contains no Webflow company-name lettering."
+    },
+    {
+      "brandId": "wix",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is WIX name lettering rather than a distinct standalone icon."
+    },
+    {
+      "brandId": "infineon",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is the full Infineon name lettering rather than a distinct symbol."
+    },
+    {
+      "brandId": "mollie",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The compact candidate is the full mollie name lettering rather than a distinct symbol."
+    },
+    {
+      "brandId": "new-relic",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "render",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "squarespace",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "rapyd",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "infineon",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "trend-micro",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "heroku",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "synthesia",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "heygen",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "arm",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "orca-security",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "jetbrains",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "sezzle",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged wordmark is absent or unreadable on the light-background contact sheet, with no usable light counterpart shown."
+    },
+    {
+      "brandId": "dynatrace",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "vultr",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "vultr",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "runway",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "checkout-com",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "wix",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "splunk",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "automattic",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "elevenlabs",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "airwallex",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "railway",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "railway",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "character-ai",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "mimecast",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "fly-io",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "sophos",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "payoneer",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "writer",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "writer",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "weebly",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "qualtrics",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "jasper",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "hashicorp",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "eset",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "marvell",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "marvell",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "smartsheet",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "docker",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "pine-labs",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "monday-com",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "monday-com",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "asana",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "red-hat",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "scale-ai",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "klarna",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "airtable",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "airtable",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "labelbox",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "labelbox",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "lam-research",
+      "role": "icon",
+      "action": "reject",
+      "reason": "The staged icon is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "lam-research",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "miro",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "aqua-security",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "afterpay",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "clickup",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "datarobot",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "1password",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    },
+    {
+      "brandId": "rightmove",
+      "role": "logo",
+      "action": "reject",
+      "reason": "The staged logo is absent or unreadable on the dark-background contact sheet, with no usable dark counterpart shown."
+    }
+  ]
+}

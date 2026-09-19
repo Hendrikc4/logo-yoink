@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "runId": "deep-search-2026-09-18T08-39-38-439Z",
+  "reviewer": "codex-light-background-visual-review",
+  "reviewedAt": "2026-09-18T08:41:20Z",
+  "decisions": [
+    { "brandId": "cardinal-health", "role": "logo", "action": "reject", "reason": "White company lettering disappears on a white background; only the red symbol remains." },
+    { "brandId": "maybelline", "role": "logo", "action": "reject", "reason": "The lockup is too small within the asset viewport to serve as a readable wordmark." },
+    { "brandId": "ola", "role": "logo", "action": "reject", "reason": "This is an app icon, not a wordmark or company lockup." },
+    { "brandId": "stmicroelectronics", "role": "logo", "action": "reject", "reason": "This is the ST symbol without the company name, so it does not satisfy the wordmark role." },
+    { "brandId": "canonical", "role": "logo", "action": "reject", "reason": "The Canonical lockup renders too small to be readable at the reviewed size." },
+    { "brandId": "c3-ai", "role": "logo", "action": "reject", "reason": "White C3.ai artwork is invisible on the white review surface." }
+  ]
+}

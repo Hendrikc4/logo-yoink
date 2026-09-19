@@ -1,13 +1,14 @@
 import { describeAssetVariant, matchesRequiredPreferences, normalizeAssetPreferences } from './asset-model.mjs';
 import { describesEmbeddedLogo } from './logo-semantics.mjs';
+import { getDomain } from 'tldts';
 
 const SOURCE_WEIGHT = {
   schema: 30, 'og-logo': 27, microdata: 26, 'inline-svg': 24, 'browser-inline-svg': 24, 'browser-img': 12,
-  'browser-css-background': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
+  'browser-css-background': 8, 'browser-css-sprite': 8, 'dom-img': 10, 'dom-picture': 10, 'noscript-img': 8,
   manifest: 22, apple: 20, 'mask-icon': 20, bimi: 18, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
   'wikimedia-commons': 24, linkedin: 20,
 };
-const RANKING_VERSION = 11;
+const RANKING_VERSION = 12;
 export const ROLE_VARIANT_MIN_SCORE = 45;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
@@ -103,10 +104,13 @@ function foreignOrganizationContext(item) {
 }
 
 function explicitForeignOrganization(item, companyName) {
-  if (item.evidence?.home_linked || !foreignOrganizationContext(item)) return false;
   const subject = explicitLogoSubject(item);
   if (!subject.length) return false;
-  const requested = companyWords(companyName || item.evidence?.company_name);
+  let domainName = '';
+  try { domainName = (getDomain(new URL(item.source_page).hostname) ?? '').split('.')[0]; } catch { /* No first-party identity evidence. */ }
+  const requested = companyWords(companyName || item.evidence?.company_name || domainName);
+  // A home link or placement cannot override an explicit conflicting brand name.
+  if (!item.evidence?.home_linked && !foreignOrganizationContext(item)) return false;
   return requested.length > 0 && !subject.some(word => requested.some(companyWord =>
     word.length >= 3 && companyWord.length >= 3 && (word.startsWith(companyWord) || companyWord.startsWith(word))));
 }
@@ -156,9 +160,12 @@ function portraitBodyPhoto(item, companyName) {
 }
 
 export function genericAssetReason(item, companyName = '') {
+  if (item.evidence?.requires_rendering && !item.evidence?.rendered) return 'unresolved SVG document styles';
+  if (/\b(?:open|download|view)\b.{0,50}\b(?:brand|logo|wordmark)\b/i.test(item.evidence?.local_semantic ?? '')) return 'brand-asset utility control';
   const structuralSemantic = `${item.evidence?.semantic_text ?? ''} ${item.evidence?.class_tokens?.join?.(' ') ?? ''}`.toLowerCase();
   const semantic = `${item.evidence?.semantic_text ?? ''} ${item.evidence?.alt ?? ''} ${item.evidence?.aria_label ?? ''}`.toLowerCase();
   const url = String(item.resolvedUrl ?? item.resolved_url ?? item.url ?? '').toLowerCase();
+  if (!item.evidence?.positive_token && /(?:navigation|nav|menu)[-_\s]*item[-_\s]*icon/i.test(structuralSemantic)) return 'navigation item icon';
   const requestedCompanyWords = new Set(normalizedWords(companyName || item.evidence?.company_name));
   const companyWords = new Set(requestedCompanyWords);
   try {
@@ -241,10 +248,15 @@ export function genericAssetReason(item, companyName = '') {
 
 export function hasWideEvidence(item, companyName = '') {
   const placedLogo = Boolean(item.evidence?.home_linked || (item.evidence?.positive_token && ['header', 'nav'].includes(item.evidence?.dom_region)));
+  let domainLabel = '';
+  try { domainLabel = (getDomain(new URL(item.source_page).hostname) ?? '').split('.')[0]; } catch { /* No page identity. */ }
+  const accessibleLabel = normalizedWords(item.evidence?.aria_label).join(' ');
+  const namedWordmark = domainLabel && /wordmark/i.test(item.evidence?.local_semantic ?? '') &&
+    [domainLabel, `${domainLabel} home`, `${domainLabel} logo`, `${domainLabel} wordmark`].includes(accessibleLabel);
   const deepOfficial = item.evidence?.deep_official && (Number(item.evidence?.archive_score) >= 40 || companyAgreement(item, companyName || item.evidence?.company_name));
   const sitemapExact = item.evidence?.sitemap_official_page === true && item.evidence?.sitemap_exact_identity === true;
   const spaLiteral = item.source === 'spa-bundle' && item.evidence?.spa_bundle_entry && item.evidence?.same_origin && item.evidence?.strong_logo_filename && item.evidence?.spa_identity_agreement;
-  return AUTHORITATIVE_SOURCES.includes(item.source) || (item.source === 'wikimedia-commons' && item.evidence?.wikidata_identity_verified === true) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || firstPartyPlacedLogoPath(item) || deepOfficial || sitemapExact || spaLiteral;
+  return AUTHORITATIVE_SOURCES.includes(item.source) || (item.source === 'wikimedia-commons' && item.evidence?.wikidata_identity_verified === true) || companyAgreement(item, companyName || item.evidence?.company_name) || placedLogo || namedWordmark || firstPartyPlacedLogoPath(item) || deepOfficial || sitemapExact || spaLiteral;
 }
 
 const CLIPPING_PRONE_SOURCES = new Set([
@@ -323,7 +335,16 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   // relaxed 1.45 bound only when first-party placement or authoritative metadata backs it.
   const wideRelaxed = ratio != null && ratio >= 1.45 && ratio < 1.8 &&
     item.width >= 120 && Math.min(item.width, item.height) >= 36 && strongWideEvidence;
-  const wide = (wideRatio != null && wideRatio >= 1.8 && (wideRatio <= 12 || wideRatio <= 14 && strongWideEvidence)) || wideRelaxed;
+  const roleSemantic = `${item.evidence?.local_semantic ?? ''} ${item.evidence?.alt ?? ''} ${item.evidence?.aria_label ?? ''} ${item.evidence?.archive_member ?? ''}`;
+  const stackedLogo = /(?:^|[\s/_.-])stacked(?:$|[\s/_.-])/i.test(`${roleSemantic} ${item.url?.startsWith('data:') ? '' : item.url}`);
+  const explicitSymbol = /\b(?:symbol|logomark|brandmark|icon)\b/i.test(roleSemantic) && !/\b(?:wordmark|lockup|logotype)\b/i.test(roleSemantic);
+  // A tiny, barely-wide glyph is insufficient evidence of a full company wordmark.
+  const compactGlyph = wideRatio >= 1.8 && wideRatio < 2.2 && !/wordmark|lockup|logotype|horizontal/i.test(roleSemantic);
+  // On opaque canvases a uniform fill can be classified as background, so zero
+  // foreground there is inconclusive. Transparent frames have no such ambiguity.
+  const nearEmpty = item.tinySuitability?.canvas_background === 'transparent' &&
+    Number.isFinite(item.tinySuitability.foreground_occupancy) && item.tinySuitability.foreground_occupancy < 0.005;
+  const wide = !nearEmpty && !stackedLogo && !explicitSymbol && !compactGlyph && ((wideRatio != null && wideRatio >= 1.8 && (wideRatio <= 12 || wideRatio <= 14 && strongWideEvidence)) || wideRelaxed);
   const paddedWordmark = contentRatio != null && contentRatio >= 1.8 && ratio != null && ratio < 1.8;
   // BIMI profile conformance is not verified, so canonical icon admission must
   // fail closed unless the rendered artwork itself was measured as icon-shaped.
@@ -344,10 +365,10 @@ export function scoreCandidate(item, { companyName = '' } = {}) {
   const predicted_roles = [
     ...(roleEligible('icon') && icon >= 35 && safeContext && usableIconSize && (square || ratio == null) &&
       bimiIconShapeOk && !clipping.likely_clipped && (faviconSource || authoritativeSource || externallyVerifiedIdentity || agreesWithCompany || placedLogo) ? ['icon'] : []),
-    ...(roleEligible('wide') && wideScore >= 35 && safeContext && !clipping.likely_clipped && (wide || ratio == null) && hasWideEvidence(item, companyName) ? ['wide'] : []),
+    ...(roleEligible('wide') && wideScore >= 35 && safeContext && !nearEmpty && !clipping.likely_clipped && (wide || ratio == null) && hasWideEvidence(item, companyName) ? ['wide'] : []),
     ...(favicon >= 35 && faviconSource && !clipping.likely_clipped ? ['favicon'] : []),
   ];
-  return { ...item, variant: describeAssetVariant(item), padded_wordmark: paddedWordmark, bimi_icon_shape_ok: bimiIconShapeOk, clipping, role_scores, predicted_roles, score, score_reasons: [...new Set(reasons)], confidence_band: score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low' };
+  return { ...item, variant: describeAssetVariant(item), stacked_logo: stackedLogo, wordmark_caution: stackedLogo ? 'stacked-logo' : explicitSymbol ? 'explicit-symbol' : compactGlyph ? 'ambiguous-compact-mark' : null, padded_wordmark: paddedWordmark, bimi_icon_shape_ok: bimiIconShapeOk, clipping, role_scores, predicted_roles, score, score_reasons: [...new Set(reasons)], confidence_band: score >= 70 ? 'high' : score >= 45 ? 'medium' : 'low' };
 }
 
 const ICON_FALLBACK_MIN_EDGE = 14;
@@ -387,7 +408,7 @@ function nearDimensions(a, b) {
 }
 
 export function iconEffectiveScore(candidate) {
-  return (candidate.role_scores?.icon ?? 0) - (candidate.padded_wordmark ? 40 : 0) - (candidate.clipping?.risk >= 0.5 && !candidate.clipping?.likely_clipped ? 3 : 0) + iconSizeBonus(candidate);
+  return (candidate.role_scores?.icon ?? 0) - (candidate.padded_wordmark ? 40 : 0) - (candidate.stacked_logo ? 40 : 0) - (candidate.clipping?.risk >= 0.5 && !candidate.clipping?.likely_clipped ? 3 : 0) + iconSizeBonus(candidate);
 }
 
 function compareRoleCandidates(a, b, role, preferences) {
