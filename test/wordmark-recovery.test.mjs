@@ -50,6 +50,7 @@ test('compact glyphs and stacked logos do not claim wordmarks; explicit short wo
   assert.equal(rankCandidates([stacked]).assets.logo, null);
 });
 
+
 test('measured contrast chooses source variants for each theme without changing image bytes', () => {
   const dark = asset({ width: 32, height: 32, url: 'https://acme.test/a.svg', dataUrl: 'original-a', background: 'transparent', tinySuitability: { surface_contrast: { light: 0.9, dark: 0 } } });
   const light = asset({ ...dark, url: 'https://acme.test/b.svg', dataUrl: 'original-b', tinySuitability: { surface_contrast: { light: 0.09, dark: 0.8 } } });

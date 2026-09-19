@@ -3,7 +3,7 @@ import sharp from 'sharp';
 import { cropCssSprite } from './css-sprite.mjs';
 import { parseHomepage, resolveHttpUrl } from './discover-static.mjs';
 import { discoverBrowserLogos } from './discover-browser.mjs';
-import { normalizeStandaloneSvg } from './standalone-svg.mjs';
+import { normalizeStandaloneSvg, normalizeLegacySvgDoctype } from './standalone-svg.mjs';
 import { discoverOfficialBrandAssets, discoverSpaBundleAssets } from './discover-deep.mjs';
 import { hasWideEvidence, rankCandidates, scoreCandidate, SOURCE_WEIGHT } from './rank.mjs';
 import { measureTinyImageSuitability } from './tiny-image-suitability.mjs';
@@ -457,6 +457,9 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     let bytes = read.bytes;
     if (item.source === 'bimi' && String(response.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase() !== 'image/svg+xml') return null;
     let metadata = imageMetadata(bytes, response.headers.get('content-type'));
+    const legacySvg = !metadata && item.source !== 'bimi' ? normalizeLegacySvgDoctype(bytes) : null;
+    const normalization = legacySvg ? { original_byte_hash: createHash('sha256').update(bytes).digest('hex'), svg_normalization: legacySvg.transformation } : {};
+    if (legacySvg) { bytes = legacySvg.bytes; metadata = imageMetadata(bytes, 'image/svg+xml'); }
     const svgSafetyValidated = metadata?.format === 'svg' ? isSafeBimiSvg(bytes) : null;
     if (item.source === 'bimi' && svgSafetyValidated === false) return null;
     if (item.source === 'bimi' && metadata?.format !== 'svg') return null;
@@ -475,13 +478,16 @@ async function validateCandidate(item, timeoutMs, diagnostics, maxImageBytes = M
     const tinySuitability = await measureTinyImageSuitability(bytes);
     const background = tinySuitability?.canvas_background ?? 'unknown';
     const genericAsset = matchGenericFingerprint(tinySuitability?.pixel_fingerprint);
-    return { ...item, background, tinySuitability, tinySuitabilityChecked: true, observed: { ...metadata, width, height, ...(genericAsset ? { generic_asset: genericAsset } : {}), byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: response.url, retrieved_at: new Date().toISOString(), http_status: response.status, svg_safety_validated: svgSafetyValidated === true ? true : undefined, bimi_svg_safety_validated: item.source === 'bimi' ? true : undefined, bimi_svg_profile_conformance: item.source === 'bimi' ? 'not_performed' : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    return { ...item, background, tinySuitability, tinySuitabilityChecked: true, observed: { ...metadata, width, height, ...(genericAsset ? { generic_asset: genericAsset } : {}), byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl: response.url, resolved_url: response.url, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, ...normalization, retrieved_asset_url: response.url, retrieved_at: new Date().toISOString(), http_status: response.status, svg_safety_validated: svgSafetyValidated === true ? true : undefined, bimi_svg_safety_validated: item.source === 'bimi' ? true : undefined, bimi_svg_profile_conformance: item.source === 'bimi' ? 'not_performed' : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, status = 200, contentType = '' } = {}) {
   try {
     const { rawBytes: _rawBytes, ...cleanItem } = item;
     let metadata = imageMetadata(bytes, contentType);
+    const legacySvg = !metadata && item.source !== 'bimi' ? normalizeLegacySvgDoctype(bytes) : null;
+    const normalization = legacySvg ? { original_byte_hash: createHash('sha256').update(bytes).digest('hex'), svg_normalization: legacySvg.transformation } : {};
+    if (legacySvg) { bytes = legacySvg.bytes; metadata = imageMetadata(bytes, 'image/svg+xml'); }
     const svgSafetyValidated = metadata?.format === 'svg' ? isSafeBimiSvg(bytes) : null;
     if (metadata?.format === 'svg') {
       bytes = normalizeStandaloneSvg(bytes, { inheritedColor: item.evidence?.inherited_color });
@@ -499,7 +505,7 @@ async function validateCandidateBytes(item, bytes, { resolvedUrl = item.url, sta
     const tinySuitability = await measureTinyImageSuitability(bytes);
     const background = tinySuitability?.canvas_background ?? 'unknown';
     const genericAsset = matchGenericFingerprint(tinySuitability?.pixel_fingerprint);
-    return { ...cleanItem, background, tinySuitability, tinySuitabilityChecked: true, observed: { ...metadata, width, height, ...(genericAsset ? { generic_asset: genericAsset } : {}), byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, retrieved_asset_url: resolvedUrl, retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? item.provenance?.source_chain ?? [], svg_safety_validated: svgSafetyValidated === true ? true : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
+    return { ...cleanItem, background, tinySuitability, tinySuitabilityChecked: true, observed: { ...metadata, width, height, ...(genericAsset ? { generic_asset: genericAsset } : {}), byte_hash: createHash('sha256').update(bytes).digest('hex') }, ...metadata, width, height, resolvedUrl, resolved_url: resolvedUrl, bytes: bytes.length, squareish, scalable, highResolution, provenance: { ...item.provenance, ...normalization, retrieved_asset_url: resolvedUrl, retrieved_at: new Date().toISOString(), http_status: status, source_chain: item.provenance_chain ?? item.provenance?.source_chain ?? [], svg_safety_validated: svgSafetyValidated === true ? true : undefined }, dataUrl: `data:${metadata.mimeType};base64,${bytes.toString('base64')}` };
   } catch { return null; }
 }
 
@@ -709,8 +715,8 @@ export async function extractLogos(website, options = {}) {
         await response.body?.cancel().catch(() => {});
         continue;
       }
-      homepage = response.url;
       const read = await readLimited(response, MAX_HTML_BYTES, { truncate: true, diagnostics: network, timeoutMs: attempt.timeoutMs });
+      homepage = response.url;
       html = read.bytes.toString('utf8'); htmlTruncated = read.truncated;
       reachability.push({ url: attempt.url, stage: attempt.stage, ok: true, status: response.status, finalUrl: response.url });
       break;
@@ -729,9 +735,9 @@ export async function extractLogos(website, options = {}) {
       return outcome && outcome.status !== 404 && !outcome.skipped;
     })?.url ?? attempts[0].url;
     try {
-      const response = await fetchJinaHomepage(target, { apiKey: jinaApiKey, timeoutMs: Math.max(timeoutMs, 20_000), diagnostics: network });
+      const response = await fetchJinaHomepage(target, { apiKey: jinaApiKey, timeoutMs: Math.max(timeoutMs, 20_000), diagnostics: network, validateUrl: options.validateUrl ?? assertPublicUrl });
       if (!response.ok) {
-        reachability.push({ url: target, via: 'jina', ok: false, status: response.status });
+        reachability.push({ url: target, via: 'jina', ok: false, status: response.status, failureKind: homepageFailureKind({ status: response.status }) });
       } else {
         const read = await readLimited(response, MAX_HTML_BYTES, { truncate: true, diagnostics: network, timeoutMs: Math.max(timeoutMs, 20_000) });
         homepage = target;
@@ -741,14 +747,20 @@ export async function extractLogos(website, options = {}) {
         reachability.push({ url: target, via: 'jina', ok: true, status: response.status, finalUrl: target });
       }
     } catch (error) {
-      reachability.push({ url: target, via: 'jina', ok: false, error: error.name === 'AbortError' ? 'timeout' : error.message });
+      const failureKind = homepageFailureKind({ error });
+      reachability.push({ url: target, via: 'jina', ok: false, error: failureKind === 'timeout' ? 'timeout' : error.message, failureKind });
     }
   }
   const homepageUnavailable = !homepage;
+  const homepageFailureClass = homepageUnavailable ? aggregateHomepageFailure(reachability) : null;
+  // A timeout says nothing about identity. Permit independently verified Commons
+  // recovery, but never turn mixed DNS/TLS/redirect failures into this exception.
+  const timeoutRecovery = homepageUnavailable && wikimediaFallback && reachability.length > 0 &&
+    reachability.every(item => !item.skipped && item.failureKind === 'timeout');
   // A denied HTML request must not prevent the independently bounded public
   // browser, favicon, and exact-domain identity recovery stages from running.
-  if (!homepage && aggregateHomepageFailure(reachability) === 'blocked_interstitial' &&
-      (options.browser || options.cachedFavicon !== false || wikimediaFallback)) homepage = normalized.url.href;
+  if (!homepage && (timeoutRecovery || homepageFailureClass === 'blocked_interstitial' &&
+      (options.browser || options.cachedFavicon !== false || wikimediaFallback))) homepage = normalized.url.href;
   if (!homepage) {
     const failureClass = aggregateHomepageFailure(reachability);
     throw extractionFailure(`Could not reach the website. ${reachability.map(item => `${item.url}${item.via ? ` via ${item.via}` : ''}: ${item.skipped ?? item.error ?? `HTTP ${item.status}`}`).join(' | ')}`, {
@@ -774,7 +786,8 @@ export async function extractLogos(website, options = {}) {
     besticonCandidates(normalized.domain, options.besticonUrl, timeoutMs, network),
   ]);
   const root = new URL(homepage); root.pathname = '/favicon.ico'; root.search = ''; root.hash = ''; const rootPng = new URL(root); rootPng.pathname = '/favicon.png';
-  const all = [...parsed.candidates, ...manifest, ...besticon, candidate(root.href, 'root-favicon', '', 'image/x-icon', { source_page: homepage }), candidate(rootPng.href, 'root-favicon', '', 'image/png', { source_page: homepage })];
+  const rootCandidates = timeoutRecovery ? [] : [candidate(root.href, 'root-favicon', '', 'image/x-icon', { source_page: homepage }), candidate(rootPng.href, 'root-favicon', '', 'image/png', { source_page: homepage })];
+  const all = [...parsed.candidates, ...manifest, ...besticon, ...rootCandidates];
   const rankedUnique = dedupeUrls(all)
     .sort((a, b) => discoveryPriority(b) - discoveryPriority(a) || declaredPixels(b) - declaredPixels(a));
   const budget = options.maxCandidates ?? MAX_CANDIDATES_TO_DOWNLOAD;
@@ -788,7 +801,7 @@ export async function extractLogos(website, options = {}) {
   await attachTinySuitability(validated);
   let ranked = rankValidated();
   let cachedFavicon = null;
-  if (!options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
+  if (!timeoutRecovery && !options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
     cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
     if (cachedFavicon) {
       validated = dedupeBytes([...validated, cachedFavicon]);
@@ -1128,7 +1141,7 @@ export async function extractLogos(website, options = {}) {
     };
   }
 
-  if (options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
+  if (!timeoutRecovery && options.bimi && !ranked.selectedByRole.icon && options.cachedFavicon !== false) {
     cachedFavicon = await cachedFaviconCandidate(normalized.domain, timeoutMs, network, maxImageBytes);
     if (cachedFavicon) {
       validated = dedupeBytes([...validated, cachedFavicon]);
@@ -1221,9 +1234,9 @@ export async function extractLogos(website, options = {}) {
   const totalRequests = network.requests + (browserDiagnostics?.requests ?? 0);
   const totalBytes = network.bytesDownloaded + (browserDiagnostics?.declaredTransferBytes ?? 0);
   if (homepageUnavailable && !ranked.assets.icon && !ranked.assets.logo) {
-    const error = extractionFailure('Homepage was blocked and public recovery found no eligible logo assets.', {
+    const error = extractionFailure(timeoutRecovery ? 'Homepage timed out and public recovery found no eligible logo assets.' : 'Homepage was blocked and public recovery found no eligible logo assets.', {
       network: { requests: totalRequests, bytesDownloaded: totalBytes }, reachability,
-      failureStage: 'public_recovery', failureClass: 'blocked_interstitial',
+      failureStage: 'public_recovery', failureClass: homepageFailureClass,
     });
     Object.assign(error.diagnostics, { browser: browserDiagnostics, deep: deepDiagnostics, wikimedia: wikimediaDiagnostics });
     throw error;

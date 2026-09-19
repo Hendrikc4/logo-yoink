@@ -13,6 +13,7 @@ const MAX_WEBSITE_CANDIDATES = 20;
 const LANGUAGE_CODES = new Set(('aa ab ae af ak am an ar as av ay az ba be bg bh bi bm bn bo br bs ca ce ch co cr cs cu cv cy da de dv dz ee el en eo es et eu fa ff fi fj fo fr fy ga gd gl gn gu gv ha he hi ho hr ht hu hy hz ia id ie ig ii ik io is it iu ja jv ka kg ki kj kk kl km kn ko kr ks ku kv kw ky la lb lg li ln lo lt lu lv mg mh mi mk ml mn mr ms mt my na nb nd ne ng nl nn no nr nv ny oc oj om or os pa pi pl ps pt qu rm rn ro ru rw sa sc sd se sg si sk sl sm sn so sq sr ss st su sv sw ta te tg th ti tk tl tn to tr ts tt tw ty ug uk ur uz ve vi vo wa wo xh yi yo za zh zu').split(' '));
 const DEFAULT_CACHE = new Map();
 const DEFAULT_PENDING = new Map();
+const DEFAULT_COOLDOWNS = new Map();
 const MAX_CACHE_BYTES = 32 * 1024 * 1024;
 const MAX_CACHE_ENTRIES = 256;
 let defaultCacheBytes = 0;
@@ -225,6 +226,7 @@ function apiUrl(base, parameters) {
 
 function retryDelay(response, nowMs = Date.now()) {
   const value = response?.headers?.get?.('retry-after');
+  if (value == null || !value.trim()) return 250;
   const seconds = Number(value);
   if (Number.isFinite(seconds) && seconds >= 0) return seconds * 1_000;
   const date = Date.parse(value);
@@ -248,7 +250,17 @@ async function waitForRetry(milliseconds, options) {
 }
 
 async function requestJsonUncached(url, options) {
+  const origin = new URL(url).origin;
   for (let attempt = 0; attempt < 2; attempt += 1) {
+    let cooldown = options.cooldowns.get(origin);
+    while (cooldown > performance.now()) {
+      await waitForRetry(cooldown - performance.now(), options);
+      // Another in-flight response may extend the host's deadline while we wait.
+      const extended = options.cooldowns.get(origin);
+      if (!(extended > cooldown)) break;
+      cooldown = extended;
+    }
+    if (cooldown <= performance.now()) options.cooldowns.delete(origin);
     const response = await fetchTimed(url, {
       timeoutMs: remainingBudget(options),
       accept: 'application/json',
@@ -259,9 +271,9 @@ async function requestJsonUncached(url, options) {
     if (!response.ok) {
       await response.body?.cancel().catch(() => {});
       const retryable = response.status === 429 || response.status === 503;
+      if (retryable) options.cooldowns.set(origin, Math.max(options.cooldowns.get(origin) ?? 0, performance.now() + retryDelay(response)));
       if (retryable && attempt === 0) {
         options.stats.retries += 1;
-        await waitForRetry(retryDelay(response), options);
         continue;
       }
       const error = new Error(`Wikimedia API returned HTTP ${response.status}.`);
@@ -274,9 +286,9 @@ async function requestJsonUncached(url, options) {
     if (!value || typeof value !== 'object') throw new Error('Wikimedia API returned malformed JSON.');
     if (value.error) {
       const retryable = ['maxlag', 'ratelimited'].includes(String(value.error.code));
+      if (retryable) options.cooldowns.set(origin, Math.max(options.cooldowns.get(origin) ?? 0, performance.now() + 250));
       if (retryable && attempt === 0) {
         options.stats.retries += 1;
-        await waitForRetry(250, options);
         continue;
       }
       const error = new Error(`Wikimedia API error: ${value.error.code ?? 'unknown'}.`);
@@ -296,13 +308,49 @@ async function requestJson(url, options) {
   let pending = options.pending.get(pendingKey);
   if (!pending) {
     pending = requestJsonUncached(url, options).then(result => {
+      const value = compactEntityPayload(url, result.value);
       // Parsed object graphs retain substantially more heap than their wire representation.
-      storeCache(options.cache, url, result.value, nowMs, options.cacheTtlMs, result.bytes * 4);
-      return result.value;
+      const retainedBytes = value === result.value ? result.bytes : Buffer.byteLength(JSON.stringify(value));
+      storeCache(options.cache, url, value, nowMs, options.cacheTtlMs, retainedBytes * 4);
+      return value;
     }).finally(() => options.pending.delete(pendingKey));
     options.pending.set(pendingKey, pending);
   } else options.stats.coalescedRequests += 1;
-  return structuredClone(await pending);
+  // A coalesced caller may have a shorter budget than the request's owner.
+  // Stop that caller's wait without cancelling work still needed by the owner.
+  let timer;
+  try {
+    return structuredClone(await Promise.race([
+      pending,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new DOMException('Wikimedia fallback timed out.', 'AbortError')), remainingBudget(options));
+      }),
+    ]));
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function compactEntityPayload(url, payload) {
+  // wbgetentities cannot filter claims by property. Keep the two properties we
+  // actually verify, including every rank, qualifier, and statement ID, before
+  // caching/cloning. References to sources of unrelated facts dominate many
+  // large entities; they are neither identity nor logo evidence in this resolver.
+  if (new URL(url).searchParams.get('action') !== 'wbgetentities' ||
+      !payload?.entities || typeof payload.entities !== 'object' || Array.isArray(payload.entities)) return payload;
+  const entities = Object.fromEntries(Object.entries(payload.entities).map(([id, entity]) => {
+    if (!entity || typeof entity !== 'object' || Array.isArray(entity) ||
+        !entity.claims || typeof entity.claims !== 'object' || Array.isArray(entity.claims)) return [id, entity];
+    const claims = Object.fromEntries(Object.entries(entity.claims).filter(([property]) => ['P856', 'P154'].includes(property)).map(([property, statements]) => [property,
+      Array.isArray(statements) ? statements.map(statement => {
+        if (!statement || typeof statement !== 'object' || Array.isArray(statement)) return statement;
+        const { references, ...evidence } = statement;
+        return evidence;
+      }) : statements,
+    ]));
+    return [id, { ...entity, claims }];
+  }));
+  return { ...payload, entities };
 }
 
 function searchTerms(domain) {
@@ -311,9 +359,17 @@ function searchTerms(domain) {
 }
 
 function searchIds(payload) {
-  return (Array.isArray(payload?.search) ? payload.search : [])
-    .map(item => item?.id)
-    .filter(id => /^Q\d+$/.test(String(id)));
+  if (!Array.isArray(payload?.search) || payload.search.some(item => !/^Q\d+$/.test(String(item?.id)))) {
+    throw new Error('Wikidata name search response was malformed.');
+  }
+  return payload.search.map(item => item.id);
+}
+
+function websiteSearchQuery(domain) {
+  // This is candidate discovery only. Prefix hits can include product pages or
+  // lookalike domains and must still pass officialWebsiteEvidence below.
+  return `haswbstatement:${['http://', 'https://', 'http://www.', 'https://www.']
+    .map(prefix => `P856=${prefix}${domain}*`).join('|')}`;
 }
 
 function websiteSearchQuery(domain) {
@@ -343,6 +399,7 @@ export async function discoverWikimediaLogoCandidates({ domain, missingRoles }, 
     now: options.now ?? (() => new Date()),
     cache: options.cache ?? (isolatedRuntime ? new Map() : DEFAULT_CACHE),
     pending: options.pending ?? (isolatedRuntime ? new Map() : DEFAULT_PENDING),
+    cooldowns: options.cooldowns ?? (isolatedRuntime ? new Map() : DEFAULT_COOLDOWNS),
     cacheScope: options.cacheScope ?? (isolatedRuntime ? 'isolated' : 'default'),
     cacheTtlMs: Math.max(0, options.cacheTtlMs ?? DEFAULT_CACHE_TTL_MS),
     network: options.diagnostics,

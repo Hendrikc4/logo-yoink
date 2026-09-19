@@ -1,0 +1,978 @@
+{
+  "total": 40,
+  "unchanged": 40,
+  "rows": [
+    {
+      "id": "99",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/3/3c/Logotipo_da_99.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "f26a350d070f2f3d8bbc831cb2c1970aa1d3cede26bdd56b7b06462d782fe5c7",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/3/3c/Logotipo_da_99.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "f26a350d070f2f3d8bbc831cb2c1970aa1d3cede26bdd56b7b06462d782fe5c7",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "alpargatas",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/8/80/Alpargatas-logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "a82414f45a3412c3cd5c110f5ee58766e0e81881d737c511fd9fdfed5d89507e",
+            "valid": true,
+            "roles": []
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/8/80/Alpargatas-logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "a82414f45a3412c3cd5c110f5ee58766e0e81881d737c511fd9fdfed5d89507e",
+            "valid": true,
+            "roles": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "baidu",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "biogen",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "bristol-myers-squibb",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/c/c6/Bristol-Myers_Squibb_logo_%282020%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "8819116d3b59ddc1d6c307266a30b23739aa53c2d44143ddc6ccfb342d94e2d9",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/c/c6/Bristol-Myers_Squibb_logo_%282020%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "8819116d3b59ddc1d6c307266a30b23739aa53c2d44143ddc6ccfb342d94e2d9",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "celine",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/8/81/Celine_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "0bc68bc300d83bf929330d44300b8941ad3f4e568acedbcb7b3bb48cee2c8ef6",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/8/81/Celine_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "0bc68bc300d83bf929330d44300b8941ad3f4e568acedbcb7b3bb48cee2c8ef6",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "charles-schwab",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/4b/Charles_Schwab_Corporation_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "3a02e0bacb9ed9243562a47a0c65d329e3f0167cc29a360601848ba82c29845b",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/4b/Charles_Schwab_Corporation_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "3a02e0bacb9ed9243562a47a0c65d329e3f0167cc29a360601848ba82c29845b",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "constellation-energy",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "crowdstrike",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/4f/CrowdStrike_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "c8a4f1eccb29399e30dbb921812b27fdd7e7068ed4ad0bea9435fea51d3cbce3",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/4f/CrowdStrike_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "c8a4f1eccb29399e30dbb921812b27fdd7e7068ed4ad0bea9435fea51d3cbce3",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "espn",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "fiserv",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/0/00/Fiserv_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "630430b25a58e3e1ef9d680bfc671f175c8d6ca4dded9bfa8f0d236d1ee0624d",
+            "valid": true,
+            "roles": []
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/0/00/Fiserv_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "630430b25a58e3e1ef9d680bfc671f175c8d6ca4dded9bfa8f0d236d1ee0624d",
+            "valid": true,
+            "roles": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "gatorade",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/9/9b/Gatorade_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "763e3bfa54d3698b84e556c834d3a7a20931cfccc2b278406ee8d934e3d0c63a",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/9/9b/Gatorade_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "763e3bfa54d3698b84e556c834d3a7a20931cfccc2b278406ee8d934e3d0c63a",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "hsbc",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/a/aa/HSBC_logo_%282018%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "2483a568d5a57db10f61d14ac95befa4ec8c6c67027be9a478a6a8bf8f734249",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/a/aa/HSBC_logo_%282018%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "2483a568d5a57db10f61d14ac95befa4ec8c6c67027be9a478a6a8bf8f734249",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "intuit",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/5/57/Intuit_logo_2022.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "9cc4aebbc9246a98c728136d7dca10b3809e31b7444ba564e35a7e5237815214",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/5/57/Intuit_logo_2022.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "9cc4aebbc9246a98c728136d7dca10b3809e31b7444ba564e35a7e5237815214",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "kakao",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "kraken",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "medtronic",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "merck",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/9/94/Merck_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "553b3ffc8be1d610bbb04ef500dbd9e5cbddcb546967e8ef47a8812d233bcc99",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/9/94/Merck_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "553b3ffc8be1d610bbb04ef500dbd9e5cbddcb546967e8ef47a8812d233bcc99",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "mitsubishi-heavy-industries",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/f/f1/Mitsubishi_heavyindustries_mhi_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "7483f43a2dc8599978a398329f8df7dd0ca51ac7eca49590ed9b49fce0774876",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/f/f1/Mitsubishi_heavyindustries_mhi_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "7483f43a2dc8599978a398329f8df7dd0ca51ac7eca49590ed9b49fce0774876",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "netmarble",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "orange",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "ovhcloud",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/45/Logo_OVH.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "1d8cfed986a95a4ee8b850609b9cdc715f4638abd81b346bafb9bc65c69bff80",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/45/Logo_OVH.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "1d8cfed986a95a4ee8b850609b9cdc715f4638abd81b346bafb9bc65c69bff80",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "patanjali",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/2/27/Patanjali_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "4f748d87140307cb584a369a463e94f6049ec0d4ac17b7c6bb0d931f12946e3e",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/2/27/Patanjali_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "4f748d87140307cb584a369a463e94f6049ec0d4ac17b7c6bb0d931f12946e3e",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "paxos",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "pegasystems",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "ramp",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ramp_Business_Corporation_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "305d8dfa84337c595910811c74ad4b9e72d1fddbbaf3272b65a52b5ac5798f52",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ramp_Business_Corporation_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "305d8dfa84337c595910811c74ad4b9e72d1fddbbaf3272b65a52b5ac5798f52",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "sempra",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/d/dc/Sempra_Energy_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "da2080df228100469e866c7047cfc3c91cf9a932795c0ff610fa7dddfbb460f1",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/d/dc/Sempra_Energy_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "da2080df228100469e866c7047cfc3c91cf9a932795c0ff610fa7dddfbb460f1",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "sentinelone",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/3/33/SentinelOne_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "1fc8c640cd3e4724eff44b36cac4b48075b60bdef03cdd653e4ff9092b2eea41",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/3/33/SentinelOne_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "1fc8c640cd3e4724eff44b36cac4b48075b60bdef03cdd653e4ff9092b2eea41",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "societe-generale",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/c/cd/Logo-SG-Soci%C3%A9t%C3%A9-G%C3%A9n%C3%A9rale.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "73ddac8b5abae1b90b216b00b17d2e0a476b5825314a83353e730a1e35d719dc",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/c/cd/Logo-SG-Soci%C3%A9t%C3%A9-G%C3%A9n%C3%A9rale.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "73ddac8b5abae1b90b216b00b17d2e0a476b5825314a83353e730a1e35d719dc",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "swiggy",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/a/a0/Swiggy_Logo_2024.webp?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "35904fb4ae2c883076ef7bd7b491725f12bbde33a236862020ab3adc7855249a",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/a/a0/Swiggy_Logo_2024.webp?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "35904fb4ae2c883076ef7bd7b491725f12bbde33a236862020ab3adc7855249a",
+            "valid": true,
+            "roles": [
+              "wide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "telia",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "telkom-indonesia",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "tj-maxx",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_logo_claims",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_logo_claims",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "toyota",
+      "unchanged": true,
+      "before": {
+        "status": "search_candidates_truncated",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "search_candidates_truncated",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "typeface",
+      "unchanged": true,
+      "before": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "no_verified_current_logo",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "wise",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_logo_claims",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_logo_claims",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "wordpress-com",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/5/54/WPCOM-Blueberry-logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "a86b400b68a954700567c4559515877acd58c480a357406829dd528242dd20c3",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/5/54/WPCOM-Blueberry-logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "a86b400b68a954700567c4559515877acd58c480a357406829dd528242dd20c3",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "x",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "xiaohongshu",
+      "unchanged": true,
+      "before": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      },
+      "after": {
+        "status": "ambiguous_entities",
+        "urls": [],
+        "assets": []
+      }
+    },
+    {
+      "id": "zwift",
+      "unchanged": true,
+      "before": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/a/af/Zwift_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "fc983c97aeaf918688450cc6970830f84d5cebea643f5d659cfd8c419f3aad84",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "urls": [
+          "https://upload.wikimedia.org/wikipedia/commons/a/af/Zwift_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+        ],
+        "assets": [
+          {
+            "rawHash": "fc983c97aeaf918688450cc6970830f84d5cebea643f5d659cfd8c419f3aad84",
+            "valid": true,
+            "roles": [
+              "icon"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
