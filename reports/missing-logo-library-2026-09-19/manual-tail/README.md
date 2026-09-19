@@ -26,5 +26,5 @@ Earlier report artifacts and withdrawal notes are historical. The later `missing
 - Full library: 1,000 identities populated; 1,170 approved immutable assets verified.
 - All 943 identities outside this 57-identity baseline are JSON-identical to the pre-change manifest, including the 131 previously recovered identities.
 - All 485 tests passed; frozen 500-company and expanded 800-company fixtures validated.
-- Syntax checks and `git diff --check` passed.
+- Syntax checks and authored-file whitespace checks passed. Full commit whitespace checks flag existing source formatting in downloaded SVGs (CRLF, trailing spaces, and blank EOF lines); those immutable vendor bytes are intentionally preserved rather than reformatted.
 - Final assignment contact sheets regenerated for 191 assets across 188 identities; zero unresolved identities.
