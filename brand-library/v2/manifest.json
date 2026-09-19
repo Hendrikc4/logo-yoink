@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "libraryId": "major-brands-1000-v1",
-  "generatedAt": "2026-09-19T09:47:23Z",
-  "approvedFromRun": "logo-only-icon-collection-2026-09-19T09-47-23Z",
+  "generatedAt": "2026-09-19T09:52:09.104Z",
+  "approvedFromRun": "icon-only-2026-09-19",
   "brands": [
     {
       "id": "apple",
@@ -6770,10 +6770,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:32:09.451Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/canon/logo/b3467376fa7bed45ba22d90e8a81f604ebd5f4bb730bd21416437f11a70ba325.svg",
+          "format": "svg",
+          "width": 623,
+          "height": 69,
+          "bytes": 3556,
+          "contentHash": "b3467376fa7bed45ba22d90e8a81f604ebd5f4bb730bd21416437f11a70ba325",
+          "visualHash": "dede8dd2eea84086c0d5372bcd713ccd2524c3f998fb1e34389f65a5e870a38c",
+          "sourceUrl": "https://global.canon/01cmn/img/common/logo.svg",
+          "discoveryPage": "https://global.canon/en/index.html",
+          "sourceKind": "dom-img",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://global.canon/01cmn/img/common/logo.svg",
+            "retrieved_at": "2026-09-19T09:04:29.311Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:51:08.304Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:52:09.104Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -6794,7 +6820,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:04:16.540Z"
+      "lastCheckedAt": "2026-09-19T09:51:08.304Z"
     },
     {
       "id": "nikon",
@@ -18502,10 +18528,53 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:33:15.246Z",
           "lastConfirmedCurrentAt": "2026-09-18T07:42:52.530Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/yelp/logo/cf1b52968959b2f8174ae26e4565567a8bfb852cbab2d7bf4e3b0b2869333334.svg",
+          "format": "svg",
+          "width": 2667,
+          "height": 1027,
+          "bytes": 12217,
+          "contentHash": "cf1b52968959b2f8174ae26e4565567a8bfb852cbab2d7bf4e3b0b2869333334",
+          "visualHash": "ca7cb5ee3c9c1e9e0b28b44d902252eba04af2295b330c2f3228651647dcd847",
+          "sourceUrl": "zip+https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/3946379ffa69/assets/img/cookbook/yelp_logos.zip#yelp_logos%2FLogo%2FLight%20bg%2FRGB%2Fyelp_logo.svg",
+          "discoveryPage": "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/3946379ffa69/assets/img/cookbook/yelp_logos.zip",
+          "sourceKind": "official-archive",
+          "provenanceChain": [
+            {
+              "kind": "homepage",
+              "url": "https://yelp.com/"
+            },
+            {
+              "kind": "official-page",
+              "url": "https://yelp.com/brand",
+              "source_page": "https://yelp.com/",
+              "context": "Conventional brand-page probe"
+            },
+            {
+              "kind": "archive",
+              "url": "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/3946379ffa69/assets/img/cookbook/yelp_logos.zip",
+              "source_page": "https://www.yelp.com/brand",
+              "context": "downloading our latest logos here https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/3946379ffa69/assets/img/cookbook/yelp_logos.zip  y-css-vi5jg0 For press and media To use or embed Yelp photos, reviews and screenshots on your site or publication, we require that:The asset not be used in a negative story about Yelp, a business listed on Yelp or Yelp users;A follow link (URL) back to the Yelp business page, review, photo, etc.; andThe content credits the contributor using their first name, last initial, and date of submission. For example, “Photo by Jane D., 3/18/23, via Yelp.”Members of the press and media can use the Yelp logo by downloading our latest logos here. Yelp branding should at all times be accompanied by the ® symbol.For media related inquiries"
+            },
+            {
+              "kind": "archive-member",
+              "url": "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/3946379ffa69/assets/img/cookbook/yelp_logos.zip",
+              "member": "yelp_logos/Logo/Light bg/RGB/yelp_logo.svg"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:51:16.505Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:52:09.104Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -18526,7 +18595,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:09:03.002Z"
+      "lastCheckedAt": "2026-09-19T09:51:16.505Z"
     },
     {
       "id": "tripadvisor",
@@ -38593,10 +38662,36 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T07:55:24.103Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:04:51.637Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "dark",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/blackberry/logo/3ebbbfd9ab2d82d342adc3dabd6fa7592e0625f305ba105e4314fac63b0baab3.svg",
+          "format": "svg",
+          "width": 467,
+          "height": 80,
+          "bytes": 7491,
+          "contentHash": "3ebbbfd9ab2d82d342adc3dabd6fa7592e0625f305ba105e4314fac63b0baab3",
+          "visualHash": "61f322c98240c567244592ed36d7a7631a12fe7800798072be425df7fd82c9fc",
+          "sourceUrl": "https://irp.cdn-website.com/586e2b1b/dms3rep/multi/bb-logo.svg",
+          "discoveryPage": "https://investors.blackberry.com/press-releases",
+          "sourceKind": "browser-img",
+          "provenanceChain": {
+            "retrieved_asset_url": "https://irp.cdn-website.com/586e2b1b/dms3rep/multi/bb-logo.svg",
+            "retrieved_at": "2026-09-19T09:15:53.372Z",
+            "http_status": 200,
+            "svg_safety_validated": true
+          },
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:51:07.418Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:52:09.104Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -38605,7 +38700,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:15:30.538Z"
+      "lastCheckedAt": "2026-09-19T09:51:07.418Z"
     },
     {
       "id": "capcut",
@@ -55511,10 +55606,53 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:10:52.512Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "any",
+          "locale": "global",
+          "representation": "compact_wordmark",
+          "path": "assets/wiz/logo/21bbca0f96b534d08f2f76640f0766fec64994d6d708c32d68087b3ad9a82f8d.svg",
+          "format": "svg",
+          "width": 543,
+          "height": 242,
+          "bytes": 1684,
+          "contentHash": "21bbca0f96b534d08f2f76640f0766fec64994d6d708c32d68087b3ad9a82f8d",
+          "visualHash": "e82b7e074121a86f4845b6539bafbf79a39522e765f3acd3420fa6cc73b44f7b",
+          "sourceUrl": "zip+https://www.datocms-assets.com/75231/1772097012-wiz-media-kit_logo-pack.zip#Logo%20pack%2FWizLogo_Blue_Vector.svg",
+          "discoveryPage": "https://www.datocms-assets.com/75231/1772097012-wiz-media-kit_logo-pack.zip",
+          "sourceKind": "official-archive",
+          "provenanceChain": [
+            {
+              "kind": "homepage",
+              "url": "https://www.wiz.io/"
+            },
+            {
+              "kind": "official-page",
+              "url": "https://www.wiz.io/newsroom",
+              "source_page": "https://www.wiz.io/",
+              "context": "Newsroom https://www.wiz.io/newsroom Company Newsroom"
+            },
+            {
+              "kind": "archive",
+              "url": "https://www.datocms-assets.com/75231/1772097012-wiz-media-kit_logo-pack.zip",
+              "source_page": "https://www.wiz.io/newsroom",
+              "context": "Download Kit https://www.datocms-assets.com/75231/1772097012-wiz-media-kit_logo-pack.zip mt-3 Media Kit Go ahead. Mention us.Media KitOur brand is the cornerstone of our identity. Thank you for using it responsibly.Logo packUpdated February 26, 2026Download KitCo-founder headshotsUpdated February 26, 2026Download KitOffice and team photosUpdated February 26, 2026Download KitVideo B-RollUpdated February 26, 2026Download KitProduct imagesUpdated February 26, 2026Download KitVideo footageUpdated February 26, 2026Download Kit"
+            },
+            {
+              "kind": "archive-member",
+              "url": "https://www.datocms-assets.com/75231/1772097012-wiz-media-kit_logo-pack.zip",
+              "member": "Logo pack/WizLogo_Blue_Vector.svg"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:51:15.015Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:52:09.104Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "icon",
@@ -55523,7 +55661,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:22:31.147Z"
+      "lastCheckedAt": "2026-09-19T09:51:15.015Z"
     },
     {
       "id": "asml",
@@ -55802,10 +55940,52 @@
           "verificationStatus": "approved_ai_visual_review",
           "lastCheckedAt": "2026-09-18T08:11:14.842Z",
           "lastConfirmedCurrentAt": "2026-09-18T08:15:17.387Z"
+        },
+        "logo": {
+          "role": "logo",
+          "theme": "light",
+          "locale": "global",
+          "representation": "wordmark_or_lockup",
+          "path": "assets/red-hat/logo/250c5bbc46fd927c81526145092a65d2f9d0dffc94ad338a143ec6ab34a4c493.svg",
+          "format": "svg",
+          "width": 360,
+          "height": 85,
+          "bytes": 2110,
+          "contentHash": "250c5bbc46fd927c81526145092a65d2f9d0dffc94ad338a143ec6ab34a4c493",
+          "visualHash": "35d7eefc78e51fd9e282a930ec3666e48a44139042be7f9cfa40cb649886c174",
+          "sourceUrl": "https://www.redhat.com/rhdc/managed-files/redhat-logo.svg",
+          "discoveryPage": "https://www.redhat.com/en/resources/virgin-media-uk-case-study",
+          "sourceKind": "dom-img",
+          "provenanceChain": [
+            {
+              "kind": "homepage",
+              "url": "https://www.redhat.com/en"
+            },
+            {
+              "kind": "official-page",
+              "url": "https://www.redhat.com/en/solutions/media-entertainment",
+              "source_page": "https://www.redhat.com/en",
+              "context": "Media and entertainment https://www.redhat.com/en/solutions/media-entertainment Solutions by industry Media and entertainment"
+            },
+            {
+              "kind": "official-page",
+              "url": "https://www.redhat.com/en/resources/virgin-media-uk-case-study",
+              "source_page": "https://www.redhat.com/en/solutions/media-entertainment",
+              "context": "Read the case study https://www.redhat.com/en/resources/virgin-media-uk-case-study Virgin Media O2 protects critical cloud services Empowering our customers with Red Hat solutions See how cable and media providers are building more agile networks and better customer experiences with Red Hat. Virgin Media O2 protects critical cloud services Discover how the second-largest mobile network operator in the UK transformed its technology infrastructure with Red Hat solutions. :host{display:inline-flex;position:relative;z-index:0;align-items:center;max-width:max-content;border-radius:var(--rh-border-radius-default,3px)}::slotted(:is(a,button,input)),a{vertical-align:middle!important;word-break:break-word!important;white-space:norm"
+            },
+            {
+              "kind": "displayed-asset",
+              "url": "https://www.redhat.com/rhdc/managed-files/redhat-logo.svg"
+            }
+          ],
+          "transformation": null,
+          "verificationStatus": "approved_ai_visual_review",
+          "lastCheckedAt": "2026-09-19T09:51:09.728Z",
+          "lastConfirmedCurrentAt": "2026-09-19T09:52:09.104Z"
         }
       },
       "variants": {},
-      "verificationStatus": "approved_with_role_gap",
+      "verificationStatus": "approved_complete",
       "notes": [
         {
           "role": "logo",
@@ -55826,7 +56006,7 @@
           "reviewedAt": "2026-09-19T09:39:14.675Z"
         }
       ],
-      "lastCheckedAt": "2026-09-19T09:22:39.091Z"
+      "lastCheckedAt": "2026-09-19T09:51:09.728Z"
     },
     {
       "id": "scale-ai",

@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "brandId": "blackberry",
+      "sourceUrl": "https://irp.cdn-website.com/586e2b1b/dms3rep/multi/bb-logo.svg",
+      "theme": "dark"
+    },
+    {
+      "brandId": "canon",
+      "sourceUrl": "https://global.canon/01cmn/img/common/logo.svg",
+      "theme": "light"
+    },
+    {
+      "brandId": "red-hat",
+      "sourceUrl": "https://www.redhat.com/rhdc/managed-files/redhat-logo.svg",
+      "theme": "light"
+    },
+    {
+      "brandId": "wiz",
+      "sourceUrl": "zip+https://www.datocms-assets.com/75231/1772097012-wiz-media-kit_logo-pack.zip#Logo%20pack%2FWizLogo_Blue_Vector.svg",
+      "representation": "compact_wordmark"
+    },
+    {
+      "brandId": "yelp",
+      "sourceUrl": "zip+https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/3946379ffa69/assets/img/cookbook/yelp_logos.zip#yelp_logos%2FLogo%2FLight%20bg%2FRGB%2Fyelp_logo.svg",
+      "theme": "light",
+      "representation": "compact_wordmark"
+    }
+  ]
+}

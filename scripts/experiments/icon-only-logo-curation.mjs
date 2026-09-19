@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, extname, resolve } from 'node:path';
 import sharp from 'sharp';
+import { inspectRemoteZip } from '../../src/discover-deep.mjs';
 import { internals as extractor } from '../../src/extractor.mjs';
 
 const args = process.argv.slice(2);
@@ -18,9 +19,10 @@ const planPath = option('--plan');
 const normalizeOnly = args.includes('--normalize-only');
 const decisionsConfigPath = option('--write-decisions');
 const restorationsPath = option('--write-restorations');
+const gapReportPath = option('--write-gap-report');
 const syncApproved = args.includes('--sync-approved');
-if (!runId || (!planPath && !normalizeOnly && !decisionsConfigPath && !restorationsPath && !syncApproved)) {
-  throw new Error('Usage: node scripts/experiments/icon-only-logo-curation.mjs --root ROOT --run RUN_ID (--plan PLAN.json | --normalize-only | --write-decisions CONFIG.json | --write-restorations FILE.json | --sync-approved)');
+if (!runId || (!planPath && !normalizeOnly && !decisionsConfigPath && !restorationsPath && !gapReportPath && !syncApproved)) {
+  throw new Error('Usage: node scripts/experiments/icon-only-logo-curation.mjs --root ROOT --run RUN_ID (--plan PLAN.json | --normalize-only | --write-decisions CONFIG.json | --write-restorations FILE.json | --write-gap-report FILE.json | --sync-approved)');
 }
 
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -30,6 +32,7 @@ const reportPath = resolve(root, 'runs', runId, 'report.json');
 const report = await readJson(reportPath);
 const plan = planPath ? await readJson(resolve(planPath)) : { records: [] };
 const byId = new Map(report.records.map(record => [record.brand.id, record]));
+const themeOverrides = new Map(plan.records.filter(entry => entry.theme).map(entry => [entry.brandId, entry.theme]));
 
 const decodeDataUrl = value => {
   const match = String(value).match(/^data:([^;,]+)?(;base64)?,([\s\S]*)$/);
@@ -37,10 +40,36 @@ const decodeDataUrl = value => {
   return match[2] ? Buffer.from(match[3], 'base64') : Buffer.from(decodeURIComponent(match[3]));
 };
 
-async function download(url) {
+async function fetchResource(url, { headers = {}, maxBytes = 3 * 1024 * 1024 } = {}) {
+  const response = await fetch(url, {
+    redirect: 'follow',
+    headers: { 'user-agent': 'LogoYoinkBrandLibrary/1.0 (captured-candidate review)', ...headers },
+    signal: AbortSignal.timeout(10_000),
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const bytes = Buffer.from(await response.arrayBuffer());
+  if (bytes.length > maxBytes) throw new Error(`Response exceeds ${maxBytes} bytes.`);
+  return { bytes, url: response.url, status: response.status, headers: response.headers };
+}
+
+async function download(candidate, companyName) {
+  const url = candidate.url;
   const inline = decodeDataUrl(url);
   if (inline) return { bytes: inline, resolvedUrl: url };
-  if (url.startsWith('zip+')) throw new Error('Archive members must be staged by the extractor, not this helper.');
+  if (url.startsWith('zip+')) {
+    const separator = url.indexOf('#');
+    const archiveUrl = url.slice(4, separator);
+    const member = decodeURIComponent(url.slice(separator + 1));
+    const inspected = await inspectRemoteZip(archiveUrl, {
+      fetchResource,
+      companyName,
+      context: candidate.evidence?.semantic_text ?? member,
+      chain: candidate.provenance_chain ?? [],
+    });
+    const match = inspected.candidates.find(item => item.evidence?.archive_member === member);
+    if (!match?.rawBytes) throw new Error(`Archive member was not selected: ${member}`);
+    return { bytes: match.rawBytes, resolvedUrl: url };
+  }
   let response;
   for (let attempt = 0; attempt < 3; attempt++) {
     response = await fetch(url, {
@@ -99,7 +128,7 @@ for (const entry of normalizeOnly ? [] : plan.records) {
   }
   const captured = matches[entry.matchIndex ?? 0];
   try {
-    const downloaded = await download(captured.url);
+    const downloaded = await download(captured, record.brand.name);
     const validated = await extractor.validateCandidateBytes(captured, downloaded.bytes, {
       resolvedUrl: downloaded.resolvedUrl,
       status: 200,
@@ -118,7 +147,7 @@ for (const entry of normalizeOnly ? [] : plan.records) {
     const checkedAt = new Date().toISOString();
     const candidate = {
       role: 'logo',
-      theme: honestTheme(validated),
+      theme: entry.theme ?? honestTheme(validated),
       locale: 'global',
       representation: entry.representation ?? representation(validated, metadata.width, metadata.height),
       path: relativePath,
@@ -157,7 +186,7 @@ for (const record of report.records) {
       ? evidence.assets.logo
       : (evidence.candidates ?? []).find(candidate => candidate.url === staged.sourceUrl);
     if (!observed) continue;
-    staged.theme = honestTheme(observed);
+    staged.theme = themeOverrides.get(record.brand.id) ?? honestTheme(observed);
     if (observed.stacked_logo) staged.representation = 'stacked_lockup';
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
@@ -247,5 +276,59 @@ if (syncApproved) {
   manifest.generatedAt = new Date().toISOString();
   await writeJson(manifestPath, manifest);
   console.log(JSON.stringify({ syncedApprovedLogos: synced }, null, 2));
+}
+if (gapReportPath) {
+  const manifest = await readJson(resolve(root, 'manifest.json'));
+  const approved = new Map(manifest.brands.map(brand => [brand.id, brand]));
+  const gaps = [];
+  for (const record of report.records) {
+    const brand = approved.get(record.brand.id);
+    if (brand?.assets?.logo) continue;
+    let evidence = { candidates: [] };
+    try {
+      evidence = await readJson(resolve(root, 'runs', runId, 'evidence', `${record.brand.id}.json`));
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+    }
+    const wideCandidates = (evidence.candidates ?? []).filter(candidate =>
+      candidate.evidence?.eligible_roles?.includes('wide'));
+    const rejected = record.roles.logo?.status === 'rejected_after_visual_review';
+    const category = record.error ? 'blocked_or_unreachable'
+      : rejected ? 'rejected_after_visual_review'
+        : 'no_verified_company_name_candidate';
+    const reason = record.error ?? record.roles.logo?.reviewReason ??
+      'Full sweep and targeted saved-candidate pass produced no identity-correct company-name artwork suitable for approval.';
+    gaps.push({
+      brandId: record.brand.id,
+      name: record.brand.name,
+      domain: record.brand.domain,
+      homepage: record.homepage ?? record.brand.officialHomepage,
+      category,
+      reason,
+      evidenceCandidates: (evidence.candidates ?? []).length,
+      wideEvidenceCandidates: wideCandidates.length,
+      evidenceFile: `runs/${runId}/evidence/${record.brand.id}.json`,
+      nextAction: category === 'blocked_or_unreachable'
+        ? 'Retry the official newsroom, investor-relations, or brand-resource host; then check a manually resolved Wikimedia Commons file if the official host remains unavailable.'
+        : category === 'rejected_after_visual_review'
+          ? 'Do not reuse the rejected asset. Search the official media/brand portal for a current master wordmark or lockup, then use a manually resolved Commons file only if identity and currency can be verified.'
+          : 'Run a manual direct asset search against official press/brand pages, followed by a manually resolved Wikimedia Commons candidate if no first-party file is published.',
+    });
+  }
+  const categories = Object.fromEntries([...new Set(gaps.map(row => row.category))].sort().map(category =>
+    [category, gaps.filter(row => row.category === category).length]));
+  await writeJson(resolve(root, gapReportPath), {
+    schemaVersion: 1,
+    runId,
+    generatedAt: new Date().toISOString(),
+    scope: 'Baseline brands that had an approved icon but no approved company-name logo.',
+    policy: 'Symbols alone are not counted as company-name logos; no symbol-only exceptions were marked complete.',
+    attemptedBrands: report.records.length,
+    approvedLogosFromCohort: report.records.filter(record => approved.get(record.brand.id)?.assets?.logo).length,
+    remainingGaps: gaps.length,
+    categories,
+    gaps,
+  });
+  console.log(JSON.stringify({ gapReport: resolve(root, gapReportPath), remainingGaps: gaps.length, categories }, null, 2));
 }
 console.log(JSON.stringify({ staged: outcomes.filter(row => row.status === 'staged').length, failed: outcomes.filter(row => row.status === 'failed').length }, null, 2));
