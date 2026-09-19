@@ -1,0 +1,15 @@
+# Wordmark recovery review — 2026-09-14
+
+Compared baseline v0.3.0 (`b6c214b`) against a final single-pass default-API capture of 21 domains. The requested nine were Linear, Neon, PostHog, Nubank, Itaú, Inter, Netflix, Amazon and Revolut. The broader twelve were Stripe, GitHub, Slack, Anthropic, OpenAI, Vercel, Cloudflare, Wise, Monzo, Shopify, Figma and Notion.
+
+Visual review of actual captured bytes found genuine wordmarks/full lockups on 5/9 samples versus 3/9 before, and 17/21 overall versus 13/21. Correct compact brand icons improved from 6/9 to 9/9 in the sample. The final pass includes blocked Revolut with a cached icon only; an offline ranking control preserves its original wordmark on reachable baseline bytes. Earlier six-of-nine progress results are not the final live metric.
+
+Discovery now uses local component/accessibility labels, preserves bounded local SVG definitions, retains displayed official brand-page assets and can render one discovered same-site brand page. Ranking rejects conflicting brand labels, navigation/resource controls, unresolved SVG paint and compact symbols posing as full wordmarks. Measured contrast selects existing variants without recoloring. A bounded native CSS sprite crop preserves original bytes and geometry metadata. Blocked homepage requests can reach the existing public recovery stages with failure diagnostics intact.
+
+New genuine wordmarks were recovered for PostHog, Inter, Netflix and Notion. Neon no longer selects Databricks; PostHog no longer selects Home. Nubank keeps its nu symbol only as an icon. Monzo gets its standalone M; Notion no longer emits a blank sticker. Amazon still has no wordmark. Itaú and Revolut use cached icons in the final pass; OpenAI uses its public favicon and exact-domain Wikimedia wordmark after homepage denial. Dark-surface coverage is incomplete, and Inter's animated lettering can vary by frame.
+
+The browser request allowance increases from 80 to 300 per page, with a 12-second page deadline and at most two rendered pages. Its 8 MiB threshold counts declared response lengths, not strict actual transfer bytes. Failed conventional brand probes count toward the two-page deep budget. Median returned-result latency increased from 2.43 seconds (19 baseline results) to 5.70 seconds (21 final results), with access variability and different failure counts.
+
+`npm run check` passed all 429 tests, syntax/qualification checks, 500/800 fixture validation and local smoke. `git diff --check` passed. Ranking v12 remains unqualified by the historical frozen benchmark; these development-selected 21-domain observations do not establish broad performance.
+
+Reproduction helpers: `scripts/experiments/wordmark-review.mjs OUTPUT API_MODULE DOMAIN...` and `scripts/review/wordmark-comparison.mjs CAPTURE_ROOT` (expects `matched-before/` and `after/`). The external evidence packet includes a full report, per-domain results/original assets, seven before/after sheets, three theme sheets, visual labels and validation output. No publication, deployment or outreach was performed.
