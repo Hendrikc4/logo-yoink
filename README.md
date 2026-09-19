@@ -205,7 +205,7 @@ for measured comparisons and limitations.
 
 Add `--role logo` to download the preferred wordmark instead of the default icon-first pick.
 
-The CLI uses the bounded local browser by default. Add `--no-browser` for static-only extraction, `--jina` to opt into Jina, or `--all-fallbacks` to enable Jina plus the deeper first-party passes. Jina requires `JINA_API_KEY`.
+The CLI first checks the packaged, reviewed exact-domain brand library. Add `--live` to bypass it. On a library hit, live discovery runs only for a requested role or variant the approval does not cover. The CLI uses the bounded local browser for that fallback by default. Add `--no-browser` for static-only extraction, `--jina` to opt into Jina, or `--all-fallbacks` to enable Jina plus the deeper first-party passes. Jina requires `JINA_API_KEY`.
 
 ## Use the API
 
@@ -218,6 +218,8 @@ const result = await yoink('stripe.com');
 result.icon; // best compact mark, or null
 result.logo; // best wordmark, or null
 ```
+
+`yoink` checks reviewed artwork for an exact canonical domain or explicit verified alias before contacting the site. It never widens a match to an arbitrary subdomain, parent, or subsidiary. Use `{ library: false }` (or call the low-level `extractLogos` export) to force live discovery. Use `roles: ['icon']` or `roles: ['logo']` when only one canonical role is needed.
 
 Browser rendering is enabled by default. To force the fastest static-only path:
 
@@ -260,7 +262,7 @@ curl -sS http://127.0.0.1:4310/api/extract \
   -d '{"website":"stripe.com","preferences":{"icon":{"color":"white"},"logo":{"theme":"dark","background":"transparent"}}}'
 ```
 
-HTTP requests may likewise include `"linkedinFallback": true`,
+HTTP requests may likewise include `"roles": ["icon"]`, `"linkedinFallback": true`,
 `"removeBackground": true`, and `"upscale": {"width": 1024, "height": 1024}`.
 
 The server uses its local browser by default. Send `"scrapers": []` for static-only extraction, `"scrapers": ["browser"]` for local browser rendering, `"scrapers": ["jina"]` for Jina, or both names together. Jina must be configured by the server owner with `JINA_API_KEY` and `PUBLIC_DEMO_ALLOW_JINA=1`; clients never send that secret.
@@ -270,7 +272,7 @@ The demo and API use the same default-on Wikidata/Commons fallback. Add
 selection is independent; use `"scrapers": []` when the whole request must stay
 on the built-in direct-fetch path.
 
-Both `preferences.icon` and `preferences.logo` accept the same optional fields. `theme` accepts `any`, `light`, or `dark` and describes the surface the asset must work on, so `dark` prefers light artwork. `color` accepts `any`, `color`, `white`, or `black`. `background` accepts `any`, `transparent`, or `opaque`. Preferences are best-effort by default: a matching eligible asset wins when available, otherwise ranking falls back to the best eligible asset. Set `strict: true` on either role (or use CLI `--strict` for the selected role) to require exact known color and background values, plus sufficient measured contrast on the requested surface. Opaque artwork uses its own foreground/background contrast. The role is `null` when no candidate qualifies. `preferenceMatch` reports `exact`, `fallback`, or `unmatched` for each canonical role.
+Both `preferences.icon` and `preferences.logo` accept the same optional fields. `theme` accepts `any`, `light`, or `dark` and describes the surface the asset must work on, so `dark` prefers light artwork. `color` accepts `any`, `color`, `white`, or `black`. `background` accepts `any`, `transparent`, or `opaque`. `representation` accepts a value (or array) such as `wordmark`, `compact_wordmark`, or `stacked_lockup`. Preferences are best-effort by default: a matching eligible asset wins when available, otherwise ranking falls back to the best eligible asset. Set `strict: true` on either role (or use CLI `--strict` for the selected role) to require exact known color and background values, plus sufficient measured contrast on the requested surface. Opaque artwork uses its own foreground/background contrast. The role is `null` when no candidate qualifies. `preferenceMatch` reports `exact`, `fallback`, or `unmatched` for each canonical role.
 
 The response keeps canonical `assets.icon` and `assets.logo` selections and adds ordered `assetVariants.icon` and `assetVariants.logo` arrays. The selected asset is first. Additional entries must represent a distinct theme/color/background combination and clear `variantPolicy.minimumRoleScore` (currently 45, the medium-certainty boundary); delivery-size copies of the same artwork are not promoted as semantic variants. Every variant includes explicit metadata such as `{"theme":"dark","color":"white","background":"transparent"}` plus role-specific `certainty: { score, band }`.
 
@@ -289,7 +291,7 @@ abstain; no pixels or lettering are invented.
 
 Grouped `assetFamilies`, every ranked `candidate`, normalized `preferences`, and discovery `diagnostics` remain available. `diagnostics.scrapers` reports which scraper choices were enabled and which actually ran. The homepage uses the canonical variant arrays for its inline icon and wordmark selectors. “More assets” contains only other high-confidence families and excludes every family already represented by a selected-role variant.
 
-The simplest response fields are top-level `icon` and `logo`. They are aliases of `assets.icon` and `assets.logo`. For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available. The deprecated `selectedByRole.favicon` key independently reports the best favicon-sized legacy selection; it never changes canonical `assets.icon` or `assets.logo`. When no true icon qualifies, a valid favicon-role candidate may become the canonical icon fallback.
+The simplest response fields are top-level `icon` and `logo`. They are aliases of `assets.icon` and `assets.logo`. `selectedByRole.logo` reports the canonical logo. For compatibility, `selectedByRole.icon` and `selectedByRole.wide` remain available, but `wide` is `null` for representations explicitly marked `stacked_lockup` or `compact_wordmark`. The deprecated `selectedByRole.favicon` key independently reports the best favicon-sized legacy selection; it never changes canonical `assets.icon` or `assets.logo`. When no true icon qualifies, a valid favicon-role candidate may become the canonical icon fallback.
 
 ### Defaults at a glance
 

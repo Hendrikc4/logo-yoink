@@ -20,6 +20,7 @@
   },
   "files": [
     "api",
+    "brand-library/runtime",
     "public",
     "src",
     ".env.example",
@@ -29,6 +30,7 @@
   ],
   "scripts": {
     "postinstall": "node src/install-browser.mjs",
+    "prepack": "node scripts/build-approved-library-runtime.mjs",
     "setup": "npm install",
     "setup:linux": "npm install && npx playwright install --with-deps chromium",
     "setup:static": "node src/setup-static.mjs",
@@ -62,6 +64,7 @@
     "check:syntax": "node scripts/maintenance/check-syntax.mjs",
     "check": "npm run check:syntax && node scripts/maintenance/validate-benchmark-qualification.mjs && npm test && npm run smoke && npm run brands:verify && npm run brands:1000:verify && npm run brands:self-test",
     "fixtures:validate": "node scripts/maintenance/validate-fixtures.mjs"
+    ,"brands:runtime": "node scripts/build-approved-library-runtime.mjs"
     ,"brands:refresh": "node scripts/brand-library.mjs refresh"
     ,"brands:supplement": "node scripts/brand-library.mjs supplement"
     ,"brands:curate": "node scripts/brand-library.mjs curate"

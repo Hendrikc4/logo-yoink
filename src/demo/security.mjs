@@ -66,7 +66,7 @@ export function assertDemoRequestOrigin(request) {
 function validatePayload(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new DemoHttpError(400, 'Expected a JSON object.');
   const keys = Object.keys(value);
-  if (!keys.includes('website') || keys.some(key => !['website', 'preferences', 'scrapers', 'wikimediaFallback', 'linkedinFallback', 'linkedinCompanyUrl', 'removeBackground', 'upscale'].includes(key))) {
+  if (!keys.includes('website') || keys.some(key => !['website', 'roles', 'preferences', 'scrapers', 'wikimediaFallback', 'linkedinFallback', 'linkedinCompanyUrl', 'removeBackground', 'upscale'].includes(key))) {
     throw new DemoHttpError(400, 'The request contains an unsupported field.');
   }
   if (typeof value.website !== 'string') throw new DemoHttpError(400, 'Website must be a string.');
@@ -79,6 +79,10 @@ function validatePayload(value) {
     if (value.linkedinFallback !== undefined && typeof value.linkedinFallback !== 'boolean') throw new DemoHttpError(400, 'linkedinFallback must be a boolean.');
     if (value.linkedinCompanyUrl !== undefined && typeof value.linkedinCompanyUrl !== 'string') throw new DemoHttpError(400, 'linkedinCompanyUrl must be a string.');
     if (value.removeBackground !== undefined && typeof value.removeBackground !== 'boolean') throw new DemoHttpError(400, 'removeBackground must be a boolean.');
+    if (value.roles !== undefined && (!Array.isArray(value.roles) || value.roles.length < 1 ||
+        value.roles.some(role => !['icon', 'logo'].includes(role)))) {
+      throw new DemoHttpError(400, 'roles must contain only icon and/or logo.');
+    }
     normalizePostProcessing({ removeBackground: value.removeBackground, upscale: value.upscale });
     if (value.scrapers !== undefined) {
       if (!Array.isArray(value.scrapers)) throw new DemoHttpError(400, 'scrapers must be an array.');
@@ -88,6 +92,7 @@ function validatePayload(value) {
     return {
       website,
       preferences: normalizeAssetPreferences(value.preferences),
+      ...(value.roles === undefined ? {} : { roles: [...new Set(value.roles)] }),
       ...(value.scrapers === undefined ? {} : { scrapers: [...new Set(value.scrapers)] }),
       ...(value.wikimediaFallback === undefined ? {} : { wikimediaFallback: value.wikimediaFallback }),
       ...(value.linkedinFallback === undefined ? {} : { linkedinFallback: value.linkedinFallback }),

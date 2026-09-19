@@ -7,11 +7,17 @@ export interface AssetPreference {
   theme?: Theme;
   color?: Color;
   background?: Background;
+  /** Require one representation such as wordmark, compact_wordmark, or stacked_lockup. */
+  representation?: string | string[];
   /** Require exact known variants and sufficient contrast on a requested surface. Default: false. */
   strict?: boolean;
 }
 
 export interface YoinkOptions {
+  /** Return these canonical roles. Both roles are requested by default. */
+  roles?: ('icon' | 'logo')[];
+  /** Prefer the approved exact-domain library. Set false to force live discovery. Default: true. */
+  library?: boolean;
   /** Optional scraper fallbacks. Default: ["browser"]. Use [] for static-only. */
   scrapers?: Scraper[];
   /** Jina key used only when scrapers includes "jina". Defaults to JINA_API_KEY. */
@@ -84,5 +90,6 @@ export const DEFAULT_OPTIONS: Readonly<{
 
 export function yoink(website: string, options?: YoinkOptions): Promise<YoinkResult>;
 export function extractLogos(website: string, options?: Record<string, unknown>): Promise<YoinkResult>;
+export function extractLogosWithLibrary(website: string, options?: YoinkOptions): Promise<YoinkResult>;
 export function normalizeWebsite(website: string): { url: URL; domain: string };
 export default yoink;

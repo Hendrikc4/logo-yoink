@@ -1,6 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "buildCommand": "node scripts/build-approved-library-runtime.mjs",
   "outputDirectory": "public",
   "regions": ["iad1"],
   "rewrites": [
@@ -23,7 +24,10 @@
   ],
   "functions": {
     "api/extract.mjs": {
-      "includeFiles": "node_modules/@sparticuz/chromium/bin/**",
+      "includeFiles": [
+        "node_modules/@sparticuz/chromium/bin/**",
+        "brand-library/runtime/**"
+      ],
       "excludeFiles": "src/background-removal*.mjs",
       "maxDuration": 60
     }

@@ -42,6 +42,7 @@ const spaBundles = args.includes('--spa-bundles');
 const wikimediaFallback = !args.includes('--no-wikimedia-fallback');
 const bimi = args.includes('--bimi');
 const allFallbacks = args.includes('--all-fallbacks');
+const library = !args.includes('--live');
 const browser = allFallbacks || !args.includes('--no-browser');
 const jina = allFallbacks || args.includes('--jina');
 const removeBackground = args.includes('--remove-background');
@@ -60,7 +61,7 @@ if (!website || downloadIndex >= 0 && !downloadDirectory ||
     requestedRole && !['icon', 'logo', 'wide', 'favicon'].includes(requestedRole) ||
     upscaleFactor != null && (!Number.isFinite(upscaleFactor) || upscaleFactor <= 1 || upscaleFactor > 8) ||
     [upscaleWidth, upscaleHeight].some(value => value != null && (!Number.isInteger(value) || value < 1 || value > 8192))) {
-  console.error('Usage: logo-yoink <website> [--no-browser] [--jina] [--all-fallbacks] [--theme any|light|dark] [--background any|transparent|opaque] [--strict] [--role icon|logo] [--download <directory>] [--remove-background] [--upscale 2] [--width 1024] [--height 1024] [--linkedin-fallback] [--linkedin-company-url <url>] [--no-wikimedia-fallback] [--bimi]');
+  console.error('Usage: logo-yoink <website> [--live] [--no-browser] [--jina] [--all-fallbacks] [--theme any|light|dark] [--background any|transparent|opaque] [--strict] [--role icon|logo] [--download <directory>] [--remove-background] [--upscale 2] [--width 1024] [--height 1024] [--linkedin-fallback] [--linkedin-company-url <url>] [--no-wikimedia-fallback] [--bimi]');
   console.error('Setup local background removal: logo-yoink setup-background-removal');
   console.error('--remove-background is off by default; reuses a matching transparent source or runs the local CPU model with at most one retry. Originals are preserved.');
   process.exit(1);
@@ -75,6 +76,8 @@ try {
     spaBundles,
     wikimedia: wikimediaFallback,
     bimi,
+    library,
+    ...(requestedRole ? { roles: [preferenceRole] } : {}),
     removeBackground,
     ...(upscale == null ? {} : { upscale }),
     linkedinFallback,

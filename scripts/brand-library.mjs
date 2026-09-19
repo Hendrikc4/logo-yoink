@@ -80,7 +80,7 @@ async function refresh() {
     try {
       const evidencePath = resolve(runDir, 'evidence', `${brand.id}.json`);
       const reusedEvidence = has('--resume-run') && await exists(evidencePath);
-      const result = reusedEvidence ? await readJson(evidencePath) : await yoink(brand.domain);
+      const result = reusedEvidence ? await readJson(evidencePath) : await yoink(brand.domain, { library: false });
       if (reusedEvidence) {
         for (const role of ['icon','logo']) {
           const asset = result.assets?.[role];

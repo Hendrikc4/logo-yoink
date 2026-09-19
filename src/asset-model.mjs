@@ -14,18 +14,28 @@ export const DEFAULT_ASSET_PREFERENCES = Object.freeze({
 function normalizeRolePreferences(value, label) {
   const preference = value ?? {};
   if (typeof preference !== 'object' || Array.isArray(preference)) throw new Error(`${label} preferences must be an object.`);
-  if (Object.keys(preference).some(key => !['theme', 'color', 'background', 'strict'].includes(key))) {
-    throw new Error(`${label} preferences only support theme, color, background, and strict.`);
+  if (Object.keys(preference).some(key => !['theme', 'color', 'background', 'representation', 'strict'].includes(key))) {
+    throw new Error(`${label} preferences only support theme, color, background, representation, and strict.`);
   }
   const theme = preference.theme ?? 'any';
   const color = preference.color ?? 'any';
   const background = preference.background ?? 'any';
+  const representation = preference.representation;
   const strict = preference.strict ?? false;
   if (!THEMES.has(theme)) throw new Error(`${label} theme must be any, light, or dark.`);
   if (!COLORS.has(color)) throw new Error(`${label} color must be any, color, white, or black.`);
   if (!BACKGROUNDS.has(background)) throw new Error(`${label} background must be any, transparent, or opaque.`);
+  if (representation !== undefined &&
+      !(typeof representation === 'string' && representation.trim()) &&
+      !(Array.isArray(representation) && representation.length > 0 && representation.every(value => typeof value === 'string' && value.trim()))) {
+    throw new Error(`${label} representation must be a non-empty string or array of non-empty strings.`);
+  }
   if (typeof strict !== 'boolean') throw new Error(`${label} strict must be a boolean.`);
-  return { theme, color, background, ...(strict ? { strict: true } : {}) };
+  return {
+    theme, color, background,
+    ...(representation === undefined ? {} : { representation: Array.isArray(representation) ? [...new Set(representation)] : representation }),
+    ...(strict ? { strict: true } : {}),
+  };
 }
 
 export function normalizeAssetPreferences(value) {

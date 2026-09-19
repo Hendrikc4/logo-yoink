@@ -1,7 +1,9 @@
 import './load-env.mjs';
 import { extractLogos } from './extractor.mjs';
+import { extractLogosWithLibrary } from './approved-library.mjs';
 
 export { extractLogos, normalizeWebsite } from './extractor.mjs';
+export { extractLogosWithLibrary } from './approved-library.mjs';
 
 export const DEFAULT_OPTIONS = Object.freeze({
   scrapers: Object.freeze(['browser']),
@@ -35,7 +37,7 @@ export async function yoink(website, options = {}) {
     throw new Error('The Jina scraper was enabled, but no jinaApiKey or JINA_API_KEY was provided.');
   }
 
-  const result = await extractLogos(website, {
+  const result = await extractLogosWithLibrary(website, {
     ...options,
     browser: scrapers.includes('browser'),
     jinaApiKey: useJina ? jinaApiKey : null,

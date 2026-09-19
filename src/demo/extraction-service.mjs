@@ -1,4 +1,5 @@
-import { extractLogos, normalizeWebsite } from '../extractor.mjs';
+import { extractLogosWithLibrary } from '../approved-library.mjs';
+import { normalizeWebsite } from '../extractor.mjs';
 import { createSharedDemoAdmission } from './shared-admission.mjs';
 import {
   createDemoGuard,
@@ -27,7 +28,7 @@ export function createDemoExtractionService({
   environment = process.env,
   limits = demoLimits(environment),
   guard = createDemoGuard({ ...limits, environment }),
-  extract = extractLogos,
+  extract = extractLogosWithLibrary,
   normalize = normalizeWebsite,
   extractionOptions = () => publicDemoExtractionOptions(environment),
   allowBackgroundRemoval = false,
@@ -43,7 +44,7 @@ export function createDemoExtractionService({
         }
         await sharedAdmission(request);
         const target = normalize(body.website);
-        const options = { ...extractionOptions(), preferences: body.preferences };
+        const options = { ...extractionOptions(), preferences: body.preferences, ...(body.roles ? { roles: body.roles } : {}) };
         const requestedScrapers = body.scrapers ?? (options.browser ? ['browser'] : []);
         if (requestedScrapers.includes('browser') && !options.browser) {
           throw new DemoHttpError(400, 'The browser scraper is disabled on this server.');
@@ -59,7 +60,7 @@ export function createDemoExtractionService({
         if (body.linkedinCompanyUrl !== undefined) options.linkedinCompanyUrl = body.linkedinCompanyUrl;
         if (body.removeBackground !== undefined) options.removeBackground = body.removeBackground;
         if (body.upscale !== undefined) options.upscale = body.upscale;
-        const requestKey = `${target.url.href}\n${JSON.stringify(body.preferences)}\n${JSON.stringify(requestedScrapers)}\n${options.wikimediaFallback !== false}\n${JSON.stringify({ linkedinFallback: options.linkedinFallback, linkedinCompanyUrl: options.linkedinCompanyUrl, removeBackground: options.removeBackground, upscale: options.upscale })}`;
+        const requestKey = `${target.url.href}\n${JSON.stringify(body.roles)}\n${JSON.stringify(body.preferences)}\n${JSON.stringify(requestedScrapers)}\n${options.wikimediaFallback !== false}\n${JSON.stringify({ linkedinFallback: options.linkedinFallback, linkedinCompanyUrl: options.linkedinCompanyUrl, removeBackground: options.removeBackground, upscale: options.upscale })}`;
         const result = await guard.run(requestKey, () => extract(target.url.href, options));
         return {
           status: 200,
