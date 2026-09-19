@@ -93,7 +93,9 @@ test('blocked static HTML reaches browser recovery and preserves failed reachabi
     url: () => 'https://acme.test/', async close() {},
     async evaluate() { return [{ source: 'browser-inline-svg', kind: 'inline-svg', inlineSvg: svg, evidence: { theme: 'light', domRegion: 'header', homeLinked: true, ariaLabel: 'Acme logo', renderedBox: { width: 240, height: 50 } } }]; },
   };
-  const options = { fetchImpl: async () => new Response('', { status: 403 }), validateUrl: async value => new URL(value), browser: true, browserInstance: { async newPage() { return page; } }, cachedFavicon: false, wikimediaFallback: false, maxCandidates: 0 };
+  const context = { on() {}, async route() {}, async routeWebSocket() {}, async newPage() { return page; }, async close() {} };
+  const proxy = { server: 'http://127.0.0.1:1', stats: { bytes: 0, blocked: 0, limitHit: false }, async close() {} };
+  const options = { fetchImpl: async () => new Response('', { status: 403 }), validateUrl: async value => new URL(value), browser: true, browserInstance: { async newContext() { return context; } }, browserCreateEgressProxy: async () => proxy, cachedFavicon: false, wikimediaFallback: false, maxCandidates: 0 };
   const result = await extractLogos('https://acme.test/', options);
   assert.ok(result.assets.logo);
   assert.equal(result.diagnostics.homepageUnavailable, true);

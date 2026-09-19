@@ -765,7 +765,7 @@ export async function extractLogos(website, options = {}) {
       return outcome && outcome.status !== 404 && !outcome.skipped;
     })?.url ?? attempts[0].url;
     try {
-      const response = await fetchJinaHomepage(target, { apiKey: jinaApiKey, timeoutMs: Math.max(timeoutMs, 20_000), diagnostics: network, validateUrl: options.validateUrl ?? assertPublicUrl });
+      const response = await fetchJinaHomepage(target, { apiKey: jinaApiKey, timeoutMs: Math.max(timeoutMs, 20_000), diagnostics: network, fetchImpl: options.jinaFetchImpl, validateUrl: options.validateUrl ?? assertPublicUrl });
       if (!response.ok) {
         reachability.push({ url: target, via: 'jina', ok: false, status: response.status, failureKind: homepageFailureKind({ status: response.status }) });
       } else {
@@ -1054,6 +1054,7 @@ export async function extractLogos(website, options = {}) {
         timeoutMs: Math.min(12_000, timeoutMs),
         userAgent: options.userAgent,
         launchOptions: options.browserLaunchOptions,
+        createEgressProxy: options.browserCreateEgressProxy,
       });
       const previous = browserDiagnostics;
       browserDiagnostics = { ...rendered.diagnostics,

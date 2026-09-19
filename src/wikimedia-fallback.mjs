@@ -372,13 +372,6 @@ function websiteSearchQuery(domain) {
     .map(prefix => `P856=${prefix}${domain}*`).join('|')}`;
 }
 
-function websiteSearchQuery(domain) {
-  // This is candidate discovery only. Prefix hits can include product pages or
-  // lookalike domains and must still pass officialWebsiteEvidence below.
-  return `haswbstatement:${['http://', 'https://', 'http://www.', 'https://www.']
-    .map(prefix => `P856=${prefix}${domain}*`).join('|')}`;
-}
-
 function pagesFromCommons(payload) {
   return Array.isArray(payload?.query?.pages) ? payload.query.pages : [];
 }

@@ -93,6 +93,7 @@ test('mocked Jina timeouts preserve recovery while mixed Jina TLS failures remai
       // mocked and the key is synthetic. Jina receives no actual requests.
       const run = extractLogos('https://acme.test/', options({
         jinaApiKey: 'synthetic-test-key',
+        jinaFetchImpl: globalThis.fetch,
         wikimediaResolver: async () => { resolverCalls++; return { candidates: [candidate], diagnostics: { status: 'ok' } }; },
       }));
       if (failure === 'timeout') {
