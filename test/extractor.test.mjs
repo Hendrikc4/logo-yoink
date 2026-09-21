@@ -775,6 +775,53 @@ test('rejects social glyphs, inline controls, template marks, and content imager
   assert.equal(genericAssetReason(actualBodyLogo, 'Acme'), null);
 });
 
+test('rejects portfolio carousels, editorial cards, and photographic CSS backgrounds', () => {
+  const common = {
+    source: 'dom-img', source_page: 'https://acme.test/', width: 600, height: 200,
+    highResolution: true, scalable: false, bytes: 100,
+  };
+  const portfolio = {
+    ...common, url: 'https://cdn.test/daylight-mono.svg', scalable: true,
+    evidence: { semantic_text: 'portfolio-logo portfolio-item w-inline-block', class_tokens: ['portfolio-logo'], dom_region: 'body', home_linked: true, positive_token: true },
+  };
+  const investor = {
+    ...common, url: 'https://cdn.test/maple.png', width: 700, height: 700,
+    evidence: { semantic_text: 'image-investor link-investor collection-list', class_tokens: ['image-investor'], dom_region: 'body', home_linked: true },
+  };
+  const logoSlider = {
+    ...common, url: 'https://cdn.test/SurfAirMobility-Logo-Color.png', width: 1200, height: 371,
+    evidence: { semantic_text: 'mainLogoBox logoWhiteBox logoSliderBox unicornReelBlock', anchor_text: 'Surf Air', dom_region: 'body', home_linked: true },
+  };
+  const editorial = {
+    ...common, url: 'https://cdn.test/Add%20a%20heading.png', width: 1280, height: 854,
+    evidence: { semantic_text: 'blog7_image blog7_item podcast', alt: 'Building Your Personal Brand & Enjoying the Process', dom_region: 'header', positive_token: true },
+  };
+  const coverPhoto = {
+    ...common, source: 'browser-css-background', url: 'https://acme.test/analysts-in-office.jpg', width: 2000, height: 1333,
+    evidence: { dom_region: 'document', home_linked: true, rendered: true, css_background: { size: 'cover' } },
+  };
+  for (const item of [portfolio, investor, logoSlider, editorial, coverPhoto]) {
+    assert.match(genericAssetReason(item, 'Acme'), /portfolio|investor|customer|editorial|background/i);
+    assert.deepEqual(rankCandidates([item], { companyName: 'Acme' }).candidates[0].predicted_roles, []);
+  }
+
+  assert.equal(genericAssetReason({ ...portfolio, url: 'https://cdn.test/acme-logo.svg' }, 'Acme'), null);
+});
+
+test('rejects Google Sites product favicons and observed non-logo placeholders', () => {
+  const googleSites = {
+    source: 'html-icon', source_page: 'https://acme.test/',
+    url: 'https://www.gstatic.com/images/branding/productlogos/sites_2026/v3/ico/sites_2026_16dp.ico',
+    width: 16, height: 16, evidence: {},
+  };
+  assert.match(genericAssetReason(googleSites, 'Acme'), /Google Sites/);
+  assert.equal(genericAssetReason(googleSites, 'Google Sites'), null);
+
+  const candidate = hash => ({ source: 'html-icon', url: 'https://acme.test/favicon.ico', width: 48, height: 48, observed: { byte_hash: hash }, evidence: {} });
+  assert.match(genericAssetReason(candidate('9d65349352816684cde83cc0a600fb9fd3143ad36edc92c302853a9cacc947c2'), 'Nosara Capital'), /featureless/);
+  assert.match(genericAssetReason({ ...candidate('4433e6f81a29468d767fe877e25fc2b8ee08f7074dd8f7aaef13d6e96b78637e'), source: 'jina-screenshot' }, 'Millennium Technology Value Partners'), /broken-image/);
+});
+
 test('rejects square portrait photography despite incidental logo semantics', () => {
   const portrait = {
     source: 'dom-img', source_page: 'https://example.test/',

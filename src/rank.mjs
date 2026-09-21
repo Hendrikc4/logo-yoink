@@ -8,7 +8,7 @@ const SOURCE_WEIGHT = {
   manifest: 22, apple: 20, 'mask-icon': 20, bimi: 18, 'ms-tile': 17, 'html-icon': 16, 'jina-screenshot': 18, besticon: 12, 'google-favicon': 10, 'duckduckgo-favicon': 9, 'root-favicon': 5, 'social-banner': -30,
   'wikimedia-commons': 24, linkedin: 20,
 };
-const RANKING_VERSION = 12;
+const RANKING_VERSION = 13;
 export const ROLE_VARIANT_MIN_SCORE = 45;
 const DELIVERY_QUERY_PARAMS = new Set(['w', 'h', 'width', 'height', 'size', 's', 'dpr', 'q', 'quality', 'fit', 'resize', 'format', 'fm']);
 
@@ -68,6 +68,8 @@ const KNOWN_GENERIC_HASHES = new Map([
   ['242351f0a1c0aee2c1d819844cdb6334140058b4487b4bbe9477c3cc33707616', 'foreign RealReports app icon'],
   ['edf01f937bdf9c38ebcd30d84cb5acde5e2101e9c64c1c9b3a4a1351ea7886a0', 'foreign RealReports favicon'],
   ['c386396ec70db3608075b5fbfaac4ab1ccaa86ba05a68ab393ec551eb66c3e00', 'Create React App default logo'],
+  ['9d65349352816684cde83cc0a600fb9fd3143ad36edc92c302853a9cacc947c2', 'featureless solid-color favicon'],
+  ['4433e6f81a29468d767fe877e25fc2b8ee08f7074dd8f7aaef13d6e96b78637e', 'broken-image placeholder screenshot'],
 ]);
 const KNOWN_HASH_OWNERS = new Map([
   ['33c1436f8c40ca2582d091c449fccc34ed9bf73f02526c5fdef44f4f06c6321b', ['wix']],
@@ -225,6 +227,8 @@ export function genericAssetReason(item, companyName = '') {
   if (!companyWords.has('linktree') && /\/\/[^/]*(?:linktr\.ee|linktree\.com)\//i.test(url)) return 'Linktree platform asset';
   if (!companyWords.has('webroker') && /\/\/[^/]*webroker\.vc\//i.test(url)) return 'foreign Webroker asset';
   if (!companyWords.has('wix') && /static\.parastorage\.com\/client\/pfavico\.ico(?:[?#]|$)/i.test(url)) return 'Wix default favicon';
+  if (!(companyWords.has('google') && companyWords.has('sites')) &&
+    /(?:^|\.)gstatic\.com\/images\/branding\/productlogos\/sites(?:_|\/)/i.test(url)) return 'Google Sites product favicon';
   if (!companyWords.has('matomo') && !companyWords.has('piwik') && (
     /(?:^|[-_\s])default-piwik-logo(?:$|[-_\s])/i.test(semantic) ||
     /\/plugins\/morpheus\/images\/logo\.svg(?:\?matomo)?$/i.test(url) ||
@@ -257,12 +261,20 @@ export function genericAssetReason(item, companyName = '') {
     /(?:customer[-_\s]*logos?|partner[-_\s]*logos?)/i.test(`${semantic} ${url}`) && !companyAgreement(item, companyName || item.evidence?.company_name)) return 'customer or partner logo';
   if (/(?:investor|sponsor|backed(?:[-_\s]*by)?)[-_\s]*(?:logos?|marks?)/i.test(structuralSemantic) &&
     !companyAgreement(item, companyName || item.evidence?.company_name)) return 'investor, sponsor, or backer logo';
+  const collectionLogo = /(?:portfolio[-_\s]*logo|image[-_\s]*investor|logo[-_\s]*(?:slider|carousel|grid|list|reel)|(?:portfolio|investor|customer|partner)[-_\s]*(?:slider|carousel|grid|list|reel))/i.test(structuralSemantic);
+  if (collectionLogo && !companyAgreement(item, companyName || item.evidence?.company_name)) return 'portfolio, investor, or customer collection logo';
   if (explicitForeignOrganization(item, companyName)) return 'foreign organization named in product or partner context';
   if (/sloane[-_\s]*logo[-_\s]*2\.webp/i.test(url)) return 'photographic avatar mislabeled as logo';
 
   if (portraitBodyPhoto(item, companyName)) return 'portrait or team-member body photo';
 
   const ratio = item.width && item.height ? item.width / item.height : null;
+  if (item.source === 'browser-css-background' && item.evidence?.css_background?.size === 'cover' &&
+    !companyAgreement(item, companyName || item.evidence?.company_name) &&
+    !/(?:logo|wordmark|brandmark|logomark)/i.test(`${semantic} ${url}`)) return 'photographic cover background';
+  if (['dom-img', 'dom-picture', 'browser-img'].includes(item.source) && !item.scalable && ratio >= 1.2 &&
+    /(?:blog\d*[-_\s]*(?:image|item)|podcast|article[-_\s]*(?:image|card)|post[-_\s]*(?:image|card))/i.test(structuralSemantic) &&
+    !companyAgreement(item, companyName || item.evidence?.company_name)) return 'editorial card image';
   const rasterBodyImage = ['dom-img', 'dom-picture', 'browser-img'].includes(item.source) && !item.scalable &&
     item.evidence?.dom_region === 'body' && !item.evidence?.home_linked;
   const explicitBrandAsset = /(?:logo|wordmark|brandmark|logomark)/i.test(`${semantic} ${url}`) && !/logo[-_\s]*editor/i.test(semantic);
