@@ -742,6 +742,13 @@ test('rejects foreign site-builder branding without rejecting the builder itself
   };
   assert.match(genericAssetReason(lovableBadge, 'Acme'), /foreign platform brand: lovable/);
   assert.equal(genericAssetReason({ ...lovableBadge, source_page: 'https://lovable.dev/' }, 'Lovable'), null);
+  const linktreeWordmark = {
+    ...lovableBadge,
+    url: 'data:image/svg+xml;base64,PHN2Zy8+',
+    evidence: { aria_label: 'Linktree', positive_token: true, dom_region: 'header', home_linked: true },
+  };
+  assert.match(genericAssetReason(linktreeWordmark, 'Bias Capital'), /foreign platform brand: linktree/);
+  assert.equal(genericAssetReason(linktreeWordmark, 'Linktree'), null);
 });
 
 test('rejects social glyphs, inline controls, template marks, and content imagery', () => {
@@ -814,6 +821,31 @@ test('rejects observed application defaults and repurposed-site assets by exact 
   assert.equal(genericAssetReason(candidate('edf01f937bdf9c38ebcd30d84cb5acde5e2101e9c64c1c9b3a4a1351ea7886a0'), 'RealReports'), null);
   const godaddy = { ...candidate('custom'), url: 'https://img1.wsimg.com/isteam/ip/static/pwa-app/logo-default.png/:/rs=w:512,h:512,m' };
   assert.match(genericAssetReason(godaddy, 'Trustiu'), /GoDaddy default/);
+  const cachedGodaddy = { ...candidate('44ea786ef9f9ad7f0ee37ab3166580818da36d2cd2721f5a480cc8a06d801fa2'),
+    source: 'google-favicon', url: 'https://www.google.com/s2/favicons?domain=trustiu.test&sz=256' };
+  assert.match(genericAssetReason(cachedGodaddy, 'Trustiu'), /GoDaddy default/);
+  assert.equal(genericAssetReason(cachedGodaddy, 'GoDaddy'), null);
+  assert.match(genericAssetReason({ ...cachedGodaddy, source_page: 'https://www.godaddy.com/' }, 'Trustiu'), /GoDaddy default/);
+  const knownDefaults = [
+    ['d16bb0afe5ac5cce15d89019f26bc1bd1da37113f1a8b774e18c6de49b430f2c', /GoDaddy default/],
+    ['dd821076a9b03adc2173c93956226aea3d92482d7578fc4339c5d3a2e9c24586', /Lovable default/],
+    ['96e9f247c99d912b5c46373026bd8750cc6dacd26611d863dd0b8505d88dd269', /Lovable default/],
+    ['9870e3d8e05b0f0bf3c3563ce488eeb87aff1d21616b5d8a5b0ee23aa7cef17a', /Linktree platform/],
+    ['6145b4226ccadc061830848ae1800c11500f034160c3c5e56ef61eff574f1cc6', /Linktree platform/],
+    ['59a72ac38371c721c2d2dab69672db12e18c8725cd737c495610097be71d99f4', /navigation chevron/],
+    ['a4656f447c4a2834bf158b3039e8b862c562ebca6a7965dfe07326666fbb15e2', /Ventures template/],
+    ['46a21e8e823a69f0b8fa4e8ea555084ba51c783495e46c2d77e6710c5a72d09d', /Webroker/],
+    ['4ed3d14e1c15c60175ae52239ac6c7ea1571a96c338591ffa8cd94f28a854131', /Hi Ventures/],
+    ['640060ea159c3bc12278d971649623851edc08372c654eebb80931514fcf5672', /Hi Ventures/],
+    ['d0e530c681a8d123fd3e5baee024e82b2390ed56c4141cfb14b0478e578726e2', /Webroker/],
+    ['ff9dc7c1d18ca438ba873a07a954f96a2f4a3826221f27467ce577ace1811ba1', /Webroker/],
+  ];
+  for (const [hash, reason] of knownDefaults) assert.match(genericAssetReason(candidate(hash), 'Acme'), reason);
+  assert.equal(genericAssetReason(candidate(knownDefaults[1][0]), 'Lovable'), null);
+  assert.equal(genericAssetReason(candidate(knownDefaults[3][0]), 'Linktree'), null);
+  assert.equal(genericAssetReason(candidate(knownDefaults[7][0]), 'Webroker'), null);
+  assert.equal(genericAssetReason(candidate(knownDefaults[8][0]), 'Hi Ventures'), null);
+  assert.equal(genericAssetReason(candidate(knownDefaults[10][0]), 'Webroker'), null);
 });
 
 test('rejects a non-home-linked foreign named logo but keeps the company logo', () => {

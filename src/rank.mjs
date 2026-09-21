@@ -40,10 +40,26 @@ const AUTHORITATIVE_SOURCES = ['schema', 'og-logo', 'microdata'];
 const FAVICON_SOURCES = ['manifest', 'apple', 'mask-icon', 'bimi', 'ms-tile', 'html-icon', 'besticon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon'];
 const DECLARED_ICON_SOURCES = new Set(['manifest', 'apple', 'mask-icon', 'ms-tile', 'html-icon', 'google-favicon', 'duckduckgo-favicon', 'root-favicon']);
 const DECLARED_ICON_MIN_SCORE = 49;
-const PLATFORM_NAMES = ['namecheap', 'matomo', 'piwik', 'wix', 'vercel', 'lovable', 'webflow', 'squarespace', 'shopify', 'godaddy', 'netlify', 'framer'];
+const PLATFORM_NAMES = ['namecheap', 'matomo', 'piwik', 'wix', 'vercel', 'lovable', 'linktree', 'webflow', 'squarespace', 'shopify', 'godaddy', 'netlify', 'framer'];
 const KNOWN_GENERIC_HASHES = new Map([
   ['33c1436f8c40ca2582d091c449fccc34ed9bf73f02526c5fdef44f4f06c6321b', 'Wix default favicon'],
   ['c965a500f698483526faf92ac286047cecd825608cd1d83276de392b30a13a83', 'WordPress default favicon'],
+  ['44ea786ef9f9ad7f0ee37ab3166580818da36d2cd2721f5a480cc8a06d801fa2', 'GoDaddy default PWA logo'],
+  ['d16bb0afe5ac5cce15d89019f26bc1bd1da37113f1a8b774e18c6de49b430f2c', 'GoDaddy default PWA logo'],
+  ['dd821076a9b03adc2173c93956226aea3d92482d7578fc4339c5d3a2e9c24586', 'Lovable default favicon'],
+  ['85ccc869f50ab06a59664b1f629708078f56effc094bc916689da45ab0eb2af1', 'Lovable default favicon'],
+  ['96e9f247c99d912b5c46373026bd8750cc6dacd26611d863dd0b8505d88dd269', 'Lovable default favicon'],
+  ['9870e3d8e05b0f0bf3c3563ce488eeb87aff1d21616b5d8a5b0ee23aa7cef17a', 'Linktree platform wordmark'],
+  ['6145b4226ccadc061830848ae1800c11500f034160c3c5e56ef61eff574f1cc6', 'Linktree platform icon'],
+  ['59a72ac38371c721c2d2dab69672db12e18c8725cd737c495610097be71d99f4', 'generic navigation chevron'],
+  ['53da184dcf880dd59a24af9e351c14dfa894d38c7b028db9947c66db90dc9b52', 'generic navigation chevron'],
+  ['1b1cbbf5585cb2a01c1829b79242c080a09cb463e637698824fe697458300db9', 'generic navigation chevron'],
+  ['a4656f447c4a2834bf158b3039e8b862c562ebca6a7965dfe07326666fbb15e2', 'generic Ventures template wordmark'],
+  ['4ed3d14e1c15c60175ae52239ac6c7ea1571a96c338591ffa8cd94f28a854131', 'foreign Hi Ventures logo'],
+  ['46a21e8e823a69f0b8fa4e8ea555084ba51c783495e46c2d77e6710c5a72d09d', 'foreign Webroker logo'],
+  ['640060ea159c3bc12278d971649623851edc08372c654eebb80931514fcf5672', 'foreign Hi Ventures logo'],
+  ['d0e530c681a8d123fd3e5baee024e82b2390ed56c4141cfb14b0478e578726e2', 'foreign Webroker favicon'],
+  ['ff9dc7c1d18ca438ba873a07a954f96a2f4a3826221f27467ce577ace1811ba1', 'foreign Webroker favicon'],
   ['9ea4f4da7050c0cc408926f6a39c253624e9babb1d43c7977cd821445a60b461', 'Create React App default logo'],
   ['dddd3a41217d3acee3effdec02946e4a26eba182c5994398e7d9dde4d585cebe', 'repurposed casino favicon'],
   ['788f0397eb26c7151af4afc25d5478ef692b39c10035774158b500b187b4a431', 'photographic avatar mislabeled as logo'],
@@ -56,6 +72,18 @@ const KNOWN_GENERIC_HASHES = new Map([
 const KNOWN_HASH_OWNERS = new Map([
   ['33c1436f8c40ca2582d091c449fccc34ed9bf73f02526c5fdef44f4f06c6321b', ['wix']],
   ['c965a500f698483526faf92ac286047cecd825608cd1d83276de392b30a13a83', ['wordpress']],
+  ['44ea786ef9f9ad7f0ee37ab3166580818da36d2cd2721f5a480cc8a06d801fa2', ['godaddy']],
+  ['d16bb0afe5ac5cce15d89019f26bc1bd1da37113f1a8b774e18c6de49b430f2c', ['godaddy']],
+  ['dd821076a9b03adc2173c93956226aea3d92482d7578fc4339c5d3a2e9c24586', ['lovable']],
+  ['85ccc869f50ab06a59664b1f629708078f56effc094bc916689da45ab0eb2af1', ['lovable']],
+  ['96e9f247c99d912b5c46373026bd8750cc6dacd26611d863dd0b8505d88dd269', ['lovable']],
+  ['9870e3d8e05b0f0bf3c3563ce488eeb87aff1d21616b5d8a5b0ee23aa7cef17a', ['linktree']],
+  ['6145b4226ccadc061830848ae1800c11500f034160c3c5e56ef61eff574f1cc6', ['linktree']],
+  ['4ed3d14e1c15c60175ae52239ac6c7ea1571a96c338591ffa8cd94f28a854131', ['hi']],
+  ['46a21e8e823a69f0b8fa4e8ea555084ba51c783495e46c2d77e6710c5a72d09d', ['webroker']],
+  ['640060ea159c3bc12278d971649623851edc08372c654eebb80931514fcf5672', ['hi']],
+  ['d0e530c681a8d123fd3e5baee024e82b2390ed56c4141cfb14b0478e578726e2', ['webroker']],
+  ['ff9dc7c1d18ca438ba873a07a954f96a2f4a3826221f27467ce577ace1811ba1', ['webroker']],
   ['9ea4f4da7050c0cc408926f6a39c253624e9babb1d43c7977cd821445a60b461', ['react']],
   ['dddd3a41217d3acee3effdec02946e4a26eba182c5994398e7d9dde4d585cebe', ['leon', 'casino']],
   ['3646840f40e10d4b14e9d62f41087a09ffe0384628d093f47337580305b18353', ['realreports']],
@@ -64,7 +92,14 @@ const KNOWN_HASH_OWNERS = new Map([
   ['edf01f937bdf9c38ebcd30d84cb5acde5e2101e9c64c1c9b3a4a1351ea7886a0', ['realreports']],
   ['c386396ec70db3608075b5fbfaac4ab1ccaa86ba05a68ab393ec551eb66c3e00', ['react']],
 ]);
-const GENERIC_OWNER_DOMAINS = { wix: ['wix.com'], wordpress: ['wordpress.org', 'wordpress.com'] };
+const GENERIC_OWNER_DOMAINS = {
+  godaddy: ['godaddy.com'],
+  linktree: ['linktr.ee', 'linktree.com'],
+  lovable: ['lovable.dev'],
+  webroker: ['webroker.vc'],
+  wix: ['wix.com'],
+  wordpress: ['wordpress.org', 'wordpress.com'],
+};
 
 function isGenericAssetOwner(owners, requestedWords, sourcePage) {
   if (!Array.isArray(owners)) return false;
@@ -180,11 +215,15 @@ export function genericAssetReason(item, companyName = '') {
       !isGenericAssetOwner(visualGeneric.owners, requestedCompanyWords, item.source_page)) {
     return `${visualGeneric.reason} via ${visualGeneric.method ?? 'visual fingerprint'}`;
   }
+  const accessibleBrand = normalizedWords(`${item.evidence?.alt ?? ''} ${item.evidence?.aria_label ?? ''}`);
   const foreignPlatform = PLATFORM_NAMES.find(platform => !companyWords.has(platform) && (
     new RegExp(`(?:^|[^a-z0-9])${platform}(?:[\\s_-]+)(?:logo|favicon|brand)(?:[^a-z0-9]|$)`, 'i').test(semantic) ||
-    new RegExp(`(?:powered|hosted|secured)[\\s_-]+by[\\s_-]+${platform}(?:[^a-z0-9]|$)`, 'i').test(semantic)
+    new RegExp(`(?:powered|hosted|secured)[\\s_-]+by[\\s_-]+${platform}(?:[^a-z0-9]|$)`, 'i').test(semantic) ||
+    accessibleBrand.length === 1 && accessibleBrand[0] === platform
   ));
   if (foreignPlatform) return `foreign platform brand: ${foreignPlatform}`;
+  if (!companyWords.has('linktree') && /\/\/[^/]*(?:linktr\.ee|linktree\.com)\//i.test(url)) return 'Linktree platform asset';
+  if (!companyWords.has('webroker') && /\/\/[^/]*webroker\.vc\//i.test(url)) return 'foreign Webroker asset';
   if (!companyWords.has('wix') && /static\.parastorage\.com\/client\/pfavico\.ico(?:[?#]|$)/i.test(url)) return 'Wix default favicon';
   if (!companyWords.has('matomo') && !companyWords.has('piwik') && (
     /(?:^|[-_\s])default-piwik-logo(?:$|[-_\s])/i.test(semantic) ||
