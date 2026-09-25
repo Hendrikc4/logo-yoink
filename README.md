@@ -459,7 +459,7 @@ The server binds to localhost by default. Static requests pin a validated public
 
 The demo keeps small JSON-only requests, origin checks, local rate/concurrency limits, request coalescing and generic errors. On Vercel it additionally checks shared per-client and aggregate firewall counters before extraction, failing closed if either rule is absent or unavailable. Jina requires both `PUBLIC_DEMO_ALLOW_JINA=1` and a request opting in. Local single-instance installs need no distributed service.
 
-**Before deploying these changes**, configure the firewall rules and hosting limits in [the deployment security guide](docs/deployment-security.md). Vercel counters are regional, the local two-extraction cap is per instance, and CPU/memory isolation remains a hosting responsibility. These repository changes do not activate firewall rules or deploy the updated application.
+The production Vercel project has the two shared limiter rules described in the [deployment security guide](docs/deployment-security.md). Vercel counters are regional, the local two-extraction cap is per instance, and CPU/memory isolation remains a hosting responsibility. Other deployments must configure the rules before enabling the public demo.
 
 </details>
 

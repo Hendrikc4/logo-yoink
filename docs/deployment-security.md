@@ -14,6 +14,8 @@ The September 2026 audit is preserved in `security_best_practices_report.md`. Th
 
 Read-only inspection on 12 September 2026 found the project's Pro plan using Fluid Compute, the `iad1` function region, elastic concurrency and exposed system environment variables. The firewall API returned `active: null`, `draft: null`, `versions: []`: there was no active custom WAF configuration. Existing platform DDoS protection is separate. No Vercel deployment or firewall activation was performed.
 
+On 24 September 2026, the production project activated both rules below after the public demo returned 503 with no active firewall configuration. The firewall API reported both rules active and valid, and a production request for `example.com` returned 200. A private `RATE_LIMIT_SECRET` was added to Production and Preview; deployments need to be rebuilt to use newly added environment variables.
+
 Create and activate these two **@vercel/firewall** rate-limit rules on the project (the condition is the Rate limit ID, not a request-controlled header):
 
 | Rate limit ID | Algorithm | Limit | Window | Result when exceeded |
