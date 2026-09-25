@@ -27,6 +27,77 @@ test('matches resized and re-encoded Wix and WordPress generic favicon fixtures'
   }
 });
 
+test('recognizes GoDaddy default branding when a favicon cache hides the provider URL', () => {
+  const fingerprint = {
+    version: 1,
+    hash: 'ffc3818199c3e7ff',
+    raster: 'AQEBAQEBAQEBAQMDAgMBAQEEBAcEBAQBAQUDBAUDBQEBBAcBAgYEAQEBBwUEBwEBAQEBAwMBAQEBAQEBAQEBAQ==',
+    color: [24, 48, 48],
+  };
+  const match = matchGenericFingerprint(fingerprint);
+  assert.equal(match.family, 'godaddy');
+  assert.equal(match.method, 'normalized-pixel-fingerprint');
+
+  const cached = {
+    source: 'google-favicon',
+    url: 'https://www.google.com/s2/favicons?domain=acme.test&sz=256',
+    resolved_url: 'https://t1.gstatic.com/faviconV2?url=http://acme.test&size=256',
+    observed: {
+      byte_hash: '44ea786ef9f9ad7f0ee37ab3166580818da36d2cd2721f5a480cc8a06d801fa2',
+      generic_asset: match,
+    },
+    width: 180,
+    height: 180,
+    highResolution: true,
+    bytes: 2323,
+    evidence: { element: 'cached-favicon', provider: 'google' },
+  };
+  const ranked = rankCandidates([cached], { companyName: 'Acme' });
+  assert.match(genericAssetReason(cached, 'Acme'), /GoDaddy default PWA logo/);
+  assert.deepEqual(ranked.candidates[0].predicted_roles, []);
+  assert.equal(ranked.selectedByRole.icon, null);
+  assert.equal(ranked.selectedByRole.favicon, null);
+
+  assert.equal(genericAssetReason(cached, 'GoDaddy'), null);
+  assert.equal(genericAssetReason({ ...cached, source_page: 'https://www.godaddy.com/' }), null);
+});
+
+test('recognizes re-encoded Lovable and Linktree platform defaults without blocking their owners', () => {
+  const cases = [
+    {
+      family: 'lovable', owner: 'Lovable', reason: /Lovable default favicon/,
+      fingerprint: { version: 1, hash: '60f0f8fcfefffe7c', color: [224, 136, 160],
+        raster: 'DQgHCQ4PDw8IBwgICg8PDwcHBwgJDw8PBwcHBwcJCg8IBwcHBwYGCQgIBwcHBwcICAgIBwcHCAoJCAgICAgKDg==' },
+    },
+    {
+      family: 'linktree', owner: 'Linktree', reason: /Linktree platform wordmark/,
+      fingerprint: { version: 1, hash: '0001017f6f6dfe00', color: [176, 176, 248],
+        raster: 'Dw8PDw8PDw4MDQ0PDw8NCAwNCwsPDw4FCwUJBgUHBgILCQULBwYIBwsJBQsICAsKBgkHCAgHCQwLDQ0MDQ0NDg==' },
+    },
+  ];
+  for (const item of cases) {
+    const match = matchGenericFingerprint(item.fingerprint);
+    assert.equal(match.family, item.family);
+    const candidate = { source: 'html-icon', url: 'https://acme.test/favicon.png', observed: { generic_asset: match }, evidence: {} };
+    assert.match(genericAssetReason(candidate, 'Acme'), item.reason);
+    assert.equal(genericAssetReason(candidate, item.owner), null);
+  }
+});
+
+test('recognizes repeated template marks and foreign portfolio branding after recoloring', () => {
+  const cases = [
+    { family: 'template-chevron', company: 'EnerTech Capital', fingerprint: { version: 1, hash: '0081c3e77e3c1800', color: [255, 248, 255], raster: 'Dw8PDw8PDw8PDw8PDw8PDw4ODw8PDw4ODw8ODw8ODw8PDw8ODg8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw==' } },
+    { family: 'hi-ventures', company: 'ALLVP', fingerprint: { version: 1, hash: '3c42a5bdadad423c', color: [176, 176, 176], raster: 'Dw0GBwcGDQ8NBg4PDw4HDQYPBQ8PCQ8HBw8EBwgGDwcHDwUOBwUPBwYPCA4JCA8GDQYPDw8PBw0PDQcHBwYNDw==' } },
+  ];
+  for (const item of cases) {
+    const match = matchGenericFingerprint(item.fingerprint);
+    assert.equal(match.family, item.family);
+    assert.match(genericAssetReason({ observed: { generic_asset: match }, evidence: {} }, item.company), /chevron|Hi Ventures/);
+  }
+  const hiMatch = matchGenericFingerprint(cases[1].fingerprint);
+  assert.equal(genericAssetReason({ observed: { generic_asset: hiMatch }, evidence: {} }, 'Hi Ventures'), null);
+});
+
 test('visual generic matches reject non-owners and retain owner assets with diagnostics', async () => {
   const cases = [
     { match: await visualMatch('wix-64.webp'), url: 'https://static.wixstatic.com/media/default.webp', owner: 'Wix' },

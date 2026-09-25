@@ -742,6 +742,13 @@ test('rejects foreign site-builder branding without rejecting the builder itself
   };
   assert.match(genericAssetReason(lovableBadge, 'Acme'), /foreign platform brand: lovable/);
   assert.equal(genericAssetReason({ ...lovableBadge, source_page: 'https://lovable.dev/' }, 'Lovable'), null);
+  const linktreeWordmark = {
+    ...lovableBadge,
+    url: 'data:image/svg+xml;base64,PHN2Zy8+',
+    evidence: { aria_label: 'Linktree', positive_token: true, dom_region: 'header', home_linked: true },
+  };
+  assert.match(genericAssetReason(linktreeWordmark, 'Bias Capital'), /foreign platform brand: linktree/);
+  assert.equal(genericAssetReason(linktreeWordmark, 'Linktree'), null);
 });
 
 test('rejects social glyphs, inline controls, template marks, and content imagery', () => {
@@ -766,6 +773,53 @@ test('rejects social glyphs, inline controls, template marks, and content imager
 
   const actualBodyLogo = { ...common, url: 'https://example.test/acme-logo.png', width: 512, height: 512, evidence: common.evidence };
   assert.equal(genericAssetReason(actualBodyLogo, 'Acme'), null);
+});
+
+test('rejects portfolio carousels, editorial cards, and photographic CSS backgrounds', () => {
+  const common = {
+    source: 'dom-img', source_page: 'https://acme.test/', width: 600, height: 200,
+    highResolution: true, scalable: false, bytes: 100,
+  };
+  const portfolio = {
+    ...common, url: 'https://cdn.test/daylight-mono.svg', scalable: true,
+    evidence: { semantic_text: 'portfolio-logo portfolio-item w-inline-block', class_tokens: ['portfolio-logo'], dom_region: 'body', home_linked: true, positive_token: true },
+  };
+  const investor = {
+    ...common, url: 'https://cdn.test/maple.png', width: 700, height: 700,
+    evidence: { semantic_text: 'image-investor link-investor collection-list', class_tokens: ['image-investor'], dom_region: 'body', home_linked: true },
+  };
+  const logoSlider = {
+    ...common, url: 'https://cdn.test/SurfAirMobility-Logo-Color.png', width: 1200, height: 371,
+    evidence: { semantic_text: 'mainLogoBox logoWhiteBox logoSliderBox unicornReelBlock', anchor_text: 'Surf Air', dom_region: 'body', home_linked: true },
+  };
+  const editorial = {
+    ...common, url: 'https://cdn.test/Add%20a%20heading.png', width: 1280, height: 854,
+    evidence: { semantic_text: 'blog7_image blog7_item podcast', alt: 'Building Your Personal Brand & Enjoying the Process', dom_region: 'header', positive_token: true },
+  };
+  const coverPhoto = {
+    ...common, source: 'browser-css-background', url: 'https://acme.test/analysts-in-office.jpg', width: 2000, height: 1333,
+    evidence: { dom_region: 'document', home_linked: true, rendered: true, css_background: { size: 'cover' } },
+  };
+  for (const item of [portfolio, investor, logoSlider, editorial, coverPhoto]) {
+    assert.match(genericAssetReason(item, 'Acme'), /portfolio|investor|customer|editorial|background/i);
+    assert.deepEqual(rankCandidates([item], { companyName: 'Acme' }).candidates[0].predicted_roles, []);
+  }
+
+  assert.equal(genericAssetReason({ ...portfolio, url: 'https://cdn.test/acme-logo.svg' }, 'Acme'), null);
+});
+
+test('rejects Google Sites product favicons and observed non-logo placeholders', () => {
+  const googleSites = {
+    source: 'html-icon', source_page: 'https://acme.test/',
+    url: 'https://www.gstatic.com/images/branding/productlogos/sites_2026/v3/ico/sites_2026_16dp.ico',
+    width: 16, height: 16, evidence: {},
+  };
+  assert.match(genericAssetReason(googleSites, 'Acme'), /Google Sites/);
+  assert.equal(genericAssetReason(googleSites, 'Google Sites'), null);
+
+  const candidate = hash => ({ source: 'html-icon', url: 'https://acme.test/favicon.ico', width: 48, height: 48, observed: { byte_hash: hash }, evidence: {} });
+  assert.match(genericAssetReason(candidate('9d65349352816684cde83cc0a600fb9fd3143ad36edc92c302853a9cacc947c2'), 'Nosara Capital'), /featureless/);
+  assert.match(genericAssetReason({ ...candidate('4433e6f81a29468d767fe877e25fc2b8ee08f7074dd8f7aaef13d6e96b78637e'), source: 'jina-screenshot' }, 'Millennium Technology Value Partners'), /broken-image/);
 });
 
 test('rejects square portrait photography despite incidental logo semantics', () => {
@@ -814,6 +868,31 @@ test('rejects observed application defaults and repurposed-site assets by exact 
   assert.equal(genericAssetReason(candidate('edf01f937bdf9c38ebcd30d84cb5acde5e2101e9c64c1c9b3a4a1351ea7886a0'), 'RealReports'), null);
   const godaddy = { ...candidate('custom'), url: 'https://img1.wsimg.com/isteam/ip/static/pwa-app/logo-default.png/:/rs=w:512,h:512,m' };
   assert.match(genericAssetReason(godaddy, 'Trustiu'), /GoDaddy default/);
+  const cachedGodaddy = { ...candidate('44ea786ef9f9ad7f0ee37ab3166580818da36d2cd2721f5a480cc8a06d801fa2'),
+    source: 'google-favicon', url: 'https://www.google.com/s2/favicons?domain=trustiu.test&sz=256' };
+  assert.match(genericAssetReason(cachedGodaddy, 'Trustiu'), /GoDaddy default/);
+  assert.equal(genericAssetReason(cachedGodaddy, 'GoDaddy'), null);
+  assert.match(genericAssetReason({ ...cachedGodaddy, source_page: 'https://www.godaddy.com/' }, 'Trustiu'), /GoDaddy default/);
+  const knownDefaults = [
+    ['d16bb0afe5ac5cce15d89019f26bc1bd1da37113f1a8b774e18c6de49b430f2c', /GoDaddy default/],
+    ['dd821076a9b03adc2173c93956226aea3d92482d7578fc4339c5d3a2e9c24586', /Lovable default/],
+    ['96e9f247c99d912b5c46373026bd8750cc6dacd26611d863dd0b8505d88dd269', /Lovable default/],
+    ['9870e3d8e05b0f0bf3c3563ce488eeb87aff1d21616b5d8a5b0ee23aa7cef17a', /Linktree platform/],
+    ['6145b4226ccadc061830848ae1800c11500f034160c3c5e56ef61eff574f1cc6', /Linktree platform/],
+    ['59a72ac38371c721c2d2dab69672db12e18c8725cd737c495610097be71d99f4', /navigation chevron/],
+    ['a4656f447c4a2834bf158b3039e8b862c562ebca6a7965dfe07326666fbb15e2', /Ventures template/],
+    ['46a21e8e823a69f0b8fa4e8ea555084ba51c783495e46c2d77e6710c5a72d09d', /Webroker/],
+    ['4ed3d14e1c15c60175ae52239ac6c7ea1571a96c338591ffa8cd94f28a854131', /Hi Ventures/],
+    ['640060ea159c3bc12278d971649623851edc08372c654eebb80931514fcf5672', /Hi Ventures/],
+    ['d0e530c681a8d123fd3e5baee024e82b2390ed56c4141cfb14b0478e578726e2', /Webroker/],
+    ['ff9dc7c1d18ca438ba873a07a954f96a2f4a3826221f27467ce577ace1811ba1', /Webroker/],
+  ];
+  for (const [hash, reason] of knownDefaults) assert.match(genericAssetReason(candidate(hash), 'Acme'), reason);
+  assert.equal(genericAssetReason(candidate(knownDefaults[1][0]), 'Lovable'), null);
+  assert.equal(genericAssetReason(candidate(knownDefaults[3][0]), 'Linktree'), null);
+  assert.equal(genericAssetReason(candidate(knownDefaults[7][0]), 'Webroker'), null);
+  assert.equal(genericAssetReason(candidate(knownDefaults[8][0]), 'Hi Ventures'), null);
+  assert.equal(genericAssetReason(candidate(knownDefaults[10][0]), 'Webroker'), null);
 });
 
 test('rejects a non-home-linked foreign named logo but keeps the company logo', () => {

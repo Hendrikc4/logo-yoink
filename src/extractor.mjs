@@ -825,7 +825,10 @@ export async function extractLogos(website, options = {}) {
   const unique = queueSelection?.chosen ?? rankedUnique.slice(0, budget);
   const validatedRaw = (await mapConcurrent(unique, 6, item => validateCandidate(item, timeoutMs, network, maxImageBytes))).filter(Boolean);
   let validated = dedupeBytes(validatedRaw);
-  const rankValidated = () => rankCandidates(applyBlockedRecoverySafety(validated, blockedRecovery), { companyName: options.companyName, preferences });
+  // Always retain the requested hostname as identity context. A redirect to a parking,
+  // hosting, or profile provider must not make that provider's own logo eligible.
+  const rankingCompanyName = options.companyName || normalized.domain.split('.')[0];
+  const rankValidated = () => rankCandidates(applyBlockedRecoverySafety(validated, blockedRecovery), { companyName: rankingCompanyName, preferences });
   const contentStats = { boxes: 0, bimiSafetyBoxes: 0 };
   await attachContentBoxes(validated, options.contentBoundingWide, options.companyName, contentStats);
   await attachTinySuitability(validated);

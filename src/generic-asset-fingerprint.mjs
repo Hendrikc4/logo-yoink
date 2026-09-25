@@ -7,6 +7,17 @@ const HASH_EDGE = 8;
 const GENERIC_FINGERPRINTS = [
   { family: 'wix', reason: 'Wix default favicon', owners: ['wix'], hash: '0000007e7e000000', color: [232, 232, 232], raster: 'Dw8PDw8PDw8PDw8PDw8PDw8ODg4ODg4PDwkECQkICQ8PBwkHCQgJDw8ODw4ODg4PDw8PDw8PDw8PDw8PDw8PDw==' },
   { family: 'wordpress', reason: 'WordPress default favicon', owners: ['wordpress'], hash: '187c34b5d75a5a18', color: [176, 168, 168], raster: 'Dw4MCQkMDg8OCQQEBAUMDgwNBgoKBg8MCQwHBg0ECwkJCAsGDQYICQwFDgcJCwYMDgoMBwUNCg4PDgwJCQwODw==' },
+  { family: 'godaddy', reason: 'GoDaddy default PWA logo', owners: ['godaddy'], hash: 'ffc3818199c3e7ff', color: [24, 48, 48], raster: 'AQEBAQEBAQEBAQMDAgMBAQEEBAcEBAQBAQUDBAUDBQEBBAcBAgYEAQEBBwUEBwEBAQEBAwMBAQEBAQEBAQEBAQ==' },
+  { family: 'godaddy', reason: 'GoDaddy default PWA logo', owners: ['godaddy'], hash: '66dbb1ada5666618', color: [176, 240, 240], raster: 'Dw0NDg4NDQ8NDQ4LDQ4NDQwPDQ0PDw8MDA8MDw0LDwwMDg0PDg0ODA4MDQ8PDQwODw0LDg4LDQ8PDw4NDQ4PDw==' },
+  { family: 'lovable', reason: 'Lovable default favicon', owners: ['lovable'], hash: '60f0f8fcfefffe7c', color: [224, 136, 160], raster: 'DQgHCQ4PDw8IBwgICg8PDwcHBwgJDw8PBwcHBwcJCg8IBwcHBwYGCQgIBwcHBwcICAgIBwcHCAoJCAgICAgKDg==' },
+  { family: 'lovable', reason: 'Lovable default favicon', owners: ['lovable'], hash: '0030383c3e3e0000', color: [240, 216, 224], raster: 'Dw8PDw8PDw8PDwsKDg8PDw8OBwgKDw8PDw4JBwgKDg8PDgoJCAgLDw8OCAgJCQ0PDw8ODg4ODw8PDw8PDw8PDw==' },
+  { family: 'linktree', reason: 'Linktree platform wordmark', owners: ['linktree'], hash: '0001017f6f6dfe00', color: [176, 176, 248], raster: 'Dw8PDw8PDw4MDQ0PDw8NCAwNCwsPDw4FCwUJBgUHBgILCQULBwYIBwsJBQsICAsKBgkHCAgHCQwLDQ0MDQ0NDg==' },
+  { family: 'linktree', reason: 'Linktree platform icon', owners: ['linktree'], hash: '00183c3c3c181800', color: [72, 200, 88], raster: 'DgsLCwsLCw4LCwsJCQsLCwsLBwMDBwsLCwoDAAADCgsLCwcFBQcLCwsLCgcHCgsLCwsLCQkLCwsOCwsLCwsLDg==' },
+  { family: 'template-chevron', reason: 'generic navigation chevron', owners: [], hash: '0081c3e77e3c1800', color: [255, 248, 255], raster: 'Dw8PDw8PDw8PDw8PDw8PDw4ODw8PDw4ODw8ODw8ODw8PDw8ODg8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw==' },
+  { family: 'template-chevron', reason: 'generic navigation chevron', owners: [], hash: '0000c3663c180000', color: [248, 248, 248], raster: 'Dw8PDw8PDw8PDw8PDw8PDw0ODw8PDw4MDwwODw8ODA8PDwwODgwPDw8PDwwMDw8PDw8PDw8PDw8PDw8PDw8PDw==' },
+  { family: 'hi-ventures', reason: 'foreign Hi Ventures logo', owners: ['hi'], hash: '3c42a5bdadad423c', color: [176, 176, 176], raster: 'Dw0GBwcGDQ8NBg4PDw4HDQYPBQ8PCQ8HBw8EBwgGDwcHDwUOBwUPBwYPCA4JCA8GDQYPDw8PBw0PDQcHBwYNDw==' },
+  { family: 'hi-ventures', reason: 'foreign Hi Ventures logo', owners: ['hi'], hash: '186666bdad6e6618', color: [200, 200, 200], raster: 'Dw8OCgoODw8PCwgNDQgLDw4ICg4PCwgOCg0IBwkJDQoKDQgNBwgNCg4IDA4LDAgODwsIDQ0ICw8PDw4KCg4PDw==' },
+  { family: 'webroker', reason: 'foreign Webroker favicon', owners: ['webroker'], hash: 'f7092384a4e3c9f7', color: [16, 56, 88], raster: 'AAAAAwMDAAAHBAQDAwQEAQoFAwMEAwIDAQkKCQQCAwMAAwIGBQIDAwADAwMEAwIDAAEEAwMDBAEAAAADAwMAAA==' },
 ].map(entry => ({ ...entry, pixels: Buffer.from(entry.raster, 'base64'), bits: BigInt(`0x${entry.hash}`) }));
 
 function bitCount64(value) {
