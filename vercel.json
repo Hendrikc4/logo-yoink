@@ -24,10 +24,7 @@
   ],
   "functions": {
     "api/extract.mjs": {
-      "includeFiles": [
-        "node_modules/@sparticuz/chromium/bin/**",
-        "brand-library/runtime/**"
-      ],
+      "includeFiles": "../brand-library/runtime/**",
       "excludeFiles": "src/background-removal*.mjs",
       "maxDuration": 60
     }
