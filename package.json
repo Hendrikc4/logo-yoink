@@ -11,7 +11,7 @@
   "exports": {
     "./generic-assets": {
       "types": "./src/generic-assets.d.ts",
-      "import": "./src/generic-assets.mjs"
+      "default": "./src/generic-assets.mjs"
     },
     ".": {
       "types": "./src/index.d.ts",

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import sharp from 'sharp';
+import { createRequire } from 'node:module';
 import catalog from '../src/reviewed-generic-assets.json' with { type: 'json' };
 import { genericAssetRejection, identifyGenericAsset } from '../src/generic-assets.mjs';
 import { genericAssetReason } from '../src/rank.mjs';
@@ -43,4 +44,8 @@ test('hosted customer subdomains never inherit platform ownership', async () => 
     assert.equal(await genericAssetRejection(bytes, entry.ownerDomains[0]), null);
     assert.equal(await genericAssetRejection(bytes, `www.${entry.ownerDomains[0]}`), null);
   }
+});
+
+test('shared catalog entry point loads from CommonJS as well as ESM', () => {
+  assert.equal(typeof createRequire(import.meta.url)('logo-yoink/generic-assets').identifyGenericAsset, 'function');
 });
