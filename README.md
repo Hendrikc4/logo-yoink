@@ -470,3 +470,11 @@ The production Vercel project has the two shared limiter rules described in the 
 <p align="center"><strong>Happy yoinkin’.</strong></p>
 
 Released under the [MIT License](LICENSE).
+
+The generic-asset filter includes a reviewed catalog of platform defaults and interface
+controls (107 exact hashes, plus bounded visual fingerprints for resized or re-encoded
+variants). Recognized owners retain their own logos by domain. Ambiguous triangles and
+plain circles are excluded from the global catalog. The shared `logo-yoink/generic-assets`
+entry point exposes the same rejection gate for provider and cache integrations; it
+examines image content without blocking favicon proxy endpoints or stripping their
+company-identifying query parameters.

@@ -9,6 +9,10 @@
     "url": "git+https://github.com/Hendrikc4/logo-yoink.git"
   },
   "exports": {
+    "./generic-assets": {
+      "types": "./src/generic-assets.d.ts",
+      "import": "./src/generic-assets.mjs"
+    },
     ".": {
       "types": "./src/index.d.ts",
       "import": "./src/index.mjs"

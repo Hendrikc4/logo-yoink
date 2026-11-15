@@ -1,0 +1,2501 @@
+[
+  {
+    "sha256": "7e511b468a8b8522354a4dbcdc4cac212a5c930fa0dddbff2a7e5ff9992760f2",
+    "family": "godaddy",
+    "reason": "GoDaddy default or foreign platform logo",
+    "owners": [
+      "godaddy"
+    ],
+    "ownerDomains": [
+      "godaddy.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "66dbb1ada5666618",
+      "raster": "Dw0MDg4MDQ8MDQ4LDA4NDAsPDQ0PDw8MCw8LDwwLDwwMDgwPDg0ODA4LDA8PDAsODw0LDg4LDQ8PDw4NDQ4PDw==",
+      "color": [
+        192,
+        232,
+        232
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 1,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "37e60dd272a25e958198e59a29739e8be5622cb0e55d05a6b0ef3fcba91ba344",
+    "family": "godaddy",
+    "reason": "GoDaddy default or foreign platform logo",
+    "owners": [
+      "godaddy"
+    ],
+    "ownerDomains": [
+      "godaddy.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "24dbb1ada5666618",
+      "raster": "Dw0NDg4NDQ8NDQ4LDA4NDQwPDQ0PDw8MDA8MDwwLDwwMDg0PDg0ODA4LDA8PDAsODw0LDg4LDQ8PDw4NDQ4PDw==",
+      "color": [
+        176,
+        240,
+        240
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 23,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "e7962be8750b252eff0efe844b0408f3f5106a52841668f4f5d7c598a7028414",
+    "family": "godaddy",
+    "reason": "GoDaddy default or foreign platform logo",
+    "owners": [
+      "godaddy"
+    ],
+    "ownerDomains": [
+      "godaddy.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ffcb818199c3e7ff",
+      "raster": "AQEBAQEBAQEBAQMCAgMBAQEEBAcEBAQBAQUCBAUDBQEBBAYCAgYEAQEBBwUECAEBAQEBAwMBAQEBAQEBAQEBAQ==",
+      "color": [
+        24,
+        48,
+        48
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 25,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "2dae774fb517e9105313ea57e8d41e241a5cdfd79f6d1430b672a1fa457740d3",
+    "family": "godaddy",
+    "reason": "GoDaddy default or foreign platform logo",
+    "owners": [
+      "godaddy"
+    ],
+    "ownerDomains": [
+      "godaddy.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "66dbb1ade7666618",
+      "raster": "DwwMDQ0MDA8MDA0KDA4MCwoPDAwPDg8LCw8KDwwKDgsLDQwPDQwNCw0KDA8PDAoNDwwKDQ0KDA8PDw4MDA4PDw==",
+      "color": [
+        184,
+        224,
+        224
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 95,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "39d06ad8505d569c26e3ed20350ae8d7c5224b9426740310a27e80af8ef5b0df",
+    "family": "lovable",
+    "reason": "Lovable default or foreign platform logo",
+    "owners": [
+      "lovable"
+    ],
+    "ownerDomains": [
+      "lovable.dev"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "60f0f0f8fefffefe",
+      "raster": "DgkICw8PDw8JBwgICw8PDwcHBwgKDw8PCAcHBwgKCw8IBwcHBwYGCggICAcHBwcICAgICAgHCAoJCAcHBwgJDg==",
+      "color": [
+        224,
+        136,
+        160
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 3,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "58cc69ee0ba08d252941cdaf6ba72e4a1459f8617da3fdd3636b94c9a5e7ceeb",
+    "family": "wordpress",
+    "reason": "WordPress default or foreign platform logo",
+    "owners": [
+      "wordpress",
+      "wordpress"
+    ],
+    "ownerDomains": [
+      "wordpress.com",
+      "wordpress.org"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187c24b5d75a5a18",
+      "raster": "Dw4MCgoMDg8OCwYGBgcNDgwOBwsLBw8MCg0ICA4GDAkKCgsIDgcJCQwHDggKCwgMDgoMCAcOCg4PDg0KCQ0ODw==",
+      "color": [
+        144,
+        192,
+        216
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 6,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "0ad29f83c8dfbf1d931889b1892be054a33e5efb63277d40412ff8c9a0a26bcf",
+    "family": "wordpress",
+    "reason": "WordPress default or foreign platform logo",
+    "owners": [
+      "wordpress",
+      "wordpress"
+    ],
+    "ownerDomains": [
+      "wordpress.com",
+      "wordpress.org"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ffc381818181c3ff",
+      "raster": "BQUFBQUFBQUFBQgICAgFBQUJCAgICwkFBQoMCAsJCgUFCA0IDQgIBQUICgoKCggFBQUJCgkJBQUFBQUFBQUFBQ==",
+      "color": [
+        96,
+        120,
+        240
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 14,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "6349de2ede768bf8aeb40a37b0771540e25717130bf14d4c7b7e48964d884685",
+    "family": "wordpress",
+    "reason": "WordPress default or foreign platform logo",
+    "owners": [
+      "wordpress",
+      "wordpress"
+    ],
+    "ownerDomains": [
+      "wordpress.com",
+      "wordpress.org"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187c3cb5d75a5a18",
+      "raster": "Dw4MCQkMDg8OCgUEBAUMDgwNBgoKBg8LCQwHBg0ECwkJCAsGDQYICQwFDgcJCwcLDgoMBwUOCg4PDgwJCQwODw==",
+      "color": [
+        176,
+        176,
+        168
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 105,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "7cd4fbb139c8f915dacb84dbb91c898c8fc6ab512c82e3931d2086ca785d56e7",
+    "family": "wordpress",
+    "reason": "WordPress default or foreign platform logo",
+    "owners": [
+      "wordpress",
+      "wordpress"
+    ],
+    "ownerDomains": [
+      "wordpress.com",
+      "wordpress.org"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187c24b5d75a5a18",
+      "raster": "Dw4MCwsMDg8OCwgICAkNDgwOCQwMCQ8MCg0KCQ4IDAoKCgwKDgkKCgwJDgoLDAkMDgsNCgkOCw4PDgwKCgwODw==",
+      "color": [
+        136,
+        208,
+        232
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 161,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "cf3928d1d52292438e9bd0e242adf137594ed6233032a92d098d23152ff687f2",
+    "family": "webflow",
+    "reason": "Webflow default or foreign platform logo",
+    "owners": [
+      "webflow"
+    ],
+    "ownerDomains": [
+      "webflow.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ffffc3c3c3d7ffff",
+      "raster": "AwMDAwMDAwMDAwMDAwMDAwMDBwUFBwQDAwMNDQ0NAwMDAw0NDgcDAwMDBgQHAwMDAwMDAwMDAwMDAwMDAwMDAw==",
+      "color": [
+        72,
+        80,
+        80
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 9,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "9fadd13c2a0d2d98b218a4af5daeb47be022614e3e49501a0790e9729e2ad880",
+    "family": "webflow",
+    "reason": "Webflow default or foreign platform logo",
+    "owners": [
+      "webflow"
+    ],
+    "ownerDomains": [
+      "webflow.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ff81a5bdbda981ff",
+      "raster": "CgoKCgoKCgoKDw8PDw8PCwoOCgwMCwwLCg0IBwcGDgsKDQcHBgoPCwoOCw0KDg8LCg8PDw8PDwsKCwsLCwsLCg==",
+      "color": [
+        160,
+        200,
+        248
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 52,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "93ae1d6cc3429063704ed341602e3b000175e7b91a71f9de5b8773bd15f31c4d",
+    "family": "webflow",
+    "reason": "Webflow default or foreign platform logo",
+    "owners": [
+      "webflow"
+    ],
+    "ownerDomains": [
+      "webflow.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "fffff3c3c3c7ffff",
+      "raster": "AwMDAwMDAwMDAwMDAwMDAwMDBAMEBAMDAwMLCQoKAwMDAwkKDQcDAwMDBQQGAwMDAwMDAwMDAwMDAwMDAwMDAw==",
+      "color": [
+        64,
+        72,
+        72
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 84,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "974647522495bf61fe39f3bb4cc4394a282ea56b80febfe9c74815b8d8b937ef",
+    "family": "wix",
+    "reason": "Wix default or foreign platform logo",
+    "owners": [
+      "wix"
+    ],
+    "ownerDomains": [
+      "wix.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000fdfbfb7d0000",
+      "raster": "Dw8PDw8PDw8PDw8PDw8PDwsMCwsLCw4KBwcHBwcOBAoIBgcHBw4ECg0MDAwLCw4KDw8PDw8PDw8PDw8PDw8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 18,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "29fc37202e432201080c901c363d8e21fc5998048b32da026b3a3964c9962fde",
+    "family": "wix",
+    "reason": "Wix default or foreign platform logo",
+    "owners": [
+      "wix"
+    ],
+    "ownerDomains": [
+      "wix.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000007e7e000000",
+      "raster": "Dw8PDw8PDw8PDw8PDw8PDw8ODg4ODg4PDwkECQkICQ8PBwkHCQgJDw8ODw4ODg4PDw8PDw8PDw8PDw8PDw8PDw==",
+      "color": [
+        232,
+        232,
+        232
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 29,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "b640a6d42b8cab731de18cbc295f5f2287c9aac146f5cd72aa976c4870393548",
+    "family": "framer",
+    "reason": "Framer default or foreign platform logo",
+    "owners": [
+      "framer"
+    ],
+    "ownerDomains": [
+      "framer.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3e1e1e787c7c3010",
+      "raster": "DwsBAAAABA8PDwsBAAAEDw8MCwcEBAcPDwQAAAQODw8PBAAAAAQODw8HAAAICAwPDw8GAA8PDw8PDw8GDw8PDw==",
+      "color": [
+        152,
+        152,
+        152
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 21,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "c60fd5fb41129b4b58395140a20ade4c31bf40ea8d241f5cfd756c526cca4cbd",
+    "family": "framer",
+    "reason": "Framer default or foreign platform logo",
+    "owners": [
+      "framer"
+    ],
+    "ownerDomains": [
+      "framer.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3e1e1e787c7c3010",
+      "raster": "Dw0JCQkJCw8PDw0JCQkLDw8ODQwKCwwPDwsJCQsPDw8PCwkJCQsPDw8MCQkMDA4PDw8LCQ8PDw8PDw8LDw8PDw==",
+      "color": [
+        216,
+        216,
+        216
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 114,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "77531b6b32f5fb2dda21dcf0b58d0e77af7d07a152c068751d155d08110a3603",
+    "family": "vercel-v0",
+    "reason": "Vercel v0 default or foreign platform logo",
+    "owners": [
+      "v0",
+      "v0",
+      "vercel"
+    ],
+    "ownerDomains": [
+      "v0.dev",
+      "v0.app",
+      "vercel.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "fffff381c1e3ffff",
+      "raster": "AAAAAAAAAAAAAAAAAAAAAAAAAAADBQEAAAUFCAcKCAAAAAgLDQYHAAAAAAMDBQEAAAAAAAAAAAAAAAAAAAAAAA==",
+      "color": [
+        32,
+        32,
+        32
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 39,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "70a313405d90805b90ef1e3dfe0d9ba5ff3bc453c89f738c611cc5e3f9ef6092",
+    "family": "spaceship",
+    "reason": "Spaceship default or foreign platform logo",
+    "owners": [
+      "spaceship"
+    ],
+    "ownerDomains": [
+      "spaceship.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00183c3c7effff00",
+      "raster": "Dw8PDAwPDw8PDw4FBQ0PDw8PCAUFCA8PDwwFBQUFDA8PBgUFBQUGDwoFBQUFBQUKBgUGCAgGBQUMDA8PDw8MDA==",
+      "color": [
+        152,
+        168,
+        255
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 8,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "3ef0bba87243bd44875ee9ba5654097d048d4b751753a8beda9fcbc480830264",
+    "family": "spaceship",
+    "reason": "Spaceship default or foreign platform logo",
+    "owners": [
+      "spaceship"
+    ],
+    "ownerDomains": [
+      "spaceship.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00183c3c7effff00",
+      "raster": "Dw8PDQwPDw8PDw4FBQ0PDw8PCAUFCA8PDwwFBQUFDA8PBgUFBQUGDwoFBQUFBQUKBgUFCAgGBQUMDA8PDw8MDA==",
+      "color": [
+        152,
+        168,
+        255
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 24,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "8b1a90113ae5cb531d56488d84ded79436b71e0751fa7d2531db5f3b596ae614",
+    "family": "highdomains",
+    "reason": "HighDomains default or foreign platform logo",
+    "owners": [
+      "highdomains"
+    ],
+    "ownerDomains": [
+      "highdomains.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "7effffffffffff7e",
+      "raster": "CwYGBgYGBgoGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYKBgYGBgYGCg==",
+      "color": [
+        255,
+        64,
+        8
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 19,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "ad245a93d44ffff66d564e85418427df75c2d8a2560d4e75250e60d6ab52f138",
+    "family": "brandbucket",
+    "reason": "BrandBucket default or foreign platform logo",
+    "owners": [
+      "brandbucket"
+    ],
+    "ownerDomains": [
+      "brandbucket.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "30303c3e3e3e1c08",
+      "raster": "DwwICw8PDw8PDQoIDw8PDw8NCwgHCw8PDw0LCAUGDA8PDQsIBgYJDw8NDAgHBwoPDw4NCwkKDQ8PDw4MDA0PDw==",
+      "color": [
+        240,
+        200,
+        184
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 66,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "020814491ec8fcee1ebd78c388860e564c6351775d7e6e4c6622c5c8f1811177",
+    "family": "carrd",
+    "reason": "Carrd default or foreign platform logo",
+    "owners": [
+      "carrd"
+    ],
+    "ownerDomains": [
+      "carrd.co"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "18766bdfdf5b6e3c",
+      "raster": "Dw0GAgIGDQ8NAwIEBgIDDQYCBggEBgIGAgIMAgICAgICAgwCAgICAgYCCgYEBwIFDQMCBgYCAg0PDQYCAgUNDw==",
+      "color": [
+        96,
+        96,
+        104
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 11,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "1704856dece137ab7eb2d50abac1f65abb18d2f0084f9e059f7a1ae3ac7f4f91",
+    "family": "vite",
+    "reason": "Vite default or foreign platform logo",
+    "owners": [
+      "vite",
+      "vitejs"
+    ],
+    "ownerDomains": [
+      "vite.dev",
+      "vitejs.dev"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00e77e7e3c3c1818",
+      "raster": "Dw8PDg0NDw8MCwsMDAsJCQ4KCQwMDAgNDwsJCgsKCQ8PDggICwgODw8PCwcJCg8PDw8PBwcODw8PDw8MCw8PDw==",
+      "color": [
+        224,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 33,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "13055374512c19a1283faed5ffa496b18c354288a544c8d6a178c4696be0807b",
+    "family": "bootstrap",
+    "reason": "Bootstrap default or foreign platform logo",
+    "owners": [
+      "getbootstrap"
+    ],
+    "ownerDomains": [
+      "getbootstrap.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "7ec7c3c3c3c3c77e",
+      "raster": "CQQEBAQEBAgEBAYHBwUEBAQEDQkJDAQEBAQNBwgLBAQEBA0HCA0EBAQEDQcHDQQEBAQICQkGBAQIBAQEBAQECA==",
+      "color": [
+        120,
+        96,
+        152
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 49,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "30f97314fe70ce99b6e4c5855dbea667239dc9396a4c9d5d080449aac656c5f7",
+    "family": "github",
+    "reason": "GitHub default or foreign platform logo",
+    "owners": [
+      "github"
+    ],
+    "ownerDomains": [
+      "github.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "e7c3a53c3c9999ff",
+      "raster": "AgIDBgYDAgICBg4PDw4GAgMOBQYGBQ8DBw0CAgICDQcIDQICAgINCAQNCgMDCg8EAggKAwQPCQICAgUDAwUCAg==",
+      "color": [
+        104,
+        104,
+        104
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 45,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "dfda741cb96b675950d0a5ecdb604f43fc73a506584a725e6dc8d4e306b90b88",
+    "family": "angular",
+    "reason": "Angular default or foreign platform logo",
+    "owners": [
+      "angular",
+      "angular"
+    ],
+    "ownerDomains": [
+      "angular.dev",
+      "angular.io"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187ee766425a7e18",
+      "raster": "Dw4JBQUJDg8IAwMGBgMDCAgDAwsLAwMICQMFCgoFAwkLAwoNDQoDCwwEDAMDDAQMDggEAwMECA4PDw0GBg0PDw==",
+      "color": [
+        232,
+        112,
+        136
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 87,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "f0904a5c5a975be9be13b3606a553b3f3ed8d582fa47c59a70bc2769ec107bb0",
+    "family": "astro",
+    "reason": "Astro default or foreign platform logo",
+    "owners": [
+      "astro"
+    ],
+    "ownerDomains": [
+      "astro.build"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c3c3c7e66001800",
+      "raster": "Dw8JAAAJDw8PDwMAAAMPDw8MAAUFAAwPDwcACgoABw8PAgQODgQDDw8PCwsMDA8PDw8LBQEMDw8PDw8MCw8PDw==",
+      "color": [
+        176,
+        176,
+        176
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 124,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "198700ada549c28ee931a180f2e8fd66a8b69a10f13dcb47d1371935ff69f560",
+    "family": "cloudflare",
+    "reason": "Cloudflare default or foreign platform logo",
+    "owners": [
+      "cloudflare"
+    ],
+    "ownerDomains": [
+      "cloudflare.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ffffe3818081ffff",
+      "raster": "CAcHBwcHBwgHBwcHBwcHBwcHBwsNCQcHBwgNDw8OCgcIDg4ODQoOCggJCQkJCQkIBwcHBwcHBwcIBwcHBwcHCA==",
+      "color": [
+        255,
+        120,
+        64
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 103,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "963587ed5117655bf14957563552f855d4fba764e33299ca8b8327877ad2a769",
+    "family": "youtube",
+    "reason": "YouTube default or foreign platform logo",
+    "owners": [
+      "youtube"
+    ],
+    "ownerDomains": [
+      "youtube.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "007effe7e7ff7e00",
+      "raster": "Dw8PDw8PDw8LBwYGBgYHCwUDAwQDAwMEBAMDDAkEAwQEAwMMCQQDBAUDAwQDAwMECwcGBgYGBwsPDw8PDw8PDw==",
+      "color": [
+        255,
+        96,
+        128
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 121,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "f9466d1c328b71bef7e148beea92134c81789afb625868c76514a86549295cad",
+    "family": "instagram",
+    "reason": "Instagram default or foreign platform logo",
+    "owners": [
+      "instagram"
+    ],
+    "ownerDomains": [
+      "instagram.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "7ec3a99999a50102",
+      "raster": "CgQDAwMEBAoFCAoKCgoIBAUKBQgICAoEBQoJCAcICgQGCwoICAkKBAcMCAsLBgoECQwNDAwLCQUNCwsLCwkHCw==",
+      "color": [
+        240,
+        112,
+        152
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 128,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "85d0671ee13bf9d7c3ebfb761c388c8fccdcd35cbaf607c4f57db3e6c019cd4f",
+    "family": "linkedin",
+    "reason": "LinkedIn default or foreign platform logo",
+    "owners": [
+      "linkedin"
+    ],
+    "ownerDomains": [
+      "linkedin.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ff9fbf8181898dff",
+      "raster": "BgUFBQUFBQYFDQgFBQUFBQUIBgUFBgUFBQ0IDw4PCgUFDQgPCAkOBQUNCA8HCA4FBQwIDgcIDQUGBQUFBQUFBg==",
+      "color": [
+        72,
+        144,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 179,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "70672adae99fe91def9d813bc8abe257d69b93232711fc2797f0a752f1cf85a0",
+    "family": "apple",
+    "reason": "Apple default or foreign platform logo",
+    "owners": [
+      "apple"
+    ],
+    "ownerDomains": [
+      "apple.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "04087e7c7c7e7e3c",
+      "raster": "Dw8PDwkHDw8PDw4PBAwPDw8GAAICAAMPCwAAAAAACQ8KAAAAAAALDwwAAAAAAAMODwMAAAAAAQ4PDQIDBAEJDw==",
+      "color": [
+        120,
+        120,
+        120
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 178,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "2c2dba0c01e69ad10095b2cfa5a0bdd1adf5ce9e866bb99dc8ffb11a2ab41ca1",
+    "family": "notion",
+    "reason": "Notion default or foreign platform logo",
+    "owners": [
+      "notion",
+      "notion"
+    ],
+    "ownerDomains": [
+      "notion.so",
+      "notion.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00667e5e5e5e7e00",
+      "raster": "Dw8PDQwNDw8OAwoLCwkJDw4ABwkKCgcODgAMAwoHCg4OAAwHAwcKDg4BDAcKBAoODwkICAkIBg4PDw0NDg8PDw==",
+      "color": [
+        176,
+        176,
+        176
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 156,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "0cb159a58a7cdbb2e9a76c5519d55d6a4f55499e6fc242f6550839a591bcffba",
+    "family": "godaddy",
+    "reason": "GoDaddy default or foreign platform logo",
+    "owners": [
+      "godaddy"
+    ],
+    "ownerDomains": [
+      "godaddy.com"
+    ],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ffe7c3999999c3ff",
+      "raster": "AQEBAQEBAQEBAQEDAwEBAQEBBwkJBwEBAQQIAQEIBAEBBAYBAQYEAQEEBwICBwQBAQMICAgIAwEBAQEBAQEBAQ==",
+      "color": [
+        48,
+        48,
+        48
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 2,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "bd5cfdba2d4c41f73f0d22348f608dcbbec835496e8508a901715d5e11b7f3a6",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "2030180c0c183020",
+      "raster": "Dw0EDQ8PDw8PDQICDQ8PDw8PDQICDQ8PDw8PDQICDQ8PDw8NAgINDw8PDQICDQ8PDw0CAg0PDw8PDQQNDw8PDw==",
+      "color": [
+        200,
+        200,
+        200
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 4,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "7c1a3c16826b659d9c3df535c7e78c1f6f5c6e7f7f5d902e416cab49b83cdd2a",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ffff00ffff00ffff",
+      "raster": "CAcHBwcHBwgDAwMDAwMDAw8PDw8PDw8PBgUFBQUFBQYGBQUFBQUFBg8PDw8PDw8PAwMDAwMDAwMIBwcHBwcHCA==",
+      "color": [
+        136,
+        136,
+        136
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 7,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "d573543d5e18669a1d13f0d76363ed1d1012226ba8cf76ffe0b7afb74c5b3575",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "60f0d87c3e190b06",
+      "raster": "DQYECw8PDw8GBwoECw8PDwQKDQUHDw8PCwQFAAcJDA8PCwcHAQMECw8PDwkDCgoDDw8PDAQKCQQPDw8PCgMEDA==",
+      "color": [
+        168,
+        168,
+        168
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 10,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "985cee00386e125ed9995569384350d313cb882d39a205ce183696cbc37bae63",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187e6ee7e76e7e18",
+      "raster": "Dw0GAgIGDQ8NAgAAAAABDQYAAggBAAAFAgADDw0EAAECAAMPDQQAAQYAAggBAAAFDQEAAAAAAQ0PDQUBAQUNDw==",
+      "color": [
+        88,
+        88,
+        88
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 12,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "9dc5d7867868da63fc7940f44abbd8cc1a6e99d09f51707a12ab47be40538896",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "183c3c3c003c7eff",
+      "raster": "Dw8NBQUMDw8PDwMAAAIPDw8PAgAAAQ4PDw8IAAAGDw8PDw8LCw8PDw8MBAEBBAwPDQEAAAAAAQwIAwMDAwMDBw==",
+      "color": [
+        144,
+        144,
+        144
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 15,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "9a33591a797d4322f033f832b2f30e971f07a99f425613b6be2ef42e540d0254",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "382466663c7e42c3",
+      "raster": "Dw8KBQULDw8PDAQNDQQNDw8HCw8PCQkPDwkIDw8HCg8PDgMFBQQPDw8HBQsKBAkPDAUPDw8OBA0HCw8PDw8KCQ==",
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 16,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "d54ce8ff02e6ad86b0c2092fa224056628144807fc9679496ab5af46306b216f",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "1c3e66663c66c3c1",
+      "raster": "Dw8KBAQKDw8PCwEJCQEKDw8GBg8PCAUPDwgDDg4EBw8PDQEBAQEMDw4DBAsLBQIOCAMPDw8PBAcHCQ8PDw8KBg==",
+      "color": [
+        168,
+        168,
+        168
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 17,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "8509f1db35ff71a6d5db6f5194ce0eaaec10e0d57ae2616b5e027525a8af93fd",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c42898d9d89423c",
+      "raster": "Dw0ICAgIDQ8NCA8PDw8IDQgPDw4KDw8ICA8NDAcKDwgIDw0LBwoPCAgPDw4KDw8IDQgPDw8PCA0PDQgICAgNDw==",
+      "color": [
+        200,
+        200,
+        200
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 20,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "451d6f9947733646f43e109dd00a10962360f57baf8b2fb3077139f86bd6fa97",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "c07f41413e3e3636",
+      "raster": "CAgPDw8PDw8PBQcHBwcHBQ8HDw8PDw8HDwoMDg4ODQcPDQUJCQkJDQ8PCAcHBwcNDw8GBg8JBgwPDwgIDwsGDQ==",
+      "color": [
+        184,
+        184,
+        184
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 26,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "ff04586ca9143b3b3052f0f8fc923626e600d53dbf0a55e43eaa336b0f01be3c",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "031fe7ea120c0c0c",
+      "raster": "Dw8PDw8MBwMPDw0ICAoHBwkICg4OBwoLCwgKDgcOCA8PDw0FDg8IDw8PDw0KCwwPDw8PDwgIDw8PDw8PDAgPDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 27,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "c6cfba576bb66e23c53495852d59dd40139e262e7818948adce551f7008f0a9b",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "080c06ffff060c08",
+      "raster": "Dw8PDgYPDw8PDw8PCwYPDw8PDw8PCgcPCwsLCgoKBQcKCgoKCgoFBw8PDw8PCwYPDw8PDwwFDw8PDw8OBQ8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 31,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "0bd0bdc5e67ba535d5663fe2a6e7f7ff5c5520b7ba70f67279c4ac860268e4f7",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": null,
+    "review": {
+      "date": "2026-11-15",
+      "template": 32,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "e3a9f5867b7235c46e5eb322f810805128ade68e3f351d5a7ee06fb58acb3aee",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "181818ffff181818",
+      "raster": "Dw8PAwMPDw8PDw8CAg8PDw8PDwICDw8PAwICAAACAgMDAgIAAAICAw8PDwICDw8PDw8PAgIPDw8PDw8DAw8PDw==",
+      "color": [
+        160,
+        160,
+        160
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 34,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "1671f8e473e3421242f968a34a4ba37a6568c8a128506f76a6eb4e9360f8ef65",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187e42c3c5477d1a",
+      "raster": "Dw0PBAIPDQ8OAQIGBwIBDQ8DDAwLDgIOAwUNCgsLBwIEBQ0JCwgJAw8CDA0KBAQIDgICBQcFCwgPDg8EAgoHDw==",
+      "color": [
+        144,
+        144,
+        144
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 35,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "19755df9422c1dfa2947c6ddaa13c2cf91416abed943b443faa78278ce1946e9",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "40707c7e7e7c7040",
+      "raster": "CQEJDw8PDw8HAAADDA8PDwcAAAAABg4PBwAAAAAAAQsHAAAAAAABCwcAAAAABg4PBwAAAwwPDw8JAQkPDw8PDw==",
+      "color": [
+        120,
+        120,
+        120
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 36,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "25a80afc1337229589f49c38c12e2b9e1eb3352fc2684b602ffc25c37d4dc909",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00ff7ebddbe7ff00",
+      "raster": "Dw8PDw8PDw8CAAAAAAAAAgYAAAAAAAAGBAgBAAABCAQAAQgDAwkBAAAAAAUFAAAAAgAAAAAAAAIPDw8PDw8PDw==",
+      "color": [
+        88,
+        88,
+        88
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 37,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "03ef471b639a4ca19fc9ebd6b6ee08f4dd3ff63fd8b17414976949586c5c6e31",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "183c6e243c3c3818",
+      "raster": "Dw8NCgsNDw8PDQgKCggODw8KCg8LCgsPDwwIDg4HDQ8PDwkKCQoPDw8PCwICDA8PDw8MAQINDw8PDw8LCw8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 38,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "0516864ebf0ff2ed0d26580c792a27bcccc04798ee1052f3658664fc51c3239a",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000183c66c30000",
+      "raster": "Dw8PDw8PDw8PDw8MDA8PDw8PDAEBDA8PDwwBAgIBDA8MAQINDQIBDAICDQ8PDQICDA4PDw8PDgwPDw8PDw8PDw==",
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 40,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "d876fb2541f31c538c4aaf8597c8fa574d2a6db54e7d821f39e50e0f6bf08000",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000183c66c30000",
+      "raster": "Dw8PDw8PDw8PDw8NDQ8PDw8PDQICDQ8PDw0CBgYCDQ8NAgYPDwYCDQIGDw8PDwYCDA8PDw8PDwwPDw8PDw8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 41,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "230f7bf24c001711a20a95c87e36f54d684f09c8f8571f5448f2e93a01b1439a",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187e67e7c3677e3c",
+      "raster": "Dw0FAQEFDQ8NAQACAgABDQUAAAUGAAAEAQAABQYAAAEBAAoJCgoAAAUAAQsLAQAEDQEAAAAAAQwPDQQBAAQMDw==",
+      "color": [
+        80,
+        80,
+        80
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 42,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "ce8d00fad5cc11e7acb396e3acad2229fc7de1f767e316d767482f3703a5a6c5",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000c3663c180000",
+      "raster": "Dw8PDw8PDw8ODw8PDw8PDgQLDw8PDwwEDgQLDw8LBA4PDgQKCgQODw8PDgUFDg8PDw8PDw8PDw8PDw8PDw8PDw==",
+      "color": [
+        224,
+        224,
+        224
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 43,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "796c5bd4f672594c21a6393f3c1ddc2036ad2bb930757f987e8442cd534b1308",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00ff81c3bd81ff00",
+      "raster": "Dw8PDw8PDw8DBAQEBAQEAwINDw8PDw0CAgMLDw8LAwIEDgQICAQOBAQPDwkJDw8EAwQEBAQEBAMPDw8PDw8PDw==",
+      "color": [
+        160,
+        160,
+        160
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 47,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "4727572f1ede99ea81dc93a3718757d0c612072ad276351973551d69f88c61e9",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ff00ff0000ff00ff",
+      "raster": "AAAAAAAAAAANDQ0NDQ0NDQUEBAQEBAQFCQkJCQkJCQkJCQkJCQkJCQUEBAQEBAQFDQ0NDQ0NDQ0AAAAAAAAAAA==",
+      "color": [
+        112,
+        112,
+        112
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 50,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "b86c6b77d4ba86f07b638e8be9c11c2c92bc0fbb31cf574d68cba38bb26d334e",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3840d7d1a3ad4e3c",
+      "raster": "DwwHCAUODw8MCA8PCgsPDwYKDQYMCQcJBgcOBw0PDgQGCwcPDQ4IBwgKBwsJBwwGDQcPDQcICA0PDQcICAcNDw==",
+      "color": [
+        176,
+        176,
+        176
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 54,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "84f8c159fe74b3e149335864e27c13622e282207ae358ab53db907f4075ef649",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "e0e0e0c060371f0f",
+      "raster": "BQIIDw8PDw8BAAIPDw8PDwMAAw4PDw8PCAALDw8PDw8OAgIODw4PDw8LAAILAwIIDw8LAgAAAAIPDw8OCAMBBQ==",
+      "color": [
+        160,
+        160,
+        160
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 55,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "c0e024267fd747e6e21f551cb791741c3ab93520caf415dd653da1e20a637282",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "185a00dbdb005a18",
+      "raster": "Dw0JBAQJDQ8NAQgAAAgBDQsIDAgIDAgLAQEHAAAHAQEBAQcAAAcBAQsIDAgIDAgLDQEIAAAIAQ0PDQkEBAkNDw==",
+      "color": [
+        112,
+        112,
+        112
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 56,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "6d8c5d6992a2c8db84bb3053e24e39d0e01ecf43f21bff056a4fc4c0209075d7",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000c3663c180000",
+      "raster": "Dw8PDw8PDw8MDQ8PDw8NDAICDQ8PDQICDAECDQ0CAQwPDAECAgEMDw8PDAEBDA8PDw8PDQ0PDw8PDw8PDw8PDw==",
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 59,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "7de8a959e46c8a4f2bb5a7adfb25609d5cde1e421fbfb0b58bfa108787f7281b",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c4281999981423c",
+      "raster": "Dw0FAwMFDQ8NAwwPDwwDDQUMCgwMCQwFAw8MAgIMDwMDDwwCAgwPAwUMCgwMCgwFDQMMDw8MAw0PDQUDAwUNDw==",
+      "color": [
+        160,
+        160,
+        160
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 60,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "fcb86b6fb795a84a8689a9cd964468671601131a3bf1c25909903c60fc74fe04",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "007f7f3f20003232",
+      "raster": "CgoPDw8PDw8PBgMDAwMDBA8HAAAAAAACDwoAAAAAAAQPDQcKCgoKDQ8PCgoKCgoODw8FBg8LAg0PDwYIDwwEDQ==",
+      "color": [
+        144,
+        144,
+        144
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 62,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "352104c2ecc24055dca17bcadbff6b65201286228b2384780ca8f1166a65800a",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00ff007e7e00ff00",
+      "raster": "Dw4ODg4ODg8IAAAAAAAACA8ODg4ODg4PCwcHBwcHBwsLBwcHBwcHCw8ODg4ODg4PCAAAAAAAAAgPDg4ODg4ODw==",
+      "color": [
+        160,
+        160,
+        160
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 65,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "42ab245f046d2203f149dfaef4fc080d75d664a537c5410c5970a010d59e3a8d",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "000c0effff0e0c00",
+      "raster": "Dw8PDw8PDw8PDw8PBgcPDw8PDw8JAAcPBQUFBQUBAAcFBQUFBQEABw8PDw8JAAcPDw8PDwYHDw8PDw8PDw8PDw==",
+      "color": [
+        184,
+        184,
+        184
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 67,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "9a64e6f9eaab4fc61e047bdbdd135219058116d4aeb1397940c0f1f95d32dedc",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000183c66c30000",
+      "raster": "Dw8PDw8PDw8PDw8ODg8PDw8PDgQDDQ8PDw4DBgYDDQ8OAwYPDwYDDQcGDw8PDwYGDg8PDw8PDw4PDw8PDw8PDw==",
+      "color": [
+        216,
+        216,
+        216
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 69,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "63de996b1692c21aa378ff6c06aa95a727fc8f3eb226e6109e5e18660f61ce5e",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000c3663c180000",
+      "raster": "Dw8PDw8PDw8NDw8PDw8PDQMIDw8PDwkDDgMIDw8JAg0PDgMJCQINDw8PDgICDg8PDw8PDg4PDw8PDw8PDw8PDw==",
+      "color": [
+        216,
+        216,
+        216
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 71,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "0e2476c3c8ddf870b27ec20d53692db6e566bd4756b9cc6afa3ab6ed09943e40",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "1f00ff00001f00ff",
+      "raster": "Dw8NAAAAAAAPDw8NDQ0NDQUEBAQEBAQFCQkJCQkJCQkPDw4JCQkJCQ8PDgQEBAQEDQ0NDQ0NDQ0AAAAAAAAAAA==",
+      "color": [
+        136,
+        136,
+        136
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 75,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "44d839dbe9147cd82fee56f8e87b9af4597928f2b18bf9394df4797ec19a5be3",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "784c4e424242427e",
+      "raster": "DwUGBgILDw8PBg8PBwcLDw8GDw8FBgQPDwYPDw8PBw8PBg8PDw8HDw8GDw8PDwcPDwYPDw8PBw8PBQcHBwcFDw==",
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 77,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "bbb1a84e1a23f3ff6453fb51780cd2db09828de7f754256fbcd9fe37b6546e71",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187e66f3f3677e1c",
+      "raster": "Dw0FAQEFDQ8NAQABAAABDQUAAAsFAAAEAQAAAQsFAAEBAAAACwUAAAUAAAoFAAAEDQEAAgAAAQwPDQQBAAQMDw==",
+      "color": [
+        72,
+        72,
+        72
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 78,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "5cb5fe5f6cc125992e3c236c793611a487d5a288ce13ae41918ada023c79f259",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0081c3663c180000",
+      "raster": "Dw8PDw8PDw8MDg8PDw8ODAIEDg8PDgQCDAEEDg4EAQwPDAEEBAEMDw8PDAEBDA8PDw8PDQ0PDw8PDw8PDw8PDw==",
+      "color": [
+        200,
+        200,
+        200
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 79,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "63741415605628d925e750ca30f9ef8cdeeef2649883439a2d7a5878b1ac72a2",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00ff00ffff00ff00",
+      "raster": "Dg0NDQ0NDQ4EAwMDAwMDBA8PDw8PDw8PCQgICAgICAkJCAgICAgICQ8PDw8PDw8PBAMDAwMDAwQODQ0NDQ0NDg==",
+      "color": [
+        168,
+        168,
+        168
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 81,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "582d6706de8cea5afd1d8a91efb88e80090ac5c92762c6d817199150b2a7c484",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "2070381c1c387020",
+      "raster": "Dw0CCw8PDw8PCgABCw8PDw8PCgABCw8PDw8PCgABDA8PDw8KAAEMDw8PCgABCw8PDwoAAQsPDw8PDQILDw8PDw==",
+      "color": [
+        184,
+        184,
+        184
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 83,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "c176e2cb58baaf9a053a7b39579dd72aa9bc7ada4014b5ef329002aa138f6688",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000183c66c30000",
+      "raster": "Dw8PDw8PDw8PDw8PDw8PDw8PDgUEDg8PDw4ECgsEDg8OBAsPDwsEDgQLDw8PDwwEDg8PDw8PDw4PDw8PDw8PDw==",
+      "color": [
+        224,
+        224,
+        224
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 88,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "2cb5351f809e172a0b439ec35db7fb020822be4bd995a16c0096f1e082b273d6",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0707070306ecf8f0",
+      "raster": "Dw8PDw8IAgUPDw8PDwIAAQ8PDw8OAwADDw8PDw8LAAgPDw4PDgICDggCAwsCAAsPAgAAAAILDw8FAQMIDg8PDw==",
+      "color": [
+        160,
+        160,
+        160
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 89,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "97c03a34a1b12934a42de769bf9feac27ee52a7ebe5148e20e9dde1869fddb01",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "60d0b07c1e1b0e04",
+      "raster": "DQMDDQ8PDw8DCwsDDg8PDwMLCAMNDw8PDQMDAQYFDQ8PDg0GAQkDDg8PDwUKDwYKDw8PDQMGBA4PDw8PDgoODw==",
+      "color": [
+        184,
+        184,
+        184
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 94,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "92331ea1c51eaeddfc3c227aa78812dc0c8720a166e2fc728db2d39a4f1a8f0d",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "040c183030180c04",
+      "raster": "Dw8PDw4EDg8PDw8OAwgPDw8PDgMIDw8PDw4DCA8PDw8PDgMIDw8PDw8PDgMIDw8PDw8PDgMIDw8PDw8PDgQODw==",
+      "color": [
+        216,
+        216,
+        216
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 96,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "ca1d7cdf8c5fab941faabdd57d129179119c756e1f85d6844a0bec850f2237cb",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "6030180c0c183060",
+      "raster": "DwwCDQ8PDw8PDwYCDQ8PDw8PDwYCDQ8PDw8PDwYCDg8PDw8PBgIODw8PDwYCDQ8PDw8GAg0PDw8PDAINDw8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 97,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "826eb5d46e7d681d5e3d379f74d34e39672e52edbca2ead47acfe10ee2fef4be",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "2030180c0c183020",
+      "raster": "Dw8IDg8PDw8PDgIDDg8PDw8PDQIDDg8PDw8PDQIDDg8PDw8NAgMODw8PDQIDDg8PDw4CAw4PDw8PDwgODw8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 98,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "2cf3d5736472946f38fa42b0d07b8b3b393ba735948c58707720b1b167010c07",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000c3663c180000",
+      "raster": "Dw8PDw8PDw8NDg8PDw8PDQcFDg8PDwYGDgQFDg8GBA4PDgQFBQQODw8PDgQEDg8PDw8PDg4PDw8PDw8PDw8PDw==",
+      "color": [
+        216,
+        216,
+        216
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 100,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "eeae16d400d0358266f2e5554bb54b316af12717e3835f7b011426194048c7bd",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000183c66c30000",
+      "raster": "Dw8PDw8PDw8PDw8PDw8PDw8PDwUFDg8PDw4ECwsEDg8OBAsPDwwEDgQMDw8PDw0EDw8PDw8PDw8PDw8PDw8PDw==",
+      "color": [
+        224,
+        224,
+        224
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 104,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "da69a9511cbcb0db055814b9e2e721f6909cce34162f027c1b01b2aa29a713bd",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c66e7a5a5e7663c",
+      "raster": "Dw0FAgIFDQ8NAwULCwUDDQUGAgcHAgUFAwsDCwsDCwMDCwMLCwMLAwUGAgcHAgUFDQMFCwsFAw0PDQUCAgUNDw==",
+      "color": [
+        120,
+        120,
+        120
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 109,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "144fdc77147d05dfceee9417acfd1972a53856452fbecef00c53a9ba008911f1",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "000307cefc783000",
+      "raster": "Dw8PDw8PDw8PDw8PDw8GBQ8PDw8PBgAGBQYPDwYABg8GAAYGAAYPDw8GAAAGDw8PDw8GBg8PDw8PDw8PDw8PDw==",
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 110,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "061acb513ed6f45b2241d662b3311b7799624376f95b34a4e6101a8e7b2cf0c7",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "7cfe007f7f00fe7c",
+      "raster": "CAcHBwcHCA8AAAAAAAAADw8PDw8PDw8PDwQEBAQEBAQPBAQEBAQEBA8PDw8PDw8PAAAAAAAAAA8IBwcHBwcIDw==",
+      "color": [
+        128,
+        128,
+        128
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 112,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "78a01575056ffa4a7b497335b280cf1ea492652a8d397e3a166b0efbfa481b61",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "080c06ffff060c08",
+      "raster": "Dw8PDwoPDw8PDw8PAwQPDw8PDw8OAwQPBwYGBgYFAAQIBwcHBwUABQ8PDw8OAwUPDw8PDwMFDw8PDw8PCg8PDw==",
+      "color": [
+        184,
+        184,
+        184
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 113,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "0ba43e7beaab9e85cc72249c024b840da7887f57e4dc77fe360d9bbe8c3fe92a",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "1818185a3c18007e",
+      "raster": "Dw8PDA0PDw8PDw8MDQ8PDw8PDwwNDw8PDwwPDA0ODQ8PDwkLDAkPDw8PDwcJDw8PDw8PDw8PDw8OCgoKCgoKDg==",
+      "color": [
+        232,
+        232,
+        232
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 119,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "150d1ec97ca26d7f09e117364f4295e0bcfdd84259405146251fb54c2a28ddfe",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "003c7e66667e3c00",
+      "raster": "Dw8OCwsODw8PCwEAAAELDw4BAAUAAAEOCwAADwsCAAsLAAAPCwIACw4BAAUAAAEODwsBAAABCw8PDw4LCw4PDw==",
+      "color": [
+        136,
+        136,
+        136
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 120,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "526a4cb2fd5fe8e21a8836cea463f8bcb9ea08bb29fb0de9ba5432b375d77ffe",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c7ee7c3c3e77e3c",
+      "raster": "Dw0FAQEFDQ8NAQADAwABDQUAAAoKAAAFAQMKDQ0KAwEBAwoNDQoDAQUAAAoKAAAFDQEAAwMAAQ0PDQUBAQUNDw==",
+      "color": [
+        96,
+        96,
+        96
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 123,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "62b1e26643540c99c3c84fcb0b6fe446991dbfa6304c60616da539b1e674b0d0",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c665a4224241818",
+      "raster": "Dw8IBgYIDw8PCQoPDwoJDw8GDwgIDwYPDwcNDQ0NBw8PDQcPDwcNDw8PBw0NBw8PDw8OBQUODw8PDw8KCg8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 127,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "e35bdecdc4df26de30405334a9d4e7d8f386aaf293d239e0ede6ec93986c9954",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c7e66667e3c1818",
+      "raster": "Dw8GAQEGDw8PBgACAgAGDw8BAg8PAgEPDwECDw8CAQ8PBgACAgAGDw8OAgAAAg4PDw8LAAALDw8PDw8HBw8PDw==",
+      "color": [
+        144,
+        144,
+        144
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 131,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "d66c0ff774561a49c9c274708c77e72ecf180af3374cea9765cfcd8a3923b7ee",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "18247e664242427e",
+      "raster": "Dw8MBgYMDw8PDwcPDwcPDw8IAwcHAwgPDwcIDw8IBw8PBw8PDw8HDw8HDw8PDwcPDwcPDw8PBw8PBgcHBwcGDw==",
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 132,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "75001030644ae1720af5101b07815305426fb015fc7cff7d19a1b9fb60b1b45c",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c4281a581bd423c",
+      "raster": "Dw0ICAgIDQ8NCA8PDw8IDQgPDg8PDg8HCA8IDw8IDwgIDwwPDw0PCAgPCAoKBw8HDQgPDQ0PCAwPDQcICAcMDw==",
+      "color": [
+        200,
+        200,
+        200
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 137,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "30f3a4d987d12a090317af85bbf1d300880079b5981edc471762026b202a0d00",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c4299ad8989433e",
+      "raster": "Dw0KCwsKDQ8NCw8PDg8LDQoPDwkHDg8KCw8MDQwMDwsLDw8NDA8PCwoPDw0MDw8KDQsPDw4PDA0PDQoLCwoNDw==",
+      "color": [
+        216,
+        216,
+        216
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 138,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "187f656c9ab8e9dabf0f781fb7ba301fadffc4cebc1983084807a2b4837990e7",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00ffc3b59981ff00",
+      "raster": "Dw8PDw8PDw8DBQUFBQUFAwMFDQ8PDgUDBQ4GCQsFDQYFDw8KBw8PBgUPDw8PDw8GBAYGBgYGBgQPDw8PDw8PDw==",
+      "color": [
+        176,
+        176,
+        176
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 140,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "46e1af03c5590409f35dcbcf2aaddb013ea685e6bba1988d331dd7472e7e1c50",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "00e0f8fefffffef8",
+      "raster": "CgoNDg8PDw8CAQMJDQ4PDwAAAAEDBwwOAAAAAAABAgYAAAAAAAAAAQAAAAAAAAAAAAAAAAABAgYAAAAAAQYMDg==",
+      "color": [
+        72,
+        72,
+        72
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 143,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "ada237345ea7d72111183e6ad00be2dbca193ffcee4a10bdec930c4af877acf9",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "80c021110905033f",
+      "raster": "BgwPDw8PDw8KAgwPDw8PDQ8LAgwPDw8BDw8LAgwPDwEPDw8MAgsPAQ8PDw8MAgsBDw8ODg4LAQAPDwUCAgICAg==",
+      "color": [
+        176,
+        176,
+        176
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 145,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "a1515e648260745bd658e60335eac3a29381fd4dd10ac2ec270f42e34edd73d6",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187e7ef7ff7e7e18",
+      "raster": "Dw4HAwQIDg8NAgAAAAADDgUAAAMAAAAHAQAAAgQAAAMBAAADBAAAAwUAAAIAAAAIDQIAAAAAAw4PDgcEBAgODw==",
+      "color": [
+        72,
+        72,
+        72
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 146,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "b217425dd7c1fe38d397be727fb077e0e3f582a167c9b72561554279164e0bed",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "3c428189bd99423c",
+      "raster": "Dw0ICAgIDQ8NCA8PDw8IDQgPDw0NDw8ICA8ODAsODwgIDwoHBwoPCAgPDwoKDw8IDQgPDw8PCA0PDQgICAgNDw==",
+      "color": [
+        200,
+        200,
+        200
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 147,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "7791c536005bd4dbd22d16d533c01dc56095c584f9fc1a8db795216199a577dd",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "187e7ee7db7e7e18",
+      "raster": "Dw0FAQEFDQ8NAQAAAAABDQUAAAABAAAEAQABCAgBAAEBAAUBAAUAAAUAAAAAAAAEDQEAAAAAAQwPDQQBAAQMDw==",
+      "color": [
+        64,
+        64,
+        64
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 148,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "8f1f65eac47e5d596b3a00c8ec06c65767f83899800eaf0936cf9f8e0b175ae6",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "247effa5a5bd817e",
+      "raster": "Dw8ADw8ADw8JAAAAAAAACQcGCAgICAYHBwsICwsICwcHCwgLCwgLBwcLAQgIAQsHBwsPDw8PCwcJAwQEBAQDCQ==",
+      "color": [
+        136,
+        136,
+        136
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 149,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "4d2445fdb71bdb0a94df7694f36a34474e1fe3c8927cfbf9c36b1e4cd6e8b5f9",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "1818183c3c18ffff",
+      "raster": "Dw8PAAAPDw8PDw8AAA8PDw8PDwAADw8PDwcAAAAABw8PDwYAAAYPDwgICAYGCAgIAAAABAQAAAAAAAAAAAQEAQ==",
+      "color": [
+        120,
+        120,
+        120
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 152,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "ee47c81ee1d89246515ba793aeb5a4b4fa73c3daf166920db35c046924d8a900",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "003c66ffa57e7e00",
+      "raster": "Dw8ODQ0ODw8PDwYKCgYPDw0KCQ0NCQoNBggJCQkJCAYLCwcLCwcLCw0JCAsLCAkNDwYJCQkJBg8PDg0NDQ0ODw==",
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 157,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "a1b386df18a9c61680ec0fbb43de7d60ae1326801466b08a5bd68037b765f58f",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0000c3663c180000",
+      "raster": "Dw8PDw8PDw8MDw8PDw8PDAIGDw8PDwYCDQIGDw8GAg0PDQIGBgINDw8PDQICDQ8PDw8PDQ0PDw8PDw8PDw8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 158,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "c000c340169c98de2f8e6ae9839a7be0b3b148bf0e5341af0ef519270ea002ba",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "000c06ffff060c00",
+      "raster": "Dw8PDwwODw8PDw8OBQcODw8PDw8MBAcOCgcHBwcEAQcKBwcHBwQBBw8PDw8MBAcODw8PDgUHDg8PDw8PDA4PDw==",
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 160,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "f47ee11644b62ae183a378d080b274e83ff5a3eca6cc9459437fbf6985b50ec6",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "ffff00ffff00ffff",
+      "raster": "BwcHBwcHBwcHBwcHBwcHBw8PDw8PDw8PCAgICAgICAgHBwcHBwcHBw8PDw8PDw8PCAgICAgICAgHBwcHBwcHBw==",
+      "color": [
+        160,
+        160,
+        160
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 167,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "183501381bca10df3698897165b1ed3931c39d66e5cd63f93b04a7991c96f39e",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "0081c3663c180000",
+      "raster": "Dw8PDw8PDw8MDw8PDw8PDAIGDw8PDwYCDQIGDw8GAg0PDQIGBgINDw8PDQICDQ8PDw8PDg4PDw8PDw8PDw8PDw==",
+      "color": [
+        208,
+        208,
+        208
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 170,
+      "method": "visual template and source provenance review"
+    }
+  },
+  {
+    "sha256": "092a4cb982418aa01c96235b8c360b2008083b066b7a11df8515cc22855db084",
+    "family": "ui-control",
+    "reason": "generic interface control",
+    "owners": [],
+    "ownerDomains": [],
+    "fingerprint": {
+      "version": 1,
+      "hash": "183c7e5a18181818",
+      "raster": "Dw8PCAgPDw8PDwgDAwgPDw8IBwoKBwgPDwsPCgoPCw8PDw8KCg8PDw8PDwoKDw8PDw8PCgoPDw8PDw8KCg8PDw==",
+      "color": [
+        216,
+        216,
+        216
+      ]
+    },
+    "review": {
+      "date": "2026-11-15",
+      "template": 172,
+      "method": "visual template and source provenance review"
+    }
+  }
+]

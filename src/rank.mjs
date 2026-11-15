@@ -1,6 +1,7 @@
 import { describeAssetVariant, matchesRequiredPreferences, normalizeAssetPreferences } from './asset-model.mjs';
 import { describesEmbeddedLogo } from './logo-semantics.mjs';
 import { getDomain } from 'tldts';
+import { isGenericAssetOwnerDomain, matchKnownGenericHash } from './generic-asset-fingerprint.mjs';
 
 const SOURCE_WEIGHT = {
   schema: 30, 'og-logo': 27, microdata: 26, 'inline-svg': 24, 'browser-inline-svg': 24, 'browser-img': 12,
@@ -172,12 +173,21 @@ export function genericAssetReason(item, companyName = '') {
     for (const word of normalizedWords(new URL(item.source_page).hostname)) companyWords.add(word);
   } catch { /* Inline and synthetic candidates may not have a source page. */ }
   const itemHash = item.observed?.byte_hash ?? item.content_hash;
+  const reviewedHash = matchKnownGenericHash(itemHash);
+  const isReviewedOwner = match => {
+    if (requestedCompanyWords.size && !match.owners.some(owner => requestedCompanyWords.has(owner))) return false;
+    if (item.source_page) {
+      try { return isGenericAssetOwnerDomain(match, new URL(item.source_page).hostname); } catch { return false; }
+    }
+    return match.owners.some(owner => requestedCompanyWords.has(owner));
+  };
+  if (reviewedHash && !isReviewedOwner(reviewedHash)) return reviewedHash.reason;
   const knownHashReason = KNOWN_GENERIC_HASHES.get(itemHash);
   const knownHashOwners = KNOWN_HASH_OWNERS.get(itemHash) ?? [];
   if (knownHashReason && !isGenericAssetOwner(knownHashOwners, requestedCompanyWords, item.source_page)) return knownHashReason;
   const visualGeneric = item.observed?.generic_asset;
   if (visualGeneric?.reason && Array.isArray(visualGeneric.owners) &&
-      !isGenericAssetOwner(visualGeneric.owners, requestedCompanyWords, item.source_page)) {
+      !(visualGeneric.ownerDomains ? isReviewedOwner(visualGeneric) : isGenericAssetOwner(visualGeneric.owners, requestedCompanyWords, item.source_page))) {
     return `${visualGeneric.reason} via ${visualGeneric.method ?? 'visual fingerprint'}`;
   }
   const foreignPlatform = PLATFORM_NAMES.find(platform => !companyWords.has(platform) && (

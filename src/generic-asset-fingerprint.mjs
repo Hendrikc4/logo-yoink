@@ -1,3 +1,18 @@
+import reviewedAssets from './reviewed-generic-assets.json' with { type: 'json' };
+
+export const GENERIC_ASSET_CATALOG_VERSION = '2026-11-15';
+const REVIEWED_HASHES = new Map(reviewedAssets.map(entry => [entry.sha256, entry]));
+export function matchKnownGenericHash(sha256) {
+  const entry = REVIEWED_HASHES.get(sha256);
+  if (!entry) return null;
+  return { family: entry.family, reason: entry.reason, owners: entry.owners, ownerDomains: entry.ownerDomains, method: 'reviewed-sha256' };
+}
+
+export function isGenericAssetOwnerDomain(match, domain) {
+  const host = String(domain ?? '').toLowerCase().replace(/^www\./, '');
+  return match?.ownerDomains?.some(owner => host === owner) ?? false;
+}
+
 const SAMPLE_EDGE = 32;
 const HASH_EDGE = 8;
 
@@ -5,8 +20,11 @@ const HASH_EDGE = 8;
 // compositing transparency onto white; the colour buckets keep unrelated monochrome marks
 // from matching a catalog entry on shape alone.
 const GENERIC_FINGERPRINTS = [
-  { family: 'wix', reason: 'Wix default favicon', owners: ['wix'], hash: '0000007e7e000000', color: [232, 232, 232], raster: 'Dw8PDw8PDw8PDw8PDw8PDw8ODg4ODg4PDwkECQkICQ8PBwkHCQgJDw8ODw4ODg4PDw8PDw8PDw8PDw8PDw8PDw==' },
-  { family: 'wordpress', reason: 'WordPress default favicon', owners: ['wordpress'], hash: '187c34b5d75a5a18', color: [176, 168, 168], raster: 'Dw4MCQkMDg8OCQQEBAUMDgwNBgoKBg8MCQwHBg0ECwkJCAsGDQYICQwFDgcJCwYMDgoMBwUNCg4PDgwJCQwODw==' },
+  { family: 'wix', reason: 'Wix default favicon', owners: ['wix'], ownerDomains: ['wix.com'], hash: '0000007e7e000000', color: [232, 232, 232], raster: 'Dw8PDw8PDw8PDw8PDw8PDw8ODg4ODg4PDwkECQkICQ8PBwkHCQgJDw8ODw4ODg4PDw8PDw8PDw8PDw8PDw8PDw==' },
+  { family: 'wordpress', reason: 'WordPress default favicon', owners: ['wordpress'], ownerDomains: ['wordpress.com', 'wordpress.org'], hash: '187c34b5d75a5a18', color: [176, 168, 168], raster: 'Dw4MCQkMDg8OCQQEBAUMDgwNBgoKBg8MCQwHBg0ECwkJCAsGDQYICQwFDgcJCwYMDgoMBwUNCg4PDgwJCQwODw==' },
+  ...reviewedAssets.filter(entry => entry.fingerprint).map(entry => ({
+    family: entry.family, reason: entry.reason, owners: entry.owners, ownerDomains: entry.ownerDomains, ...entry.fingerprint,
+  })),
 ].map(entry => ({ ...entry, pixels: Buffer.from(entry.raster, 'base64'), bits: BigInt(`0x${entry.hash}`) }));
 
 function bitCount64(value) {
@@ -61,7 +79,7 @@ export function matchGenericFingerprint(fingerprint) {
     let rasterDistance = 0;
     for (let index = 0; index < 64; index += 1) rasterDistance += Math.abs(candidateRaster[index] - referenceRaster[index]);
     rasterDistance /= 64;
-    if (distance <= 4 && colorDistance <= 16 && rasterDistance <= 0.35) return { family: entry.family, reason: entry.reason, owners: entry.owners, method: 'normalized-pixel-fingerprint', distance, rasterDistance: Math.round(rasterDistance * 1000) / 1000 };
+    if (distance <= 4 && colorDistance <= 16 && rasterDistance <= 0.35) return { family: entry.family, reason: entry.reason, owners: entry.owners, ...(entry.ownerDomains ? { ownerDomains: entry.ownerDomains } : {}), method: 'normalized-pixel-fingerprint', distance, rasterDistance: Math.round(rasterDistance * 1000) / 1000 };
   }
   return null;
 }
