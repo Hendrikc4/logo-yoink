@@ -15,10 +15,16 @@
     },
     ".": {
       "types": "./src/index.d.ts",
+  "typesVersions": {
+    "*": { "generic-assets": ["src/generic-assets.d.ts"] }
+  },
       "import": "./src/index.mjs"
     }
   },
   "types": "./src/index.d.ts",
+  "typesVersions": {
+    "*": { "generic-assets": ["src/generic-assets.d.ts"] }
+  },
   "bin": {
     "logo-yoink": "./src/cli.mjs"
   },
